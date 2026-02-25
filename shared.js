@@ -59,37 +59,37 @@
     if (isIdx) {
         placements = [
             // Left — marketing themed
-            { img: 'h_ad_dashboard.jpg',    side: 'left', offset: -120, top: 8, size: 360 },
-            { img: 'h_growth_engine.jpg',   side: 'left', offset: -140, top: 55, size: 340 },
+            { img: 'h_ad_dashboard.png',    side: 'left', offset: -120, top: 8, size: 360 },
+            { img: 'h_growth_engine.png',   side: 'left', offset: -140, top: 55, size: 340 },
             // Right — marketing themed
-            { img: 'h_megaphone_city.jpg',  side: 'right', offset: -120, top: 8, size: 350 },
-            { img: 'h_target_bullseye.jpg', side: 'right', offset: -140, top: 55, size: 330 }
+            { img: 'h_megaphone_city.png',  side: 'right', offset: -120, top: 8, size: 350 },
+            { img: 'h_target_bullseye.png', side: 'right', offset: -140, top: 55, size: 330 }
         ];
     } else if (isEdu) {
         placements = [
             // Left — aligned to sections
-            { img: 'e_chalkboard.jpg',      side: 'left', offset: -110, top: 5, size: 360 },
-            { img: 'e_ancient_library.jpg',  side: 'left', offset: -130, top: 38, size: 350 },
-            { img: 'e_brain_tree.jpg',       side: 'left', offset: -110, top: 56, size: 360 },
-            { img: 'e_printing.jpg',         side: 'left', offset: -130, top: 74, size: 340 },
+            { img: 'e_chalkboard.png',      side: 'left', offset: -110, top: 5, size: 360 },
+            { img: 'e_ancient_library.png',  side: 'left', offset: -130, top: 38, size: 350 },
+            { img: 'e_brain_tree.png',       side: 'left', offset: -110, top: 56, size: 360 },
+            { img: 'e_printing.png',         side: 'left', offset: -130, top: 74, size: 340 },
             // Right — aligned to sections
-            { img: 'e_rocket_edu.jpg',       side: 'right', offset: -110, top: 5, size: 350 },
-            { img: 'e_funnel_machine.jpg',   side: 'right', offset: -130, top: 20, size: 340 },
-            { img: 'e_megaphone_scene.jpg',  side: 'right', offset: -110, top: 56, size: 360 },
-            { img: 'e_scale_up.jpg',         side: 'right', offset: -130, top: 78, size: 340 }
+            { img: 'e_rocket_edu.png',       side: 'right', offset: -110, top: 5, size: 350 },
+            { img: 'e_funnel_machine.png',   side: 'right', offset: -130, top: 20, size: 340 },
+            { img: 'e_megaphone_scene.png',  side: 'right', offset: -110, top: 56, size: 360 },
+            { img: 'e_scale_up.png',         side: 'right', offset: -130, top: 78, size: 340 }
         ];
     } else {
         placements = [
             // Left — real estate + capital themed (bigger images)
-            { img: 'c_skyline.jpg',      side: 'left', offset: -120, top: 5, size: 420 },
-            { img: 'c_money_tree.jpg',   side: 'left', offset: -140, top: 28, size: 400 },
-            { img: 'c_magnet.jpg',       side: 'left', offset: -120, top: 52, size: 410 },
-            { img: 'c_pipeline.jpg',     side: 'left', offset: -140, top: 74, size: 390 },
+            { img: 'c_skyline.png',      side: 'left', offset: -120, top: 5, size: 420 },
+            { img: 'c_money_tree.png',   side: 'left', offset: -140, top: 28, size: 400 },
+            { img: 'c_magnet.png',       side: 'left', offset: -120, top: 52, size: 410 },
+            { img: 'c_pipeline.png',     side: 'left', offset: -140, top: 74, size: 390 },
             // Right
-            { img: 'c_treasury.jpg',     side: 'right', offset: -120, top: 5, size: 410 },
-            { img: 'c_safe_crack.jpg',   side: 'right', offset: -140, top: 28, size: 420 },
-            { img: 'c_chess.jpg',        side: 'right', offset: -120, top: 52, size: 400 },
-            { img: 'c_network_city.jpg', side: 'right', offset: -140, top: 78, size: 390 }
+            { img: 'c_treasury.png',     side: 'right', offset: -120, top: 5, size: 410 },
+            { img: 'c_safe_crack.png',   side: 'right', offset: -140, top: 28, size: 420 },
+            { img: 'c_chess.png',        side: 'right', offset: -120, top: 52, size: 400 },
+            { img: 'c_network_city.png', side: 'right', offset: -140, top: 78, size: 390 }
         ];
     }
 
