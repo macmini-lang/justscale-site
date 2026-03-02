@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Book a Call | Eagle Eye Capital Ltd. | JustScale</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../shared.css?v=3">
+    <link rel="stylesheet" href="../../prospect.css?v=4">
+    <style>
+        .book-hero { text-align: center; padding: 60px 0 20px; }
+        .book-hero h1 { font-size: 2rem; font-weight: 700; margin-bottom: 12px; }
+        .book-hero p { color: rgba(255,255,255,0.6); font-size: 1.05rem; max-width: 500px; margin: 0 auto; }
+        .book-calendly { max-width: 700px; margin: 0 auto; padding: 0 20px 60px; }
+        .book-calendly .calendly-inline-widget { border-radius: 12px; overflow: hidden; }
+        .book-back { display: inline-block; margin-top: 24px; color: var(--gold); font-size: 0.9rem; opacity: 0.7; transition: opacity 0.2s; }
+        .book-back:hover { opacity: 1; }
+    </style>
+</head>
+<body>
+<div class="page" id="page">
+
+    <nav class="brief-nav">
+        <div class="brief-container">
+            <a href="../../../index.html" class="brief-nav-logo">
+                <img src="../../../logo.svg" alt="JustScale">
+            </a>
+            <span class="brief-nav-label">Discovery Call</span>
+        </div>
+    </nav>
+
+    <div class="book-hero">
+        <div class="brief-container">
+            <h1 class="sr">Let's talk about Eagle Eye Capital Ltd..</h1>
+            <p class="sr">Pick a time that works. No pressure, no pitch. Just a conversation about what's possible.</p>
+        </div>
+    </div>
+
+    <div class="book-calendly">
+        <div class="calendly-inline-widget" data-url="https://calendly.com/zac-justscale/justscale-discovery-call" style="min-width:320px;height:700px;"></div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        <div style="text-align: center;">
+            <a href="../" class="book-back">&larr; Back to briefing</a>
+        </div>
+    </div>
+
+    <footer class="brief-footer">
+        <div class="brief-container">
+            <a href="../../../index.html" class="brief-footer-logo">
+                <img src="../../../logo.svg" alt="JustScale">
+            </a>
+            <span class="brief-footer-copy">&copy; 2026 JustScale. All rights reserved.</span>
+        </div>
+    </footer>
+
+</div>
+
+<script>
+(function() {
+    var page = document.getElementById('page');
+    if (page) page.classList.add('loaded');
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.sr').forEach(function(el) { observer.observe(el); });
+})();
+</script>
+</body>
+</html>
