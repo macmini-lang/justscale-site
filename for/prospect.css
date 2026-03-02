@@ -753,6 +753,162 @@ a, button, .btn { cursor: pointer !important; }
     color: var(--text-m);
 }
 
+/* ── Flowchart ────────────────────────────────── */
+.brief-flowchart {
+    padding: 40px 0 0;
+}
+
+.brief-flow-track {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    padding: 20px 24px;
+}
+
+.brief-flow-current {
+    border-color: rgba(255, 80, 80, 0.2);
+    background: rgba(255, 80, 80, 0.03);
+}
+
+.brief-flow-system {
+    border-color: rgba(80, 200, 120, 0.2);
+    background: rgba(80, 200, 120, 0.03);
+}
+
+.brief-flow-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.brief-flow-current .brief-flow-label {
+    color: rgba(255, 120, 120, 0.8);
+}
+
+.brief-flow-system .brief-flow-label {
+    color: rgba(80, 200, 120, 0.85);
+}
+
+.brief-flow-steps {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.brief-flow-step {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text);
+    padding: 8px 16px;
+    border-radius: 8px;
+    white-space: nowrap;
+}
+
+.brief-flow-current .brief-flow-step {
+    background: rgba(255, 80, 80, 0.08);
+    border: 1px solid rgba(255, 80, 80, 0.15);
+}
+
+.brief-flow-system .brief-flow-step {
+    background: rgba(80, 200, 120, 0.08);
+    border: 1px solid rgba(80, 200, 120, 0.15);
+}
+
+.brief-flow-arrow {
+    color: var(--text-m);
+    display: flex;
+    align-items: center;
+    opacity: 0.4;
+}
+
+.brief-flow-vs {
+    text-align: center;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-m);
+    padding: 10px 0;
+}
+
+/* ── Comparison Grid ─────────────────────────── */
+.brief-compare-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.brief-compare-row {
+    display: grid;
+    grid-template-columns: 140px 1fr 1fr;
+    gap: 16px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    padding: 20px 22px;
+    align-items: start;
+}
+
+.brief-compare-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brief-compare-area span {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.brief-compare-icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gold-glow);
+    border-radius: 7px;
+}
+
+.brief-compare-icon svg {
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: var(--gold);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.brief-compare-col-label {
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.brief-compare-you .brief-compare-col-label {
+    color: rgba(255, 120, 120, 0.7);
+}
+
+.brief-compare-them .brief-compare-col-label {
+    color: rgba(80, 200, 120, 0.75);
+}
+
+.brief-compare-you p,
+.brief-compare-them p {
+    font-size: 0.82rem;
+    color: var(--text-s);
+    line-height: 1.5;
+    margin: 0;
+}
+
 /* ── Scroll Reveal ─────────────────────────────── */
 .sr {
     opacity: 0;
@@ -782,6 +938,25 @@ a, button, .btn { cursor: pointer !important; }
     .brief-observation {
         flex-direction: column;
         gap: 12px;
+    }
+
+    .brief-compare-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .brief-compare-area {
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 10px;
+    }
+
+    .brief-flow-steps {
+        gap: 6px;
+    }
+
+    .brief-flow-step {
+        font-size: 0.75rem;
+        padding: 6px 12px;
     }
 
     .brief-ad-meta {
