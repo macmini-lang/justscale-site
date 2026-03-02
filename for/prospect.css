@@ -1,0 +1,813 @@
+/* prospect.css — Executive Briefing Styles
+   Overrides shared.css marketing behaviors for editorial report format.
+   All briefing-specific classes use brief-* namespace. */
+
+/* ── Suppress Marketing Behaviors ──────────────── */
+.bg-icons { display: none !important; }
+.cursor-dot, .cursor-ring { display: none !important; }
+.scroll-progress { display: none !important; }
+body { cursor: auto !important; }
+a, button, .btn { cursor: pointer !important; }
+.transition-section { display: none !important; }
+
+/* ── Brief Container (760px editorial width) ───── */
+.brief-container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 28px;
+}
+
+/* ── Nav Override ───────────────────────────────── */
+.brief-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(12, 12, 12, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 0;
+}
+
+.brief-nav .brief-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brief-nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.brief-nav-logo img {
+    height: 22px;
+    width: auto;
+}
+
+.brief-nav-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-s);
+}
+
+/* ── Header ────────────────────────────────────── */
+.brief-header {
+    padding: 140px 0 60px;
+    border-bottom: 1px solid var(--border);
+}
+
+.brief-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+    margin-bottom: 20px;
+}
+
+.brief-meta-item {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-s);
+}
+
+.brief-meta-item span {
+    color: var(--text-m);
+    margin-right: 4px;
+}
+
+.brief-header h1 {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 16px;
+}
+
+.brief-header-sub {
+    font-size: 1rem;
+    color: var(--text-s);
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+.brief-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+}
+
+.brief-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.brief-stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: -0.01em;
+}
+
+.brief-stat-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-m);
+}
+
+/* ── Section Structure ─────────────────────────── */
+.brief-section {
+    padding: 56px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.brief-section:last-of-type {
+    border-bottom: none;
+}
+
+.brief-section-num {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+    display: block;
+}
+
+.brief-section h2 {
+    font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin-bottom: 20px;
+}
+
+.brief-section h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 8px;
+}
+
+/* ── Executive Summary ─────────────────────────── */
+.brief-summary {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-s);
+}
+
+/* ── Market Context ────────────────────────────── */
+.brief-narrative {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--text-s);
+    margin-bottom: 36px;
+}
+
+.brief-narrative p {
+    margin-bottom: 16px;
+}
+
+.brief-narrative p:last-child {
+    margin-bottom: 0;
+}
+
+/* ── Benchmark Cards ───────────────────────────── */
+.brief-benchmarks {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 36px;
+}
+
+.brief-benchmark {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    padding: 20px 22px;
+}
+
+.brief-benchmark-value {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 4px;
+    letter-spacing: -0.01em;
+}
+
+.brief-benchmark-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+}
+
+.brief-benchmark-context {
+    font-size: 0.8rem;
+    color: var(--text-s);
+    line-height: 1.5;
+}
+
+/* ── Competitor Observations ───────────────────── */
+.brief-competitors {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.brief-competitor {
+    padding-left: 16px;
+    border-left: 2px solid var(--border-l);
+}
+
+.brief-competitor-firm {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 4px;
+}
+
+.brief-competitor-obs {
+    font-size: 0.85rem;
+    color: var(--text-s);
+    line-height: 1.55;
+}
+
+/* ── Observation Cards ─────────────────────────── */
+.brief-observations {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.brief-observation {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    padding: 22px 24px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.brief-observation-icon {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gold-glow);
+    border-radius: 8px;
+    margin-top: 2px;
+}
+
+.brief-observation-icon svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: var(--gold);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.brief-observation-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.brief-observation-finding {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+}
+
+.brief-observation-evidence {
+    font-size: 0.84rem;
+    color: var(--text-s);
+    line-height: 1.55;
+}
+
+/* ── Opportunity Cards ─────────────────────────── */
+.brief-opportunities {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.brief-opportunity {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    padding: 24px;
+}
+
+.brief-opportunity h3 {
+    margin-bottom: 10px;
+}
+
+.brief-opportunity-desc {
+    font-size: 0.88rem;
+    color: var(--text-s);
+    line-height: 1.6;
+    margin-bottom: 14px;
+}
+
+.brief-impact {
+    background: var(--gold-glow);
+    border: 1px solid rgba(201, 169, 110, 0.15);
+    border-radius: 10px;
+    padding: 14px 18px;
+}
+
+.brief-impact-value {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 2px;
+}
+
+.brief-impact-basis {
+    font-size: 0.78rem;
+    color: var(--text-s);
+    line-height: 1.45;
+}
+
+/* ── Ad Script Cards ───────────────────────────── */
+.brief-ad-scripts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.brief-ad-script {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    padding: 28px 24px;
+}
+
+.brief-ad-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.brief-ad-pill {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: var(--gold-glow);
+    border: 1px solid rgba(201, 169, 110, 0.15);
+    padding: 4px 12px;
+    border-radius: 100px;
+}
+
+.brief-ad-audience {
+    font-size: 0.82rem;
+    color: var(--text-s);
+    margin-bottom: 18px;
+    line-height: 1.5;
+}
+
+.brief-ad-audience strong {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.brief-script-segments {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.brief-script-segment {
+    padding-left: 16px;
+    border-left: 2px solid var(--border-l);
+}
+
+.brief-seg-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 4px;
+}
+
+.brief-script-segment p {
+    font-size: 0.88rem;
+    color: var(--text-s);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.brief-production-notes {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 16px;
+}
+
+.brief-production-notes-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-m);
+    margin-bottom: 6px;
+}
+
+.brief-production-notes p {
+    font-size: 0.82rem;
+    color: var(--text-s);
+    line-height: 1.55;
+    margin: 0;
+}
+
+/* ── Email Sequence Cards ──────────────────────── */
+.brief-emails {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.brief-email {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    padding: 24px;
+}
+
+.brief-email-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.brief-email-num {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+}
+
+.brief-email-timing {
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--text-m);
+    background: rgba(255, 255, 255, 0.03);
+    padding: 3px 10px;
+    border-radius: 100px;
+    border: 1px solid var(--border);
+}
+
+.brief-email-subject {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 12px;
+}
+
+.brief-email-body {
+    font-size: 0.84rem;
+    color: var(--text-s);
+    line-height: 1.65;
+    white-space: pre-line;
+    padding: 16px 18px;
+    background: rgba(255, 255, 255, 0.015);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 12px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.brief-email-purpose {
+    font-size: 0.78rem;
+    color: var(--text-m);
+    font-style: italic;
+}
+
+/* ── Funnel Wireframe ──────────────────────────── */
+.brief-funnel-overview {
+    font-size: 0.95rem;
+    color: var(--text-s);
+    line-height: 1.7;
+    margin-bottom: 28px;
+}
+
+.brief-funnel-stages {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.brief-funnel-stage {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    padding: 22px 24px;
+}
+
+.brief-funnel-stage h3 {
+    margin-bottom: 12px;
+}
+
+.brief-funnel-elements {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.brief-funnel-elements li {
+    font-size: 0.84rem;
+    color: var(--text-s);
+    line-height: 1.5;
+    padding-left: 18px;
+    position: relative;
+}
+
+.brief-funnel-elements li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold-dim);
+}
+
+.brief-funnel-connector {
+    width: 2px;
+    height: 24px;
+    background: linear-gradient(to bottom, var(--gold-dim), var(--border));
+    margin: 0 auto;
+    flex-shrink: 0;
+}
+
+/* ── Roadmap Phase Cards ───────────────────────── */
+.brief-roadmap {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.brief-phase {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    padding: 24px;
+}
+
+.brief-phase-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.brief-phase-name {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.brief-phase-timeframe {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: var(--gold-glow);
+    border: 1px solid rgba(201, 169, 110, 0.15);
+    padding: 3px 10px;
+    border-radius: 100px;
+}
+
+.brief-phase-actions {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.brief-phase-actions li {
+    font-size: 0.84rem;
+    color: var(--text-s);
+    line-height: 1.5;
+    padding-left: 18px;
+    position: relative;
+}
+
+.brief-phase-actions li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold-dim);
+}
+
+.brief-phase-milestone {
+    font-size: 0.84rem;
+    color: var(--text);
+    font-weight: 500;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+}
+
+.brief-phase-milestone strong {
+    color: var(--gold);
+    font-weight: 600;
+}
+
+/* ── Video Section ─────────────────────────────── */
+.brief-vsl-wrap {
+    max-width: 100%;
+    border-radius: var(--r);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--card);
+    margin-top: 8px;
+}
+
+.brief-vsl-wrap iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    display: block;
+}
+
+.brief-vsl-placeholder {
+    padding: 56.25% 0 0 0;
+    position: relative;
+    background: var(--card);
+}
+
+.brief-vsl-placeholder p {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-s);
+    font-size: 0.88rem;
+}
+
+/* ── CTA Section ───────────────────────────────── */
+.brief-cta {
+    padding: 64px 0;
+    text-align: center;
+}
+
+.brief-cta h2 {
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 12px;
+}
+
+.brief-cta p {
+    font-size: 0.92rem;
+    color: var(--text-s);
+    margin-bottom: 28px;
+    line-height: 1.6;
+}
+
+.brief-cta-btn {
+    display: inline-block;
+    padding: 14px 36px;
+    background: var(--gold);
+    color: #0c0c0c;
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    border-radius: 8px;
+    transition: background 0.2s var(--ease), transform 0.2s var(--ease);
+    text-decoration: none;
+}
+
+.brief-cta-btn:hover {
+    background: var(--gold-l);
+    transform: translateY(-1px);
+}
+
+.brief-cta-email {
+    margin-top: 16px;
+    font-size: 0.82rem;
+    color: var(--text-m);
+}
+
+/* ── Footer Override ───────────────────────────── */
+.brief-footer {
+    padding: 28px 0;
+    border-top: 1px solid var(--border);
+}
+
+.brief-footer .brief-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brief-footer-logo img {
+    height: 18px;
+    width: auto;
+    opacity: 0.5;
+}
+
+.brief-footer-copy {
+    font-size: 0.72rem;
+    color: var(--text-m);
+}
+
+/* ── Scroll Reveal ─────────────────────────────── */
+.sr {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
+}
+
+.sr.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ── Responsive (768px) ────────────────────────── */
+@media (max-width: 768px) {
+    .brief-header {
+        padding: 120px 0 48px;
+    }
+
+    .brief-stats {
+        gap: 20px;
+    }
+
+    .brief-benchmarks {
+        grid-template-columns: 1fr;
+    }
+
+    .brief-observation {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .brief-ad-meta {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .brief-email-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .brief-phase-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .brief-section {
+        padding: 40px 0;
+    }
+
+    .brief-footer .brief-container {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+}
