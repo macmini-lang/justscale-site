@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Executive Briefing | Looking Glass Capital Fund III LP | JustScale</title>
+    <meta name="description" content="Executive briefing prepared for Adam Besvinick at Looking Glass Capital Fund III LP.">
+    <meta property="og:title" content="Executive Briefing | Looking Glass Capital Fund III LP | JustScale">
+    <meta property="og:description" content="An independent assessment of investor acquisition infrastructure.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../shared.css?v=2">
+    <link rel="stylesheet" href="../prospect.css?v=3">
+</head>
+<body>
+<div class="page" id="page">
+
+    <!-- NAV -->
+    <nav class="brief-nav">
+        <div class="brief-container">
+            <a href="../../index.html" class="brief-nav-logo">
+                <img src="../../logo.svg" alt="JustScale">
+            </a>
+            <span class="brief-nav-label">Executive Briefing</span>
+        </div>
+    </nav>
+
+    <header class="brief-header">
+        <div class="brief-container">
+            <div class="brief-meta">
+                <span class="brief-meta-item"><span>Prepared for</span> Adam Besvinick</span>
+                <span class="brief-meta-item"><span>Fund</span> Looking Glass Capital Fund III LP</span>
+                <span class="brief-meta-item"><span>Type</span> Reg D 506(b)</span>
+            </div>
+            <h1>Executive Briefing: Looking Glass Capital Fund III LP</h1>
+            <p class="brief-header-sub">An independent assessment of Looking Glass Capital Fund III LP&rsquo;s investor acquisition infrastructure.</p>
+                <div class="brief-stats">
+                    <div class="brief-stat">
+                        <div class="brief-stat-value">506(b)</div>
+                        <div class="brief-stat-label">Reg D Type</div>
+                    </div>
+                </div>
+        </div>
+    </header>
+
+    <div class="brief-inline-cta sr">
+        <div class="brief-container">
+            <p>Seen enough? Let&#x27;s talk.</p>
+            <a href="./book/" class="brief-inline-cta-btn">Yes, I Want to Learn More</a>
+        </div>
+    </div>
+
+    <div class="brief-inline-cta sr">
+        <div class="brief-container">
+            <p>Want to walk through these gaps together?</p>
+            <a href="./book/" class="brief-inline-cta-btn">Yes, I Want to Learn More</a>
+        </div>
+    </div>
+
+    <div class="brief-inline-cta sr">
+        <div class="brief-container">
+            <p>Ready to build this?</p>
+            <a href="./book/" class="brief-inline-cta-btn">Yes, I Want to Learn More</a>
+        </div>
+    </div>
+
+    <div class="brief-inline-cta sr">
+        <div class="brief-container">
+            <p>Want us to execute this for you?</p>
+            <a href="./book/" class="brief-inline-cta-btn">Yes, I Want to Learn More</a>
+        </div>
+    </div>
+
+    <section class="brief-cta">
+        <div class="brief-container">
+            <h2 class="sr">Want help executing this?</h2>
+            <p class="sr">Everything above is yours to use. If you want a team to build and run it, we do that too.</p>
+            <a href="./book/" class="brief-cta-btn sr">Yes, I Want to Learn More</a>
+            <p class="brief-cta-email sr">Or email directly: zac@justscale.co</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="brief-footer">
+        <div class="brief-container">
+            <a href="../../index.html" class="brief-footer-logo">
+                <img src="../../logo.svg" alt="JustScale">
+            </a>
+            <span class="brief-footer-copy">&copy; 2026 JustScale. All rights reserved.</span>
+        </div>
+    </footer>
+
+</div><!-- /page -->
+
+<script>
+(function() {
+    // Page fade-in (shared.css starts .page at opacity:0)
+    var page = document.getElementById('page');
+    if (page) page.classList.add('loaded');
+
+    // Scroll reveal for .sr elements
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.sr').forEach(function(el) { observer.observe(el); });
+})();
+</script>
+</body>
+</html>
