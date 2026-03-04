@@ -654,6 +654,23 @@ a, button, .btn { cursor: pointer !important; }
 }
 
 /* ── Video Section ─────────────────────────────── */
+.brief-vsl-section {
+    padding: 48px 0 32px;
+    text-align: center;
+}
+
+.brief-vsl-heading {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.brief-vsl-sub {
+    color: var(--text-s);
+    font-size: 1rem;
+    margin-bottom: 24px;
+}
+
 .brief-vsl-wrap {
     max-width: 100%;
     border-radius: var(--r);
@@ -661,6 +678,11 @@ a, button, .btn { cursor: pointer !important; }
     border: 1px solid var(--border);
     background: var(--card);
     margin-top: 8px;
+}
+
+.brief-vsl-wrap wistia-player {
+    display: block;
+    width: 100%;
 }
 
 .brief-vsl-wrap iframe {
