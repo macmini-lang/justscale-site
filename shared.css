@@ -761,12 +761,11 @@ nav .container {
     border: 1px solid var(--border);
     border-radius: var(--r);
     overflow: hidden;
-    aspect-ratio: 16 / 9;
-    cursor: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     transition: border-color 0.4s, box-shadow 0.4s;
+}
+.video-container wistia-player {
+    display: block;
+    width: 100%;
 }
 .video-container:hover {
     border-color: rgba(201,169,110,0.1);
