@@ -34,9 +34,22 @@
             text-transform: uppercase;
             color: var(--text-s);
         }
-        .book-hero { text-align: center; padding: 120px 0 20px; }
+        .book-hero { text-align: center; padding: 120px 0 30px; }
         .book-hero h1 { font-size: 2rem; font-weight: 700; margin-bottom: 12px; }
         .book-hero p { color: rgba(255,255,255,0.6); font-size: 1.05rem; max-width: 500px; margin: 0 auto; }
+        .book-hero .gold-rule { width: 60px; height: 2px; background: var(--gold); margin: 24px auto 0; opacity: 0.5; }
+        .book-section-label {
+            font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em;
+            text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
+        }
+        .book-value { text-align: center; padding: 0 20px 40px; max-width: 600px; margin: 0 auto; }
+        .book-value h2 { font-size: 1.3rem; font-weight: 600; margin-bottom: 16px; line-height: 1.4; }
+        .book-value ul { list-style: none; text-align: left; max-width: 400px; margin: 0 auto; }
+        .book-value li {
+            font-size: 0.95rem; color: var(--text-s); padding: 8px 0;
+            border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px;
+        }
+        .book-value li svg { width: 16px; height: 16px; stroke: var(--gold); fill: none; stroke-width: 2; flex-shrink: 0; }
         .book-calendly { max-width: 700px; margin: 0 auto; padding: 0 20px 60px; }
         .book-calendly .calendly-inline-widget { border-radius: 12px; overflow: hidden; }
         .book-footer {
@@ -50,9 +63,22 @@
         }
         .book-footer-logo img { height: 18px; width: auto; opacity: 0.5; }
         .book-footer-copy { font-size: 0.72rem; color: var(--text-m); }
+        /* Prevent Calendly iframe from capturing page scroll on touch devices */
+        @media (pointer: coarse) {
+            .book-calendly {
+                position: relative;
+            }
+            .book-calendly .calendly-inline-widget iframe {
+                pointer-events: none;
+            }
+            .book-calendly.active .calendly-inline-widget iframe {
+                pointer-events: auto;
+            }
+        }
         @media (max-width: 768px) {
             .book-hero { padding: 100px 0 10px; }
             .book-hero h1 { font-size: 1.6rem; }
+            .book-value h2 { font-size: 1.15rem; }
             .book-footer .container { flex-direction: column; gap: 12px; text-align: center; }
         }
     </style>
@@ -73,11 +99,23 @@
         <div class="container">
             <h1 class="sr">Book a discovery call.</h1>
             <p class="sr">Pick a time that works. No pressure, no pitch. Just a conversation about what's possible.</p>
+            <div class="gold-rule sr"></div>
         </div>
     </div>
 
+    <div class="book-value sr">
+        <div class="book-section-label">What we'll cover</div>
+        <h2>A 30-minute call to see if we're a fit.</h2>
+        <ul>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Where your business is now and where you want it</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>The biggest bottleneck holding you back</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Whether paid advertising is the right move</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Exactly how we'd work together if it makes sense</li>
+        </ul>
+    </div>
+
     <div class="book-calendly">
-        <div class="calendly-inline-widget" data-url="https://calendly.com/zac-justscale/justscale-discovery-call" style="min-width:320px;height:700px;"></div>
+        <div class="calendly-inline-widget" data-url="https://calendly.com/zac-justscale/justscale-discovery-call?hide_gdpr_banner=1" style="min-width:320px;height:1100px;"></div>
         <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
     </div>
 
@@ -105,6 +143,16 @@
         });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.sr').forEach(function(el) { observer.observe(el); });
+
+    // On touch devices: Calendly iframe starts with pointer-events:none so page scroll works.
+    // Tap the calendar area to activate it, tap outside to deactivate.
+    var cal = document.querySelector('.book-calendly');
+    if (cal && 'ontouchstart' in window) {
+        cal.addEventListener('click', function() { cal.classList.add('active'); });
+        document.addEventListener('touchstart', function(e) {
+            if (!cal.contains(e.target)) cal.classList.remove('active');
+        });
+    }
 })();
 </script>
 </body>
