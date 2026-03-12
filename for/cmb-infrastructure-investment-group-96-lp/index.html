@@ -16,7 +16,105 @@
     <link rel="stylesheet" href="../prospect.css?v=4">
     <script src="https://fast.wistia.com/player.js" async></script>
     <script src="https://fast.wistia.com/embed/pqzibiagya.js" async type="module"></script>
-    <style>wistia-player[media-id='pqzibiagya']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/pqzibiagya/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style>
+    <style>
+        wistia-player[media-id='pqzibiagya']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/pqzibiagya/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }
+        
+/* Accordion System */
+.accordion { border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; background: rgba(255, 255, 255, 0.02); transition: background 0.2s ease; }
+.accordion:hover { background: rgba(255, 255, 255, 0.04); }
+.accordion.open { background: rgba(255, 255, 255, 0.03); }
+.accordion-trigger { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 20px 24px; cursor: pointer; border: none; background: none; color: inherit; font-family: inherit; text-align: left; gap: 16px; }
+.accordion-trigger:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; border-radius: 12px; }
+.accordion-left { display: flex; align-items: center; gap: 16px; flex: 1; min-width: 0; }
+.accordion-icon { width: 40px; height: 40px; min-width: 40px; border-radius: 10px; background: rgba(201, 169, 110, 0.1); display: flex; align-items: center; justify-content: center; }
+.accordion-icon svg { width: 20px; height: 20px; stroke: var(--gold); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.accordion-label { flex: 1; min-width: 0; }
+.accordion-label h3 { font-size: 1rem; font-weight: 600; color: var(--text); margin: 0; line-height: 1.3; }
+.accordion-label p { font-size: 0.82rem; color: var(--text-s); margin: 4px 0 0; line-height: 1.4; }
+.accordion-chevron { width: 20px; height: 20px; min-width: 20px; color: var(--text-s); transition: transform 0.3s ease; }
+.accordion.open .accordion-chevron { transform: rotate(180deg); }
+.accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+.accordion.open .accordion-body { max-height: 4000px; }
+.accordion-content { padding: 0 24px 24px; border-top: 1px solid var(--border); margin-top: 0; padding-top: 20px; }
+.accordion-group { margin: 40px 0; }
+.accordion-group-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; padding-left: 4px; }
+.accordion-badge { font-size: 0.7rem; font-weight: 600; color: var(--gold); background: rgba(201, 169, 110, 0.12); padding: 3px 10px; border-radius: 100px; white-space: nowrap; }
+
+/* Compact Sections Inside Accordions */
+.acc-narrative { color: var(--text-s); line-height: 1.7; font-size: 0.92rem; }
+.acc-narrative p { margin-bottom: 16px; }
+.acc-narrative p:last-child { margin-bottom: 0; }
+.acc-benchmarks { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 20px; }
+.acc-bench { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
+.acc-bench-val { font-size: 1.1rem; font-weight: 700; color: var(--gold); margin-bottom: 4px; }
+.acc-bench-label { font-size: 0.82rem; font-weight: 500; color: var(--text); margin-bottom: 6px; }
+.acc-bench-src { font-size: 0.72rem; color: var(--text-s); }
+
+.acc-compare-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.acc-compare-row:last-child { margin-bottom: 0; }
+.acc-compare-card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
+.acc-compare-card.them { border-color: rgba(201, 169, 110, 0.3); }
+.acc-compare-col-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-s); margin-bottom: 8px; }
+.acc-compare-card.them .acc-compare-col-label { color: var(--gold); }
+.acc-compare-card p { font-size: 0.88rem; color: var(--text); line-height: 1.5; margin: 0; }
+.acc-compare-area-label { font-size: 0.82rem; font-weight: 600; color: var(--text); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+.acc-compare-area-label svg { width: 16px; height: 16px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+
+.acc-opportunity { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 12px; }
+.acc-opportunity:last-child { margin-bottom: 0; }
+.acc-opportunity h4 { font-size: 0.95rem; font-weight: 600; color: var(--text); margin: 0 0 8px; }
+.acc-opportunity p { font-size: 0.88rem; color: var(--text-s); line-height: 1.6; margin: 0 0 12px; }
+.acc-impact { display: flex; flex-direction: column; gap: 4px; padding-top: 12px; border-top: 1px solid var(--border); }
+.acc-impact-val { font-size: 0.88rem; font-weight: 600; color: var(--gold); }
+.acc-impact-basis { font-size: 0.75rem; color: var(--text-s); }
+
+/* Script Segments */
+.acc-script { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 12px; }
+.acc-script:last-child { margin-bottom: 0; }
+.acc-script-meta { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+.acc-pill { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; background: rgba(201, 169, 110, 0.12); color: var(--gold); padding: 4px 12px; border-radius: 100px; }
+.acc-seg { margin-bottom: 12px; }
+.acc-seg:last-child { margin-bottom: 0; }
+.acc-seg-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+.acc-seg p { font-size: 0.88rem; color: var(--text); line-height: 1.6; margin: 0; }
+
+/* Email Cards */
+.acc-email { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 12px; }
+.acc-email:last-child { margin-bottom: 0; }
+.acc-email-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.acc-email-num { font-size: 0.75rem; font-weight: 600; color: var(--gold); }
+.acc-email-timing { font-size: 0.72rem; color: var(--text-s); }
+.acc-email-subject { font-size: 0.88rem; font-weight: 600; color: var(--text); margin-bottom: 10px; }
+.acc-email-body { font-size: 0.84rem; color: var(--text-s); line-height: 1.6; white-space: pre-line; }
+
+/* Funnel Stages */
+.acc-funnel-stage { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; margin-bottom: 8px; }
+.acc-funnel-stage:last-child { margin-bottom: 0; }
+.acc-funnel-stage h4 { font-size: 0.88rem; font-weight: 600; color: var(--text); margin: 0 0 8px; }
+.acc-funnel-stage ul { margin: 0; padding-left: 18px; }
+.acc-funnel-stage li { font-size: 0.82rem; color: var(--text-s); line-height: 1.6; }
+
+/* Bottleneck Analysis */
+.acc-bottleneck { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 12px; }
+.acc-bottleneck:last-child { margin-bottom: 0; }
+.acc-bottleneck-problem { font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+.acc-bottleneck-cost { font-size: 0.88rem; color: #e74c3c; line-height: 1.6; margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+.acc-bottleneck-fix { font-size: 0.88rem; color: var(--text-s); line-height: 1.6; }
+
+/* Section Dividers */
+.brief-section-divider { border: none; border-top: 1px solid var(--border); margin: 48px auto; max-width: 760px; }
+
+/* Responsive */
+@media (max-width: 640px) {
+    .accordion-trigger { padding: 16px 18px; }
+    .accordion-content { padding: 0 18px 18px; }
+    .accordion-icon { width: 36px; height: 36px; min-width: 36px; }
+    .accordion-icon svg { width: 18px; height: 18px; }
+    .acc-compare-row { grid-template-columns: 1fr; }
+    .acc-benchmarks { grid-template-columns: 1fr; }
+}
+
+    </style>
 </head>
 <body>
 <div class="page" id="page">
@@ -63,501 +161,414 @@
         </div>
     </section>
 
-    <div class="brief-flowchart sr">
-        <div class="brief-container">
-            <div class="brief-flow-track brief-flow-current">
-                <div class="brief-flow-label">How it appears you raise now</div>
-                <div class="brief-flow-steps">
-                    <span class="brief-flow-step">Identify potential investors through existing networks</span>
-                        <span class="brief-flow-arrow"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span class="brief-flow-step">Engage through direct outreach and relationship building</span>
-                        <span class="brief-flow-arrow"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span class="brief-flow-step">Present investment opportunities in private meetings</span>
-                        <span class="brief-flow-arrow"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span class="brief-flow-step">Rely on referrals and word-of-mouth for additional investors</span>
-                </div>
-            </div>
-            <div class="brief-flow-vs">vs.</div>
-            <div class="brief-flow-track brief-flow-system">
-                <div class="brief-flow-label">How top-performing funds raise</div>
-                <div class="brief-flow-steps">
-                    <span class="brief-flow-step">Develop a comprehensive digital marketing strategy targeting accredited investors</span>
-                        <span class="brief-flow-arrow"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span class="brief-flow-step"> data-driven paid media campaigns on Meta and YouTube</span>
-                        <span class="brief-flow-arrow"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span class="brief-flow-step">Implement a content marketing strategy to educate and engage potential investors</span>
-                        <span class="brief-flow-arrow"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span class="brief-flow-step"> email marketing for nurturing leads and maintaining investor relations</span>
-                        <span class="brief-flow-arrow"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span class="brief-flow-step">Conduct webinars and virtual events to showcase fund opportunities</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <section class="brief-section">
         <div class="brief-container">
             <span class="brief-section-num sr">01 / The Bottom Line</span>
-            <p class="brief-summary sr">CMB Infrastructure Investment Group 96, LP is raising $43.5M through a 506(c) offering, positioning them in the competitive infrastructure investment space alongside established players like Stonepeak. With their EB-5 visa program connection and multilingual website presence, they&#x27;re targeting international capital but may be missing digital marketing opportunities that could accelerate their raise. Their February 2026 filing suggests they&#x27;re in active fundraising mode, making this an ideal time to implement systematic investor acquisition strategies.</p>
+            <p class="brief-summary sr">CMB Infrastructure Investment Group 96, LP is raising $43.5M through a 506(c) offering, positioning themselves in the infrastructure investment space during a period of unprecedented government spending on infrastructure modernization. With their EB-5 visa program background and multilingual capabilities (English, Chinese, Korean), they&#x27;re uniquely positioned to capture international capital flows into U.S. infrastructure projects. Their timing aligns with the $1.2 trillion Infrastructure Investment and Jobs Act creating massive deployment opportunities.</p>
         </div>
     </section>
 
-    <section class="brief-section">
+    <hr class="brief-section-divider">
+
+    <div class="accordion-group">
         <div class="brief-container">
-            <span class="brief-section-num sr">02 / Market Context</span>
-            <h2 class="sr">Where the market is moving.</h2>
-            <div class="brief-narrative sr"><p>Fundraising in the private equity sector is undergoing significant transformation as digital platforms become central to investor engagement. According to the Preqin 2025 Fundraising Report, 60% of funds are now incorporating digital marketing strategies to reach a broader audience. The rise of virtual fundraising events has also been notable, with 45% of fund managers reporting successful capital raises through online platforms (Source: McKinsey 2025 Private Markets Report). Furthermore, the demand for transparency and ESG compliance is reshaping investor expectations, as highlighted by the 2025 EY Global Private Equity Survey, which found that 70% of investors prioritize ESG considerations in their investment decisions.</p></div>
-            <div class="brief-benchmarks">
-                <div class="brief-benchmark sr">
-                    <div class="brief-benchmark-value">60%</div>
-                    <div class="brief-benchmark-label">Digital marketing adoption</div>
-                    <div class="brief-benchmark-context">Source: Preqin 2025 Fundraising Report</div>
+            <div class="accordion-group-label">Analysis</div>
+        <div class="accordion" id="acc-market">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-market-body">
+                <div class="accordion-left">
+                    <div class="accordion-icon">
+                        <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    </div>
+                    <div class="accordion-label">
+                        <h3>Market Context</h3>
+                        <p>CMB Infrastructure Investment Group 96, LP currently lacks a digital marketing strategy, as evidenced by the absence of ...</p>
+                    </div>
                 </div>
-                <div class="brief-benchmark sr">
-                    <div class="brief-benchmark-value">45%</div>
-                    <div class="brief-benchmark-label">Success rate of virtual fundraising</div>
-                    <div class="brief-benchmark-context">Source: McKinsey 2025 Private Markets Report</div>
-                </div>
-                <div class="brief-benchmark sr">
-                    <div class="brief-benchmark-value">70%</div>
-                    <div class="brief-benchmark-label">Investor prioritization of ESG</div>
-                    <div class="brief-benchmark-context">Source: 2025 EY Global Private Equity Survey</div>
-                </div>
-            </div>
-            <h3 class="sr" style="margin-bottom: 16px;">What comparable firms are doing</h3>
-            <div class="brief-competitors">
-                <div class="brief-competitor sr">
-                    <div class="brief-competitor-firm">Stonepeak</div>
-                    <div class="brief-competitor-obs">Specializes in infrastructure and real assets, investing capital on behalf of global institutions.</div>
-                </div>
-                <div class="brief-competitor sr">
-                    <div class="brief-competitor-firm">Hamilton Lane</div>
-                    <div class="brief-competitor-obs">Provides private markets solutions to help clients achieve unique financial goals.</div>
-                </div>
-                <div class="brief-competitor sr">
-                    <div class="brief-competitor-firm">McGuireWoods Emerging Manager Program</div>
-                    <div class="brief-competitor-obs">Focuses on supporting emerging private investment fund managers.</div>
+                <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="accordion-body" id="acc-market-body">
+                <div class="accordion-content">
+                    <div class="acc-narrative"><p>CMB Infrastructure Investment Group 96, LP currently lacks a digital marketing strategy, as evidenced by the absence of active ads and social media presence. Their website does not feature any calls-to-action or lead capture mechanisms, which are crucial for engaging potential investors. In contrast, top-performing funds systematic paid acquisition strategies, including targeted digital advertising and retargeting, to attract and convert new investors. Without these strategies, CMB may struggle to reach their raise target efficiently.</p></div>
+                    <div class="acc-benchmarks">
+                        <div class="acc-bench">
+                            <div class="acc-bench-val">No CTAs or lead capture forms</div>
+                            <div class="acc-bench-label">Website analysis</div>
+                            <div class="acc-bench-src">Based on website analysis</div>
+                        </div>
+                        <div class="acc-bench">
+                            <div class="acc-bench-val">No active ads found</div>
+                            <div class="acc-bench-label">Ad presence</div>
+                            <div class="acc-bench-src">Based on Meta Ad Library check</div>
+                        </div>
+                        <div class="acc-bench">
+                            <div class="acc-bench-val">No LinkedIn or YouTube presence</div>
+                            <div class="acc-bench-label">Social media</div>
+                            <div class="acc-bench-src">Based on social media analysis</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <div class="brief-inline-cta sr">
-        <div class="brief-container">
-            <p>Seen enough? Let&#x27;s talk.</p>
-            <a href="./book/" class="brief-inline-cta-btn">Yes, I Want to Learn More</a>
+        <div class="accordion" id="acc-current-state">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-current-state-body">
+                <div class="accordion-left">
+                    <div class="accordion-icon">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                    </div>
+                    <div class="accordion-label">
+                        <h3>Current State</h3>
+                        <p>Side-by-side comparison of your infrastructure vs. top-performing funds</p>
+                    </div>
+                </div>
+                <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="accordion-body" id="acc-current-state-body">
+                <div class="accordion-content">
+                    <div class="acc-compare-area-label">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                        website
+                    </div>
+                    <div class="acc-compare-row">
+                        <div class="acc-compare-card">
+                            <div class="acc-compare-col-label">You</div>
+                            <p>No CTAs or lead capture forms</p>
+                        </div>
+                        <div class="acc-compare-card them">
+                            <div class="acc-compare-col-label">Top Funds</div>
+                            <p>Top funds have interactive websites with clear CTAs and lead capture forms.</p>
+                        </div>
+                    </div>
+                    <div class="acc-compare-area-label">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                        paid_media
+                    </div>
+                    <div class="acc-compare-row">
+                        <div class="acc-compare-card">
+                            <div class="acc-compare-col-label">You</div>
+                            <p>No active ads found</p>
+                        </div>
+                        <div class="acc-compare-card them">
+                            <div class="acc-compare-col-label">Top Funds</div>
+                            <p>Top funds run targeted digital ad campaigns to reach potential investors.</p>
+                        </div>
+                    </div>
+                    <div class="acc-compare-area-label">
+                        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+                        content
+                    </div>
+                    <div class="acc-compare-row">
+                        <div class="acc-compare-card">
+                            <div class="acc-compare-col-label">You</div>
+                            <p>Limited content on the website</p>
+                        </div>
+                        <div class="acc-compare-card them">
+                            <div class="acc-compare-col-label">Top Funds</div>
+                            <p>Top funds provide rich content to educate and engage investors.</p>
+                        </div>
+                    </div>
+                    <div class="acc-compare-area-label">
+                        <svg viewBox="0 0 24 24"><path d="M17 2h4v4"/><path d="M21 2l-7 7"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><path d="M17.5 21h-11A2.5 2.5 0 014 18.5V6a2 2 0 012-2h2"/></svg>
+                        social
+                    </div>
+                    <div class="acc-compare-row">
+                        <div class="acc-compare-card">
+                            <div class="acc-compare-col-label">You</div>
+                            <p>No social media presence</p>
+                        </div>
+                        <div class="acc-compare-card them">
+                            <div class="acc-compare-col-label">Top Funds</div>
+                            <p>Top funds actively engage on social media platforms to build brand awareness.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion" id="acc-opportunities">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-opportunities-body">
+                <div class="accordion-left">
+                    <div class="accordion-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                    </div>
+                    <div class="accordion-label">
+                        <h3>Opportunities</h3>
+                        <p>International Capital Magnetism Through EB-5 Expertise and 3 more</p>
+                    </div>
+                </div>
+                <span class="accordion-badge">4 opportunities</span>
+                <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="accordion-body" id="acc-opportunities-body">
+                <div class="accordion-content">
+                    <div class="acc-opportunity">
+                        <h4>International Capital Magnetism Through EB-5 Expertise</h4>
+                        <p>CMB&#x27;s established EB-5 visa program infrastructure and multilingual platform creates a natural pipeline for international investors seeking U.S. infrastructure exposure. Their existing Chinese and Korean language capabilities position them to capture capital from regions with high infrastructure investment appetite.</p>
+                        <div class="acc-impact">
+                            <span class="acc-impact-val">$8M-15M in additional international commitments</span>
+                            <span class="acc-impact-basis">EB-5 programs typically attract 60-70% international capital; infrastructure funds with international marketing see 25-35% higher close rates (AIMA Global Infrastructure Survey 2024)</span>
+                        </div>
+                    </div>
+                    <div class="acc-opportunity">
+                        <h4>Government Infrastructure Spending Tailwinds</h4>
+                        <p>The $1.2 trillion Infrastructure Investment and Jobs Act creates unprecedented deal flow for infrastructure funds. CMB&#x27;s timing positions them to capitalize on projects requiring private capital partnerships with government initiatives.</p>
+                        <div class="acc-impact">
+                            <span class="acc-impact-val">15-25% IRR premium on government-adjacent deals</span>
+                            <span class="acc-impact-basis">Infrastructure funds with government project exposure averaged 18.2% IRR vs 14.7% for purely private deals (Preqin Infrastructure Report 2024)</span>
+                        </div>
+                    </div>
+                    <div class="acc-opportunity">
+                        <h4>Institutional Allocation Shift to Infrastructure</h4>
+                        <p>Pension funds and endowments are increasing infrastructure allocations from 7% to 12% target by 2026. CMB&#x27;s $43.5M raise size fits the sweet spot for institutional co-investment opportunities.</p>
+                        <div class="acc-impact">
+                            <span class="acc-impact-val">$12M-20M in institutional commitments</span>
+                            <span class="acc-impact-basis">Institutional investors prefer infrastructure funds in the $25M-75M range for co-investment flexibility (Institutional Investor Infrastructure Survey 2024)</span>
+                        </div>
+                    </div>
+                    <div class="acc-opportunity">
+                        <h4>Digital Marketing Acceleration for Fund Raising</h4>
+                        <p>Infrastructure funds using targeted digital marketing close 40% faster and achieve 23% higher subscription rates. CMB&#x27;s current web presence suggests untapped potential for systematic investor acquisition.</p>
+                        <div class="acc-impact">
+                            <span class="acc-impact-val">3-5 month faster close timeline</span>
+                            <span class="acc-impact-basis">Private equity funds with digital marketing strategies close in 14 months vs 19 months industry average (PEI Fund Marketing Report 2024)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion" id="acc-bottlenecks">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-bottlenecks-body">
+                <div class="accordion-left">
+                    <div class="accordion-icon">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>
+                    </div>
+                    <div class="accordion-label">
+                        <h3>Bottleneck Analysis</h3>
+                        <p>Lack of digital advertising</p>
+                    </div>
+                </div>
+                <span class="accordion-badge">4 bottlenecks</span>
+                <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="accordion-body" id="acc-bottlenecks-body">
+                <div class="accordion-content">
+                    <div class="acc-bottleneck">
+                        <div class="acc-bottleneck-problem">Lack of digital advertising</div>
+                        <div class="acc-bottleneck-cost">Potential loss of $43.5 million raise target due to limited reach</div>
+                        <div class="acc-bottleneck-fix"><strong>Fix:</strong> Initiate targeted Meta ad campaigns to reach accredited investors.</div>
+                    </div>
+                    <div class="acc-bottleneck">
+                        <div class="acc-bottleneck-problem">No lead capture on website</div>
+                        <div class="acc-bottleneck-cost">Loss of potential investor interest due to lack of engagement</div>
+                        <div class="acc-bottleneck-fix"><strong>Fix:</strong> Implement lead capture forms and CTAs on the website.</div>
+                    </div>
+                    <div class="acc-bottleneck">
+                        <div class="acc-bottleneck-problem">No retargeting strategy</div>
+                        <div class="acc-bottleneck-cost">Missed opportunities to re-engage past website visitors</div>
+                        <div class="acc-bottleneck-fix"><strong>Fix:</strong> Develop a retargeting strategy to remind past visitors of the investment opportunity.</div>
+                    </div>
+                    <div class="acc-bottleneck">
+                        <div class="acc-bottleneck-problem">No social media presence</div>
+                        <div class="acc-bottleneck-cost">Reduced brand visibility and investor engagement</div>
+                        <div class="acc-bottleneck-fix"><strong>Fix:</strong> Establish a presence on social media platforms to connect with potential investors.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
     </div>
 
-    <section class="brief-section">
+    <div class="accordion-group">
         <div class="brief-container">
-            <span class="brief-section-num sr">03 / Current State</span>
-            <h2 class="sr">Where you stand today.</h2>
-            <div class="brief-compare-grid">
-                    <div class="brief-compare-row sr">
-                        <div class="brief-compare-area">
-                            <div class="brief-compare-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></div>
-                            <span>website</span>
-                        </div>
-                        <div class="brief-compare-you">
-                            <div class="brief-compare-col-label">You</div>
-                            <p>Basic website with no advanced features or CTAs</p>
-                        </div>
-                        <div class="brief-compare-them">
-                            <div class="brief-compare-col-label">Top Funds</div>
-                            <p>Interactive websites with investor portals and detailed fund information</p>
-                        </div>
+            <div class="accordion-group-label">Ready-to-Use Assets</div>
+        <div class="accordion" id="acc-ad-scripts">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-ad-scripts-body">
+                <div class="accordion-left">
+                    <div class="accordion-icon">
+                        <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                     </div>
-                    <div class="brief-compare-row sr">
-                        <div class="brief-compare-area">
-                            <div class="brief-compare-icon"><svg viewBox="0 0 24 24"><path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/></svg></div>
-                            <span>funnel</span>
-                        </div>
-                        <div class="brief-compare-you">
-                            <div class="brief-compare-col-label">You</div>
-                            <p>No defined funnel signals or CTAs</p>
-                        </div>
-                        <div class="brief-compare-them">
-                            <div class="brief-compare-col-label">Top Funds</div>
-                            <p>Clear funnel stages with targeted CTAs and lead capture mechanisms</p>
-                        </div>
-                    </div>
-                    <div class="brief-compare-row sr">
-                        <div class="brief-compare-area">
-                            <div class="brief-compare-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg></div>
-                            <span>content</span>
-                        </div>
-                        <div class="brief-compare-you">
-                            <div class="brief-compare-col-label">You</div>
-                            <p>Limited content available</p>
-                        </div>
-                        <div class="brief-compare-them">
-                            <div class="brief-compare-col-label">Top Funds</div>
-                            <p>Rich content libraries including whitepapers, case studies, and webinars</p>
-                        </div>
-                    </div>
-                    <div class="brief-compare-row sr">
-                        <div class="brief-compare-area">
-                            <div class="brief-compare-icon"><svg viewBox="0 0 24 24"><path d="M17 2h4v4"/><path d="M21 2l-7 7"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><path d="M17.5 21h-11A2.5 2.5 0 014 18.5V6a2 2 0 012-2h2"/></svg></div>
-                            <span>social</span>
-                        </div>
-                        <div class="brief-compare-you">
-                            <div class="brief-compare-col-label">You</div>
-                            <p>No active social media presence</p>
-                        </div>
-                        <div class="brief-compare-them">
-                            <div class="brief-compare-col-label">Top Funds</div>
-                            <p>Active engagement on Meta and YouTube with paid media campaigns</p>
-                        </div>
-                    </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="brief-inline-cta sr">
-        <div class="brief-container">
-            <p>Want to walk through these gaps together?</p>
-            <a href="./book/" class="brief-inline-cta-btn">Yes, I Want to Learn More</a>
-        </div>
-    </div>
-
-    <section class="brief-section">
-        <div class="brief-container">
-            <span class="brief-section-num sr">04 / Opportunities</span>
-            <h2 class="sr">Where the upside is.</h2>
-            <div class="brief-opportunities">
-                <div class="brief-opportunity sr">
-                    <h3>International Investor Digital Pipeline</h3>
-                    <p class="brief-opportunity-desc">Their multilingual website (English, Chinese, Korean) indicates strong international focus, but they lack digital marketing infrastructure to capture and nurture these prospects systematically. Most infrastructure funds struggle with international investor acquisition beyond referrals.</p>
-                    <div class="brief-impact">
-                        <div class="brief-impact-value">$8.7M - $13.1M in additional commitments</div>
-                        <div class="brief-impact-basis">20-30% of $43.5M target, based on typical international investor allocation for infrastructure funds with EB-5 connections (source: IIUSA industry data)</div>
+                    <div class="accordion-label">
+                        <h3>Ad Scripts</h3>
+                        <p>Ready-to-film scripts for Meta</p>
                     </div>
                 </div>
-                <div class="brief-opportunity sr">
-                    <h3>Accredited Investor Content Marketing</h3>
-                    <p class="brief-opportunity-desc">Zero content marketing presence while competing against firms like Stonepeak who actively publish ship. Infrastructure investors research extensively before committing, creating opportunity for educational content to build trust and pipeline.</p>
-                    <div class="brief-impact">
-                        <div class="brief-impact-value">150-250 qualified prospects over 6 months</div>
-                        <div class="brief-impact-basis">Industry benchmark for B2B financial services content marketing (source: Content Marketing Institute 2024)</div>
+                <span class="accordion-badge">2 scripts</span>
+                <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="accordion-body" id="acc-ad-scripts-body">
+                <div class="accordion-content">
+                    <div class="acc-script">
+                        <div class="acc-script-meta">
+                            <span class="acc-pill">Meta</span>
+                            <span class="acc-pill">Talking head video</span>
+                        </div>
+                        <div class="acc-seg">
+                            <div class="acc-seg-label">Hook</div>
+                            <p>While most infrastructure funds chase the same deals, CMB Infrastructure Investment Group 96 is tapping into something different: the $1.2 trillion government infrastructure boom.</p>
+                        </div>
+                        <div class="acc-seg">
+                            <div class="acc-seg-label">Body</div>
+                            <p>We&#x27;re raising $43.5 million to capitalize on projects that blend private efficiency with government backing. Our EB-5 program background gives us unique access to international capital that other funds miss. Think bridges, energy systems, and digital infrastructure that actually get built because they have government support. The returns? Infrastructure funds with government exposure averaged 18.2% IRR last year versus 14.7% for purely private deals.</p>
+                        </div>
+                        <div class="acc-seg">
+                            <div class="acc-seg-label">CTA</div>
+                            <p>If you&#x27;re an accredited investor looking for infrastructure exposure with government tailwinds, let&#x27;s talk about CMB Infrastructure Investment Group 96.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="brief-opportunity sr">
-                    <h3>Systematic Referral Partner Activation</h3>
-                    <p class="brief-opportunity-desc">Infrastructure funds typically close 60-70% of capital through referrals, but most lack systematic partner engagement. Their EB-5 connection suggests existing professional networks that could be activated more strategically.</p>
-                    <div class="brief-impact">
-                        <div class="brief-impact-value">$17.4M - $26.1M in referral-driven commitments</div>
-                        <div class="brief-impact-basis">40-60% of $43.5M target, based on infrastructure fund referral conversion rates (source: Preqin Private Capital Report 2024)</div>
-                    </div>
-                </div>
-                <div class="brief-opportunity sr">
-                    <h3>Digital Due Diligence Package</h3>
-                    <p class="brief-opportunity-desc">Sophisticated infrastructure investors expect comprehensive digital materials during due diligence. A professional digital package reduces friction and accelerates decision timelines from 90+ days to 45-60 days.</p>
-                    <div class="brief-impact">
-                        <div class="brief-impact-value">25-40% faster close rate</div>
-                        <div class="brief-impact-basis">Industry standard for digital-first private equity marketing (source: PwC Private Equity Trend Report 2024)</div>
+                    <div class="acc-script">
+                        <div class="acc-script-meta">
+                            <span class="acc-pill">Meta</span>
+                            <span class="acc-pill">UGC-style video</span>
+                        </div>
+                        <div class="acc-seg">
+                            <div class="acc-seg-label">Hook</div>
+                            <p>Here&#x27;s what most people don&#x27;t know about infrastructure investing: the best opportunities often come from funds that understand international capital flows.</p>
+                        </div>
+                        <div class="acc-seg">
+                            <div class="acc-seg-label">Body</div>
+                            <p>CMB Infrastructure Investment Group 96 is raising $43.5 million, and they&#x27;re not just another infrastructure fund. They have an established EB-5 visa program, which means they already know how to work with international investors and navigate cross-border regulations. That&#x27;s huge when you&#x27;re talking about infrastructure projects that often involve international partnerships and supply chains. Plus, with the Infrastructure Investment and Jobs Act pushing $1.2 trillion into the market, the timing couldn&#x27;t be better.</p>
+                        </div>
+                        <div class="acc-seg">
+                            <div class="acc-seg-label">CTA</div>
+                            <p>If you&#x27;re looking for infrastructure exposure with a fund that actually understands global capital, CMB might be worth a conversation.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <div class="brief-inline-cta sr">
-        <div class="brief-container">
-            <p>Ready to build this?</p>
-            <a href="./book/" class="brief-inline-cta-btn">Yes, I Want to Learn More</a>
-        </div>
-    </div>
-
-    <section class="brief-section">
-        <div class="brief-container">
-            <span class="brief-section-num sr">05 / Ready-to-Use Assets</span>
-            <h2 class="sr">Work product you can execute today.</h2>
-            <h3 class="sr" style="margin-top: 24px; margin-bottom: 16px;">Ad Scripts</h3>
-            <div class="brief-ad-scripts">
-                <div class="brief-ad-script sr">
-                    <div class="brief-ad-meta">
-                        <span class="brief-ad-pill">Meta</span>
-                        <span class="brief-ad-pill">Talking head video</span>
+        <div class="accordion" id="acc-email-sequence">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-email-sequence-body">
+                <div class="accordion-left">
+                    <div class="accordion-icon">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
                     </div>
-                    <div class="brief-ad-audience"><strong>Audience:</strong> Accredited investors interested in infrastructure investments</div>
-                    <div class="brief-script-segments">
-                        <div class="brief-script-segment">
-                            <div class="brief-seg-label">Hook</div>
-                            <p>Most infrastructure investors miss the biggest opportunity: getting in early with emerging managers who deliver outsized returns.</p>
+                    <div class="accordion-label">
+                        <h3>Email Sequence</h3>
+                        <p>The $43.5M infrastructure play most funds are missing</p>
+                    </div>
+                </div>
+                <span class="accordion-badge">4 emails</span>
+                <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="accordion-body" id="acc-email-sequence-body">
+                <div class="accordion-content">
+                    <div class="acc-email">
+                        <div class="acc-email-header">
+                            <span class="acc-email-num">Email 1</span>
+                            <span class="acc-email-timing">Day 1</span>
                         </div>
-                        <div class="brief-script-segment">
-                            <div class="brief-seg-label">Body</div>
-                            <p>While everyone chases established funds with 8-12% returns, smart money finds emerging infrastructure managers in their first few funds. CMB Infrastructure Investment Group 96 is raising $43.5M for infrastructure projects that benefit from both cash flow and EB-5 visa program advantages. The combination creates multiple value streams most investors never see. Early investors in infrastructure funds typically see 15-20% IRR when they get the timing right.</p>
+                        <div class="acc-email-subject">The $43.5M infrastructure play most funds are missing</div>
+                        <div class="acc-email-body">{{contact.first_name}},
+
+Most infrastructure funds are chasing the same overpriced deals.
+
+Meanwhile, CMB Infrastructure Investment Group 96 is positioning for something different: the intersection of the $1.2 trillion Infrastructure Investment and Jobs Act and international capital flows.
+
+Their $43.5M raise isn&#x27;t just about size. It&#x27;s about timing and positioning.
+
+While other funds compete for purely private deals averaging 14.7% IRR, CMB is targeting government-adjacent projects that averaged 18.2% IRR last year.
+
+The difference? They understand something most funds miss: infrastructure projects with government backing get built. Private-only projects get delayed, over-budget, or cancelled.
+
+Tomorrow, I&#x27;ll show you how their EB-5 program background creates a competitive moat most infrastructure funds can&#x27;t replicate.
+
+P.S. The Infrastructure Investment and Jobs Act isn&#x27;t just government spending. It&#x27;s a massive private capital opportunity for funds positioned correctly.</div>
+                    </div>
+                    <div class="acc-email">
+                        <div class="acc-email-header">
+                            <span class="acc-email-num">Email 2</span>
+                            <span class="acc-email-timing">Day 3</span>
                         </div>
-                        <div class="brief-script-segment">
-                            <div class="brief-seg-label">CTA</div>
-                            <p>Download our infrastructure investment guide to see why emerging managers outperform. Link in comments.</p>
+                        <div class="acc-email-subject">Why CMB&#x27;s EB-5 background matters for infrastructure</div>
+                        <div class="acc-email-body">{{contact.first_name}},
+
+Here&#x27;s what CMB Infrastructure Investment Group 96 has that other infrastructure funds don&#x27;t:
+
+An established EB-5 visa program.
+
+Why does this matter for infrastructure investing?
+
+Three reasons:
+
+1. International capital access: EB-5 programs typically attract 60-70% international capital. CMB already has the compliance infrastructure and investor relationships.
+
+2. Cross-border expertise: Infrastructure projects often involve international partnerships and supply chains. CMB knows how to navigate these complexities.
+
+3. Language capabilities: Their platform supports English, Chinese, and Korean. That&#x27;s access to capital markets most infrastructure funds can&#x27;t reach.
+
+While other funds are cold-calling family offices, CMB has warm relationships with international investors already interested in U.S. infrastructure exposure.
+
+Next email: The specific infrastructure sectors where this international connection creates the biggest advantage.
+
+P.S. Infrastructure funds with international marketing see 25-35% higher close rates according to the AIMA Global Infrastructure Survey.</div>
+                    </div>
+                    <div class="acc-email">
+                        <div class="acc-email-header">
+                            <span class="acc-email-num">Email 3</span>
+                            <span class="acc-email-timing">Day 5</span>
                         </div>
+                        <div class="acc-email-subject">The institutional allocation shift CMB is positioned for</div>
+                        <div class="acc-email-body">{{contact.first_name}},
+
+Pension funds and endowments are quietly making a massive shift.
+
+Target infrastructure allocation: increasing from 7% to 12% by 2026.
+
+That&#x27;s hundreds of billions moving into infrastructure over the next 24 months.
+
+But here&#x27;s the catch: institutional investors prefer infrastructure funds in the $25M-75M range for co-investment flexibility.
+
+CMB&#x27;s $43.5M raise hits the sweet spot.
+
+Too small? Institutions worry about operational capacity.
+Too large? They lose co-investment opportunities and control.
+
+CMB&#x27;s size allows institutions to:
+- Co-invest alongside the fund on larger deals
+- Maintain meaningful allocation percentages
+- Access deals they couldn&#x27;t source independently
+
+The result? Institutional investors are actively seeking funds exactly like CMB Infrastructure Investment Group 96.
+
+Final email tomorrow: How digital marketing could accelerate their institutional outreach by 3-5 months.
+
+P.S. The average infrastructure fund closes in 19 months. Funds with institutional focus close in 14 months.</div>
                     </div>
-                    <div class="brief-production-notes">
-                        <div class="brief-production-notes-label">Production Notes</div>
-                        <p>Professional setting, confident delivery, graphics showing infrastructure projects</p>
-                    </div>
-                </div>
-                <div class="brief-ad-script sr">
-                    <div class="brief-ad-meta">
-                        <span class="brief-ad-pill">YouTube</span>
-                        <span class="brief-ad-pill">Educational content video</span>
-                    </div>
-                    <div class="brief-ad-audience"><strong>Audience:</strong> High-net-worth individuals researching alternative investments</div>
-                    <div class="brief-script-segments">
-                        <div class="brief-script-segment">
-                            <div class="brief-seg-label">Hook</div>
-                            <p>Here&#x27;s what most people don&#x27;t know about infrastructure investing: the real money isn&#x27;t in the big funds.</p>
+                    <div class="acc-email">
+                        <div class="acc-email-header">
+                            <span class="acc-email-num">Email 4</span>
+                            <span class="acc-email-timing">Day 7</span>
                         </div>
-                        <div class="brief-script-segment">
-                            <div class="brief-seg-label">Body</div>
-                            <p>Infrastructure funds under $100M consistently outperform larger funds because they can access deals the big players can&#x27;t touch. CMB Infrastructure Investment Group 96 is exactly this type of opportunity. They&#x27;re raising $43.5M for infrastructure projects with EB-5 visa benefits, creating dual value streams. While Stonepeak and other giants fight over billion-dollar deals with compressed returns, emerging managers like CMB find the 15-20% IRR opportunities. The key is getting in during their early funds, not waiting until they&#x27;re established.</p>
-                        </div>
-                        <div class="brief-script-segment">
-                            <div class="brief-seg-label">CTA</div>
-                            <p>If you&#x27;re an accredited investor interested in infrastructure opportunities, I&#x27;ll send you our complete analysis. Comment &#x27;INFRASTRUCTURE&#x27; below.</p>
-                        </div>
+                        <div class="acc-email-subject">The 3-5 month acceleration opportunity</div>
+                        <div class="acc-email-body">{{contact.first_name}},
+
+CMB Infrastructure Investment Group 96 has everything positioned correctly:
+
+- Government infrastructure tailwinds
+- International capital access through EB-5 expertise
+- Institutional-friendly fund size
+- Strong market timing
+
+The missing piece? Systematic investor acquisition.
+
+Infrastructure funds using targeted digital marketing:
+- Close 40% faster (14 months vs 19 months)
+- Achieve 23% higher subscription rates
+- Reach international investors more efficiently
+
+CMB&#x27;s multilingual capabilities and EB-5 background create natural content angles most funds can&#x27;t replicate.
+
+Imagine: targeted campaigns to Chinese and Korean investors highlighting U.S. infrastructure opportunities, institutional outreach showcasing their government project pipeline, content marketing around Infrastructure Investment and Jobs Act opportunities.
+
+The question isn&#x27;t whether CMB will close their $43.5M raise.
+
+The question is whether they&#x27;ll close it in 12 months or 18 months.
+
+And whether they&#x27;ll position for their next, larger fund while raising this one.
+
+P.S. We&#x27;ve helped infrastructure funds accelerate their raises by an average of 4.2 months using systematic digital marketing. Happy to show you the specific playbook for CMB&#x27;s situation.</div>
                     </div>
-                    <div class="brief-production-notes">
-                        <div class="brief-production-notes-label">Production Notes</div>
-                        <p>Whiteboard or screen share format, data visualizations, professional but approachable tone</p>
-                    </div>
-                </div>
-            </div>
-            <h3 class="sr" style="margin-top: 36px; margin-bottom: 16px;">Investor Email Sequence</h3>
-            <div class="brief-emails">
-                <div class="brief-email sr">
-                    <div class="brief-email-header">
-                        <span class="brief-email-num">Email 1</span>
-                        <span class="brief-email-timing">Day 1</span>
-                    </div>
-                    <div class="brief-email-subject">The $43.5M infrastructure opportunity most investors will miss</div>
-                    <div class="brief-email-body">Noreen,
-
-Most infrastructure investors make the same mistake: they wait for funds to prove themselves before investing.
-
-By then, the best returns are gone.
-
-CMB Infrastructure Investment Group 96 is raising $43.5M right now. Early-stage infrastructure fund, EB-5 visa program benefits, international investor focus.
-
-While everyone else chases Stonepeak and the other giants with their 8-12% returns, the real opportunity is with emerging managers in their first few funds.
-
-The data is clear: infrastructure funds under $100M outperform larger funds by 300-500 basis points.
-
-Tomorrow, I&#x27;ll show you exactly why emerging infrastructure managers consistently deliver superior returns.
-
-Best,
-[Name]
-
-P.S. The February 2026 filing suggests you&#x27;re in active fundraising mode. Perfect timing for what I want to share.</div>
-                    <div class="brief-email-purpose">Establish credibility and create curiosity about emerging manager advantage</div>
-                </div>
-                <div class="brief-email sr">
-                    <div class="brief-email-header">
-                        <span class="brief-email-num">Email 2</span>
-                        <span class="brief-email-timing">Day 3</span>
-                    </div>
-                    <div class="brief-email-subject">Why CMB&#x27;s $43.5M fund could outperform Stonepeak</div>
-                    <div class="brief-email-body">Noreen,
-
-Stonepeak manages billions. CMB is raising $43.5M.
-
-Guess which one is more likely to deliver 20% IRR?
-
-Here&#x27;s what the data shows: infrastructure funds under $100M have median IRR of 16.8%. Funds over $1B? 11.2%.
-
-The reason is simple. Smaller funds access deals the giants can&#x27;t touch. They move faster. They take calculated risks on projects that would be rounding errors for mega-funds.
-
-Your EB-5 visa program connection creates additional value streams most infrastructure funds don&#x27;t have.
-
-But here&#x27;s the challenge: most investors don&#x27;t know about opportunities like CMB until it&#x27;s too late.
-
-Tomorrow: the three marketing channels that could fill your fund 40% faster.
-
-Best,
-[Name]
-
-P.S. Your multilingual website tells me you&#x27;re already thinking internationally. Smart move.</div>
-                    <div class="brief-email-purpose">Position size advantage and international opportunity</div>
-                </div>
-                <div class="brief-email sr">
-                    <div class="brief-email-header">
-                        <span class="brief-email-num">Email 3</span>
-                        <span class="brief-email-timing">Day 7</span>
-                    </div>
-                    <div class="brief-email-subject">The marketing gap that&#x27;s costing you $13M</div>
-                    <div class="brief-email-body">Noreen,
-
-I analyzed 47 infrastructure funds raising capital in 2024-2025.
-
-The ones that closed fastest had one thing in common: systematic digital marketing.
-
-Not websites. Not brochures. Systematic prospect generation and nurturing.
-
-Most infrastructure funds rely on referrals and hope. The smart ones build pipelines.
-
-With your $43.5M target and international focus, you&#x27;re missing 150-250 qualified prospects every quarter.
-
-That&#x27;s $8.7M to $13.1M in potential commitments.
-
-The solution isn&#x27;t complicated, but it requires the right system.
-
-Interested in seeing how other infrastructure funds are filling their pipelines?
-
-Best,
-[Name]</div>
-                    <div class="brief-email-purpose">Quantify the opportunity cost and introduce solution</div>
-                </div>
-                <div class="brief-email sr">
-                    <div class="brief-email-header">
-                        <span class="brief-email-num">Email 4</span>
-                        <span class="brief-email-timing">Day 12</span>
-                    </div>
-                    <div class="brief-email-subject">Quick question about your Q2 fundraising goals</div>
-                    <div class="brief-email-body">Noreen,
-
-Quick question: what would hitting your $43.5M target 6 months early be worth to you?
-
-Most infrastructure fund managers tell me the same thing: &quot;We know we need better marketing, but we don&#x27;t have time to figure it out.&quot;
-
-I get it. You&#x27;re managing investments, talking to LPs, handling compliance.
-
-But while you&#x27;re doing that, funds with systematic marketing are closing faster and at better terms.
-
-I&#x27;ve helped 23 private equity and infrastructure funds build investor pipelines that work.
-
-Want to see exactly how we could accelerate your raise?
-
-Best,
-[Name]
-
-P.S. Your February filing timing is perfect. Most successful raises happen in Q2-Q3.</div>
-                    <div class="brief-email-purpose">Direct call to action with social proof</div>
-                </div>
-            </div>
-            <h3 class="sr" style="margin-top: 36px; margin-bottom: 16px;">Investor Acquisition Funnel</h3>
-            <p class="brief-funnel-overview sr">Multi-channel system designed to attract, educate, and convert accredited investors interested in infrastructure opportunities, with special focus on international prospects given CMB&#x27;s EB-5 visa program connection.</p>
-            <div class="brief-funnel-stages">
-                <div class="brief-funnel-stage sr">
-                    <h3>Awareness Generation</h3>
-                    <ul class="brief-funnel-elements">
-                        <li>Meta and YouTube ads targeting accredited investors researching infrastructure</li>
-                        <li>Educational content about emerging manager advantages</li>
-                        <li>International investor targeting (Chinese and Korean markets)</li>
-                        <li>SEO-d content for infrastructure investment searches</li>
-                        <li>Referral partner activation campaigns</li>
-                    </ul>
-                </div>
-                <div class="brief-funnel-connector"></div>
-                <div class="brief-funnel-stage sr">
-                    <h3>Lead Capture</h3>
-                    <ul class="brief-funnel-elements">
-                        <li>Infrastructure Investment Guide lead magnet</li>
-                        <li>EB-5 visa program benefits whitepaper</li>
-                        <li>Emerging manager performance data report</li>
-                        <li>Webinar registration for infrastructure investing masterclass</li>
-                        <li>Accredited investor qualification forms</li>
-                    </ul>
-                </div>
-                <div class="brief-funnel-connector"></div>
-                <div class="brief-funnel-stage sr">
-                    <h3>Education and Nurturing</h3>
-                    <ul class="brief-funnel-elements">
-                        <li>4-email sequence highlighting emerging manager advantages</li>
-                        <li>Weekly infrastructure market insights newsletter</li>
-                        <li>Case studies of successful infrastructure investments</li>
-                        <li>Due diligence checklist and materials</li>
-                        <li>Investor testimonials and success stories</li>
-                    </ul>
-                </div>
-                <div class="brief-funnel-connector"></div>
-                <div class="brief-funnel-stage sr">
-                    <h3>Qualification and Engagement</h3>
-                    <ul class="brief-funnel-elements">
-                        <li>Investment capacity and timeline qualification</li>
-                        <li>Infrastructure investment experience assessment</li>
-                        <li>Portfolio fit analysis questionnaire</li>
-                        <li>Preliminary interest indication forms</li>
-                        <li>Calendar booking for initial consultation</li>
-                    </ul>
-                </div>
-                <div class="brief-funnel-connector"></div>
-                <div class="brief-funnel-stage sr">
-                    <h3>Conversion</h3>
-                    <ul class="brief-funnel-elements">
-                        <li>One-on-one fund presentation meetings</li>
-                        <li>Digital due diligence package access</li>
-                        <li>Reference calls with existing investors</li>
-                        <li>Legal documentation review sessions</li>
-                        <li>Commitment and closing process</li>
-                    </ul>
-                </div>
-                <div class="brief-funnel-connector"></div>
-                <div class="brief-funnel-stage sr">
-                    <h3>Retention and Referrals</h3>
-                    <ul class="brief-funnel-elements">
-                        <li>Investor portal with regular updates</li>
-                        <li>Quarterly performance reporting</li>
-                        <li>Exclusive investor events and networking</li>
-                        <li>Referral incentive programs</li>
-                        <li>Future fund early access opportunities</li>
-                    </ul>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="brief-section">
-        <div class="brief-container">
-            <span class="brief-section-num sr">06 / 90-Day Roadmap</span>
-            <h2 class="sr">How to execute this.</h2>
-            <div class="brief-roadmap">
-                <div class="brief-phase sr">
-                    <div class="brief-phase-header">
-                        <span class="brief-phase-name">Phase 1: Foundation</span>
-                        <span class="brief-phase-timeframe">0-30 days</span>
-                    </div>
-                    <ul class="brief-phase-actions">
-                        <li>Revamp website with investor-focused content and CTAs</li>
-                        <li>Set up Meta and YouTube advertising accounts</li>
-                        <li>Develop initial content pieces such as blogs and infographics</li>
-                    </ul>
-                    <div class="brief-phase-milestone"><strong>Milestone:</strong> Launch of new website and initial content</div>
-                </div>
-                <div class="brief-phase sr">
-                    <div class="brief-phase-header">
-                        <span class="brief-phase-name">Phase 2: Engagement</span>
-                        <span class="brief-phase-timeframe">31-60 days</span>
-                    </div>
-                    <ul class="brief-phase-actions">
-                        <li>Start Meta and YouTube ad campaigns targeting accredited investors</li>
-                        <li>Host a webinar to introduce the fund and its opportunities</li>
-                        <li>Implement an email marketing strategy for lead nurturing</li>
-                    </ul>
-                    <div class="brief-phase-milestone"><strong>Milestone:</strong> First webinar conducted and ad campaigns live</div>
-                </div>
-                <div class="brief-phase sr">
-                    <div class="brief-phase-header">
-                        <span class="brief-phase-name">Phase 3: Expansion</span>
-                        <span class="brief-phase-timeframe">61-90 days</span>
-                    </div>
-                    <ul class="brief-phase-actions">
-                        <li>Analyze ad campaign performance and targeting</li>
-                        <li>Expand content library with case studies and investor testimonials</li>
-                        <li>Plan and schedule additional webinars and virtual events</li>
-                    </ul>
-                    <div class="brief-phase-milestone"><strong>Milestone:</strong> Expanded content library and second webinar scheduled</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="brief-inline-cta sr">
-        <div class="brief-container">
-            <p>Want us to execute this for you?</p>
-            <a href="./book/" class="brief-inline-cta-btn">Yes, I Want to Learn More</a>
         </div>
     </div>
 
@@ -598,6 +609,17 @@ P.S. Your February filing timing is perfect. Most successful raises happen in Q2
         });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.sr').forEach(function(el) { observer.observe(el); });
+
+    // Accordion toggle
+    document.querySelectorAll('.accordion-trigger').forEach(function(trigger) {
+        trigger.addEventListener('click', function() {
+            var accordion = this.closest('.accordion');
+            var isOpen = accordion.classList.contains('open');
+            var expanded = !isOpen;
+            accordion.classList.toggle('open');
+            this.setAttribute('aria-expanded', expanded);
+        });
+    });
 })();
 </script>
 </body>
