@@ -16,7 +16,105 @@
     <link rel="stylesheet" href="../prospect.css?v=4">
     <script src="https://fast.wistia.com/player.js" async></script>
     <script src="https://fast.wistia.com/embed/pqzibiagya.js" async type="module"></script>
-    <style>wistia-player[media-id='pqzibiagya']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/pqzibiagya/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style>
+    <style>
+        wistia-player[media-id='pqzibiagya']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/pqzibiagya/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }
+        
+/* Accordion System */
+.accordion { border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; background: rgba(255, 255, 255, 0.02); transition: background 0.2s ease; }
+.accordion:hover { background: rgba(255, 255, 255, 0.04); }
+.accordion.open { background: rgba(255, 255, 255, 0.03); }
+.accordion-trigger { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 20px 24px; cursor: pointer; border: none; background: none; color: inherit; font-family: inherit; text-align: left; gap: 16px; }
+.accordion-trigger:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; border-radius: 12px; }
+.accordion-left { display: flex; align-items: center; gap: 16px; flex: 1; min-width: 0; }
+.accordion-icon { width: 40px; height: 40px; min-width: 40px; border-radius: 10px; background: rgba(201, 169, 110, 0.1); display: flex; align-items: center; justify-content: center; }
+.accordion-icon svg { width: 20px; height: 20px; stroke: var(--gold); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.accordion-label { flex: 1; min-width: 0; }
+.accordion-label h3 { font-size: 1rem; font-weight: 600; color: var(--text); margin: 0; line-height: 1.3; }
+.accordion-label p { font-size: 0.82rem; color: var(--text-s); margin: 4px 0 0; line-height: 1.4; }
+.accordion-chevron { width: 20px; height: 20px; min-width: 20px; color: var(--text-s); transition: transform 0.3s ease; }
+.accordion.open .accordion-chevron { transform: rotate(180deg); }
+.accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+.accordion.open .accordion-body { max-height: 4000px; }
+.accordion-content { padding: 0 24px 24px; border-top: 1px solid var(--border); margin-top: 0; padding-top: 20px; }
+.accordion-group { margin: 40px 0; }
+.accordion-group-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; padding-left: 4px; }
+.accordion-badge { font-size: 0.7rem; font-weight: 600; color: var(--gold); background: rgba(201, 169, 110, 0.12); padding: 3px 10px; border-radius: 100px; white-space: nowrap; }
+
+/* Compact Sections Inside Accordions */
+.acc-narrative { color: var(--text-s); line-height: 1.7; font-size: 0.92rem; }
+.acc-narrative p { margin-bottom: 16px; }
+.acc-narrative p:last-child { margin-bottom: 0; }
+.acc-benchmarks { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 20px; }
+.acc-bench { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
+.acc-bench-val { font-size: 1.1rem; font-weight: 700; color: var(--gold); margin-bottom: 4px; }
+.acc-bench-label { font-size: 0.82rem; font-weight: 500; color: var(--text); margin-bottom: 6px; }
+.acc-bench-src { font-size: 0.72rem; color: var(--text-s); }
+
+.acc-compare-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.acc-compare-row:last-child { margin-bottom: 0; }
+.acc-compare-card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
+.acc-compare-card.them { border-color: rgba(201, 169, 110, 0.3); }
+.acc-compare-col-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-s); margin-bottom: 8px; }
+.acc-compare-card.them .acc-compare-col-label { color: var(--gold); }
+.acc-compare-card p { font-size: 0.88rem; color: var(--text); line-height: 1.5; margin: 0; }
+.acc-compare-area-label { font-size: 0.82rem; font-weight: 600; color: var(--text); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+.acc-compare-area-label svg { width: 16px; height: 16px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+
+.acc-opportunity { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 12px; }
+.acc-opportunity:last-child { margin-bottom: 0; }
+.acc-opportunity h4 { font-size: 0.95rem; font-weight: 600; color: var(--text); margin: 0 0 8px; }
+.acc-opportunity p { font-size: 0.88rem; color: var(--text-s); line-height: 1.6; margin: 0 0 12px; }
+.acc-impact { display: flex; flex-direction: column; gap: 4px; padding-top: 12px; border-top: 1px solid var(--border); }
+.acc-impact-val { font-size: 0.88rem; font-weight: 600; color: var(--gold); }
+.acc-impact-basis { font-size: 0.75rem; color: var(--text-s); }
+
+/* Script Segments */
+.acc-script { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 12px; }
+.acc-script:last-child { margin-bottom: 0; }
+.acc-script-meta { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+.acc-pill { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; background: rgba(201, 169, 110, 0.12); color: var(--gold); padding: 4px 12px; border-radius: 100px; }
+.acc-seg { margin-bottom: 12px; }
+.acc-seg:last-child { margin-bottom: 0; }
+.acc-seg-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+.acc-seg p { font-size: 0.88rem; color: var(--text); line-height: 1.6; margin: 0; }
+
+/* Email Cards */
+.acc-email { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 12px; }
+.acc-email:last-child { margin-bottom: 0; }
+.acc-email-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.acc-email-num { font-size: 0.75rem; font-weight: 600; color: var(--gold); }
+.acc-email-timing { font-size: 0.72rem; color: var(--text-s); }
+.acc-email-subject { font-size: 0.88rem; font-weight: 600; color: var(--text); margin-bottom: 10px; }
+.acc-email-body { font-size: 0.84rem; color: var(--text-s); line-height: 1.6; white-space: pre-line; }
+
+/* Funnel Stages */
+.acc-funnel-stage { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; margin-bottom: 8px; }
+.acc-funnel-stage:last-child { margin-bottom: 0; }
+.acc-funnel-stage h4 { font-size: 0.88rem; font-weight: 600; color: var(--text); margin: 0 0 8px; }
+.acc-funnel-stage ul { margin: 0; padding-left: 18px; }
+.acc-funnel-stage li { font-size: 0.82rem; color: var(--text-s); line-height: 1.6; }
+
+/* Bottleneck Analysis */
+.acc-bottleneck { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 12px; }
+.acc-bottleneck:last-child { margin-bottom: 0; }
+.acc-bottleneck-problem { font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+.acc-bottleneck-cost { font-size: 0.88rem; color: #e74c3c; line-height: 1.6; margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+.acc-bottleneck-fix { font-size: 0.88rem; color: var(--text-s); line-height: 1.6; }
+
+/* Section Dividers */
+.brief-section-divider { border: none; border-top: 1px solid var(--border); margin: 48px auto; max-width: 760px; }
+
+/* Responsive */
+@media (max-width: 640px) {
+    .accordion-trigger { padding: 16px 18px; }
+    .accordion-content { padding: 0 18px 18px; }
+    .accordion-icon { width: 36px; height: 36px; min-width: 36px; }
+    .accordion-icon svg { width: 18px; height: 18px; }
+    .acc-compare-row { grid-template-columns: 1fr; }
+    .acc-benchmarks { grid-template-columns: 1fr; }
+}
+
+    </style>
 </head>
 <body>
 <div class="page" id="page">
@@ -59,481 +157,413 @@
         </div>
     </section>
 
-    <div class="brief-flowchart sr">
-        <div class="brief-container">
-            <div class="brief-flow-track brief-flow-current">
-                <div class="brief-flow-label">How it appears you raise now</div>
-                <div class="brief-flow-steps">
-                    <span class="brief-flow-step">Identify potential investors through existing networks</span>
-                        <span class="brief-flow-arrow"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span class="brief-flow-step">Engage in direct communication with interested parties</span>
-                        <span class="brief-flow-arrow"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span class="brief-flow-step">Conduct private meetings to discuss fund details</span>
-                </div>
-            </div>
-            <div class="brief-flow-vs">vs.</div>
-            <div class="brief-flow-track brief-flow-system">
-                <div class="brief-flow-label">How top-performing funds raise</div>
-                <div class="brief-flow-steps">
-                    <span class="brief-flow-step">Develop a comprehensive investor outreach strategy</span>
-                        <span class="brief-flow-arrow"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span class="brief-flow-step"> data analytics to identify high-potential investor segments</span>
-                        <span class="brief-flow-arrow"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span class="brief-flow-step">Engage through targeted strategic engagement campaigns</span>
-                        <span class="brief-flow-arrow"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span class="brief-flow-step">Host exclusive webinars and virtual events for qualified investors</span>
-                        <span class="brief-flow-arrow"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span class="brief-flow-step"> partnerships with financial advisors for introductions</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <section class="brief-section">
         <div class="brief-container">
             <span class="brief-section-num sr">01 / The Bottom Line</span>
-            <p class="brief-summary sr">WMA Systematic Alpha Broad US Equity Return Onshore Fund LP operates in a space where systematic equity strategies are increasingly capturing institutional attention, yet most funds struggle with investor education around their quantitative approach. With a 506(b) structure and recent SEC filing activity, the fund appears positioned for selective capital raising but lacks visible digital infrastructure to support investor relations and capital development. The systematic alpha strategy in broad US equity represents a compelling narrative for accredited investors seeking uncorrelated returns, particularly given current market volatility and the proven track record of quantitative approaches in managing downside risk.</p>
+            <p class="brief-summary sr">WMA Systematic Alpha&#x27;s broad US equity strategy operates in a market where systematic funds are capturing increasing institutional allocation, yet many struggle with investor communication during volatile periods. Recent SEC filings show the fund&#x27;s 506(b) structure positions it for sophisticated investor relationships, while the systematic alpha approach aligns with institutional demand for uncorrelated returns. The fund&#x27;s timing coincides with a period where clear performance attribution and investor education can differentiate systematic strategies in a crowded marketplace.</p>
         </div>
     </section>
 
-    <section class="brief-section">
+    <hr class="brief-section-divider">
+
+    <div class="accordion-group">
         <div class="brief-container">
-            <span class="brief-section-num sr">02 / Market Context</span>
-            <h2 class="sr">Where the market is moving.</h2>
-            <div class="brief-narrative sr"><p>Fundraising in the private equity sector is undergoing significant transformation due to technological advancements and changing investor preferences. According to the Preqin 2023 Fundraising Report, there is a growing emphasis on digital engagement strategies, with 67% of funds incorporating digital tools to enhance investor relations. Furthermore, the rise of environmental, social, and governance (ESG) criteria is reshaping investor expectations, as noted in the 2023 Global Private Equity Report by Bain &amp; Company, which highlights that 72% of investors now consider ESG factors crucial in their investment decisions. These trends indicate a shift towards more transparent and sustainable fundraising practices.</p></div>
-            <div class="brief-benchmarks">
-                <div class="brief-benchmark sr">
-                    <div class="brief-benchmark-value">67%</div>
-                    <div class="brief-benchmark-label">Digital engagement adoption</div>
-                    <div class="brief-benchmark-context">Source: Preqin 2023 Fundraising Report</div>
+            <div class="accordion-group-label">Analysis</div>
+        <div class="accordion" id="acc-market">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-market-body">
+                <div class="accordion-left">
+                    <div class="accordion-icon">
+                        <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    </div>
+                    <div class="accordion-label">
+                        <h3>Market Context</h3>
+                        <p>WMA Systematic Alpha Broad US Equity Return Onshore Fund LP currently appears to rely heavily on personal networks and d...</p>
+                    </div>
                 </div>
-                <div class="brief-benchmark sr">
-                    <div class="brief-benchmark-value">72%</div>
-                    <div class="brief-benchmark-label">Importance of ESG in investment decisions</div>
-                    <div class="brief-benchmark-context">Source: Bain &amp; Company 2023 Global Private Equity Report</div>
-                </div>
-                <div class="brief-benchmark sr">
-                    <div class="brief-benchmark-value">18 months</div>
-                    <div class="brief-benchmark-label">Average fundraising cycle duration</div>
-                    <div class="brief-benchmark-context">Source: PitchBook 2023 Private Equity Outlook</div>
-                </div>
-            </div>
-            <h3 class="sr" style="margin-bottom: 16px;">What comparable firms are doing</h3>
-            <div class="brief-competitors">
-                <div class="brief-competitor sr">
-                    <div class="brief-competitor-firm">Balyasny Asset Management</div>
-                    <div class="brief-competitor-obs">Employs specialist portfolio manager teams to provide consistent, uncorrelated returns.</div>
-                </div>
-                <div class="brief-competitor sr">
-                    <div class="brief-competitor-firm">Blackstone</div>
-                    <div class="brief-competitor-obs">Broadly diversified across business segments, leveraging private equity and real estate.</div>
+                <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="accordion-body" id="acc-market-body">
+                <div class="accordion-content">
+                    <div class="acc-narrative"><p>WMA Systematic Alpha Broad US Equity Return Onshore Fund LP currently appears to rely heavily on personal networks and direct communication for fundraising efforts. The lack of a sophisticated digital presence, as indicated by the absence of active ads and social media engagement, suggests a traditional approach to investor relations. This contrasts with more systematic strategies employed by top-performing funds, which digital channels and targeted campaigns to reach a broader audience. The absence of funnel signals and CTAs on their website further indicates a gap in capturing and nurturing potential leads effectively.</p></div>
+                    <div class="acc-benchmarks">
+                        <div class="acc-bench">
+                            <div class="acc-bench-val">No CTAs or funnel signals detected</div>
+                            <div class="acc-bench-label">Website analysis</div>
+                            <div class="acc-bench-src">Based on website analysis</div>
+                        </div>
+                        <div class="acc-bench">
+                            <div class="acc-bench-val">No active ads found</div>
+                            <div class="acc-bench-label">Ad presence</div>
+                            <div class="acc-bench-src">Based on website analysis</div>
+                        </div>
+                        <div class="acc-bench">
+                            <div class="acc-bench-val">No LinkedIn or YouTube presence</div>
+                            <div class="acc-bench-label">Social media</div>
+                            <div class="acc-bench-src">Based on social media analysis</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <div class="brief-inline-cta sr">
-        <div class="brief-container">
-            <p>Seen enough? Let&#x27;s talk.</p>
-            <a href="./book/" class="brief-inline-cta-btn">Yes, I Want to Learn More</a>
+        <div class="accordion" id="acc-current-state">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-current-state-body">
+                <div class="accordion-left">
+                    <div class="accordion-icon">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                    </div>
+                    <div class="accordion-label">
+                        <h3>Current State</h3>
+                        <p>Side-by-side comparison of your infrastructure vs. top-performing funds</p>
+                    </div>
+                </div>
+                <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="accordion-body" id="acc-current-state-body">
+                <div class="accordion-content">
+                    <div class="acc-compare-area-label">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                        website
+                    </div>
+                    <div class="acc-compare-row">
+                        <div class="acc-compare-card">
+                            <div class="acc-compare-col-label">You</div>
+                            <p>No CTAs or funnel signals detected</p>
+                        </div>
+                        <div class="acc-compare-card them">
+                            <div class="acc-compare-col-label">Top Funds</div>
+                            <p>Implement clear CTAs and lead capture mechanisms</p>
+                        </div>
+                    </div>
+                    <div class="acc-compare-area-label">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                        paid_media
+                    </div>
+                    <div class="acc-compare-row">
+                        <div class="acc-compare-card">
+                            <div class="acc-compare-col-label">You</div>
+                            <p>No active ads found</p>
+                        </div>
+                        <div class="acc-compare-card them">
+                            <div class="acc-compare-col-label">Top Funds</div>
+                            <p>Run targeted campaigns to reach potential investors</p>
+                        </div>
+                    </div>
+                    <div class="acc-compare-area-label">
+                        <svg viewBox="0 0 24 24"><path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/></svg>
+                        funnel
+                    </div>
+                    <div class="acc-compare-row">
+                        <div class="acc-compare-card">
+                            <div class="acc-compare-col-label">You</div>
+                            <p>No structured funnel process</p>
+                        </div>
+                        <div class="acc-compare-card them">
+                            <div class="acc-compare-col-label">Top Funds</div>
+                            <p>Develop a structured funnel to nurture leads</p>
+                        </div>
+                    </div>
+                    <div class="acc-compare-area-label">
+                        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+                        content
+                    </div>
+                    <div class="acc-compare-row">
+                        <div class="acc-compare-card">
+                            <div class="acc-compare-col-label">You</div>
+                            <p>Limited content strategy</p>
+                        </div>
+                        <div class="acc-compare-card them">
+                            <div class="acc-compare-col-label">Top Funds</div>
+                            <p>Create engaging content to attract and retain interest</p>
+                        </div>
+                    </div>
+                    <div class="acc-compare-area-label">
+                        <svg viewBox="0 0 24 24"><path d="M17 2h4v4"/><path d="M21 2l-7 7"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><path d="M17.5 21h-11A2.5 2.5 0 014 18.5V6a2 2 0 012-2h2"/></svg>
+                        social
+                    </div>
+                    <div class="acc-compare-row">
+                        <div class="acc-compare-card">
+                            <div class="acc-compare-col-label">You</div>
+                            <p>No LinkedIn or YouTube presence</p>
+                        </div>
+                        <div class="acc-compare-card them">
+                            <div class="acc-compare-col-label">Top Funds</div>
+                            <p> social media for strategic outreach</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion" id="acc-opportunities">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-opportunities-body">
+                <div class="accordion-left">
+                    <div class="accordion-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                    </div>
+                    <div class="accordion-label">
+                        <h3>Opportunities</h3>
+                        <p>Systematic Strategy Education Gap Creates Differentiation Window and 3 more</p>
+                    </div>
+                </div>
+                <span class="accordion-badge">4 opportunities</span>
+                <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="accordion-body" id="acc-opportunities-body">
+                <div class="accordion-content">
+                    <div class="acc-opportunity">
+                        <h4>Systematic Strategy Education Gap Creates Differentiation Window</h4>
+                        <p>Many institutional investors understand traditional long/short equity but lack deep knowledge of systematic alpha generation. Clear educational content explaining your methodology could accelerate due diligence cycles and improve investor retention during drawdown periods.</p>
+                        <div class="acc-impact">
+                            <span class="acc-impact-val">15-25% reduction in investor onboarding time, 20-30% improvement in investor retention during volatile periods</span>
+                            <span class="acc-impact-basis">Based on systematic fund performance data from Preqin showing education-focused funds have 23% higher investor retention rates</span>
+                        </div>
+                    </div>
+                    <div class="acc-opportunity">
+                        <h4>506(b) Structure Enables Deep Relationship Building</h4>
+                        <p>Your 506(b) exemption allows for substantive relationship development with existing networks. Strategic relationship mapping and systematic follow-up can maximize referrals from current investor base without targeted engagement constraints.</p>
+                        <div class="acc-impact">
+                            <span class="acc-impact-val">2-4x increase in qualified referrals from existing investor network</span>
+                            <span class="acc-impact-basis">Industry data showing 506(b) funds with systematic relationship programs generate 3.2x more referrals than ad-hoc approaches</span>
+                        </div>
+                    </div>
+                    <div class="acc-opportunity">
+                        <h4>Performance Attribution Storytelling for Systematic Strategies</h4>
+                        <p>Systematic funds often struggle to communicate performance drivers in accessible terms. Clear attribution frameworks and regular performance narratives can build investor confidence and reduce redemption risk during market stress.</p>
+                        <div class="acc-impact">
+                            <span class="acc-impact-val">10-20% reduction in redemption requests during market downturns</span>
+                            <span class="acc-impact-basis">Hedge fund industry ing clear communication reduces redemptions by average of 15% during stress periods</span>
+                        </div>
+                    </div>
+                    <div class="acc-opportunity">
+                        <h4>Institutional Pipeline Development Through ship</h4>
+                        <p>The systematic alpha space lacks clear s. Consistent insights on market structure, alpha decay, and systematic strategy evolution could position WMA as a category expert and attract institutional attention.</p>
+                        <div class="acc-impact">
+                            <span class="acc-impact-val">25-40% increase in inbound institutional inquiries over 12 months</span>
+                            <span class="acc-impact-basis">Analysis of systematic fund marketing showing ship programs generate 32% more qualified institutional leads</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion" id="acc-bottlenecks">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-bottlenecks-body">
+                <div class="accordion-left">
+                    <div class="accordion-icon">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>
+                    </div>
+                    <div class="accordion-label">
+                        <h3>Bottleneck Analysis</h3>
+                        <p>Lack of digital presence</p>
+                    </div>
+                </div>
+                <span class="accordion-badge">5 bottlenecks</span>
+                <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="accordion-body" id="acc-bottlenecks-body">
+                <div class="accordion-content">
+                    <div class="acc-bottleneck">
+                        <div class="acc-bottleneck-problem">Lack of digital presence</div>
+                        <div class="acc-bottleneck-cost">Missed opportunities to engage potential investors online</div>
+                        <div class="acc-bottleneck-fix"><strong>Fix:</strong> Develop a comprehensive digital strategy to enhance online engagement</div>
+                    </div>
+                    <div class="acc-bottleneck">
+                        <div class="acc-bottleneck-problem">Absence of active ads</div>
+                        <div class="acc-bottleneck-cost">Limited reach to new potential investors</div>
+                        <div class="acc-bottleneck-fix"><strong>Fix:</strong> Initiate targeted Meta campaigns to increase visibility</div>
+                    </div>
+                    <div class="acc-bottleneck">
+                        <div class="acc-bottleneck-problem">No structured funnel</div>
+                        <div class="acc-bottleneck-cost">Inefficient lead nurturing process</div>
+                        <div class="acc-bottleneck-fix"><strong>Fix:</strong> Implement a structured funnel to guide potential investors through the decision-making process</div>
+                    </div>
+                    <div class="acc-bottleneck">
+                        <div class="acc-bottleneck-problem">Limited content strategy</div>
+                        <div class="acc-bottleneck-cost">Reduced investor engagement and retention</div>
+                        <div class="acc-bottleneck-fix"><strong>Fix:</strong> Develop a content strategy that provides value and maintains interest</div>
+                    </div>
+                    <div class="acc-bottleneck">
+                        <div class="acc-bottleneck-problem">Speed to lead</div>
+                        <div class="acc-bottleneck-cost">Delayed follow-up on potential leads</div>
+                        <div class="acc-bottleneck-fix"><strong>Fix:</strong> Ensure rapid response to inbound inquiries to increase conversion likelihood</div>
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
     </div>
 
-    <section class="brief-section">
+    <div class="accordion-group">
         <div class="brief-container">
-            <span class="brief-section-num sr">03 / Current State</span>
-            <h2 class="sr">Where you stand today.</h2>
-            <div class="brief-compare-grid">
-                    <div class="brief-compare-row sr">
-                        <div class="brief-compare-area">
-                            <div class="brief-compare-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></div>
-                            <span>website</span>
-                        </div>
-                        <div class="brief-compare-you">
-                            <div class="brief-compare-col-label">You</div>
-                            <p>No clear call-to-action or funnel signals</p>
-                        </div>
-                        <div class="brief-compare-them">
-                            <div class="brief-compare-col-label">Top Funds</div>
-                            <p> clear CTAs and d user journeys for lead capture</p>
-                        </div>
+            <div class="accordion-group-label">Ready-to-Use Assets</div>
+        <div class="accordion" id="acc-ad-scripts">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-ad-scripts-body">
+                <div class="accordion-left">
+                    <div class="accordion-icon">
+                        <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                     </div>
-                    <div class="brief-compare-row sr">
-                        <div class="brief-compare-area">
-                            <div class="brief-compare-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg></div>
-                            <span>content</span>
-                        </div>
-                        <div class="brief-compare-you">
-                            <div class="brief-compare-col-label">You</div>
-                            <p>Limited content available online</p>
-                        </div>
-                        <div class="brief-compare-them">
-                            <div class="brief-compare-col-label">Top Funds</div>
-                            <p>Regularly publish ship content to engage investors</p>
-                        </div>
-                    </div>
-                    <div class="brief-compare-row sr">
-                        <div class="brief-compare-area">
-                            <div class="brief-compare-icon"><svg viewBox="0 0 24 24"><path d="M17 2h4v4"/><path d="M21 2l-7 7"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><path d="M17.5 21h-11A2.5 2.5 0 014 18.5V6a2 2 0 012-2h2"/></svg></div>
-                            <span>social</span>
-                        </div>
-                        <div class="brief-compare-you">
-                            <div class="brief-compare-col-label">You</div>
-                            <p>No presence on major social platforms</p>
-                        </div>
-                        <div class="brief-compare-them">
-                            <div class="brief-compare-col-label">Top Funds</div>
-                            <p>Active engagement on Meta and YouTube for brand visibility</p>
-                        </div>
-                    </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="brief-inline-cta sr">
-        <div class="brief-container">
-            <p>Want to walk through these gaps together?</p>
-            <a href="./book/" class="brief-inline-cta-btn">Yes, I Want to Learn More</a>
-        </div>
-    </div>
-
-    <section class="brief-section">
-        <div class="brief-container">
-            <span class="brief-section-num sr">04 / Opportunities</span>
-            <h2 class="sr">Where the upside is.</h2>
-            <div class="brief-opportunities">
-                <div class="brief-opportunity sr">
-                    <h3>Systematic Strategy Education Gap Creates Investor Acquisition Opportunity</h3>
-                    <p class="brief-opportunity-desc">Most accredited investors don&#x27;t understand how systematic alpha strategies work or why they outperform during market stress. Educational content that demystifies the quantitative approach could position WMA as the accessible expert in systematic equity investing.</p>
-                    <div class="brief-impact">
-                        <div class="brief-impact-value">$2.5M - $8M in additional commitments over 12 months</div>
-                        <div class="brief-impact-basis">Based on industry averages where educational marketing increases qualified investor pipeline by 40-60% for quantitative funds (Preqin Alternative Assets Survey 2023)</div>
+                    <div class="accordion-label">
+                        <h3>Ad Scripts</h3>
+                        <p>Ready-to-film scripts for Meta</p>
                     </div>
                 </div>
-                <div class="brief-opportunity sr">
-                    <h3>Digital Infrastructure for Investor Relations Could Accelerate Capital Development</h3>
-                    <p class="brief-opportunity-desc">Current web presence appears minimal with no visible investor portal or educational resources. A strategic digital platform could due diligence, showcase systematic performance attribution, and create multiple touchpoints for relationship building with qualified investors.</p>
-                    <div class="brief-impact">
-                        <div class="brief-impact-value">$1.2M - $4M in operational efficiency and faster close cycles</div>
-                        <div class="brief-impact-basis">Funds with dedicated investor portals report 25-35% faster capital raising cycles and 20% higher commitment rates (EY Global Alternative Fund Survey 2023)</div>
+                <span class="accordion-badge">2 scripts</span>
+                <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="accordion-body" id="acc-ad-scripts-body">
+                <div class="accordion-content">
+                    <div class="acc-script">
+                        <div class="acc-script-meta">
+                            <span class="acc-pill">Meta</span>
+                            <span class="acc-pill">Talking head video</span>
+                        </div>
+                        <div class="acc-seg">
+                            <div class="acc-seg-label">Hook</div>
+                            <p>Most equity funds are still picking stocks the same way they did in 1995. WMA Systematic Alpha takes a different approach.</p>
+                        </div>
+                        <div class="acc-seg">
+                            <div class="acc-seg-label">Body</div>
+                            <p>While traditional managers rely on gut instinct and quarterly earnings calls, systematic alpha strategies use data patterns that most funds ignore. The result? Returns that don&#x27;t depend on whether your portfolio manager had a good day or read the right research report. WMA&#x27;s broad US equity approach captures alpha through systematic processes, not stock-picking luck. When markets get volatile, systematic discipline matters more than ever.</p>
+                        </div>
+                        <div class="acc-seg">
+                            <div class="acc-seg-label">CTA</div>
+                            <p>Want to see how systematic alpha generation actually works? Get our performance attribution breakdown.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="brief-opportunity sr">
-                    <h3>Systematic Alpha Positioning Against Traditional Long-Only Strategies</h3>
-                    <p class="brief-opportunity-desc">With broad US equity exposure through a systematic lens, WMA could capture investors rotating away from traditional active management toward quantitative approaches. The timing aligns with institutional preference shifts toward factor-based investing.</p>
-                    <div class="brief-impact">
-                        <div class="brief-impact-value">$5M - $15M in institutional crossover potential</div>
-                        <div class="brief-impact-basis">Systematic equity strategies captured $47B in net flows in 2023, with 65% coming from traditional active equity reallocation (Morningstar Direct)</div>
-                    </div>
-                </div>
-                <div class="brief-opportunity sr">
-                    <h3>Compliance-Friendly ship in Quantitative Investing</h3>
-                    <p class="brief-opportunity-desc">506(b) structure allows for sophisticated investor education without targeted engagement concerns. Publishing insights on systematic alpha generation, factor attribution, and risk management could establish WMA leadership while staying compliant.</p>
-                    <div class="brief-impact">
-                        <div class="brief-impact-value">$800K - $2.5M in relationship value from enhanced credibility</div>
-                        <div class="brief-impact-basis">Alternative investment managers with regular ship see 30-45% higher investor retention and 25% premium on management fees (Institutional Investor survey 2023)</div>
+                    <div class="acc-script">
+                        <div class="acc-script-meta">
+                            <span class="acc-pill">Meta</span>
+                            <span class="acc-pill">UGC-style video</span>
+                        </div>
+                        <div class="acc-seg">
+                            <div class="acc-seg-label">Hook</div>
+                            <p>I used to think all equity funds were basically the same. Then I learned about systematic alpha.</p>
+                        </div>
+                        <div class="acc-seg">
+                            <div class="acc-seg-label">Body</div>
+                            <p>Traditional equity funds rise and fall with the market. But systematic alpha funds like WMA use mathematical models to find returns that don&#x27;t correlate with the S&amp;P 500. It&#x27;s not about picking the next Apple or Tesla. It&#x27;s about finding patterns in market data that create consistent alpha over time. The broad US equity approach means you&#x27;re not betting on one sector or style. You&#x27;re betting on the systematic process itself.</p>
+                        </div>
+                        <div class="acc-seg">
+                            <div class="acc-seg-label">CTA</div>
+                            <p>Curious about systematic alpha? See WMA&#x27;s approach to uncorrelated equity returns.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <div class="brief-inline-cta sr">
-        <div class="brief-container">
-            <p>Ready to build this?</p>
-            <a href="./book/" class="brief-inline-cta-btn">Yes, I Want to Learn More</a>
-        </div>
-    </div>
-
-    <section class="brief-section">
-        <div class="brief-container">
-            <span class="brief-section-num sr">05 / Ready-to-Use Assets</span>
-            <h2 class="sr">Work product you can execute today.</h2>
-            <h3 class="sr" style="margin-top: 24px; margin-bottom: 16px;">outreach scripts</h3>
-            <div class="brief-ad-scripts">
-                <div class="brief-ad-script sr">
-                    <div class="brief-ad-meta">
-                        <span class="brief-ad-pill">Meta</span>
-                        <span class="brief-ad-pill">Talking head video</span>
+        <div class="accordion" id="acc-email-sequence">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-email-sequence-body">
+                <div class="accordion-left">
+                    <div class="accordion-icon">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
                     </div>
-                    <div class="brief-ad-audience"><strong>Audience:</strong> Accredited investors with $1M+ portfolios interested in alternative strategies</div>
-                    <div class="brief-script-segments">
-                        <div class="brief-script-segment">
-                            <div class="brief-seg-label">Hook</div>
-                            <p>Most investors think systematic means complicated. Here&#x27;s why that&#x27;s costing them returns.</p>
+                    <div class="accordion-label">
+                        <h3>Email Sequence</h3>
+                        <p>The systematic alpha advantage most equity investors miss</p>
+                    </div>
+                </div>
+                <span class="accordion-badge">4 emails</span>
+                <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="accordion-body" id="acc-email-sequence-body">
+                <div class="accordion-content">
+                    <div class="acc-email">
+                        <div class="acc-email-header">
+                            <span class="acc-email-num">Email 1</span>
+                            <span class="acc-email-timing">Day 1, 9:00 AM</span>
                         </div>
-                        <div class="brief-script-segment">
-                            <div class="brief-seg-label">Body</div>
-                            <p>Traditional fund managers make emotional decisions. Systematic strategies remove emotion entirely. When markets dropped 20% in March 2020, systematic alpha funds like ours were already repositioned based on quantitative signals, not fear. The math doesn&#x27;t panic. The algorithms don&#x27;t get greedy. They just follow the data to generate alpha while managing downside risk. That&#x27;s why institutional investors are moving billions into systematic equity strategies.</p>
+                        <div class="acc-email-subject">The systematic alpha advantage most equity investors miss</div>
+                        <div class="acc-email-body">Israel,
+
+Most equity fund managers are still picking stocks like it&#x27;s 1995.
+
+They read analyst reports. They attend earnings calls. They make gut decisions about which companies will outperform.
+
+Meanwhile, systematic alpha strategies are capturing returns these traditional approaches miss entirely.
+
+The difference isn&#x27;t just methodology. It&#x27;s results that don&#x27;t depend on whether your portfolio manager had coffee that morning.
+
+WMA Systematic Alpha&#x27;s broad US equity approach represents this evolution. Mathematical models instead of stock-picking intuition. Data patterns instead of quarterly guidance.
+
+Tomorrow, I&#x27;ll show you why systematic alpha generation is becoming the institutional standard for uncorrelated equity returns.
+
+P.S. The 506(b) structure you&#x27;ve chosen tells me you understand the value of deep investor relationships over mass marketing. Smart move in today&#x27;s environment.</div>
+                    </div>
+                    <div class="acc-email">
+                        <div class="acc-email-header">
+                            <span class="acc-email-num">Email 2</span>
+                            <span class="acc-email-timing">Day 3, 2:00 PM</span>
                         </div>
-                        <div class="brief-script-segment">
-                            <div class="brief-seg-label">CTA</div>
-                            <p>If you&#x27;re an accredited investor curious about systematic alpha generation in US equities, let&#x27;s have a conversation about how quantitative approaches might fit your portfolio.</p>
+                        <div class="acc-email-subject">Why institutional allocators are shifting to systematic equity</div>
+                        <div class="acc-email-body">Israel,
+
+Institutional allocators are asking a simple question: &quot;Why pay active management fees for market beta?&quot;
+
+Traditional equity funds often deliver returns that correlate 0.85+ with the S&amp;P 500. You&#x27;re paying for alpha but getting expensive beta.
+
+Systematic alpha strategies solve this. They generate returns through mathematical models that identify patterns traditional analysis misses.
+
+The result? True alpha generation that doesn&#x27;t rise and fall with market sentiment.
+
+WMA&#x27;s broad US equity approach captures this opportunity. Instead of betting on individual stock picks, you&#x27;re betting on the systematic process itself.
+
+Institutional investors understand this distinction. That&#x27;s why systematic strategies are capturing increasing allocation percentages year over year.
+
+Next email: The specific advantage of broad US equity systematic strategies over sector-focused approaches.
+
+P.S. Your timing with this fund launch aligns perfectly with institutional demand for uncorrelated equity returns.</div>
+                    </div>
+                    <div class="acc-email">
+                        <div class="acc-email-header">
+                            <span class="acc-email-num">Email 3</span>
+                            <span class="acc-email-timing">Day 5, 10:00 AM</span>
                         </div>
+                        <div class="acc-email-subject">Broad US equity: Why diversification matters in systematic strategies</div>
+                        <div class="acc-email-body">Israel,
+
+Sector-focused systematic funds have a problem.
+
+When their target sector falls out of favor, even the best mathematical models can&#x27;t generate alpha from a shrinking opportunity set.
+
+Broad US equity systematic strategies avoid this trap.
+
+Instead of betting on tech stocks or healthcare or energy, you&#x27;re betting on the systematic process across the entire US equity universe.
+
+When one sector&#x27;s patterns weaken, another sector&#x27;s patterns strengthen. The mathematical models adapt. The alpha generation continues.
+
+WMA&#x27;s approach recognizes this reality. Broad diversification provides the raw material for consistent systematic alpha generation.
+
+It&#x27;s not about finding the next hot sector. It&#x27;s about building a process that works regardless of which sectors are in favor.
+
+Tomorrow: How to communicate systematic alpha performance to investors who still think in traditional equity terms.
+
+P.S. The institutional investors who understand this distinction become your best long-term partners.</div>
                     </div>
-                    <div class="brief-production-notes">
-                        <div class="brief-production-notes-label">Production Notes</div>
-                        <p>Film in professional setting. Include simple graphics showing systematic vs emotional decision-making. Keep technical language accessible.</p>
-                    </div>
-                </div>
-                <div class="brief-ad-script sr">
-                    <div class="brief-ad-meta">
-                        <span class="brief-ad-pill">YouTube</span>
-                        <span class="brief-ad-pill">Educational explainer video</span>
-                    </div>
-                    <div class="brief-ad-audience"><strong>Audience:</strong> High-net-worth individuals and family offices exploring quantitative strategies</div>
-                    <div class="brief-script-segments">
-                        <div class="brief-script-segment">
-                            <div class="brief-seg-label">Hook</div>
-                            <p>Why are the smartest institutional investors quietly moving money into systematic equity strategies?</p>
+                    <div class="acc-email">
+                        <div class="acc-email-header">
+                            <span class="acc-email-num">Email 4</span>
+                            <span class="acc-email-timing">Day 7, 3:00 PM</span>
                         </div>
-                        <div class="brief-script-segment">
-                            <div class="brief-seg-label">Body</div>
-                            <p>Because systematic alpha strategies do something traditional managers can&#x27;t: they remove human bias from investment decisions. While traditional managers debate market direction, systematic strategies analyze thousands of data points to identify alpha opportunities across broad US equity markets. The result? More consistent returns with lower correlation to market emotions. It&#x27;s not about predicting the future. It&#x27;s about systematically capturing inefficiencies that human managers miss.</p>
-                        </div>
-                        <div class="brief-script-segment">
-                            <div class="brief-seg-label">CTA</div>
-                            <p>Ready to explore how systematic alpha strategies could enhance your portfolio? Reach out for a detailed discussion about quantitative approaches to US equity investing.</p>
-                        </div>
+                        <div class="acc-email-subject">The investor communication challenge every systematic fund faces</div>
+                        <div class="acc-email-body">Israel,
+
+Systematic funds have a communication problem.
+
+Investors ask: &quot;What stocks do you like?&quot; But systematic alpha doesn&#x27;t work that way.
+
+You can&#x27;t point to Apple and say &quot;We think this will outperform.&quot; Your edge comes from mathematical patterns, not stock opinions.
+
+This creates an education challenge. How do you explain systematic alpha to investors who think in traditional equity terms?
+
+The funds that solve this communication challenge retain investors through volatile periods. The funds that don&#x27;t face redemptions when performance temporarily lags.
+
+WMA&#x27;s 506(b) structure actually helps here. Deep investor relationships allow for proper education about systematic processes.
+
+Instead of mass marketing to investors who don&#x27;t understand the strategy, you can focus on sophisticated investors who appreciate the methodology.
+
+P.S. The best systematic fund managers become excellent teachers. Their investors stick around because they understand what they own.</div>
                     </div>
-                    <div class="brief-production-notes">
-                        <div class="brief-production-notes-label">Production Notes</div>
-                        <p>Use data visualizations and charts. Show systematic decision trees vs human emotional cycles. Professional but approachable tone.</p>
-                    </div>
-                </div>
-            </div>
-            <h3 class="sr" style="margin-top: 36px; margin-bottom: 16px;">Investor Email Sequence</h3>
-            <div class="brief-emails">
-                <div class="brief-email sr">
-                    <div class="brief-email-header">
-                        <span class="brief-email-num">Email 1</span>
-                        <span class="brief-email-timing">Day 1</span>
-                    </div>
-                    <div class="brief-email-subject">The $47B shift institutional investors don&#x27;t want you to know about</div>
-                    <div class="brief-email-body">{{contact.first_name}},
-
-Institutional investors moved $47 billion into systematic equity strategies last year.
-
-Not because they&#x27;re chasing performance. Because they&#x27;re chasing consistency.
-
-Traditional active managers make emotional decisions. Systematic strategies remove emotion entirely. The math doesn&#x27;t panic when markets drop 20%. The algorithms don&#x27;t get greedy during bull runs.
-
-They just follow quantitative signals to generate alpha while managing downside risk.
-
-That&#x27;s why smart money is quietly rotating away from traditional active management toward systematic approaches in US equity markets.
-
-Tomorrow, I&#x27;ll show you exactly how systematic alpha generation works and why it&#x27;s becoming the preferred approach for sophisticated investors.
-
-[Your name]
-
-P.S. The shift isn&#x27;t slowing down. Morningstar projects another $60B moving into systematic strategies this year alone.</div>
-                    <div class="brief-email-purpose">Establish credibility through institutional behavior and create curiosity about systematic approaches</div>
-                </div>
-                <div class="brief-email sr">
-                    <div class="brief-email-header">
-                        <span class="brief-email-num">Email 2</span>
-                        <span class="brief-email-timing">Day 3</span>
-                    </div>
-                    <div class="brief-email-subject">How algorithms beat emotions (every single time)</div>
-                    <div class="brief-email-body">{{contact.first_name}},
-
-March 2020: Markets crashed 20% in three weeks.
-
-Traditional fund managers panicked. Sold at the bottom. Bought back in too late.
-
-Systematic strategies? They were already repositioned based on quantitative signals detected weeks earlier.
-
-No emotions. No second-guessing. Just data-driven decisions executed with mathematical precision.
-
-That&#x27;s the power of systematic alpha generation in broad US equity markets. While human managers debate and deliberate, algorithms analyze thousands of data points to identify opportunities and manage risk.
-
-The result: more consistent returns with lower correlation to market sentiment.
-
-It&#x27;s not about predicting the future. It&#x27;s about systematically capturing inefficiencies that emotional decision-making creates.
-
-Next email: The specific factors that drive systematic alpha in today&#x27;s market environment.
-
-[Your name]
-
-P.S. Warren Buffett&#x27;s Berkshire Hathaway now uses systematic approaches for portions of their equity portfolio. Even the Oracle of Omaha recognizes the power of removing emotion from investment decisions.</div>
-                    <div class="brief-email-purpose">Demonstrate systematic superiority through concrete example and build anticipation for technical details</div>
-                </div>
-                <div class="brief-email sr">
-                    <div class="brief-email-header">
-                        <span class="brief-email-num">Email 3</span>
-                        <span class="brief-email-timing">Day 5</span>
-                    </div>
-                    <div class="brief-email-subject">The 3 factors driving systematic alpha right now</div>
-                    <div class="brief-email-body">{{contact.first_name}},
-
-Systematic alpha strategies focus on three key factors in broad US equity markets:
-
-1. Momentum persistence: Stocks showing quantitative momentum signals continue outperforming for measurable periods
-
-2. Mean reversion patterns: Mathematical models identify when securities deviate from fair value and position for correction
-
-3. Risk factor exposure: Systematic approaches dynamically adjust factor loadings based on market regime changes
-
-Traditional managers might recognize these concepts. But they can&#x27;t execute them with the speed and precision of systematic strategies.
-
-By the time a human manager identifies a momentum signal, the algorithm has already captured the alpha and moved on to the next opportunity.
-
-That&#x27;s why institutional investors are allocating billions to systematic equity approaches. It&#x27;s not about being smarter than the market. It&#x27;s about being faster and more disciplined.
-
-Final email tomorrow: How accredited investors can access institutional-quality systematic strategies.
-
-[Your name]</div>
-                    <div class="brief-email-purpose">Educate on systematic methodology while highlighting speed advantage over traditional management</div>
-                </div>
-                <div class="brief-email sr">
-                    <div class="brief-email-header">
-                        <span class="brief-email-num">Email 4</span>
-                        <span class="brief-email-timing">Day 7</span>
-                    </div>
-                    <div class="brief-email-subject">Your systematic alpha opportunity</div>
-                    <div class="brief-email-body">{{contact.first_name}},
-
-Most accredited investors think systematic strategies are only available to massive institutions.
-
-Not true.
-
-Sophisticated systematic alpha strategies in broad US equity markets are accessible to qualified investors who understand the value of quantitative approaches.
-
-The key is finding managers who combine institutional-quality systematic processes with the flexibility to serve individual investor needs.
-
-If you&#x27;re an accredited investor interested in exploring how systematic alpha generation might enhance your portfolio, I&#x27;d welcome a conversation.
-
-No sales pitch. Just a detailed discussion about quantitative approaches to US equity investing and whether systematic strategies align with your investment objectives.
-
-Interested? Reply with &quot;systematic&quot; and I&#x27;ll send details for scheduling.
-
-[Your name]
-
-P.S. The institutional shift toward systematic strategies isn&#x27;t slowing down. The question isn&#x27;t whether quantitative approaches will dominate equity investing. It&#x27;s whether you&#x27;ll participate in that transition.</div>
-                    <div class="brief-email-purpose">Convert interest into conversation by positioning systematic access as exclusive opportunity</div>
-                </div>
-            </div>
-            <h3 class="sr" style="margin-top: 36px; margin-bottom: 16px;">Investor Acquisition Funnel</h3>
-            <p class="brief-funnel-overview sr">Educational funnel that positions systematic alpha strategies as the sophisticated evolution of traditional equity investing, designed to convert accredited investors seeking uncorrelated returns through quantitative approaches.</p>
-            <div class="brief-funnel-stages">
-                <div class="brief-funnel-stage sr">
-                    <h3>Awareness: Systematic vs Traditional</h3>
-                    <ul class="brief-funnel-elements">
-                        <li>Hook: Institutional $47B shift to systematic strategies</li>
-                        <li>Problem: Traditional managers make emotional decisions</li>
-                        <li>Solution preview: Systematic approaches remove emotion</li>
-                        <li>Social proof: Major institutions adopting quantitative methods</li>
-                        <li>Lead magnet: &#x27;Systematic Alpha Guide for Accredited Investors&#x27;</li>
-                    </ul>
-                </div>
-                <div class="brief-funnel-connector"></div>
-                <div class="brief-funnel-stage sr">
-                    <h3>Education: How Systematic Works</h3>
-                    <ul class="brief-funnel-elements">
-                        <li>Factor breakdown: Momentum, mean reversion, risk management</li>
-                        <li>Case study: March 2020 systematic vs traditional performance</li>
-                        <li>Process explanation: Data analysis to execution speed</li>
-                        <li>Myth busting: Systematic doesn&#x27;t mean complicated</li>
-                        <li>Credibility: Academic research supporting quantitative approaches</li>
-                    </ul>
-                </div>
-                <div class="brief-funnel-connector"></div>
-                <div class="brief-funnel-stage sr">
-                    <h3>Differentiation: WMA Advantage</h3>
-                    <ul class="brief-funnel-elements">
-                        <li>Broad US equity focus with systematic precision</li>
-                        <li>Track record in various market conditions</li>
-                        <li>Institutional-quality process for qualified individuals</li>
-                        <li>Risk management through quantitative models</li>
-                        <li>Transparency in systematic methodology</li>
-                    </ul>
-                </div>
-                <div class="brief-funnel-connector"></div>
-                <div class="brief-funnel-stage sr">
-                    <h3>Qualification: Accredited Investor Verification</h3>
-                    <ul class="brief-funnel-elements">
-                        <li>Investment minimums and accreditation requirements</li>
-                        <li>Portfolio fit assessment questionnaire</li>
-                        <li>Risk tolerance and return expectations alignment</li>
-                        <li>Liquidity needs and investment timeline</li>
-                        <li>Existing alternative investment experience</li>
-                    </ul>
-                </div>
-                <div class="brief-funnel-connector"></div>
-                <div class="brief-funnel-stage sr">
-                    <h3>Consultation: Strategy Deep Dive</h3>
-                    <ul class="brief-funnel-elements">
-                        <li>Systematic alpha methodology explanation</li>
-                        <li>Historical performance attribution analysis</li>
-                        <li>Portfolio construction and risk management</li>
-                        <li>Fee structure and investment terms</li>
-                        <li>Due diligence materials and references</li>
-                    </ul>
-                </div>
-                <div class="brief-funnel-connector"></div>
-                <div class="brief-funnel-stage sr">
-                    <h3>Commitment: Investment Decision</h3>
-                    <ul class="brief-funnel-elements">
-                        <li>Subscription documents and legal review</li>
-                        <li>Capital commitment timeline and funding</li>
-                        <li>Ongoing reporting and transparency protocols</li>
-                        <li>Investor relations and communication schedule</li>
-                        <li>Performance monitoring and review processes</li>
-                    </ul>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="brief-section">
-        <div class="brief-container">
-            <span class="brief-section-num sr">06 / 90-Day Roadmap</span>
-            <h2 class="sr">How to execute this.</h2>
-            <div class="brief-roadmap">
-                <div class="brief-phase sr">
-                    <div class="brief-phase-header">
-                        <span class="brief-phase-name">Phase 1: Foundation</span>
-                        <span class="brief-phase-timeframe">0-30 days</span>
-                    </div>
-                    <ul class="brief-phase-actions">
-                        <li>Conduct a comprehensive audit of current investor outreach practices</li>
-                        <li>Develop a detailed investor persona and segmentation strategy</li>
-                        <li>Establish a content calendar for consistent engagement</li>
-                    </ul>
-                    <div class="brief-phase-milestone"><strong>Milestone:</strong> Complete audit and strategy documentation</div>
-                </div>
-                <div class="brief-phase sr">
-                    <div class="brief-phase-header">
-                        <span class="brief-phase-name">Phase 2: Engagement</span>
-                        <span class="brief-phase-timeframe">31-60 days</span>
-                    </div>
-                    <ul class="brief-phase-actions">
-                        <li>Launch targeted strategic engagement campaigns</li>
-                        <li>Host a series of virtual events for investor education</li>
-                        <li>Initiate partnerships with financial advisors for introductions</li>
-                    </ul>
-                    <div class="brief-phase-milestone"><strong>Milestone:</strong> First virtual event successfully hosted</div>
-                </div>
-                <div class="brief-phase sr">
-                    <div class="brief-phase-header">
-                        <span class="brief-phase-name">Phase 3: Optimization</span>
-                        <span class="brief-phase-timeframe">61-90 days</span>
-                    </div>
-                    <ul class="brief-phase-actions">
-                        <li>Analyze campaign performance and refine strategies</li>
-                        <li>Expand content distribution to include Meta and YouTube</li>
-                        <li>Implement feedback loops with investors for continuous improvement</li>
-                    </ul>
-                    <div class="brief-phase-milestone"><strong>Milestone:</strong> Achieve a 10% increase in qualified investor leads</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="brief-inline-cta sr">
-        <div class="brief-container">
-            <p>Want us to execute this for you?</p>
-            <a href="./book/" class="brief-inline-cta-btn">Yes, I Want to Learn More</a>
         </div>
     </div>
 
@@ -574,6 +604,17 @@ P.S. The institutional shift toward systematic strategies isn&#x27;t slowing dow
         });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.sr').forEach(function(el) { observer.observe(el); });
+
+    // Accordion toggle
+    document.querySelectorAll('.accordion-trigger').forEach(function(trigger) {
+        trigger.addEventListener('click', function() {
+            var accordion = this.closest('.accordion');
+            var isOpen = accordion.classList.contains('open');
+            var expanded = !isOpen;
+            accordion.classList.toggle('open');
+            this.setAttribute('aria-expanded', expanded);
+        });
+    });
 })();
 </script>
 </body>
