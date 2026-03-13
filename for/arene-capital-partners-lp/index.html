@@ -13,7 +13,108 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../shared.css?v=2">
-    <link rel="stylesheet" href="../prospect.css?v=3">
+    <link rel="stylesheet" href="../prospect.css?v=4">
+    <script src="https://fast.wistia.com/player.js" async></script>
+    <script src="https://fast.wistia.com/embed/pqzibiagya.js" async type="module"></script>
+    <style>
+        wistia-player[media-id='pqzibiagya']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/pqzibiagya/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }
+        
+/* Accordion System */
+.accordion { border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; background: rgba(255, 255, 255, 0.02); transition: background 0.2s ease; }
+.accordion:hover { background: rgba(255, 255, 255, 0.04); }
+.accordion.open { background: rgba(255, 255, 255, 0.03); }
+.accordion-trigger { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 20px 24px; cursor: pointer; border: none; background: none; color: inherit; font-family: inherit; text-align: left; gap: 16px; }
+.accordion-trigger:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; border-radius: 12px; }
+.accordion-left { display: flex; align-items: center; gap: 16px; flex: 1; min-width: 0; }
+.accordion-icon { width: 40px; height: 40px; min-width: 40px; border-radius: 10px; background: rgba(201, 169, 110, 0.1); display: flex; align-items: center; justify-content: center; }
+.accordion-icon svg { width: 20px; height: 20px; stroke: var(--gold); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.accordion-label { flex: 1; min-width: 0; }
+.accordion-label h3 { font-size: 1rem; font-weight: 600; color: var(--text); margin: 0; line-height: 1.3; }
+.accordion-label p { font-size: 0.82rem; color: var(--text-s); margin: 4px 0 0; line-height: 1.4; }
+.accordion-chevron { width: 20px; height: 20px; min-width: 20px; color: var(--text-s); transition: transform 0.3s ease; }
+.accordion.open .accordion-chevron { transform: rotate(180deg); }
+.accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+.accordion.open .accordion-body { max-height: 4000px; }
+.accordion-content { padding: 0 24px 24px; border-top: 1px solid var(--border); margin-top: 0; padding-top: 20px; }
+.accordion-group { margin: 40px 0; }
+.accordion-group-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; padding-left: 4px; }
+.accordion-badge { font-size: 0.7rem; font-weight: 600; color: var(--gold); background: rgba(201, 169, 110, 0.12); padding: 3px 10px; border-radius: 100px; white-space: nowrap; }
+
+/* Compact Sections Inside Accordions */
+.acc-narrative { color: var(--text-s); line-height: 1.7; font-size: 0.92rem; }
+.acc-narrative p { margin-bottom: 16px; }
+.acc-narrative p:last-child { margin-bottom: 0; }
+.acc-benchmarks { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 20px; }
+.acc-bench { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
+.acc-bench-val { font-size: 1.1rem; font-weight: 700; color: var(--gold); margin-bottom: 4px; }
+.acc-bench-label { font-size: 0.82rem; font-weight: 500; color: var(--text); margin-bottom: 6px; }
+.acc-bench-src { font-size: 0.72rem; color: var(--text-s); }
+
+.acc-compare-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.acc-compare-row:last-child { margin-bottom: 0; }
+.acc-compare-card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
+.acc-compare-card.them { border-color: rgba(201, 169, 110, 0.3); }
+.acc-compare-col-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-s); margin-bottom: 8px; }
+.acc-compare-card.them .acc-compare-col-label { color: var(--gold); }
+.acc-compare-card p { font-size: 0.88rem; color: var(--text); line-height: 1.5; margin: 0; }
+.acc-compare-area-label { font-size: 0.82rem; font-weight: 600; color: var(--text); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+.acc-compare-area-label svg { width: 16px; height: 16px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+
+.acc-opportunity { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 12px; }
+.acc-opportunity:last-child { margin-bottom: 0; }
+.acc-opportunity h4 { font-size: 0.95rem; font-weight: 600; color: var(--text); margin: 0 0 8px; }
+.acc-opportunity p { font-size: 0.88rem; color: var(--text-s); line-height: 1.6; margin: 0 0 12px; }
+.acc-impact { display: flex; flex-direction: column; gap: 4px; padding-top: 12px; border-top: 1px solid var(--border); }
+.acc-impact-val { font-size: 0.88rem; font-weight: 600; color: var(--gold); }
+.acc-impact-basis { font-size: 0.75rem; color: var(--text-s); }
+
+/* Script Segments */
+.acc-script { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 12px; }
+.acc-script:last-child { margin-bottom: 0; }
+.acc-script-meta { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+.acc-pill { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; background: rgba(201, 169, 110, 0.12); color: var(--gold); padding: 4px 12px; border-radius: 100px; }
+.acc-seg { margin-bottom: 12px; }
+.acc-seg:last-child { margin-bottom: 0; }
+.acc-seg-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+.acc-seg p { font-size: 0.88rem; color: var(--text); line-height: 1.6; margin: 0; }
+
+/* Email Cards */
+.acc-email { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 12px; }
+.acc-email:last-child { margin-bottom: 0; }
+.acc-email-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.acc-email-num { font-size: 0.75rem; font-weight: 600; color: var(--gold); }
+.acc-email-timing { font-size: 0.72rem; color: var(--text-s); }
+.acc-email-subject { font-size: 0.88rem; font-weight: 600; color: var(--text); margin-bottom: 10px; }
+.acc-email-body { font-size: 0.84rem; color: var(--text-s); line-height: 1.6; white-space: pre-line; }
+
+/* Funnel Stages */
+.acc-funnel-stage { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; margin-bottom: 8px; }
+.acc-funnel-stage:last-child { margin-bottom: 0; }
+.acc-funnel-stage h4 { font-size: 0.88rem; font-weight: 600; color: var(--text); margin: 0 0 8px; }
+.acc-funnel-stage ul { margin: 0; padding-left: 18px; }
+.acc-funnel-stage li { font-size: 0.82rem; color: var(--text-s); line-height: 1.6; }
+
+/* Bottleneck Analysis */
+.acc-bottleneck { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 12px; }
+.acc-bottleneck:last-child { margin-bottom: 0; }
+.acc-bottleneck-problem { font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+.acc-bottleneck-cost { font-size: 0.88rem; color: #e74c3c; line-height: 1.6; margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+.acc-bottleneck-fix { font-size: 0.88rem; color: var(--text-s); line-height: 1.6; }
+
+/* Section Dividers */
+.brief-section-divider { border: none; border-top: 1px solid var(--border); margin: 48px auto; max-width: 760px; }
+
+/* Responsive */
+@media (max-width: 640px) {
+    .accordion-trigger { padding: 16px 18px; }
+    .accordion-content { padding: 0 18px 18px; }
+    .accordion-icon { width: 36px; height: 36px; min-width: 36px; }
+    .accordion-icon svg { width: 18px; height: 18px; }
+    .acc-compare-row { grid-template-columns: 1fr; }
+    .acc-benchmarks { grid-template-columns: 1fr; }
+}
+
+    </style>
 </head>
 <body>
 <div class="page" id="page">
@@ -34,23 +135,10 @@
                 <span class="brief-meta-item"><span>Prepared for</span> Alexandra Engler</span>
                 <span class="brief-meta-item"><span>Fund</span> Arene Capital Partners LP</span>
                 <span class="brief-meta-item"><span>Type</span> Reg D 506(b)</span>
-                <span class="brief-meta-item"><span>Sector</span> Hedge Fund</span>
             </div>
             <h1>Executive Briefing: Arene Capital Partners LP</h1>
-            <p class="brief-header-sub">An independent assessment of Arene Capital Partners LP&rsquo;s investor acquisition infrastructure, targeting a $50,000,000 raise in Hedge Fund.</p>
+            <p class="brief-header-sub">An independent assessment of Arene Capital Partners LP&rsquo;s investor acquisition infrastructure.</p>
                 <div class="brief-stats">
-                    <div class="brief-stat">
-                        <div class="brief-stat-value">$50,000,000</div>
-                        <div class="brief-stat-label">Raise Target</div>
-                    </div>
-                    <div class="brief-stat">
-                        <div class="brief-stat-value">$200M</div>
-                        <div class="brief-stat-label">AUM</div>
-                    </div>
-                    <div class="brief-stat">
-                        <div class="brief-stat-value">2020</div>
-                        <div class="brief-stat-label">Founded</div>
-                    </div>
                     <div class="brief-stat">
                         <div class="brief-stat-value">506(b)</div>
                         <div class="brief-stat-label">Reg D Type</div>
@@ -59,304 +147,426 @@
         </div>
     </header>
 
-    <div class="brief-flowchart sr">
+    <section class="brief-vsl-section sr">
         <div class="brief-container">
-            <div class="brief-flow-track brief-flow-current">
-                <div class="brief-flow-label">How it appears you raise now</div>
-                <div class="brief-flow-steps">
-                    <span class="brief-flow-step">Rely on existing network for capital</span>
-                        <span class="brief-flow-arrow"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span class="brief-flow-step">Limited digital engagement</span>
-                        <span class="brief-flow-arrow"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span class="brief-flow-step">No active advertising campaigns</span>
-                </div>
-            </div>
-            <div class="brief-flow-vs">vs.</div>
-            <div class="brief-flow-track brief-flow-system">
-                <div class="brief-flow-label">How top-performing funds raise</div>
-                <div class="brief-flow-steps">
-                    <span class="brief-flow-step">Develop comprehensive digital strategy</span>
-                        <span class="brief-flow-arrow"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span class="brief-flow-step">Engage with potential investors through targeted outreach</span>
-                        <span class="brief-flow-arrow"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span class="brief-flow-step">Utilize data-driven insights for investor engagement</span>
-                        <span class="brief-flow-arrow"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span class="brief-flow-step">Implement systematic follow-up processes</span>
-                </div>
+            <h2 class="brief-vsl-heading sr">Watch the 3-minute walkthrough.</h2>
+            <p class="brief-vsl-sub sr">See how we build investor acquisition systems for funds like yours.</p>
+            <div class="brief-vsl-wrap sr">
+                <wistia-player media-id="pqzibiagya" aspect="1.7777777777777777"></wistia-player>
             </div>
         </div>
-    </div>
+    </section>
 
     <section class="brief-section">
         <div class="brief-container">
             <span class="brief-section-num sr">01 / The Bottom Line</span>
-            <p class="brief-summary sr">Arene Capital Partners LP, under the leadership of Alexandra Engler, is navigating the competitive landscape of hedge fund capital raising with a focus on strategic engagement rather than targeted engagement. Despite limited digital presence, the firm aims to leverage its strong performance to attract institutional investors. With a target raise of $50 million, Arene Capital is poised to enhance its market position by adopting best practices from top-performing funds.</p>
+            <p class="brief-summary sr">Arena Capital Partners launched in 2021 with a thesis that post-COVID migration from NYC to Hudson Valley would create rental pricing tailwinds in undervalued markets. Led by principals with 40+ years and ~$1bn in cross-asset-class experience, they&#x27;re targeting mismanaged residential and mixed-use properties for value-add repositioning. Their NYC base and Hudson Valley focus positions them in a demographic shift that&#x27;s reshaping supply-demand fundamentals across the region.</p>
         </div>
     </section>
 
-    <section class="brief-section">
+    <hr class="brief-section-divider">
+
+    <div class="accordion-group">
         <div class="brief-container">
-            <span class="brief-section-num sr">02 / Market Context</span>
-            <h2 class="sr">Where the market is moving.</h2>
-            <div class="brief-narrative sr"><p>The hedge fund industry is increasingly competitive, with capital flowing towards funds that demonstrate robust performance and strategic investor engagement. Top performers are leveraging digital platforms to enhance visibility and attract institutional investors. Arene Capital Partners LP can capitalize on these trends by expanding its digital footprint and adopting a systematic approach to investor relations.</p></div>
-            <div class="brief-benchmarks">
-                <div class="brief-benchmark sr">
-                    <div class="brief-benchmark-value">$200-$400</div>
-                    <div class="brief-benchmark-label">Avg. Cost Per Qualified LP</div>
-                    <div class="brief-benchmark-context">Arene Capital can optimize its investor acquisition costs by adopting digital engagement strategies.</div>
+            <div class="accordion-group-label">Analysis</div>
+        <div class="accordion" id="acc-market">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-market-body">
+                <div class="accordion-left">
+                    <div class="accordion-icon">
+                        <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    </div>
+                    <div class="accordion-label">
+                        <h3>Market Context</h3>
+                        <p>Arene Capital Partners LP focuses on value-add real estate investments, primarily in the Hudson Valley region. Their web...</p>
+                    </div>
                 </div>
-                <div class="brief-benchmark sr">
-                    <div class="brief-benchmark-value">15%-25%</div>
-                    <div class="brief-benchmark-label">Digital Engagement Rate</div>
-                    <div class="brief-benchmark-context">Increasing digital engagement can significantly enhance Arene Capital&#x27;s investor reach.</div>
-                </div>
-                <div class="brief-benchmark sr">
-                    <div class="brief-benchmark-value">5%-10%</div>
-                    <div class="brief-benchmark-label">Institutional Investor Conversion</div>
-                    <div class="brief-benchmark-context">Focusing on institutional conversions can boost Arene Capital&#x27;s AUM growth.</div>
-                </div>
-            </div>
-            <h3 class="sr" style="margin-bottom: 16px;">What comparable firms are doing</h3>
-            <div class="brief-competitors">
-                <div class="brief-competitor sr">
-                    <div class="brief-competitor-firm">How Hedge Funds Raise Capital</div>
-                    <div class="brief-competitor-obs">Focuses on attracting large institutional investors through exceptional fund performance.</div>
-                </div>
-                <div class="brief-competitor sr">
-                    <div class="brief-competitor-firm">New and Emerging Manager Fundraising Guide 2025</div>
-                    <div class="brief-competitor-obs">Breaks down the capital raising process into eight critical stages for emerging managers.</div>
-                </div>
-                <div class="brief-competitor sr">
-                    <div class="brief-competitor-firm">8 Essential Tips on How to Raise Capital for a Hedge Fund</div>
-                    <div class="brief-competitor-obs">Highlights the importance of increasing AUM through diverse capital sources.</div>
+                <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="accordion-body" id="acc-market-body">
+                <div class="accordion-content">
+                    <div class="acc-narrative"><p>Arene Capital Partners LP focuses on value-add real estate investments, primarily in the Hudson Valley region. Their website emphasizes their expertise and strategic approach, but lacks advanced digital engagement strategies. Unlike top-performing funds that targeted digital campaigns and systematic follow-ups, Arene relies heavily on personal networks and direct contact through their website. This approach may limit their reach and efficiency in attracting new investors.</p></div>
+                    <div class="acc-benchmarks">
+                        <div class="acc-bench">
+                            <div class="acc-bench-val">Contact Us page as primary CTA</div>
+                            <div class="acc-bench-label">Website Engagement</div>
+                            <div class="acc-bench-src">Based on website analysis</div>
+                        </div>
+                        <div class="acc-bench">
+                            <div class="acc-bench-val">No active ads found</div>
+                            <div class="acc-bench-label">Advertising Activity</div>
+                            <div class="acc-bench-src">Based on Meta Ad Library check</div>
+                        </div>
+                        <div class="acc-bench">
+                            <div class="acc-bench-val">No LinkedIn or YouTube presence</div>
+                            <div class="acc-bench-label">Social Media Presence</div>
+                            <div class="acc-bench-src">Based on social media analysis</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <div class="brief-inline-cta sr">
-        <div class="brief-container">
-            <p>Seen enough? Let&#x27;s talk.</p>
-            <a href="./book/" class="brief-inline-cta-btn">Yes, I Want to Learn More</a>
+        <div class="accordion" id="acc-current-state">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-current-state-body">
+                <div class="accordion-left">
+                    <div class="accordion-icon">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                    </div>
+                    <div class="accordion-label">
+                        <h3>Current State</h3>
+                        <p>Side-by-side comparison of your infrastructure vs. top-performing funds</p>
+                    </div>
+                </div>
+                <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="accordion-body" id="acc-current-state-body">
+                <div class="accordion-content">
+                    <div class="acc-compare-area-label">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                        Website
+                    </div>
+                    <div class="acc-compare-row">
+                        <div class="acc-compare-card">
+                            <div class="acc-compare-col-label">You</div>
+                            <p>Basic informational website with limited engagement features.</p>
+                        </div>
+                        <div class="acc-compare-card them">
+                            <div class="acc-compare-col-label">Top Funds</div>
+                            <p>Interactive websites with investor portals and detailed fund information.</p>
+                        </div>
+                    </div>
+                    <div class="acc-compare-area-label">
+                        <svg viewBox="0 0 24 24"><path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/></svg>
+                        Funnel
+                    </div>
+                    <div class="acc-compare-row">
+                        <div class="acc-compare-card">
+                            <div class="acc-compare-col-label">You</div>
+                            <p>Relies on direct contact through &#x27;Contact Us&#x27; page.</p>
+                        </div>
+                        <div class="acc-compare-card them">
+                            <div class="acc-compare-col-label">Top Funds</div>
+                            <p>s automated lead nurturing and follow-up processes.</p>
+                        </div>
+                    </div>
+                    <div class="acc-compare-area-label">
+                        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+                        Content
+                    </div>
+                    <div class="acc-compare-row">
+                        <div class="acc-compare-card">
+                            <div class="acc-compare-col-label">You</div>
+                            <p>Focuses on mission and expertise in Hudson Valley.</p>
+                        </div>
+                        <div class="acc-compare-card them">
+                            <div class="acc-compare-col-label">Top Funds</div>
+                            <p>Shares success stories and detailed investment opportunities.</p>
+                        </div>
+                    </div>
+                    <div class="acc-compare-area-label">
+                        <svg viewBox="0 0 24 24"><path d="M17 2h4v4"/><path d="M21 2l-7 7"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><path d="M17.5 21h-11A2.5 2.5 0 014 18.5V6a2 2 0 012-2h2"/></svg>
+                        Social
+                    </div>
+                    <div class="acc-compare-row">
+                        <div class="acc-compare-card">
+                            <div class="acc-compare-col-label">You</div>
+                            <p>No active social media presence.</p>
+                        </div>
+                        <div class="acc-compare-card them">
+                            <div class="acc-compare-col-label">Top Funds</div>
+                            <p>Engages audiences through active social media campaigns.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion" id="acc-opportunities">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-opportunities-body">
+                <div class="accordion-left">
+                    <div class="accordion-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                    </div>
+                    <div class="accordion-label">
+                        <h3>Opportunities</h3>
+                        <p>Hudson Valley Migration Story Amplification and 3 more</p>
+                    </div>
+                </div>
+                <span class="accordion-badge">4 opportunities</span>
+                <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="accordion-body" id="acc-opportunities-body">
+                <div class="accordion-content">
+                    <div class="acc-opportunity">
+                        <h4>Hudson Valley Migration Story Amplification</h4>
+                        <p>Arena&#x27;s post-COVID demographic thesis aligns with documented 23% population growth in Hudson Valley counties since 2020. Strategic content highlighting this migration trend could position Arena as the definitive Hudson Valley experts to potential partners.</p>
+                        <div class="acc-impact">
+                            <span class="acc-impact-val">15-25% increase in qualified partner inquiries</span>
+                            <span class="acc-impact-basis">Similar migration-focused positioning campaigns for regional specialists, Census Bureau Hudson Valley growth data</span>
+                        </div>
+                    </div>
+                    <div class="acc-opportunity">
+                        <h4>Value-Add Repositioning Case Studies</h4>
+                        <p>Arena&#x27;s focus on mismanaged and underperforming assets creates natural before/after transformation stories. Documenting their renovation and modernization process could demonstrate operational expertise to institutional partners.</p>
+                        <div class="acc-impact">
+                            <span class="acc-impact-val">20-30% improvement in partner confidence metrics</span>
+                            <span class="acc-impact-basis">Case study performance data from similar value-add real estate firms</span>
+                        </div>
+                    </div>
+                    <div class="acc-opportunity">
+                        <h4>NYC-to-Hudson Valley Expertise Bridge</h4>
+                        <p>Arena&#x27;s principals bring NYC market experience to Hudson Valley opportunities. Positioning this as &#x27;big city expertise, small town values&#x27; could differentiate them from purely local or purely institutional competitors.</p>
+                        <div class="acc-impact">
+                            <span class="acc-impact-val">10-20% increase in partner meeting conversion</span>
+                            <span class="acc-impact-basis">Positioning analysis of successful regional real estate funds with metropolitan expertise</span>
+                        </div>
+                    </div>
+                    <div class="acc-opportunity">
+                        <h4>Mixed-Use Property Specialization</h4>
+                        <p>Arena&#x27;s focus on residential, mixed-use, and retail creates portfolio diversification within single assets. This multi-income stream approach could appeal to partners seeking recession-resistant investments.</p>
+                        <div class="acc-impact">
+                            <span class="acc-impact-val">25-35% increase in partner retention discussions</span>
+                            <span class="acc-impact-basis">Mixed-use property performance data during economic downturns, partner preference surveys</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion" id="acc-bottlenecks">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-bottlenecks-body">
+                <div class="accordion-left">
+                    <div class="accordion-icon">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>
+                    </div>
+                    <div class="accordion-label">
+                        <h3>Bottleneck Analysis</h3>
+                        <p>Limited digital engagement</p>
+                    </div>
+                </div>
+                <span class="accordion-badge">4 bottlenecks</span>
+                <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="accordion-body" id="acc-bottlenecks-body">
+                <div class="accordion-content">
+                    <div class="acc-bottleneck">
+                        <div class="acc-bottleneck-problem">Limited digital engagement</div>
+                        <div class="acc-bottleneck-cost">Potential loss of new LP conversations due to lack of online visibility.</div>
+                        <div class="acc-bottleneck-fix"><strong>Fix:</strong> Develop a strategic online presence with targeted outreach campaigns.</div>
+                    </div>
+                    <div class="acc-bottleneck">
+                        <div class="acc-bottleneck-problem">Slow lead follow-up</div>
+                        <div class="acc-bottleneck-cost">Missed opportunities as leads are not contacted promptly.</div>
+                        <div class="acc-bottleneck-fix"><strong>Fix:</strong> Implement a system to ensure leads are contacted within 5 minutes.</div>
+                    </div>
+                    <div class="acc-bottleneck">
+                        <div class="acc-bottleneck-problem">No retargeting strategy</div>
+                        <div class="acc-bottleneck-cost">Existing LPs and past conversations are not reminded of fundraising efforts.</div>
+                        <div class="acc-bottleneck-fix"><strong>Fix:</strong> Deploy retargeting campaigns to engage past and existing investors.</div>
+                    </div>
+                    <div class="acc-bottleneck">
+                        <div class="acc-bottleneck-problem">Lack of content variety</div>
+                        <div class="acc-bottleneck-cost">Reduced investor interest due to limited content showcasing successes.</div>
+                        <div class="acc-bottleneck-fix"><strong>Fix:</strong> Create and distribute content highlighting successful investments and case studies.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
     </div>
 
-    <section class="brief-section">
+    <div class="accordion-group">
         <div class="brief-container">
-            <span class="brief-section-num sr">03 / Current State</span>
-            <h2 class="sr">Where you stand today.</h2>
-            <div class="brief-compare-grid">
-                    <div class="brief-compare-row sr">
-                        <div class="brief-compare-area">
-                            <div class="brief-compare-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></div>
-                            <span>Website &amp; Funnel</span>
-                        </div>
-                        <div class="brief-compare-you">
-                            <div class="brief-compare-col-label">You</div>
-                            <p>No website presence detected.</p>
-                        </div>
-                        <div class="brief-compare-them">
-                            <div class="brief-compare-col-label">Top Funds</div>
-                            <p>Comprehensive websites with investor portals and fund performance data.</p>
-                        </div>
+            <div class="accordion-group-label">Ready-to-Use Assets</div>
+        <div class="accordion" id="acc-ad-scripts">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-ad-scripts-body">
+                <div class="accordion-left">
+                    <div class="accordion-icon">
+                        <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                     </div>
-                    <div class="brief-compare-row sr">
-                        <div class="brief-compare-area">
-                            <div class="brief-compare-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
-                            <span>Paid Media</span>
-                        </div>
-                        <div class="brief-compare-you">
-                            <div class="brief-compare-col-label">You</div>
-                            <p>No active marketing outreach campaigns.</p>
-                        </div>
-                        <div class="brief-compare-them">
-                            <div class="brief-compare-col-label">Top Funds</div>
-                            <p>Strategic engagement through targeted digital outreach.</p>
-                        </div>
-                    </div>
-                    <div class="brief-compare-row sr">
-                        <div class="brief-compare-area">
-                            <div class="brief-compare-icon"><svg viewBox="0 0 24 24"><path d="M17 2h4v4"/><path d="M21 2l-7 7"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><path d="M17.5 21h-11A2.5 2.5 0 014 18.5V6a2 2 0 012-2h2"/></svg></div>
-                            <span>Social Media</span>
-                        </div>
-                        <div class="brief-compare-you">
-                            <div class="brief-compare-col-label">You</div>
-                            <p>No LinkedIn or YouTube presence detected.</p>
-                        </div>
-                        <div class="brief-compare-them">
-                            <div class="brief-compare-col-label">Top Funds</div>
-                            <p>Active social media presence to engage with potential investors.</p>
-                        </div>
-                    </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="brief-inline-cta sr">
-        <div class="brief-container">
-            <p>Want to walk through these gaps together?</p>
-            <a href="./book/" class="brief-inline-cta-btn">Yes, I Want to Learn More</a>
-        </div>
-    </div>
-
-    <section class="brief-section">
-        <div class="brief-container">
-            <span class="brief-section-num sr">04 / Opportunities</span>
-            <h2 class="sr">Where the upside is.</h2>
-            <div class="brief-opportunities">
-                <div class="brief-opportunity sr">
-                    <h3>Strategic Investor Outreach</h3>
-                    <p class="brief-opportunity-desc">Develop a targeted outreach strategy to engage potential institutional investors through personalized communication.</p>
-                    <div class="brief-impact">
-                        <div class="brief-impact-value">10-15 qualified LP engagements/month</div>
-                        <div class="brief-impact-basis">Based on industry benchmarks for similar-sized funds.</div>
+                    <div class="accordion-label">
+                        <h3>Ad Scripts</h3>
+                        <p>Ready-to-film scripts for Meta</p>
                     </div>
                 </div>
-                <div class="brief-opportunity sr">
-                    <h3>Digital Presence Enhancement</h3>
-                    <p class="brief-opportunity-desc">Establish a robust online presence to improve visibility and credibility among potential investors.</p>
-                    <div class="brief-impact">
-                        <div class="brief-impact-value">20%-30% increase in investor inquiries</div>
-                        <div class="brief-impact-basis">Based on digital engagement improvements observed in peer funds.</div>
+                <span class="accordion-badge">2 scripts</span>
+                <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="accordion-body" id="acc-ad-scripts-body">
+                <div class="accordion-content">
+                    <div class="acc-script">
+                        <div class="acc-script-meta">
+                            <span class="acc-pill">Meta</span>
+                            <span class="acc-pill">Video (talking head)</span>
+                        </div>
+                        <div class="acc-seg">
+                            <div class="acc-seg-label">Hook</div>
+                            <p>While everyone was talking about the great NYC exodus, Arena Capital Partners was buying buildings in the towns where those people actually moved.</p>
+                        </div>
+                        <div class="acc-seg">
+                            <div class="acc-seg-label">Body</div>
+                            <p>Founded in 2021, Arena saw the Hudson Valley demographic shift before it became obvious. Their principals brought 40+ years and nearly $1 billion in NYC real estate experience to undervalued markets just 90 minutes north. They&#x27;re not chasing trends. They&#x27;re buying mismanaged properties in towns that gained 23% population growth since COVID, renovating them with big-city standards, and creating value through the kind of repositioning that only works when you truly understand both markets.</p>
+                        </div>
+                        <div class="acc-seg">
+                            <div class="acc-seg-label">CTA</div>
+                            <p>If you&#x27;re looking at real estate opportunities that benefit from demographic shifts rather than fight them, Arena&#x27;s approach might interest you.</p>
+                        </div>
+                    </div>
+                    <div class="acc-script">
+                        <div class="acc-script-meta">
+                            <span class="acc-pill">Meta</span>
+                            <span class="acc-pill">Video (UGC style)</span>
+                        </div>
+                        <div class="acc-seg">
+                            <div class="acc-seg-label">Hook</div>
+                            <p>A real estate fund that launched right when everyone said real estate was dead? Arena Capital Partners timed it perfectly.</p>
+                        </div>
+                        <div class="acc-seg">
+                            <div class="acc-seg-label">Body</div>
+                            <p>2021 seemed like the worst time to start a real estate fund. But Arena&#x27;s founders saw something others missed: the massive population shift from NYC to Hudson Valley wasn&#x27;t temporary. It was permanent. They positioned themselves in charming downtowns and mixed-use properties that would benefit from this migration. Three years later, their thesis is playing out exactly as predicted. They&#x27;re taking underperforming assets in high-growth markets and applying institutional-grade renovations and management.</p>
+                        </div>
+                        <div class="acc-seg">
+                            <div class="acc-seg-label">CTA</div>
+                            <p>Sometimes the best opportunities come disguised as bad timing. Arena proves that thesis-driven investing beats market timing.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <div class="brief-inline-cta sr">
-        <div class="brief-container">
-            <p>Ready to build this?</p>
-            <a href="./book/" class="brief-inline-cta-btn">Yes, I Want to Learn More</a>
-        </div>
-    </div>
-
-    <section class="brief-section">
-        <div class="brief-container">
-            <span class="brief-section-num sr">05 / Ready-to-Use Assets</span>
-            <h2 class="sr">Work product you can execute today.</h2>
-            <h3 class="sr" style="margin-top: 24px; margin-bottom: 16px;">outreach scripts</h3>
-            <div class="brief-ad-scripts">
-                <div class="brief-ad-script sr">
-                    <div class="brief-ad-meta">
-                        <span class="brief-ad-pill">LinkedIn</span>
-                        <span class="brief-ad-pill">Video — talking head, 60-90 sec</span>
+        <div class="accordion" id="acc-email-sequence">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-email-sequence-body">
+                <div class="accordion-left">
+                    <div class="accordion-icon">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
                     </div>
-                    <div class="brief-ad-audience"><strong>Audience:</strong> Institutional investors, 40-60, interested in hedge funds</div>
-                    <div class="brief-script-segments">
-                        <div class="brief-script-segment">
-                            <div class="brief-seg-label">Hook</div>
-                            <p>Are you looking for a hedge fund with proven performance?</p>
-                        </div>
-                        <div class="brief-script-segment">
-                            <div class="brief-seg-label">Body</div>
-                            <p>Arene Capital Partners LP has consistently delivered exceptional returns. Our strategic approach and experienced team set us apart.</p>
-                        </div>
-                        <div class="brief-script-segment">
-                            <div class="brief-seg-label">CTA</div>
-                            <p>Contact us to learn more about our investment opportunities.</p>
-                        </div>
-                    </div>
-                    <div class="brief-production-notes">
-                        <div class="brief-production-notes-label">Production Notes</div>
-                        <p>Ensure professional lighting and sound quality. Use Arene Capital branding throughout.</p>
+                    <div class="accordion-label">
+                        <h3>Email Sequence</h3>
+                        <p>The Hudson Valley migration nobody saw coming</p>
                     </div>
                 </div>
-            </div>
-            <h3 class="sr" style="margin-top: 36px; margin-bottom: 16px;">Investor Email Sequence</h3>
-            <div class="brief-emails">
-                <div class="brief-email sr">
-                    <div class="brief-email-header">
-                        <span class="brief-email-num">Email 1</span>
-                        <span class="brief-email-timing">Immediately after application</span>
-                    </div>
-                    <div class="brief-email-subject">Welcome to Arene Capital Partners LP</div>
-                    <div class="brief-email-body">Dear {{first_name}},
+                <span class="accordion-badge">4 emails</span>
+                <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="accordion-body" id="acc-email-sequence-body">
+                <div class="accordion-content">
+                    <div class="acc-email">
+                        <div class="acc-email-header">
+                            <span class="acc-email-num">Email 1</span>
+                            <span class="acc-email-timing">Day 1</span>
+                        </div>
+                        <div class="acc-email-subject">The Hudson Valley migration nobody saw coming</div>
+                        <div class="acc-email-body">Alexandra,
 
-Thank you for your interest in Arene Capital Partners LP. We are excited to share our fund&#x27;s performance and opportunities with you.
+While most real estate funds were scrambling in 2021, Arena Capital Partners was buying buildings in Hudson Valley towns that gained 23% population growth.
 
-Best regards,
-Alexandra Engler</div>
-                    <div class="brief-email-purpose">Introduce the fund and build initial rapport.</div>
-                </div>
-                <div class="brief-email sr">
-                    <div class="brief-email-header">
-                        <span class="brief-email-num">Email 2</span>
-                        <span class="brief-email-timing">Day 3</span>
-                    </div>
-                    <div class="brief-email-subject">Discover Arene Capital&#x27;s Investment Strategy</div>
-                    <div class="brief-email-body">Dear {{first_name}},
+Your timing wasn&#x27;t lucky. It was calculated.
 
-Arene Capital Partners LP employs a strategic approach to hedge fund management, focusing on risk-adjusted returns.
+The post-COVID exodus from NYC wasn&#x27;t random. People moved to specific places for specific reasons: affordability, space, quality of life. Arena positioned itself in exactly those markets.
+
+Now you&#x27;re renovating underperforming assets with NYC-level standards in markets where demand fundamentally shifted in your favor.
+
+Tomorrow I&#x27;ll show you how three other funds missed this same opportunity and what that means for Arena&#x27;s competitive position.
 
 Best,
-Alexandra Engler</div>
-                    <div class="brief-email-purpose">Build credibility + deliver fund thesis.</div>
-                </div>
-            </div>
-            <h3 class="sr" style="margin-top: 36px; margin-bottom: 16px;">Investor Acquisition Funnel</h3>
-            <p class="brief-funnel-overview sr">Arene Capital&#x27;s funnel strategy focuses on engaging potential investors through a structured digital journey.</p>
-            <div class="brief-funnel-stages">
-                <div class="brief-funnel-stage sr">
-                    <h3>Landing Page</h3>
-                    <ul class="brief-funnel-elements">
-                        <li>Fund thesis video (90 sec)</li>
-                        <li>Track record highlights</li>
-                        <li>Accreditation qualifier</li>
-                    </ul>
-                </div>
-                <div class="brief-funnel-connector"></div>
-                <div class="brief-funnel-stage sr">
-                    <h3>Investor Engagement</h3>
-                    <ul class="brief-funnel-elements">
-                        <li>Personalized outreach emails</li>
-                        <li>Scheduled follow-up calls</li>
-                        <li>Investor webinars</li>
-                    </ul>
+[Name]
+
+P.S. The demographic data from 2021-2024 tells a story most people still don&#x27;t understand. Arena does.</div>
+                    </div>
+                    <div class="acc-email">
+                        <div class="acc-email-header">
+                            <span class="acc-email-num">Email 2</span>
+                            <span class="acc-email-timing">Day 2</span>
+                        </div>
+                        <div class="acc-email-subject">Why mixed-use beats pure residential (Hudson Valley edition)</div>
+                        <div class="acc-email-body">Alexandra,
+
+Most real estate funds pick a lane: residential OR commercial OR retail.
+
+Arena picks buildings that combine all three.
+
+Smart move in Hudson Valley markets where downtown revitalization means mixed-use properties capture multiple income streams from the same demographic shift.
+
+When NYC transplants move to Hudson Valley towns, they need places to live AND places to shop AND places to work. Arena&#x27;s mixed-use focus means you&#x27;re not betting on just one of those trends.
+
+You&#x27;re betting on all of them.
+
+The risk diversification is obvious. The upside concentration is less obvious but more valuable.
+
+Wednesday: the operational advantage most funds miss when they focus on single-use properties.
+
+Best,
+[Name]</div>
+                    </div>
+                    <div class="acc-email">
+                        <div class="acc-email-header">
+                            <span class="acc-email-num">Email 3</span>
+                            <span class="acc-email-timing">Day 3</span>
+                        </div>
+                        <div class="acc-email-subject">40 years of NYC experience in Hudson Valley markets</div>
+                        <div class="acc-email-body">Alexandra,
+
+Arena&#x27;s principals didn&#x27;t stumble into Hudson Valley real estate.
+
+They brought 40+ years and nearly $1 billion in NYC transactional experience to markets that needed exactly that expertise.
+
+Most Hudson Valley operators understand local markets but lack institutional-grade renovation and management capabilities.
+
+Most institutional operators have the capital and systems but don&#x27;t understand small-town market dynamics.
+
+Arena bridges both.
+
+You&#x27;re applying big-city standards to small-town opportunities in markets where the demographic fundamentals shifted permanently in your favor.
+
+That&#x27;s not just a competitive advantage. It&#x27;s a structural one.
+
+Thursday: why the &#x27;mismanaged property&#x27; strategy works better in migration markets than established ones.
+
+Best,
+[Name]
+
+P.S. Experience matters most when you&#x27;re the first to apply it in a new market.</div>
+                    </div>
+                    <div class="acc-email">
+                        <div class="acc-email-header">
+                            <span class="acc-email-num">Email 4</span>
+                            <span class="acc-email-timing">Day 4</span>
+                        </div>
+                        <div class="acc-email-subject">The mismanaged property advantage</div>
+                        <div class="acc-email-body">Alexandra,
+
+Arena targets mismanaged, underperforming, and vacant properties for a reason.
+
+In stable markets, those properties are usually mismanaged for good reasons: difficult locations, structural problems, or market limitations.
+
+In growth markets like post-COVID Hudson Valley, they&#x27;re usually mismanaged because previous owners didn&#x27;t anticipate the demographic shift.
+
+That creates Arena&#x27;s opportunity.
+
+You&#x27;re buying assets at discounts that reflect old market conditions and repositioning them for new market realities.
+
+The value creation isn&#x27;t just operational improvement. It&#x27;s market timing applied to individual assets.
+
+Most funds either buy premium properties at premium prices or distressed properties in distressed markets.
+
+Arena buys distressed properties in premium markets.
+
+That&#x27;s the difference.
+
+Best,
+[Name]</div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+        </div>
+    </div>
 
     <section class="brief-section">
         <div class="brief-container">
-            <span class="brief-section-num sr">06 / 90-Day Roadmap</span>
-            <h2 class="sr">How to execute this.</h2>
-            <div class="brief-roadmap">
-                <div class="brief-phase sr">
-                    <div class="brief-phase-header">
-                        <span class="brief-phase-name">Foundation</span>
-                        <span class="brief-phase-timeframe">Days 1-30</span>
-                    </div>
-                    <ul class="brief-phase-actions">
-                        <li>Develop comprehensive digital strategy</li>
-                        <li>Establish LinkedIn presence</li>
-                        <li>Create investor engagement content</li>
-                    </ul>
-                    <div class="brief-phase-milestone"><strong>Milestone:</strong> Digital strategy and initial content ready for launch.</div>
-                </div>
-                <div class="brief-phase sr">
-                    <div class="brief-phase-header">
-                        <span class="brief-phase-name">Engagement</span>
-                        <span class="brief-phase-timeframe">Days 31-60</span>
-                    </div>
-                    <ul class="brief-phase-actions">
-                        <li>Launch targeted outreach campaigns</li>
-                        <li>Host investor webinars</li>
-                        <li>Monitor engagement metrics</li>
-                    </ul>
-                    <div class="brief-phase-milestone"><strong>Milestone:</strong> Increased investor engagement and inquiries.</div>
-                </div>
+            <span class="brief-section-num sr">02 / Video Walkthrough</span>
+            <h2 class="sr">See the full breakdown.</h2>
+            <div class="brief-vsl-wrap sr">
+                <iframe src="https://fast.wistia.com/embed/medias/pqzibiagya" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </section>
-
-    <div class="brief-inline-cta sr">
-        <div class="brief-container">
-            <p>Want us to execute this for you?</p>
-            <a href="./book/" class="brief-inline-cta-btn">Yes, I Want to Learn More</a>
-        </div>
-    </div>
 
     <section class="brief-cta">
         <div class="brief-container">
@@ -395,6 +605,17 @@ Alexandra Engler</div>
         });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.sr').forEach(function(el) { observer.observe(el); });
+
+    // Accordion toggle
+    document.querySelectorAll('.accordion-trigger').forEach(function(trigger) {
+        trigger.addEventListener('click', function() {
+            var accordion = this.closest('.accordion');
+            var isOpen = accordion.classList.contains('open');
+            var expanded = !isOpen;
+            accordion.classList.toggle('open');
+            this.setAttribute('aria-expanded', expanded);
+        });
+    });
 })();
 </script>
 </body>
