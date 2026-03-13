@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Antimony: The Critical Mineral Most Investors Haven't Heard Of | Antimony Resources Corp.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #0c0c0c;
+            --bg-s: #111111;
+            --card: #151515;
+            --text: #f5f5f0;
+            --text-s: #8a8a82;
+            --gold: #c9a96e;
+            --gold-l: #d4b87a;
+            --border: rgba(255,255,255,0.06);
+            --border-l: rgba(255,255,255,0.10);
+            --red: #e74c3c;
+        }
+        html { font-size: 16px; scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        a { color: inherit; text-decoration: none; }
+
+        .lp-container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+        /* ── Nav ── */
+        .lp-nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(12,12,12,0.92);
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 14px 0;
+        }
+        .lp-nav .lp-container { display: flex; align-items: center; justify-content: space-between; }
+        .lp-nav-logo img { height: 22px; width: auto; }
+        .lp-nav-cta {
+            font-size: 0.78rem; font-weight: 600; letter-spacing: 0.02em;
+            background: var(--gold); color: #0c0c0c; padding: 8px 20px;
+            border-radius: 100px; transition: opacity 0.2s;
+        }
+        .lp-nav-cta:hover { opacity: 0.85; }
+
+        /* ── Hero ── */
+        .lp-hero { padding: 140px 0 60px; text-align: center; }
+        .lp-hero-eyebrow {
+            font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em;
+            text-transform: uppercase; color: var(--gold); margin-bottom: 20px;
+        }
+        .lp-hero h1 {
+            font-size: 2.4rem; font-weight: 800; line-height: 1.15;
+            margin-bottom: 20px; max-width: 620px; margin-left: auto; margin-right: auto;
+        }
+        .lp-hero-sub {
+            font-size: 1.05rem; color: var(--text-s); max-width: 540px;
+            margin: 0 auto 36px; line-height: 1.6;
+        }
+        .lp-hero-cta {
+            display: inline-block; background: var(--gold); color: #0c0c0c;
+            font-size: 1rem; font-weight: 700; padding: 16px 40px;
+            border-radius: 100px; transition: transform 0.2s, opacity 0.2s;
+        }
+        .lp-hero-cta:hover { transform: translateY(-1px); opacity: 0.9; }
+        .lp-hero-friction {
+            font-size: 0.78rem; color: var(--text-s); margin-top: 12px;
+        }
+
+        @media (max-width: 640px) {
+            .lp-hero h1 { font-size: 1.7rem; }
+            .lp-hero { padding: 120px 0 48px; }
+        }
+
+        /* ── Stats Bar ── */
+        .lp-stats {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+            padding: 32px 0;
+        }
+        .lp-stat { text-align: center; }
+        .lp-stat:not(:last-child) { border-right: 1px solid var(--border); }
+        .lp-stat-val { font-size: 1.4rem; font-weight: 700; color: var(--gold); margin-bottom: 4px; }
+        .lp-stat-label { font-size: 0.72rem; font-weight: 500; color: var(--text-s); text-transform: uppercase; letter-spacing: 0.08em; }
+
+        @media (max-width: 640px) {
+            .lp-stats { grid-template-columns: 1fr; gap: 24px; }
+            .lp-stat:not(:last-child) { border-right: none; border-bottom: 1px solid var(--border); padding-bottom: 24px; }
+        }
+
+        /* ── Section ── */
+        .lp-section { padding: 64px 0; }
+        .lp-section-label {
+            font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em;
+            text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
+        }
+        .lp-section h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 16px; line-height: 1.25; }
+        .lp-section p { color: var(--text-s); font-size: 0.95rem; line-height: 1.7; margin-bottom: 16px; }
+        .lp-section p:last-child { margin-bottom: 0; }
+
+        /* ── Problem/Opportunity Cards ── */
+        .lp-cards { display: grid; gap: 12px; margin-top: 24px; }
+        .lp-card {
+            background: var(--card); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px;
+        }
+        .lp-card h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 8px; }
+        .lp-card p { font-size: 0.88rem; color: var(--text-s); line-height: 1.6; margin: 0; }
+        .lp-card-highlight {
+            font-size: 0.82rem; font-weight: 600; color: var(--gold);
+            margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border);
+        }
+
+        /* ── Comparison ── */
+        .lp-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
+        .lp-compare-col {
+            background: var(--card); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px;
+        }
+        .lp-compare-col.highlight { border-color: rgba(201,169,110,0.3); }
+        .lp-compare-header {
+            font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em;
+            text-transform: uppercase; color: var(--text-s); margin-bottom: 16px;
+        }
+        .lp-compare-col.highlight .lp-compare-header { color: var(--gold); }
+        .lp-compare-item { font-size: 0.88rem; color: var(--text-s); line-height: 1.6; margin-bottom: 12px; padding-left: 20px; position: relative; }
+        .lp-compare-item:last-child { margin-bottom: 0; }
+        .lp-compare-item::before { content: ''; position: absolute; left: 0; top: 8px; width: 8px; height: 8px; border-radius: 50%; }
+        .lp-compare-col:not(.highlight) .lp-compare-item::before { background: var(--red); opacity: 0.6; }
+        .lp-compare-col.highlight .lp-compare-item::before { background: var(--gold); }
+
+        @media (max-width: 640px) { .lp-compare { grid-template-columns: 1fr; } }
+
+        /* ── Qualification ── */
+        .lp-qual { margin-top: 24px; }
+        .lp-qual-row {
+            display: flex; align-items: flex-start; gap: 12px;
+            padding: 14px 0; border-bottom: 1px solid var(--border);
+            font-size: 0.9rem; color: var(--text-s);
+        }
+        .lp-qual-row:last-child { border-bottom: none; }
+        .lp-qual-icon { font-size: 1rem; min-width: 20px; text-align: center; }
+
+        /* ── CTA Section ── */
+        .lp-cta-section {
+            text-align: center; padding: 80px 0;
+            border-top: 1px solid var(--border);
+        }
+        .lp-cta-section h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 12px; }
+        .lp-cta-section p { color: var(--text-s); font-size: 0.95rem; max-width: 480px; margin: 0 auto 32px; }
+        .lp-cta-btn {
+            display: inline-block; background: var(--gold); color: #0c0c0c;
+            font-size: 1rem; font-weight: 700; padding: 16px 48px;
+            border-radius: 100px; transition: transform 0.2s, opacity 0.2s;
+        }
+        .lp-cta-btn:hover { transform: translateY(-1px); opacity: 0.9; }
+        .lp-cta-sub { font-size: 0.78rem; color: var(--text-s); margin-top: 12px; }
+
+        /* ── Footer ── */
+        .lp-footer {
+            border-top: 1px solid var(--border); padding: 24px 0;
+            text-align: center;
+        }
+        .lp-footer img { height: 18px; margin-bottom: 8px; opacity: 0.5; }
+        .lp-footer p { font-size: 0.7rem; color: var(--text-s); }
+
+        /* ── Scroll Reveal ── */
+        .sr { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .sr.visible { opacity: 1; transform: none; }
+
+        /* ── Divider ── */
+        .lp-divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+    </style>
+</head>
+<body>
+<div class="page" id="page">
+
+    <nav class="lp-nav">
+        <div class="lp-container">
+            <a href="../../../index.html" class="lp-nav-logo">
+                <img src="../../../logo.svg" alt="JustScale">
+            </a>
+            <a href="../book/" class="lp-nav-cta">Request Info</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="lp-hero">
+        <div class="lp-container">
+            <div class="lp-hero-eyebrow sr">Accredited Investors Only</div>
+            <h1 class="sr">China Controls 85% of Antimony. The Pentagon Just Called It a Critical Mineral.</h1>
+            <p class="lp-hero-sub sr">Antimony Resources Corp. is developing North American antimony production at the exact moment defense contractors and EV manufacturers are scrambling for supply. Here is why that matters for your portfolio.</p>
+            <a href="../book/" class="lp-hero-cta sr">See the Investment Overview</a>
+            <p class="lp-hero-friction sr">15-minute call. No commitment. Accredited investors only.</p>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <div class="lp-container">
+        <div class="lp-stats sr">
+            <div class="lp-stat">
+                <div class="lp-stat-val">228%</div>
+                <div class="lp-stat-label">Price Surge Since 2020</div>
+            </div>
+            <div class="lp-stat">
+                <div class="lp-stat-val">85%</div>
+                <div class="lp-stat-label">China's Global Supply Share</div>
+            </div>
+            <div class="lp-stat">
+                <div class="lp-stat-val">$8M</div>
+                <div class="lp-stat-label">Current Raise Target</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- THE PROBLEM -->
+    <section class="lp-section">
+        <div class="lp-container">
+            <div class="lp-section-label sr">The Supply Chain Problem</div>
+            <h2 class="sr">The U.S. imports 87% of its antimony. China just restricted exports.</h2>
+            <p class="sr">Antimony is in ammunition, flame retardants, night vision goggles, and next-generation EV batteries. It is not optional for the defense industry. It is not optional for battery manufacturers. And right now, almost all of it comes from one country that is actively restricting supply.</p>
+            <p class="sr">The Pentagon responded by adding antimony to the critical minerals list. The Defense Production Act now gives preferential contracts to domestic suppliers. That changes the math for every North American antimony producer.</p>
+        </div>
+    </section>
+
+    <hr class="lp-divider">
+
+    <!-- THE OPPORTUNITY -->
+    <section class="lp-section">
+        <div class="lp-container">
+            <div class="lp-section-label sr">The Opportunity</div>
+            <h2 class="sr">North American antimony production at the intersection of defense and clean energy.</h2>
+            <div class="lp-cards">
+                <div class="lp-card sr">
+                    <h3>Defense Sector Demand</h3>
+                    <p>Defense contractors need antimony for ammunition and military equipment. They cannot rely on Chinese supply chains. Domestic producers get preferential contracts and premium pricing.</p>
+                    <div class="lp-card-highlight">Defense Production Act gives preference to domestic suppliers</div>
+                </div>
+                <div class="lp-card sr">
+                    <h3>EV Battery Market</h3>
+                    <p>Next-generation battery technologies require antimony for improved performance and safety. North American EV production is targeting 50% market share by 2030. Battery manufacturers face the same supply security issues as defense contractors.</p>
+                    <div class="lp-card-highlight">Dual demand driver: defense + clean energy</div>
+                </div>
+                <div class="lp-card sr">
+                    <h3>Canadian Operations</h3>
+                    <p>Antimony Resources chose Canada deliberately. Stable government, clear mining regulations, developed infrastructure, proximity to North American markets. The Fraser Institute ranks Canada in the top 3 globally for mining investment attractiveness.</p>
+                    <div class="lp-card-highlight">12-22% valuation premium for stable jurisdiction projects</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="lp-divider">
+
+    <!-- COMPARISON -->
+    <section class="lp-section">
+        <div class="lp-container">
+            <div class="lp-section-label sr">Why Now</div>
+            <h2 class="sr">The window on North American critical minerals is open. It will not stay open.</h2>
+            <div class="lp-compare">
+                <div class="lp-compare-col sr">
+                    <div class="lp-compare-header">12 Months Ago</div>
+                    <div class="lp-compare-item">Antimony barely on the radar</div>
+                    <div class="lp-compare-item">China exporting freely</div>
+                    <div class="lp-compare-item">No Defense Production Act focus</div>
+                    <div class="lp-compare-item">Limited EV battery demand</div>
+                </div>
+                <div class="lp-compare-col highlight sr">
+                    <div class="lp-compare-header">Today</div>
+                    <div class="lp-compare-item">Pentagon critical mineral designation</div>
+                    <div class="lp-compare-item">China restricting exports</div>
+                    <div class="lp-compare-item">Preferential contracts for domestic producers</div>
+                    <div class="lp-compare-item">Prices up 228% and climbing</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="lp-divider">
+
+    <!-- QUALIFICATION -->
+    <section class="lp-section">
+        <div class="lp-container">
+            <div class="lp-section-label sr">Is This Right for You</div>
+            <h2 class="sr">This opportunity is for accredited investors who:</h2>
+            <div class="lp-qual">
+                <div class="lp-qual-row sr">
+                    <span class="lp-qual-icon">&#10003;</span>
+                    <span>Understand commodity supply chain dynamics and geopolitical risk</span>
+                </div>
+                <div class="lp-qual-row sr">
+                    <span class="lp-qual-icon">&#10003;</span>
+                    <span>Want exposure to critical minerals without taking on single-country risk</span>
+                </div>
+                <div class="lp-qual-row sr">
+                    <span class="lp-qual-icon">&#10003;</span>
+                    <span>Are looking for investments positioned at the intersection of national security and clean energy</span>
+                </div>
+                <div class="lp-qual-row sr">
+                    <span class="lp-qual-icon">&#10003;</span>
+                    <span>Can commit a minimum of $50,000 and have a 3-5 year investment horizon</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MID CTA -->
+    <section class="lp-cta-section">
+        <div class="lp-container">
+            <h2 class="sr">See the full investment overview.</h2>
+            <p class="sr">15-minute call with our team. We walk through the thesis, the numbers, and the timeline. No pressure.</p>
+            <a href="../book/" class="lp-cta-btn sr">Request the Investment Overview</a>
+            <p class="lp-cta-sub sr">Accredited investors only. Reg D 506(b).</p>
+        </div>
+    </section>
+
+    <footer class="lp-footer">
+        <div class="lp-container">
+            <img src="../../../logo.svg" alt="JustScale">
+            <p>&copy; 2026 JustScale. Built for Antimony Resources Corp. All rights reserved.</p>
+            <p style="margin-top: 4px; font-size: 0.65rem;">This page is not an offer to sell securities. Investment opportunities are available only to accredited investors under Regulation D Rule 506(b).</p>
+        </div>
+    </footer>
+
+</div>
+
+<script>
+(function() {
+    var page = document.getElementById('page');
+    if (page) page.classList.add('loaded');
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.sr').forEach(function(el) { observer.observe(el); });
+})();
+</script>
+</body>
+</html>
