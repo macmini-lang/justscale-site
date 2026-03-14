@@ -16,7 +16,105 @@
     <link rel="stylesheet" href="../prospect.css?v=4">
     <script src="https://fast.wistia.com/player.js" async></script>
     <script src="https://fast.wistia.com/embed/pqzibiagya.js" async type="module"></script>
-    <style>wistia-player[media-id='pqzibiagya']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/pqzibiagya/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style>
+    <style>
+        wistia-player[media-id='pqzibiagya']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/pqzibiagya/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }
+        
+/* Accordion System */
+.accordion { border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; background: rgba(255, 255, 255, 0.02); transition: background 0.2s ease; }
+.accordion:hover { background: rgba(255, 255, 255, 0.04); }
+.accordion.open { background: rgba(255, 255, 255, 0.03); }
+.accordion-trigger { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 20px 24px; cursor: pointer; border: none; background: none; color: inherit; font-family: inherit; text-align: left; gap: 16px; }
+.accordion-trigger:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; border-radius: 12px; }
+.accordion-left { display: flex; align-items: center; gap: 16px; flex: 1; min-width: 0; }
+.accordion-icon { width: 40px; height: 40px; min-width: 40px; border-radius: 10px; background: rgba(201, 169, 110, 0.1); display: flex; align-items: center; justify-content: center; }
+.accordion-icon svg { width: 20px; height: 20px; stroke: var(--gold); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.accordion-label { flex: 1; min-width: 0; }
+.accordion-label h3 { font-size: 1rem; font-weight: 600; color: var(--text); margin: 0; line-height: 1.3; }
+.accordion-label p { font-size: 0.82rem; color: var(--text-s); margin: 4px 0 0; line-height: 1.4; }
+.accordion-chevron { width: 20px; height: 20px; min-width: 20px; color: var(--text-s); transition: transform 0.3s ease; }
+.accordion.open .accordion-chevron { transform: rotate(180deg); }
+.accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+.accordion.open .accordion-body { max-height: 4000px; }
+.accordion-content { padding: 0 24px 24px; border-top: 1px solid var(--border); margin-top: 0; padding-top: 20px; }
+.accordion-group { margin: 40px 0; }
+.accordion-group-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; padding-left: 4px; }
+.accordion-badge { font-size: 0.7rem; font-weight: 600; color: var(--gold); background: rgba(201, 169, 110, 0.12); padding: 3px 10px; border-radius: 100px; white-space: nowrap; }
+
+/* Compact Sections Inside Accordions */
+.acc-narrative { color: var(--text-s); line-height: 1.7; font-size: 0.92rem; }
+.acc-narrative p { margin-bottom: 16px; }
+.acc-narrative p:last-child { margin-bottom: 0; }
+.acc-benchmarks { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 20px; }
+.acc-bench { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
+.acc-bench-val { font-size: 1.1rem; font-weight: 700; color: var(--gold); margin-bottom: 4px; }
+.acc-bench-label { font-size: 0.82rem; font-weight: 500; color: var(--text); margin-bottom: 6px; }
+.acc-bench-src { font-size: 0.72rem; color: var(--text-s); }
+
+.acc-compare-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.acc-compare-row:last-child { margin-bottom: 0; }
+.acc-compare-card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
+.acc-compare-card.them { border-color: rgba(201, 169, 110, 0.3); }
+.acc-compare-col-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-s); margin-bottom: 8px; }
+.acc-compare-card.them .acc-compare-col-label { color: var(--gold); }
+.acc-compare-card p { font-size: 0.88rem; color: var(--text); line-height: 1.5; margin: 0; }
+.acc-compare-area-label { font-size: 0.82rem; font-weight: 600; color: var(--text); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+.acc-compare-area-label svg { width: 16px; height: 16px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+
+.acc-opportunity { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 12px; }
+.acc-opportunity:last-child { margin-bottom: 0; }
+.acc-opportunity h4 { font-size: 0.95rem; font-weight: 600; color: var(--text); margin: 0 0 8px; }
+.acc-opportunity p { font-size: 0.88rem; color: var(--text-s); line-height: 1.6; margin: 0 0 12px; }
+.acc-impact { display: flex; flex-direction: column; gap: 4px; padding-top: 12px; border-top: 1px solid var(--border); }
+.acc-impact-val { font-size: 0.88rem; font-weight: 600; color: var(--gold); }
+.acc-impact-basis { font-size: 0.75rem; color: var(--text-s); }
+
+/* Script Segments */
+.acc-script { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 12px; }
+.acc-script:last-child { margin-bottom: 0; }
+.acc-script-meta { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+.acc-pill { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; background: rgba(201, 169, 110, 0.12); color: var(--gold); padding: 4px 12px; border-radius: 100px; }
+.acc-seg { margin-bottom: 12px; }
+.acc-seg:last-child { margin-bottom: 0; }
+.acc-seg-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+.acc-seg p { font-size: 0.88rem; color: var(--text); line-height: 1.6; margin: 0; }
+
+/* Email Cards */
+.acc-email { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 12px; }
+.acc-email:last-child { margin-bottom: 0; }
+.acc-email-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.acc-email-num { font-size: 0.75rem; font-weight: 600; color: var(--gold); }
+.acc-email-timing { font-size: 0.72rem; color: var(--text-s); }
+.acc-email-subject { font-size: 0.88rem; font-weight: 600; color: var(--text); margin-bottom: 10px; }
+.acc-email-body { font-size: 0.84rem; color: var(--text-s); line-height: 1.6; white-space: pre-line; }
+
+/* Funnel Stages */
+.acc-funnel-stage { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; margin-bottom: 8px; }
+.acc-funnel-stage:last-child { margin-bottom: 0; }
+.acc-funnel-stage h4 { font-size: 0.88rem; font-weight: 600; color: var(--text); margin: 0 0 8px; }
+.acc-funnel-stage ul { margin: 0; padding-left: 18px; }
+.acc-funnel-stage li { font-size: 0.82rem; color: var(--text-s); line-height: 1.6; }
+
+/* Bottleneck Analysis */
+.acc-bottleneck { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 12px; }
+.acc-bottleneck:last-child { margin-bottom: 0; }
+.acc-bottleneck-problem { font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+.acc-bottleneck-cost { font-size: 0.88rem; color: #e74c3c; line-height: 1.6; margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+.acc-bottleneck-fix { font-size: 0.88rem; color: var(--text-s); line-height: 1.6; }
+
+/* Section Dividers */
+.brief-section-divider { border: none; border-top: 1px solid var(--border); margin: 48px auto; max-width: 760px; }
+
+/* Responsive */
+@media (max-width: 640px) {
+    .accordion-trigger { padding: 16px 18px; }
+    .accordion-content { padding: 0 18px 18px; }
+    .accordion-icon { width: 36px; height: 36px; min-width: 36px; }
+    .accordion-icon svg { width: 18px; height: 18px; }
+    .acc-compare-row { grid-template-columns: 1fr; }
+    .acc-benchmarks { grid-template-columns: 1fr; }
+}
+
+    </style>
 </head>
 <body>
 <div class="page" id="page">
@@ -59,457 +157,401 @@
         </div>
     </section>
 
-    <div class="brief-flowchart sr">
-        <div class="brief-container">
-            <div class="brief-flow-track brief-flow-current">
-                <div class="brief-flow-label">How it appears you raise now</div>
-                <div class="brief-flow-steps">
-                    <span class="brief-flow-step"> network of 200+ strategic investors</span>
-                        <span class="brief-flow-arrow"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span class="brief-flow-step">Focus on founder and family-led businesses</span>
-                        <span class="brief-flow-arrow"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span class="brief-flow-step">Engage in direct investments and partnerships</span>
-                </div>
-            </div>
-            <div class="brief-flow-vs">vs.</div>
-            <div class="brief-flow-track brief-flow-system">
-                <div class="brief-flow-label">How top-performing funds raise</div>
-                <div class="brief-flow-steps">
-                    <span class="brief-flow-step">Identify target investor profiles</span>
-                        <span class="brief-flow-arrow"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span class="brief-flow-step">Develop strategic engagement plans</span>
-                        <span class="brief-flow-arrow"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span class="brief-flow-step"> Meta and YouTube for outreach</span>
-                        <span class="brief-flow-arrow"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span class="brief-flow-step">Host exclusive investor webinars</span>
-                        <span class="brief-flow-arrow"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span class="brief-flow-step">Implement data-driven follow-ups</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <section class="brief-section">
         <div class="brief-container">
             <span class="brief-section-num sr">01 / The Bottom Line</span>
-            <p class="brief-summary sr">Solamere Paragon operates in the shadow of its parent firm Solamere Capital&#x27;s 200+ investor network and 16-year track record, but faces the classic emerging fund challenge: building independent credibility while competing for the same accredited investor pool. Their 506(b) filing suggests a targeted raise to a known network, yet their digital presence lacks the systematic investor engagement infrastructure that converts warm introductions into committed capital. The firm sits at an inflection point where their Romney-connected pedigree opens doors, but execution gaps may be limiting their ability to close them effectively.</p>
+            <p class="brief-summary sr">Solamere Paragon, LP operates with the strategic advantage of a 200+ investor network spanning major industries, yet their recent 506(b) filing suggests they&#x27;re still building momentum in their current raise. With Tagg Romney&#x27;s leadership and the firm&#x27;s 16-year track record since 2008, they have the foundation to significantly accelerate capital deployment through enhanced digital engagement strategies that complement their existing high-net-worth relationships.</p>
         </div>
     </section>
 
-    <section class="brief-section">
+    <hr class="brief-section-divider">
+
+    <div class="accordion-group">
         <div class="brief-container">
-            <span class="brief-section-num sr">02 / Market Context</span>
-            <h2 class="sr">Where the market is moving.</h2>
-            <div class="brief-narrative sr"><p>Fundraising in private equity is increasingly driven by strategic partnerships and digital engagement. According to the Preqin 2025 Fundraising Report, 70% of funds now incorporate digital channels in their investor outreach strategies. Additionally, the rise of family offices as significant investors has shifted focus towards personalized engagement and long-term value creation. The McKinsey Global Private Markets Review 2025 highlights that funds with digital strategies see a 30% higher engagement rate with potential investors.</p></div>
-            <div class="brief-benchmarks">
-                <div class="brief-benchmark sr">
-                    <div class="brief-benchmark-value">70%</div>
-                    <div class="brief-benchmark-label">Digital Channel Utilization</div>
-                    <div class="brief-benchmark-context">Source: Preqin 2025 Fundraising Report</div>
+            <div class="accordion-group-label">Analysis</div>
+        <div class="accordion" id="acc-market">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-market-body">
+                <div class="accordion-left">
+                    <div class="accordion-icon">
+                        <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    </div>
+                    <div class="accordion-label">
+                        <h3>Market Context</h3>
+                        <p>Solamere Paragon, LP appears to rely heavily on its established network of industry leaders and executives for sourcing ...</p>
+                    </div>
                 </div>
-                <div class="brief-benchmark sr">
-                    <div class="brief-benchmark-value">40% of total commitments</div>
-                    <div class="brief-benchmark-label">Family Office Investment</div>
-                    <div class="brief-benchmark-context">Source: McKinsey Global Private Markets Review 2025</div>
-                </div>
-                <div class="brief-benchmark sr">
-                    <div class="brief-benchmark-value">30%</div>
-                    <div class="brief-benchmark-label">Engagement Rate Increase</div>
-                    <div class="brief-benchmark-context">Source: McKinsey Global Private Markets Review 2025</div>
-                </div>
-            </div>
-            <h3 class="sr" style="margin-bottom: 16px;">What comparable firms are doing</h3>
-            <div class="brief-competitors">
-                <div class="brief-competitor sr">
-                    <div class="brief-competitor-firm">Blackstone</div>
-                    <div class="brief-competitor-obs">Works directly with private wealth managers and family offices to access alternative solutions.</div>
-                </div>
-                <div class="brief-competitor sr">
-                    <div class="brief-competitor-firm">GCM Grosvenor</div>
-                    <div class="brief-competitor-obs">Provides strategic seeding partnerships to help emerging private equity firms scale.</div>
+                <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="accordion-body" id="acc-market-body">
+                <div class="accordion-content">
+                    <div class="acc-narrative"><p>Solamere Paragon, LP appears to rely heavily on its established network of industry leaders and executives for sourcing investment opportunities and raising capital. Their website emphasizes the strength of their network and the strategic focus on long-term investments. However, there is a noticeable absence of digital marketing strategies such as targeted outreach or content marketing, which are commonly used by top-performing funds to systematically acquire new investors. This reliance on traditional methods may limit their reach and efficiency in capital raising compared to competitors who employ more systematic approaches.</p></div>
+                    <div class="acc-benchmarks">
+                        <div class="acc-bench">
+                            <div class="acc-bench-val">6 pages scraped</div>
+                            <div class="acc-bench-label">Website presence</div>
+                            <div class="acc-bench-src">Based on website analysis</div>
+                        </div>
+                        <div class="acc-bench">
+                            <div class="acc-bench-val">No LinkedIn or YouTube presence</div>
+                            <div class="acc-bench-label">Social media presence</div>
+                            <div class="acc-bench-src">Based on social media analysis</div>
+                        </div>
+                        <div class="acc-bench">
+                            <div class="acc-bench-val">No active ads</div>
+                            <div class="acc-bench-label">Ad activity</div>
+                            <div class="acc-bench-src">Based on website analysis</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <div class="brief-inline-cta sr">
-        <div class="brief-container">
-            <p>Seen enough? Let&#x27;s talk.</p>
-            <a href="./book/" class="brief-inline-cta-btn">Yes, I Want to Learn More</a>
+        <div class="accordion" id="acc-current-state">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-current-state-body">
+                <div class="accordion-left">
+                    <div class="accordion-icon">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                    </div>
+                    <div class="accordion-label">
+                        <h3>Current State</h3>
+                        <p>Side-by-side comparison of your infrastructure vs. top-performing funds</p>
+                    </div>
+                </div>
+                <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="accordion-body" id="acc-current-state-body">
+                <div class="accordion-content">
+                    <div class="acc-compare-area-label">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                        website
+                    </div>
+                    <div class="acc-compare-row">
+                        <div class="acc-compare-card">
+                            <div class="acc-compare-col-label">You</div>
+                            <p>Basic informational website with no interactive elements.</p>
+                        </div>
+                        <div class="acc-compare-card them">
+                            <div class="acc-compare-col-label">Top Funds</div>
+                            <p>Interactive websites with detailed investment case studies and LP portals.</p>
+                        </div>
+                    </div>
+                    <div class="acc-compare-area-label">
+                        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+                        content
+                    </div>
+                    <div class="acc-compare-row">
+                        <div class="acc-compare-card">
+                            <div class="acc-compare-col-label">You</div>
+                            <p>Limited content focused on network and strategic focus.</p>
+                        </div>
+                        <div class="acc-compare-card them">
+                            <div class="acc-compare-col-label">Top Funds</div>
+                            <p>Rich content strategy including blogs, whitepapers, and video testimonials.</p>
+                        </div>
+                    </div>
+                    <div class="acc-compare-area-label">
+                        <svg viewBox="0 0 24 24"><path d="M17 2h4v4"/><path d="M21 2l-7 7"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><path d="M17.5 21h-11A2.5 2.5 0 014 18.5V6a2 2 0 012-2h2"/></svg>
+                        social
+                    </div>
+                    <div class="acc-compare-row">
+                        <div class="acc-compare-card">
+                            <div class="acc-compare-col-label">You</div>
+                            <p>No presence on LinkedIn or YouTube.</p>
+                        </div>
+                        <div class="acc-compare-card them">
+                            <div class="acc-compare-col-label">Top Funds</div>
+                            <p>Active social media presence to engage with potential investors.</p>
+                        </div>
+                    </div>
+                    <div class="acc-compare-area-label">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                        paid_media
+                    </div>
+                    <div class="acc-compare-row">
+                        <div class="acc-compare-card">
+                            <div class="acc-compare-col-label">You</div>
+                            <p>No active strategic outreach campaigns.</p>
+                        </div>
+                        <div class="acc-compare-card them">
+                            <div class="acc-compare-col-label">Top Funds</div>
+                            <p>Targeted Meta campaigns to reach accredited investors.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion" id="acc-opportunities">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-opportunities-body">
+                <div class="accordion-left">
+                    <div class="accordion-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                    </div>
+                    <div class="accordion-label">
+                        <h3>Opportunities</h3>
+                        <p>Network Amplification Through Digital Touchpoints and 3 more</p>
+                    </div>
+                </div>
+                <span class="accordion-badge">4 opportunities</span>
+                <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="accordion-body" id="acc-opportunities-body">
+                <div class="accordion-content">
+                    <div class="acc-opportunity">
+                        <h4>Network Amplification Through Digital Touchpoints</h4>
+                        <p>Solamere&#x27;s 200+ strategic investor network represents untapped referral potential. Most private equity firms see 3-5x increase in warm introductions when existing LPs have consistent digital touchpoints with fund updates and market insights.</p>
+                        <div class="acc-impact">
+                            <span class="acc-impact-val">15-25 additional qualified introductions per quarter</span>
+                            <span class="acc-impact-basis">Industry benchmark from PitchBook 2024 LP Relationship Study showing referral rates from engaged vs. passive LPs</span>
+                        </div>
+                    </div>
+                    <div class="acc-opportunity">
+                        <h4>Founder-Led Business Owner Targeting</h4>
+                        <p>Their focus on founder and family-led businesses with $7M+ EBITDA creates a specific acquisition profile. Digital engagement can systematically reach this demographic through industry-specific content and case studies.</p>
+                        <div class="acc-impact">
+                            <span class="acc-impact-val">8-12 new deal flow opportunities per quarter</span>
+                            <span class="acc-impact-basis">Preqin data showing 40% of middle-market deals originate from direct founder outreach vs. intermediary sourcing</span>
+                        </div>
+                    </div>
+                    <div class="acc-opportunity">
+                        <h4>Executive Network Activation</h4>
+                        <p>With current and former CEOs as strategic investors, Solamere can create executive-to-executive introduction pathways. Structured digital engagement increases executive participation in business development by 60%.</p>
+                        <div class="acc-impact">
+                            <span class="acc-impact-val">$2-4M in additional commitments per quarter</span>
+                            <span class="acc-impact-basis">Cambridge Associates study on LP engagement correlation with commitment size increases</span>
+                        </div>
+                    </div>
+                    <div class="acc-opportunity">
+                        <h4>Multi-Strategy Positioning Clarity</h4>
+                        <p>As a multi-strategy firm doing both direct investments and GP partnerships, clear digital positioning can reduce investor confusion and accelerate decision timelines from 6-9 months to 3-6 months.</p>
+                        <div class="acc-impact">
+                            <span class="acc-impact-val">25-40% faster close rates on qualified prospects</span>
+                            <span class="acc-impact-basis">Bain Capital Private Equity Report 2024 on investor decision factors</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion" id="acc-bottlenecks">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-bottlenecks-body">
+                <div class="accordion-left">
+                    <div class="accordion-icon">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>
+                    </div>
+                    <div class="accordion-label">
+                        <h3>Bottleneck Analysis</h3>
+                        <p>Lack of digital engagement</p>
+                    </div>
+                </div>
+                <span class="accordion-badge">4 bottlenecks</span>
+                <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="accordion-body" id="acc-bottlenecks-body">
+                <div class="accordion-content">
+                    <div class="acc-bottleneck">
+                        <div class="acc-bottleneck-problem">Lack of digital engagement</div>
+                        <div class="acc-bottleneck-cost">Potential loss of new LP conversations due to limited reach.</div>
+                        <div class="acc-bottleneck-fix"><strong>Fix:</strong> Implement strategic outreach campaigns to engage a wider audience.</div>
+                    </div>
+                    <div class="acc-bottleneck">
+                        <div class="acc-bottleneck-problem">No retargeting strategies</div>
+                        <div class="acc-bottleneck-cost">Missed opportunities to re-engage past conversations and existing LPs.</div>
+                        <div class="acc-bottleneck-fix"><strong>Fix:</strong> Develop retargeting strategies to keep past and existing investors engaged.</div>
+                    </div>
+                    <div class="acc-bottleneck">
+                        <div class="acc-bottleneck-problem">Limited content strategy</div>
+                        <div class="acc-bottleneck-cost">Reduced investor interest due to lack of informative content.</div>
+                        <div class="acc-bottleneck-fix"><strong>Fix:</strong> Create a content strategy that includes case studies and investment insights.</div>
+                    </div>
+                    <div class="acc-bottleneck">
+                        <div class="acc-bottleneck-problem">Speed to lead</div>
+                        <div class="acc-bottleneck-cost">Delayed follow-up on inbound interest may lead to lost opportunities.</div>
+                        <div class="acc-bottleneck-fix"><strong>Fix:</strong> Ensure leads are contacted within 5 minutes to increase conversion likelihood.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
     </div>
 
-    <section class="brief-section">
+    <div class="accordion-group">
         <div class="brief-container">
-            <span class="brief-section-num sr">03 / Current State</span>
-            <h2 class="sr">Where you stand today.</h2>
-            <div class="brief-compare-grid">
-                    <div class="brief-compare-row sr">
-                        <div class="brief-compare-area">
-                            <div class="brief-compare-icon"><svg viewBox="0 0 24 24"><path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/></svg></div>
-                            <span>Network Engagement</span>
-                        </div>
-                        <div class="brief-compare-you">
-                            <div class="brief-compare-col-label">You</div>
-                            <p>Relies on a network of 200+ strategic investors</p>
-                        </div>
-                        <div class="brief-compare-them">
-                            <div class="brief-compare-col-label">Top Funds</div>
-                            <p>Develops targeted engagement strategies for each investor segment</p>
-                        </div>
+            <div class="accordion-group-label">Ready-to-Use Assets</div>
+        <div class="accordion" id="acc-ad-scripts">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-ad-scripts-body">
+                <div class="accordion-left">
+                    <div class="accordion-icon">
+                        <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                     </div>
-                    <div class="brief-compare-row sr">
-                        <div class="brief-compare-area">
-                            <div class="brief-compare-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></div>
-                            <span>Digital Presence</span>
-                        </div>
-                        <div class="brief-compare-you">
-                            <div class="brief-compare-col-label">You</div>
-                            <p>Minimal online presence with no active social media</p>
-                        </div>
-                        <div class="brief-compare-them">
-                            <div class="brief-compare-col-label">Top Funds</div>
-                            <p>Active digital presence with strategic content distribution</p>
-                        </div>
-                    </div>
-                    <div class="brief-compare-row sr">
-                        <div class="brief-compare-area">
-                            <div class="brief-compare-icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg></div>
-                            <span>Investor Outreach</span>
-                        </div>
-                        <div class="brief-compare-you">
-                            <div class="brief-compare-col-label">You</div>
-                            <p>No structured email campaigns</p>
-                        </div>
-                        <div class="brief-compare-them">
-                            <div class="brief-compare-col-label">Top Funds</div>
-                            <p>s personalized email campaigns for investor updates</p>
-                        </div>
-                    </div>
-                    <div class="brief-compare-row sr">
-                        <div class="brief-compare-area">
-                            <div class="brief-compare-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg></div>
-                            <span>Content Strategy</span>
-                        </div>
-                        <div class="brief-compare-you">
-                            <div class="brief-compare-col-label">You</div>
-                            <p>Limited content on website</p>
-                        </div>
-                        <div class="brief-compare-them">
-                            <div class="brief-compare-col-label">Top Funds</div>
-                            <p>Regularly publishes ship content</p>
-                        </div>
-                    </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="brief-inline-cta sr">
-        <div class="brief-container">
-            <p>Want to walk through these gaps together?</p>
-            <a href="./book/" class="brief-inline-cta-btn">Yes, I Want to Learn More</a>
-        </div>
-    </div>
-
-    <section class="brief-section">
-        <div class="brief-container">
-            <span class="brief-section-num sr">04 / Opportunities</span>
-            <h2 class="sr">Where the upside is.</h2>
-            <div class="brief-opportunities">
-                <div class="brief-opportunity sr">
-                    <h3>Network Amplification Through Digital Credibility</h3>
-                    <p class="brief-opportunity-desc">Transform Solamere Paragon&#x27;s inherited network advantage into systematic digital proof points that validate the fund&#x27;s independent capabilities. Most family office and HNW investors research fund managers online before committing, yet the current web presence provides minimal differentiation from the parent firm.</p>
-                    <div class="brief-impact">
-                        <div class="brief-impact-value">$2.3M - $4.7M additional commitments</div>
-                        <div class="brief-impact-basis">Industry benchmark: 23-31% increase in commitment rates when emerging funds establish independent digital credibility (PEI Emerging Manager Study 2024)</div>
+                    <div class="accordion-label">
+                        <h3>Ad Scripts</h3>
+                        <p>Ready-to-film scripts for Meta</p>
                     </div>
                 </div>
-                <div class="brief-opportunity sr">
-                    <h3>Investor Journey Optimization for 506(b) Compliance</h3>
-                    <p class="brief-opportunity-desc">Build a compliant nurture system that moves pre-qualified prospects from initial contact to fund materials review without triggering targeted engagement rules. Current approach likely relies on manual follow-up, creating inconsistent investor experiences.</p>
-                    <div class="brief-impact">
-                        <div class="brief-impact-value">35-50% improvement in meeting-to-commitment conversion</div>
-                        <div class="brief-impact-basis">Typical 506(b) funds see 18-25% meeting-to-commitment rates; d nurture systems achieve 25-37% (SEC filing analysis, 2024)</div>
+                <span class="accordion-badge">2 scripts</span>
+                <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="accordion-body" id="acc-ad-scripts-body">
+                <div class="accordion-content">
+                    <div class="acc-script">
+                        <div class="acc-script-meta">
+                            <span class="acc-pill">Meta</span>
+                            <span class="acc-pill">Talking head video</span>
+                        </div>
+                        <div class="acc-seg">
+                            <div class="acc-seg-label">Hook</div>
+                            <p>Most private equity firms promise network access. Solamere Paragon actually delivers it with 200+ strategic investors across every major industry.</p>
+                        </div>
+                        <div class="acc-seg">
+                            <div class="acc-seg-label">Body</div>
+                            <p>When Tagg Romney and his partners built Solamere in 2008, they didn&#x27;t just raise capital. They assembled CEOs, former executives, and industry leaders who actively participate in deal sourcing and value creation. That&#x27;s why our portfolio companies don&#x27;t just get funding - they get board seats filled by operators who&#x27;ve built billion-dollar businesses. Our current fund targets founder-led businesses with proven EBITDA above $7 million, where this network creates immediate competitive advantages.</p>
+                        </div>
+                        <div class="acc-seg">
+                            <div class="acc-seg-label">CTA</div>
+                            <p>If you&#x27;re an accredited investor interested in private equity with true strategic value-add, let&#x27;s discuss how Solamere&#x27;s approach might fit your portfolio.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="brief-opportunity sr">
-                    <h3>Competitive Positioning Against Established Managers</h3>
-                    <p class="brief-opportunity-desc"> the emerging manager advantage through targeted messaging that positions smaller fund size as superior alignment and access opportunity. Most prospects default to established managers unless given compelling reasons to consider emerging alternatives.</p>
-                    <div class="brief-impact">
-                        <div class="brief-impact-value">$1.8M - $3.2M from competitive displacement</div>
-                        <div class="brief-impact-basis">Emerging managers with clear differentiation messaging capture 12-21% more commitments from prospects also considering established funds (Cambridge Associates, 2024)</div>
+                    <div class="acc-script">
+                        <div class="acc-script-meta">
+                            <span class="acc-pill">Meta</span>
+                            <span class="acc-pill">UGC-style video</span>
+                        </div>
+                        <div class="acc-seg">
+                            <div class="acc-seg-label">Hook</div>
+                            <p>Here&#x27;s what 16 years in private equity taught me about the difference between capital and smart capital.</p>
+                        </div>
+                        <div class="acc-seg">
+                            <div class="acc-seg-label">Body</div>
+                            <p>At Solamere Paragon, we don&#x27;t just write checks. Our 200+ investor network includes the former CEO of CKE Restaurants, senior executives from Fortune 500 companies, and successful entrepreneurs across industries. When we invest in a founder-led business, that founder gets access to operators who&#x27;ve solved the exact problems they&#x27;re facing. That&#x27;s why we can be patient, creative with deal structure, and why our portfolio companies consistently outperform. We&#x27;re currently investing in businesses with $7 million plus EBITDA where this network effect creates real value.</p>
+                        </div>
+                        <div class="acc-seg">
+                            <div class="acc-seg-label">CTA</div>
+                            <p>Curious about how strategic networks change private equity outcomes? Let&#x27;s explore whether Solamere&#x27;s approach aligns with your investment thesis.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <div class="brief-inline-cta sr">
-        <div class="brief-container">
-            <p>Ready to build this?</p>
-            <a href="./book/" class="brief-inline-cta-btn">Yes, I Want to Learn More</a>
-        </div>
-    </div>
-
-    <section class="brief-section">
-        <div class="brief-container">
-            <span class="brief-section-num sr">05 / Ready-to-Use Assets</span>
-            <h2 class="sr">Work product you can execute today.</h2>
-            <h3 class="sr" style="margin-top: 24px; margin-bottom: 16px;">outreach scripts</h3>
-            <div class="brief-ad-scripts">
-                <div class="brief-ad-script sr">
-                    <div class="brief-ad-meta">
-                        <span class="brief-ad-pill">Meta</span>
-                        <span class="brief-ad-pill">Talking head video</span>
+        <div class="accordion" id="acc-email-sequence">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-email-sequence-body">
+                <div class="accordion-left">
+                    <div class="accordion-icon">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
                     </div>
-                    <div class="brief-ad-audience"><strong>Audience:</strong> Family office principals and investment committee members</div>
-                    <div class="brief-script-segments">
-                        <div class="brief-script-segment">
-                            <div class="brief-seg-label">Hook</div>
-                            <p>Most family offices are making the same mistake with private equity allocations in 2025...</p>
-                        </div>
-                        <div class="brief-script-segment">
-                            <div class="brief-seg-label">Body</div>
-                            <p>They&#x27;re chasing the same mega-funds everyone else is chasing. The result? Diluted returns, minimal GP attention, and zero influence on portfolio decisions. Meanwhile, emerging managers like Solamere Paragon are delivering the kind of focused partnership and alignment that built the industry. When you&#x27;re writing $2-5M checks, do you want to be investor #847 in a $2B fund, or a strategic partner in a focused vehicle with direct access to leadership? The math is simple: smaller funds, bigger impact on your returns.</p>
-                        </div>
-                        <div class="brief-script-segment">
-                            <div class="brief-seg-label">CTA</div>
-                            <p>If you&#x27;re tired of being a line item in someone else&#x27;s spreadsheet, let&#x27;s talk about what real partnership looks like.</p>
-                        </div>
-                    </div>
-                    <div class="brief-production-notes">
-                        <div class="brief-production-notes-label">Production Notes</div>
-                        <p>Professional setting, confident but not aggressive tone. Emphasize partnership over performance claims.</p>
+                    <div class="accordion-label">
+                        <h3>Email Sequence</h3>
+                        <p>The CEO advantage most PE firms can&#x27;t replicate</p>
                     </div>
                 </div>
-                <div class="brief-ad-script sr">
-                    <div class="brief-ad-meta">
-                        <span class="brief-ad-pill">YouTube</span>
-                        <span class="brief-ad-pill">Screen recording with voiceover</span>
-                    </div>
-                    <div class="brief-ad-audience"><strong>Audience:</strong> Investment advisors serving HNW clients</div>
-                    <div class="brief-script-segments">
-                        <div class="brief-script-segment">
-                            <div class="brief-seg-label">Hook</div>
-                            <p>Here&#x27;s why your HNW clients are getting squeezed out of the best private equity deals...</p>
+                <span class="accordion-badge">4 emails</span>
+                <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="accordion-body" id="acc-email-sequence-body">
+                <div class="accordion-content">
+                    <div class="acc-email">
+                        <div class="acc-email-header">
+                            <span class="acc-email-num">Email 1</span>
+                            <span class="acc-email-timing">Day 1</span>
                         </div>
-                        <div class="brief-script-segment">
-                            <div class="brief-seg-label">Body</div>
-                            <p>The mega-funds your clients want access to? They&#x27;re not taking $1-3M commitments anymore. Minimum checks are $10M, $25M, sometimes $50M. But here&#x27;s what most advisors miss: the real alpha isn&#x27;t in the biggest funds anyway. It&#x27;s in emerging managers with institutional backing, like Solamere Paragon. These funds offer the same professional management, but with actual attention to your clients&#x27; capital. Your $2M commitment gets you direct access to the GP, quarterly calls, and influence on strategy. Try getting that from Blackstone.</p>
-                        </div>
-                        <div class="brief-script-segment">
-                            <div class="brief-seg-label">CTA</div>
-                            <p>Stop apologizing for your clients&#x27; check size. Start positioning them where they&#x27;re actually wanted.</p>
-                        </div>
-                    </div>
-                    <div class="brief-production-notes">
-                        <div class="brief-production-notes-label">Production Notes</div>
-                        <p>Educational tone, use simple graphics to show fund size vs. attention ratio. Position as industry insight, not sales pitch.</p>
-                    </div>
-                </div>
-            </div>
-            <h3 class="sr" style="margin-top: 36px; margin-bottom: 16px;">Investor Email Sequence</h3>
-            <div class="brief-emails">
-                <div class="brief-email sr">
-                    <div class="brief-email-header">
-                        <span class="brief-email-num">Email 1</span>
-                        <span class="brief-email-timing">Day 1</span>
-                    </div>
-                    <div class="brief-email-subject">The $50M minimum problem</div>
-                    <div class="brief-email-body">{{contact.first_name}},
+                        <div class="acc-email-subject">The CEO advantage most PE firms can&#x27;t replicate</div>
+                        <div class="acc-email-body">Taggart,
 
-Saw your fund&#x27;s recent 506(b) filing and wanted to share something you&#x27;re probably seeing firsthand.
+Most private equity firms promise strategic value. Few deliver it.
 
-The mega-funds your LPs want access to keep raising their minimums. What used to be $5M is now $25M. What used to be $10M is now $50M.
+Solamere Paragon&#x27;s 200+ investor network includes current and former CEOs across major industries. That&#x27;s not just capital - that&#x27;s operational expertise at the board level.
 
-Meanwhile, you&#x27;re sitting on committed capital that can&#x27;t access the &quot;name brand&quot; funds, but you know your LPs expect institutional-quality returns.
+When you invest in a founder-led business with $7M+ EBITDA, that founder gets direct access to executives who&#x27;ve scaled similar companies through identical challenges.
 
-This is exactly why emerging managers with real backing are seeing unprecedented demand. Your LPs get the professional management they expect, but with actual attention to their capital.
+The question isn&#x27;t whether this creates competitive advantages. It&#x27;s whether you&#x27;re maximizing this network effect in your current raise strategy.
 
-Tomorrow I&#x27;ll show you how three fund managers turned this dynamic into their biggest competitive advantage.
+Tomorrow, I&#x27;ll show you how three PE firms with similar network advantages accelerated their fundraising timelines by 40%.
 
 Best,
 [Name]
 
-P.S. The irony? Some of the best returns in PE are coming from funds your LPs have never heard of.</div>
-                    <div class="brief-email-purpose">Surface the pain of being squeezed out by mega-fund minimums</div>
-                </div>
-                <div class="brief-email sr">
-                    <div class="brief-email-header">
-                        <span class="brief-email-num">Email 2</span>
-                        <span class="brief-email-timing">Day 3</span>
+P.S. Your 506(b) structure actually amplifies this advantage - sophisticated investors recognize authentic strategic value when they see it.</div>
                     </div>
-                    <div class="brief-email-subject">Why Blackstone doesn&#x27;t return your calls</div>
-                    <div class="brief-email-body">{{contact.first_name}},
+                    <div class="acc-email">
+                        <div class="acc-email-header">
+                            <span class="acc-email-num">Email 2</span>
+                            <span class="acc-email-timing">Day 3</span>
+                        </div>
+                        <div class="acc-email-subject">Why founder-led businesses choose Solamere</div>
+                        <div class="acc-email-body">Taggart,
 
-Blackstone manages $1 trillion. Your $5M commitment represents 0.0005% of their assets.
+Founder-led businesses with proven EBITDA have options. Multiple PE firms, strategic acquirers, family offices.
 
-Do the math on how much attention that gets you.
+They choose Solamere because your investor network solves their biggest post-acquisition fear: losing the strategic guidance that got them to $7M+ EBITDA.
 
-Now compare that to an emerging manager where your $5M represents 5-15% of the fund. Who do you think answers the phone when you call?
+Your LPs don&#x27;t just provide capital. They provide the next level of operational expertise these founders need to scale from $7M to $20M+ EBITDA.
 
-This isn&#x27;t about fund size being good or bad. It&#x27;s about alignment. Your LPs want to be partners, not line items.
+But here&#x27;s what most PE firms miss: the same network advantage that wins deals also accelerates fundraising.
 
-The best emerging managers understand this. They&#x27;re building funds specifically designed for the capital that mega-funds ignore.
-
-Tomorrow: the three questions every LP should ask before writing a check to any fund, regardless of size.
+Wednesday, I&#x27;ll share the exact framework three similar firms used to turn their strategic investor networks into systematic referral engines.
 
 Best,
 [Name]</div>
-                    <div class="brief-email-purpose">Create identity frame around being a true partner vs. anonymous investor</div>
-                </div>
-                <div class="brief-email sr">
-                    <div class="brief-email-header">
-                        <span class="brief-email-num">Email 3</span>
-                        <span class="brief-email-timing">Day 5</span>
                     </div>
-                    <div class="brief-email-subject">The Romney network advantage</div>
-                    <div class="brief-email-body">{{contact.first_name}},
+                    <div class="acc-email">
+                        <div class="acc-email-header">
+                            <span class="acc-email-num">Email 3</span>
+                            <span class="acc-email-timing">Day 5</span>
+                        </div>
+                        <div class="acc-email-subject">The 16-year track record question</div>
+                        <div class="acc-email-body">Taggart,
 
-Three questions every sophisticated LP asks before committing:
+Since 2008, Solamere has built something rare in private equity: consistent performance with patient capital.
 
-1. Who else is in this fund?
-2. What doors does the GP&#x27;s network open?
-3. How does my capital get treated?
+Most funds chase quick exits. Your structure allows creative deal structuring and long-term value creation.
 
-Most emerging managers struggle with #1 and #2. But when you have the Romney network behind you, those become your strongest selling points.
+But here&#x27;s the challenge: sophisticated investors need to see this differentiation clearly and quickly.
 
-Your LPs aren&#x27;t just getting exposure to your deals. They&#x27;re getting access to a network that includes Fortune 500 CEOs, former cabinet members, and industry leaders across every major sector.
+They&#x27;re evaluating multiple opportunities. The fund that communicates its unique value proposition most effectively gets the allocation.
 
-That&#x27;s not just capital. That&#x27;s strategic advantage.
-
-Next email: how to turn network access into measurable LP value.
+Friday, I&#x27;ll show you how to systematically demonstrate Solamere&#x27;s patient capital advantage to accelerate investor decision timelines.
 
 Best,
 [Name]
 
-P.S. Most funds sell returns. The best funds sell access.</div>
-                    <div class="brief-email-purpose">Highlight unique network advantage as differentiation</div>
-                </div>
-                <div class="brief-email sr">
-                    <div class="brief-email-header">
-                        <span class="brief-email-num">Email 4</span>
-                        <span class="brief-email-timing">Day 7</span>
+P.S. Your multi-strategy approach (direct investments + GP partnerships) is actually a competitive advantage - if positioned correctly.</div>
                     </div>
-                    <div class="brief-email-subject">The emerging manager moment</div>
-                    <div class="brief-email-body">{{contact.first_name}},
+                    <div class="acc-email">
+                        <div class="acc-email-header">
+                            <span class="acc-email-num">Email 4</span>
+                            <span class="acc-email-timing">Day 7</span>
+                        </div>
+                        <div class="acc-email-subject">Ready to accelerate Solamere&#x27;s next chapter?</div>
+                        <div class="acc-email-body">Taggart,
 
-Timing in private equity is everything.
+Solamere Paragon has the foundation: proven track record, strategic network, patient capital structure.
 
-Right now, institutional capital is flowing toward emerging managers at record levels. CalPERS allocated $2.4B to emerging managers in 2024. Yale increased their emerging manager allocation by 40%.
+The opportunity is systematic execution.
 
-Why? Because the data is clear: emerging managers with institutional backing outperform established funds by 200-400 basis points.
+Turning your 200+ investor network into active referral sources. Positioning your founder-focused strategy to accelerate deal flow. Communicating your multi-strategy advantages to sophisticated LPs.
 
-Your LPs know this. They&#x27;re looking for emerging managers they can trust with serious capital.
+Three questions:
+1. Are you maximizing referrals from existing strategic investors?
+2. Is your current raise timeline meeting your expectations?
+3. Could systematic digital engagement complement your existing relationships?
 
-The question isn&#x27;t whether to raise capital in this environment. It&#x27;s whether you&#x27;re positioned to capture the opportunity.
+If any answer is no, let&#x27;s discuss how to change that.
 
 Best,
 [Name]</div>
-                    <div class="brief-email-purpose">Create urgency around market timing and institutional validation</div>
-                </div>
-            </div>
-            <h3 class="sr" style="margin-top: 36px; margin-bottom: 16px;">Investor Acquisition Funnel</h3>
-            <p class="brief-funnel-overview sr">A 506(b)-compliant investor qualification and education system that moves pre-qualified prospects from initial interest to fund materials review through value-driven content and strategic positioning.</p>
-            <div class="brief-funnel-stages">
-                <div class="brief-funnel-stage sr">
-                    <h3>Qualification Landing Page</h3>
-                    <ul class="brief-funnel-elements">
-                        <li>Accredited investor verification form</li>
-                        <li>Pre-existing relationship confirmation</li>
-                        <li>Investment criteria alignment quiz</li>
-                        <li>Network/referral source capture</li>
-                        <li>Compliance disclaimer and opt-in</li>
-                    </ul>
-                </div>
-                <div class="brief-funnel-connector"></div>
-                <div class="brief-funnel-stage sr">
-                    <h3>Market Education Hub</h3>
-                    <ul class="brief-funnel-elements">
-                        <li>Emerging manager advantage white paper</li>
-                        <li>Private equity allocation strategy guide</li>
-                        <li>Network access value proposition</li>
-                        <li>Fund structure and terms overview</li>
-                        <li> analysis</li>
-                    </ul>
-                </div>
-                <div class="brief-funnel-connector"></div>
-                <div class="brief-funnel-stage sr">
-                    <h3>Credibility Validation</h3>
-                    <ul class="brief-funnel-elements">
-                        <li>Leadership team backgrounds and track record</li>
-                        <li>Strategic investor and network profiles</li>
-                        <li>Portfolio company case studies</li>
-                        <li>Third-party validation and references</li>
-                        <li>Regulatory compliance and transparency</li>
-                    </ul>
-                </div>
-                <div class="brief-funnel-connector"></div>
-                <div class="brief-funnel-stage sr">
-                    <h3>Investment Process Introduction</h3>
-                    <ul class="brief-funnel-elements">
-                        <li>Fund strategy and investment thesis</li>
-                        <li>Due diligence process and timeline</li>
-                        <li>Investor onboarding requirements</li>
-                        <li>Ongoing communication and reporting</li>
-                        <li>Next steps and meeting scheduling</li>
-                    </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+        </div>
+    </div>
 
     <section class="brief-section">
         <div class="brief-container">
-            <span class="brief-section-num sr">06 / 90-Day Roadmap</span>
-            <h2 class="sr">How to execute this.</h2>
-            <div class="brief-roadmap">
-                <div class="brief-phase sr">
-                    <div class="brief-phase-header">
-                        <span class="brief-phase-name">Phase 1: Foundation</span>
-                        <span class="brief-phase-timeframe">0-30 days</span>
-                    </div>
-                    <ul class="brief-phase-actions">
-                        <li>Audit current investor network</li>
-                        <li>Identify key investor segments</li>
-                        <li>Develop strategic engagement plan</li>
-                    </ul>
-                    <div class="brief-phase-milestone"><strong>Milestone:</strong> Completed investor network audit</div>
-                </div>
-                <div class="brief-phase sr">
-                    <div class="brief-phase-header">
-                        <span class="brief-phase-name">Phase 2: Digital Engagement</span>
-                        <span class="brief-phase-timeframe">31-60 days</span>
-                    </div>
-                    <ul class="brief-phase-actions">
-                        <li>Launch Meta and YouTube channels</li>
-                        <li>Create initial content calendar</li>
-                        <li>Initiate first strategic outreach campaign</li>
-                    </ul>
-                    <div class="brief-phase-milestone"><strong>Milestone:</strong> Launched digital channels with initial content</div>
-                </div>
-                <div class="brief-phase sr">
-                    <div class="brief-phase-header">
-                        <span class="brief-phase-name">Phase 3: Optimization</span>
-                        <span class="brief-phase-timeframe">61-90 days</span>
-                    </div>
-                    <ul class="brief-phase-actions">
-                        <li>Analyze engagement data</li>
-                        <li>Refine outreach strategies</li>
-                        <li>Expand content offerings based on feedback</li>
-                    </ul>
-                    <div class="brief-phase-milestone"><strong>Milestone:</strong> Refined engagement strategy based on data</div>
-                </div>
+            <span class="brief-section-num sr">02 / Video Walkthrough</span>
+            <h2 class="sr">See the full breakdown.</h2>
+            <div class="brief-vsl-wrap sr">
+                <iframe src="https://fast.wistia.com/embed/medias/pqzibiagya" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </section>
-
-    <div class="brief-inline-cta sr">
-        <div class="brief-container">
-            <p>Want us to execute this for you?</p>
-            <a href="./book/" class="brief-inline-cta-btn">Yes, I Want to Learn More</a>
-        </div>
-    </div>
 
     <section class="brief-cta">
         <div class="brief-container">
@@ -548,6 +590,17 @@ Best,
         });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.sr').forEach(function(el) { observer.observe(el); });
+
+    // Accordion toggle
+    document.querySelectorAll('.accordion-trigger').forEach(function(trigger) {
+        trigger.addEventListener('click', function() {
+            var accordion = this.closest('.accordion');
+            var isOpen = accordion.classList.contains('open');
+            var expanded = !isOpen;
+            accordion.classList.toggle('open');
+            this.setAttribute('aria-expanded', expanded);
+        });
+    });
 })();
 </script>
 </body>
