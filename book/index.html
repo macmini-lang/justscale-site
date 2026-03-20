@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../shared.css?v=20260320k">
+    <link rel="stylesheet" href="../shared.css?v=20260320l">
     <style>
         .book-nav {
             position: fixed;
@@ -101,7 +101,7 @@
     <div class="book-hero">
         <div class="container">
             <h1 class="sr">Apply for a strategy session.</h1>
-            <p class="sr">We work with a limited number of clients at any given time. Pick a time below and we'll evaluate if there's a fit.</p>
+            <p class="sr">We work with a limited number of clients at any given time. Fill out the application below and we'll be in touch.</p>
             <div class="gold-rule sr"></div>
         </div>
     </div>
@@ -118,8 +118,8 @@
     </div>
 
     <div class="book-calendly">
-        <div class="calendly-inline-widget" data-url="https://calendly.com/zac-justscale/justscale-discovery-call?hide_gdpr_banner=1" style="min-width:320px;height:700px;"></div>
-        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        <div data-tf-live="01KM6NNMYV0EA2VFNS6N8B7555" style="min-width:320px;height:700px;"></div>
+        <script src="//embed.typeform.com/next/embed.js"></script>
     </div>
 
     <footer class="book-footer">
@@ -147,15 +147,6 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.sr').forEach(function(el) { observer.observe(el); });
 
-    // On touch devices: Calendly iframe starts with pointer-events:none so page scroll works.
-    // Tap the calendar area to activate it, tap outside to deactivate.
-    var cal = document.querySelector('.book-calendly');
-    if (cal && 'ontouchstart' in window) {
-        cal.addEventListener('click', function() { cal.classList.add('active'); });
-        document.addEventListener('touchstart', function(e) {
-            if (!cal.contains(e.target)) cal.classList.remove('active');
-        });
-    }
 })();
 </script>
 </body>
