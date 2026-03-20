@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="shared.css?v=20260320h">
+    <link rel="stylesheet" href="shared.css?v=20260320i">
     <script src="https://fast.wistia.com/player.js" async></script>
     <script src="https://fast.wistia.com/embed/9saxap09s8.js" async type="module"></script>
     <style>
@@ -370,11 +370,15 @@
             if(left) left.addEventListener('click', function(){ grid.scrollBy({left: -cardW, behavior: 'smooth'}); });
             if(right) right.addEventListener('click', function(){ grid.scrollBy({left: cardW, behavior: 'smooth'}); });
             // Center the grid so middle 3 cards are visible, edges peek/fade
+            // Disable smooth scroll for initial positioning, re-enable after
             var cards = grid.querySelectorAll('.yt-card');
             if(cards.length > 3){
+                grid.style.scrollBehavior = 'auto';
                 var totalW = cards.length * cardW - 20;
                 var centerScroll = (totalW - grid.offsetWidth) / 2;
                 grid.scrollLeft = Math.max(0, centerScroll);
+                // Re-enable smooth after a tick so arrows work smoothly
+                setTimeout(function(){ grid.style.scrollBehavior = ''; }, 50);
             }
         }
     })();
@@ -410,6 +414,6 @@
 <!-- GSAP + ScrollTrigger CDN -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="shared.js?v=20260320h"></script>
+<script src="shared.js?v=20260320i"></script>
 </body>
 </html>
