@@ -1255,7 +1255,6 @@ footer .container {
     gap: 20px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     padding: 0 calc(50% - 170px) 16px;
     scrollbar-width: none;
