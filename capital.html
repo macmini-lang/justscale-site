@@ -320,25 +320,72 @@
             <h2 class="section-title sr">Raising capital? Watch these.</h2>
             <p class="yt-feed-sub sr">How funds are using paid ads to build predictable LP pipelines. Straight from the field.</p>
         </div>
-        <div class="yt-grid">
-            <a class="yt-card sr" href="https://www.youtube.com/watch?v=RBeum6nPwZM" target="_blank" rel="noopener">
-                <div class="yt-thumb"><img src="https://i.ytimg.com/vi/RBeum6nPwZM/maxresdefault.jpg" alt="the unfair advantage successful funds are using now" loading="lazy"><div class="yt-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div></div>
-                <div class="yt-info"><h4>the unfair advantage successful funds are using now</h4><div class="yt-date">Mar 19, 2026</div></div>
-            </a>
-            <a class="yt-card sr" href="https://www.youtube.com/watch?v=P6nbrETWQcM" target="_blank" rel="noopener">
-                <div class="yt-thumb"><img src="https://i.ytimg.com/vi/P6nbrETWQcM/maxresdefault.jpg" alt="why meta ads work better than any other channel for raising capital" loading="lazy"><div class="yt-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div></div>
-                <div class="yt-info"><h4>why meta ads work better than any other channel for raising capital</h4><div class="yt-date">Mar 13, 2026</div></div>
-            </a>
-            <a class="yt-card sr" href="https://www.youtube.com/watch?v=8pwxldMvRNg" target="_blank" rel="noopener">
-                <div class="yt-thumb"><img src="https://i.ytimg.com/vi/8pwxldMvRNg/maxresdefault.jpg" alt="how much does it cost to raise capital? (meta ads vs traditional)" loading="lazy"><div class="yt-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div></div>
-                <div class="yt-info"><h4>how much does it cost to raise capital? (meta ads vs traditional)</h4><div class="yt-date">Mar 11, 2026</div></div>
-            </a>
-            <a class="yt-card sr" href="https://www.youtube.com/watch?v=4fJ69XNmGqU" target="_blank" rel="noopener">
-                <div class="yt-thumb"><img src="https://i.ytimg.com/vi/4fJ69XNmGqU/maxresdefault.jpg" alt="how top fund managers use paid ads to raise capital" loading="lazy"><div class="yt-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div></div>
-                <div class="yt-info"><h4>how top fund managers use paid ads to raise capital</h4><div class="yt-date">Mar 11, 2026</div></div>
-            </a>
+        <div class="yt-scroll-wrap">
+            <button class="yt-arrow yt-arrow--left" aria-label="Scroll left"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+            <button class="yt-arrow yt-arrow--right" aria-label="Scroll right"><svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg></button>
+            <div class="yt-grid">
+                <div class="yt-card sr" data-vid="RBeum6nPwZM">
+                    <div class="yt-thumb"><img src="https://i.ytimg.com/vi/RBeum6nPwZM/maxresdefault.jpg" alt="the unfair advantage successful funds are using now" loading="lazy"><div class="yt-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div></div>
+                    <div class="yt-info"><h4>the unfair advantage successful funds are using now</h4><div class="yt-date">Mar 19, 2026</div></div>
+                </div>
+                <div class="yt-card sr" data-vid="P6nbrETWQcM">
+                    <div class="yt-thumb"><img src="https://i.ytimg.com/vi/P6nbrETWQcM/maxresdefault.jpg" alt="why meta ads work better than any other channel for raising capital" loading="lazy"><div class="yt-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div></div>
+                    <div class="yt-info"><h4>why meta ads work better than any other channel for raising capital</h4><div class="yt-date">Mar 13, 2026</div></div>
+                </div>
+                <div class="yt-card sr" data-vid="8pwxldMvRNg">
+                    <div class="yt-thumb"><img src="https://i.ytimg.com/vi/8pwxldMvRNg/maxresdefault.jpg" alt="how much does it cost to raise capital? (meta ads vs traditional)" loading="lazy"><div class="yt-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div></div>
+                    <div class="yt-info"><h4>how much does it cost to raise capital? (meta ads vs traditional)</h4><div class="yt-date">Mar 11, 2026</div></div>
+                </div>
+                <div class="yt-card sr" data-vid="4fJ69XNmGqU">
+                    <div class="yt-thumb"><img src="https://i.ytimg.com/vi/4fJ69XNmGqU/maxresdefault.jpg" alt="how top fund managers use paid ads to raise capital" loading="lazy"><div class="yt-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div></div>
+                    <div class="yt-info"><h4>how top fund managers use paid ads to raise capital</h4><div class="yt-date">Mar 11, 2026</div></div>
+                </div>
+            </div>
         </div>
     </section>
+
+    <!-- Video Lightbox -->
+    <div class="yt-lightbox" id="yt-lightbox">
+        <div class="yt-lightbox-inner">
+            <div class="yt-lightbox-close"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+            <iframe id="yt-lightbox-iframe" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+    </div>
+    <script>
+    (function(){
+        var lightbox = document.getElementById('yt-lightbox');
+        var iframe = document.getElementById('yt-lightbox-iframe');
+        var close = lightbox.querySelector('.yt-lightbox-close');
+        document.querySelectorAll('.yt-card[data-vid]').forEach(function(card){
+            card.addEventListener('click', function(){
+                var vid = card.getAttribute('data-vid');
+                iframe.src = 'https://www.youtube.com/embed/' + vid + '?autoplay=1&rel=0';
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        function closeLightbox(){
+            lightbox.classList.remove('active');
+            iframe.src = '';
+            document.body.style.overflow = '';
+        }
+        close.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', function(e){
+            if(e.target === lightbox) closeLightbox();
+        });
+        document.addEventListener('keydown', function(e){
+            if(e.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox();
+        });
+        var wrap = document.querySelector('.yt-scroll-wrap');
+        if(wrap){
+            var grid = wrap.querySelector('.yt-grid');
+            var left = wrap.querySelector('.yt-arrow--left');
+            var right = wrap.querySelector('.yt-arrow--right');
+            if(left) left.addEventListener('click', function(){ grid.scrollBy({left: -360, behavior: 'smooth'}); });
+            if(right) right.addEventListener('click', function(){ grid.scrollBy({left: 360, behavior: 'smooth'}); });
+        }
+    })();
+    </script>
 
     <!-- SECTION 11: FINAL CTA -->
     <section class="section final-cta" id="contact">
