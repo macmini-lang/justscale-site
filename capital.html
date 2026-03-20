@@ -313,6 +313,46 @@
         </div>
     </section>
 
+    <!-- YOUTUBE FEED -->
+    <section class="section yt-feed">
+        <div class="container" style="text-align:center;">
+            <div class="section-label sr">From the channel</div>
+            <h2 class="section-title sr">Raising capital? Watch these.</h2>
+            <p class="yt-feed-sub sr">How funds are using paid ads to build predictable LP pipelines. Straight from the field.</p>
+        </div>
+        <div class="yt-grid" id="yt-feed-grid">
+            <div class="yt-loading">Loading videos...</div>
+        </div>
+    </section>
+    <script>
+    (function(){
+        var PLAYLIST_ID = 'PLvnCK0StRu8eVPTh32TKvwDKdSP8wC5k2';
+        var API_KEY = 'AIzaSyBk_gI3lh8R7gc9AWEJygzJuPg1hXHb87c';
+        var grid = document.getElementById('yt-feed-grid');
+        fetch('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=9&playlistId=' + PLAYLIST_ID + '&key=' + API_KEY)
+            .then(function(r){ return r.json(); })
+            .then(function(data){
+                if(!data.items||!data.items.length){ grid.innerHTML='<div class="yt-loading">No videos found.</div>'; return; }
+                grid.innerHTML='';
+                data.items.forEach(function(item){
+                    var s = item.snippet;
+                    var vid = s.resourceId.videoId;
+                    var thumb = (s.thumbnails.maxres||s.thumbnails.high||s.thumbnails.medium).url;
+                    var title = s.title;
+                    var date = new Date(s.publishedAt).toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric'});
+                    var a = document.createElement('a');
+                    a.className='yt-card sr visible';
+                    a.href='https://www.youtube.com/watch?v='+vid;
+                    a.target='_blank';
+                    a.rel='noopener';
+                    a.innerHTML='<div class="yt-thumb"><img src="'+thumb+'" alt="'+title.replace(/"/g,'&quot;')+'" loading="lazy"><div class="yt-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div></div><div class="yt-info"><h4>'+title+'</h4><div class="yt-date">'+date+'</div></div>';
+                    grid.appendChild(a);
+                });
+            })
+            .catch(function(){ grid.innerHTML='<div class="yt-loading">Unable to load videos.</div>'; });
+    })();
+    </script>
+
     <!-- SECTION 11: FINAL CTA -->
     <section class="section final-cta" id="contact">
         <div class="container">
