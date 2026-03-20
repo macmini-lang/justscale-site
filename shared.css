@@ -1233,17 +1233,18 @@ footer .container {
     position: absolute;
     top: 0;
     bottom: 16px;
-    width: 80px;
+    width: calc((100% - 1060px) / 2);
+    min-width: 60px;
     z-index: 4;
     pointer-events: none;
 }
 .yt-scroll-wrap::before {
     left: 0;
-    background: linear-gradient(to right, var(--bg, #0c0c0c) 0%, transparent 100%);
+    background: linear-gradient(to right, var(--bg, #0c0c0c) 30%, transparent 100%);
 }
 .yt-scroll-wrap::after {
     right: 0;
-    background: linear-gradient(to left, var(--bg, #0c0c0c) 0%, transparent 100%);
+    background: linear-gradient(to left, var(--bg, #0c0c0c) 30%, transparent 100%);
 }
 .yt-scroll-wrap.yt-no-fade::before,
 .yt-scroll-wrap.yt-no-fade::after {
@@ -1366,8 +1367,8 @@ footer .container {
 }
 .yt-arrow:hover { background: rgba(0,0,0,0.9); border-color: var(--gold); }
 .yt-arrow svg { width: 18px; height: 18px; stroke: #fff; fill: none; stroke-width: 2; }
-.yt-arrow--left { left: 8px; }
-.yt-arrow--right { right: 8px; }
+.yt-arrow--left { left: calc((100% - 1060px) / 2 - 52px); }
+.yt-arrow--right { right: calc((100% - 1060px) / 2 - 52px); }
 /* Video lightbox */
 .yt-lightbox {
     position: fixed;
