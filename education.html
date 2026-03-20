@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="shared.css?v=20260320j">
+    <link rel="stylesheet" href="shared.css?v=20260320k">
     <script src="https://fast.wistia.com/player.js" async></script>
     <script src="https://fast.wistia.com/embed/9saxap09s8.js" async type="module"></script>
     <style>
@@ -366,16 +366,35 @@
         if(feed && grid){
             var left = feed.querySelector('.yt-arrow--left');
             var right = feed.querySelector('.yt-arrow--right');
-            var cardW = 360; // 340px card + 20px gap
-            if(left) left.addEventListener('click', function(){ grid.scrollBy({left: -cardW, behavior: 'smooth'}); });
-            if(right) right.addEventListener('click', function(){ grid.scrollBy({left: cardW, behavior: 'smooth'}); });
-            // Center the grid so middle cards are visible on load
-            var cards = grid.querySelectorAll('.yt-card');
-            if(cards.length > 3){
-                // Scroll so card index 2 (3rd card) is roughly centered
-                var scrollTarget = 2 * cardW;
-                grid.scrollLeft = scrollTarget;
+            var cardW = 360;
+
+            function smoothScroll(target){
+                var start = grid.scrollLeft;
+                var diff = target - start;
+                var duration = 400;
+                var startTime = null;
+                function step(ts){
+                    if(!startTime) startTime = ts;
+                    var progress = Math.min((ts - startTime) / duration, 1);
+                    var ease = progress < 0.5 ? 2*progress*progress : -1+(4-2*progress)*progress;
+                    grid.scrollLeft = start + diff * ease;
+                    if(progress < 1) requestAnimationFrame(step);
+                }
+                requestAnimationFrame(step);
             }
+
+            if(left) left.addEventListener('click', function(){
+                var target = Math.max(0, grid.scrollLeft - cardW);
+                smoothScroll(target);
+            });
+            if(right) right.addEventListener('click', function(){
+                var max = grid.scrollWidth - grid.clientWidth;
+                var target = Math.min(max, grid.scrollLeft + cardW);
+                smoothScroll(target);
+            });
+
+            // Center on load: show cards 3-4-5 (index 2-3-4)
+            grid.scrollLeft = 2 * cardW;
         }
     })();
     </script>
@@ -410,6 +429,6 @@
 <!-- GSAP + ScrollTrigger CDN -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="shared.js?v=20260320j"></script>
+<script src="shared.js?v=20260320k"></script>
 </body>
 </html>

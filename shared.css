@@ -1254,7 +1254,7 @@ footer .container {
     display: flex;
     gap: 20px;
     overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    scroll-snap-type: none;
     -webkit-overflow-scrolling: touch;
     padding: 0 calc(50% - 170px) 16px;
     scrollbar-width: none;
@@ -1265,7 +1265,6 @@ footer .container {
 .yt-grid::-webkit-scrollbar { display: none; }
 .yt-card {
     flex: 0 0 340px;
-    scroll-snap-align: start;
     background: var(--card-bg, rgba(255,255,255,0.03));
     border: 1px solid var(--border);
     border-radius: 12px;
