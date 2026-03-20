@@ -320,38 +320,25 @@
             <h2 class="section-title sr">Raising capital? Watch these.</h2>
             <p class="yt-feed-sub sr">How funds are using paid ads to build predictable LP pipelines. Straight from the field.</p>
         </div>
-        <div class="yt-grid" id="yt-feed-grid">
-            <div class="yt-loading">Loading videos...</div>
+        <div class="yt-grid">
+            <a class="yt-card sr" href="https://www.youtube.com/watch?v=RBeum6nPwZM" target="_blank" rel="noopener">
+                <div class="yt-thumb"><img src="https://i.ytimg.com/vi/RBeum6nPwZM/maxresdefault.jpg" alt="the unfair advantage successful funds are using now" loading="lazy"><div class="yt-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div></div>
+                <div class="yt-info"><h4>the unfair advantage successful funds are using now</h4><div class="yt-date">Mar 19, 2026</div></div>
+            </a>
+            <a class="yt-card sr" href="https://www.youtube.com/watch?v=P6nbrETWQcM" target="_blank" rel="noopener">
+                <div class="yt-thumb"><img src="https://i.ytimg.com/vi/P6nbrETWQcM/maxresdefault.jpg" alt="why meta ads work better than any other channel for raising capital" loading="lazy"><div class="yt-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div></div>
+                <div class="yt-info"><h4>why meta ads work better than any other channel for raising capital</h4><div class="yt-date">Mar 13, 2026</div></div>
+            </a>
+            <a class="yt-card sr" href="https://www.youtube.com/watch?v=8pwxldMvRNg" target="_blank" rel="noopener">
+                <div class="yt-thumb"><img src="https://i.ytimg.com/vi/8pwxldMvRNg/maxresdefault.jpg" alt="how much does it cost to raise capital? (meta ads vs traditional)" loading="lazy"><div class="yt-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div></div>
+                <div class="yt-info"><h4>how much does it cost to raise capital? (meta ads vs traditional)</h4><div class="yt-date">Mar 11, 2026</div></div>
+            </a>
+            <a class="yt-card sr" href="https://www.youtube.com/watch?v=4fJ69XNmGqU" target="_blank" rel="noopener">
+                <div class="yt-thumb"><img src="https://i.ytimg.com/vi/4fJ69XNmGqU/maxresdefault.jpg" alt="how top fund managers use paid ads to raise capital" loading="lazy"><div class="yt-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div></div>
+                <div class="yt-info"><h4>how top fund managers use paid ads to raise capital</h4><div class="yt-date">Mar 11, 2026</div></div>
+            </a>
         </div>
     </section>
-    <script>
-    (function(){
-        var PLAYLIST_ID = 'PLvnCK0StRu8eVPTh32TKvwDKdSP8wC5k2';
-        var API_KEY = 'AIzaSyBk_gI3lh8R7gc9AWEJygzJuPg1hXHb87c';
-        var grid = document.getElementById('yt-feed-grid');
-        fetch('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=9&playlistId=' + PLAYLIST_ID + '&key=' + API_KEY)
-            .then(function(r){ return r.json(); })
-            .then(function(data){
-                if(!data.items||!data.items.length){ grid.innerHTML='<div class="yt-loading">No videos found.</div>'; return; }
-                grid.innerHTML='';
-                data.items.forEach(function(item){
-                    var s = item.snippet;
-                    var vid = s.resourceId.videoId;
-                    var thumb = (s.thumbnails.maxres||s.thumbnails.high||s.thumbnails.medium).url;
-                    var title = s.title;
-                    var date = new Date(s.publishedAt).toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric'});
-                    var a = document.createElement('a');
-                    a.className='yt-card sr visible';
-                    a.href='https://www.youtube.com/watch?v='+vid;
-                    a.target='_blank';
-                    a.rel='noopener';
-                    a.innerHTML='<div class="yt-thumb"><img src="'+thumb+'" alt="'+title.replace(/"/g,'&quot;')+'" loading="lazy"><div class="yt-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div></div><div class="yt-info"><h4>'+title+'</h4><div class="yt-date">'+date+'</div></div>';
-                    grid.appendChild(a);
-                });
-            })
-            .catch(function(){ grid.innerHTML='<div class="yt-loading">Unable to load videos.</div>'; });
-    })();
-    </script>
 
     <!-- SECTION 11: FINAL CTA -->
     <section class="section final-cta" id="contact">

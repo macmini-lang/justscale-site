@@ -260,38 +260,37 @@
             <h2 class="section-title sr">Selling education? Watch these.</h2>
             <p class="yt-feed-sub sr">Real breakdowns on scaling info products with paid ads. No fluff, no theory.</p>
         </div>
-        <div class="yt-grid" id="yt-feed-grid">
-            <div class="yt-loading">Loading videos...</div>
+        <div class="yt-grid">
+            <a class="yt-card sr" href="https://www.youtube.com/watch?v=tmcIWrAXTSM" target="_blank" rel="noopener">
+                <div class="yt-thumb"><img src="https://i.ytimg.com/vi/tmcIWrAXTSM/hqdefault.jpg" alt="if your info business is contracting here's what to do" loading="lazy"><div class="yt-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div></div>
+                <div class="yt-info"><h4>if your info business is contracting here's what to do</h4><div class="yt-date">Mar 18, 2026</div></div>
+            </a>
+            <a class="yt-card sr" href="https://www.youtube.com/watch?v=O6GwzHxYfo8" target="_blank" rel="noopener">
+                <div class="yt-thumb"><img src="https://i.ytimg.com/vi/O6GwzHxYfo8/maxresdefault.jpg" alt="scaling a $20k info product ad budget in 2026 (consulting call)" loading="lazy"><div class="yt-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div></div>
+                <div class="yt-info"><h4>scaling a $20k info product ad budget in 2026 (consulting call)</h4><div class="yt-date">Mar 13, 2026</div></div>
+            </a>
+            <a class="yt-card sr" href="https://www.youtube.com/watch?v=5igCd2sZAu8" target="_blank" rel="noopener">
+                <div class="yt-thumb"><img src="https://i.ytimg.com/vi/5igCd2sZAu8/maxresdefault.jpg" alt="how to sign $100k+ clients from paid ads" loading="lazy"><div class="yt-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div></div>
+                <div class="yt-info"><h4>how to sign $100k+ clients from paid ads (info, services, and funds)</h4><div class="yt-date">Mar 11, 2026</div></div>
+            </a>
+            <a class="yt-card sr" href="https://www.youtube.com/watch?v=DfXvF69p3wc" target="_blank" rel="noopener">
+                <div class="yt-thumb"><img src="https://i.ytimg.com/vi/DfXvF69p3wc/maxresdefault.jpg" alt="scaling a sales team past $200k/mo with paid traffic" loading="lazy"><div class="yt-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div></div>
+                <div class="yt-info"><h4>scaling a sales team past $200k/mo with paid traffic (4 lessons)</h4><div class="yt-date">Mar 11, 2026</div></div>
+            </a>
+            <a class="yt-card sr" href="https://www.youtube.com/watch?v=vrX498T-oSY" target="_blank" rel="noopener">
+                <div class="yt-thumb"><img src="https://i.ytimg.com/vi/vrX498T-oSY/maxresdefault.jpg" alt="the 2 pillars that determine if your info product hits $100k/mo or not" loading="lazy"><div class="yt-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div></div>
+                <div class="yt-info"><h4>the 2 pillars that determine if your info product hits $100k/mo or not</h4><div class="yt-date">Mar 11, 2026</div></div>
+            </a>
+            <a class="yt-card sr" href="https://www.youtube.com/watch?v=9Uq9ZEYSPMU" target="_blank" rel="noopener">
+                <div class="yt-thumb"><img src="https://i.ytimg.com/vi/9Uq9ZEYSPMU/hqdefault.jpg" alt="how to scale info past $150k/mo with paid ads" loading="lazy"><div class="yt-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div></div>
+                <div class="yt-info"><h4>how to scale info past $150k/mo with paid ads</h4><div class="yt-date">Mar 11, 2026</div></div>
+            </a>
+            <a class="yt-card sr" href="https://www.youtube.com/watch?v=QDNbnA-Visw" target="_blank" rel="noopener">
+                <div class="yt-thumb"><img src="https://i.ytimg.com/vi/QDNbnA-Visw/maxresdefault.jpg" alt="how to launch high ticket info into paid ads after spending $600k in 2025" loading="lazy"><div class="yt-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div></div>
+                <div class="yt-info"><h4>how to launch high ticket info into paid ads after spending $600k in 2025</h4><div class="yt-date">Mar 11, 2026</div></div>
+            </a>
         </div>
     </section>
-    <script>
-    (function(){
-        var PLAYLIST_ID = 'PLvnCK0StRu8cChfgzQGrKMcRC7vicXzHT';
-        var API_KEY = 'AIzaSyBk_gI3lh8R7gc9AWEJygzJuPg1hXHb87c';
-        var grid = document.getElementById('yt-feed-grid');
-        fetch('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=9&playlistId=' + PLAYLIST_ID + '&key=' + API_KEY)
-            .then(function(r){ return r.json(); })
-            .then(function(data){
-                if(!data.items||!data.items.length){ grid.innerHTML='<div class="yt-loading">No videos found.</div>'; return; }
-                grid.innerHTML='';
-                data.items.forEach(function(item){
-                    var s = item.snippet;
-                    var vid = s.resourceId.videoId;
-                    var thumb = (s.thumbnails.maxres||s.thumbnails.high||s.thumbnails.medium).url;
-                    var title = s.title;
-                    var date = new Date(s.publishedAt).toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric'});
-                    var a = document.createElement('a');
-                    a.className='yt-card sr visible';
-                    a.href='https://www.youtube.com/watch?v='+vid;
-                    a.target='_blank';
-                    a.rel='noopener';
-                    a.innerHTML='<div class="yt-thumb"><img src="'+thumb+'" alt="'+title.replace(/"/g,'&quot;')+'" loading="lazy"><div class="yt-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div></div><div class="yt-info"><h4>'+title+'</h4><div class="yt-date">'+date+'</div></div>';
-                    grid.appendChild(a);
-                });
-            })
-            .catch(function(){ grid.innerHTML='<div class="yt-loading">Unable to load videos.</div>'; });
-    })();
-    </script>
 
     <!-- SECTION 10: FINAL CTA -->
     <section class="section section--alt final-cta" id="contact">
