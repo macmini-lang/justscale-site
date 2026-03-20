@@ -1216,7 +1216,7 @@ footer .container {
 }
 
 /* ========== YOUTUBE FEED ========== */
-.yt-feed { padding: 80px 0; overflow: hidden; }
+.yt-feed { padding: 80px 0; overflow-x: clip; overflow-y: visible; }
 .yt-feed .container { padding: 0 28px; }
 .yt-feed .section-label { margin-bottom: 8px; }
 .yt-feed .section-title { margin-bottom: 12px; }
