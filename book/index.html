@@ -50,8 +50,7 @@
             border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px;
         }
         .book-value li svg { width: 16px; height: 16px; stroke: var(--gold); fill: none; stroke-width: 2; flex-shrink: 0; }
-        .book-calendly { max-width: 700px; margin: 0 auto; padding: 0 20px 40px; }
-        .book-calendly .calendly-inline-widget { border-radius: 12px; overflow: hidden; }
+        .book-calendly { max-width: 900px; margin: 0 auto; padding: 0 20px 40px; }
         .book-footer {
             padding: 28px 0;
             border-top: 1px solid var(--border);
@@ -63,18 +62,6 @@
         }
         .book-footer-logo img { height: 18px; width: auto; opacity: 0.5; }
         .book-footer-copy { font-size: 0.72rem; color: var(--text-m); }
-        /* Prevent Calendly iframe from capturing page scroll on touch devices */
-        @media (pointer: coarse) {
-            .book-calendly {
-                position: relative;
-            }
-            .book-calendly .calendly-inline-widget iframe {
-                pointer-events: none;
-            }
-            .book-calendly.active .calendly-inline-widget iframe {
-                pointer-events: auto;
-            }
-        }
         /* Inline override: ensure scroll-reveal elements are visible */
         .sr.visible { opacity: 1 !important; transform: translateY(0) !important; }
         .sr { transition: opacity 0.6s ease, transform 0.6s ease; }
@@ -118,7 +105,7 @@
     </div>
 
     <div class="book-calendly">
-        <div data-tf-live="01KM6NNMYV0EA2VFNS6N8B7555" style="min-width:320px;height:700px;"></div>
+        <div data-tf-live="01KM6NNMYV0EA2VFNS6N8B7555" style="width:100%;height:80vh;min-height:600px;"></div>
         <script src="//embed.typeform.com/next/embed.js"></script>
     </div>
 
