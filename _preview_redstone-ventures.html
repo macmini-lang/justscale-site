@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Pitch Page | Redstone Ventures | JustScale</title>
+    <meta name="description" content="Pitch Page prepared for James Mitchell at Redstone Ventures.">
+    <meta property="og:title" content="Pitch Page | Redstone Ventures | JustScale">
+    <meta property="og:description" content="An independent assessment of investor acquisition infrastructure.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="shared.css?v=2">
+    <link rel="stylesheet" href="for/prospect.css?v=5">
+    <script src="https://fast.wistia.com/player.js" async></script>
+    <script src="https://fast.wistia.com/embed/pqzibiagya.js" async type="module"></script>
+    <script src="https://fast.wistia.com/embed/bkgqk77130.js" async type="module"></script>
+    <style>
+        wistia-player[media-id='pqzibiagya']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/pqzibiagya/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }
+        wistia-player[media-id='bkgqk77130']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/bkgqk77130/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }
+        
+/* Accordion System */
+.accordion { border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; background: rgba(255, 255, 255, 0.02); transition: background 0.2s ease; }
+.accordion:hover { background: rgba(255, 255, 255, 0.04); }
+.accordion.open { background: rgba(255, 255, 255, 0.03); }
+.accordion-trigger { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 20px 24px; cursor: pointer; border: none; background: none; color: inherit; font-family: inherit; text-align: left; gap: 16px; }
+.accordion-trigger:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; border-radius: 12px; }
+.accordion-left { display: flex; align-items: center; gap: 16px; flex: 1; min-width: 0; }
+.accordion-icon { width: 40px; height: 40px; min-width: 40px; border-radius: 10px; background: rgba(201, 169, 110, 0.1); display: flex; align-items: center; justify-content: center; }
+.accordion-icon svg { width: 20px; height: 20px; stroke: var(--gold); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.accordion-label { flex: 1; min-width: 0; }
+.accordion-label h3 { font-size: 1rem; font-weight: 600; color: var(--text); margin: 0; line-height: 1.3; }
+.accordion-label p { font-size: 0.82rem; color: var(--text-s); margin: 4px 0 0; line-height: 1.4; }
+.accordion-chevron { width: 20px; height: 20px; min-width: 20px; color: var(--text-s); transition: transform 0.3s ease; }
+.accordion.open .accordion-chevron { transform: rotate(180deg); }
+.accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+.accordion.open .accordion-body { max-height: 4000px; }
+.accordion-content { padding: 0 24px 24px; border-top: 1px solid var(--border); margin-top: 0; padding-top: 20px; }
+.accordion-group { margin: 40px 0; }
+.accordion-group-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; padding-left: 4px; }
+.accordion-badge { font-size: 0.7rem; font-weight: 600; color: var(--gold); background: rgba(201, 169, 110, 0.12); padding: 3px 10px; border-radius: 100px; white-space: nowrap; }
+
+/* Compact Sections Inside Accordions */
+.acc-narrative { color: var(--text-s); line-height: 1.7; font-size: 0.92rem; }
+.acc-narrative p { margin-bottom: 16px; }
+.acc-narrative p:last-child { margin-bottom: 0; }
+.acc-benchmarks { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 20px; }
+.acc-bench { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
+.acc-bench-val { font-size: 1.1rem; font-weight: 700; color: var(--gold); margin-bottom: 4px; }
+.acc-bench-label { font-size: 0.82rem; font-weight: 500; color: var(--text); margin-bottom: 6px; }
+.acc-bench-src { font-size: 0.72rem; color: var(--text-s); }
+
+.acc-compare-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.acc-compare-row:last-child { margin-bottom: 0; }
+.acc-compare-card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
+.acc-compare-card.them { border-color: rgba(201, 169, 110, 0.3); }
+.acc-compare-col-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-s); margin-bottom: 8px; }
+.acc-compare-card.them .acc-compare-col-label { color: var(--gold); }
+.acc-compare-card p { font-size: 0.88rem; color: var(--text); line-height: 1.5; margin: 0; }
+.acc-compare-area-label { font-size: 0.82rem; font-weight: 600; color: var(--text); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+.acc-compare-area-label svg { width: 16px; height: 16px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+
+.acc-opportunity { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 12px; }
+.acc-opportunity:last-child { margin-bottom: 0; }
+.acc-opportunity h4 { font-size: 0.95rem; font-weight: 600; color: var(--text); margin: 0 0 8px; }
+.acc-opportunity p { font-size: 0.88rem; color: var(--text-s); line-height: 1.6; margin: 0 0 12px; }
+.acc-impact { display: flex; flex-direction: column; gap: 4px; padding-top: 12px; border-top: 1px solid var(--border); }
+.acc-impact-val { font-size: 0.88rem; font-weight: 600; color: var(--gold); }
+.acc-impact-basis { font-size: 0.75rem; color: var(--text-s); }
+
+/* Script Segments */
+.acc-script { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 12px; }
+.acc-script:last-child { margin-bottom: 0; }
+.acc-script-meta { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+.acc-pill { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; background: rgba(201, 169, 110, 0.12); color: var(--gold); padding: 4px 12px; border-radius: 100px; }
+.acc-seg { margin-bottom: 12px; }
+.acc-seg:last-child { margin-bottom: 0; }
+.acc-seg-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+.acc-seg p { font-size: 0.88rem; color: var(--text); line-height: 1.6; margin: 0; }
+
+/* Email Cards */
+.acc-email { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 12px; }
+.acc-email:last-child { margin-bottom: 0; }
+.acc-email-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.acc-email-num { font-size: 0.75rem; font-weight: 600; color: var(--gold); }
+.acc-email-timing { font-size: 0.72rem; color: var(--text-s); }
+.acc-email-subject { font-size: 0.88rem; font-weight: 600; color: var(--text); margin-bottom: 10px; }
+.acc-email-body { font-size: 0.84rem; color: var(--text-s); line-height: 1.6; white-space: pre-line; }
+
+/* Funnel Stages */
+.acc-funnel-stage { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; margin-bottom: 8px; }
+.acc-funnel-stage:last-child { margin-bottom: 0; }
+.acc-funnel-stage h4 { font-size: 0.88rem; font-weight: 600; color: var(--text); margin: 0 0 8px; }
+.acc-funnel-stage ul { margin: 0; padding-left: 18px; }
+.acc-funnel-stage li { font-size: 0.82rem; color: var(--text-s); line-height: 1.6; }
+
+/* Bottleneck Analysis */
+.acc-bottleneck { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 12px; }
+.acc-bottleneck:last-child { margin-bottom: 0; }
+.acc-bottleneck-problem { font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+.acc-bottleneck-cost { font-size: 0.88rem; color: #e74c3c; line-height: 1.6; margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+.acc-bottleneck-fix { font-size: 0.88rem; color: var(--text-s); line-height: 1.6; }
+
+/* Section Dividers */
+.brief-section-divider { border: none; border-top: 1px solid var(--border); margin: 48px auto; max-width: 760px; }
+
+/* Responsive */
+@media (max-width: 640px) {
+    .accordion-trigger { padding: 16px 18px; }
+    .accordion-content { padding: 0 18px 18px; }
+    .accordion-icon { width: 36px; height: 36px; min-width: 36px; }
+    .accordion-icon svg { width: 18px; height: 18px; }
+    .acc-compare-row { grid-template-columns: 1fr; }
+    .acc-benchmarks { grid-template-columns: 1fr; }
+}
+
+    </style>
+</head>
+<body>
+<div class="page" id="page">
+
+    <!-- NAV -->
+    <nav class="brief-nav">
+        <div class="brief-container">
+            <a href="index.html" class="brief-nav-logo" style="display:none;">
+                <img src="logo.svg" alt="JustScale">
+            </a>
+            <span class="brief-nav-label">Pitch Page</span>
+        </div>
+    </nav>
+
+    <header class="brief-header">
+        <div class="brief-container">
+            <div class="hero-from sr">From Zac Regan // JustScale</div>
+            <div class="hero-badge sr">Built Specifically for James</div>
+            <h1 class="sr">James, here's how you raise $40,000,000 for Redstone Growth Fund II through paid ads</h1>
+            <p class="brief-header-sub sr">Below is a full marketing audit of your fund, ad scripts you can film tomorrow, an investor email sequence, and landing page copy. Everything is built specifically for your fund. It's yours to keep.</p>
+            <a href="#step-video" class="hero-cta-btn sr">Start Here</a>
+            <div class="journey-pills sr">
+                <a href="#step-video" class="journey-pill"><span class="journey-pill-num">1</span> Watch the Video</a>
+                <a href="#step-scorecard" class="journey-pill"><span class="journey-pill-num">2</span> See the Data</a>
+                <a href="#step-deliverables" class="journey-pill"><span class="journey-pill-num">3</span> Your Deliverables</a>
+                <a href="#step-book" class="journey-pill"><span class="journey-pill-num">4</span> Book a Call</a>
+            </div>
+        </div>
+    </header>
+
+    <hr class="glow-divider">
+    <section class="brief-section" id="step-video">
+        <div class="brief-container">
+            <span class="step-badge sr">Step 1</span>
+            <h2 class="sr">Watch This First</h2>
+            <div class="brief-vsl-wrap sr" style="margin-top: 20px;">
+                <wistia-player media-id="pqzibiagya" aspect="1.7777777777777777"></wistia-player>
+            </div>
+        </div>
+    </section>
+
+    <div class="brief-inline-cta-v2">
+        <a href="https://calendly.com/zac-justscale/justscale-discovery-call" target="_blank" rel="noopener" class="brief-inline-cta-btn">Book a Call &rarr;</a>
+    </div>
+
+    <hr class="glow-divider">
+    <section class="brief-section" id="step-scorecard">
+        <div class="brief-container">
+            <span class="step-badge sr">Step 2</span>
+            <h2 class="sr">Your Areas for Improvement</h2>
+            <p class="scorecard-subtitle sr">Green = you're covered. Red = qualified investors you're not reaching.</p>
+            <div class="scorecard-grid">
+                <div class="scorecard-card sr">
+                    <span class="scorecard-emoji">📱</span>
+                    <span class="scorecard-label">Paid Ads</span>
+                    <span class="scorecard-pill missing">Missing</span>
+                </div>
+                <div class="scorecard-card sr">
+                    <span class="scorecard-emoji">🌐</span>
+                    <span class="scorecard-label">Landing Page</span>
+                    <span class="scorecard-pill weak">Weak</span>
+                </div>
+                <div class="scorecard-card sr">
+                    <span class="scorecard-emoji">📹</span>
+                    <span class="scorecard-label">VSL / Video</span>
+                    <span class="scorecard-pill missing">Missing</span>
+                </div>
+                <div class="scorecard-card sr">
+                    <span class="scorecard-emoji">📋</span>
+                    <span class="scorecard-label">Application Funnel</span>
+                    <span class="scorecard-pill missing">Missing</span>
+                </div>
+                <div class="scorecard-card sr">
+                    <span class="scorecard-emoji">📧</span>
+                    <span class="scorecard-label">Email Nurture</span>
+                    <span class="scorecard-pill missing">Missing</span>
+                </div>
+                <div class="scorecard-card sr">
+                    <span class="scorecard-emoji">🔄</span>
+                    <span class="scorecard-label">Retargeting</span>
+                    <span class="scorecard-pill missing">Missing</span>
+                </div>
+                <div class="scorecard-card sr">
+                    <span class="scorecard-emoji">📣</span>
+                    <span class="scorecard-label">Social Presence</span>
+                    <span class="scorecard-pill strong">Strong</span>
+                </div>
+                <div class="scorecard-card sr">
+                    <span class="scorecard-emoji">📊</span>
+                    <span class="scorecard-label">Analytics</span>
+                    <span class="scorecard-pill weak">Weak</span>
+                </div>
+            </div>
+            <p class="scorecard-subtitle sr" style="margin-top:20px;">That's 5 channels where qualified investors never see your fund. <a href="#comp-section" style="color:var(--gold);">See how that compares to your competition below.</a></p>
+        </div>
+    </section>
+
+    <hr class="glow-divider">
+    <section class="brief-section" id="comp-section">
+        <div class="brief-container">
+            <h2 class="sr">Redstone Growth Fund II vs. the Competition</h2>
+            <div class="comp-chart">
+            <div class="comp-row is-prospect sr">
+                <div class="comp-row-name prospect">Redstone</div>
+                <div class="comp-bars">
+                    <div class="comp-bar-wrap">
+                        <span class="comp-bar-label">Paid Media</span>
+                        <div class="comp-bar-track"><div class="comp-bar-fill gold" data-width="10"></div></div>
+                        <span class="comp-bar-score">1/10</span>
+                    </div>
+                    <div class="comp-bar-wrap">
+                        <span class="comp-bar-label">Funnel Quality</span>
+                        <div class="comp-bar-track"><div class="comp-bar-fill gold" data-width="30"></div></div>
+                        <span class="comp-bar-score">3/10</span>
+                    </div>
+                    <div class="comp-bar-wrap">
+                        <span class="comp-bar-label">Content</span>
+                        <div class="comp-bar-track"><div class="comp-bar-fill gold" data-width="60"></div></div>
+                        <span class="comp-bar-score">6/10</span>
+                    </div>
+                    <div class="comp-bar-wrap">
+                        <span class="comp-bar-label">Email/Nurture</span>
+                        <div class="comp-bar-track"><div class="comp-bar-fill gold" data-width="20"></div></div>
+                        <span class="comp-bar-score">2/10</span>
+                    </div>
+                </div>
+            </div>
+            <div class="comp-row sr">
+                <div class="comp-row-name">Origin Capital</div>
+                <div class="comp-bars">
+                    <div class="comp-bar-wrap">
+                        <span class="comp-bar-label">Paid Media</span>
+                        <div class="comp-bar-track"><div class="comp-bar-fill green" data-width="80"></div></div>
+                        <span class="comp-bar-score">8/10</span>
+                    </div>
+                    <div class="comp-bar-wrap">
+                        <span class="comp-bar-label">Funnel Quality</span>
+                        <div class="comp-bar-track"><div class="comp-bar-fill green" data-width="70"></div></div>
+                        <span class="comp-bar-score">7/10</span>
+                    </div>
+                    <div class="comp-bar-wrap">
+                        <span class="comp-bar-label">Content</span>
+                        <div class="comp-bar-track"><div class="comp-bar-fill yellow" data-width="50"></div></div>
+                        <span class="comp-bar-score">5/10</span>
+                    </div>
+                    <div class="comp-bar-wrap">
+                        <span class="comp-bar-label">Email/Nurture</span>
+                        <div class="comp-bar-track"><div class="comp-bar-fill green" data-width="80"></div></div>
+                        <span class="comp-bar-score">8/10</span>
+                    </div>
+                </div>
+            </div>
+            <div class="comp-row sr">
+                <div class="comp-row-name">Nuveen RE</div>
+                <div class="comp-bars">
+                    <div class="comp-bar-wrap">
+                        <span class="comp-bar-label">Paid Media</span>
+                        <div class="comp-bar-track"><div class="comp-bar-fill green" data-width="90"></div></div>
+                        <span class="comp-bar-score">9/10</span>
+                    </div>
+                    <div class="comp-bar-wrap">
+                        <span class="comp-bar-label">Funnel Quality</span>
+                        <div class="comp-bar-track"><div class="comp-bar-fill green" data-width="80"></div></div>
+                        <span class="comp-bar-score">8/10</span>
+                    </div>
+                    <div class="comp-bar-wrap">
+                        <span class="comp-bar-label">Content</span>
+                        <div class="comp-bar-track"><div class="comp-bar-fill green" data-width="70"></div></div>
+                        <span class="comp-bar-score">7/10</span>
+                    </div>
+                    <div class="comp-bar-wrap">
+                        <span class="comp-bar-label">Email/Nurture</span>
+                        <div class="comp-bar-track"><div class="comp-bar-fill green" data-width="90"></div></div>
+                        <span class="comp-bar-score">9/10</span>
+                    </div>
+                </div>
+            </div>
+            <div class="comp-row sr">
+                <div class="comp-row-name">Starwood</div>
+                <div class="comp-bars">
+                    <div class="comp-bar-wrap">
+                        <span class="comp-bar-label">Paid Media</span>
+                        <div class="comp-bar-track"><div class="comp-bar-fill green" data-width="70"></div></div>
+                        <span class="comp-bar-score">7/10</span>
+                    </div>
+                    <div class="comp-bar-wrap">
+                        <span class="comp-bar-label">Funnel Quality</span>
+                        <div class="comp-bar-track"><div class="comp-bar-fill yellow" data-width="60"></div></div>
+                        <span class="comp-bar-score">6/10</span>
+                    </div>
+                    <div class="comp-bar-wrap">
+                        <span class="comp-bar-label">Content</span>
+                        <div class="comp-bar-track"><div class="comp-bar-fill green" data-width="80"></div></div>
+                        <span class="comp-bar-score">8/10</span>
+                    </div>
+                    <div class="comp-bar-wrap">
+                        <span class="comp-bar-label">Email/Nurture</span>
+                        <div class="comp-bar-track"><div class="comp-bar-fill green" data-width="70"></div></div>
+                        <span class="comp-bar-score">7/10</span>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <p class="scorecard-subtitle sr" style="margin-top:24px;">The gap is distribution, not product. Here's the system that closes it.</p>
+        </div>
+    </section>
+
+    <hr class="glow-divider">
+    <section class="brief-section">
+        <div class="brief-container">
+            <h2 class="sr">Here's How the System Works</h2>
+            <p class="scorecard-subtitle sr">Each step below is built for your fund. Click any step to see the actual deliverable.</p>
+            <div class="brief-vsl-wrap sr" style="margin-bottom: 32px;">
+                <wistia-player media-id="bkgqk77130" aspect="1.7777777777777777"></wistia-player>
+            </div>
+            <div class="pipeline">
+            <a href="#acc-ad-scripts" style="text-decoration:none;" class="pipeline-step sr">
+                <div class="pipeline-icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none">
+            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z" fill="currentColor" opacity="0.9"/>
+        </svg></div>
+                <span class="pipeline-label">Meta Ads</span>
+            </a>
+            <span class="pipeline-arrow"><svg viewBox="0 0 24 24" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div class="pipeline-step sr">
+                <div class="pipeline-icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="3"/>
+            <path d="M7 8h10M7 12h6M7 16h8"/>
+            <circle cx="17" cy="15" r="2.5"/><path d="M19 17l1.5 1.5"/>
+        </svg></div>
+                <span class="pipeline-label">Lead Form</span>
+            </div>
+            <span class="pipeline-arrow"><svg viewBox="0 0 24 24" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <a href="#acc-landing-page-copy" style="text-decoration:none;" class="pipeline-step sr">
+                <div class="pipeline-icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="18" rx="2"/>
+            <path d="M2 8h20"/>
+            <rect x="5" y="10.5" width="14" height="5" rx="1" stroke-dasharray="2 1.5" opacity="0.5"/>
+            <polygon points="10.5,11.5 10.5,14.5 13.5,13" fill="currentColor" stroke="none" opacity="0.7"/>
+            <rect x="8" y="17" width="8" height="2" rx="1" opacity="0.6"/>
+        </svg></div>
+                <span class="pipeline-label">Landing Page + VSL</span>
+            </a>
+            <span class="pipeline-arrow"><svg viewBox="0 0 24 24" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div class="pipeline-step sr">
+                <div class="pipeline-icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="3"/>
+            <path d="M8 12l3 3 5-6"/>
+        </svg></div>
+                <span class="pipeline-label">Confirmation Page</span>
+            </div>
+            <span class="pipeline-arrow"><svg viewBox="0 0 24 24" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <a href="#acc-email-sequence" style="text-decoration:none;" class="pipeline-step sr">
+                <div class="pipeline-icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="M22 4L12 13 2 4"/>
+            <path d="M2 20l7-7M22 20l-7-7" opacity="0.4"/>
+        </svg></div>
+                <span class="pipeline-label">Email Nurture</span>
+            </a>
+            <span class="pipeline-arrow"><svg viewBox="0 0 24 24" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div class="pipeline-step sr">
+                <div class="pipeline-icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+        </svg></div>
+                <span class="pipeline-label">Sales Call</span>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="glow-divider">
+    <section class="brief-section" id="calc-section">
+        <div class="brief-container">
+            <h2 class="sr">Projected Capital Raised</h2>
+            <p class="scorecard-subtitle sr">Adjust the numbers to match your fund. These are based on what we see across similar Reg D raises.</p>
+            <div class="calc-grid sr">
+                <div class="calc-input-group">
+                    <label class="calc-label" for="calc-invest">Avg. LP Commitment</label>
+                    <input class="calc-input" type="number" id="calc-invest" value="250000">
+                </div>
+                <div class="calc-input-group">
+                    <label class="calc-label" for="calc-leads">Qualified Applications / Mo</label>
+                    <input class="calc-input" type="number" id="calc-leads" value="35">
+                </div>
+                <div class="calc-input-group">
+                    <label class="calc-label" for="calc-close">Application-to-LP Rate (%)</label>
+                    <input class="calc-input" type="number" id="calc-close" value="8" min="1" max="100">
+                </div>
+                <div class="calc-input-group">
+                    <label class="calc-label" for="calc-spend">Monthly Ad Spend</label>
+                    <input class="calc-input" type="number" id="calc-spend" value="10000">
+                </div>
+            </div>
+            <div class="calc-results sr">
+                <div class="calc-result"><div class="calc-result-value" id="calc-monthly-lps">-</div><div class="calc-result-label">New LPs / Month</div></div>
+                <div class="calc-result"><div class="calc-result-value" id="calc-monthly-capital">-</div><div class="calc-result-label">Capital Raised / Month</div></div>
+                <div class="calc-result"><div class="calc-result-value" id="calc-annual-capital">-</div><div class="calc-result-label">Capital Raised / Year</div></div>
+                <div class="calc-result"><div class="calc-result-value" id="calc-roas">-</div><div class="calc-result-label">Return on Ad Spend</div></div>
+            </div>
+            <p class="scorecard-subtitle sr" style="margin-top:20px; font-size:0.78rem;">These are projections, not guarantees. Actual results depend on your fund's track record, offer structure, and sales process.</p>
+        </div>
+    </section>
+
+    <div class="brief-inline-cta-v2">
+        <a href="https://calendly.com/zac-justscale/justscale-discovery-call" target="_blank" rel="noopener" class="brief-inline-cta-btn">Book a Call &rarr;</a>
+    </div>
+
+    <hr class="glow-divider">
+    <section class="brief-section" id="step-deliverables">
+        <div class="brief-container">
+            <span class="step-badge sr">Step 3</span>
+            <span class="value-tag sr">Estimated Value: $7,500+</span>
+            <h2 class="sr">Your Deliverables</h2>
+            <p class="scorecard-subtitle sr">3 deliverables. Click to expand. Yours to keep.</p>
+        <div class="accordion" id="acc-audit">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-audit-body">
+                <div class="accordion-left">
+                    <div class="accordion-icon">
+                        <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    </div>
+                    <div class="accordion-label">
+                        <h3>Full Marketing Audit & Gap Analysis</h3>
+                        <p>Strengths, gaps, competitor breakdown, and core diagnosis</p>
+                    </div>
+                </div>
+                <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="accordion-body" id="acc-audit-body">
+                <div class="accordion-content">
+                    <h4 style="color:var(--gold); margin-bottom:12px;">Where You Win</h4>
+                    <div class="acc-opportunity" style="border-color:rgba(46,204,113,0.2); background:rgba(46,204,113,0.03);">
+                        <h4>Strong track record</h4>
+                        <p>18.2% IRR</p>
+                    </div>
+                    <h4 style="color:#e74c3c; margin:24px 0 12px;">Where You Bleed Revenue</h4>
+                    <div class="acc-opportunity" style="border-color:rgba(231,76,60,0.2); background:rgba(231,76,60,0.03);">
+                        <h4>No paid ads</h4>
+                        <p>Zero spend</p>
+                        <div class="acc-impact">
+                            <span class="acc-impact-val" style="color:#e74c3c;">$5M+</span>
+                        </div>
+                    </div>
+                    <h4 style="color:var(--text); margin:24px 0 12px;">The Core Issue</h4>
+                    <div class="acc-narrative"><p>Distribution gap.</p></div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion" id="acc-ad-scripts">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-ad-scripts-body">
+                <div class="accordion-left">
+                    <div class="accordion-icon">
+                        <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    </div>
+                    <div class="accordion-label">
+                        <h3>Cold Traffic Ad Scripts</h3>
+                        <p>Ready-to-film scripts organized by hook type</p>
+                    </div>
+                </div>
+                <span class="accordion-badge">1 scripts</span>
+                <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="accordion-body" id="acc-ad-scripts-body">
+                <div class="accordion-content">
+                    <div class="script-group-header">Direct Offer</div>
+                    <div class="acc-script">
+                        <div class="acc-script-meta">
+                            <span class="acc-pill">Meta</span>
+                            <span class="acc-pill">Video 60s</span>
+                        </div>
+                        <div class="acc-seg">
+                            <div class="acc-seg-label">Hook</div>
+                            <p>h</p>
+                        </div>
+                        <div class="acc-seg">
+                            <div class="acc-seg-label">Body</div>
+                            <p>b</p>
+                        </div>
+                        <div class="acc-seg">
+                            <div class="acc-seg-label">CTA</div>
+                            <p>c</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion" id="acc-email-sequence">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-email-sequence-body">
+                <div class="accordion-left">
+                    <div class="accordion-icon">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
+                    </div>
+                    <div class="accordion-label">
+                        <h3>Investor Nurture Email Sequence</h3>
+                        <p>Full emails with subject lines, ready to send</p>
+                    </div>
+                </div>
+                <span class="accordion-badge">1 emails</span>
+                <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="accordion-body" id="acc-email-sequence-body">
+                <div class="accordion-content">
+                    <div class="acc-email">
+                        <div class="acc-email-header">
+                            <span class="acc-email-num">Email 1</span>
+                            <span class="acc-email-timing">Day 0</span>
+                        </div>
+                        <div class="acc-email-subject">test</div>
+                        <div class="acc-email-body">test</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <hr class="glow-divider">
+    <section class="brief-section">
+        <div class="brief-container">
+            <h2 class="sr">Why Fund Managers Trust JustScale With Their Raise</h2>
+            <div class="about-content sr">
+                <div class="about-text">
+                    <p>Most agencies run ads for e-commerce brands and coaching programs. They've never worked with a fund manager. They don't understand compliance. They don't know the difference between 506(b) and 506(c). And they definitely don't know how to speak to accredited investors who manage eight-figure portfolios.</p>
+                    <p>We only work with fund managers raising capital through Reg D offerings. Every ad script, every email, every landing page we write goes through a compliance filter before it ships. We understand LP psychology, the accredited investor qualification process, and the 90-180 day sales cycle that capital raising requires.</p>
+                    <p>Everything on this page was built specifically for Redstone Growth Fund II. The ad scripts use your track record. The emails reference your commercial real estate thesis. The landing page copy speaks to your target investors. This is the actual work, not a pitch deck about the work.</p>
+                    <span class="about-credential">JustScale // Paid Investor Acquisition for Fund Managers</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="glow-divider">
+    <section class="brief-cta" id="step-book">
+        <div class="brief-container">
+            <span class="step-badge sr">Step 4</span>
+            <h2 class="sr">Book Your Call</h2>
+            <p class="sr">James, everything above is yours whether we work together or not. If you want a team that does this full-time for fund managers, that's a 20-minute conversation.</p>
+            <a href="https://calendly.com/zac-justscale/justscale-discovery-call" target="_blank" rel="noopener" class="brief-cta-btn sr">Book a 20-Minute Call</a>
+            <p class="brief-cta-email sr">Or email directly: zac@justscale.co</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="brief-footer">
+        <div class="brief-container">
+            <a href="index.html" class="brief-footer-logo" style="display:none;">
+                <img src="logo.svg" alt="JustScale">
+            </a>
+            <span class="brief-footer-copy">&copy; 2026 JustScale // Built for James // March 2026</span>
+        </div>
+    </footer>
+
+</div><!-- /page -->
+
+<script>
+(function() {
+    // Page fade-in
+    var page = document.getElementById('page');
+    if (page) page.classList.add('loaded');
+
+    // Scroll reveal for .sr elements
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.sr').forEach(function(el) { observer.observe(el); });
+
+    // Accordion toggle
+    document.querySelectorAll('.accordion-trigger').forEach(function(trigger) {
+        trigger.addEventListener('click', function() {
+            var accordion = this.closest('.accordion');
+            var isOpen = accordion.classList.contains('open');
+            accordion.classList.toggle('open');
+            this.setAttribute('aria-expanded', !isOpen);
+        });
+    });
+
+    // Bar chart animation on scroll
+    var barObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                var bars = entry.target.querySelectorAll('.comp-bar-fill');
+                bars.forEach(function(bar) {
+                    var w = bar.getAttribute('data-width');
+                    if (w) bar.style.width = w + '%';
+                });
+                barObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.comp-chart').forEach(function(el) { barObserver.observe(el); });
+
+    // Revenue calculator
+    var calcInvest = document.getElementById('calc-invest');
+    var calcLeads = document.getElementById('calc-leads');
+    var calcClose = document.getElementById('calc-close');
+    var calcSpend = document.getElementById('calc-spend');
+
+    function updateCalc() {
+        if (!calcInvest) return;
+        var invest = parseFloat(calcInvest.value) || 0;
+        var leads = parseFloat(calcLeads.value) || 0;
+        var closeRate = (parseFloat(calcClose.value) || 0) / 100;
+        var spend = parseFloat(calcSpend.value) || 0;
+
+        var monthlyLps = Math.round(leads * closeRate);
+        var monthlyCapital = monthlyLps * invest;
+        var annualCapital = monthlyCapital * 12;
+        var roas = spend > 0 ? Math.round(monthlyCapital / spend) : 0;
+
+        var fmt = function(n) {
+            if (n >= 1000000) return '$' + (n / 1000000).toFixed(1) + 'M';
+            if (n >= 1000) return '$' + Math.round(n / 1000) + 'K';
+            return '$' + n;
+        };
+
+        var el = document.getElementById('calc-monthly-lps');
+        if (el) el.textContent = monthlyLps;
+        el = document.getElementById('calc-monthly-capital');
+        if (el) el.textContent = fmt(monthlyCapital);
+        el = document.getElementById('calc-annual-capital');
+        if (el) el.textContent = fmt(annualCapital);
+        el = document.getElementById('calc-roas');
+        if (el) el.textContent = roas + 'x';
+    }
+
+    if (calcInvest) {
+        [calcInvest, calcLeads, calcClose, calcSpend].forEach(function(input) {
+            input.addEventListener('input', updateCalc);
+        });
+        updateCalc();
+    }
+})();
+</script>
+</body>
+</html>

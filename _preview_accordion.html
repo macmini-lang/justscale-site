@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Executive Briefing | Antimony Resources Corp. | JustScale</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="shared.css?v=2">
+    <link rel="stylesheet" href="for/prospect.css?v=4">
+    <script src="https://fast.wistia.com/player.js" async></script>
+    <script src="https://fast.wistia.com/embed/pqzibiagya.js" async type="module"></script>
+    <style>
+        wistia-player[media-id='pqzibiagya']:not(:defined) {
+            background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/pqzibiagya/swatch');
+            display: block; filter: blur(5px); padding-top:56.25%;
+        }
+
+        /* ── Accordion System ──────────────────────────── */
+        .accordion {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.02);
+            transition: background 0.2s ease;
+        }
+        .accordion:hover {
+            background: rgba(255, 255, 255, 0.04);
+        }
+        .accordion.open {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .accordion-trigger {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 24px;
+            cursor: pointer;
+            border: none;
+            background: none;
+            color: inherit;
+            font-family: inherit;
+            text-align: left;
+            gap: 16px;
+        }
+        .accordion-trigger:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: -2px;
+            border-radius: 12px;
+        }
+
+        .accordion-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .accordion-icon {
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            border-radius: 10px;
+            background: rgba(201, 169, 110, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .accordion-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--gold);
+            fill: none;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .accordion-label {
+            flex: 1;
+            min-width: 0;
+        }
+        .accordion-label h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text);
+            margin: 0;
+            line-height: 1.3;
+        }
+        .accordion-label p {
+            font-size: 0.82rem;
+            color: var(--text-s);
+            margin: 4px 0 0;
+            line-height: 1.4;
+        }
+
+        .accordion-chevron {
+            width: 20px;
+            height: 20px;
+            min-width: 20px;
+            color: var(--text-s);
+            transition: transform 0.3s ease;
+        }
+        .accordion.open .accordion-chevron {
+            transform: rotate(180deg);
+        }
+
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+        .accordion.open .accordion-body {
+            max-height: 4000px;
+        }
+
+        .accordion-content {
+            padding: 0 24px 24px;
+            border-top: 1px solid var(--border);
+            margin-top: 0;
+            padding-top: 20px;
+        }
+
+        /* ── Accordion Group ───────────────────────────── */
+        .accordion-group {
+            margin: 40px 0;
+        }
+        .accordion-group-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 16px;
+            padding-left: 4px;
+        }
+
+        /* ── Asset Count Badge ─────────────────────────── */
+        .accordion-badge {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--gold);
+            background: rgba(201, 169, 110, 0.12);
+            padding: 3px 10px;
+            border-radius: 100px;
+            white-space: nowrap;
+        }
+
+        /* ── Compact Sections Inside Accordions ────────── */
+        .acc-narrative { color: var(--text-s); line-height: 1.7; font-size: 0.92rem; }
+        .acc-narrative p { margin-bottom: 16px; }
+        .acc-narrative p:last-child { margin-bottom: 0; }
+
+        .acc-benchmarks {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .acc-bench {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px;
+        }
+        .acc-bench-val {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 4px;
+        }
+        .acc-bench-label {
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+        .acc-bench-src {
+            font-size: 0.72rem;
+            color: var(--text-s);
+        }
+
+        .acc-compare-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .acc-compare-row:last-child { margin-bottom: 0; }
+        .acc-compare-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px;
+        }
+        .acc-compare-card.them {
+            border-color: rgba(201, 169, 110, 0.3);
+        }
+        .acc-compare-col-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-s);
+            margin-bottom: 8px;
+        }
+        .acc-compare-card.them .acc-compare-col-label {
+            color: var(--gold);
+        }
+        .acc-compare-card p {
+            font-size: 0.88rem;
+            color: var(--text);
+            line-height: 1.5;
+            margin: 0;
+        }
+        .acc-compare-area-label {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .acc-compare-area-label svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--gold);
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        .acc-opportunity {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 12px;
+        }
+        .acc-opportunity:last-child { margin-bottom: 0; }
+        .acc-opportunity h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text);
+            margin: 0 0 8px;
+        }
+        .acc-opportunity p {
+            font-size: 0.88rem;
+            color: var(--text-s);
+            line-height: 1.6;
+            margin: 0 0 12px;
+        }
+        .acc-impact {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+        }
+        .acc-impact-val {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--gold);
+        }
+        .acc-impact-basis {
+            font-size: 0.75rem;
+            color: var(--text-s);
+        }
+
+        /* ── Script Segments Inside Accordions ─────────── */
+        .acc-script {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 12px;
+        }
+        .acc-script:last-child { margin-bottom: 0; }
+        .acc-script-meta {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+        .acc-pill {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            background: rgba(201, 169, 110, 0.12);
+            color: var(--gold);
+            padding: 4px 12px;
+            border-radius: 100px;
+        }
+        .acc-seg {
+            margin-bottom: 12px;
+        }
+        .acc-seg:last-child { margin-bottom: 0; }
+        .acc-seg-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 4px;
+        }
+        .acc-seg p {
+            font-size: 0.88rem;
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* ── Email Cards Inside Accordions ──────────────── */
+        .acc-email {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 12px;
+        }
+        .acc-email:last-child { margin-bottom: 0; }
+        .acc-email-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        .acc-email-num {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--gold);
+        }
+        .acc-email-timing {
+            font-size: 0.72rem;
+            color: var(--text-s);
+        }
+        .acc-email-subject {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+        .acc-email-body {
+            font-size: 0.84rem;
+            color: var(--text-s);
+            line-height: 1.6;
+            white-space: pre-line;
+        }
+
+        /* ── Funnel Stages ─────────────────────────────── */
+        .acc-funnel-stage {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-bottom: 8px;
+        }
+        .acc-funnel-stage:last-child { margin-bottom: 0; }
+        .acc-funnel-stage h4 {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text);
+            margin: 0 0 8px;
+        }
+        .acc-funnel-stage ul {
+            margin: 0;
+            padding-left: 18px;
+        }
+        .acc-funnel-stage li {
+            font-size: 0.82rem;
+            color: var(--text-s);
+            line-height: 1.6;
+        }
+
+        /* ── Roadmap Phases ────────────────────────────── */
+        .acc-phase {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 12px;
+        }
+        .acc-phase:last-child { margin-bottom: 0; }
+        .acc-phase-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .acc-phase-name {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+        .acc-phase-time {
+            font-size: 0.75rem;
+            color: var(--gold);
+            font-weight: 500;
+        }
+        .acc-phase ul {
+            margin: 0;
+            padding-left: 18px;
+        }
+        .acc-phase li {
+            font-size: 0.85rem;
+            color: var(--text-s);
+            line-height: 1.6;
+        }
+        .acc-phase-milestone {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            font-size: 0.82rem;
+            color: var(--text-s);
+        }
+
+        /* ── Section Dividers ──────────────────────────── */
+        .brief-section-divider {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 48px auto;
+            max-width: 760px;
+        }
+
+        /* ── Responsive ────────────────────────────────── */
+        @media (max-width: 640px) {
+            .accordion-trigger { padding: 16px 18px; }
+            .accordion-content { padding: 0 18px 18px; }
+            .accordion-icon { width: 36px; height: 36px; min-width: 36px; }
+            .accordion-icon svg { width: 18px; height: 18px; }
+            .acc-compare-row { grid-template-columns: 1fr; }
+            .acc-benchmarks { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+<div class="page" id="page">
+
+    <!-- NAV -->
+    <nav class="brief-nav">
+        <div class="brief-container">
+            <a href="index.html" class="brief-nav-logo">
+                <img src="logo.svg" alt="JustScale">
+            </a>
+            <span class="brief-nav-label">Executive Briefing</span>
+        </div>
+    </nav>
+
+    <!-- HEADER (always visible) -->
+    <header class="brief-header">
+        <div class="brief-container">
+            <div class="brief-meta">
+                <span class="brief-meta-item"><span>Prepared for</span> Sheryl Jones</span>
+                <span class="brief-meta-item"><span>Fund</span> Antimony Resources Corp.</span>
+                <span class="brief-meta-item"><span>Type</span> Reg D 506(b)</span>
+            </div>
+            <h1>Executive Briefing: Antimony Resources Corp.</h1>
+            <p class="brief-header-sub">What's working, what's missing, and what the top-performing funds in your space are doing that you're not.</p>
+            <div class="brief-stats">
+                <div class="brief-stat">
+                    <div class="brief-stat-value">$8,038,065</div>
+                    <div class="brief-stat-label">Raise Target</div>
+                </div>
+                <div class="brief-stat">
+                    <div class="brief-stat-value">506(b)</div>
+                    <div class="brief-stat-label">Reg D Type</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- VSL (always visible) -->
+    <section class="brief-vsl-section sr">
+        <div class="brief-container">
+            <h2 class="brief-vsl-heading sr">Watch the 3-minute walkthrough.</h2>
+            <p class="brief-vsl-sub sr">See how we build investor acquisition systems for funds like yours.</p>
+            <div class="brief-vsl-wrap sr">
+                <wistia-player media-id="pqzibiagya" aspect="1.7777777777777777"></wistia-player>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXECUTIVE SUMMARY (always visible) -->
+    <section class="brief-section">
+        <div class="brief-container">
+            <span class="brief-section-num sr">01 / The Bottom Line</span>
+            <p class="brief-summary sr">Antimony Resources Corp. is raising $8M in a market where China controls 85% of global antimony supply and prices have surged 228% since 2020. The thesis is strong. The problem is that no accredited investor will ever hear about it unless you build a system to put it in front of them. Right now, there's no paid acquisition, no investor funnel, no email nurture, and no content strategy. Every LP you close comes from your existing network. That works until it doesn't, and at $8M, you're approaching the ceiling.</p>
+        </div>
+    </section>
+
+    <hr class="brief-section-divider">
+
+    <!-- ══════════════════════════════════════════════════ -->
+    <!-- ACCORDION: ANALYSIS                               -->
+    <!-- ══════════════════════════════════════════════════ -->
+
+    <div class="brief-container">
+        <div class="accordion-group">
+            <div class="accordion-group-label">Analysis</div>
+
+            <!-- Market Context -->
+            <div class="accordion" id="acc-market">
+                <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-market-body">
+                    <div class="accordion-left">
+                        <div class="accordion-icon">
+                            <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                        </div>
+                        <div class="accordion-label">
+                            <h3>Market Context</h3>
+                            <p>The funds beating you to LP commitments are doing things you're not. Here's what's changed.</p>
+                        </div>
+                    </div>
+                    <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="accordion-body" id="acc-market-body">
+                    <div class="accordion-content">
+                        <div class="acc-narrative">
+                            <p>The funds closing raises fastest have stopped relying on warm intros and placement agents. 60% now use paid digital channels to find LPs, according to PitchBook's 2023 Annual Report. Virtual investor meetings are up 40% year over year (Preqin 2023). The funds doing this are filling rooms. The ones still working their network are watching those rooms fill up without them.</p>
+                        </div>
+                        <div class="acc-benchmarks">
+                            <div class="acc-bench">
+                                <div class="acc-bench-val">40% increase</div>
+                                <div class="acc-bench-label">Virtual Investor Meetings</div>
+                                <div class="acc-bench-src">Preqin 2023 Fundraising Report</div>
+                            </div>
+                            <div class="acc-bench">
+                                <div class="acc-bench-val">60% of funds</div>
+                                <div class="acc-bench-label">Data-Driven Fundraising</div>
+                                <div class="acc-bench-src">PitchBook 2023 Annual Report</div>
+                            </div>
+                            <div class="acc-bench">
+                                <div class="acc-bench-val">12 months</div>
+                                <div class="acc-bench-label">Average Fundraising Time</div>
+                                <div class="acc-bench-src">Bain & Company 2023 PE Report</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Current State -->
+            <div class="accordion" id="acc-current">
+                <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-current-body">
+                    <div class="accordion-left">
+                        <div class="accordion-icon">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                        </div>
+                        <div class="accordion-label">
+                            <h3>Where You Stand Today</h3>
+                            <p>Side-by-side comparison of your infrastructure against funds that are consistently oversubscribed.</p>
+                        </div>
+                    </div>
+                    <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="accordion-body" id="acc-current-body">
+                    <div class="accordion-content">
+                        <div class="acc-compare-area-label">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                            Website & Funnel
+                        </div>
+                        <div class="acc-compare-row">
+                            <div class="acc-compare-card">
+                                <div class="acc-compare-col-label">You</div>
+                                <p>No landing pages. No investor funnel. If someone finds you online, there's nowhere for them to go.</p>
+                            </div>
+                            <div class="acc-compare-card them">
+                                <div class="acc-compare-col-label">Top Funds</div>
+                                <p>Dedicated investor landing pages with qualification steps that filter out tire kickers before your team ever gets on the phone.</p>
+                            </div>
+                        </div>
+
+                        <div class="acc-compare-area-label" style="margin-top: 20px;">
+                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+                            Content & Social
+                        </div>
+                        <div class="acc-compare-row">
+                            <div class="acc-compare-card">
+                                <div class="acc-compare-col-label">You</div>
+                                <p>No ads running. No video content. No way for accredited investors to find you unless they already know your name.</p>
+                            </div>
+                            <div class="acc-compare-card them">
+                                <div class="acc-compare-col-label">Top Funds</div>
+                                <p>Running targeted Meta and YouTube campaigns that put their raise in front of accredited investors every day, whether those investors were looking or not.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Opportunities -->
+            <div class="accordion" id="acc-opps">
+                <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-opps-body">
+                    <div class="accordion-left">
+                        <div class="accordion-icon">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>
+                        </div>
+                        <div class="accordion-label">
+                            <h3>Opportunities</h3>
+                            <p>Four things the top funds in your space already have that you don't.</p>
+                        </div>
+                    </div>
+                    <span class="accordion-badge">4 identified</span>
+                    <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="accordion-body" id="acc-opps-body">
+                    <div class="accordion-content">
+                        <div class="acc-opportunity">
+                            <h4>Critical Mineral Supply Chain Positioning</h4>
+                            <p>Antimony's designation as a critical mineral by the U.S. government creates immediate strategic value for North American producers. With China controlling 85% of global supply and recent export restrictions, domestic production becomes increasingly valuable to defense contractors and battery manufacturers.</p>
+                            <div class="acc-impact">
+                                <span class="acc-impact-val">$2.1M - $4.7M additional valuation premium</span>
+                                <span class="acc-impact-basis">Based on critical mineral premium multiples (Source: U.S. Geological Survey 2023)</span>
+                            </div>
+                        </div>
+                        <div class="acc-opportunity">
+                            <h4>Defense Sector Revenue Acceleration</h4>
+                            <p>Antimony's use in flame retardants, ammunition, and military equipment creates direct revenue opportunities with defense contractors seeking supply chain security.</p>
+                            <div class="acc-impact">
+                                <span class="acc-impact-val">18-35% revenue acceleration</span>
+                                <span class="acc-impact-basis">Defense contractor sourcing preferences (Source: DoD Industrial Base Report 2023)</span>
+                            </div>
+                        </div>
+                        <div class="acc-opportunity">
+                            <h4>Electric Vehicle Battery Market Entry</h4>
+                            <p>Antimony's role in next-generation battery technologies positions the fund to capture EV market growth as North American production targets 50% market share by 2030.</p>
+                            <div class="acc-impact">
+                                <span class="acc-impact-val">$1.8M - $3.2M annual revenue potential</span>
+                                <span class="acc-impact-basis">EV battery antimony consumption projections (Source: IEA Global EV Outlook 2023)</span>
+                            </div>
+                        </div>
+                        <div class="acc-opportunity">
+                            <h4>Geographic Risk Mitigation Premium</h4>
+                            <p>Canadian operations provide political stability and regulatory clarity. This geographic advantage commands premium valuations from institutional investors seeking geopolitically secure mineral investments.</p>
+                            <div class="acc-impact">
+                                <span class="acc-impact-val">12-22% valuation multiple expansion</span>
+                                <span class="acc-impact-basis">Mining jurisdiction risk premium analysis (Source: Fraser Institute Mining Survey 2023)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══════════════════════════════════════════════ -->
+        <!-- ACCORDION: READY-TO-USE ASSETS                -->
+        <!-- ══════════════════════════════════════════════ -->
+
+        <div class="accordion-group">
+            <div class="accordion-group-label">Ready-to-Use Assets</div>
+
+            <!-- Ad Scripts -->
+            <div class="accordion" id="acc-ads">
+                <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-ads-body">
+                    <div class="accordion-left">
+                        <div class="accordion-icon">
+                            <svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                        </div>
+                        <div class="accordion-label">
+                            <h3>Ad Scripts</h3>
+                            <p>The exact scripts top funds are running right now to fill LP pipelines. Built for your fund.</p>
+                        </div>
+                    </div>
+                    <span class="accordion-badge">2 scripts</span>
+                    <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="accordion-body" id="acc-ads-body">
+                    <div class="accordion-content">
+                        <div class="acc-script">
+                            <div class="acc-script-meta">
+                                <span class="acc-pill">Meta</span>
+                                <span class="acc-pill">Talking Head Video</span>
+                            </div>
+                            <div class="acc-seg">
+                                <div class="acc-seg-label">Hook</div>
+                                <p>China just restricted antimony exports. Here's why that creates a massive opportunity for North American investors.</p>
+                            </div>
+                            <div class="acc-seg">
+                                <div class="acc-seg-label">Body</div>
+                                <p>Antimony is in everything from military equipment to electric vehicle batteries. China controls 85% of global supply, and they just tightened export controls. The Pentagon designated it a critical mineral, meaning defense contractors need domestic sources. While prices have already surged 228% since 2020, the real opportunity is just beginning as North American manufacturers scramble for secure supply chains.</p>
+                            </div>
+                            <div class="acc-seg">
+                                <div class="acc-seg-label">CTA</div>
+                                <p>Want to see how critical mineral shortages create investment opportunities? Click the link to get our North American Critical Minerals briefing.</p>
+                            </div>
+                        </div>
+                        <div class="acc-script">
+                            <div class="acc-script-meta">
+                                <span class="acc-pill">YouTube</span>
+                                <span class="acc-pill">Educational Explainer</span>
+                            </div>
+                            <div class="acc-seg">
+                                <div class="acc-seg-label">Hook</div>
+                                <p>The Pentagon just added this mineral to their critical list. Most investors have never heard of it.</p>
+                            </div>
+                            <div class="acc-seg">
+                                <div class="acc-seg-label">Body</div>
+                                <p>Antimony sounds obscure, but it's essential for flame retardants, ammunition, and advanced batteries. China produces 85% of the world's supply, and recent export restrictions are creating massive shortages. The U.S. imports 87% of its antimony needs, making domestic production incredibly valuable.</p>
+                            </div>
+                            <div class="acc-seg">
+                                <div class="acc-seg-label">CTA</div>
+                                <p>Download our critical minerals investment guide to see which other materials are creating similar opportunities.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Email Sequence -->
+            <div class="accordion" id="acc-emails">
+                <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-emails-body">
+                    <div class="accordion-left">
+                        <div class="accordion-icon">
+                            <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
+                        </div>
+                        <div class="accordion-label">
+                            <h3>Investor Email Sequence</h3>
+                            <p>The sequence that turns cold investor traffic into booked meetings. Written for your raise.</p>
+                        </div>
+                    </div>
+                    <span class="accordion-badge">4 emails</span>
+                    <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="accordion-body" id="acc-emails-body">
+                    <div class="accordion-content">
+                        <div class="acc-email">
+                            <div class="acc-email-header">
+                                <span class="acc-email-num">Email 1</span>
+                                <span class="acc-email-timing">Day 1</span>
+                            </div>
+                            <div class="acc-email-subject">China's antimony export restrictions (opportunity alert)</div>
+                            <div class="acc-email-body">Sheryl,
+
+China just tightened export controls on antimony.
+
+Most people don't know what antimony is. But the Pentagon does. They added it to their critical minerals list because it's essential for military equipment, flame retardants, and advanced batteries.
+
+Here's the problem: The U.S. imports 87% of its antimony needs. China controls 85% of global production.
+
+Here's the opportunity: North American producers are positioned to capture massive value as manufacturers scramble for secure supply chains.
+
+Tomorrow, I'll show you exactly how critical mineral shortages create investment premiums.
+
+Best,
+Zac</div>
+                        </div>
+                        <div class="acc-email">
+                            <div class="acc-email-header">
+                                <span class="acc-email-num">Email 2</span>
+                                <span class="acc-email-timing">Day 3</span>
+                            </div>
+                            <div class="acc-email-subject">Why defense contractors pay premiums for domestic antimony</div>
+                            <div class="acc-email-body">Sheryl,
+
+Defense contractors need antimony for ammunition and military equipment. But they can't rely on Chinese supply chains for obvious reasons.
+
+The Pentagon's response? The Defense Production Act now gives preferential contracts to domestic critical mineral suppliers.
+
+This isn't just about price. It's about access. When you're the only North American supplier in a room full of defense contractors, you name your terms.
+
+Next email: How the EV battery revolution multiplies this opportunity.
+
+Best,
+Zac</div>
+                        </div>
+                        <div class="acc-email">
+                            <div class="acc-email-header">
+                                <span class="acc-email-num">Email 3</span>
+                                <span class="acc-email-timing">Day 5</span>
+                            </div>
+                            <div class="acc-email-subject">The EV battery connection most investors miss</div>
+                            <div class="acc-email-body">Sheryl,
+
+Everyone talks about lithium and cobalt in EV batteries. Almost nobody mentions antimony. But next-generation battery technologies need it for improved performance and safety.
+
+North American EV production is targeting 50% market share by 2030. That means massive demand for domestic battery supply chains.
+
+Battery manufacturers face the same supply chain security issues as defense contractors. They need reliable, geopolitically stable sources.
+
+Best,
+Zac</div>
+                        </div>
+                        <div class="acc-email">
+                            <div class="acc-email-header">
+                                <span class="acc-email-num">Email 4</span>
+                                <span class="acc-email-timing">Day 7</span>
+                            </div>
+                            <div class="acc-email-subject">Why Canadian mining operations command premium valuations</div>
+                            <div class="acc-email-body">Sheryl,
+
+Location matters in mining. Especially for critical minerals.
+
+Investors pay premium multiples for projects in stable jurisdictions. Canada consistently ranks in the top 3 globally for mining investment attractiveness.
+
+The Fraser Institute's mining survey shows Canadian projects command 12-22% valuation premiums compared to higher-risk jurisdictions.
+
+For Antimony Resources, that geographic advantage compounds with strategic positioning in critical mineral supply chains.
+
+Best,
+Zac</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Funnel Wireframe -->
+            <div class="accordion" id="acc-funnel">
+                <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-funnel-body">
+                    <div class="accordion-left">
+                        <div class="accordion-icon">
+                            <svg viewBox="0 0 24 24"><path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/></svg>
+                        </div>
+                        <div class="accordion-label">
+                            <h3>Investor Acquisition Funnel</h3>
+                            <p>The system oversubscribed funds use to move investors from stranger to committed LP.</p>
+                        </div>
+                    </div>
+                    <span class="accordion-badge">6 stages</span>
+                    <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="accordion-body" id="acc-funnel-body">
+                    <div class="accordion-content">
+                        <div class="acc-funnel-stage">
+                            <h4>1. Awareness</h4>
+                            <ul>
+                                <li>Educational content about antimony's strategic importance</li>
+                                <li>Geopolitical supply chain analysis</li>
+                                <li>China export restriction implications</li>
+                            </ul>
+                        </div>
+                        <div class="acc-funnel-stage">
+                            <h4>2. Interest</h4>
+                            <ul>
+                                <li>North American production advantages</li>
+                                <li>Premium pricing for domestic suppliers</li>
+                                <li>Defense Production Act benefits</li>
+                            </ul>
+                        </div>
+                        <div class="acc-funnel-stage">
+                            <h4>3. Consideration</h4>
+                            <ul>
+                                <li>Company-specific project details</li>
+                                <li>Management team credentials</li>
+                                <li>Competitive positioning analysis</li>
+                            </ul>
+                        </div>
+                        <div class="acc-funnel-stage">
+                            <h4>4. Evaluation</h4>
+                            <ul>
+                                <li>Financial projections and modeling</li>
+                                <li>Comparable company valuations</li>
+                                <li>Due diligence materials</li>
+                            </ul>
+                        </div>
+                        <div class="acc-funnel-stage">
+                            <h4>5. Decision</h4>
+                            <ul>
+                                <li>Accredited investor verification</li>
+                                <li>Private placement documentation</li>
+                                <li>Subscription agreement execution</li>
+                            </ul>
+                        </div>
+                        <div class="acc-funnel-stage">
+                            <h4>6. Onboarding</h4>
+                            <ul>
+                                <li>Quarterly progress reporting</li>
+                                <li>Industry update communications</li>
+                                <li>Future opportunity pipeline</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══════════════════════════════════════════════ -->
+        <!-- ACCORDION: EXECUTION PLAN                     -->
+        <!-- ══════════════════════════════════════════════ -->
+
+        <div class="accordion-group">
+            <div class="accordion-group-label">Execution Plan</div>
+
+            <!-- 90-Day Roadmap -->
+            <div class="accordion" id="acc-roadmap">
+                <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-roadmap-body">
+                    <div class="accordion-left">
+                        <div class="accordion-icon">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </div>
+                        <div class="accordion-label">
+                            <h3>90-Day Roadmap</h3>
+                            <p>What your first 90 days look like if you want to stop losing LPs to funds that market better.</p>
+                        </div>
+                    </div>
+                    <span class="accordion-badge">3 phases</span>
+                    <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="accordion-body" id="acc-roadmap-body">
+                    <div class="accordion-content">
+                        <div class="acc-phase">
+                            <div class="acc-phase-header">
+                                <span class="acc-phase-name">Foundation</span>
+                                <span class="acc-phase-time">Days 1-30</span>
+                            </div>
+                            <ul>
+                                <li>Audit current investor outreach methods</li>
+                                <li>Develop a comprehensive investor profile</li>
+                                <li>Create a content calendar for strategic engagement</li>
+                            </ul>
+                            <div class="acc-phase-milestone"><strong>Milestone:</strong> Investor profile and engagement strategy complete</div>
+                        </div>
+                        <div class="acc-phase">
+                            <div class="acc-phase-header">
+                                <span class="acc-phase-name">Implementation</span>
+                                <span class="acc-phase-time">Days 31-60</span>
+                            </div>
+                            <ul>
+                                <li>Launch strategic engagement campaigns on Meta</li>
+                                <li>Host a virtual investor event</li>
+                                <li>Begin data collection and campaign refinement</li>
+                            </ul>
+                            <div class="acc-phase-milestone"><strong>Milestone:</strong> First virtual event held with investor feedback collected</div>
+                        </div>
+                        <div class="acc-phase">
+                            <div class="acc-phase-header">
+                                <span class="acc-phase-name">Optimization</span>
+                                <span class="acc-phase-time">Days 61-90</span>
+                            </div>
+                            <ul>
+                                <li>Refine engagement strategies based on data insights</li>
+                                <li>Expand content offerings to include webinars</li>
+                                <li>Initiate follow-up meetings with engaged investors</li>
+                            </ul>
+                            <div class="acc-phase-milestone"><strong>Milestone:</strong> Refined strategy with measurable investor engagement increase</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- /brief-container -->
+
+    <!-- CTA (always visible) -->
+    <section class="brief-cta">
+        <div class="brief-container">
+            <h2 class="sr">Everything above is yours.</h2>
+            <p class="sr">Run the scripts, send the emails, build the funnel. If you want a team that does this for funds full-time, that's what we do.</p>
+            <a href="./for/antimony-resources-corp/book/" class="brief-cta-btn sr">Yes, I Want to Learn More</a>
+            <p class="brief-cta-email sr">Or email directly: zac@justscale.co</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="brief-footer">
+        <div class="brief-container">
+            <a href="index.html" class="brief-footer-logo">
+                <img src="logo.svg" alt="JustScale">
+            </a>
+            <span class="brief-footer-copy">&copy; 2026 JustScale. All rights reserved.</span>
+        </div>
+    </footer>
+
+</div><!-- /page -->
+
+<script>
+(function() {
+    // Page fade-in
+    var page = document.getElementById('page');
+    if (page) page.classList.add('loaded');
+
+    // Scroll reveal
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.sr').forEach(function(el) { observer.observe(el); });
+
+    // Accordion toggle
+    document.querySelectorAll('.accordion-trigger').forEach(function(trigger) {
+        trigger.addEventListener('click', function() {
+            var accordion = this.closest('.accordion');
+            var isOpen = accordion.classList.contains('open');
+            var expanded = !isOpen;
+
+            accordion.classList.toggle('open');
+            this.setAttribute('aria-expanded', expanded);
+        });
+    });
+})();
+</script>
+</body>
+</html>
