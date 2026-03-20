@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="shared.css?v=20260320c">
+    <link rel="stylesheet" href="shared.css?v=20260320d">
     <script src="https://fast.wistia.com/player.js" async></script>
     <script src="https://fast.wistia.com/embed/9saxap09s8.js" async type="module"></script>
     <style>
@@ -358,7 +358,7 @@
         lightbox.addEventListener('click', function(e){ if(e.target === lightbox) closeLightbox(); });
         document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox(); });
 
-        // Scroll arrows
+        // Scroll arrows + center on load
         var wrap = document.querySelector('.yt-scroll-wrap');
         if(wrap){
             var grid = wrap.querySelector('.yt-grid');
@@ -366,6 +366,13 @@
             var right = wrap.querySelector('.yt-arrow--right');
             if(left) left.addEventListener('click', function(){ grid.scrollBy({left: -360, behavior: 'smooth'}); });
             if(right) right.addEventListener('click', function(){ grid.scrollBy({left: 360, behavior: 'smooth'}); });
+            // Center the grid so middle 3 cards are visible, edges peek/fade
+            var cards = grid.querySelectorAll('.yt-card');
+            if(cards.length > 3){
+                var cardW = cards[0].offsetWidth + 20; // card width + gap
+                var centerScroll = ((cards.length * cardW - 20) - grid.offsetWidth) / 2;
+                grid.scrollLeft = Math.max(0, centerScroll);
+            }
         }
     })();
     </script>
@@ -400,6 +407,6 @@
 <!-- GSAP + ScrollTrigger CDN -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="shared.js?v=20260320c"></script>
+<script src="shared.js?v=20260320d"></script>
 </body>
 </html>

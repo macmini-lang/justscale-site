@@ -1226,21 +1226,40 @@ footer .container {
 }
 .yt-scroll-wrap {
     position: relative;
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
-    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
 }
-.yt-scroll-wrap.yt-no-fade {
-    -webkit-mask-image: none;
-    mask-image: none;
+.yt-scroll-wrap::before,
+.yt-scroll-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 16px;
+    width: 80px;
+    z-index: 4;
+    pointer-events: none;
+}
+.yt-scroll-wrap::before {
+    left: 0;
+    background: linear-gradient(to right, var(--bg, #0c0c0c) 0%, transparent 100%);
+}
+.yt-scroll-wrap::after {
+    right: 0;
+    background: linear-gradient(to left, var(--bg, #0c0c0c) 0%, transparent 100%);
+}
+.yt-scroll-wrap.yt-no-fade::before,
+.yt-scroll-wrap.yt-no-fade::after {
+    display: none;
 }
 .yt-grid {
     display: flex;
     gap: 20px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     padding: 0 60px 16px;
     scrollbar-width: none;
+}
+.yt-grid.yt-grid--center {
     justify-content: center;
 }
 .yt-grid::-webkit-scrollbar { display: none; }
