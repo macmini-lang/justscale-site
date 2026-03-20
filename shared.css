@@ -1257,7 +1257,7 @@ footer .container {
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
-    padding: 0 60px 16px;
+    padding: 0 calc(50% - 170px) 16px;
     scrollbar-width: none;
 }
 .yt-grid.yt-grid--center {
