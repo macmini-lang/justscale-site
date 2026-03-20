@@ -31,10 +31,9 @@ body {
     width: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    cursor: none;
 }
 
-a { color: inherit; text-decoration: none; cursor: none; }
+a { color: inherit; text-decoration: none; }
 
 .container {
     max-width: 1140px;
@@ -208,91 +207,6 @@ a { color: inherit; text-decoration: none; cursor: none; }
     box-shadow: 0 0 8px rgba(201,169,110,0.4), 0 0 2px rgba(201,169,110,0.6);
 }
 
-/* ========== CUSTOM CURSOR ========== */
-/* Style: small crosshair that expands on hover */
-.cursor-dot {
-    position: fixed;
-    width: 2px;
-    height: 20px;
-    background: var(--gold);
-    pointer-events: none;
-    z-index: 10001;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: opacity 0.3s, height 0.2s var(--ease);
-}
-.cursor-dot::after {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 2px;
-    background: var(--gold);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: width 0.2s var(--ease);
-}
-.cursor-dot.visible { opacity: 0.7; }
-
-.cursor-ring {
-    position: fixed;
-    width: 0;
-    height: 0;
-    border: none;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 10000;
-    transform: translate(-50%, -50%);
-    transition: width 0.35s var(--ease), height 0.35s var(--ease), background 0.3s, opacity 0.3s;
-    opacity: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.cursor-ring.visible { opacity: 1; }
-.cursor-ring.hovering {
-    width: 48px;
-    height: 48px;
-    background: rgba(201,169,110,0.08);
-    border: 1px solid rgba(201,169,110,0.25);
-}
-
-.cursor-ring-text {
-    font-size: 0.5rem;
-    font-weight: 600;
-    color: var(--gold);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    opacity: 0;
-    transition: opacity 0.25s;
-    pointer-events: none;
-    white-space: nowrap;
-}
-.cursor-ring.hovering .cursor-ring-text { opacity: 1; }
-
-/* Click ripple */
-.click-ripple {
-    position: fixed;
-    pointer-events: none;
-    z-index: 9998;
-    transform: translate(-50%, -50%);
-}
-.click-ripple span {
-    position: absolute;
-    border: 1px solid var(--gold);
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    opacity: 0.5;
-    animation: rippleExpand 0.6s ease-out forwards;
-}
-.click-ripple span:nth-child(2) { animation-delay: 0.08s; }
-.click-ripple span:nth-child(3) { animation-delay: 0.16s; }
-
-@keyframes rippleExpand {
-    to { transform: translate(-50%, -50%) scale(1); opacity: 0; }
-}
 
 /* ========== NAV ========== */
 nav {
@@ -346,7 +260,7 @@ nav .container {
     color: var(--text-m);
     transition: color 0.3s;
     letter-spacing: 0.01em;
-    cursor: none;
+    cursor: pointer;
 }
 .nav-links a:hover { color: var(--text); }
 
@@ -363,7 +277,7 @@ nav .container {
     font-weight: 600;
     letter-spacing: 0.01em;
     border: none;
-    cursor: none;
+    cursor: pointer;
     transition: box-shadow 0.3s, transform 0.15s ease;
     will-change: transform;
     position: relative;
@@ -628,7 +542,7 @@ nav .container {
     opacity: 0;
     transform: translateY(30px);
     will-change: opacity, transform;
-    cursor: none;
+    cursor: pointer;
 }
 
 /* Cursor-tracking inner glow */
@@ -923,7 +837,7 @@ nav .container {
     position: relative;
     overflow: hidden;
     transition: border-color 0.4s, box-shadow 0.4s;
-    cursor: none;
+    cursor: pointer;
     text-align: center;
 }
 .fw-card:hover {
@@ -1012,7 +926,7 @@ nav .container {
     transform: translateY(20px);
     will-change: opacity, transform;
     transition: border-color 0.4s, box-shadow 0.4s;
-    cursor: none;
+    cursor: pointer;
 }
 .step-card:hover {
     border-color: rgba(201,169,110,0.1);
@@ -1143,7 +1057,7 @@ nav .container {
     align-items: center;
     justify-content: space-between;
     padding: 24px 0;
-    cursor: none;
+    cursor: pointer;
     font-size: 1rem;
     font-weight: 500;
     letter-spacing: -0.01em;
@@ -1213,7 +1127,7 @@ footer .container {
     font-size: 0.78rem;
     color: var(--text-m);
     transition: color 0.3s;
-    cursor: none;
+    cursor: pointer;
     position: relative;
 }
 .foot-links a::after {
@@ -1296,14 +1210,8 @@ footer .container {
     }
 }
 
-/* ========== TOUCH DEVICES: disable custom cursor ========== */
+/* ========== TOUCH DEVICES ========== */
 @media (pointer: coarse) {
-    html, body, a, .btn, .card, .step-card, .fw-card, .faq-q, .video-container, .ham {
-        cursor: auto;
-    }
-    .cursor-dot,
-    .cursor-ring,
-    .click-ripple { display: none !important; }
     .scroll-progress { top: 0; }
 }
 
@@ -1319,7 +1227,7 @@ footer .container {
 }
 .cards-section .card {
     padding: 52px 44px;
-    cursor: none;
+    cursor: pointer;
     display: block;
 }
 .cards-section .card p {
@@ -1338,6 +1246,3 @@ footer .container {
     .cards-section .card { padding: 40px 28px; }
 }
 
-@media (pointer: coarse) {
-    .cards-section .card { cursor: auto; }
-}

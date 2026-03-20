@@ -134,75 +134,7 @@
         });
     }, 1000);
 
-    /* ---- 2. Custom Cursor System ---- */
-    var isTouch = window.matchMedia('(pointer: coarse)').matches;
-    var dot = document.querySelector('.cursor-dot');
-    var ring = document.querySelector('.cursor-ring');
-    var ringText = ring ? ring.querySelector('.cursor-ring-text') : null;
-
-    if (!isTouch && dot && ring) {
-        var mouseX = -100, mouseY = -100;
-        var ringX = -100, ringY = -100;
-
-        document.addEventListener('mousemove', function(e) {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            dot.style.left = mouseX + 'px';
-            dot.style.top = mouseY + 'px';
-            if (!dot.classList.contains('visible')) {
-                dot.classList.add('visible');
-                ring.classList.add('visible');
-            }
-        });
-
-        // Ring follows with interpolation lag
-        function updateRing() {
-            ringX += (mouseX - ringX) * 0.15;
-            ringY += (mouseY - ringY) * 0.15;
-            ring.style.left = ringX + 'px';
-            ring.style.top = ringY + 'px';
-            requestAnimationFrame(updateRing);
-        }
-        requestAnimationFrame(updateRing);
-
-        // Hover detection — ring scales up + shows text
-        var hoverTargets = document.querySelectorAll('a, button, .btn, .card, .step-card, .fw-card, .faq-q, .video-container');
-        hoverTargets.forEach(function(el) {
-            el.addEventListener('mouseenter', function() {
-                ring.classList.add('hovering');
-                if (ringText) {
-                    if (el.classList.contains('card') || el.classList.contains('step-card') || el.classList.contains('fw-card')) {
-                        ringText.textContent = 'View';
-                    } else if (el.classList.contains('btn') || el.tagName === 'BUTTON') {
-                        ringText.textContent = 'Click';
-                    } else {
-                        ringText.textContent = '';
-                    }
-                }
-            });
-            el.addEventListener('mouseleave', function() {
-                ring.classList.remove('hovering');
-                if (ringText) ringText.textContent = '';
-            });
-        });
-
-        // Click ripple — 3 concentric circles
-        document.addEventListener('click', function(e) {
-            var ripple = document.createElement('div');
-            ripple.className = 'click-ripple';
-            ripple.style.left = e.clientX + 'px';
-            ripple.style.top = e.clientY + 'px';
-            for (var r = 0; r < 3; r++) {
-                var circle = document.createElement('span');
-                var size = 30 + r * 25;
-                circle.style.width = size + 'px';
-                circle.style.height = size + 'px';
-                ripple.appendChild(circle);
-            }
-            document.body.appendChild(ripple);
-            setTimeout(function() { ripple.remove(); }, 700);
-        });
-    }
+    /* ---- 2. Custom Cursor System (removed) ---- */
 
     /* ---- 3. Scroll Progress Bar ---- */
     var progressBar = document.querySelector('.scroll-progress');
