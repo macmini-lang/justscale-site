@@ -75,6 +75,9 @@
                 pointer-events: auto;
             }
         }
+        /* Inline override: ensure scroll-reveal elements are visible */
+        .sr.visible { opacity: 1 !important; transform: translateY(0) !important; }
+        .sr { transition: opacity 0.6s ease, transform 0.6s ease; }
         @media (max-width: 768px) {
             .book-hero { padding: 100px 0 10px; }
             .book-hero h1 { font-size: 1.6rem; }
