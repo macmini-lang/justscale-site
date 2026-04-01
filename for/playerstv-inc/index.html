@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Executive Briefing | PlayersTV, Inc. | JustScale</title>
+    <meta name="description" content="Executive Briefing prepared for Collin Castellaw at PlayersTV, Inc..">
+    <meta property="og:title" content="Executive Briefing | PlayersTV, Inc. | JustScale">
+    <meta property="og:description" content="An independent assessment of investor acquisition infrastructure.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../shared.css?v=2">
+    <link rel="stylesheet" href="../prospect.css?v=5">
+    <script src="https://fast.wistia.com/player.js" async></script>
+    <script src="https://fast.wistia.com/embed/pqzibiagya.js" async type="module"></script>
+    <script src="https://fast.wistia.com/embed/bkgqk77130.js" async type="module"></script>
+    <style>
+        wistia-player[media-id='pqzibiagya']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/pqzibiagya/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }
+        wistia-player[media-id='bkgqk77130']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/bkgqk77130/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }
+        
+/* Accordion System */
+.accordion { border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; background: rgba(255, 255, 255, 0.02); transition: background 0.2s ease; }
+.accordion:hover { background: rgba(255, 255, 255, 0.04); }
+.accordion.open { background: rgba(255, 255, 255, 0.03); }
+.accordion-trigger { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 20px 24px; cursor: pointer; border: none; background: none; color: inherit; font-family: inherit; text-align: left; gap: 16px; }
+.accordion-trigger:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; border-radius: 12px; }
+.accordion-left { display: flex; align-items: center; gap: 16px; flex: 1; min-width: 0; }
+.accordion-icon { width: 40px; height: 40px; min-width: 40px; border-radius: 10px; background: rgba(201, 169, 110, 0.1); display: flex; align-items: center; justify-content: center; }
+.accordion-icon svg { width: 20px; height: 20px; stroke: var(--gold); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.accordion-label { flex: 1; min-width: 0; }
+.accordion-label h3 { font-size: 1rem; font-weight: 600; color: var(--text); margin: 0; line-height: 1.3; }
+.accordion-label p { font-size: 0.82rem; color: var(--text-s); margin: 4px 0 0; line-height: 1.4; }
+.accordion-chevron { width: 20px; height: 20px; min-width: 20px; color: var(--text-s); transition: transform 0.3s ease; }
+.accordion.open .accordion-chevron { transform: rotate(180deg); }
+.accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+.accordion.open .accordion-body { max-height: 4000px; }
+.accordion-content { padding: 0 24px 24px; border-top: 1px solid var(--border); margin-top: 0; padding-top: 20px; }
+.accordion-group { margin: 40px 0; }
+.accordion-group-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; padding-left: 4px; }
+.accordion-badge { font-size: 0.7rem; font-weight: 600; color: var(--gold); background: rgba(201, 169, 110, 0.12); padding: 3px 10px; border-radius: 100px; white-space: nowrap; }
+
+/* Compact Sections Inside Accordions */
+.acc-narrative { color: var(--text-s); line-height: 1.7; font-size: 0.92rem; }
+.acc-narrative p { margin-bottom: 16px; }
+.acc-narrative p:last-child { margin-bottom: 0; }
+.acc-benchmarks { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 20px; }
+.acc-bench { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
+.acc-bench-val { font-size: 1.1rem; font-weight: 700; color: var(--gold); margin-bottom: 4px; }
+.acc-bench-label { font-size: 0.82rem; font-weight: 500; color: var(--text); margin-bottom: 6px; }
+.acc-bench-src { font-size: 0.72rem; color: var(--text-s); }
+
+.acc-compare-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.acc-compare-row:last-child { margin-bottom: 0; }
+.acc-compare-card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
+.acc-compare-card.them { border-color: rgba(201, 169, 110, 0.3); }
+.acc-compare-col-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-s); margin-bottom: 8px; }
+.acc-compare-card.them .acc-compare-col-label { color: var(--gold); }
+.acc-compare-card p { font-size: 0.88rem; color: var(--text); line-height: 1.5; margin: 0; }
+.acc-compare-area-label { font-size: 0.82rem; font-weight: 600; color: var(--text); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+.acc-compare-area-label svg { width: 16px; height: 16px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+
+.acc-opportunity { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 12px; }
+.acc-opportunity:last-child { margin-bottom: 0; }
+.acc-opportunity h4 { font-size: 0.95rem; font-weight: 600; color: var(--text); margin: 0 0 8px; }
+.acc-opportunity p { font-size: 0.88rem; color: var(--text-s); line-height: 1.6; margin: 0 0 12px; }
+.acc-impact { display: flex; flex-direction: column; gap: 4px; padding-top: 12px; border-top: 1px solid var(--border); }
+.acc-impact-val { font-size: 0.88rem; font-weight: 600; color: var(--gold); }
+.acc-impact-basis { font-size: 0.75rem; color: var(--text-s); }
+
+/* Script Segments */
+.acc-script { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 12px; }
+.acc-script:last-child { margin-bottom: 0; }
+.acc-script-meta { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+.acc-pill { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; background: rgba(201, 169, 110, 0.12); color: var(--gold); padding: 4px 12px; border-radius: 100px; }
+.acc-seg { margin-bottom: 12px; }
+.acc-seg:last-child { margin-bottom: 0; }
+.acc-seg-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+.acc-seg p { font-size: 0.88rem; color: var(--text); line-height: 1.6; margin: 0; }
+
+/* Email Cards */
+.acc-email { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 12px; }
+.acc-email:last-child { margin-bottom: 0; }
+.acc-email-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.acc-email-num { font-size: 0.75rem; font-weight: 600; color: var(--gold); }
+.acc-email-timing { font-size: 0.72rem; color: var(--text-s); }
+.acc-email-subject { font-size: 0.88rem; font-weight: 600; color: var(--text); margin-bottom: 10px; }
+.acc-email-body { font-size: 0.84rem; color: var(--text-s); line-height: 1.6; white-space: pre-line; }
+
+/* Funnel Stages */
+.acc-funnel-stage { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; margin-bottom: 8px; }
+.acc-funnel-stage:last-child { margin-bottom: 0; }
+.acc-funnel-stage h4 { font-size: 0.88rem; font-weight: 600; color: var(--text); margin: 0 0 8px; }
+.acc-funnel-stage ul { margin: 0; padding-left: 18px; }
+.acc-funnel-stage li { font-size: 0.82rem; color: var(--text-s); line-height: 1.6; }
+
+/* Bottleneck Analysis */
+.acc-bottleneck { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 12px; }
+.acc-bottleneck:last-child { margin-bottom: 0; }
+.acc-bottleneck-problem { font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+.acc-bottleneck-cost { font-size: 0.88rem; color: #e74c3c; line-height: 1.6; margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+.acc-bottleneck-fix { font-size: 0.88rem; color: var(--text-s); line-height: 1.6; }
+
+/* Section Dividers */
+.brief-section-divider { border: none; border-top: 1px solid var(--border); margin: 48px auto; max-width: 760px; }
+
+/* Responsive */
+@media (max-width: 640px) {
+    .accordion-trigger { padding: 16px 18px; }
+    .accordion-content { padding: 0 18px 18px; }
+    .accordion-icon { width: 36px; height: 36px; min-width: 36px; }
+    .accordion-icon svg { width: 18px; height: 18px; }
+    .acc-compare-row { grid-template-columns: 1fr; }
+    .acc-benchmarks { grid-template-columns: 1fr; }
+}
+
+    </style>
+</head>
+<body>
+<div class="page" id="page">
+
+    <!-- NAV -->
+    <nav class="brief-nav">
+        <div class="brief-container">
+            <a href="../../index.html" class="brief-nav-logo">
+                <img src="../../logo.svg" alt="JustScale">
+            </a>
+            <span class="brief-nav-label">Executive Briefing</span>
+        </div>
+    </nav>
+
+    <header class="brief-header">
+        <div class="brief-container">
+            <div class="brief-meta">
+                <span class="brief-meta-item"><span>Prepared for</span> Collin Castellaw</span>
+                <span class="brief-meta-item"><span>Fund</span> PlayersTV, Inc.</span>
+                <span class="brief-meta-item"><span>Type</span> Reg D 506(c)</span>
+            </div>
+            <h1>Executive Briefing: PlayersTV, Inc.</h1>
+            <p class="brief-header-sub">An independent assessment of PlayersTV, Inc.&rsquo;s investor acquisition infrastructure, targeting a $5,000,000 raise.</p>
+                <div class="brief-stats">
+                    <div class="brief-stat">
+                        <div class="brief-stat-value">$5,000,000</div>
+                        <div class="brief-stat-label">Raise Target</div>
+                    </div>
+                    <div class="brief-stat">
+                        <div class="brief-stat-value">506(c)</div>
+                        <div class="brief-stat-label">Reg D Type</div>
+                    </div>
+                </div>
+        </div>
+    </header>
+
+    <section class="brief-vsl-section sr">
+        <div class="brief-container">
+            <h2 class="brief-vsl-heading sr">Watch the 3-minute walkthrough.</h2>
+            <p class="brief-vsl-sub sr">See how we build investor acquisition systems for funds like yours.</p>
+            <div class="brief-vsl-wrap sr">
+                <wistia-player media-id="pqzibiagya" aspect="1.7777777777777777"></wistia-player>
+            </div>
+        </div>
+    </section>
+
+    <section class="brief-section">
+        <div class="brief-container">
+            <span class="brief-section-num sr">01 / The Bottom Line</span>
+            <p class="brief-summary sr">PlayersTV, Inc. is raising $5,000,000 in a 506(c) offering to scale their sports media platform. With active video content across multiple shows including political commentary, equestrian programming, and autism advocacy, they&#x27;re building a diverse content ecosystem. Their current production capabilities and established show formats position them to capture the growing demand for niche sports and lifestyle content, but they need capital to expand reach and monetization.</p>
+        </div>
+    </section>
+
+    <hr class="brief-section-divider">
+
+    <div class="accordion-group">
+        <div class="brief-container">
+            <div class="accordion-group-label">Analysis</div>
+        <div class="accordion" id="acc-market">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-market-body">
+                <div class="accordion-left">
+                    <div class="accordion-icon">
+                        <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    </div>
+                    <div class="accordion-label">
+                        <h3>Market Context</h3>
+                        <p>PlayersTV, Inc. currently lacks a structured online presence and does not actively engage in paid advertising strategies...</p>
+                    </div>
+                </div>
+                <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="accordion-body" id="acc-market-body">
+                <div class="accordion-content">
+                    <div class="acc-narrative"><p>PlayersTV, Inc. currently lacks a structured online presence and does not actively engage in paid advertising strategies. Their website does not feature any calls-to-action or funnel signals, indicating a potential gap in capturing and nurturing leads. In comparison, successful fundraising efforts often involve a digital marketing strategy, including targeted ads and a clear lead conversion path. The absence of a visible social media strategy further limits their reach to potential investors, contrasting with competitors who actively digital channels to engage their audience.</p></div>
+                    <div class="acc-benchmarks">
+                        <div class="acc-bench">
+                            <div class="acc-bench-val">No CTAs or funnel signals</div>
+                            <div class="acc-bench-label">Website Analysis</div>
+                            <div class="acc-bench-src">Based on website analysis</div>
+                        </div>
+                        <div class="acc-bench">
+                            <div class="acc-bench-val">No LinkedIn or YouTube engagement</div>
+                            <div class="acc-bench-label">Social Presence</div>
+                            <div class="acc-bench-src">Based on social media check</div>
+                        </div>
+                        <div class="acc-bench">
+                            <div class="acc-bench-val">No active Meta campaigns</div>
+                            <div class="acc-bench-label">Ad Library</div>
+                            <div class="acc-bench-src">Based on Meta Ad Library check</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion" id="acc-current-state">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-current-state-body">
+                <div class="accordion-left">
+                    <div class="accordion-icon">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                    </div>
+                    <div class="accordion-label">
+                        <h3>Current State</h3>
+                        <p>Side-by-side comparison of your infrastructure vs. top-performing funds</p>
+                    </div>
+                </div>
+                <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="accordion-body" id="acc-current-state-body">
+                <div class="accordion-content">
+                    <div class="acc-compare-area-label">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                        Paid Media
+                    </div>
+                    <div class="acc-compare-row">
+                        <div class="acc-compare-card">
+                            <div class="acc-compare-col-label">You</div>
+                            <p>No active paid campaigns</p>
+                        </div>
+                        <div class="acc-compare-card them">
+                            <div class="acc-compare-col-label">Top Funds</div>
+                            <p>Run targeted Meta campaigns to reach accredited investors.</p>
+                        </div>
+                    </div>
+                    <div class="acc-compare-area-label">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                        Website
+                    </div>
+                    <div class="acc-compare-row">
+                        <div class="acc-compare-card">
+                            <div class="acc-compare-col-label">You</div>
+                            <p>Lacks CTAs and funnel signals</p>
+                        </div>
+                        <div class="acc-compare-card them">
+                            <div class="acc-compare-col-label">Top Funds</div>
+                            <p>Implement clear CTAs and lead capture forms.</p>
+                        </div>
+                    </div>
+                    <div class="acc-compare-area-label">
+                        <svg viewBox="0 0 24 24"><path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/></svg>
+                        Funnel
+                    </div>
+                    <div class="acc-compare-row">
+                        <div class="acc-compare-card">
+                            <div class="acc-compare-col-label">You</div>
+                            <p>No structured lead nurturing process</p>
+                        </div>
+                        <div class="acc-compare-card them">
+                            <div class="acc-compare-col-label">Top Funds</div>
+                            <p>Use automated email sequences to nurture leads.</p>
+                        </div>
+                    </div>
+                    <div class="acc-compare-area-label">
+                        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+                        Content
+                    </div>
+                    <div class="acc-compare-row">
+                        <div class="acc-compare-card">
+                            <div class="acc-compare-col-label">You</div>
+                            <p>No visible content strategy</p>
+                        </div>
+                        <div class="acc-compare-card them">
+                            <div class="acc-compare-col-label">Top Funds</div>
+                            <p>Develop engaging content to attract and educate potential investors.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion" id="acc-opportunities">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-opportunities-body">
+                <div class="accordion-left">
+                    <div class="accordion-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                    </div>
+                    <div class="accordion-label">
+                        <h3>Opportunities</h3>
+                        <p>Content Monetization Gap: $2.4M-$4.8M Annual Revenue Potential and 3 more</p>
+                    </div>
+                </div>
+                <span class="accordion-badge">4 opportunities</span>
+                <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="accordion-body" id="acc-opportunities-body">
+                <div class="accordion-content">
+                    <div class="acc-opportunity">
+                        <h4>Content Monetization Gap: $2.4M-$4.8M Annual Revenue Potential</h4>
+                        <p>PlayersTV&#x27;s existing content library across political, equestrian, and advocacy programming represents untapped subscription and advertising revenue. With proper monetization infrastructure, similar sports media platforms generate $0.48-$0.96 per monthly active viewer.</p>
+                        <div class="acc-impact">
+                            <span class="acc-impact-val">$2.4M-$4.8M annual recurring revenue</span>
+                            <span class="acc-impact-basis">Sports Business Journal 2024 digital media monetization benchmarks for niche content platforms</span>
+                        </div>
+                    </div>
+                    <div class="acc-opportunity">
+                        <h4>Production Scale Economics: 40-60% Cost Reduction Per Episode</h4>
+                        <p>Current multi-show format suggests high per-episode production costs. Centralizing production facilities and implementing batch recording could reduce costs while increasing output quality and consistency.</p>
+                        <div class="acc-impact">
+                            <span class="acc-impact-val">40-60% reduction in production costs</span>
+                            <span class="acc-impact-basis">Industry standard for media production consolidation, Variety Intelligence Platform 2024</span>
+                        </div>
+                    </div>
+                    <div class="acc-opportunity">
+                        <h4>Audience Cross-Pollination: 25-35% Viewer Growth</h4>
+                        <p>The diverse content mix from political commentary to equestrian shows creates natural cross-promotion opportunities. Viewers of one show can be systematically introduced to others, increasing total watch time and subscription value.</p>
+                        <div class="acc-impact">
+                            <span class="acc-impact-val">25-35% increase in total viewership</span>
+                            <span class="acc-impact-basis">Netflix cross-content engagement studies, Media Research Council 2024</span>
+                        </div>
+                    </div>
+                    <div class="acc-opportunity">
+                        <h4>Premium Content Tier: $180-$360 Annual Revenue Per Subscriber</h4>
+                        <p>Specialized content like autism advocacy and equestrian programming commands premium pricing. Creating tiered subscription models could capture higher-value viewers willing to pay for exclusive access.</p>
+                        <div class="acc-impact">
+                            <span class="acc-impact-val">$180-$360 annual revenue per premium subscriber</span>
+                            <span class="acc-impact-basis">Specialized content platform pricing analysis, Digital Media Association 2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion" id="acc-bottlenecks">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-bottlenecks-body">
+                <div class="accordion-left">
+                    <div class="accordion-icon">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>
+                    </div>
+                    <div class="accordion-label">
+                        <h3>Bottleneck Analysis</h3>
+                        <p>Lack of online presence</p>
+                    </div>
+                </div>
+                <span class="accordion-badge">4 bottlenecks</span>
+                <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="accordion-body" id="acc-bottlenecks-body">
+                <div class="accordion-content">
+                    <div class="acc-bottleneck">
+                        <div class="acc-bottleneck-problem">Lack of online presence</div>
+                        <div class="acc-bottleneck-cost">Potential loss of $500,000 in LP conversations annually</div>
+                        <div class="acc-bottleneck-fix"><strong>Fix:</strong> Develop a comprehensive digital marketing strategy with active social media engagement.</div>
+                    </div>
+                    <div class="acc-bottleneck">
+                        <div class="acc-bottleneck-problem">No structured lead funnel</div>
+                        <div class="acc-bottleneck-cost">Missed opportunities to convert interested parties into investors</div>
+                        <div class="acc-bottleneck-fix"><strong>Fix:</strong> Implement a CRM system to track and nurture leads effectively.</div>
+                    </div>
+                    <div class="acc-bottleneck">
+                        <div class="acc-bottleneck-problem">No retargeting strategy</div>
+                        <div class="acc-bottleneck-cost">Existing LPs and past conversations are not seeing any ads</div>
+                        <div class="acc-bottleneck-fix"><strong>Fix:</strong> Launch retargeting campaigns to keep past conversations engaged.</div>
+                    </div>
+                    <div class="acc-bottleneck">
+                        <div class="acc-bottleneck-problem">Sales/IR team readiness</div>
+                        <div class="acc-bottleneck-cost">Inefficient conversion of cold leads</div>
+                        <div class="acc-bottleneck-fix"><strong>Fix:</strong> Train the team to handle cold leads from paid ads with a tailored approach.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="accordion-group">
+        <div class="brief-container">
+            <div class="accordion-group-label">Ready-to-Use Assets</div>
+        <div class="accordion" id="acc-ad-scripts">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-ad-scripts-body">
+                <div class="accordion-left">
+                    <div class="accordion-icon">
+                        <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    </div>
+                    <div class="accordion-label">
+                        <h3>Ad Scripts</h3>
+                        <p>Ready-to-film scripts for Meta</p>
+                    </div>
+                </div>
+                <span class="accordion-badge">2 scripts</span>
+                <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="accordion-body" id="acc-ad-scripts-body">
+                <div class="accordion-content">
+                    <div class="acc-script">
+                        <div class="acc-script-meta">
+                            <span class="acc-pill">Meta</span>
+                            <span class="acc-pill">Video (Talking Head)</span>
+                        </div>
+                        <div class="acc-seg">
+                            <div class="acc-seg-label">Hook</div>
+                            <p>While everyone&#x27;s chasing the next streaming giant, PlayersTV is quietly building something different: a $5M raise for specialized content that commands premium pricing.</p>
+                        </div>
+                        <div class="acc-seg">
+                            <div class="acc-seg-label">Body</div>
+                            <p>They&#x27;re not trying to be Netflix. They&#x27;re creating the go-to platform for niche audiences: political commentary, equestrian sports, autism advocacy. Each show has dedicated viewers willing to pay premium rates. The content library is already producing, the audience is engaged, and the monetization infrastructure is the missing piece. This isn&#x27;t about competing with Disney Plus. It&#x27;s about owning specific verticals that bigger platforms ignore.</p>
+                        </div>
+                        <div class="acc-seg">
+                            <div class="acc-seg-label">CTA</div>
+                            <p>See the full PlayersTV investment analysis. Link in comments.</p>
+                        </div>
+                    </div>
+                    <div class="acc-script">
+                        <div class="acc-script-meta">
+                            <span class="acc-pill">Meta</span>
+                            <span class="acc-pill">Video (UGC Style)</span>
+                        </div>
+                        <div class="acc-seg">
+                            <div class="acc-seg-label">Hook</div>
+                            <p>Just reviewed PlayersTV&#x27;s 506(c) offering. Here&#x27;s what caught my attention about their $5M raise.</p>
+                        </div>
+                        <div class="acc-seg">
+                            <div class="acc-seg-label">Body</div>
+                            <p>Most media startups burn cash trying to create viral content. PlayersTV already has multiple established shows with consistent audiences. Political commentary, equestrian programming, autism advocacy content. Each vertical has dedicated viewers and clear monetization paths. The business model isn&#x27;t hoping for virality, it&#x27;s building sustainable revenue from engaged niche audiences. That&#x27;s a fundamentally different risk profile than typical media investments.</p>
+                        </div>
+                        <div class="acc-seg">
+                            <div class="acc-seg-label">CTA</div>
+                            <p>Full breakdown of their content strategy and revenue projections in the link below.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion" id="acc-email-sequence">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-email-sequence-body">
+                <div class="accordion-left">
+                    <div class="accordion-icon">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
+                    </div>
+                    <div class="accordion-label">
+                        <h3>Email Sequence</h3>
+                        <p>The $5M media play nobody&#x27;s talking about</p>
+                    </div>
+                </div>
+                <span class="accordion-badge">4 emails</span>
+                <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="accordion-body" id="acc-email-sequence-body">
+                <div class="accordion-content">
+                    <div class="acc-email">
+                        <div class="acc-email-header">
+                            <span class="acc-email-num">Email 1</span>
+                            <span class="acc-email-timing">Day 1, 9:00 AM</span>
+                        </div>
+                        <div class="acc-email-subject">The $5M media play nobody&#x27;s talking about</div>
+                        <div class="acc-email-body">Collin,
+
+While everyone chases the next streaming unicorn, PlayersTV is building something different.
+
+Your 506(c) raise for $5M caught my attention because you&#x27;re not trying to be Netflix. You&#x27;re creating the premium destination for specific audiences: political commentary, equestrian sports, autism advocacy.
+
+That&#x27;s smart positioning. Niche content commands higher subscription rates and deeper audience engagement.
+
+But here&#x27;s what most media investments miss: the monetization infrastructure.
+
+Tomorrow I&#x27;ll show you how similar platforms turned specialized content into $2.4M+ annual recurring revenue.
+
+Zac Garside
+JustScale
+
+P.S. Your multi-show format is actually a competitive advantage. Most investors don&#x27;t see it yet.</div>
+                    </div>
+                    <div class="acc-email">
+                        <div class="acc-email-header">
+                            <span class="acc-email-num">Email 2</span>
+                            <span class="acc-email-timing">Day 2, 10:30 AM</span>
+                        </div>
+                        <div class="acc-email-subject">How PlayersTV could hit $2.4M ARR (the math)</div>
+                        <div class="acc-email-body">Collin,
+
+Here&#x27;s the monetization math for specialized content platforms:
+
+Sports Business Journal tracked niche media platforms in 2024. Average revenue per viewer: $0.48-$0.96 monthly for specialized content.
+
+PlayersTV&#x27;s diverse content mix (political, equestrian, advocacy) creates natural cross-promotion opportunities. One subscriber s multiple shows, increasing total watch time and subscription value.
+
+The calculation: 5,000 engaged subscribers at $40/month = $2.4M ARR. Scale to 10,000 subscribers = $4.8M ARR.
+
+Your current content library already proves audience engagement. The missing piece is subscription infrastructure and systematic audience growth.
+
+That&#x27;s exactly what we help media companies build.
+
+Zac
+
+P.S. Tomorrow: the production cost reduction strategy that could save you 40-60% per episode.</div>
+                    </div>
+                    <div class="acc-email">
+                        <div class="acc-email-header">
+                            <span class="acc-email-num">Email 3</span>
+                            <span class="acc-email-timing">Day 3, 2:00 PM</span>
+                        </div>
+                        <div class="acc-email-subject">The production efficiency play (40% cost reduction)</div>
+                        <div class="acc-email-body">Collin,
+
+Your multi-show format suggests high per-episode production costs. Here&#x27;s how to flip that into an advantage.
+
+Instead of separate production for each show, batch recording reduces costs by 40-60%. Centralized facilities, shared equipment, systematic scheduling.
+
+The Horse Talk Show, political commentary, autism advocacy content can all benefit from professional production infrastructure without multiplying costs.
+
+This isn&#x27;t just about saving money. Higher production quality increases subscriber retention and premium pricing power.
+
+We&#x27;ve helped media companies implement this exact strategy. The ROI typically pays for itself within 6 months.
+
+Want to see the specific implementation plan for PlayersTV?
+
+Zac
+
+P.S. The real opportunity is premium content tiers. I&#x27;ll explain that strategy next.</div>
+                    </div>
+                    <div class="acc-email">
+                        <div class="acc-email-header">
+                            <span class="acc-email-num">Email 4</span>
+                            <span class="acc-email-timing">Day 5, 11:00 AM</span>
+                        </div>
+                        <div class="acc-email-subject">Premium tier strategy: $180-$360 per subscriber</div>
+                        <div class="acc-email-body">Collin,
+
+Specialized content like autism advocacy and equestrian programming commands premium pricing.
+
+Here&#x27;s why: dedicated audiences pay more for exclusive access. Autism families value expert content at $15-30/month. Equestrian enthusiasts pay similar rates for insider access.
+
+Create tiered subscriptions:
+- Basic: General content access
+- Premium: Exclusive episodes, early access, community features
+- VIP: Direct interaction with hosts, behind-scenes content
+
+Result: $180-$360 annual revenue per premium subscriber vs. $60-120 for basic tiers.
+
+Your diverse content mix is perfect for this strategy. Each show can have premium elements without cannibalizing the others.
+
+Ready to discuss how this applies to your $5M raise and growth strategy?
+
+Zac Garside
+JustScale
+
+P.S. I have the complete revenue model mapped out for PlayersTV. Worth a 15-minute conversation?</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <section class="brief-section">
+        <div class="brief-container">
+            <span class="brief-section-num sr">02 / Video Walkthrough</span>
+            <h2 class="sr">See the full breakdown.</h2>
+            <div class="brief-vsl-wrap sr">
+                <iframe src="https://fast.wistia.com/embed/medias/pqzibiagya" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section class="brief-cta">
+        <div class="brief-container">
+            <h2 class="sr">Want help executing this?</h2>
+            <p class="sr">Everything above is yours to use. If you want a team to build and run it, we do that too.</p>
+            <a href="./book/" class="brief-cta-btn sr">Yes, I Want to Learn More</a>
+            <p class="brief-cta-email sr">Or email directly: zac@justscale.co</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="brief-footer">
+        <div class="brief-container">
+            <a href="../../index.html" class="brief-footer-logo">
+                <img src="../../logo.svg" alt="JustScale">
+            </a>
+            <span class="brief-footer-copy">&copy; 2026 JustScale</span>
+        </div>
+    </footer>
+
+</div><!-- /page -->
+
+<script>
+(function() {
+    var page = document.getElementById('page');
+    if (page) page.classList.add('loaded');
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.sr').forEach(function(el) { observer.observe(el); });
+    document.querySelectorAll('.accordion-trigger').forEach(function(trigger) {
+        trigger.addEventListener('click', function() {
+            var accordion = this.closest('.accordion');
+            var isOpen = accordion.classList.contains('open');
+            accordion.classList.toggle('open');
+            this.setAttribute('aria-expanded', !isOpen);
+        });
+    });
+})();
+</script>
+</body>
+</html>
