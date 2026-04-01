@@ -209,16 +209,31 @@
             color: #5a5a54;
         }
 
-        /* MOBILE */
-        @media (max-width: 480px) {
-            .container { max-width: 380px; }
-            .two-col { flex-direction: column; }
-            .two-col .col { padding: 0; margin-bottom: 20px; }
+        /* TABLET */
+        @media (max-width: 768px) {
             .faq-row { flex-direction: column; }
-            .faq-row .faq-title { margin-bottom: 15px; padding: 0; }
+            .faq-row .faq-title { margin-bottom: 12px; padding: 0; }
             .faq-row .faq-video { padding: 0; width: 100%; }
-            .hero h1 { font-size: 24px; }
-            .step-heading h1 { font-size: 20px; }
+        }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+            .container { padding: 0 16px; }
+            .hero { padding: 48px 0 32px; }
+            .hero h1 { font-size: 22px; }
+            .hero p { font-size: 14px; }
+            .section { padding: 32px 0; }
+            .step-heading { padding: 16px; }
+            .step-heading h1 { font-size: 16px; }
+            .phone-cta { padding: 28px 0; }
+            .phone-cta p { font-size: 18px; }
+            .two-col { flex-direction: column; }
+            .two-col .col { padding: 0; margin-bottom: 24px; }
+            .two-col .col h2 { font-size: 14px; }
+            .faq-row { padding: 16px 0; }
+            .faq-row .faq-title h3 { font-size: 15px; }
+            .prep-list { padding: 0 10px 20px; margin-left: 16px; }
+            .prep-list li { font-size: 13px; }
         }
     </style>
 </head>
