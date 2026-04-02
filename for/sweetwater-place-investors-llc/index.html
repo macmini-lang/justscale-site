@@ -4,569 +4,1272 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>Executive Briefing | Sweetwater Place Investors, LLC | JustScale</title>
-    <meta name="description" content="Executive Briefing prepared for Arturo Venti at Sweetwater Place Investors, LLC.">
-    <meta property="og:title" content="Executive Briefing | Sweetwater Place Investors, LLC | JustScale">
-    <meta property="og:description" content="An independent assessment of investor acquisition infrastructure.">
+    <title>Pitch Page | Sweetwater Place Investors, LLC | JustScale</title>
+    <meta name="description" content="Pitch page prepared for Arturo Venti at Sweetwater Place Investors, LLC.">
+    <meta property="og:title" content="Pitch Page | Sweetwater Place Investors, LLC | JustScale">
+    <meta property="og:description" content="A personalized investor acquisition system for Sweetwater Place Investors, LLC.">
     <meta property="og:type" content="website">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../shared.css?v=2">
-    <link rel="stylesheet" href="../prospect.css?v=5">
     <script src="https://fast.wistia.com/player.js" async></script>
     <script src="https://fast.wistia.com/embed/pqzibiagya.js" async type="module"></script>
     <script src="https://fast.wistia.com/embed/bkgqk77130.js" async type="module"></script>
+    <script src="https://embed.typeform.com/next/embed.js" async></script>
     <style>
         wistia-player[media-id='pqzibiagya']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/pqzibiagya/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }
         wistia-player[media-id='bkgqk77130']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/bkgqk77130/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }
         
-/* Accordion System */
-.accordion { border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; background: rgba(255, 255, 255, 0.02); transition: background 0.2s ease; }
-.accordion:hover { background: rgba(255, 255, 255, 0.04); }
-.accordion.open { background: rgba(255, 255, 255, 0.03); }
-.accordion-trigger { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 20px 24px; cursor: pointer; border: none; background: none; color: inherit; font-family: inherit; text-align: left; gap: 16px; }
-.accordion-trigger:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; border-radius: 12px; }
-.accordion-left { display: flex; align-items: center; gap: 16px; flex: 1; min-width: 0; }
-.accordion-icon { width: 40px; height: 40px; min-width: 40px; border-radius: 10px; background: rgba(201, 169, 110, 0.1); display: flex; align-items: center; justify-content: center; }
-.accordion-icon svg { width: 20px; height: 20px; stroke: var(--gold); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-.accordion-label { flex: 1; min-width: 0; }
-.accordion-label h3 { font-size: 1rem; font-weight: 600; color: var(--text); margin: 0; line-height: 1.3; }
-.accordion-label p { font-size: 0.82rem; color: var(--text-s); margin: 4px 0 0; line-height: 1.4; }
-.accordion-chevron { width: 20px; height: 20px; min-width: 20px; color: var(--text-s); transition: transform 0.3s ease; }
-.accordion.open .accordion-chevron { transform: rotate(180deg); }
-.accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
-.accordion.open .accordion-body { max-height: 4000px; }
-.accordion-content { padding: 0 24px 24px; border-top: 1px solid var(--border); margin-top: 0; padding-top: 20px; }
-.accordion-group { margin: 40px 0; }
-.accordion-group-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; padding-left: 4px; }
-.accordion-badge { font-size: 0.7rem; font-weight: 600; color: var(--gold); background: rgba(201, 169, 110, 0.12); padding: 3px 10px; border-radius: 100px; white-space: nowrap; }
+/* ── Reset & Base ────────────────────────────── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #050505; color: #e8e8e8; line-height: 1.6; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
 
-/* Compact Sections Inside Accordions */
-.acc-narrative { color: var(--text-s); line-height: 1.7; font-size: 0.92rem; }
-.acc-narrative p { margin-bottom: 16px; }
-.acc-narrative p:last-child { margin-bottom: 0; }
-.acc-benchmarks { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 20px; }
-.acc-bench { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
-.acc-bench-val { font-size: 1.1rem; font-weight: 700; color: var(--gold); margin-bottom: 4px; }
-.acc-bench-label { font-size: 0.82rem; font-weight: 500; color: var(--text); margin-bottom: 6px; }
-.acc-bench-src { font-size: 0.72rem; color: var(--text-s); }
+/* ── CSS Variables ───────────────────────────── */
+:root {
+    --bg-dark: #050505;
+    --bg-card: #0f0f0f;
+    --bg-elevated: #1a1a1a;
+    --gold: #c9a96e;
+    --gold-hover: #d4b87a;
+    --gold-glow: rgba(201,169,110,0.3);
+    --gold-subtle: rgba(201,169,110,0.12);
+    --gold-muted: rgba(201,169,110,0.06);
+    --text: #e8e8e8;
+    --text-secondary: rgba(255,255,255,0.55);
+    --text-muted: rgba(255,255,255,0.35);
+    --border: rgba(255,255,255,0.08);
+    --border-gold: rgba(201,169,110,0.2);
+    --green: #2ecc71;
+    --yellow: #f1c40f;
+    --red: #e74c3c;
+}
 
-.acc-compare-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
-.acc-compare-row:last-child { margin-bottom: 0; }
-.acc-compare-card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
-.acc-compare-card.them { border-color: rgba(201, 169, 110, 0.3); }
-.acc-compare-col-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-s); margin-bottom: 8px; }
-.acc-compare-card.them .acc-compare-col-label { color: var(--gold); }
-.acc-compare-card p { font-size: 0.88rem; color: var(--text); line-height: 1.5; margin: 0; }
-.acc-compare-area-label { font-size: 0.82rem; font-weight: 600; color: var(--text); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
-.acc-compare-area-label svg { width: 16px; height: 16px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+/* ── Page Container ──────────────────────────── */
+.page { opacity: 0; transition: opacity 0.6s ease; }
+.page.loaded { opacity: 1; }
 
-.acc-opportunity { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 12px; }
-.acc-opportunity:last-child { margin-bottom: 0; }
-.acc-opportunity h4 { font-size: 0.95rem; font-weight: 600; color: var(--text); margin: 0 0 8px; }
-.acc-opportunity p { font-size: 0.88rem; color: var(--text-s); line-height: 1.6; margin: 0 0 12px; }
-.acc-impact { display: flex; flex-direction: column; gap: 4px; padding-top: 12px; border-top: 1px solid var(--border); }
-.acc-impact-val { font-size: 0.88rem; font-weight: 600; color: var(--gold); }
-.acc-impact-basis { font-size: 0.75rem; color: var(--text-s); }
+/* ── Background Effects ──────────────────────── */
+.bg-grid {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 60px 60px;
+}
+.orb {
+    position: fixed; border-radius: 50%; pointer-events: none; z-index: 0;
+    filter: blur(80px); opacity: 0.12; animation: orbFloat 20s ease-in-out infinite;
+}
+.orb-1 { width: 500px; height: 500px; background: var(--gold); top: -150px; right: -100px; animation-delay: 0s; }
+.orb-2 { width: 400px; height: 400px; background: var(--gold); bottom: -100px; left: -100px; animation-delay: -7s; }
+.orb-3 { width: 300px; height: 300px; background: var(--gold); top: 50%; left: 50%; transform: translate(-50%, -50%); animation-delay: -14s; opacity: 0.06; }
+@keyframes orbFloat {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(30px, -20px) scale(1.05); }
+    50% { transform: translate(-20px, 30px) scale(0.95); }
+    75% { transform: translate(20px, 20px) scale(1.02); }
+}
 
-/* Script Segments */
-.acc-script { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 12px; }
-.acc-script:last-child { margin-bottom: 0; }
-.acc-script-meta { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
-.acc-pill { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; background: rgba(201, 169, 110, 0.12); color: var(--gold); padding: 4px 12px; border-radius: 100px; }
-.acc-seg { margin-bottom: 12px; }
-.acc-seg:last-child { margin-bottom: 0; }
-.acc-seg-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
-.acc-seg p { font-size: 0.88rem; color: var(--text); line-height: 1.6; margin: 0; }
+/* ── Container ───────────────────────────────── */
+.container { max-width: 820px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
 
-/* Email Cards */
-.acc-email { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 12px; }
-.acc-email:last-child { margin-bottom: 0; }
-.acc-email-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
-.acc-email-num { font-size: 0.75rem; font-weight: 600; color: var(--gold); }
-.acc-email-timing { font-size: 0.72rem; color: var(--text-s); }
-.acc-email-subject { font-size: 0.88rem; font-weight: 600; color: var(--text); margin-bottom: 10px; }
-.acc-email-body { font-size: 0.84rem; color: var(--text-s); line-height: 1.6; white-space: pre-line; }
+/* ── Scroll Reveal ───────────────────────────── */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
 
-/* Funnel Stages */
-.acc-funnel-stage { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; margin-bottom: 8px; }
-.acc-funnel-stage:last-child { margin-bottom: 0; }
-.acc-funnel-stage h4 { font-size: 0.88rem; font-weight: 600; color: var(--text); margin: 0 0 8px; }
-.acc-funnel-stage ul { margin: 0; padding-left: 18px; }
-.acc-funnel-stage li { font-size: 0.82rem; color: var(--text-s); line-height: 1.6; }
+/* ── Gold Divider ────────────────────────────── */
+.gold-divider {
+    border: none; height: 1px; max-width: 820px; margin: 64px auto;
+    background: linear-gradient(90deg, transparent, var(--gold-glow), transparent);
+}
 
-/* Bottleneck Analysis */
-.acc-bottleneck { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 12px; }
-.acc-bottleneck:last-child { margin-bottom: 0; }
-.acc-bottleneck-problem { font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 8px; }
-.acc-bottleneck-cost { font-size: 0.88rem; color: #e74c3c; line-height: 1.6; margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
-.acc-bottleneck-fix { font-size: 0.88rem; color: var(--text-s); line-height: 1.6; }
+/* ── Hero ────────────────────────────────────── */
+.hero { padding: 100px 0 60px; text-align: center; }
+.hero-from {
+    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--text-muted); margin-bottom: 20px;
+}
+.hero-badge {
+    display: inline-block; font-size: 0.8rem; font-weight: 600; color: var(--gold);
+    background: var(--gold-subtle); border: 1px solid var(--border-gold);
+    padding: 6px 20px; border-radius: 100px; margin-bottom: 28px;
+}
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.15;
+    letter-spacing: -0.02em; color: var(--text); max-width: 720px; margin: 0 auto 20px;
+}
+.hero-sub {
+    font-size: 1.05rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto 36px; line-height: 1.65;
+}
+.hero-cta {
+    display: inline-block; background: var(--gold); color: #0a0a0a; font-weight: 700;
+    font-size: 1rem; padding: 14px 36px; border-radius: 8px; transition: all 0.25s ease;
+    box-shadow: 0 0 24px var(--gold-glow);
+}
+.hero-cta:hover { background: var(--gold-hover); box-shadow: 0 0 32px rgba(201,169,110,0.45); transform: translateY(-1px); }
+.journey-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 32px; }
+.journey-pill {
+    display: inline-flex; align-items: center; gap: 8px; font-size: 0.82rem; font-weight: 500;
+    color: var(--text-secondary); background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+    padding: 8px 16px; border-radius: 100px; transition: all 0.2s ease;
+}
+.journey-pill:hover { border-color: var(--border-gold); color: var(--gold); }
+.journey-pill-num {
+    display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px;
+    font-size: 0.7rem; font-weight: 700; color: #0a0a0a; background: var(--gold); border-radius: 50%;
+}
 
-/* Section Dividers */
-.brief-section-divider { border: none; border-top: 1px solid var(--border); margin: 48px auto; max-width: 760px; }
+/* ── Section Base ────────────────────────────── */
+.section { padding: 60px 0; }
+.section h2 {
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 700; letter-spacing: -0.01em;
+    color: var(--text); margin-bottom: 12px;
+}
+.section-sub { font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 32px; line-height: 1.6; max-width: 620px; }
+.step-badge {
+    display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--gold); background: var(--gold-subtle);
+    padding: 4px 14px; border-radius: 100px; margin-bottom: 16px;
+}
+.value-tag {
+    display: inline-block; font-size: 0.72rem; font-weight: 600; color: var(--gold);
+    border: 1px solid var(--border-gold); padding: 4px 14px; border-radius: 100px;
+    margin-left: 8px; margin-bottom: 16px;
+}
 
-/* Responsive */
-@media (max-width: 640px) {
-    .accordion-trigger { padding: 16px 18px; }
-    .accordion-content { padding: 0 18px 18px; }
-    .accordion-icon { width: 36px; height: 36px; min-width: 36px; }
-    .accordion-icon svg { width: 18px; height: 18px; }
-    .acc-compare-row { grid-template-columns: 1fr; }
-    .acc-benchmarks { grid-template-columns: 1fr; }
+/* ── Video ───────────────────────────────────── */
+.video-wrap {
+    border-radius: 12px; overflow: hidden; border: 1px solid var(--border);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+}
+
+/* ── Accordions (V3 - simple toggle) ─────────── */
+.accordion-item {
+    border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px;
+    overflow: hidden; background: var(--bg-card); transition: background 0.2s ease;
+}
+.accordion-item:hover { background: var(--bg-elevated); }
+.accordion-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 24px; cursor: pointer; user-select: none;
+}
+.accordion-header-left { flex: 1; min-width: 0; }
+.accordion-header-left h3 { font-size: 1rem; font-weight: 600; color: var(--text); margin: 0 0 4px; }
+.accordion-header-left .preview { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.4; }
+.accordion-toggle {
+    width: 28px; height: 28px; min-width: 28px; display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem; font-weight: 300; color: var(--text-secondary); border-radius: 6px;
+    background: rgba(255,255,255,0.04); transition: all 0.2s ease;
+}
+.accordion-item.open .accordion-toggle { transform: rotate(45deg); }
+.accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
+.accordion-item.open .accordion-body { max-height: 12000px; }
+.accordion-content { padding: 0 24px 24px; border-top: 1px solid var(--border); padding-top: 20px; }
+
+/* ── Sub-Accordions (nested inside ad scripts) ── */
+.sub-accordion { margin-bottom: 12px; }
+.sub-accordion-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 18px; cursor: pointer; user-select: none;
+    background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+    border-radius: 8px; transition: background 0.2s ease;
+}
+.sub-accordion-header:hover { background: rgba(255,255,255,0.05); }
+.sub-accordion-header h4 { font-size: 0.9rem; font-weight: 600; color: var(--text); margin: 0; }
+.sub-accordion-header .sub-count { font-size: 0.72rem; color: var(--text-muted); margin-left: 8px; }
+.sub-accordion-toggle {
+    font-size: 1rem; font-weight: 300; color: var(--text-muted); transition: transform 0.2s ease;
+}
+.sub-accordion.open .sub-accordion-toggle { transform: rotate(45deg); }
+.sub-accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+.sub-accordion.open .sub-accordion-body { max-height: 8000px; }
+.sub-accordion-content { padding: 12px 0 0; }
+
+/* ── Script Cards ────────────────────────────── */
+.script-card {
+    background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px;
+    padding: 20px; margin-bottom: 12px;
+}
+.script-card:last-child { margin-bottom: 0; }
+.script-meta { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
+.pill {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
+    background: var(--gold-subtle); color: var(--gold); padding: 4px 12px; border-radius: 100px;
+}
+.script-seg { margin-bottom: 12px; }
+.script-seg:last-child { margin-bottom: 0; }
+.script-seg-label {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 4px;
+}
+.script-seg p { font-size: 0.88rem; color: var(--text); line-height: 1.65; margin: 0; }
+.production-notes {
+    margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border);
+    font-size: 0.8rem; color: var(--text-muted); line-height: 1.5;
+}
+.production-notes-label {
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--text-muted); margin-bottom: 4px;
+}
+
+/* ── Email Cards ─────────────────────────────── */
+.email-card {
+    background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px;
+    padding: 20px; margin-bottom: 12px;
+}
+.email-card:last-child { margin-bottom: 0; }
+.email-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.email-num { font-size: 0.75rem; font-weight: 600; color: var(--gold); }
+.email-timing { font-size: 0.72rem; color: var(--text-muted); }
+.email-purpose { font-size: 0.72rem; color: var(--text-secondary); margin-bottom: 6px; font-style: italic; }
+.email-subject { font-size: 0.9rem; font-weight: 600; color: var(--text); margin-bottom: 12px; }
+.email-body { font-size: 0.84rem; color: var(--text-secondary); line-height: 1.65; white-space: pre-line; }
+
+/* ── Landing Page Copy Sections ──────────────── */
+.lp-section {
+    background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px;
+    padding: 20px; margin-bottom: 12px;
+}
+.lp-section:last-child { margin-bottom: 0; }
+.lp-section h4 { font-size: 0.82rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+.lp-section p { font-size: 0.88rem; color: var(--text); line-height: 1.65; margin: 0; }
+
+/* ── Marketing Audit ─────────────────────────── */
+.audit-block {
+    background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px;
+    padding: 20px; margin-bottom: 12px;
+}
+.audit-block:last-child { margin-bottom: 0; }
+.audit-block h4 { font-size: 0.95rem; font-weight: 600; color: var(--text); margin: 0 0 8px; }
+.audit-block p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.65; margin: 0 0 12px; }
+.audit-block p:last-child { margin-bottom: 0; }
+.audit-block.strength { border-color: rgba(46,204,113,0.2); background: rgba(46,204,113,0.03); }
+.audit-block.gap { border-color: rgba(231,76,60,0.2); background: rgba(231,76,60,0.03); }
+.audit-heading { font-size: 0.85rem; font-weight: 700; color: var(--gold); margin: 24px 0 12px; }
+.audit-heading:first-child { margin-top: 0; }
+.audit-heading.red { color: var(--red); }
+.audit-impact { font-size: 0.85rem; font-weight: 600; color: var(--red); padding-top: 10px; border-top: 1px solid var(--border); }
+.audit-diagnosis { color: var(--text-secondary); line-height: 1.7; font-size: 0.92rem; }
+
+/* ── Scorecard Grid ──────────────────────────── */
+.scorecard-grid { display: flex; flex-wrap: nowrap; gap: 10px; overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 8px; }
+.scorecard-card {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px;
+    padding: 18px 14px; display: flex; flex-direction: column; align-items: center;
+    gap: 8px; text-align: center; transition: border-color 0.2s ease;
+    min-width: 100px; flex-shrink: 0; flex: 1;
+}
+.scorecard-card:hover { border-color: var(--border-gold); }
+.scorecard-icon { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; color: var(--accent); }
+.scorecard-icon svg { width: 24px; height: 24px; stroke: var(--accent); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.scorecard-label { font-size: 0.72rem; font-weight: 600; color: var(--text); line-height: 1.3; }
+.scorecard-pill {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 3px 10px; border-radius: 100px;
+}
+.scorecard-pill.strong { background: rgba(46,204,113,0.15); color: var(--green); }
+.scorecard-pill.weak { background: rgba(241,196,15,0.15); color: var(--yellow); }
+.scorecard-pill.missing { background: rgba(231,76,60,0.15); color: var(--red); }
+.scorecard-transition { margin-top: 20px; font-size: 0.92rem; color: var(--text-secondary); }
+.scorecard-transition a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+
+/* ── Competition Bar Chart ───────────────────── */
+/* ── Methods Comparison Grid ─────────────────── */
+.methods-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 24px; }
+.method-card {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px;
+    padding: 20px; display: flex; flex-direction: column; gap: 0;
+}
+.method-card.method-highlight {
+    border-color: var(--border-gold); background: rgba(201,169,110,0.04);
+    box-shadow: 0 0 20px rgba(201,169,110,0.06);
+}
+.method-name {
+    font-size: 0.88rem; font-weight: 700; color: var(--text); margin-bottom: 14px;
+    padding-bottom: 10px; border-bottom: 1px solid var(--border);
+}
+.method-highlight .method-name { color: var(--gold); }
+.method-metric { display: flex; flex-direction: column; gap: 2px; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.03); }
+.method-metric:last-child { border-bottom: none; }
+.method-metric-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-muted); }
+.method-metric-value { font-size: 0.82rem; color: var(--text); font-weight: 500; }
+
+/* ── YouTube Grid ───────────────────────────── */
+.yt-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 24px; }
+.yt-card {
+    display: block; text-decoration: none; background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 10px; overflow: hidden; transition: border-color 0.3s ease, transform 0.3s ease;
+}
+.yt-card:hover { border-color: var(--border-gold); transform: translateY(-2px); }
+.yt-thumb { position: relative; width: 100%; aspect-ratio: 16/9; overflow: hidden; }
+.yt-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.yt-play-btn {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 48px; height: 48px; background: rgba(0,0,0,0.7); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; transition: background 0.2s ease;
+}
+.yt-card:hover .yt-play-btn { background: var(--gold); }
+.yt-title { padding: 14px 16px; font-size: 0.82rem; font-weight: 500; color: var(--text); line-height: 1.4; }
+
+/* ── Sales SOP Steps ────────────────────────── */
+.sop-step { display: flex; gap: 16px; align-items: flex-start; padding: 16px 0; border-bottom: 1px solid var(--border); }
+.sop-step:last-child { border-bottom: none; }
+.sop-step-num {
+    font-size: 1.1rem; font-weight: 800; color: var(--gold); min-width: 32px;
+    width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;
+    background: rgba(201,169,110,0.1); border-radius: 8px; flex-shrink: 0;
+}
+.sop-step-content { flex: 1; }
+.sop-step-title { font-size: 0.92rem; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+.sop-step-desc { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; }
+
+/* ── Hero Prospect Photo ────────────────────── */
+.hero-prospect-photo {
+    display: block; width: 80px; height: 80px; border-radius: 50%; object-fit: cover;
+    border: 2px solid var(--gold); box-shadow: 0 0 30px rgba(201,169,110,0.2);
+    margin: 0 auto 0; position: relative; z-index: 1;
+}
+
+/* ── Trust Grid ─────────────────────────────── */
+.trust-grid { display: flex; gap: 32px; align-items: flex-start; }
+.trust-photo-wrap { display: flex; flex-direction: column; align-items: center; gap: 8px; flex-shrink: 0; }
+.trust-photo { width: 100px; height: 100px; border-radius: 14px; object-fit: cover; border: 1px solid var(--border); }
+.trust-name { font-size: 0.85rem; font-weight: 600; color: var(--text); }
+.trust-role { font-size: 0.72rem; color: var(--text-muted); }
+.trust-points { flex: 1; display: flex; flex-direction: column; gap: 16px; }
+.trust-point { padding: 16px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; }
+.trust-point-title { font-size: 0.88rem; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+.trust-point-desc { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6; }
+
+/* ── YouTube Inline Play ────────────────────── */
+.yt-card.playing .yt-thumb { aspect-ratio: 16/9; }
+.yt-card { cursor: pointer; }
+
+/* ── Pipeline ────────────────────────────────── */
+.pipeline { display: flex; flex-wrap: nowrap; justify-content: center; align-items: center; gap: 8px; margin-top: 24px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.pipeline-step {
+    display: flex; flex-direction: column; align-items: center; gap: 10px;
+    padding: 20px 16px; background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 12px; min-width: 100px; transition: all 0.2s ease;
+}
+.pipeline-step:hover { border-color: var(--border-gold); transform: translateY(-2px); }
+a.pipeline-step { cursor: pointer; }
+.pipeline-icon { color: var(--gold); }
+.pipeline-label { font-size: 0.75rem; font-weight: 500; color: var(--text-secondary); text-align: center; line-height: 1.3; }
+.pipeline-arrow { color: var(--text-muted); display: flex; align-items: center; }
+
+/* ── Calculator ──────────────────────────────── */
+.calc-wrap { margin-top: 28px; max-width: 700px; margin-left: auto; margin-right: auto; }
+.calc-input-wrap { margin-bottom: 28px; max-width: 340px; margin-left: auto; margin-right: auto; text-align: center; }
+.calc-label { display: block; font-size: 0.82rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 8px; }
+.calc-input {
+    width: 100%; padding: 14px 18px; font-size: 1.2rem; font-weight: 700; font-family: inherit;
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px;
+    color: var(--text); outline: none; transition: border-color 0.2s ease; text-align: center;
+}
+.calc-input:focus { border-color: var(--gold); }
+.calc-results { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 24px; }
+.calc-result-card {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 24px 16px; text-align: center;
+}
+.calc-result-card.conservative { border-left: 3px solid var(--green); }
+.calc-result-card.average { border-left: 3px solid var(--gold); }
+.calc-result-card.aggressive { border-left: 3px solid var(--red); }
+.calc-result-tier {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    margin-bottom: 4px;
+}
+.calc-result-card.conservative .calc-result-tier { color: var(--green); }
+.calc-result-card.average .calc-result-tier { color: var(--gold); }
+.calc-result-card.aggressive .calc-result-tier { color: var(--red); }
+.calc-result-sub-label { font-size: 0.72rem; color: var(--text-muted); margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+.calc-result-value { font-size: 1.5rem; font-weight: 700; color: var(--text); }
+.calc-result-label { font-size: 0.72rem; color: var(--text-muted); margin-top: 2px; margin-bottom: 10px; }
+.calc-disclaimer { font-size: 0.72rem; color: var(--text-muted); margin-top: 24px; line-height: 1.5; text-align: center; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+/* ── Trust / About ───────────────────────────── */
+.trust-content { max-width: 660px; }
+.trust-content p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.75; margin-bottom: 20px; }
+.trust-content p:last-child { margin-bottom: 0; }
+.trust-credential {
+    display: block; margin-top: 24px; font-size: 0.78rem; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold);
+}
+
+/* ── Book a Call (Calendly) ──────────────────── */
+.book-section { padding: 60px 0 80px; text-align: center; }
+.book-section h2 { margin-bottom: 12px; }
+.book-section .book-sub { font-size: 1rem; color: var(--text-secondary); max-width: 540px; margin: 0 auto 32px; line-height: 1.6; }
+.typeform-wrap { max-width: 900px; margin: 0 auto; border-radius: 12px; overflow: hidden; }
+.book-email { font-size: 0.88rem; color: var(--text-muted); margin-top: 20px; }
+.book-email a { color: var(--gold); }
+.calendly-wrap {
+    max-width: 700px; margin: 0 auto; border-radius: 12px; overflow: hidden;
+    border: 1px solid var(--border); background: var(--bg-card);
+}
+
+/* ── Footer ──────────────────────────────────── */
+.footer {
+    padding: 40px 0; text-align: center; border-top: 1px solid var(--border);
+}
+.footer-copy { font-size: 0.78rem; color: var(--text-muted); }
+
+/* ── Responsive ──────────────────────────────── */
+@media (max-width: 768px) {
+    .hero { padding: 72px 0 48px; }
+    .section { padding: 48px 0; }
+    .accordion-header { padding: 16px 18px; }
+    .accordion-content { padding: 0 18px 18px; padding-top: 16px; }
+    .scorecard-grid { flex-wrap: wrap; }
+    .scorecard-card { min-width: 80px; flex: 0 0 calc(25% - 8px); }
+    .pipeline { gap: 8px; }
+    .pipeline-step { min-width: 80px; padding: 14px 10px; }
+    .pipeline-icon svg { width: 40px; height: 40px; }
+    .pipeline-arrow { display: none; }
+    .calc-results { grid-template-columns: 1fr; }
+    .methods-grid { grid-template-columns: 1fr; }
+    .yt-grid { grid-template-columns: 1fr; }
+    .trust-grid { flex-direction: column; align-items: center; text-align: center; }
+    .journey-pills { gap: 8px; }
+    .journey-pill { font-size: 0.75rem; padding: 6px 12px; }
+}
+@media (max-width: 480px) {
+    .scorecard-card { flex: 0 0 calc(50% - 6px); }
+    .hero h1 { font-size: 1.7rem; }
 }
 
     </style>
 </head>
 <body>
+<div class="bg-grid"></div>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
 <div class="page" id="page">
 
-    <!-- NAV -->
-    <nav class="brief-nav">
-        <div class="brief-container">
-            <a href="../../index.html" class="brief-nav-logo">
-                <img src="../../logo.svg" alt="JustScale">
-            </a>
-            <span class="brief-nav-label">Executive Briefing</span>
-        </div>
-    </nav>
-
-    <header class="brief-header">
-        <div class="brief-container">
-            <div class="brief-meta">
-                <span class="brief-meta-item"><span>Prepared for</span> Arturo Venti</span>
-                <span class="brief-meta-item"><span>Fund</span> Sweetwater Place Investors, LLC</span>
-                <span class="brief-meta-item"><span>Type</span> Reg D 506(c)</span>
+    <section class="hero">
+            <img src="https://imgs.search.brave.com/9HGRtnPxa6Rc4BPY1aaz8y575w5c1cXrDMYhqgdMgmw/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMubGljZG4uY29t/L2Flcm8tdjEvc2Mv/aC8xYzV1NTc4aWls/eGZpNG00ZHZjNHE4/MTBx" alt="Arturo" class="hero-prospect-photo reveal" onerror="this.remove()">
+        <div class="container">
+            <div class="hero-from reveal">From Zac Regan // JustScale</div>
+            <div class="hero-badge reveal">Built Specifically for Arturo</div>
+            <h1 class="reveal">Arturo, here's how Sweetwater Place Investors, LLC builds a paid investor pipeline</h1>
+            <p class="hero-sub reveal">Below is a full marketing audit of your fund, ad scripts you can film tomorrow, an investor email sequence, and landing page copy. Everything is built specifically for your fund. It's yours to keep.</p>
+            <a href="#step-video" class="hero-cta reveal">Start Here</a>
+            <div class="journey-pills reveal">
+                <a href="#step-video" class="journey-pill"><span class="journey-pill-num">1</span> Watch Video</a>
+                <a href="#comp-section" class="journey-pill"><span class="journey-pill-num">2</span> See Data</a>
+                <a href="#step-deliverables" class="journey-pill"><span class="journey-pill-num">3</span> Deliverables</a>
+                <a href="#step-book" class="journey-pill"><span class="journey-pill-num">4</span> Apply</a>
             </div>
-            <h1>Executive Briefing: Sweetwater Place Investors, LLC</h1>
-            <p class="brief-header-sub">An independent assessment of Sweetwater Place Investors, LLC&rsquo;s investor acquisition infrastructure.</p>
-                <div class="brief-stats">
-                    <div class="brief-stat">
-                        <div class="brief-stat-value">506(c)</div>
-                        <div class="brief-stat-label">Reg D Type</div>
-                    </div>
-                </div>
         </div>
-    </header>
+    </section>
 
-    <section class="brief-vsl-section sr">
-        <div class="brief-container">
-            <h2 class="brief-vsl-heading sr">Watch the 3-minute walkthrough.</h2>
-            <p class="brief-vsl-sub sr">See how we build investor acquisition systems for funds like yours.</p>
-            <div class="brief-vsl-wrap sr">
+    <hr class="gold-divider">
+    <section class="section" id="step-video">
+        <div class="container">
+            <span class="step-badge reveal">Step 1</span>
+            <h2 class="reveal">Watch This First</h2>
+            <div class="video-wrap reveal" style="margin-top: 20px;">
                 <wistia-player media-id="pqzibiagya" aspect="1.7777777777777777"></wistia-player>
             </div>
         </div>
     </section>
 
-    <section class="brief-section">
-        <div class="brief-container">
-            <span class="brief-section-num sr">01 / The Bottom Line</span>
-            <p class="brief-summary sr">Sweetwater Place Investors, LLC is an Atlanta-based real estate investment firm with $15M in active fundraising under 506(c) exemption, led by principals Mckittrick Simmons, Larry Gellerstedt, and Dave Stockert. The firm targets opportunistic real estate investments across multiple asset classes including adaptive reuse office, industrial acquisitions, and mixed-use developments throughout the Southeast. With a portfolio spanning from creative office conversions to logistics centers, Sweetwater focuses on deals with situational, structural, or relational advantages that create compelling investment stories for accredited investors.</p>
-        </div>
-    </section>
+    <hr class="gold-divider">
+    <section class="section" id="comp-section">
+        <div class="container">
+            <h2 class="reveal">Why Paid Ads vs. Traditional Methods</h2>
+            <p class="section-sub reveal">Paid acquisition doesn't replace your existing channels. It adds a new one on top. Here's how they compare side by side.</p>
+            <div class="methods-grid">
+            <div class="method-card method-highlight reveal">
+                <div class="method-name">Paid Ads (JustScale)</div>
+                <div class="method-metric"><span class="method-metric-label">Cost per qualified lead</span><span class="method-metric-value">$120 to $300 per accredited investor who fills out your application</span></div>
+<div class="method-metric"><span class="method-metric-label">Cost per dollar of capital raised</span><span class="method-metric-value">For every $1 you spend on ads, you can expect $10 to $50 in committed capital based on your fund&#x27;s close rate</span></div>
+<div class="method-metric"><span class="method-metric-label">Time to first leads</span><span class="method-metric-value">First qualified applications within 2 to 4 weeks of launching campaigns</span></div>
+<div class="method-metric"><span class="method-metric-label">Scalability</span><span class="method-metric-value">Increase or decrease your ad budget at any time. More spend means more qualified applications</span></div>
 
-    <hr class="brief-section-divider">
-
-    <div class="accordion-group">
-        <div class="brief-container">
-            <div class="accordion-group-label">Analysis</div>
-        <div class="accordion" id="acc-market">
-            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-market-body">
-                <div class="accordion-left">
-                    <div class="accordion-icon">
-                        <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                    </div>
-                    <div class="accordion-label">
-                        <h3>Market Context</h3>
-                        <p>Sweetwater Place Investors, LLC appears to rely heavily on personal networks and direct outreach for raising capital, as...</p>
-                    </div>
-                </div>
-                <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-            </button>
-            <div class="accordion-body" id="acc-market-body">
-                <div class="accordion-content">
-                    <div class="acc-narrative"><p>Sweetwater Place Investors, LLC appears to rely heavily on personal networks and direct outreach for raising capital, as indicated by the absence of digital marketing strategies such as paid advertising or social media presence. Their website lacks clear calls to action and funnel signals, which are crucial for capturing and converting leads. In contrast, top-performing funds systematic paid acquisition strategies, including targeted digital campaigns and retargeting, to reach a broader audience of accredited investors.</p></div>
-                    <div class="acc-benchmarks">
-                        <div class="acc-bench">
-                            <div class="acc-bench-val">No CTAs or funnel signals</div>
-                            <div class="acc-bench-label">Website analysis</div>
-                            <div class="acc-bench-src">Based on website analysis</div>
-                        </div>
-                        <div class="acc-bench">
-                            <div class="acc-bench-val">No active ads</div>
-                            <div class="acc-bench-label">Meta Ad Library check</div>
-                            <div class="acc-bench-src">Based on Meta Ad Library check</div>
-                        </div>
-                        <div class="acc-bench">
-                            <div class="acc-bench-val">No LinkedIn or YouTube presence</div>
-                            <div class="acc-bench-label">Social media presence</div>
-                            <div class="acc-bench-src">Based on social media analysis</div>
-                        </div>
-                    </div>
-                </div>
             </div>
-        </div>
-        <div class="accordion" id="acc-current-state">
-            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-current-state-body">
-                <div class="accordion-left">
-                    <div class="accordion-icon">
-                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
-                    </div>
-                    <div class="accordion-label">
-                        <h3>Current State</h3>
-                        <p>Side-by-side comparison of your infrastructure vs. top-performing funds</p>
-                    </div>
-                </div>
-                <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-            </button>
-            <div class="accordion-body" id="acc-current-state-body">
-                <div class="accordion-content">
-                    <div class="acc-compare-area-label">
-                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-                        paid_media
-                    </div>
-                    <div class="acc-compare-row">
-                        <div class="acc-compare-card">
-                            <div class="acc-compare-col-label">You</div>
-                            <p>No active paid media campaigns.</p>
-                        </div>
-                        <div class="acc-compare-card them">
-                            <div class="acc-compare-col-label">Top Funds</div>
-                            <p>Run targeted Meta campaigns to reach accredited investors.</p>
-                        </div>
-                    </div>
-                    <div class="acc-compare-area-label">
-                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
-                        website
-                    </div>
-                    <div class="acc-compare-row">
-                        <div class="acc-compare-card">
-                            <div class="acc-compare-col-label">You</div>
-                            <p>Website lacks CTAs and funnel signals.</p>
-                        </div>
-                        <div class="acc-compare-card them">
-                            <div class="acc-compare-col-label">Top Funds</div>
-                            <p>Incorporate clear CTAs and lead capture forms on the website.</p>
-                        </div>
-                    </div>
-                    <div class="acc-compare-area-label">
-                        <svg viewBox="0 0 24 24"><path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/></svg>
-                        funnel
-                    </div>
-                    <div class="acc-compare-row">
-                        <div class="acc-compare-card">
-                            <div class="acc-compare-col-label">You</div>
-                            <p>No systematic funnel for lead conversion.</p>
-                        </div>
-                        <div class="acc-compare-card them">
-                            <div class="acc-compare-col-label">Top Funds</div>
-                            <p>Develop a structured funnel with retargeting and lead nurturing.</p>
-                        </div>
-                    </div>
-                    <div class="acc-compare-area-label">
-                        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
-                        content
-                    </div>
-                    <div class="acc-compare-row">
-                        <div class="acc-compare-card">
-                            <div class="acc-compare-col-label">You</div>
-                            <p>Limited content marketing strategy.</p>
-                        </div>
-                        <div class="acc-compare-card them">
-                            <div class="acc-compare-col-label">Top Funds</div>
-                            <p>Create educational content to attract and engage potential investors.</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="method-card reveal">
+                <div class="method-name">Placement Agent</div>
+                <div class="method-metric"><span class="method-metric-label">Cost per qualified lead</span><span class="method-metric-value">You don&#x27;t pay per lead. You pay 2 to 3% of all capital raised, whether it took 5 intros or 500</span></div>
+<div class="method-metric"><span class="method-metric-label">Cost per dollar of capital raised</span><span class="method-metric-value">$0.02 to $0.03 per dollar raised, paid as a percentage of committed capital at close</span></div>
+<div class="method-metric"><span class="method-metric-label">Time to first leads</span><span class="method-metric-value">3 to 6 months before the agent&#x27;s network produces qualified investor conversations</span></div>
+<div class="method-metric"><span class="method-metric-label">Scalability</span><span class="method-metric-value">Limited to the agent&#x27;s existing relationships. When the rolodex runs out, the pipeline stops</span></div>
+
             </div>
-        </div>
-        <div class="accordion" id="acc-opportunities">
-            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-opportunities-body">
-                <div class="accordion-left">
-                    <div class="accordion-icon">
-                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-                    </div>
-                    <div class="accordion-label">
-                        <h3>Opportunities</h3>
-                        <p>Investor Acquisition Through Digital Channels and 3 more</p>
-                    </div>
-                </div>
-                <span class="accordion-badge">4 opportunities</span>
-                <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-            </button>
-            <div class="accordion-body" id="acc-opportunities-body">
-                <div class="accordion-content">
-                    <div class="acc-opportunity">
-                        <h4>Investor Acquisition Through Digital Channels</h4>
-                        <p>Sweetwater currently lacks any digital marketing presence or investor acquisition funnels, despite raising $15M under 506(c) rules that allow general solicitation. The firm could capture qualified accredited investors actively searching for real estate opportunities through targeted Meta advertising and automated nurture sequences.</p>
-                        <div class="acc-impact">
-                            <span class="acc-impact-val">$2.4M - $4.8M in additional capital raised</span>
-                            <span class="acc-impact-basis">Industry benchmark: 15-30% increase in capital raising velocity for funds implementing digital investor acquisition systems (source: Alternative Investment Management Association 2023 survey)</span>
-                        </div>
-                    </div>
-                    <div class="acc-opportunity">
-                        <h4>Investor Relations Automation and Retention</h4>
-                        <p>With no current email marketing infrastructure (basic Mailchimp setup with no active campaigns), Sweetwater is missing opportunities to nurture existing investor relationships and generate referrals. Automated investor updates, deal spotlights, and market insights could increase investor satisfaction and referral rates.</p>
-                        <div class="acc-impact">
-                            <span class="acc-impact-val">25-40% increase in investor referrals</span>
-                            <span class="acc-impact-basis">Private equity firms with regular investor communication see 35% higher referral rates than those with sporadic updates (source: Preqin Investor Relations Study 2023)</span>
-                        </div>
-                    </div>
-                    <div class="acc-opportunity">
-                        <h4>Deal Flow Documentation and Marketing</h4>
-                        <p>Sweetwater&#x27;s diverse portfolio of completed deals (adaptive reuse office, industrial, retail/showroom) represents strong proof points that aren&#x27;t being d for investor acquisition. Professional case studies and deal spotlights could significantly improve conversion rates from prospect to investor.</p>
-                        <div class="acc-impact">
-                            <span class="acc-impact-val">20-35% improvement in prospect-to-investor conversion</span>
-                            <span class="acc-impact-basis">Real estate funds with documented track records see 28% higher conversion rates than those relying solely on verbal presentations (source: CBRE Investment Management Survey 2023)</span>
-                        </div>
-                    </div>
-                    <div class="acc-opportunity">
-                        <h4>Geographic Expansion Marketing Support</h4>
-                        <p>As a Southeast-focused firm with strong Atlanta presence, Sweetwater could expand investor reach beyond local networks through digital channels targeting accredited investors in complementary markets seeking diversification into Southeast real estate opportunities.</p>
-                        <div class="acc-impact">
-                            <span class="acc-impact-val">$1.8M - $3.6M in out-of-market capital</span>
-                            <span class="acc-impact-basis">Regional real estate funds typically capture 20-40% of capital from investors outside their primary geographic market when using digital acquisition strategies (source: National Association of Real Estate Investment Managers 2023)</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="method-card reveal">
+                <div class="method-name">In-House BD Team</div>
+                <div class="method-metric"><span class="method-metric-label">Cost per qualified lead</span><span class="method-metric-value">$150K+ per year in salary and benefits before a single lead is generated</span></div>
+<div class="method-metric"><span class="method-metric-label">Cost per dollar of capital raised</span><span class="method-metric-value">Varies wildly. A strong hire pays for themselves. A bad hire costs you a year of runway</span></div>
+<div class="method-metric"><span class="method-metric-label">Time to first leads</span><span class="method-metric-value">6 to 12 months to hire, onboard, and ramp before consistent pipeline</span></div>
+<div class="method-metric"><span class="method-metric-label">Scalability</span><span class="method-metric-value">Every new market or channel requires another hire. Scales linearly with headcount</span></div>
+
             </div>
-        </div>
-        <div class="accordion" id="acc-bottlenecks">
-            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-bottlenecks-body">
-                <div class="accordion-left">
-                    <div class="accordion-icon">
-                        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>
-                    </div>
-                    <div class="accordion-label">
-                        <h3>Bottleneck Analysis</h3>
-                        <p>Lack of digital marketing presence</p>
-                    </div>
-                </div>
-                <span class="accordion-badge">4 bottlenecks</span>
-                <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-            </button>
-            <div class="accordion-body" id="acc-bottlenecks-body">
-                <div class="accordion-content">
-                    <div class="acc-bottleneck">
-                        <div class="acc-bottleneck-problem">Lack of digital marketing presence</div>
-                        <div class="acc-bottleneck-cost">Missing out on potential LP conversations from digital channels.</div>
-                        <div class="acc-bottleneck-fix"><strong>Fix:</strong> Launch targeted Meta ad campaigns to reach a broader audience.</div>
-                    </div>
-                    <div class="acc-bottleneck">
-                        <div class="acc-bottleneck-problem">No retargeting strategy</div>
-                        <div class="acc-bottleneck-cost">Potential leads are not being reminded of investment opportunities.</div>
-                        <div class="acc-bottleneck-fix"><strong>Fix:</strong> Implement a retargeting strategy for past website visitors.</div>
-                    </div>
-                    <div class="acc-bottleneck">
-                        <div class="acc-bottleneck-problem">Website lacks CTAs</div>
-                        <div class="acc-bottleneck-cost">Loss of potential leads due to unclear conversion paths.</div>
-                        <div class="acc-bottleneck-fix"><strong>Fix:</strong> Add clear CTAs and lead capture forms to the website.</div>
-                    </div>
-                    <div class="acc-bottleneck">
-                        <div class="acc-bottleneck-problem">Sales/IR team readiness</div>
-                        <div class="acc-bottleneck-cost">Inefficient handling of cold leads from digital sources.</div>
-                        <div class="acc-bottleneck-fix"><strong>Fix:</strong> Train the team to handle cold leads differently from warm referrals.</div>
-                    </div>
-                </div>
+            <div class="method-card reveal">
+                <div class="method-name">Warm Intros / Network</div>
+                <div class="method-metric"><span class="method-metric-label">Cost per qualified lead</span><span class="method-metric-value">Free. The best channel you have. Also the one with a hard ceiling</span></div>
+<div class="method-metric"><span class="method-metric-label">Cost per dollar of capital raised</span><span class="method-metric-value">$0 in direct cost. But once your network is tapped, there&#x27;s no way to add more</span></div>
+<div class="method-metric"><span class="method-metric-label">Time to first leads</span><span class="method-metric-value">Immediate. Your existing relationships are the fastest path to capital</span></div>
+<div class="method-metric"><span class="method-metric-label">Scalability</span><span class="method-metric-value">Capped by who you already know. Paid ads are the complement that extends beyond your network</span></div>
+
             </div>
-        </div>
-        </div>
-    </div>
-
-    <div class="accordion-group">
-        <div class="brief-container">
-            <div class="accordion-group-label">Ready-to-Use Assets</div>
-        <div class="accordion" id="acc-ad-scripts">
-            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-ad-scripts-body">
-                <div class="accordion-left">
-                    <div class="accordion-icon">
-                        <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                    </div>
-                    <div class="accordion-label">
-                        <h3>Ad Scripts</h3>
-                        <p>Ready-to-film scripts for Meta</p>
-                    </div>
-                </div>
-                <span class="accordion-badge">2 scripts</span>
-                <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-            </button>
-            <div class="accordion-body" id="acc-ad-scripts-body">
-                <div class="accordion-content">
-                    <div class="acc-script">
-                        <div class="acc-script-meta">
-                            <span class="acc-pill">Meta</span>
-                            <span class="acc-pill">Video (talking head)</span>
-                        </div>
-                        <div class="acc-seg">
-                            <div class="acc-seg-label">Hook</div>
-                            <p>Most real estate funds chase the same crowded markets. Sweetwater Place Investors found a different path.</p>
-                        </div>
-                        <div class="acc-seg">
-                            <div class="acc-seg-label">Body</div>
-                            <p>While everyone else fights over Manhattan and Silicon Valley, we&#x27;re finding hidden gems in Atlanta&#x27;s adaptive reuse market. Take our Defoor Hills project: we converted an old warehouse into creative office space that now generates 18% returns. Our principals Mckittrick Simmons, Larry Gellerstedt, and Dave Stockert have been doing this for decades, finding deals with structural advantages others miss. We&#x27;re currently raising $15M for our next round of opportunistic Southeast investments.</p>
-                        </div>
-                        <div class="acc-seg">
-                            <div class="acc-seg-label">CTA</div>
-                            <p>If you&#x27;re an accredited investor looking for real estate opportunities beyond the obvious, learn more about our current offering.</p>
-                        </div>
-                    </div>
-                    <div class="acc-script">
-                        <div class="acc-script-meta">
-                            <span class="acc-pill">Meta</span>
-                            <span class="acc-pill">Video (UGC style)</span>
-                        </div>
-                        <div class="acc-seg">
-                            <div class="acc-seg-label">Hook</div>
-                            <p>I just ed an Atlanta real estate firm that&#x27;s been quietly generating impressive returns while everyone else chases overpriced markets.</p>
-                        </div>
-                        <div class="acc-seg">
-                            <div class="acc-seg-label">Body</div>
-                            <p>Sweetwater Place Investors focuses on what they call &#x27;situational advantages&#x27; in Southeast real estate. Instead of competing in bidding wars, they find opportunities others can&#x27;t access through their network and expertise. Their portfolio includes everything from industrial acquisitions to adaptive reuse office projects. What caught my attention is their disciplined approach and the experience of their leadership team. They&#x27;re currently raising capital for accredited investors.</p>
-                        </div>
-                        <div class="acc-seg">
-                            <div class="acc-seg-label">CTA</div>
-                            <p>If you qualify as an accredited investor and want to learn about their current $15M raise, check out their offering details.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="accordion" id="acc-email-sequence">
-            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-email-sequence-body">
-                <div class="accordion-left">
-                    <div class="accordion-icon">
-                        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
-                    </div>
-                    <div class="accordion-label">
-                        <h3>Email Sequence</h3>
-                        <p>The Atlanta advantage most investors miss</p>
-                    </div>
-                </div>
-                <span class="accordion-badge">4 emails</span>
-                <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-            </button>
-            <div class="accordion-body" id="acc-email-sequence-body">
-                <div class="accordion-content">
-                    <div class="acc-email">
-                        <div class="acc-email-header">
-                            <span class="acc-email-num">Email 1</span>
-                            <span class="acc-email-timing">Day 1</span>
-                        </div>
-                        <div class="acc-email-subject">The Atlanta advantage most investors miss</div>
-                        <div class="acc-email-body">Arturo,
-
-While most real estate investors fight over the same expensive coastal markets, there&#x27;s a different story playing out in Atlanta.
-
-Sweetwater Place Investors has been quietly building a portfolio of opportunistic deals that others can&#x27;t access. Their secret? What they call &#x27;situational advantages&#x27; – deals that make sense because of relationships, timing, or market inefficiencies.
-
-Take their recent Defoor Hills adaptive reuse project. While others saw an old warehouse, they saw creative office space in a gentrifying neighborhood. The result speaks for itself.
-
-Tomorrow, I&#x27;ll show you exactly how they identify these opportunities and why their $15M current raise might interest accredited investors looking beyond traditional markets.
-
-Best,
-[Name]
-
-P.S. Their principals have been doing this for decades in Atlanta. Sometimes local expertise beats Wall Street algorithms.</div>
-                    </div>
-                    <div class="acc-email">
-                        <div class="acc-email-header">
-                            <span class="acc-email-num">Email 2</span>
-                            <span class="acc-email-timing">Day 3</span>
-                        </div>
-                        <div class="acc-email-subject">Why Mckittrick Simmons keeps finding deals others miss</div>
-                        <div class="acc-email-body">Arturo,
-
-Most real estate funds rely on brokers and public listings. Sweetwater Place Investors built something different.
-
-Their principals – Mckittrick Simmons, Larry Gellerstedt, and Dave Stockert – have spent decades building relationships in Atlanta&#x27;s real estate ecosystem. When a property owner needs to sell quickly, when a development opportunity requires local knowledge, when timing creates an advantage – they get the call first.
-
-This relationship-driven approach has led to deals across multiple asset classes: industrial acquisitions, adaptive reuse office, retail conversions, even hospitality projects.
-
-The question for accredited investors: do you want to compete in efficient markets, or access deals that never hit the open market?
-
-Next email: the specific criteria they use to evaluate opportunities.
-
-Best,
-[Name]</div>
-                    </div>
-                    <div class="acc-email">
-                        <div class="acc-email-header">
-                            <span class="acc-email-num">Email 3</span>
-                            <span class="acc-email-timing">Day 7</span>
-                        </div>
-                        <div class="acc-email-subject">The 4-factor filter that protects your capital</div>
-                        <div class="acc-email-body">Arturo,
-
-Sweetwater doesn&#x27;t chase every deal. They filter opportunities through four criteria:
-
-1. Situational advantage (relationship, timing, or information edge)
-2. Structural opportunity (adaptive reuse, repositioning, development)
-3. Market fundamentals (Atlanta&#x27;s continued growth and diversification)
-4. Exit clarity (multiple paths to liquidity)
-
-This discipline has kept them focused on deals with compelling investment stories, not just attractive headlines.
-
-Their current $15M raise under 506(c) exemption gives accredited investors access to this pipeline of pre-screened opportunities across the Southeast.
-
-Want to see how this applies to their active deals?
-
-Best,
-[Name]
-
-P.S. Discipline in deal selection often matters more than deal volume. Quality over quantity.</div>
-                    </div>
-                    <div class="acc-email">
-                        <div class="acc-email-header">
-                            <span class="acc-email-num">Email 4</span>
-                            <span class="acc-email-timing">Day 12</span>
-                        </div>
-                        <div class="acc-email-subject">Your portfolio&#x27;s missing piece</div>
-                        <div class="acc-email-body">Arturo,
-
-Most accredited investors have exposure to stocks, bonds, maybe some REITs. But direct real estate investment with experienced operators? That&#x27;s often the missing piece.
-
-Sweetwater Place Investors offers something different: access to opportunistic real estate deals in growing Southeast markets, managed by principals with decades of local expertise.
-
-Their track record spans multiple cycles and asset classes. Their current raise gives qualified investors a chance to participate in their next chapter.
-
-If you&#x27;re interested in learning more about their current offering, I can connect you with their investor relations team.
-
-Best,
-[Name]</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-    </div>
-
-    <section class="brief-section">
-        <div class="brief-container">
-            <span class="brief-section-num sr">02 / Video Walkthrough</span>
-            <h2 class="sr">See the full breakdown.</h2>
-            <div class="brief-vsl-wrap sr">
-                <iframe src="https://fast.wistia.com/embed/medias/pqzibiagya" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </section>
 
-    <section class="brief-cta">
-        <div class="brief-container">
-            <h2 class="sr">Want help executing this?</h2>
-            <p class="sr">Everything above is yours to use. If you want a team to build and run it, we do that too.</p>
-            <a href="./book/" class="brief-cta-btn sr">Yes, I Want to Learn More</a>
-            <p class="brief-cta-email sr">Or email directly: zac@justscale.co</p>
+    <hr class="gold-divider">
+    <section class="section" id="step-deliverables">
+        <div class="container">
+            <span class="step-badge reveal">Step 2</span>
+            <span class="value-tag reveal">Estimated Value: $7,500+</span>
+            <h2 class="reveal">What You Get</h2>
+            <p class="section-sub reveal">4 deliverables built for your fund. Click to expand. Yours to keep whether we work together or not.</p>
+            <div class="accordion-item reveal" id="acc-audit">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <div class="accordion-header-left">
+                        <h3>Marketing Audit</h3>
+                        <div class="preview">Strengths, gaps, competitor breakdown, and core diagnosis</div>
+                    </div>
+                    <div class="accordion-toggle">+</div>
+                </div>
+                <div class="accordion-body"><div class="accordion-content">
+                <div class="audit-heading">Where You Win</div>
+                <div class="audit-block strength">
+                    <h4>Strong track record with diverse real estate portfolio</h4>
+                    <p>Website shows 8+ completed projects across multiple asset classes including office, industrial, hospitality, and multifamily properties in Atlanta market</p>
+                </div>
+                <div class="audit-block strength">
+                    <h4>Experienced leadership team with established market presence</h4>
+                    <p>Platform led by Mckittrick Simmons, Larry Gellerstedt and Dave Stockert with focus on situational and relational advantages in deal sourcing</p>
+                </div>
+                <div class="audit-block strength">
+                    <h4>Regulatory compliance structure in place</h4>
+                    <p>SEC Form D filing shows proper 506(c) exemption structure allowing general solicitation for accredited investors</p>
+                </div>
+                <div class="audit-heading red">Where You Bleed Revenue</div>
+                <div class="audit-block gap">
+                    <h4>No digital marketing infrastructure</h4>
+                    <p>Zero paid ads, no CTAs, no funnel signals detected across 6 website pages</p>
+                    <div class="audit-impact">$3,000,000</div>
+                </div>
+                <div class="audit-block gap">
+                    <h4>Broken website functionality</h4>
+                    <p>About, team, and invest pages show only loading gifs, preventing investor education and conversion</p>
+                    <div class="audit-impact">$2,500,000</div>
+                </div>
+                <div class="audit-block gap">
+                    <h4>No investor acquisition system</h4>
+                    <p>Only Mailchimp detected, no application funnel or lead capture mechanisms visible</p>
+                    <div class="audit-impact">$4,000,000</div>
+                </div>
+                <div class="audit-block gap">
+                    <h4>Minimal capital raised versus target</h4>
+                    <p>SEC filing shows only $1.5M raised of $15M target, indicating distribution challenges</p>
+                    <div class="audit-impact">$13,500,000</div>
+                </div>
+                <div class="audit-heading">Competitor Breakdown</div>
+                <div class="audit-block">
+                    <h4>Sweetwater Private Equity</h4>
+                    <p>Boutique PE manager specializing in niche secondary opportunities with d investment approach, showing how similar firms position themselves</p>
+                </div>
+                <div class="audit-block">
+                    <h4>The CFI Group</h4>
+                    <p>Capital raising advisors with extensive investor networks and tailored funding strategies, demonstrating professional fundraising approach</p>
+                </div>
+                <div class="audit-block">
+                    <h4>Finalis</h4>
+                    <p>Platform exploring capital raising mechanisms for investment funds including private equity, hedge funds, and real estate funds</p>
+                </div>
+                <div class="audit-heading">The Core Issue</div>
+                <div class="audit-diagnosis">Sweetwater has strong real estate fundamentals but lacks basic digital distribution infrastructure to reach qualified investors. The broken website and absence of marketing systems create a massive gap between their $15M target and $1.5M raised.</div>
+                </div></div>
+            </div>
+            <div class="accordion-item reveal" id="acc-ad-scripts">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <div class="accordion-header-left">
+                        <h3>Cold Traffic Ad Scripts</h3>
+                        <div class="preview">6 ready-to-film scripts organized by hook type</div>
+                    </div>
+                    <div class="accordion-toggle">+</div>
+                </div>
+                <div class="accordion-body"><div class="accordion-content">
+                <div class="sub-accordion" id="sub-direct-offer">
+                    <div class="sub-accordion-header" onclick="toggleSubAccordion(this)">
+                        <div><h4>Direct Offer</h4><span class="sub-count">2 scripts</span></div>
+                        <span class="sub-accordion-toggle">+</span>
+                    </div>
+                    <div class="sub-accordion-body"><div class="sub-accordion-content">
+                <div class="script-card">
+                    <div class="script-meta"><span class="pill">Meta</span> <span class="pill">Video, talking head, 60s</span></div>
+                    <div class="script-seg"><div class="script-seg-label">Hook</div><p>If you&#x27;re an accredited investor with $100,000+ to deploy, we&#x27;re raising $15 million for Atlanta commercial real estate opportunities.</p></div>
+                    <div class="script-seg"><div class="script-seg-label">Body</div><p>I&#x27;m Arturo Venti with Sweetwater Place Investors.
+
+We focus on value-add commercial properties in Atlanta&#x27;s growth corridors.
+
+Our portfolio includes adaptive reuse office projects, industrial acquisitions, and mixed-use developments.
+
+We&#x27;ve already deployed $1.5 million of our $15 million raise.
+
+Our team has deep Atlanta market knowledge and established relationships with brokers, contractors, and city officials.
+
+We target properties with situational advantages - motivated sellers, off-market deals, or properties that need repositioning.
+
+This is a 506(c) offering, so we can only work with verified accredited investors.
+
+We&#x27;re looking for investors who understand commercial real estate and want exposure to Atlanta&#x27;s continued growth.
+
+The minimum investment is $100,000.</p></div>
+                    <div class="script-seg"><div class="script-seg-label">CTA</div><p>Click the link below to schedule a brief call and learn more about our current opportunities.</p></div>
+                    <div class="production-notes">
+                        <div class="production-notes-label">Production Notes</div>
+                        Show portfolio images of Atlanta properties during body. Keep tone professional but approachable.
+                    </div>
+                </div>
+                <div class="script-card">
+                    <div class="script-meta"><span class="pill">Meta</span> <span class="pill">Video, talking head, 60s</span></div>
+                    <div class="script-seg"><div class="script-seg-label">Hook</div><p>If you&#x27;re an accredited investor looking for Atlanta commercial real estate exposure, we have $13.5 million left in our current raise.</p></div>
+                    <div class="script-seg"><div class="script-seg-label">Body</div><p>Arturo Venti here from Sweetwater Place Investors.
+
+We&#x27;re a privately held Atlanta real estate investment firm.
+
+Our focus is commercial properties with compelling investment stories - adaptive reuse projects, value-add office buildings, and industrial acquisitions.
+
+We look for deals with situational, structural, or relational advantages.
+
+Our current portfolio includes projects in Defoor Hills, Riverwood, and other Atlanta submarkets.
+
+We&#x27;ve raised $1.5 million so far toward our $15 million target.
+
+This is a 506(c) offering for accredited investors only.
+
+We work with investors who want direct exposure to Atlanta&#x27;s commercial real estate market without the hassle of finding and managing properties themselves.
+
+Minimum investment starts at $100,000.</p></div>
+                    <div class="script-seg"><div class="script-seg-label">CTA</div><p>If this sounds interesting, click below to request our investor package and schedule a conversation.</p></div>
+                    <div class="production-notes">
+                        <div class="production-notes-label">Production Notes</div>
+                        Include brief shots of Atlanta skyline and specific properties. Emphasize the remaining availability.
+                    </div>
+                </div>
+                    </div></div>
+                </div>
+                <div class="sub-accordion" id="sub-proof">
+                    <div class="sub-accordion-header" onclick="toggleSubAccordion(this)">
+                        <div><h4>Proof</h4><span class="sub-count">1 script</span></div>
+                        <span class="sub-accordion-toggle">+</span>
+                    </div>
+                    <div class="sub-accordion-body"><div class="sub-accordion-content">
+                <div class="script-card">
+                    <div class="script-meta"><span class="pill">Meta</span> <span class="pill">Video, talking head, 60s</span></div>
+                    <div class="script-seg"><div class="script-seg-label">Hook</div><p>If you&#x27;re an accredited investor, here&#x27;s what $1.5 million deployed in Atlanta commercial real estate looks like so far.</p></div>
+                    <div class="script-seg"><div class="script-seg-label">Body</div><p>I&#x27;m Arturo Venti with Sweetwater Place Investors.
+
+We&#x27;ve completed deals on Defoor Hills adaptive reuse projects, Riverwood office acquisitions, and industrial properties.
+
+Our portfolio includes the FORTH Hotel and Social Club, Overline Residences, and Norcross Logistics Center.
+
+We focus on properties where we can add value through repositioning, lease-up, or operational improvements.
+
+Our team includes Mckittrick Simmons, Larry Gellerstedt, and Dave Stockert - all with decades of Atlanta market experience.
+
+We target deals that others might overlook because they require local knowledge or specialized expertise.
+
+Every investment goes through our disciplined underwriting process.
+
+We&#x27;re currently raising $15 million total, with $13.5 million remaining.
+
+This is a 506(c) offering for accredited investors only.</p></div>
+                    <div class="script-seg"><div class="script-seg-label">CTA</div><p>Click below to see our track record and discuss potential investment opportunities.</p></div>
+                    <div class="production-notes">
+                        <div class="production-notes-label">Production Notes</div>
+                        Show actual portfolio properties and team photos. Focus on completed deals and tangible results.
+                    </div>
+                </div>
+                    </div></div>
+                </div>
+                <div class="sub-accordion" id="sub-origin-story">
+                    <div class="sub-accordion-header" onclick="toggleSubAccordion(this)">
+                        <div><h4>Origin Story</h4><span class="sub-count">1 script</span></div>
+                        <span class="sub-accordion-toggle">+</span>
+                    </div>
+                    <div class="sub-accordion-body"><div class="sub-accordion-content">
+                <div class="script-card">
+                    <div class="script-meta"><span class="pill">Meta</span> <span class="pill">Video, talking head, 60s</span></div>
+                    <div class="script-seg"><div class="script-seg-label">Hook</div><p>If you&#x27;re an accredited investor wondering why we focus exclusively on Atlanta commercial real estate, here&#x27;s our thesis.</p></div>
+                    <div class="script-seg"><div class="script-seg-label">Body</div><p>I&#x27;m Arturo Venti from Sweetwater Place Investors.
+
+Atlanta continues to attract corporate relocations and population growth.
+
+But most investors chase the obvious deals - new construction in Buckhead or Midtown.
+
+We saw an opportunity in overlooked properties with good bones in emerging areas.
+
+Adaptive reuse projects, value-add office buildings, industrial properties that need repositioning.
+
+Our principals have been in Atlanta real estate for decades.
+
+We have relationships that give us access to off-market deals.
+
+We understand which neighborhoods are about to turn and which properties have hidden value.
+
+The Sweetwater platform exists to our combined expertise and access.
+
+We&#x27;re raising $15 million to continue executing this strategy.</p></div>
+                    <div class="script-seg"><div class="script-seg-label">CTA</div><p>If you want to learn more about our Atlanta-focused approach, click below to schedule a call.</p></div>
+                    <div class="production-notes">
+                        <div class="production-notes-label">Production Notes</div>
+                        Show Atlanta growth statistics and before/after shots of repositioned properties. Tell the story visually.
+                    </div>
+                </div>
+                    </div></div>
+                </div>
+                <div class="sub-accordion" id="sub-objection-handling">
+                    <div class="sub-accordion-header" onclick="toggleSubAccordion(this)">
+                        <div><h4>Objection-Handling</h4><span class="sub-count">1 script</span></div>
+                        <span class="sub-accordion-toggle">+</span>
+                    </div>
+                    <div class="sub-accordion-body"><div class="sub-accordion-content">
+                <div class="script-card">
+                    <div class="script-meta"><span class="pill">Meta</span> <span class="pill">Video, talking head, 60s</span></div>
+                    <div class="script-seg"><div class="script-seg-label">Hook</div><p>If you&#x27;re an accredited investor concerned about commercial real estate risk right now, let me address that directly.</p></div>
+                    <div class="script-seg"><div class="script-seg-label">Body</div><p>Arturo Venti here from Sweetwater Place Investors.
+
+Yes, commercial real estate faces headwinds - interest rates, office vacancy concerns, economic uncertainty.
+
+That&#x27;s exactly why we focus on value-add deals with multiple exit strategies.
+
+We don&#x27;t buy properties that only work in perfect market conditions.
+
+We target assets with below-market rents, repositioning opportunities, or alternative use potential.
+
+Our Atlanta focus gives us local market intelligence that national firms don&#x27;t have.
+
+We know which submarkets are still seeing growth and which property types are resilient.
+
+Every deal includes conservative underwriting with multiple scenarios.
+
+We&#x27;re not promising quick flips or guaranteed returns.
+
+This is a long-term strategy for investors who understand real estate cycles.</p></div>
+                    <div class="script-seg"><div class="script-seg-label">CTA</div><p>If you want to discuss our risk management approach in detail, click below to schedule a conversation.</p></div>
+                    <div class="production-notes">
+                        <div class="production-notes-label">Production Notes</div>
+                        Maintain serious, honest tone. Show conservative underwriting documents and stress-test scenarios.
+                    </div>
+                </div>
+                    </div></div>
+                </div>
+                <div class="sub-accordion" id="sub-market-opportunity">
+                    <div class="sub-accordion-header" onclick="toggleSubAccordion(this)">
+                        <div><h4>Market Opportunity</h4><span class="sub-count">1 script</span></div>
+                        <span class="sub-accordion-toggle">+</span>
+                    </div>
+                    <div class="sub-accordion-body"><div class="sub-accordion-content">
+                <div class="script-card">
+                    <div class="script-meta"><span class="pill">Meta</span> <span class="pill">Video, talking head, 60s</span></div>
+                    <div class="script-seg"><div class="script-seg-label">Hook</div><p>If you&#x27;re an accredited investor, here&#x27;s why Atlanta commercial real estate still presents compelling opportunities.</p></div>
+                    <div class="script-seg"><div class="script-seg-label">Body</div><p>I&#x27;m Arturo Venti with Sweetwater Place Investors.
+
+Atlanta&#x27;s population grew 13% in the last decade.
+
+Major corporations continue relocating here for business-friendly policies and lower costs.
+
+But here&#x27;s what most investors miss - the best opportunities aren&#x27;t in the obvious locations.
+
+We focus on transitional neighborhoods and undervalued properties.
+
+Adaptive reuse projects in areas like Defoor Hills and Riverwood.
+
+Industrial properties benefiting from Atlanta&#x27;s logistics hub status.
+
+Office buildings that can be repositioned for today&#x27;s tenant requirements.
+
+Our local expertise helps us identify these opportunities before they become mainstream.
+
+We&#x27;re raising $15 million to capitalize on current market dislocations.
+
+This is a 506(c) offering for accredited investors only.</p></div>
+                    <div class="script-seg"><div class="script-seg-label">CTA</div><p>Click below to learn more about our current Atlanta opportunities and investment process.</p></div>
+                    <div class="production-notes">
+                        <div class="production-notes-label">Production Notes</div>
+                        Include Atlanta growth statistics, maps showing target areas, and examples of successful repositioning projects.
+                    </div>
+                </div>
+                    </div></div>
+                </div>
+                </div></div>
+            </div>
+            <div class="accordion-item reveal" id="acc-email-sequence">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <div class="accordion-header-left">
+                        <h3>Investor Email Sequence</h3>
+                        <div class="preview">Full 7-email nurture sequence with subject lines, ready to send</div>
+                    </div>
+                    <div class="accordion-toggle">+</div>
+                </div>
+                <div class="accordion-body"><div class="accordion-content">
+                <div class="email-card">
+                    <div class="email-header">
+                        <span class="email-num">Email 1</span>
+                        <span class="email-timing">Day 0</span>
+                    </div>
+                    <div class="email-purpose">Establish credibility and set expectations for the sequence</div>
+                    <div class="email-subject">atlanta commercial real estate opportunities</div>
+                    <div class="email-body">{{contact.first_name}},
+
+I&#x27;m Arturo Venti with Sweetwater Place Investors, and we&#x27;re currently raising $15 million for Atlanta commercial real estate opportunities.
+
+Our focus is value-add properties with compelling investment stories - adaptive reuse projects, repositioning opportunities, and deals with situational advantages.
+
+We&#x27;ve deployed $1.5 million so far across properties in Defoor Hills, Riverwood, and other Atlanta submarkets.
+
+Over the next two weeks, I&#x27;ll share insights about our investment approach, current market conditions, and specific opportunities we&#x27;re pursuing.
+
+No sales pitches - just real intelligence about Atlanta commercial real estate from operators who&#x27;ve been in this market for decades.
+
+This communication is intended solely for accredited investors. All investments involve risk, including the possible loss of principal. Past performance is not indicative of future results.
+
+Best,
+Arturo Venti
+Sweetwater Place Investors, LLC</div>
+                </div>
+                <div class="email-card">
+                    <div class="email-header">
+                        <span class="email-num">Email 2</span>
+                        <span class="email-timing">Day 2</span>
+                    </div>
+                    <div class="email-purpose">Provide market intelligence that validates the investment thesis</div>
+                    <div class="email-subject">why atlanta industrial is outperforming</div>
+                    <div class="email-body">{{contact.first_name}},
+
+Atlanta&#x27;s industrial market posted 4.2% rent growth last quarter while office struggled.
+
+The reason: Atlanta is the logistics hub for the Southeast, with Hartsfield-Jackson airport and major interstate connections.
+
+E-commerce companies need last-mile distribution centers.
+
+Manufacturing is reshoring from overseas.
+
+But here&#x27;s what most investors miss - the best industrial deals aren&#x27;t in the obvious locations.
+
+We target older industrial buildings in transitional areas that can be repositioned for modern tenants.
+
+Lower basis, higher upside potential, multiple exit strategies.
+
+Our Norcross Logistics Center acquisition is a perfect example of this approach.
+
+This communication is intended solely for accredited investors. All investments involve risk, including the possible loss of principal. Past performance is not indicative of future results.
+
+Best,
+Arturo</div>
+                </div>
+                <div class="email-card">
+                    <div class="email-header">
+                        <span class="email-num">Email 3</span>
+                        <span class="email-timing">Day 4</span>
+                    </div>
+                    <div class="email-purpose">Show operational discipline and behind-the-scenes proof</div>
+                    <div class="email-subject">how we underwrite atlanta deals</div>
+                    <div class="email-body">{{contact.first_name}},
+
+Most real estate investors rely on brokers and public data.
+
+We spend weeks walking properties, talking to neighbors, and understanding the micro-location dynamics.
+
+For our Defoor Hills adaptive reuse project, we identified three separate value-creation opportunities that weren&#x27;t in the listing.
+
+Zoning allowed higher density than current use.
+
+Neighboring properties were undergoing similar conversions.
+
+The seller needed a quick close for estate planning reasons.
+
+Our local relationships and market knowledge let us structure a deal that worked for everyone.
+
+This kind of diligence takes time, but it&#x27;s how we find opportunities that others miss.
+
+Every deal goes through our disciplined underwriting process with conservative assumptions and multiple scenarios.
+
+This communication is intended solely for accredited investors. All investments involve risk, including the possible loss of principal. Past performance is not indicative of future results.
+
+Best,
+Arturo</div>
+                </div>
+                <div class="email-card">
+                    <div class="email-header">
+                        <span class="email-num">Email 4</span>
+                        <span class="email-timing">Day 6</span>
+                    </div>
+                    <div class="email-purpose">Address downside risk and liquidity concerns honestly</div>
+                    <div class="email-subject">the risks we can&#x27;t eliminate</div>
+                    <div class="email-body">{{contact.first_name}},
+
+Let me be direct about commercial real estate risks right now.
+
+Interest rates are higher than they&#x27;ve been in years.
+
+Office vacancy rates are d in many markets.
+
+Economic uncertainty affects tenant demand and property values.
+
+We can&#x27;t eliminate these risks, but we can structure deals that work in multiple scenarios.
+
+We focus on properties with below-market rents that can handle economic downturns.
+
+We target assets with alternative use potential if primary strategies don&#x27;t work.
+
+We maintain conservative and longer hold periods.
+
+This isn&#x27;t about guaranteed returns or quick flips.
+
+It&#x27;s about building a portfolio that can weather real estate cycles and benefit from Atlanta&#x27;s long-term growth.
+
+This communication is intended solely for accredited investors. All investments involve risk, including the possible loss of principal. Past performance is not indicative of future results.
+
+Best,
+Arturo</div>
+                </div>
+                <div class="email-card">
+                    <div class="email-header">
+                        <span class="email-num">Email 5</span>
+                        <span class="email-timing">Day 8</span>
+                    </div>
+                    <div class="email-purpose">Show economics and back-of-napkin math on specific commitment</div>
+                    <div class="email-subject">back-of-napkin math on a $250k commitment</div>
+                    <div class="email-body">{{contact.first_name}},
+
+Here&#x27;s how a $250,000 investment might work in our current raise.
+
+We target 15-20% IRR over 3-5 year hold periods.
+
+That&#x27;s based on acquiring properties at 7-8% cap rates and improving them to 6-7% through repositioning.
+
+Add modest rent growth and you get to mid-teens returns if everything goes according to plan.
+
+A $250,000 commitment could potentially return $400,000-$500,000 over five years.
+
+But that assumes our underwriting is accurate, market conditions cooperate, and execution goes smoothly.
+
+Real estate is illiquid, so this capital would be tied up for the full hold period.
+
+Distributions typically start in year 2-3 as properties stabilize.
+
+These are projections, not promises.
+
+This communication is intended solely for accredited investors. All investments involve risk, including the possible loss of principal. Past performance is not indicative of future results.
+
+Best,
+Arturo</div>
+                </div>
+                <div class="email-card">
+                    <div class="email-header">
+                        <span class="email-num">Email 6</span>
+                        <span class="email-timing">Day 11</span>
+                    </div>
+                    <div class="email-purpose">Create urgency through real timeline and raise progress</div>
+                    <div class="email-subject">where we stand on the $15m raise</div>
+                    <div class="email-body">{{contact.first_name}},
+
+Quick update on our $15 million raise.
+
+We&#x27;ve committed $1.5 million so far and have another $3 million in soft commitments.
+
+That leaves roughly $10.5 million available for new investors.
+
+We&#x27;re targeting to close the raise by end of Q2, which gives us time to deploy capital into the deals we&#x27;ve identified.
+
+Our pipeline includes two adaptive reuse office projects and one industrial acquisition, all in Atlanta submarkets we know well.
+
+Minimum investment is $100,000 for accredited investors.
+
+If you&#x27;re interested in learning more, we can schedule a call to discuss the specific opportunities and answer your questions.
+
+No pressure - just want to give you the current status since you&#x27;ve been following along.
+
+This communication is intended solely for accredited investors. All investments involve risk, including the possible loss of principal. Past performance is not indicative of future results.
+
+Best,
+Arturo</div>
+                </div>
+                <div class="email-card">
+                    <div class="email-header">
+                        <span class="email-num">Email 7</span>
+                        <span class="email-timing">Day 14</span>
+                    </div>
+                    <div class="email-purpose">Permission to pass with three clear options and soft close</div>
+                    <div class="email-subject">three options from here</div>
+                    <div class="email-body">{{contact.first_name}},
+
+After two weeks of emails, you probably have a sense of whether our Atlanta commercial real estate approach fits your investment goals.
+
+Here are your three options:
+
+1. Schedule a call to discuss investment details and next steps
+2. Pass on this opportunity (no hard feelings)
+3. Ask me to follow up in 6-12 months when your situation might be different
+
+Just reply and let me know which option works for you.
+
+If you choose option 1, we&#x27;ll send our investor package and schedule a conversation about the specific deals in our pipeline.
+
+If you choose option 2 or 3, I&#x27;ll respect that and won&#x27;t keep following up.
+
+Thanks for your time over the past two weeks.
+
+This communication is intended solely for accredited investors. All investments involve risk, including the possible loss of principal. Past performance is not indicative of future results.
+
+Best,
+Arturo Venti
+Sweetwater Place Investors, LLC</div>
+                </div>
+                </div></div>
+            </div>
+            <div class="accordion-item reveal" id="acc-sales-sop">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <div class="accordion-header-left">
+                        <h3>Sales Team Playbook</h3>
+                        <div class="preview">6-step process for converting paid leads into LP commitments</div>
+                    </div>
+                    <div class="accordion-toggle">+</div>
+                </div>
+                <div class="accordion-body"><div class="accordion-content">
+                <div class="sop-step">
+                    <div class="sop-step-num">01</div>
+                    <div class="sop-step-content">
+                        <div class="sop-step-title">Lead Comes In</div>
+                        <div class="sop-step-desc">Accredited investor fills out the application from your Meta ad. You get notified immediately.</div>
+                    </div>
+                </div>
+                <div class="sop-step">
+                    <div class="sop-step-num">02</div>
+                    <div class="sop-step-content">
+                        <div class="sop-step-title">Speed to Lead</div>
+                        <div class="sop-step-desc">Call within 5 minutes. Not 5 hours. The first fund manager to call gets 80% of the commitments.</div>
+                    </div>
+                </div>
+                <div class="sop-step">
+                    <div class="sop-step-num">03</div>
+                    <div class="sop-step-content">
+                        <div class="sop-step-title">Qualify on First Call</div>
+                        <div class="sop-step-desc">Confirm accreditation status. Confirm investment timeline. Confirm liquidity. If they pass, book the presentation call.</div>
+                    </div>
+                </div>
+                <div class="sop-step">
+                    <div class="sop-step-num">04</div>
+                    <div class="sop-step-content">
+                        <div class="sop-step-title">Send Pre-Call Materials</div>
+                        <div class="sop-step-desc">Email the fund overview deck, PPM summary, and a short video from you within 1 hour of the qualify call.</div>
+                    </div>
+                </div>
+                <div class="sop-step">
+                    <div class="sop-step-num">05</div>
+                    <div class="sop-step-content">
+                        <div class="sop-step-title">Presentation Call</div>
+                        <div class="sop-step-desc">Walk them through the fund thesis, track record, deal pipeline, and fee structure. Answer questions. Don&#x27;t pitch.</div>
+                    </div>
+                </div>
+                <div class="sop-step">
+                    <div class="sop-step-num">06</div>
+                    <div class="sop-step-content">
+                        <div class="sop-step-title">Follow-Up Sequence</div>
+                        <div class="sop-step-desc">If they don&#x27;t commit on the call, they enter a 14-day email nurture. Each email teaches something new about the fund. Day 14 is a soft close.</div>
+                    </div>
+                </div>
+                </div></div>
+            </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="brief-footer">
-        <div class="brief-container">
-            <a href="../../index.html" class="brief-footer-logo">
-                <img src="../../logo.svg" alt="JustScale">
+    <hr class="gold-divider">
+    <section class="section">
+        <div class="container">
+            <h2 class="reveal">Here's How the System Works</h2>
+            <p class="section-sub reveal">Each step below is built for your fund. Click any step to see the actual deliverable.</p>
+            <div class="video-wrap reveal" style="margin-bottom: 32px;">
+                <wistia-player media-id="bkgqk77130" aspect="1.7777777777777777"></wistia-player>
+            </div>
+            <div class="pipeline">
+            <a href="#acc-ad-scripts" class="pipeline-step reveal">
+                <div class="pipeline-icon"><svg viewBox="0 0 64 64" width="64" height="64" fill="none">
+        <path d="M32 4C15.432 4 2 17.432 2 34c0 13.31 9.753 24.341 22.5 26.345V40.375h-6.773V34h6.773V29.19c0-6.683 3.98-10.375 10.073-10.375 2.918 0 5.967.52 5.967.52v6.56h-3.36c-3.313 0-4.347 2.056-4.347 4.165V34h7.394l-1.182 6.375h-6.212v19.97C52.247 58.341 62 47.31 62 34 62 17.432 48.568 4 32 4z" fill="currentColor" opacity="0.9"/>
+    </svg></div>
+                <span class="pipeline-label">Meta Ads</span>
             </a>
-            <span class="brief-footer-copy">&copy; 2026 JustScale</span>
+            <span class="pipeline-arrow"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div class="pipeline-step reveal">
+                <div class="pipeline-icon"><svg viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="10" y="8" width="44" height="48" rx="6"/>
+        <path d="M20 22h24M20 34h16M20 46h20"/>
+        <circle cx="48" cy="42" r="6"/><path d="M52.5 46.5l4 4"/>
+    </svg></div>
+                <span class="pipeline-label">Lead Form</span>
+            </div>
+            <span class="pipeline-arrow"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <a href="#acc-landing-page-copy" class="pipeline-step reveal">
+                <div class="pipeline-icon"><svg viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="6" y="8" width="52" height="48" rx="4"/>
+        <path d="M6 20h52"/>
+        <rect x="16" y="26" width="32" height="14" rx="2" stroke-dasharray="3 2" opacity="0.5"/>
+        <polygon points="28,30 28,36 36,33" fill="currentColor" stroke="none" opacity="0.7"/>
+        <rect x="22" y="44" width="20" height="5" rx="2" opacity="0.6"/>
+    </svg></div>
+                <span class="pipeline-label">Landing Page + VSL</span>
+            </a>
+            <span class="pipeline-arrow"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div class="pipeline-step reveal">
+                <div class="pipeline-icon"><svg viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="10" y="8" width="44" height="48" rx="6"/>
+        <path d="M22 34l8 8 12-16"/>
+    </svg></div>
+                <span class="pipeline-label">Confirmation Page</span>
+            </div>
+            <span class="pipeline-arrow"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <a href="#acc-email-sequence" class="pipeline-step reveal">
+                <div class="pipeline-icon"><svg viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="6" y="12" width="52" height="40" rx="4"/>
+        <path d="M58 12L32 36 6 12"/>
+        <path d="M6 52l18-18M58 52l-18-18" opacity="0.4"/>
+    </svg></div>
+                <span class="pipeline-label">Email Nurture</span>
+            </a>
+            <span class="pipeline-arrow"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div class="pipeline-step reveal">
+                <div class="pipeline-icon"><svg viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M58 45.12v8a5.33 5.33 0 01-5.81 5.33 52.77 52.77 0 01-23.01-8.18 52 52 0 01-16-16A52.77 52.77 0 015.01 11.15 5.33 5.33 0 0110.29 5.33h8a5.33 5.33 0 015.33 4.59c.34 2.56.96 5.07 1.87 7.49a5.33 5.33 0 01-1.2 5.63l-3.39 3.39a42.67 42.67 0 0016 16l3.39-3.39a5.33 5.33 0 015.63-1.2 34.24 34.24 0 007.49 1.87A5.33 5.33 0 0158 45.12z"/>
+    </svg></div>
+                <span class="pipeline-label">Sales Call</span>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="gold-divider">
+    <section class="section" id="calc-section">
+        <div class="container">
+            <h2 class="reveal">What Could This Mean for Your Fund?</h2>
+            <p class="section-sub reveal">Adjust your monthly ad budget. We'll show you projected cost per capital commitment at three performance tiers.</p>
+            <div class="calc-wrap reveal">
+                <div class="calc-input-wrap">
+                    <label class="calc-label" for="calc-spend">Monthly Ad Spend ($)</label>
+                    <input class="calc-input" type="number" id="calc-spend" value="5000" min="0" step="500">
+                </div>
+                <div class="calc-results">
+                    <div class="calc-result-card conservative">
+                        <div class="calc-result-tier">Conservative</div>
+                        <div class="calc-result-sub-label">$300 cost per qualified lead</div>
+                        <div class="calc-result-value" id="calc-conservative">-</div>
+                        <div class="calc-result-label">Qualified Leads / Month</div>
+                        <div class="calc-result-value" id="calc-conservative-capital" style="margin-top:8px;">-</div>
+                        <div class="calc-result-label">Projected Capital Raised</div>
+                    </div>
+                    <div class="calc-result-card average">
+                        <div class="calc-result-tier">Average</div>
+                        <div class="calc-result-sub-label">$200 cost per qualified lead</div>
+                        <div class="calc-result-value" id="calc-average">-</div>
+                        <div class="calc-result-label">Qualified Leads / Month</div>
+                        <div class="calc-result-value" id="calc-average-capital" style="margin-top:8px;">-</div>
+                        <div class="calc-result-label">Projected Capital Raised</div>
+                    </div>
+                    <div class="calc-result-card aggressive">
+                        <div class="calc-result-tier">Aggressive</div>
+                        <div class="calc-result-sub-label">$120 cost per qualified lead</div>
+                        <div class="calc-result-value" id="calc-aggressive">-</div>
+                        <div class="calc-result-label">Qualified Leads / Month</div>
+                        <div class="calc-result-value" id="calc-aggressive-capital" style="margin-top:8px;">-</div>
+                        <div class="calc-result-label">Projected Capital Raised</div>
+                    </div>
+                </div>
+                <p class="calc-disclaimer">These are projections, not guarantees. Assumes 8% lead-to-LP conversion and $150K average LP commitment. Actual results depend on your fund's track record, offer structure, and sales process.</p>
+            </div>
+        </div>
+    </section>
+
+    <hr class="gold-divider">
+    <section class="section">
+        <div class="container">
+            <h2 class="reveal">Want More Capital Raising Content?</h2>
+            <p class="section-sub reveal">These break down exactly how funds are using paid ads to build predictable LP pipelines.</p>
+            <div class="yt-grid">
+                <div class="yt-card reveal" data-vid="RBeum6nPwZM">
+                    <div class="yt-thumb">
+                        <img src="https://i.ytimg.com/vi/RBeum6nPwZM/maxresdefault.jpg" alt="the unfair advantage successful funds are using now" loading="lazy">
+                        <div class="yt-play-btn"><svg viewBox="0 0 24 24" width="24" height="24"><polygon points="8,5 19,12 8,19" fill="white"/></svg></div>
+                    </div>
+                    <div class="yt-title">the unfair advantage successful funds are using now</div>
+                </div>
+                <div class="yt-card reveal" data-vid="P6nbrETWQcM">
+                    <div class="yt-thumb">
+                        <img src="https://i.ytimg.com/vi/P6nbrETWQcM/maxresdefault.jpg" alt="why meta ads work better than any other channel for raising capital" loading="lazy">
+                        <div class="yt-play-btn"><svg viewBox="0 0 24 24" width="24" height="24"><polygon points="8,5 19,12 8,19" fill="white"/></svg></div>
+                    </div>
+                    <div class="yt-title">why meta ads work better than any other channel for raising capital</div>
+                </div>
+                <div class="yt-card reveal" data-vid="8pwxldMvRNg">
+                    <div class="yt-thumb">
+                        <img src="https://i.ytimg.com/vi/8pwxldMvRNg/maxresdefault.jpg" alt="how much does it cost to raise capital? (meta ads vs traditional)" loading="lazy">
+                        <div class="yt-play-btn"><svg viewBox="0 0 24 24" width="24" height="24"><polygon points="8,5 19,12 8,19" fill="white"/></svg></div>
+                    </div>
+                    <div class="yt-title">how much does it cost to raise capital? (meta ads vs traditional)</div>
+                </div>
+                <div class="yt-card reveal" data-vid="4fJ69XNmGqU">
+                    <div class="yt-thumb">
+                        <img src="https://i.ytimg.com/vi/4fJ69XNmGqU/maxresdefault.jpg" alt="how top fund managers use paid ads to raise capital" loading="lazy">
+                        <div class="yt-play-btn"><svg viewBox="0 0 24 24" width="24" height="24"><polygon points="8,5 19,12 8,19" fill="white"/></svg></div>
+                    </div>
+                    <div class="yt-title">how top fund managers use paid ads to raise capital</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="gold-divider">
+    <section class="section">
+        <div class="container">
+            <h2 class="reveal">Why JustScale</h2>
+            <div class="trust-grid reveal">
+                <div class="trust-photo-wrap">
+                    <img src="https://justscale.co/img/zac-headshot.jpg" alt="Zac Regan" class="trust-photo" onerror="this.style.display='none'">
+                    <span class="trust-name">Zac Regan</span>
+                    <span class="trust-role">Founder, JustScale</span>
+                </div>
+                <div class="trust-points">
+                    <div class="trust-point">
+                        <div class="trust-point-title">We only work with fund managers</div>
+                        <div class="trust-point-desc">No e-commerce. No coaching. Every script, email, and page goes through a compliance filter built for Reg D offerings.</div>
+                    </div>
+                    <div class="trust-point">
+                        <div class="trust-point-title">We understand LP psychology</div>
+                        <div class="trust-point-desc">Accredited investors don't buy from ads the way consumers do. The qualification process, the 90-180 day sales cycle, the due diligence. We build for all of it.</div>
+                    </div>
+                    <div class="trust-point">
+                        <div class="trust-point-title">This page is the proof</div>
+                        <div class="trust-point-desc">Arturo, everything above was built specifically for your fund. Not a template. Not a pitch deck. The actual work.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="gold-divider">
+    <section class="book-section" id="step-book">
+        <div class="container">
+            <span class="step-badge reveal">Step 4</span>
+            <h2 class="reveal">Apply to Work Together</h2>
+            <p class="book-sub reveal">Arturo, everything above is yours whether we work together or not. If you want a team that builds and runs this system full-time for your fund, fill out the application below.</p>
+            <div class="typeform-wrap reveal">
+                <div data-tf-live="01KM6PCWRQ4E5S7ZRES81WHBP0" style="width:100%;height:85vh;min-height:700px;"></div>
+            </div>
+            <p class="book-email reveal">Or email directly: <a href="mailto:zac@justscale.co">zac@justscale.co</a></p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <span class="footer-copy">&copy; 2026 JustScale // Built for Arturo // March 2026</span>
         </div>
     </footer>
 
@@ -574,26 +1277,99 @@ Best,
 
 <script>
 (function() {
+    // Page fade-in
     var page = document.getElementById('page');
     if (page) page.classList.add('loaded');
-    var observer = new IntersectionObserver(function(entries) {
+
+    // Scroll reveal for .reveal elements
+    var revealObserver = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
+                revealObserver.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.sr').forEach(function(el) { observer.observe(el); });
-    document.querySelectorAll('.accordion-trigger').forEach(function(trigger) {
-        trigger.addEventListener('click', function() {
-            var accordion = this.closest('.accordion');
-            var isOpen = accordion.classList.contains('open');
-            accordion.classList.toggle('open');
-            this.setAttribute('aria-expanded', !isOpen);
-        });
-    });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(function(el) { revealObserver.observe(el); });
+
+    // Calculator
+    var calcSpend = document.getElementById('calc-spend');
+    function fmt(n) {
+        if (n >= 1000000) return '$' + (n / 1000000).toFixed(1) + 'M';
+        if (n >= 1000) return '$' + Math.round(n / 1000).toLocaleString() + 'K';
+        return '$' + n.toLocaleString();
+    }
+    function updateCalc() {
+        if (!calcSpend) return;
+        var spend = parseFloat(calcSpend.value) || 0;
+        var avgCommitment = 150000;
+        var closeRate = 0.08;
+        var el;
+        // Conservative: $300/lead
+        var consLeads = Math.round(spend / 300);
+        var consCapital = Math.round(consLeads * closeRate * avgCommitment);
+        el = document.getElementById('calc-conservative');
+        if (el) el.textContent = consLeads;
+        el = document.getElementById('calc-conservative-capital');
+        if (el) el.textContent = fmt(consCapital);
+        // Average: $200/lead
+        var avgLeads = Math.round(spend / 200);
+        var avgCapital = Math.round(avgLeads * closeRate * avgCommitment);
+        el = document.getElementById('calc-average');
+        if (el) el.textContent = avgLeads;
+        el = document.getElementById('calc-average-capital');
+        if (el) el.textContent = fmt(avgCapital);
+        // Aggressive: $120/lead
+        var aggLeads = Math.round(spend / 120);
+        var aggCapital = Math.round(aggLeads * closeRate * avgCommitment);
+        el = document.getElementById('calc-aggressive');
+        if (el) el.textContent = aggLeads;
+        el = document.getElementById('calc-aggressive-capital');
+        if (el) el.textContent = fmt(aggCapital);
+    }
+    if (calcSpend) {
+        calcSpend.addEventListener('input', updateCalc);
+        updateCalc();
+    }
 })();
+
+// Accordion toggle (global, called from onclick)
+function toggleAccordion(header) {
+    var item = header.closest('.accordion-item');
+    if (!item) return;
+    item.classList.toggle('open');
+}
+
+// Sub-accordion toggle
+function toggleSubAccordion(header) {
+    var item = header.closest('.sub-accordion');
+    if (!item) return;
+    item.classList.toggle('open');
+}
+
+// YouTube inline playback (click thumbnail to play in place)
+document.querySelectorAll('.yt-card[data-vid]').forEach(function(card) {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', function() {
+        var vid = this.getAttribute('data-vid');
+        var thumb = this.querySelector('.yt-thumb');
+        if (!thumb || this.classList.contains('playing')) return;
+        this.classList.add('playing');
+        var wrapper = document.createElement('div');
+        wrapper.style.cssText = 'position:relative;width:100%;padding-top:56.25%;';
+        var iframe = document.createElement('iframe');
+        iframe.src = 'https://www.youtube-nocookie.com/embed/' + vid + '?autoplay=1&rel=0&modestbranding=1';
+        iframe.allow = 'autoplay; encrypted-media; fullscreen';
+        iframe.setAttribute('allowfullscreen', '');
+        iframe.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius:8px;';
+        wrapper.appendChild(iframe);
+        thumb.innerHTML = '';
+        thumb.appendChild(wrapper);
+        // Hide title below
+        var title = this.querySelector('.yt-title');
+        if (title) title.style.display = 'none';
+    });
+});
 </script>
 </body>
 </html>
