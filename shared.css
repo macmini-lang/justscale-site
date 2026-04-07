@@ -191,7 +191,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ========== PAGE WRAPPER (transition) ========== */
-.page { opacity: 0; transition: opacity 0.6s ease, transform 0.6s ease; position: relative; z-index: 1; overflow-x: clip; max-width: 100vw; }
+.page { opacity: 0; transition: opacity 0.6s ease, transform 0.6s ease; position: relative; z-index: 1; overflow-x: clip; max-width: 100vw; background: transparent; }
 .page.loaded { opacity: 1; }
 .page.exit { opacity: 0; transform: translateY(-8px); }
 
