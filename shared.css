@@ -1254,7 +1254,6 @@ footer .container {
 }
 .foot-links a:hover::after { transform: scaleX(1); }
 .foot-links a:hover { color: #FFFFFF; }
-footer .logo-img { filter: brightness(0) invert(1); }
 .foot-copy {
     font-size: 0.72rem;
     color: rgba(255,255,255,0.4);
