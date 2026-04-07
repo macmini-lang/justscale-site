@@ -43,96 +43,8 @@
         });
     }, 600);
 
-    /* ---- 1c. Floating Illustrations (page-specific scenes) ---- */
-    var imgBase = 'img/';
-
-    // Page-specific placements — large creative scenes
-    var floatClasses = ['bg-icon--f1', 'bg-icon--f2', 'bg-icon--f3'];
-    var pathname = window.location.pathname;
-    var isEdu = pathname.indexOf('education') !== -1;
-    var isCap = pathname.indexOf('capital') !== -1;
-    var isIdx = !isEdu && !isCap;
-
-    // Offset from content edge (px). Content is 1140px wide, so half = 570px.
-    // offset values: distance outside the content area edge
-    var placements;
-    if (isIdx) {
-        placements = [
-            // Left — marketing themed
-            { img: 'h_ad_dashboard.png',    side: 'left', offset: -120, top: 8, size: 360 },
-            { img: 'h_growth_engine.png',   side: 'left', offset: -140, top: 55, size: 340 },
-            // Right — marketing themed
-            { img: 'h_megaphone_city.png',  side: 'right', offset: -120, top: 8, size: 350 },
-            { img: 'h_target_bullseye.png', side: 'right', offset: -140, top: 55, size: 330 }
-        ];
-    } else if (isEdu) {
-        placements = [
-            // Left — aligned to sections
-            { img: 'e_chalkboard.png',      side: 'left', offset: -110, top: 5, size: 360 },
-            { img: 'e_ancient_library.png',  side: 'left', offset: -130, top: 38, size: 350 },
-            { img: 'e_brain_tree.png',       side: 'left', offset: -110, top: 56, size: 360 },
-            { img: 'e_printing.png',         side: 'left', offset: -130, top: 74, size: 340 },
-            // Right — aligned to sections
-            { img: 'e_rocket_edu.png',       side: 'right', offset: -110, top: 5, size: 350 },
-            { img: 'e_funnel_machine.png',   side: 'right', offset: -130, top: 20, size: 340 },
-            { img: 'e_megaphone_scene.png',  side: 'right', offset: -110, top: 56, size: 360 },
-            { img: 'e_scale_up.png',         side: 'right', offset: -130, top: 78, size: 340 }
-        ];
-    } else {
-        placements = [
-            // Left — real estate + capital themed (bigger images)
-            { img: 'c_skyline.png',      side: 'left', offset: -120, top: 5, size: 420 },
-            { img: 'c_money_tree.png',   side: 'left', offset: -140, top: 28, size: 400 },
-            { img: 'c_magnet.png',       side: 'left', offset: -120, top: 52, size: 410 },
-            { img: 'c_pipeline.png',     side: 'left', offset: -140, top: 74, size: 390 },
-            // Right
-            { img: 'c_treasury.png',     side: 'right', offset: -120, top: 5, size: 410 },
-            { img: 'c_safe_crack.png',   side: 'right', offset: -140, top: 28, size: 420 },
-            { img: 'c_chess.png',        side: 'right', offset: -120, top: 52, size: 400 },
-            { img: 'c_network_city.png', side: 'right', offset: -140, top: 78, size: 390 }
-        ];
-    }
-
-    // Inject icon container into .page
+    /* ---- 1c. Floating Illustrations — removed ---- */
     var pageEl = document.getElementById('page');
-    var iconContainer = document.createElement('div');
-    iconContainer.className = 'bg-icons';
-    placements.forEach(function(p, i) {
-        var el = document.createElement('div');
-        el.className = 'bg-icon ' + floatClasses[i % 3];
-        el.style.width = p.size + 'px';
-        el.style.height = p.size + 'px';
-        el.style.top = p.top + '%';
-        // Position anchored to content area (1140px), not viewport edges
-        // calc(50% - 570px content half - offset - image size)
-        var anchor = 570 + p.offset;
-        if (p.side === 'left') {
-            el.style.left = 'calc(50% - ' + (anchor + p.size) + 'px)';
-        } else {
-            el.style.right = 'calc(50% - ' + (anchor + p.size) + 'px)';
-        }
-        el.style.animationDelay = (i * 1.3) + 's';
-        // Alternate slight brightness for depth
-        if (i % 3 === 0) el.classList.add('bright');
-        var imgEl = document.createElement('img');
-        imgEl.src = imgBase + p.img;
-        imgEl.alt = '';
-        imgEl.style.width = '100%';
-        imgEl.style.height = '100%';
-        imgEl.style.objectFit = 'contain';
-        imgEl.draggable = false;
-        el.appendChild(imgEl);
-        iconContainer.appendChild(el);
-    });
-    if (pageEl) pageEl.insertBefore(iconContainer, pageEl.firstChild);
-
-    // Stagger icon fade-in
-    setTimeout(function() {
-        var icons = iconContainer.querySelectorAll('.bg-icon');
-        icons.forEach(function(ic, i) {
-            setTimeout(function() { ic.classList.add('visible'); }, i * 200);
-        });
-    }, 1000);
 
     /* ---- 2. Custom Cursor System (removed) ---- */
 
@@ -248,20 +160,7 @@
             });
         }
 
-        /* ---- 7b. Floating Icon Parallax on Scroll ---- */
-        document.querySelectorAll('.bg-icon').forEach(function(icon, i) {
-            var speedMultiplier = 0.3 + (i % 3) * 0.15;
-            gsap.to(icon, {
-                marginTop: -120 * speedMultiplier,
-                ease: 'none',
-                scrollTrigger: {
-                    trigger: document.body,
-                    start: 'top top',
-                    end: 'bottom bottom',
-                    scrub: 1
-                }
-            });
-        });
+        /* ---- 7b. Floating Icon Parallax — removed ---- */
 
         /* ---- 8. Choreographed Section Entrances ---- */
         // Direction-varied reveals: labels from left, titles from below,
