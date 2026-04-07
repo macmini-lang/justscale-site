@@ -54,7 +54,7 @@ a { color: inherit; text-decoration: none; }
 .bg-dot-grid {
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(circle, rgba(0,0,0,0.25) 3px, transparent 3px);
+    background-image: radial-gradient(circle, rgba(0,0,0,0.15) 2px, transparent 2px);
     background-size: 32px 32px;
     opacity: 1;
 }
