@@ -11,15 +11,15 @@
     <style>
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --bg: #0c0c0c;
-            --bg-s: #111111;
-            --card: #151515;
-            --text: #f5f5f0;
-            --text-s: #8a8a82;
-            --gold: #c9a96e;
-            --gold-l: #d4b87a;
-            --border: rgba(255,255,255,0.06);
-            --border-l: rgba(255,255,255,0.10);
+            --bg: #FFFFFF;
+            --bg-s: #F7F7F7;
+            --card: #FFFFFF;
+            --text: #111111;
+            --text-s: #555555;
+            --gold: #111111;
+            --gold-l: #333333;
+            --border: rgba(0,0,0,0.08);
+            --border-l: rgba(0,0,0,0.14);
             --red: #e74c3c;
         }
         html { font-size: 16px; scroll-behavior: smooth; }
@@ -37,7 +37,7 @@
         /* ── Nav ── */
         .lp-nav {
             position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-            background: rgba(12,12,12,0.92);
+            background: rgba(255,255,255,0.92);
             backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
             padding: 14px 0;
@@ -46,7 +46,7 @@
         .lp-nav-logo img { height: 22px; width: auto; }
         .lp-nav-cta {
             font-size: 0.78rem; font-weight: 600; letter-spacing: 0.02em;
-            background: var(--gold); color: #0c0c0c; padding: 8px 20px;
+            background: var(--gold); color: #FFFFFF; padding: 8px 20px;
             border-radius: 100px; transition: opacity 0.2s;
         }
         .lp-nav-cta:hover { opacity: 0.85; }
@@ -66,7 +66,7 @@
             margin: 0 auto 36px; line-height: 1.6;
         }
         .lp-hero-cta {
-            display: inline-block; background: var(--gold); color: #0c0c0c;
+            display: inline-block; background: var(--gold); color: #FFFFFF;
             font-size: 1rem; font-weight: 700; padding: 16px 40px;
             border-radius: 100px; transition: transform 0.2s, opacity 0.2s;
         }
@@ -125,7 +125,7 @@
             background: var(--card); border: 1px solid var(--border);
             border-radius: 12px; padding: 24px;
         }
-        .lp-compare-col.highlight { border-color: rgba(201,169,110,0.3); }
+        .lp-compare-col.highlight { border-color: rgba(0,0,0,0.3); }
         .lp-compare-header {
             font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em;
             text-transform: uppercase; color: var(--text-s); margin-bottom: 16px;
@@ -157,7 +157,7 @@
         .lp-cta-section h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 12px; }
         .lp-cta-section p { color: var(--text-s); font-size: 0.95rem; max-width: 480px; margin: 0 auto 32px; }
         .lp-cta-btn {
-            display: inline-block; background: var(--gold); color: #0c0c0c;
+            display: inline-block; background: var(--gold); color: #FFFFFF;
             font-size: 1rem; font-weight: 700; padding: 16px 48px;
             border-radius: 100px; transition: transform 0.2s, opacity 0.2s;
         }

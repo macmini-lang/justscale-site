@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>Pitch Page | PlayersTV, Inc. | JustScale</title>
-    <meta name="description" content="Pitch page prepared for Collin Castellaw at PlayersTV, Inc..">
-    <meta property="og:title" content="Pitch Page | PlayersTV, Inc. | JustScale">
-    <meta property="og:description" content="A personalized investor acquisition system for PlayersTV, Inc..">
+    <title>Pitch Page | Oakfire Ridge, LLC | JustScale</title>
+    <meta name="description" content="Pitch page prepared for Sean Tipton at Oakfire Ridge, LLC.">
+    <meta property="og:title" content="Pitch Page | Oakfire Ridge, LLC | JustScale">
+    <meta property="og:description" content="A personalized investor acquisition system for Oakfire Ridge, LLC.">
     <meta property="og:type" content="website">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,25 +23,25 @@
 /* ── Reset & Base ────────────────────────────── */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #FFFFFF; color: #111111; line-height: 1.6; overflow-x: hidden; }
+body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #FFFFFF; color: #222222; line-height: 1.6; overflow-x: hidden; }
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
 
 /* ── CSS Variables ───────────────────────────── */
 :root {
     --bg-dark: #FFFFFF;
-    --bg-card: #FFFFFF;
-    --bg-elevated: #FAFAFA;
+    --bg-card: #FAFAFA;
+    --bg-elevated: #F7F7F7;
     --gold: #111111;
     --gold-hover: #333333;
-    --gold-glow: rgba(0,0,0,0.3);
-    --gold-subtle: rgba(0,0,0,0.12);
-    --gold-muted: rgba(0,0,0,0.06);
+    --gold-glow: rgba(0,0,0,0.12);
+    --gold-subtle: rgba(0,0,0,0.06);
+    --gold-muted: rgba(0,0,0,0.03);
     --text: #111111;
-    --text-secondary: rgba(0,0,0,0.55);
-    --text-muted: rgba(0,0,0,0.35);
+    --text-secondary: rgba(0,0,0,0.6);
+    --text-muted: rgba(0,0,0,0.08);
     --border: rgba(0,0,0,0.08);
-    --border-gold: rgba(0,0,0,0.2);
+    --border-gold: rgba(0,0,0,0.14);
     --green: #2ecc71;
     --yellow: #f1c40f;
     --red: #e74c3c;
@@ -55,8 +55,8 @@ img { max-width: 100%; display: block; }
 .bg-grid {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;
     background-image:
-        linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px);
+        linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
     background-size: 60px 60px;
 }
 .orb {
@@ -113,7 +113,7 @@ img { max-width: 100%; display: block; }
 .journey-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 32px; }
 .journey-pill {
     display: inline-flex; align-items: center; gap: 8px; font-size: 0.82rem; font-weight: 500;
-    color: var(--text-secondary); background: rgba(0,0,0,0.03); border: 1px solid var(--border);
+    color: var(--text-secondary); background: rgba(0,0,0,0.04); border: 1px solid var(--border);
     padding: 8px 16px; border-radius: 100px; transition: all 0.2s ease;
 }
 .journey-pill:hover { border-color: var(--border-gold); color: var(--gold); }
@@ -143,7 +143,7 @@ img { max-width: 100%; display: block; }
 /* ── Video ───────────────────────────────────── */
 .video-wrap {
     border-radius: 12px; overflow: hidden; border: 1px solid var(--border);
-    box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.08);
 }
 
 /* ── Accordions (V3 - simple toggle) ─────────── */
@@ -162,7 +162,7 @@ img { max-width: 100%; display: block; }
 .accordion-toggle {
     width: 28px; height: 28px; min-width: 28px; display: flex; align-items: center; justify-content: center;
     font-size: 1.2rem; font-weight: 300; color: var(--text-secondary); border-radius: 6px;
-    background: rgba(0,0,0,0.03); transition: all 0.2s ease;
+    background: rgba(0,0,0,0.04); transition: all 0.2s ease;
 }
 .accordion-item.open .accordion-toggle { transform: rotate(45deg); }
 .accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
@@ -177,7 +177,7 @@ img { max-width: 100%; display: block; }
     background: rgba(0,0,0,0.02); border: 1px solid var(--border);
     border-radius: 8px; transition: background 0.2s ease;
 }
-.sub-accordion-header:hover { background: rgba(0,0,0,0.04); }
+.sub-accordion-header:hover { background: rgba(0,0,0,0.05); }
 .sub-accordion-header h4 { font-size: 0.9rem; font-weight: 600; color: var(--text); margin: 0; }
 .sub-accordion-header .sub-count { font-size: 0.72rem; color: var(--text-muted); margin-left: 8px; }
 .sub-accordion-toggle {
@@ -308,7 +308,7 @@ img { max-width: 100%; display: block; }
 .yt-thumb img { width: 100%; height: 100%; object-fit: cover; }
 .yt-play-btn {
     position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-    width: 48px; height: 48px; background: rgba(0,0,0,0.7); border-radius: 50%;
+    width: 48px; height: 48px; background: rgba(0,0,0,0.5); border-radius: 50%;
     display: flex; align-items: center; justify-content: center; transition: background 0.2s ease;
 }
 .yt-card:hover .yt-play-btn { background: var(--gold); }
@@ -452,11 +452,11 @@ a.pipeline-step { cursor: pointer; }
 <div class="page" id="page">
 
     <section class="hero">
-            <img src="https://imgs.search.brave.com/UAjKJFycp02eUI_vafXudGm4u7tGtEPvEEL5dGJza5s/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5saWNkbi5jb20v/ZG1zL2ltYWdlL3Yy/L0Q1NjAzQVFFT29x/Q3dsNGJqc3cvcHJv/ZmlsZS1kaXNwbGF5/cGhvdG8tc2NhbGVf/MjAwXzIwMC9CNTZa/dVZzTjIxSm9BWS0v/MC8xNzY3NzQyOTU2/MjcwP2U9MjE0NzQ4/MzY0NyZhbXA7dj1i/ZXRhJmFtcDt0PUdW/cVBwbG1ROXBqUjd0/UW8zanZZTTZFckZT/LTZBYURUNDg4bnFZ/Q0VCaG8" alt="Collin" class="hero-prospect-photo reveal" onerror="this.remove()">
+            <img src="https://imgs.search.brave.com/9HGRtnPxa6Rc4BPY1aaz8y575w5c1cXrDMYhqgdMgmw/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9zdGF0aWMubGljZG4uY29tL2Flcm8tdjEvc2MvaC8xYzV1NTc4aWlseGZpNG00ZHZjNHE4MTBx" alt="Sean" class="hero-prospect-photo reveal">
         <div class="container">
             <div class="hero-from reveal">From Zac Regan // JustScale</div>
-            <div class="hero-badge reveal">Built Specifically for Collin</div>
-            <h1 class="reveal">Collin, here's how you raise $5,000,000 for PlayersTV, Inc. through paid ads</h1>
+            <div class="hero-badge reveal">Built Specifically for Sean</div>
+            <h1 class="reveal">Sean, here's how you raise $16,000,000 for Oakfire Ridge, LLC through paid ads</h1>
             <p class="hero-sub reveal">Below is a full marketing audit of your fund, ad scripts you can film tomorrow, an investor email sequence, and landing page copy. Everything is built specifically for your fund. It's yours to keep.</p>
             <a href="#step-video" class="hero-cta reveal">Start Here</a>
             <div class="journey-pills reveal">
@@ -539,53 +539,53 @@ a.pipeline-step { cursor: pointer; }
                 <div class="accordion-body"><div class="accordion-content">
                 <div class="audit-heading">Where You Win</div>
                 <div class="audit-block strength">
-                    <h4>Active advertising presence with diverse content programming</h4>
-                    <p>25 active ads running across multiple show formats including political interviews, equestrian content, and autism advocacy programming</p>
+                    <h4>Compelling physical asset and concept</h4>
+                    <p>49-acre private sanctuary in San Antonio with clear lifestyle positioning: steakhouse, spa, lodges, and active living.</p>
                 </div>
                 <div class="audit-block strength">
-                    <h4>Content production capability across multiple verticals</h4>
-                    <p>Ad descriptions show produced content ranging from &#x27;The Horse Talk Show&#x27; to &#x27;Miami Autism Dad&#x27; to political interviews with State Representatives</p>
+                    <h4>Membership model creates recurring revenue</h4>
+                    <p>Members-only structure generates predictable cash flow independent of nightly hotel occupancy.</p>
                 </div>
                 <div class="audit-block strength">
-                    <h4>Regulatory compliance structure in place</h4>
-                    <p>506(c) compliance designation allows for general solicitation to accredited investors for their $5M raise target</p>
+                    <h4>Strong local market positioning</h4>
+                    <p>San Antonio is the 7th largest US city with consistent population growth and a tourism economy exceeding $15B annually.</p>
                 </div>
                 <div class="audit-heading red">Where You Bleed Revenue</div>
                 <div class="audit-block gap">
-                    <h4>No investor-focused landing pages or conversion funnel</h4>
-                    <p>Website shows 0 pages scraped with no CTAs or funnel signals detected</p>
-                    <div class="audit-impact">$2,000,000</div>
+                    <h4>No paid investor acquisition</h4>
+                    <p>Zero Meta or Google ad campaigns detected. The raise depends entirely on personal network and word of mouth.</p>
+                    <div class="audit-impact">$2M-$5M/yr in unreached accredited investors</div>
                 </div>
                 <div class="audit-block gap">
-                    <h4>Missing SEC filing documentation</h4>
-                    <p>No Form D filing found in EDGAR database despite active fundraising</p>
-                    <div class="audit-impact">$1,500,000</div>
+                    <h4>No investor-facing funnel</h4>
+                    <p>Website is built on Wix for potential members, not investors. No application flow, no accreditation check.</p>
+                    <div class="audit-impact">Qualified investors have no path to express interest</div>
                 </div>
                 <div class="audit-block gap">
-                    <h4>Zero social media presence for investor relations</h4>
-                    <p>LinkedIn and YouTube URLs are null with no follower counts or podcast presence</p>
-                    <div class="audit-impact">$1,000,000</div>
+                    <h4>No email nurture for investor leads</h4>
+                    <p>No automated sequences. Investors who express interest receive no systematic follow-up.</p>
+                    <div class="audit-impact">30-50% of interested investors lost</div>
                 </div>
                 <div class="audit-block gap">
-                    <h4>Ads target content consumption, not investment conversion</h4>
-                    <p>All 25 ads focus on show content rather than investment opportunities or fund performance</p>
-                    <div class="audit-impact">$500,000</div>
+                    <h4>No retargeting</h4>
+                    <p>No tracking pixel on the Wix site. Website visitors who don&#x27;t act immediately are gone.</p>
+                    <div class="audit-impact">95% of interested visitors never return</div>
                 </div>
                 <div class="audit-heading">Competitor Breakdown</div>
                 <div class="audit-block">
-                    <h4>Bruin Capital</h4>
-                    <p>Sports-adjacent private equity firm focusing on media, analytics, and tech services within the sports ecosystem</p>
+                    <h4>Soho House</h4>
+                    <p>The benchmark for members-only clubs. Aggressive digital marketing, strong brand, global expansion funded by institutional capital.</p>
                 </div>
                 <div class="audit-block">
-                    <h4>Blackstone</h4>
-                    <p>Major private equity firm with dedicated team serving private wealth managers, family offices and financial advisors for alternative investments</p>
+                    <h4>Inspirato</h4>
+                    <p>Luxury hospitality membership that went public via SPAC. Demonstrated membership-based hospitality can attract significant investor interest.</p>
                 </div>
                 <div class="audit-block">
-                    <h4>Goldman Sachs Asset Management</h4>
-                    <p>Asset management division using Goldman Sachs resources for private equity and alternative investment solutions</p>
+                    <h4>Exclusive Resorts</h4>
+                    <p>Private luxury destination club with a real estate investment component. Uses targeted digital campaigns to reach high-net-worth members and investors.</p>
                 </div>
                 <div class="audit-heading">The Core Issue</div>
-                <div class="audit-diagnosis">PlayersTV has strong content production but zero investor acquisition infrastructure. The company needs to build dedicated investor marketing funnels separate from their content advertising to reach their $5M target.</div>
+                <div class="audit-diagnosis">Oakfire Ridge has a differentiated concept, a strong physical asset, and a market that supports it. The constraint is visibility. Accredited investors who would be interested simply don&#x27;t know it exists. Paid acquisition solves that.</div>
                 </div></div>
             </div>
             <div class="accordion-item reveal" id="acc-ad-scripts">
@@ -605,56 +605,48 @@ a.pipeline-step { cursor: pointer; }
                     <div class="sub-accordion-body"><div class="sub-accordion-content">
                 <div class="script-card">
                     <div class="script-meta"><span class="pill">Meta</span> <span class="pill">Video, talking head, 60s</span></div>
-                    <div class="script-seg"><div class="script-seg-label">Hook</div><p>If you&#x27;re an accredited investor with $100,000+ to deploy into media and entertainment, I&#x27;m raising $5 million for PlayersTV and we have room for 12 more investors.</p></div>
-                    <div class="script-seg"><div class="script-seg-label">Body</div><p>I&#x27;m Collin Castellaw, and we&#x27;re building the future of sports and community television.
+                    <div class="script-seg"><div class="script-seg-label">Hook</div><p>If you&#x27;re an accredited investor looking at hospitality real estate, there&#x27;s a private club development in San Antonio raising $16 million right now that I think you should know about.</p></div>
+                    <div class="script-seg"><div class="script-seg-label">Body</div><p>Oakfire Ridge is a 49-acre members-only club being built outside San Antonio, Texas.
 
-PlayersTV produces content that connects communities through authentic storytelling.
+It&#x27;s not a hotel and it&#x27;s not a resort.
 
-We&#x27;re seeing massive shifts in how people consume local content, especially in sports and community programming.
+It&#x27;s a private membership community built around a prime steakhouse, guest lodges, a full spa, and active living facilities on one contiguous property.
 
-Traditional broadcasters are losing viewers while targeted, community-focused content is exploding.
+The business model is membership-based, which means recurring dues on top of the amenity revenue.
 
-Our 506(c) raise gives accredited investors direct access to this growing market.
+That structure is what separates this from a typical hospitality development.
 
-We&#x27;re not chasing viral content or algorithm games.
+Members don&#x27;t just visit, they belong to the club, which is a very different relationship than a one-time booking.
 
-We&#x27;re building sustainable revenue through authentic community connections.
+The raise is $16 million under a 506(c) offering, which means it&#x27;s open to verified accredited investors.
 
-The media landscape is fragmenting, and that creates opportunity for focused players like us.
-
-We have 12 spots remaining in this $5 million raise.</p></div>
-                    <div class="script-seg"><div class="script-seg-label">CTA</div><p>If you want to see our investor deck and learn about our content strategy, comment &#x27;DECK&#x27; below and I&#x27;ll send you the details.</p></div>
+San Antonio is one of the fastest-growing metros in the country, and this type of private club concept does not yet exist there.</p></div>
+                    <div class="script-seg"><div class="script-seg-label">CTA</div><p>Click the link below to see the full Oakfire Ridge offering details.</p></div>
                     <div class="production-notes">
                         <div class="production-notes-label">Production Notes</div>
-                        Collin speaking directly to camera in professional setting. Graphics showing PlayersTV logo and fund details. Keep energy conversational but confident.
+                        Clean neutral background. Measured, confident pace.
                     </div>
                 </div>
                 <div class="script-card">
                     <div class="script-meta"><span class="pill">Meta</span> <span class="pill">Video, talking head, 60s</span></div>
-                    <div class="script-seg"><div class="script-seg-label">Hook</div><p>If you&#x27;re an accredited investor looking to diversify beyond traditional assets, our $5 million PlayersTV fund is accepting new investors through our 506(c) offering.</p></div>
-                    <div class="script-seg"><div class="script-seg-label">Body</div><p>Most investors stick to stocks, bonds, and real estate.
+                    <div class="script-seg"><div class="script-seg-label">Hook</div><p>Accredited investors who want exposure to hospitality real estate without buying a hotel or a short-term rental portfolio, this is worth 60 seconds of your time.</p></div>
+                    <div class="script-seg"><div class="script-seg-label">Body</div><p>Oakfire Ridge is raising $16 million to build a private members-only club on 49 acres in San Antonio.
 
-But the media industry is undergoing a fundamental transformation.
+The amenity lineup includes a prime steakhouse, guest lodges, a spa, and fitness facilities.
 
-Local and community-focused content is becoming incredibly valuable.
+But what makes this interesting from an investment standpoint isn&#x27;t the amenities, it&#x27;s the membership model underneath them.
 
-PlayersTV is positioned right in the middle of this shift.
+Members pay recurring dues to belong to the club.
 
-We produce sports and community programming that actually connects with audiences.
+That creates a predictable, layered revenue stream that a traditional hotel room night does not produce.
 
-While big media companies struggle with cord-cutting, focused content creators are thriving.
+The 506(c) structure means they can advertise publicly, but you must be a verified accredited investor to participate.
 
-Our business model doesn&#x27;t depend on massive scale or viral hits.
-
-We build sustainable revenue through targeted community engagement.
-
-This 506(c) structure means we can only work with accredited investors.
-
-But it also means we can move quickly and make decisions based on opportunity, not bureaucracy.</p></div>
-                    <div class="script-seg"><div class="script-seg-label">CTA</div><p>Want to see how we&#x27;re building value in the changing media landscape? Send me a message and I&#x27;ll share our investment overview.</p></div>
+San Antonio has been one of the most consistent growth markets in the Sun Belt for the past several years.</p></div>
+                    <div class="script-seg"><div class="script-seg-label">CTA</div><p>The investor overview is available through the link below.</p></div>
                     <div class="production-notes">
                         <div class="production-notes-label">Production Notes</div>
-                        Professional backdrop with PlayersTV branding visible. Collin should emphasize the exclusivity and opportunity aspects while maintaining compliance tone.
+                        Business casual. Brief B-roll of upscale club environments.
                     </div>
                 </div>
                     </div></div>
@@ -667,30 +659,22 @@ But it also means we can move quickly and make decisions based on opportunity, n
                     <div class="sub-accordion-body"><div class="sub-accordion-content">
                 <div class="script-card">
                     <div class="script-meta"><span class="pill">Meta</span> <span class="pill">Video, talking head, 60s</span></div>
-                    <div class="script-seg"><div class="script-seg-label">Hook</div><p>If you&#x27;re an accredited investor wondering about track record in media investments, let me share what we&#x27;ve learned building PlayersTV from the ground up.</p></div>
-                    <div class="script-seg"><div class="script-seg-label">Body</div><p>We&#x27;ve produced content across sports, politics, and community programming.
+                    <div class="script-seg"><div class="script-seg-label">Hook</div><p>There&#x27;s a 49-acre private club concept sitting on a single property in San Antonio, Texas, and it&#x27;s structured specifically so accredited investors can participate in the raise.</p></div>
+                    <div class="script-seg"><div class="script-seg-label">Body</div><p>When I say 49 acres, I want you to picture what that actually means for a members-only club.
 
-Our shows feature everyone from state representatives to autism advocates to polo club organizers.
+You have space for a prime steakhouse, multiple guest lodges, a full spa, and active living facilities without any of it feeling crowded.
 
-That diversity isn&#x27;t accidental.
+That kind of footprint doesn&#x27;t come available often, especially inside a growing metro.
 
-It proves we can create compelling content across multiple verticals.
+The San Antonio market is adding population and income at a rate that makes it one of the stronger bets in the Sun Belt.
 
-Each show builds its own audience while strengthening the overall PlayersTV brand.
+And the private club model is structurally different from other hospitality investments because membership dues create a recurring revenue base before a single table is turned.
 
-We&#x27;ve learned that authentic community connections beat flashy production every time.
-
-Our content gets engagement because it matters to real people in real communities.
-
-This isn&#x27;t about chasing trends or viral moments.
-
-We&#x27;re building sustainable content franchises that generate long-term value.
-
-Now we&#x27;re raising $5 million to scale what&#x27;s already working.</p></div>
-                    <div class="script-seg"><div class="script-seg-label">CTA</div><p>Interested in seeing our content portfolio and growth metrics? Comment &#x27;PROOF&#x27; and I&#x27;ll send you our track record summary.</p></div>
+Oakfire Ridge is raising $16 million under a 506(c) offering to fund the development.</p></div>
+                    <div class="script-seg"><div class="script-seg-label">CTA</div><p>The full investment overview is linked below.</p></div>
                     <div class="production-notes">
                         <div class="production-notes-label">Production Notes</div>
-                        Include brief clips or screenshots of actual PlayersTV content mentioned. Show variety and quality of programming to support credibility claims.
+                        Property imagery or renders. Matter-of-fact tone.
                     </div>
                 </div>
                     </div></div>
@@ -703,32 +687,26 @@ Now we&#x27;re raising $5 million to scale what&#x27;s already working.</p></div
                     <div class="sub-accordion-body"><div class="sub-accordion-content">
                 <div class="script-card">
                     <div class="script-meta"><span class="pill">Meta</span> <span class="pill">Video, talking head, 60s</span></div>
-                    <div class="script-seg"><div class="script-seg-label">Hook</div><p>If you&#x27;re an accredited investor curious why I&#x27;m betting $5 million on community television, here&#x27;s the story behind PlayersTV.</p></div>
-                    <div class="script-seg"><div class="script-seg-label">Body</div><p>I watched local media die a slow death over the past decade.
+                    <div class="script-seg"><div class="script-seg-label">Hook</div><p>If you&#x27;re an accredited investor, I want to tell you why Oakfire Ridge exists, because the reason behind the concept is exactly what makes the investment case work.</p></div>
+                    <div class="script-seg"><div class="script-seg-label">Body</div><p>Most private clubs exist to serve the member.
 
-Newspapers closed, local TV stations cut staff, communities lost their voice.
+You pay dues, you show up, you&#x27;re taken care of, and you leave.
 
-But something interesting happened.
+The founding team behind Oakfire Ridge started with a different premise.
 
-People started craving authentic, local content more than ever.
+Their belief is that hospitality is not a service you receive but an experience you actively participate in.
 
-They wanted to see their neighbors, their local politicians, their community stories.
+That sounds like a tagline, but it&#x27;s actually the operating model.
 
-Social media gave everyone a platform, but most content got lost in the noise.
+It shapes how the club is designed, how staff and members interact, and how the amenities are built to draw people in rather than just accommodate them.
 
-I realized there was a massive opportunity to create focused, community-driven programming.
+When you design a club that way, on 49 acres in a high-growth market like San Antonio, you get members who are bought in at a level that drives recurring dues and genuine word-of-mouth.
 
-Not trying to compete with Netflix or ESPN.
-
-Just serving communities that were being ignored by big media.
-
-PlayersTV became that solution.
-
-Now we&#x27;re raising capital to expand into more communities and build sustainable revenue streams.</p></div>
-                    <div class="script-seg"><div class="script-seg-label">CTA</div><p>Want to learn more about our community-first approach and investment opportunity? Send me a direct message.</p></div>
+They&#x27;re raising $16 million under 506(c) to bring the concept to life.</p></div>
+                    <div class="script-seg"><div class="script-seg-label">CTA</div><p>The full story and the investment details are at the link below.</p></div>
                     <div class="production-notes">
                         <div class="production-notes-label">Production Notes</div>
-                        More personal, storytelling tone. Collin should feel passionate about the mission while maintaining professional credibility for investors.
+                        Conversational, grounded. Slower pace in first third.
                     </div>
                 </div>
                     </div></div>
@@ -741,34 +719,26 @@ Now we&#x27;re raising capital to expand into more communities and build sustain
                     <div class="sub-accordion-body"><div class="sub-accordion-content">
                 <div class="script-card">
                     <div class="script-meta"><span class="pill">Meta</span> <span class="pill">Video, talking head, 60s</span></div>
-                    <div class="script-seg"><div class="script-seg-label">Hook</div><p>If you&#x27;re an accredited investor concerned about media industry risks, let me address the elephant in the room about our $5 million PlayersTV raise.</p></div>
-                    <div class="script-seg"><div class="script-seg-label">Body</div><p>Yes, media is a tough business.
+                    <div class="script-seg"><div class="script-seg-label">Hook</div><p>I hear two objections from accredited investors when they look at hospitality real estate, and if you&#x27;ve had either of them, this is worth watching before you pass.</p></div>
+                    <div class="script-seg"><div class="script-seg-label">Body</div><p>The first one is that hospitality is too operationally sensitive, too dependent on foot traffic and consumer spending cycles.
 
-Yes, most content companies fail.
+That concern makes sense for a hotel that runs entirely on nightly bookings.
 
-Yes, this is a higher-risk investment than buying index funds.
+It applies differently to a membership model.
 
-I&#x27;m not going to pretend otherwise.
+Oakfire Ridge is a private club, and members pay recurring dues to belong.
 
-But here&#x27;s what makes PlayersTV different.
+That recurring base doesn&#x27;t evaporate the way a room night does when demand softens.
 
-We&#x27;re not trying to be the next Disney or Netflix.
+The second objection is liquidity, specifically that private real estate deals are hard to exit.
 
-We&#x27;re building sustainable, community-focused content that serves underserved markets.
+That&#x27;s a fair point, and it&#x27;s one you should go into this knowing.
 
-Our revenue model doesn&#x27;t depend on massive scale or viral hits.
-
-We generate value through authentic community connections and targeted programming.
-
-The risk isn&#x27;t that people will stop wanting local content.
-
-The risk is execution, and that&#x27;s why we&#x27;re raising capital to do this right.
-
-Every investment carries risk, but smart investors diversify into opportunities with asymmetric upside.</p></div>
-                    <div class="script-seg"><div class="script-seg-label">CTA</div><p>Ready for an honest conversation about risks and returns? Comment &#x27;RISK&#x27; and I&#x27;ll send you our detailed risk assessment.</p></div>
+This is a 506(c) offering, it&#x27;s a private placement, and you should treat it as an illiquid position.</p></div>
+                    <div class="script-seg"><div class="script-seg-label">CTA</div><p>If those two things don&#x27;t disqualify it for you, the investment details are at the link below.</p></div>
                     <div class="production-notes">
                         <div class="production-notes-label">Production Notes</div>
-                        Serious, honest tone. Collin should acknowledge real concerns while positioning PlayersTV as a thoughtful approach to media investment.
+                        Measured presenter. Direct eye contact. No music.
                     </div>
                 </div>
                     </div></div>
@@ -781,34 +751,24 @@ Every investment carries risk, but smart investors diversify into opportunities 
                     <div class="sub-accordion-body"><div class="sub-accordion-content">
                 <div class="script-card">
                     <div class="script-meta"><span class="pill">Meta</span> <span class="pill">Video, talking head, 60s</span></div>
-                    <div class="script-seg"><div class="script-seg-label">Hook</div><p>If you&#x27;re an accredited investor watching the media landscape evolve, the opportunity in community-focused content has never been bigger.</p></div>
-                    <div class="script-seg"><div class="script-seg-label">Body</div><p>Traditional broadcasters are hemorrhaging viewers and revenue.
+                    <div class="script-seg"><div class="script-seg-label">Hook</div><p>Accredited investors who track experiential real estate already know the private club market has been growing, and Oakfire Ridge is a ground-up play in a Sun Belt city where this concept doesn&#x27;t exist yet.</p></div>
+                    <div class="script-seg"><div class="script-seg-label">Body</div><p>Private membership clubs have held up better than open-access hospitality through multiple economic cycles because the customer relationship is fundamentally different.
 
-Local newspapers have lost 70% of their workforce in the past two decades.
+You&#x27;re not selling a room, you&#x27;re selling belonging.
 
-But communities still need their stories told.
+And belonging is one of the stickier things a consumer can buy.
 
-They still want to see local sports, local politics, local personalities.
+San Antonio checks the boxes: population growth, income growth, established culture around food and entertainment, and no true private club at this scale.
 
-The infrastructure for serving these communities is collapsing.
+Oakfire Ridge is building on 49 acres with a prime steakhouse, guest lodges, a spa, and active living facilities under one membership.
 
-That creates massive opportunity for focused players like PlayersTV.
+The raise is $16 million under a 506(c) offering.
 
-We&#x27;re not competing with streaming giants for national attention.
-
-We&#x27;re serving communities that big media has abandoned.
-
-The technology exists to produce quality content cost-effectively.
-
-The distribution channels are democratized.
-
-What&#x27;s missing is the capital and strategy to build sustainable businesses around community content.
-
-That&#x27;s exactly what our $5 million raise is designed to solve.</p></div>
-                    <div class="script-seg"><div class="script-seg-label">CTA</div><p>Want to see our market analysis and growth projections? Message me &#x27;OPPORTUNITY&#x27; and I&#x27;ll share our investment thesis.</p></div>
+Ground-up developments at this scale carry development risk, that&#x27;s the honest version of this conversation.</p></div>
+                    <div class="script-seg"><div class="script-seg-label">CTA</div><p>The full investment overview is at the link below.</p></div>
                     <div class="production-notes">
                         <div class="production-notes-label">Production Notes</div>
-                        Data-driven, opportunity-focused tone. Include graphics showing market trends and the gap PlayersTV is filling. Professional but energetic delivery.
+                        Analytical, confident.
                     </div>
                 </div>
                     </div></div>
@@ -829,240 +789,228 @@ That&#x27;s exactly what our $5 million raise is designed to solve.</p></div>
                         <span class="email-num">Email 1</span>
                         <span class="email-timing">Day 0</span>
                     </div>
-                    <div class="email-purpose">Establish credibility and set expectations for the email sequence</div>
-                    <div class="email-subject">playerstv investment overview (7 emails)</div>
+                    <div class="email-purpose">Credibility and vision.</div>
+                    <div class="email-subject">a private club in san antonio, and why i&#x27;m raising $16M for it</div>
                     <div class="email-body">{{contact.first_name}},
 
-I&#x27;m raising $5 million for PlayersTV through a 506(c) offering, and I wanted to share why this opportunity might interest you.
+I want to tell you about a piece of land in San Antonio before I tell you anything about the investment.
 
-We produce community-focused television content, from local sports to political interviews to specialized programming like autism advocacy shows.
+49 acres.
 
-While traditional media struggles with cord-cutting and declining revenues, community-focused content is thriving.
+Prime steakhouse, guest lodges, a spa, and active living facilities that would make most five-star resorts look ordinary.
 
-People want authentic, local programming that speaks to their specific interests and communities.
+But the piece that makes this different isn&#x27;t the amenities.
 
-Over the next two weeks, I&#x27;ll share insights about our market, our approach, and the specific investment opportunity.
+It&#x27;s the model.
 
-Each email will give you a different perspective on why we believe PlayersTV is positioned for significant growth.
+Oakfire Ridge is a private members-only club.
 
-No pressure, just information to help you evaluate whether this fits your investment strategy.
+Members don&#x27;t just visit.
 
-This communication is intended solely for accredited investors. All investments involve risk, including the possible loss of principal. Past performance is not indicative of future results.
+They belong.
 
-Best,
-Collin Castellaw
-PlayersTV, Inc.</div>
+That distinction changes the economics of the whole thing, and I&#x27;ll explain exactly how in my next email.
+
+For now, I just want you to understand what we&#x27;re building and who it&#x27;s for.
+
+If you&#x27;d like to see the property overview, reply to this email and I&#x27;ll get it to you.
+
+Sean Tipton
+Oakfire Ridge
+
+This communication is intended solely for accredited investors. All investments involve risk, including the possible loss of principal. Past performance is not indicative of future results. This is not an offer to sell securities.</div>
                 </div>
                 <div class="email-card">
                     <div class="email-header">
                         <span class="email-num">Email 2</span>
                         <span class="email-timing">Day 2</span>
                     </div>
-                    <div class="email-purpose">Provide market intelligence that validates the investment thesis</div>
-                    <div class="email-subject">local media&#x27;s $43 billion problem</div>
+                    <div class="email-purpose">Market intelligence. Membership economics vs nightly occupancy.</div>
+                    <div class="email-subject">why membership clubs print money when hotels don&#x27;t</div>
                     <div class="email-body">{{contact.first_name}},
 
-Local newspaper advertising revenue dropped from $43 billion in 2005 to $8.8 billion in 2020.
+Here&#x27;s what most hospitality investors never think about.
 
-That&#x27;s not just a statistic.
+A hotel that sits empty for three nights loses that revenue forever.
 
-It&#x27;s a massive market disruption that created opportunity for focused players like PlayersTV.
+A private members club collects dues whether the steakhouse is full or not.
 
-While newspapers struggled with digital transformation, communities still needed their stories told.
+That&#x27;s the core of the Oakfire Ridge thesis.
 
-Local sports coverage, political interviews, community events, specialized programming.
+Members don&#x27;t leave because they got a better deal somewhere else.
 
-The demand never disappeared.
+They leave when they stop feeling like they belong.
 
-The infrastructure just collapsed.
+Our entire operation is designed around that one fact.
 
-We&#x27;re rebuilding that infrastructure with modern technology and sustainable business models.
+The steakhouse, the spa, the lodges, the active living facilities, they&#x27;re not amenities you check off a list.
 
-Our content serves the same communities that lost their local media, but we do it profitably and efficiently.
+They&#x27;re the reasons a member renews every year without thinking twice.
 
-Tomorrow I&#x27;ll share how our production approach creates value without the overhead that killed traditional local media.
+In my next email, I&#x27;ll show you what the land itself looks like and what&#x27;s already been committed before we raised a dollar of outside capital.
 
-This communication is intended solely for accredited investors. All investments involve risk, including the possible loss of principal. Past performance is not indicative of future results.
+Sean Tipton
+Oakfire Ridge
 
-Best,
-Collin</div>
+This communication is intended solely for accredited investors. All investments involve risk, including the possible loss of principal. Past performance is not indicative of future results.</div>
                 </div>
                 <div class="email-card">
                     <div class="email-header">
                         <span class="email-num">Email 3</span>
                         <span class="email-timing">Day 4</span>
                     </div>
-                    <div class="email-purpose">Show operational discipline and behind-the-scenes decision making</div>
-                    <div class="email-subject">how we choose what to produce</div>
+                    <div class="email-purpose">Behind-the-scenes proof. Physical asset, member commitments.</div>
+                    <div class="email-subject">what 49 acres in san antonio looks like right now</div>
                     <div class="email-body">{{contact.first_name}},
 
-Most content companies chase viral moments or try to copy what&#x27;s already working.
+I mentioned the land in my first email.
 
-We do the opposite.
+Let me be more specific.
 
-Before we produce anything, we ask three questions: Does this serve an underserved community? Can we create authentic value? Will this build long-term audience loyalty?
+49 acres in San Antonio, Texas.
 
-Our autism advocacy show connects families dealing with diagnosis and support challenges.
+Prime location for a market that is actively underserved for this type of private club experience.
 
-Our political interviews give local representatives a platform to explain their actual priorities.
+Here&#x27;s what&#x27;s not theoretical: we have founding member commitments already in place.
 
-Our sports programming covers communities that ESPN ignores.
+These are individuals who paid to be part of this before the steakhouse opened, before the spa was finished, before the lodges were ready.
 
-Each show builds its own audience while strengthening the overall PlayersTV brand.
+That&#x27;s not marketing language.
 
-We&#x27;re not trying to be everything to everyone.
+That&#x27;s proof of demand from people who wrote checks to reserve their membership.
 
-We&#x27;re building sustainable content franchises that matter to specific communities.
+If you want to see photos of where the property stands today, reply and I&#x27;ll send them over.
 
-This disciplined approach to content creation is what separates us from companies that burn through capital chasing trends.
+Sean Tipton
+Oakfire Ridge
 
-This communication is intended solely for accredited investors. All investments involve risk, including the possible loss of principal. Past performance is not indicative of future results.
-
-Best,
-Collin</div>
+This communication is intended solely for accredited investors. All investments involve risk, including the possible loss of principal. Past performance is not indicative of future results.</div>
                 </div>
                 <div class="email-card">
                     <div class="email-header">
                         <span class="email-num">Email 4</span>
                         <span class="email-timing">Day 6</span>
                     </div>
-                    <div class="email-purpose">Address downside risks and liquidity concerns honestly</div>
-                    <div class="email-subject">the honest truth about media investments</div>
+                    <div class="email-purpose">Objection handling. Risk, timing, liquidity.</div>
+                    <div class="email-subject">the three objections i get from every serious investor</div>
                     <div class="email-body">{{contact.first_name}},
 
-Let me be direct about the risks.
+I&#x27;d rather answer the hard questions now than waste your time on a call.
 
-Media is a hit-driven business where most companies fail.
+Objection one: hospitality is a risky asset class.
 
-Content creation is expensive and success is never guaranteed.
+Correct, if you&#x27;re running a hotel dependent on nightly bookings.
 
-Our 506(c) structure means your investment is illiquid until we have an exit event.
+Oakfire Ridge is not that.
 
-You could lose your entire investment if we execute poorly or market conditions change dramatically.
+Membership dues are contracted in advance, not earned night by night.
 
-I&#x27;m not going to sugarcoat those realities.
+Objection two: is the market timing right?
 
-But here&#x27;s why we believe the risk is justified.
+The demand for exclusive, in-person, experience-driven venues has accelerated every year since 2021, specifically among the demographic that can afford a private club membership.
 
-We&#x27;re not trying to create the next viral sensation or compete with streaming giants.
+Objection three: what about liquidity?
 
-We&#x27;re building sustainable revenue through focused community programming.
+This is a private placement, not a public REIT.
 
-Our business model doesn&#x27;t require massive scale to be profitable.
+If liquidity on a defined timeline matters to you, I&#x27;ll walk through the exit mechanics on a call.
 
-Smart investors understand that asymmetric opportunities come with real risks.
+Sean Tipton
+Oakfire Ridge
 
-The question is whether our approach to managing those risks makes sense for your portfolio.
-
-This communication is intended solely for accredited investors. All investments involve risk, including the possible loss of principal. Past performance is not indicative of future results.
-
-Best,
-Collin</div>
+This communication is intended solely for accredited investors. All investments involve risk, including the possible loss of principal. Past performance is not indicative of future results.</div>
                 </div>
                 <div class="email-card">
                     <div class="email-header">
                         <span class="email-num">Email 5</span>
                         <span class="email-timing">Day 8</span>
                     </div>
-                    <div class="email-purpose">Present investment economics and potential returns</div>
-                    <div class="email-subject">back of napkin math on $100k</div>
+                    <div class="email-purpose">Economics. Membership revenue model mechanics.</div>
+                    <div class="email-subject">what a $250,000 position in oakfire ridge actually looks like</div>
                     <div class="email-body">{{contact.first_name}},
 
-Let&#x27;s talk numbers.
+I want to be concrete about the economics.
 
-A $100,000 investment in our $5 million raise gives you a meaningful stake in PlayersTV&#x27;s growth.
+The Oakfire Ridge raise is $16,000,000 under Reg D 506(c).
 
-We&#x27;re using this capital to expand into three new markets over 18 months.
+The membership revenue model works like this: each founding member pays initiation fees plus annual dues.
 
-Each market represents potential recurring revenue through local sponsorships, content licensing, and community partnerships.
+Those dues recur every year, regardless of how often the member visits.
 
-Our goal is to build sustainable cash flow that supports company valuation growth.
+That&#x27;s the line on the income statement that doesn&#x27;t behave like a hotel.
 
-If we execute our expansion plan successfully, early investors should see significant appreciation when we pursue an exit strategy.
+When you add food and beverage revenue from the steakhouse, spa revenue, and lodge stays, you have multiple revenue layers on top of a committed recurring base.
 
-The timeline for liquidity is typically 3-5 years in media investments.
+I won&#x27;t publish specific projections in an email.
 
-I can&#x27;t guarantee specific returns because that would be illegal and dishonest.
+That&#x27;s what the PPM is for.
 
-But I can show you our revenue projections and explain how we plan to build value.
+If you&#x27;d like to review the full financial model, reply and I&#x27;ll get you access.
 
-The math only works if we execute well, but the opportunity is substantial for investors who believe in our approach.
+Sean Tipton
+Oakfire Ridge
 
-This communication is intended solely for accredited investors. All investments involve risk, including the possible loss of principal. Past performance is not indicative of future results.
-
-Best,
-Collin</div>
+This communication is intended solely for accredited investors. All investments involve risk, including the possible loss of principal. Past performance is not indicative of future results. Projections are illustrative only.</div>
                 </div>
                 <div class="email-card">
                     <div class="email-header">
                         <span class="email-num">Email 6</span>
                         <span class="email-timing">Day 11</span>
                     </div>
-                    <div class="email-purpose">Create urgency through real timeline and raise progress</div>
-                    <div class="email-subject">we&#x27;re 60% committed</div>
+                    <div class="email-purpose">Urgency via real development timeline.</div>
+                    <div class="email-subject">where the raise stands and what happens next</div>
                     <div class="email-body">{{contact.first_name}},
 
-Quick update on our raise progress.
+I want to give you an honest update on where things are.
 
-We&#x27;re $3 million committed toward our $5 million target.
+The $16,000,000 raise is in progress.
 
-That puts us at 60% with strong momentum from family offices and individual accredited investors.
+The development timeline has fixed milestones that do not move based on how the raise is going.
 
-We&#x27;re planning to close this round by the end of next quarter.
+The steakhouse opens on a specific date.
 
-Not because of artificial deadlines, but because we want to deploy this capital into our expansion plan.
+The spa opens on a specific date.
 
-The longer we wait, the longer it takes to start generating returns for our investors.
+Those dates drive the membership revenue model.
 
-We have room for a few more strategic investors who understand our community-focused approach.
+The capital we close in the next 90 days determines who participates in the revenue generated from day one of operations.
 
-If you&#x27;re interested in learning more, now is the time to start the conversation.
+If you&#x27;ve been sitting on this, now is the right time to get the PPM and start your review.
 
-Our investor deck includes detailed financials, market analysis, and growth projections.
+Reply to this email and I&#x27;ll send it directly.
 
- schedule a call to discuss how PlayersTV might fit your investment strategy.
+Sean Tipton
+Oakfire Ridge
 
-No pressure, just information to help you make an informed decision.
-
-This communication is intended solely for accredited investors. All investments involve risk, including the possible loss of principal. Past performance is not indicative of future results.
-
-Best,
-Collin</div>
+This communication is intended solely for accredited investors. All investments involve risk, including the possible loss of principal. Past performance is not indicative of future results.</div>
                 </div>
                 <div class="email-card">
                     <div class="email-header">
                         <span class="email-num">Email 7</span>
                         <span class="email-timing">Day 14</span>
                     </div>
-                    <div class="email-purpose">Soft close with permission to pass and clear next steps</div>
-                    <div class="email-subject">three options </div>
+                    <div class="email-purpose">Soft close. Three options.</div>
+                    <div class="email-subject">honest question</div>
                     <div class="email-body">{{contact.first_name}},
 
-After two weeks of emails, you probably have a good sense of whether PlayersTV interests you as an investment opportunity.
+I&#x27;ve sent you six emails over the past two weeks.
 
-You have three options .
+Property overview, market thesis, behind-the-scenes proof, objections addressed, deal economics, and raise timeline.
 
-Option 1: You&#x27;re interested and want to see our full investor deck and discuss next steps.
+You either have enough information to make a decision, or you don&#x27;t.
 
-Option 2: This doesn&#x27;t fit your current investment strategy, and you&#x27;d prefer I remove you from future communications.
+Option A: You&#x27;re interested and want to review the PPM. Reply and I&#x27;ll send it within the hour.
 
-Option 3: The timing isn&#x27;t right now, but you&#x27;d like me to keep you informed about future opportunities.
+Option B: The timing isn&#x27;t right. Reply &quot;pass&quot; and I&#x27;ll stop the emails.
 
-All three options are perfectly fine.
+Option C: You want to stay in the loop but aren&#x27;t ready to move yet. No reply needed. I&#x27;ll keep you posted on major milestones.
 
-I&#x27;d rather work with investors who are genuinely excited about our community-focused approach than try to convince someone who isn&#x27;t aligned with our vision.
+Whatever your answer is, I respect it.
 
-If you&#x27;re in camp 1, reply to this email and I&#x27;ll send you our complete investment materials.
+Sean Tipton
+Oakfire Ridge
 
-If you&#x27;re in camp 2 or 3, just let me know and I&#x27;ll adjust your communication preferences accordingly.
-
-Thanks for taking the time to learn about PlayersTV.
-
-This communication is intended solely for accredited investors. All investments involve risk, including the possible loss of principal. Past performance is not indicative of future results.
-
-Best,
-Collin Castellaw
-PlayersTV, Inc.</div>
+This communication is intended solely for accredited investors. All investments involve risk, including the possible loss of principal. Past performance is not indicative of future results.</div>
                 </div>
                 </div></div>
             </div>
@@ -1193,7 +1141,7 @@ PlayersTV, Inc.</div>
             <div class="calc-wrap reveal">
                 <div class="calc-input-wrap">
                     <label class="calc-label" for="calc-spend">Monthly Ad Spend ($)</label>
-                    <input class="calc-input" type="number" id="calc-spend" value="5000" min="0" step="500">
+                    <input class="calc-input" type="number" id="calc-spend" value="8000" min="0" step="500">
                 </div>
                 <div class="calc-results">
                     <div class="calc-result-card conservative">
@@ -1285,7 +1233,7 @@ PlayersTV, Inc.</div>
                     </div>
                     <div class="trust-point">
                         <div class="trust-point-title">This page is the proof</div>
-                        <div class="trust-point-desc">Collin, everything above was built specifically for your fund. Not a template. Not a pitch deck. The actual work.</div>
+                        <div class="trust-point-desc">Sean, everything above was built specifically for your fund. Not a template. Not a pitch deck. The actual work.</div>
                     </div>
                 </div>
             </div>
@@ -1297,7 +1245,7 @@ PlayersTV, Inc.</div>
         <div class="container">
             <span class="step-badge reveal">Step 4</span>
             <h2 class="reveal">Apply to Work Together</h2>
-            <p class="book-sub reveal">Collin, everything above is yours whether we work together or not. If you want a team that builds and runs this system full-time for your fund, fill out the application below.</p>
+            <p class="book-sub reveal">Sean, everything above is yours whether we work together or not. If you want a team that builds and runs this system full-time for your fund, fill out the application below.</p>
             <div class="typeform-wrap reveal">
                 <div data-tf-live="01KM6PCWRQ4E5S7ZRES81WHBP0" style="width:100%;height:85vh;min-height:700px;"></div>
             </div>
@@ -1307,7 +1255,7 @@ PlayersTV, Inc.</div>
 
     <footer class="footer">
         <div class="container">
-            <span class="footer-copy">&copy; 2026 JustScale // Built for Collin // March 2026</span>
+            <span class="footer-copy">&copy; 2026 JustScale // Built for Sean // March 2026</span>
         </div>
     </footer>
 

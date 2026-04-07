@@ -17,7 +17,7 @@
     }
     cx.putImageData(img, 0, 0);
     var grain = document.createElement('div');
-    grain.style.cssText = 'position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:0.4;mix-blend-mode:overlay;';
+    grain.style.cssText = 'position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:0.25;mix-blend-mode:multiply;';
     grain.style.backgroundImage = 'url(' + c.toDataURL() + ')';
     grain.style.backgroundRepeat = 'repeat';
     document.body.appendChild(grain);
@@ -748,7 +748,7 @@
             var shadowY = Math.round(-rx * 1.5 + 16);
 
             card.style.transform = 'perspective(800px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateY(-2px)';
-            card.style.boxShadow = shadowX + 'px ' + shadowY + 'px 50px rgba(201,169,110,0.05), 0 20px 50px rgba(0,0,0,0.3), inset 0 0 0 1px rgba(201,169,110,0.06)';
+            card.style.boxShadow = shadowX + 'px ' + shadowY + 'px 50px rgba(0,0,0,0.03), 0 20px 50px rgba(0,0,0,0.08), inset 0 0 0 1px rgba(0,0,0,0.06)';
         });
         card.addEventListener('mouseleave', function() {
             card.style.transform = '';
