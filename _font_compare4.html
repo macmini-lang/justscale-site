@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Match — Thick Marker Semi-Cursive</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Kalam:wght@400;700&family=Sriracha&family=Dancing+Script:wght@400;700&family=Bad+Script&family=Mansalva&family=Nanum+Pen+Script&family=Marck+Script&family=Shadows+Into+Light&family=Loved+by+the+King&family=Liu+Jian+Mao+Cao&family=Handlee&family=Rock+Salt&family=Reenie+Beanie&family=Covered+By+Your+Grace&family=Sacramento&family=Mali:wght@400;700&family=Pangolin&family=Indie+Flower&family=Sue+Ellen+Francisco&family=Sedgwick+Ave&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #FFFFFF;
+            color: #111;
+            background-image: radial-gradient(circle, rgba(0,0,0,0.10) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 28px; }
+        h1 { font-size: 1.4rem; font-weight: 700; margin-bottom: 4px; font-family: Inter, sans-serif; }
+        .subtitle { font-size: 0.85rem; color: #999; margin-bottom: 16px; font-family: Inter, sans-serif; }
+
+        .ref-box {
+            border: 3px solid #111;
+            border-radius: 14px;
+            padding: 20px;
+            margin-bottom: 48px;
+            background: #F7F7F7;
+            text-align: center;
+        }
+        .ref-box img { max-width: 100%; border-radius: 8px; }
+        .ref-label { font-size: 0.7rem; color: #999; margin-top: 8px; font-family: Inter, sans-serif; }
+
+        .section-label {
+            font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em;
+            text-transform: uppercase; color: #999; margin: 40px 0 16px;
+            font-family: Inter, sans-serif; border-top: 2px solid rgba(0,0,0,0.12); padding-top: 16px;
+        }
+
+        .font-card {
+            border: 2px solid rgba(0,0,0,0.16);
+            border-radius: 14px;
+            padding: 28px 32px;
+            margin-bottom: 16px;
+            background: #fff;
+            transition: border-color 0.2s;
+        }
+        .font-card:hover { border-color: rgba(0,0,0,0.35); }
+
+        .font-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 16px;
+        }
+        .font-name { font-size: 0.82rem; font-weight: 700; font-family: Inter, sans-serif; }
+        .font-why { font-size: 0.7rem; color: #777; font-family: Inter, sans-serif; }
+
+        /* Mimic the whiteboard: show the same words Zac writes */
+        .whiteboard {
+            background: #FAFAFA;
+            border: 2px solid rgba(0,0,0,0.10);
+            border-radius: 10px;
+            padding: 32px;
+            position: relative;
+            background-image: radial-gradient(circle, rgba(0,0,0,0.06) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .wb-line1 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            line-height: 1.35;
+            color: #111;
+            margin-bottom: 16px;
+        }
+        .wb-line2 {
+            font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+            line-height: 1.4;
+            color: #111;
+            margin-bottom: 6px;
+            padding-left: 24px;
+        }
+        .wb-dash { color: #111; }
+        .wb-headline {
+            font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+            line-height: 1.3;
+            color: #111;
+            margin-top: 24px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Round 4 — matching YOUR handwriting</h1>
+    <p class="subtitle">Thick marker, semi-cursive, right-slanting, flowing. Here's what actually matches.</p>
+
+    <div class="section-label">Closest matches — thick, semi-cursive, flowing</div>
+
+    <!-- CAVEAT BOLD -->
+    <div class="font-card">
+        <div class="font-header">
+            <div class="font-name">Caveat (Bold)</div>
+            <div class="font-why">Semi-cursive, natural flow, has weight options</div>
+        </div>
+        <div class="whiteboard">
+            <div class="wb-line1" style="font-family: 'Caveat', cursive; font-weight: 700;">capital costs  $$</div>
+            <div class="wb-line2" style="font-family: 'Caveat', cursive; font-weight: 700;"><span class="wb-dash">—</span> time</div>
+            <div class="wb-line2" style="font-family: 'Caveat', cursive; font-weight: 700;"><span class="wb-dash">—</span> headspace</div>
+            <div class="wb-headline" style="font-family: 'Caveat', cursive; font-weight: 700;">We help businesses scale with paid advertising.</div>
+        </div>
+    </div>
+
+    <!-- CAVEAT MEDIUM -->
+    <div class="font-card">
+        <div class="font-header">
+            <div class="font-name">Caveat (SemiBold)</div>
+            <div class="font-why">Same font, slightly lighter — closer to marker weight</div>
+        </div>
+        <div class="whiteboard">
+            <div class="wb-line1" style="font-family: 'Caveat', cursive; font-weight: 600;">capital costs  $$</div>
+            <div class="wb-line2" style="font-family: 'Caveat', cursive; font-weight: 600;"><span class="wb-dash">—</span> time</div>
+            <div class="wb-line2" style="font-family: 'Caveat', cursive; font-weight: 600;"><span class="wb-dash">—</span> headspace</div>
+            <div class="wb-headline" style="font-family: 'Caveat', cursive; font-weight: 600;">We help businesses scale with paid advertising.</div>
+        </div>
+    </div>
+
+    <!-- KALAM BOLD -->
+    <div class="font-card">
+        <div class="font-header">
+            <div class="font-name">Kalam (Bold)</div>
+            <div class="font-why">Thick pen-on-paper, warm, slightly connected letters</div>
+        </div>
+        <div class="whiteboard">
+            <div class="wb-line1" style="font-family: 'Kalam', cursive; font-weight: 700;">capital costs  $$</div>
+            <div class="wb-line2" style="font-family: 'Kalam', cursive; font-weight: 700;"><span class="wb-dash">—</span> time</div>
+            <div class="wb-line2" style="font-family: 'Kalam', cursive; font-weight: 700;"><span class="wb-dash">—</span> headspace</div>
+            <div class="wb-headline" style="font-family: 'Kalam', cursive; font-weight: 700;">We help businesses scale with paid advertising.</div>
+        </div>
+    </div>
+
+    <!-- SRIRACHA -->
+    <div class="font-card">
+        <div class="font-header">
+            <div class="font-name">Sriracha</div>
+            <div class="font-why">Thick brush, right-slanted, bold strokes, swagger</div>
+        </div>
+        <div class="whiteboard">
+            <div class="wb-line1" style="font-family: 'Sriracha', cursive;">capital costs  $$</div>
+            <div class="wb-line2" style="font-family: 'Sriracha', cursive;"><span class="wb-dash">—</span> time</div>
+            <div class="wb-line2" style="font-family: 'Sriracha', cursive;"><span class="wb-dash">—</span> headspace</div>
+            <div class="wb-headline" style="font-family: 'Sriracha', cursive;">We help businesses scale with paid advertising.</div>
+        </div>
+    </div>
+
+    <!-- MANSALVA -->
+    <div class="font-card">
+        <div class="font-header">
+            <div class="font-name">Mansalva</div>
+            <div class="font-why">Thick marker, slightly messy, casual — closest to Sharpie-on-whiteboard</div>
+        </div>
+        <div class="whiteboard">
+            <div class="wb-line1" style="font-family: 'Mansalva', cursive;">capital costs  $$</div>
+            <div class="wb-line2" style="font-family: 'Mansalva', cursive;"><span class="wb-dash">—</span> time</div>
+            <div class="wb-line2" style="font-family: 'Mansalva', cursive;"><span class="wb-dash">—</span> headspace</div>
+            <div class="wb-headline" style="font-family: 'Mansalva', cursive;">We help businesses scale with paid advertising.</div>
+        </div>
+    </div>
+
+    <!-- DANCING SCRIPT BOLD -->
+    <div class="font-card">
+        <div class="font-header">
+            <div class="font-name">Dancing Script (Bold)</div>
+            <div class="font-why">Flowing cursive, right-slanted, connected, lively</div>
+        </div>
+        <div class="whiteboard">
+            <div class="wb-line1" style="font-family: 'Dancing Script', cursive; font-weight: 700;">capital costs  $$</div>
+            <div class="wb-line2" style="font-family: 'Dancing Script', cursive; font-weight: 700;"><span class="wb-dash">—</span> time</div>
+            <div class="wb-line2" style="font-family: 'Dancing Script', cursive; font-weight: 700;"><span class="wb-dash">—</span> headspace</div>
+            <div class="wb-headline" style="font-family: 'Dancing Script', cursive; font-weight: 700;">We help businesses scale with paid advertising.</div>
+        </div>
+    </div>
+
+    <!-- BAD SCRIPT -->
+    <div class="font-card">
+        <div class="font-header">
+            <div class="font-name">Bad Script</div>
+            <div class="font-why">Natural handwriting, slightly connected, imperfect — like actual writing</div>
+        </div>
+        <div class="whiteboard">
+            <div class="wb-line1" style="font-family: 'Bad Script', cursive;">capital costs  $$</div>
+            <div class="wb-line2" style="font-family: 'Bad Script', cursive;"><span class="wb-dash">—</span> time</div>
+            <div class="wb-line2" style="font-family: 'Bad Script', cursive;"><span class="wb-dash">—</span> headspace</div>
+            <div class="wb-headline" style="font-family: 'Bad Script', cursive;">We help businesses scale with paid advertising.</div>
+        </div>
+    </div>
+
+    <!-- MARCK SCRIPT -->
+    <div class="font-card">
+        <div class="font-header">
+            <div class="font-name">Marck Script</div>
+            <div class="font-why">Flowing, semi-connected, slanted — like confident fast handwriting</div>
+        </div>
+        <div class="whiteboard">
+            <div class="wb-line1" style="font-family: 'Marck Script', cursive;">capital costs  $$</div>
+            <div class="wb-line2" style="font-family: 'Marck Script', cursive;"><span class="wb-dash">—</span> time</div>
+            <div class="wb-line2" style="font-family: 'Marck Script', cursive;"><span class="wb-dash">—</span> headspace</div>
+            <div class="wb-headline" style="font-family: 'Marck Script', cursive;">We help businesses scale with paid advertising.</div>
+        </div>
+    </div>
+
+    <!-- LIU JIAN MAO CAO -->
+    <div class="font-card">
+        <div class="font-header">
+            <div class="font-name">Liu Jian Mao Cao</div>
+            <div class="font-why">Bold brush strokes, raw, energetic — like thick calligraphy marker</div>
+        </div>
+        <div class="whiteboard">
+            <div class="wb-line1" style="font-family: 'Liu Jian Mao Cao', cursive;">capital costs  $$</div>
+            <div class="wb-line2" style="font-family: 'Liu Jian Mao Cao', cursive;"><span class="wb-dash">—</span> time</div>
+            <div class="wb-line2" style="font-family: 'Liu Jian Mao Cao', cursive;"><span class="wb-dash">—</span> headspace</div>
+            <div class="wb-headline" style="font-family: 'Liu Jian Mao Cao', cursive;">We help businesses scale with paid advertising.</div>
+        </div>
+    </div>
+
+    <!-- NANUM PEN SCRIPT -->
+    <div class="font-card">
+        <div class="font-header">
+            <div class="font-name">Nanum Pen Script</div>
+            <div class="font-why">Loose pen handwriting, natural tilt, casual authority</div>
+        </div>
+        <div class="whiteboard">
+            <div class="wb-line1" style="font-family: 'Nanum Pen Script', cursive;">capital costs  $$</div>
+            <div class="wb-line2" style="font-family: 'Nanum Pen Script', cursive;"><span class="wb-dash">—</span> time</div>
+            <div class="wb-line2" style="font-family: 'Nanum Pen Script', cursive;"><span class="wb-dash">—</span> headspace</div>
+            <div class="wb-headline" style="font-family: 'Nanum Pen Script', cursive;">We help businesses scale with paid advertising.</div>
+        </div>
+    </div>
+
+    <!-- MALI BOLD -->
+    <div class="font-card">
+        <div class="font-header">
+            <div class="font-name">Mali (Bold)</div>
+            <div class="font-why">Rounded, warm, thick strokes — like a felt-tip marker</div>
+        </div>
+        <div class="whiteboard">
+            <div class="wb-line1" style="font-family: 'Mali', cursive; font-weight: 700;">capital costs  $$</div>
+            <div class="wb-line2" style="font-family: 'Mali', cursive; font-weight: 700;"><span class="wb-dash">—</span> time</div>
+            <div class="wb-line2" style="font-family: 'Mali', cursive; font-weight: 700;"><span class="wb-dash">—</span> headspace</div>
+            <div class="wb-headline" style="font-family: 'Mali', cursive; font-weight: 700;">We help businesses scale with paid advertising.</div>
+        </div>
+    </div>
+
+    <!-- SEDGWICK AVE -->
+    <div class="font-card">
+        <div class="font-header">
+            <div class="font-name">Sedgwick Ave</div>
+            <div class="font-why">Loose, street, semi-connected — fast casual writing</div>
+        </div>
+        <div class="whiteboard">
+            <div class="wb-line1" style="font-family: 'Sedgwick Ave', cursive;">capital costs  $$</div>
+            <div class="wb-line2" style="font-family: 'Sedgwick Ave', cursive;"><span class="wb-dash">—</span> time</div>
+            <div class="wb-line2" style="font-family: 'Sedgwick Ave', cursive;"><span class="wb-dash">—</span> headspace</div>
+            <div class="wb-headline" style="font-family: 'Sedgwick Ave', cursive;">We help businesses scale with paid advertising.</div>
+        </div>
+    </div>
+
+    <!-- PANGOLIN -->
+    <div class="font-card">
+        <div class="font-header">
+            <div class="font-name">Pangolin</div>
+            <div class="font-why">Warm, rounded, consistent — like careful handwriting with a good pen</div>
+        </div>
+        <div class="whiteboard">
+            <div class="wb-line1" style="font-family: 'Pangolin', cursive;">capital costs  $$</div>
+            <div class="wb-line2" style="font-family: 'Pangolin', cursive;"><span class="wb-dash">—</span> time</div>
+            <div class="wb-line2" style="font-family: 'Pangolin', cursive;"><span class="wb-dash">—</span> headspace</div>
+            <div class="wb-headline" style="font-family: 'Pangolin', cursive;">We help businesses scale with paid advertising.</div>
+        </div>
+    </div>
+
+    <div style="text-align: center; padding: 40px 0; font-size: 0.8rem; color: #999;">
+        Each one is shown writing your actual words on a whiteboard grid. Pick the one that looks most like you.
+    </div>
+</div>
+</body>
+</html>

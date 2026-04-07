@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Comparison — Pick Your Handwriting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Kalam:wght@400;700&family=Patrick+Hand&family=Permanent+Marker&family=Shadows+Into+Light+Two&family=Rock+Salt&family=Indie+Flower&family=Architects+Daughter&family=Homemade+Apple&family=Reenie+Beanie&family=Just+Another+Hand&family=Gloria+Hallelujah&family=Covered+By+Your+Grace&family=Coming+Soon&family=Schoolbell&family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #FFFFFF;
+            color: #111;
+            background-image: radial-gradient(circle, rgba(0,0,0,0.10) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 28px; }
+        h1 { font-size: 1.4rem; font-weight: 700; margin-bottom: 8px; font-family: Inter, sans-serif; }
+        .subtitle { font-size: 0.85rem; color: #999; margin-bottom: 48px; font-family: Inter, sans-serif; }
+
+        .font-card {
+            border: 2px solid rgba(0,0,0,0.16);
+            border-radius: 14px;
+            padding: 32px;
+            margin-bottom: 20px;
+            background: #fff;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 32px;
+            align-items: start;
+            transition: border-color 0.2s;
+        }
+        .font-card:hover { border-color: rgba(0,0,0,0.35); }
+
+        .font-meta {
+            font-family: Inter, sans-serif;
+        }
+        .font-name {
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: #111;
+        }
+        .font-style {
+            font-size: 0.72rem;
+            color: #999;
+            line-height: 1.5;
+        }
+        .font-tag {
+            display: inline-block;
+            font-size: 0.6rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-top: 8px;
+        }
+        .tag-rough { background: #111; color: #fff; }
+        .tag-casual { background: #F0F0F0; color: #555; }
+        .tag-clean { background: #E8E8E8; color: #333; }
+        .tag-raw { background: #333; color: #fff; }
+
+        .font-samples {}
+        .font-hero {
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            line-height: 1.25;
+            margin-bottom: 12px;
+            color: #111;
+        }
+        .font-section {
+            font-size: 1.4rem;
+            line-height: 1.3;
+            margin-bottom: 8px;
+            color: #111;
+        }
+        .font-card-title {
+            font-size: 1.1rem;
+            line-height: 1.35;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        .font-body {
+            font-family: Inter, sans-serif;
+            font-size: 0.85rem;
+            color: #777;
+            line-height: 1.6;
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(0,0,0,0.12), transparent);
+            margin: 40px 0;
+        }
+
+        @media (max-width: 640px) {
+            .font-card { grid-template-columns: 1fr; gap: 16px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Pick your handwriting</h1>
+    <p class="subtitle">Same headlines, different fonts. Body copy stays Inter. Dot grid is live behind everything.</p>
+
+    <!-- 1. Permanent Marker (current) -->
+    <div class="font-card">
+        <div class="font-meta">
+            <div class="font-name">Permanent Marker</div>
+            <div class="font-style">Bold marker strokes. Blocky, confident. The "sharpie on a whiteboard" look.</div>
+            <span class="font-tag tag-rough">Rough</span>
+        </div>
+        <div class="font-samples">
+            <div class="font-hero" style="font-family: 'Permanent Marker', cursive;">We help businesses scale with paid advertising.</div>
+            <div class="font-section" style="font-family: 'Permanent Marker', cursive;">A predictable pipeline of interested investors.</div>
+            <div class="font-card-title" style="font-family: 'Permanent Marker', cursive;">If you're selling education</div>
+            <div class="font-body">Body copy stays in Inter. Clean, readable, professional contrast.</div>
+        </div>
+    </div>
+
+    <!-- 2. Caveat -->
+    <div class="font-card">
+        <div class="font-meta">
+            <div class="font-name">Caveat</div>
+            <div class="font-style">Fast, natural handwriting. Casual but readable. Like quick notes on a notepad.</div>
+            <span class="font-tag tag-casual">Casual</span>
+        </div>
+        <div class="font-samples">
+            <div class="font-hero" style="font-family: 'Caveat', cursive; font-weight: 700;">We help businesses scale with paid advertising.</div>
+            <div class="font-section" style="font-family: 'Caveat', cursive; font-weight: 700;">A predictable pipeline of interested investors.</div>
+            <div class="font-card-title" style="font-family: 'Caveat', cursive; font-weight: 700;">If you're selling education</div>
+            <div class="font-body">Body copy stays in Inter. Clean, readable, professional contrast.</div>
+        </div>
+    </div>
+
+    <!-- 3. Kalam -->
+    <div class="font-card">
+        <div class="font-meta">
+            <div class="font-name">Kalam</div>
+            <div class="font-style">Pen-on-paper handwriting. Warm, personal, slightly imperfect. Teacher writing on a board.</div>
+            <span class="font-tag tag-casual">Casual</span>
+        </div>
+        <div class="font-samples">
+            <div class="font-hero" style="font-family: 'Kalam', cursive; font-weight: 700;">We help businesses scale with paid advertising.</div>
+            <div class="font-section" style="font-family: 'Kalam', cursive; font-weight: 700;">A predictable pipeline of interested investors.</div>
+            <div class="font-card-title" style="font-family: 'Kalam', cursive; font-weight: 700;">If you're selling education</div>
+            <div class="font-body">Body copy stays in Inter. Clean, readable, professional contrast.</div>
+        </div>
+    </div>
+
+    <!-- 4. Patrick Hand -->
+    <div class="font-card">
+        <div class="font-meta">
+            <div class="font-name">Patrick Hand</div>
+            <div class="font-style">Clean handwriting. Neat, consistent, legible. Like someone who writes carefully.</div>
+            <span class="font-tag tag-clean">Clean</span>
+        </div>
+        <div class="font-samples">
+            <div class="font-hero" style="font-family: 'Patrick Hand', cursive;">We help businesses scale with paid advertising.</div>
+            <div class="font-section" style="font-family: 'Patrick Hand', cursive;">A predictable pipeline of interested investors.</div>
+            <div class="font-card-title" style="font-family: 'Patrick Hand', cursive;">If you're selling education</div>
+            <div class="font-body">Body copy stays in Inter. Clean, readable, professional contrast.</div>
+        </div>
+    </div>
+
+    <!-- 5. Rock Salt -->
+    <div class="font-card">
+        <div class="font-meta">
+            <div class="font-name">Rock Salt</div>
+            <div class="font-style">Scratchy, all-caps energy. Raw and unpolished. Like writing fast with a dying pen.</div>
+            <span class="font-tag tag-raw">Raw</span>
+        </div>
+        <div class="font-samples">
+            <div class="font-hero" style="font-family: 'Rock Salt', cursive; font-size: clamp(1.4rem, 2.8vw, 2rem);">We help businesses scale with paid advertising.</div>
+            <div class="font-section" style="font-family: 'Rock Salt', cursive; font-size: 1.1rem;">A predictable pipeline of interested investors.</div>
+            <div class="font-card-title" style="font-family: 'Rock Salt', cursive; font-size: 0.95rem;">If you're selling education</div>
+            <div class="font-body">Body copy stays in Inter. Clean, readable, professional contrast.</div>
+        </div>
+    </div>
+
+    <!-- 6. Architects Daughter -->
+    <div class="font-card">
+        <div class="font-meta">
+            <div class="font-name">Architects Daughter</div>
+            <div class="font-style">Blueprint/drafting style. Technical but human. Like an engineer's notes.</div>
+            <span class="font-tag tag-clean">Clean</span>
+        </div>
+        <div class="font-samples">
+            <div class="font-hero" style="font-family: 'Architects Daughter', cursive;">We help businesses scale with paid advertising.</div>
+            <div class="font-section" style="font-family: 'Architects Daughter', cursive;">A predictable pipeline of interested investors.</div>
+            <div class="font-card-title" style="font-family: 'Architects Daughter', cursive;">If you're selling education</div>
+            <div class="font-body">Body copy stays in Inter. Clean, readable, professional contrast.</div>
+        </div>
+    </div>
+
+    <!-- 7. Gloria Hallelujah -->
+    <div class="font-card">
+        <div class="font-meta">
+            <div class="font-name">Gloria Hallelujah</div>
+            <div class="font-style">Comic/sketch style. Bold, playful strokes. Like whiteboard brainstorming.</div>
+            <span class="font-tag tag-rough">Rough</span>
+        </div>
+        <div class="font-samples">
+            <div class="font-hero" style="font-family: 'Gloria Hallelujah', cursive;">We help businesses scale with paid advertising.</div>
+            <div class="font-section" style="font-family: 'Gloria Hallelujah', cursive;">A predictable pipeline of interested investors.</div>
+            <div class="font-card-title" style="font-family: 'Gloria Hallelujah', cursive;">If you're selling education</div>
+            <div class="font-body">Body copy stays in Inter. Clean, readable, professional contrast.</div>
+        </div>
+    </div>
+
+    <!-- 8. Shadows Into Light Two -->
+    <div class="font-card">
+        <div class="font-meta">
+            <div class="font-name">Shadows Into Light Two</div>
+            <div class="font-style">Airy, light handwriting. Loose and relaxed. Like quick margin notes.</div>
+            <span class="font-tag tag-casual">Casual</span>
+        </div>
+        <div class="font-samples">
+            <div class="font-hero" style="font-family: 'Shadows Into Light Two', cursive;">We help businesses scale with paid advertising.</div>
+            <div class="font-section" style="font-family: 'Shadows Into Light Two', cursive;">A predictable pipeline of interested investors.</div>
+            <div class="font-card-title" style="font-family: 'Shadows Into Light Two', cursive;">If you're selling education</div>
+            <div class="font-body">Body copy stays in Inter. Clean, readable, professional contrast.</div>
+        </div>
+    </div>
+
+    <!-- 9. Covered By Your Grace -->
+    <div class="font-card">
+        <div class="font-meta">
+            <div class="font-name">Covered By Your Grace</div>
+            <div class="font-style">Fast, tilted, natural. Like someone jotting ideas mid-conversation. Energetic.</div>
+            <span class="font-tag tag-raw">Raw</span>
+        </div>
+        <div class="font-samples">
+            <div class="font-hero" style="font-family: 'Covered By Your Grace', cursive;">We help businesses scale with paid advertising.</div>
+            <div class="font-section" style="font-family: 'Covered By Your Grace', cursive;">A predictable pipeline of interested investors.</div>
+            <div class="font-card-title" style="font-family: 'Covered By Your Grace', cursive;">If you're selling education</div>
+            <div class="font-body">Body copy stays in Inter. Clean, readable, professional contrast.</div>
+        </div>
+    </div>
+
+    <!-- 10. Homemade Apple -->
+    <div class="font-card">
+        <div class="font-meta">
+            <div class="font-name">Homemade Apple</div>
+            <div class="font-style">True cursive. Connected letters, flowing. Like a handwritten letter.</div>
+            <span class="font-tag tag-raw">Raw</span>
+        </div>
+        <div class="font-samples">
+            <div class="font-hero" style="font-family: 'Homemade Apple', cursive; font-size: clamp(1.4rem, 2.8vw, 2rem);">We help businesses scale with paid advertising.</div>
+            <div class="font-section" style="font-family: 'Homemade Apple', cursive; font-size: 1.15rem;">A predictable pipeline of interested investors.</div>
+            <div class="font-card-title" style="font-family: 'Homemade Apple', cursive;">If you're selling education</div>
+            <div class="font-body">Body copy stays in Inter. Clean, readable, professional contrast.</div>
+        </div>
+    </div>
+
+    <!-- 11. Nothing You Could Do -->
+    <div class="font-card">
+        <div class="font-meta">
+            <div class="font-name">Nothing You Could Do</div>
+            <div class="font-style">Thin, elegant handwriting. Delicate but confident. Like a signature.</div>
+            <span class="font-tag tag-casual">Casual</span>
+        </div>
+        <div class="font-samples">
+            <div class="font-hero" style="font-family: 'Nothing You Could Do', cursive;">We help businesses scale with paid advertising.</div>
+            <div class="font-section" style="font-family: 'Nothing You Could Do', cursive;">A predictable pipeline of interested investors.</div>
+            <div class="font-card-title" style="font-family: 'Nothing You Could Do', cursive;">If you're selling education</div>
+            <div class="font-body">Body copy stays in Inter. Clean, readable, professional contrast.</div>
+        </div>
+    </div>
+
+    <!-- 12. Coming Soon -->
+    <div class="font-card">
+        <div class="font-meta">
+            <div class="font-name">Coming Soon</div>
+            <div class="font-style">Neat, rounded handwriting. Friendly, approachable. Like whiteboard notes that are actually legible.</div>
+            <span class="font-tag tag-clean">Clean</span>
+        </div>
+        <div class="font-samples">
+            <div class="font-hero" style="font-family: 'Coming Soon', cursive;">We help businesses scale with paid advertising.</div>
+            <div class="font-section" style="font-family: 'Coming Soon', cursive;">A predictable pipeline of interested investors.</div>
+            <div class="font-card-title" style="font-family: 'Coming Soon', cursive;">If you're selling education</div>
+            <div class="font-body">Body copy stays in Inter. Clean, readable, professional contrast.</div>
+        </div>
+    </div>
+
+    <!-- 13. Indie Flower -->
+    <div class="font-card">
+        <div class="font-meta">
+            <div class="font-name">Indie Flower</div>
+            <div class="font-style">Bubbly, casual print. Upbeat and informal. Like doodling in the margins.</div>
+            <span class="font-tag tag-casual">Casual</span>
+        </div>
+        <div class="font-samples">
+            <div class="font-hero" style="font-family: 'Indie Flower', cursive;">We help businesses scale with paid advertising.</div>
+            <div class="font-section" style="font-family: 'Indie Flower', cursive;">A predictable pipeline of interested investors.</div>
+            <div class="font-card-title" style="font-family: 'Indie Flower', cursive;">If you're selling education</div>
+            <div class="font-body">Body copy stays in Inter. Clean, readable, professional contrast.</div>
+        </div>
+    </div>
+
+    <!-- 14. Schoolbell -->
+    <div class="font-card">
+        <div class="font-meta">
+            <div class="font-name">Schoolbell</div>
+            <div class="font-style">Childlike but charming. Simple, unassuming print. Like a kid's best handwriting.</div>
+            <span class="font-tag tag-clean">Clean</span>
+        </div>
+        <div class="font-samples">
+            <div class="font-hero" style="font-family: 'Schoolbell', cursive;">We help businesses scale with paid advertising.</div>
+            <div class="font-section" style="font-family: 'Schoolbell', cursive;">A predictable pipeline of interested investors.</div>
+            <div class="font-card-title" style="font-family: 'Schoolbell', cursive;">If you're selling education</div>
+            <div class="font-body">Body copy stays in Inter. Clean, readable, professional contrast.</div>
+        </div>
+    </div>
+
+    <!-- 15. Reenie Beanie -->
+    <div class="font-card">
+        <div class="font-meta">
+            <div class="font-name">Reenie Beanie</div>
+            <div class="font-style">Tall, narrow, fast. Like someone scribbling on a sticky note. Urgent energy.</div>
+            <span class="font-tag tag-raw">Raw</span>
+        </div>
+        <div class="font-samples">
+            <div class="font-hero" style="font-family: 'Reenie Beanie', cursive; font-size: clamp(2.2rem, 4.5vw, 3.2rem);">We help businesses scale with paid advertising.</div>
+            <div class="font-section" style="font-family: 'Reenie Beanie', cursive; font-size: 1.6rem;">A predictable pipeline of interested investors.</div>
+            <div class="font-card-title" style="font-family: 'Reenie Beanie', cursive; font-size: 1.3rem;">If you're selling education</div>
+            <div class="font-body">Body copy stays in Inter. Clean, readable, professional contrast.</div>
+        </div>
+    </div>
+
+    <!-- 16. Just Another Hand -->
+    <div class="font-card">
+        <div class="font-meta">
+            <div class="font-name">Just Another Hand</div>
+            <div class="font-style">Tall, condensed, casual. Efficient handwriting. Like notes crammed into a small space.</div>
+            <span class="font-tag tag-casual">Casual</span>
+        </div>
+        <div class="font-samples">
+            <div class="font-hero" style="font-family: 'Just Another Hand', cursive; font-size: clamp(2.4rem, 5vw, 3.6rem);">We help businesses scale with paid advertising.</div>
+            <div class="font-section" style="font-family: 'Just Another Hand', cursive; font-size: 1.8rem;">A predictable pipeline of interested investors.</div>
+            <div class="font-card-title" style="font-family: 'Just Another Hand', cursive; font-size: 1.4rem;">If you're selling education</div>
+            <div class="font-body">Body copy stays in Inter. Clean, readable, professional contrast.</div>
+        </div>
+    </div>
+
+    <div style="text-align: center; padding: 40px 0; font-size: 0.8rem; color: #999;">
+        Tell me the name of the font you like and I'll swap it in across the whole site.
+    </div>
+</div>
+</body>
+</html>

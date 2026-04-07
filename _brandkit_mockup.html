@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JustScale — Brand Kit Mockup (B&W)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ===================================================
+           JUSTSCALE BRAND KIT — BLACK & WHITE REBRAND
+           Matching YouTube @zacregan channel aesthetic
+           =================================================== */
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        /* ---------- NEW TOKEN SYSTEM ---------- */
+        :root {
+            /* Backgrounds */
+            --bg:          #FFFFFF;       /* was #0c0c0c  — pure white */
+            --bg-s:        #F7F7F7;      /* was #111111  — very light gray for alt sections */
+            --card:        #FFFFFF;       /* was #151515  — white cards */
+            --card-hover:  #FAFAFA;      /* was #1a1a1a  — subtle hover */
+
+            /* Text */
+            --text:        #111111;       /* was #f5f5f0  — near-black primary */
+            --text-s:      #555555;       /* was #8a8a82  — medium gray secondary */
+            --text-m:      #999999;       /* was #5a5a54  — muted gray */
+
+            /* Accent — monochrome, no gold */
+            --accent:      #111111;       /* was --gold #c9a96e  — black */
+            --accent-l:    #333333;       /* was --gold-l #d4b87a  — dark gray hover */
+            --accent-dim:  #666666;       /* was --gold-dim #a08550  — medium gray */
+
+            /* Borders */
+            --border:      rgba(0,0,0,0.08);    /* was rgba(255,255,255,0.06) */
+            --border-l:    rgba(0,0,0,0.14);     /* was rgba(255,255,255,0.10) */
+
+            /* Dot grid */
+            --dot:         rgba(0,0,0,0.10);     /* was rgba(201,169,110,0.12) — gray dots */
+
+            /* Effects (translated from gold to monochrome) */
+            --glow:        rgba(0,0,0,0.04);     /* was rgba(201,169,110,0.03) — card inner glow */
+            --glow-border: rgba(0,0,0,0.18);     /* was rgba(201,169,110,0.4) — card border glow */
+            --blob-1:      rgba(0,0,0,0.025);    /* was rgba(201,169,110,0.14) — blob gradient */
+            --blob-2:      rgba(0,0,0,0.018);    /* was rgba(201,169,110,0.10) */
+            --blob-3:      rgba(0,0,0,0.014);    /* was rgba(180,160,120,0.08) */
+            --orb:         rgba(0,0,0,0.02);     /* was rgba(201,169,110,0.035) — hero orb */
+            --aurora-1:    rgba(0,0,0,0.015);    /* was rgba(201,169,110,0.03) — aurora sweep */
+            --aurora-2:    rgba(0,0,0,0.012);    /* was rgba(160,133,80,0.025) */
+            --progress-glow: rgba(0,0,0,0.15);   /* was rgba(201,169,110,0.4) — scroll bar glow */
+
+            /* Shared */
+            --r:           14px;
+            --ease:        cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        html { font-size: 16px; scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ---------- DYNAMIC BACKGROUND (full translation) ---------- */
+        .bg-dynamic {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        /* Dot grid — gray on white (was gold on black) */
+        .bg-dot-grid {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle, var(--dot) 1px, transparent 1px);
+            background-size: 32px 32px;
+            opacity: 0.6;
+        }
+
+        /* Aurora drift — subtle gray sweep (was gold sweep) */
+        .bg-aurora {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                135deg,
+                transparent 0%,
+                var(--aurora-1) 25%,
+                transparent 45%,
+                var(--aurora-2) 65%,
+                transparent 85%,
+                var(--aurora-1) 100%
+            );
+            background-size: 300% 300%;
+            animation: auroraDrift 25s ease-in-out infinite alternate;
+        }
+        @keyframes auroraDrift {
+            0%   { background-position: 0% 0%; }
+            50%  { background-position: 100% 50%; }
+            100% { background-position: 30% 100%; }
+        }
+
+        /* Animated gradient blobs — soft gray (was gold) */
+        .bg-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0;
+            will-change: transform;
+            animation-fill-mode: forwards;
+        }
+        .bg-blob.visible { opacity: 1; }
+        .bg-blob--1 {
+            width: 700px; height: 700px;
+            background: radial-gradient(circle, var(--blob-1), transparent 65%);
+            top: 5%; left: -10%;
+            animation: blobDrift1 18s ease-in-out infinite alternate;
+        }
+        .bg-blob--2 {
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, var(--blob-2), transparent 65%);
+            top: 40%; right: -12%;
+            animation: blobDrift2 15s ease-in-out infinite alternate;
+        }
+        .bg-blob--3 {
+            width: 550px; height: 550px;
+            background: radial-gradient(circle, var(--blob-3), transparent 65%);
+            bottom: 0%; left: 15%;
+            animation: blobDrift3 22s ease-in-out infinite alternate;
+        }
+        @keyframes blobDrift1 {
+            0%   { transform: translate(0, 0) scale(1); }
+            33%  { transform: translate(80px, -60px) scale(1.1); }
+            66%  { transform: translate(-40px, 40px) scale(0.9); }
+            100% { transform: translate(60px, -30px) scale(1.05); }
+        }
+        @keyframes blobDrift2 {
+            0%   { transform: translate(0, 0) scale(1); }
+            33%  { transform: translate(-70px, 50px) scale(1.08); }
+            66%  { transform: translate(50px, -40px) scale(0.92); }
+            100% { transform: translate(-30px, 70px) scale(1.04); }
+        }
+        @keyframes blobDrift3 {
+            0%   { transform: translate(0, 0) scale(1); }
+            33%  { transform: translate(50px, 60px) scale(1.06); }
+            66%  { transform: translate(-60px, -30px) scale(0.95); }
+            100% { transform: translate(40px, -50px) scale(1.1); }
+        }
+
+        /* ---------- LAYOUT ---------- */
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 28px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .kit-section {
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border-l);
+        }
+        .kit-section:last-child { border-bottom: none; }
+
+        .kit-title {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-m);
+            margin-bottom: 32px;
+        }
+
+        /* ========== SECTION 1: HEADER — TOKEN COMPARISON ========== */
+        .token-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+        }
+        .token-card {
+            border: 1px solid var(--border-l);
+            border-radius: 10px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .token-swatch {
+            width: 100%;
+            height: 48px;
+            border-radius: 6px;
+            border: 1px solid var(--border-l);
+        }
+        .token-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text);
+            letter-spacing: 0.02em;
+        }
+        .token-value {
+            font-size: 0.7rem;
+            font-weight: 400;
+            color: var(--text-m);
+            font-family: 'SF Mono', 'Fira Code', monospace;
+        }
+        .token-old {
+            font-size: 0.65rem;
+            color: var(--text-m);
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+
+        /* ========== SECTION 2: TYPOGRAPHY ========== */
+        .type-sample { margin-bottom: 28px; }
+        .type-sample h1 {
+            font-size: clamp(2.4rem, 5.2vw, 3.8rem);
+            font-weight: 700;
+            letter-spacing: -0.035em;
+            line-height: 1.15;
+            color: var(--text);
+        }
+        .type-sample h2 {
+            font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.15;
+            color: var(--text);
+        }
+        .type-sample h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--text);
+        }
+        .type-sample p {
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.75;
+            color: var(--text-s);
+            max-width: 560px;
+        }
+        .type-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+        .type-meta {
+            font-size: 0.7rem;
+            color: var(--text-m);
+            margin-top: 4px;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+        }
+
+        /* ========== SECTION 3: BUTTONS ========== */
+        .btn-row {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 11px 26px;
+            background: var(--accent);
+            color: #FFFFFF;
+            border: none;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+            cursor: pointer;
+            transition: background 0.25s var(--ease), box-shadow 0.25s var(--ease);
+            text-decoration: none;
+        }
+        .btn:hover {
+            background: var(--accent-l);
+            box-shadow: 0 2px 16px rgba(0,0,0,0.12);
+        }
+
+        .btn-lg {
+            padding: 16px 40px;
+            font-size: 0.92rem;
+            border-radius: 10px;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text);
+            border: 1.5px solid var(--border-l);
+        }
+        .btn-outline:hover {
+            background: var(--bg-s);
+            border-color: var(--text-m);
+            box-shadow: none;
+        }
+
+        /* ========== SECTION 4: CARDS ========== */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+        @media (max-width: 640px) {
+            .cards-grid { grid-template-columns: 1fr; }
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border-l);
+            border-radius: var(--r);
+            padding: 32px 28px;
+            cursor: pointer;
+            transition: border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .card:hover {
+            border-color: rgba(0,0,0,0.22);
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+        }
+
+        .card-num {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            color: var(--text-m);
+            margin-bottom: 12px;
+        }
+        .card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+        .card p {
+            font-size: 0.92rem;
+            line-height: 1.7;
+            color: var(--text-s);
+            margin-bottom: 16px;
+        }
+        .card-arrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--accent);
+            transition: gap 0.25s var(--ease);
+        }
+        .card:hover .card-arrow { gap: 10px; }
+        .card-arrow svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* ========== SECTION 5: NAV PREVIEW ========== */
+        .nav-preview {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 28px;
+            border: 1px solid var(--border-l);
+            border-radius: var(--r);
+            background: var(--bg);
+        }
+        .nav-logo {
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--text);
+        }
+        .nav-logo-icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        .nav-links-preview {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+            list-style: none;
+        }
+        .nav-links-preview a {
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+            color: var(--text-m);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-links-preview a:hover {
+            color: var(--text);
+        }
+
+        /* ========== SECTION 6: HERO PREVIEW ========== */
+        .hero-preview {
+            text-align: center;
+            padding: 100px 28px 60px;
+            border: 1px solid var(--border-l);
+            border-radius: var(--r);
+            background: var(--bg);
+            position: relative;
+            overflow: hidden;
+        }
+        /* Dot grid in hero */
+        .hero-preview::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle, var(--dot) 1px, transparent 1px);
+            background-size: 32px 32px;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        /* Orb — subtle gray radial (was gold) */
+        .hero-orb {
+            position: absolute;
+            width: 700px; height: 700px;
+            background: radial-gradient(circle, var(--orb) 0%, transparent 65%);
+            top: 35%; left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+        .hero-preview h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            letter-spacing: -0.035em;
+            line-height: 1.15;
+            color: var(--text);
+            margin-bottom: 20px;
+            position: relative;
+        }
+        /* Rule — black gradient with shimmer (was gold) */
+        .hero-rule {
+            width: 120px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            margin: 0 auto 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-rule::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 60%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0,0,0,0.3), transparent);
+            animation: ruleShimmer 3s ease-in-out infinite;
+        }
+        @keyframes ruleShimmer {
+            0%   { left: -60%; opacity: 0; }
+            10%  { opacity: 1; }
+            100% { left: 160%; opacity: 0; }
+        }
+        .hero-preview p {
+            font-size: 1rem;
+            line-height: 1.75;
+            color: var(--text-s);
+            max-width: 520px;
+            margin: 0 auto 28px;
+            position: relative;
+        }
+        .hero-preview .btn { position: relative; }
+
+        /* ========== BUTTON EFFECTS (translated) ========== */
+        .btn-live {
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+        }
+        .btn-live::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--accent-l);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s var(--ease);
+            z-index: -2;
+        }
+        .btn-live:hover::before { transform: scaleX(1); }
+        .btn-live::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 50%; height: 100%;
+            background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.22) 50%, transparent 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+        .btn-live:hover::after {
+            animation: btnShine 0.4s 0.08s ease-out forwards;
+        }
+        @keyframes btnShine { to { left: 150%; } }
+        .btn-live:hover {
+            box-shadow: 0 0 30px var(--progress-glow);
+        }
+
+        /* ========== CARD EFFECTS (translated) ========== */
+        .card-live { position: relative; }
+        /* Cursor-tracking inner glow — gray (was gold) */
+        .card-glow-preview {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(
+                800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+                var(--glow),
+                transparent 40%
+            );
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+            border-radius: inherit;
+        }
+        .card-live:hover .card-glow-preview { opacity: 1; }
+        /* Cursor-tracking border spotlight — gray (was gold) */
+        .card-border-glow-preview {
+            position: absolute;
+            inset: -1px;
+            background: radial-gradient(
+                400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+                var(--glow-border),
+                transparent 40%
+            );
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+            border-radius: inherit;
+            z-index: -1;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            padding: 1px;
+        }
+        .card-live:hover .card-border-glow-preview { opacity: 1; }
+        /* Top accent line — black gradient (was gold) */
+        .card-live::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        .card-live:hover::after { opacity: 0.3; }
+        .card-live:hover {
+            border-color: rgba(0,0,0,0.12);
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+        }
+
+        /* ========== SCROLL PROGRESS (translated) ========== */
+        .scroll-progress-preview {
+            height: 2px;
+            background: var(--accent);
+            box-shadow: 0 0 8px var(--progress-glow), 0 0 2px rgba(0,0,0,0.3);
+        }
+
+        /* ========== NAV SCROLL STATE (translated) ========== */
+        .nav-scrolled-preview {
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        /* ========== LOGO HOVER (translated) ========== */
+        .logo-hover-preview:hover {
+            filter: drop-shadow(0 0 8px rgba(0,0,0,0.15));
+        }
+
+        /* ========== FLOATING ICONS — blend mode change ========== */
+        .icon-blend-note {
+            font-size: 0.75rem;
+            color: var(--text-m);
+            font-style: italic;
+        }
+
+        /* ========== SECTION 7: FOOTER PREVIEW ========== */
+        .footer-preview {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 24px 28px;
+            border: 1px solid var(--border-l);
+            border-radius: var(--r);
+            background: var(--bg-s);
+        }
+        .footer-preview .foot-copy-preview {
+            font-size: 0.75rem;
+            color: var(--text-m);
+        }
+        .footer-links-preview {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+        .footer-links-preview a {
+            font-size: 0.8rem;
+            color: var(--text-m);
+            text-decoration: none;
+        }
+
+        /* ========== SECTION 8: SCROLL PROGRESS BAR ========== */
+        .scroll-bar-preview {
+            width: 100%;
+            height: 2px;
+            background: var(--bg-s);
+            border-radius: 2px;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+        .scroll-bar-fill {
+            width: 45%;
+            height: 100%;
+            background: var(--accent);
+        }
+
+        /* ========== SECTION 9: COMPARISON ========== */
+        .compare-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+        @media (max-width: 640px) {
+            .compare-grid { grid-template-columns: 1fr; }
+        }
+        .compare-card {
+            border-radius: var(--r);
+            padding: 32px;
+            text-align: center;
+        }
+        .compare-old {
+            background: #0c0c0c;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        .compare-old h3 { color: #f5f5f0; font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+        .compare-old p { color: #8a8a82; font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px; }
+        .compare-old .compare-btn {
+            display: inline-block;
+            padding: 10px 24px;
+            background: #c9a96e;
+            color: #0c0c0c;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-weight: 600;
+        }
+        .compare-new {
+            background: var(--bg);
+            border: 1px solid var(--border-l);
+        }
+        .compare-new h3 { color: var(--text); font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+        .compare-new p { color: var(--text-s); font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px; }
+        .compare-new .compare-btn {
+            display: inline-block;
+            padding: 10px 24px;
+            background: var(--accent);
+            color: #FFFFFF;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-weight: 600;
+        }
+        .compare-label {
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+        .compare-old .compare-label { color: #8a8a82; }
+        .compare-new .compare-label { color: var(--text-m); }
+
+        /* ========== NOTES ========== */
+        .notes {
+            background: var(--bg-s);
+            border: 1px solid var(--border-l);
+            border-radius: var(--r);
+            padding: 28px;
+        }
+        .notes h3 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+        .notes ul {
+            list-style: none;
+            padding: 0;
+        }
+        .notes li {
+            font-size: 0.85rem;
+            line-height: 1.7;
+            color: var(--text-s);
+            padding: 4px 0;
+        }
+        .notes li::before {
+            content: '—';
+            margin-right: 8px;
+            color: var(--text-m);
+        }
+
+        /* ========== SECTION LABEL: ALT SECTION PREVIEW ========== */
+        .alt-section-preview {
+            background: var(--bg-s);
+            border: 1px solid var(--border-l);
+            border-radius: var(--r);
+            padding: 48px 28px;
+            text-align: center;
+        }
+        .section-label-preview {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+        .alt-section-preview h2 {
+            font-size: clamp(1.4rem, 2.4vw, 1.8rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+        .alt-section-preview p {
+            font-size: 0.95rem;
+            line-height: 1.75;
+            color: var(--text-s);
+            max-width: 480px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Full dynamic background with all effects translated -->
+<div class="bg-dynamic">
+    <div class="bg-dot-grid"></div>
+    <div class="bg-aurora"></div>
+    <div class="bg-blob bg-blob--1 visible"></div>
+    <div class="bg-blob bg-blob--2 visible"></div>
+    <div class="bg-blob bg-blob--3 visible"></div>
+</div>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="kit-section" style="padding-top: 40px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px;">
+            <div>
+                <h1 style="font-size: 1.6rem; font-weight: 700; letter-spacing: -0.03em;">JustScale Brand Kit</h1>
+                <p style="font-size: 0.85rem; color: var(--text-s); margin-top: 4px;">B&W rebrand — matching YouTube @zacregan channel</p>
+            </div>
+            <div style="font-size: 0.7rem; color: var(--text-m); text-align: right;">
+                April 2026<br>
+                MOCKUP — NOT LIVE
+            </div>
+        </div>
+    </div>
+
+    <!-- 1. COLOR TOKENS -->
+    <div class="kit-section">
+        <div class="kit-title">1 — Color Tokens</div>
+        <div class="token-grid">
+            <div class="token-card">
+                <div class="token-swatch" style="background: #FFFFFF;"></div>
+                <div class="token-label">--bg (Background)</div>
+                <div class="token-value">#FFFFFF</div>
+                <div class="token-old">was #0c0c0c</div>
+            </div>
+            <div class="token-card">
+                <div class="token-swatch" style="background: #F7F7F7;"></div>
+                <div class="token-label">--bg-s (Alt Section)</div>
+                <div class="token-value">#F7F7F7</div>
+                <div class="token-old">was #111111</div>
+            </div>
+            <div class="token-card">
+                <div class="token-swatch" style="background: #FFFFFF; border: 1px solid rgba(0,0,0,0.14);"></div>
+                <div class="token-label">--card</div>
+                <div class="token-value">#FFFFFF</div>
+                <div class="token-old">was #151515</div>
+            </div>
+            <div class="token-card">
+                <div class="token-swatch" style="background: #111111;"></div>
+                <div class="token-label">--text (Primary)</div>
+                <div class="token-value">#111111</div>
+                <div class="token-old">was #f5f5f0</div>
+            </div>
+            <div class="token-card">
+                <div class="token-swatch" style="background: #555555;"></div>
+                <div class="token-label">--text-s (Secondary)</div>
+                <div class="token-value">#555555</div>
+                <div class="token-old">was #8a8a82</div>
+            </div>
+            <div class="token-card">
+                <div class="token-swatch" style="background: #999999;"></div>
+                <div class="token-label">--text-m (Muted)</div>
+                <div class="token-value">#999999</div>
+                <div class="token-old">was #5a5a54</div>
+            </div>
+            <div class="token-card">
+                <div class="token-swatch" style="background: #111111;"></div>
+                <div class="token-label">--accent (CTA/Buttons)</div>
+                <div class="token-value">#111111</div>
+                <div class="token-old">was #c9a96e (gold)</div>
+            </div>
+            <div class="token-card">
+                <div class="token-swatch" style="background: rgba(0,0,0,0.10); border: 1px solid rgba(0,0,0,0.14);"></div>
+                <div class="token-label">--dot (Grid Dots)</div>
+                <div class="token-value">rgba(0,0,0,0.10)</div>
+                <div class="token-old">was rgba(201,169,110,0.12)</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. TYPOGRAPHY -->
+    <div class="kit-section">
+        <div class="kit-title">2 — Typography (Inter — unchanged)</div>
+
+        <div class="type-sample">
+            <div class="type-label">H1 — Hero Headline</div>
+            <h1>We help businesses scale with paid advertising.</h1>
+            <div class="type-meta">Inter 700 · clamp(2.4rem, 5.2vw, 3.8rem) · -0.035em tracking · 1.15 line-height</div>
+        </div>
+
+        <div class="type-sample">
+            <div class="type-label">H2 — Section Title</div>
+            <h2>A predictable pipeline of interested investors.</h2>
+            <div class="type-meta">Inter 700 · clamp(1.6rem, 2.8vw, 2.2rem) · -0.03em tracking · 1.15 line-height</div>
+        </div>
+
+        <div class="type-sample">
+            <div class="type-label">H3 — Card Title</div>
+            <h3>If you're selling education</h3>
+            <div class="type-meta">Inter 600 · 1rem · 1.3 line-height</div>
+        </div>
+
+        <div class="type-sample">
+            <div class="type-label">Body Copy</div>
+            <p>We take a hands-on marketing approach to scaling education businesses and raising capital for funds with paid advertising. Direct response systems that produce predictable, measurable results.</p>
+            <div class="type-meta">Inter 400 · 1rem · 1.75 line-height · color: --text-s (#555555)</div>
+        </div>
+
+        <div class="type-sample">
+            <div class="type-label">Section Label (Overline)</div>
+            <div class="section-label-preview">THE PROCESS</div>
+            <div class="type-meta">Inter 600 · 0.7rem · 0.12em tracking · uppercase · color: --accent (#111111)</div>
+        </div>
+    </div>
+
+    <!-- 3. BUTTONS (with live shine + glow effects) -->
+    <div class="kit-section">
+        <div class="kit-title">3 — Buttons (hover to see shine effect)</div>
+
+        <div class="btn-row">
+            <a class="btn btn-live">Yes, I want to scale</a>
+            <a class="btn btn-lg btn-live">Apply now</a>
+            <a class="btn btn-outline">Learn more</a>
+        </div>
+        <div style="font-size: 0.75rem; color: var(--text-m); margin-top: 4px;">
+            Primary: black bg / white text / shine sweep on hover / shadow glow · Outline: transparent / border
+        </div>
+    </div>
+
+    <!-- 4. SCROLL PROGRESS BAR -->
+    <div class="kit-section">
+        <div class="kit-title">4 — Scroll Progress Bar</div>
+        <div class="scroll-bar-preview">
+            <div class="scroll-bar-fill"></div>
+        </div>
+        <div style="font-size: 0.75rem; color: var(--text-m);">
+            2px height · black fill · replaces gold bar
+        </div>
+    </div>
+
+    <!-- 5. NAV PREVIEW -->
+    <div class="kit-section">
+        <div class="kit-title">5 — Navigation</div>
+        <div class="nav-preview">
+            <div class="nav-logo">
+                <svg class="nav-logo-icon" viewBox="0 0 40 40" fill="none">
+                    <path d="M8 8 L20 32 L32 8 Z" fill="#111111" stroke="#111111" stroke-width="1.5"/>
+                    <line x1="12" y1="15" x2="28" y2="15" stroke="#FFFFFF" stroke-width="2"/>
+                    <line x1="14" y1="21" x2="26" y2="21" stroke="#FFFFFF" stroke-width="2"/>
+                </svg>
+                JustScale
+            </div>
+            <ul class="nav-links-preview">
+                <li><a href="#">Education</a></li>
+                <li><a href="#">Capital</a></li>
+                <li><a href="#" class="btn" style="padding: 8px 20px;">Yes, I want to scale</a></li>
+            </ul>
+        </div>
+        <div style="font-size: 0.75rem; color: var(--text-m); margin-top: 8px;">
+            White bg · nav links in muted gray → black on hover · logo needs black version (SVG fill swap)
+        </div>
+    </div>
+
+    <!-- 6. HERO PREVIEW (with orb + dot grid + shimmer rule) -->
+    <div class="kit-section">
+        <div class="kit-title">6 — Hero Section (orb + dot grid + shimmer rule)</div>
+        <div class="hero-preview">
+            <div class="hero-orb"></div>
+            <h1>We help businesses scale with paid advertising.</h1>
+            <div class="hero-rule"></div>
+            <p>We take a hands-on marketing approach to scaling education businesses and raising capital for funds with paid advertising.</p>
+            <a class="btn btn-lg btn-live">Yes, I want to scale</a>
+        </div>
+    </div>
+
+    <!-- 7. CARDS (with live cursor-tracking glow + border glow + accent line) -->
+    <div class="kit-section">
+        <div class="kit-title">7 — Service Cards (hover to see glow tracking + border spotlight + accent line)</div>
+        <div class="cards-grid">
+            <a class="card card-live" onmousemove="trackMouse(event, this)">
+                <div class="card-glow-preview"></div>
+                <div class="card-border-glow-preview"></div>
+                <div class="card-num">01 — Education</div>
+                <h3>If you're selling education</h3>
+                <p>Then you need a system, not just a launch. We use direct response advertising to predictably scale your education business.</p>
+                <span class="card-arrow">
+                    See How We Scale Edu.
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </span>
+            </a>
+            <a class="card card-live" onmousemove="trackMouse(event, this)">
+                <div class="card-glow-preview"></div>
+                <div class="card-border-glow-preview"></div>
+                <div class="card-num">02 — Capital</div>
+                <h3>If you're raising capital</h3>
+                <p>You already know relying on your network is slow and unpredictable. We turn capital raising into a science.</p>
+                <span class="card-arrow">
+                    See How We Attract LPs
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </span>
+            </a>
+        </div>
+    </div>
+
+    <!-- 8. ALT SECTION -->
+    <div class="kit-section">
+        <div class="kit-title">8 — Alternate Section (--bg-s background)</div>
+        <div class="alt-section-preview">
+            <div class="section-label-preview">THE PROCESS</div>
+            <h2>A predictable pipeline of interested investors.</h2>
+            <p>We build direct response ad systems that generate qualified investor leads for your fund, predictably and at scale.</p>
+        </div>
+    </div>
+
+    <!-- 9. FOOTER PREVIEW -->
+    <div class="kit-section">
+        <div class="kit-title">9 — Footer</div>
+        <div class="footer-preview">
+            <div class="nav-logo" style="font-size: 0.9rem;">JustScale</div>
+            <ul class="footer-links-preview">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Education</a></li>
+                <li><a href="#">Capital</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <span class="foot-copy-preview" style="font-size: 0.72rem; color: var(--text-m);">&copy; 2026 JustScale. All rights reserved.</span>
+        </div>
+    </div>
+
+    <!-- 10. SIDE-BY-SIDE COMPARISON -->
+    <div class="kit-section">
+        <div class="kit-title">10 — Before & After</div>
+        <div class="compare-grid">
+            <div class="compare-card compare-old">
+                <div class="compare-label">Current — Dark + Gold</div>
+                <h3>We help businesses scale.</h3>
+                <p>Direct response advertising for education and capital raising.</p>
+                <span class="compare-btn">Apply now</span>
+            </div>
+            <div class="compare-card compare-new">
+                <div class="compare-label">New — Black & White</div>
+                <h3>We help businesses scale.</h3>
+                <p>Direct response advertising for education and capital raising.</p>
+                <span class="compare-btn">Apply now</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 11. EFFECTS TRANSLATION TABLE -->
+    <div class="kit-section">
+        <div class="kit-title">11 — Effects Translation (every visual effect mapped)</div>
+        <div class="notes">
+            <h3>Background effects (all preserved, color-swapped)</h3>
+            <ul>
+                <li>Dot grid: rgba(201,169,110,0.12) → rgba(0,0,0,0.10) — same 32px grid, gray dots on white</li>
+                <li>Aurora drift: gold gradient sweep → gray gradient sweep — same 25s animation</li>
+                <li>Blob 1 (700px): gold radial → rgba(0,0,0,0.025) — same drift keyframes</li>
+                <li>Blob 2 (600px): gold radial → rgba(0,0,0,0.018) — same drift keyframes</li>
+                <li>Blob 3 (550px): gold radial → rgba(0,0,0,0.014) — same drift keyframes</li>
+                <li>Floating icons: mix-blend-mode: lighten → multiply (inverted for light bg)</li>
+            </ul>
+        </div>
+        <div class="notes" style="margin-top: 16px;">
+            <h3>Hero effects (all preserved)</h3>
+            <ul>
+                <li>Orb: gold radial gradient → rgba(0,0,0,0.02) — same 700px circle</li>
+                <li>Gold rule → black rule: gradient uses --accent (#111) instead of --gold</li>
+                <li>Rule shimmer: white highlight → dark highlight rgba(0,0,0,0.3) — same animation</li>
+                <li>Word-by-word reveal: unchanged (opacity + transform, no color dependency)</li>
+                <li>Hero subtitle/CTA fade-in: unchanged</li>
+            </ul>
+        </div>
+        <div class="notes" style="margin-top: 16px;">
+            <h3>Card effects (all preserved)</h3>
+            <ul>
+                <li>Cursor-tracking inner glow: gold rgba → rgba(0,0,0,0.04) — same 800px radius</li>
+                <li>Cursor-tracking border spotlight: gold rgba → rgba(0,0,0,0.18) — same mask composite</li>
+                <li>Top accent line: gold gradient → black gradient — same fade-in on hover</li>
+                <li>Card hover shadow (JS): gold-tinted → neutral: rgba(0,0,0,0.03) / rgba(0,0,0,0.08)</li>
+                <li>Card stagger animations: unchanged (opacity + translateY)</li>
+            </ul>
+        </div>
+        <div class="notes" style="margin-top: 16px;">
+            <h3>Button effects (all preserved)</h3>
+            <ul>
+                <li>::before hover fill: --gold-l → --accent-l (#333) — same scaleX animation</li>
+                <li>::after shine sweep: unchanged — white gradient on black button still works</li>
+                <li>Hover glow: gold glow → rgba(0,0,0,0.15) shadow — same 30px spread</li>
+            </ul>
+        </div>
+        <div class="notes" style="margin-top: 16px;">
+            <h3>Nav + Chrome effects</h3>
+            <ul>
+                <li>Scroll progress: gold + gold glow → black + rgba(0,0,0,0.15) glow</li>
+                <li>Nav scroll bg: rgba(12,12,12,0.85) → rgba(255,255,255,0.85) + blur(24px)</li>
+                <li>Logo hover: gold drop-shadow → rgba(0,0,0,0.15) drop-shadow</li>
+                <li>Hamburger spans: uses --text (auto-inherits #111)</li>
+                <li>Page transition: unchanged (opacity + translateY)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 12. IMPLEMENTATION NOTES -->
+    <div class="kit-section">
+        <div class="kit-title">12 — Implementation Summary</div>
+        <div class="notes">
+            <h3>What changes (color only — zero structural changes)</h3>
+            <ul>
+                <li>shared.css :root — swap 14 color tokens + add 9 effect tokens</li>
+                <li>shared.css effects — replace all hardcoded gold rgba values with CSS vars</li>
+                <li>shared.css nav.scrolled — dark transparent → white transparent</li>
+                <li>shared.css .bg-icon img — mix-blend-mode: lighten → multiply</li>
+                <li>shared.js line 751 — card box-shadow: gold rgba → neutral rgba</li>
+                <li>shared.js line ~224 — nav scroll bg color: rgba(12,12,12,0.85) → rgba(255,255,255,0.85)</li>
+                <li>logo.svg — fill attribute: white/light → black/dark</li>
+            </ul>
+        </div>
+        <div class="notes" style="margin-top: 16px;">
+            <h3>What stays identical</h3>
+            <ul>
+                <li>Font family (Inter), all sizes, weights, letter-spacing, line-heights</li>
+                <li>Layout structure, container width, spacing scale, border-radius</li>
+                <li>All page content, copy, HTML structure</li>
+                <li>GSAP scroll animations, triggers, timelines</li>
+                <li>All animation keyframes (drift, float, shimmer, shine)</li>
+                <li>Responsive behavior and breakpoints</li>
+                <li>Wistia video embeds</li>
+                <li>Cursor tracking logic</li>
+            </ul>
+        </div>
+        <div class="notes" style="margin-top: 16px;">
+            <h3>Files touched</h3>
+            <ul>
+                <li>shared.css — token swap + effect color updates</li>
+                <li>shared.js — 2 lines: nav bg color + card shadow color</li>
+                <li>logo.svg — fill swap</li>
+                <li>index.html, education.html, capital.html — zero changes (CSS vars handle it)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div style="padding: 40px 0; text-align: center;">
+        <p style="font-size: 0.8rem; color: var(--text-m);">Open this file locally to preview: agency/website/justscale/_brandkit_mockup.html</p>
+    </div>
+
+</div>
+
+<script>
+    // Card cursor-tracking glow (same logic as shared.js, translated colors)
+    function trackMouse(e, card) {
+        var rect = card.getBoundingClientRect();
+        var x = e.clientX - rect.left;
+        var y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', x + 'px');
+        card.style.setProperty('--mouse-y', y + 'px');
+    }
+</script>
+
+</body>
+</html>

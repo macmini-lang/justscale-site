@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Comparison — Clean Sans-Serif Options</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Satoshi&family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=General+Sans&family=Urbanist:wght@400;500;600;700;800&family=Lexend:wght@400;500;600;700;800&family=Figtree:wght@400;500;600;700;800&family=Geist&family=Albert+Sans:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700;800&family=Instrument+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #FFFFFF;
+            color: #111;
+            background-image: radial-gradient(circle, rgba(0,0,0,0.10) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 28px; }
+        h1 { font-size: 1.4rem; font-weight: 700; margin-bottom: 4px; }
+        .subtitle { font-size: 0.85rem; color: #999; margin-bottom: 48px; }
+
+        .section-label {
+            font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em;
+            text-transform: uppercase; color: #999; margin: 48px 0 16px;
+            border-top: 2px solid rgba(0,0,0,0.08); padding-top: 16px;
+        }
+
+        .font-card {
+            border: 2px solid rgba(0,0,0,0.16);
+            border-radius: 14px;
+            padding: 28px 32px;
+            margin-bottom: 16px;
+            background: #fff;
+            transition: border-color 0.2s;
+        }
+        .font-card:hover { border-color: rgba(0,0,0,0.35); }
+        .font-card.current { border-color: #111; border-width: 3px; }
+
+        .font-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 20px;
+            font-family: Inter, sans-serif;
+        }
+        .font-name { font-size: 0.82rem; font-weight: 700; }
+        .font-why { font-size: 0.7rem; color: #777; }
+        .tag { font-size: 0.55rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; background: #111; color: #fff; margin-left: 8px; }
+
+        .font-hero {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 700;
+            letter-spacing: -0.035em;
+            line-height: 1.15;
+            color: #111;
+            margin-bottom: 16px;
+        }
+        .font-h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.15;
+            color: #111;
+            margin-bottom: 12px;
+        }
+        .font-h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.3;
+            color: #111;
+            margin-bottom: 8px;
+        }
+        .font-body {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: #555;
+            line-height: 1.75;
+            max-width: 520px;
+        }
+        .font-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #111;
+            margin-bottom: 16px;
+        }
+
+        /* Mini card preview */
+        .mini {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 20px;
+        }
+        .mini-card {
+            border: 2px solid rgba(0,0,0,0.16);
+            border-radius: 10px;
+            padding: 20px;
+            background: #fff;
+        }
+        .mini-num {
+            font-size: 0.6rem; font-weight: 600; letter-spacing: 0.1em;
+            text-transform: uppercase; color: #999; margin-bottom: 8px;
+        }
+        .mini-h3 { font-size: 1rem; font-weight: 600; color: #111; margin-bottom: 6px; letter-spacing: -0.01em; }
+        .mini-p { font-size: 0.8rem; color: #777; line-height: 1.6; }
+        .mini-btn {
+            display: inline-block; margin-top: 12px; padding: 8px 18px;
+            background: #111; color: #fff; border-radius: 8px;
+            font-size: 0.75rem; font-weight: 600;
+        }
+
+        @media (max-width: 640px) {
+            .mini { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Clean sans-serif fonts — like Inter but different</h1>
+    <p class="subtitle">Same headline, body, card preview for each. Current (Inter) shown first for reference.</p>
+
+    <div class="section-label">Current</div>
+
+    <div class="font-card current">
+        <div class="font-header">
+            <div class="font-name">Inter <span class="tag">Current</span></div>
+            <div class="font-why">Geometric, neutral, versatile. The baseline.</div>
+        </div>
+        <div class="font-label" style="font-family: 'Inter';">THE PROCESS</div>
+        <div class="font-hero" style="font-family: 'Inter';">We help businesses scale with paid advertising.</div>
+        <div class="font-h2" style="font-family: 'Inter';">A predictable pipeline of interested investors.</div>
+        <div class="font-body" style="font-family: 'Inter';">We take a hands-on marketing approach to scaling education businesses and raising capital for funds with paid advertising.</div>
+        <div class="mini">
+            <div class="mini-card">
+                <div class="mini-num" style="font-family: 'Inter';">01 — Education</div>
+                <div class="mini-h3" style="font-family: 'Inter';">If you're selling education</div>
+                <div class="mini-p" style="font-family: 'Inter';">Then you need a system, not just a launch.</div>
+                <div class="mini-btn" style="font-family: 'Inter';">See How We Scale Edu.</div>
+            </div>
+            <div class="mini-card">
+                <div class="mini-num" style="font-family: 'Inter';">02 — Capital</div>
+                <div class="mini-h3" style="font-family: 'Inter';">If you're raising capital</div>
+                <div class="mini-p" style="font-family: 'Inter';">We turn capital raising into a science.</div>
+                <div class="mini-btn" style="font-family: 'Inter';">See How We Attract LPs</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-label">Geometric — sharp, modern, confident</div>
+
+    <div class="font-card">
+        <div class="font-header">
+            <div class="font-name">DM Sans</div>
+            <div class="font-why">Geometric, low contrast, slightly softer than Inter. Very popular right now.</div>
+        </div>
+        <div class="font-label" style="font-family: 'DM Sans';">THE PROCESS</div>
+        <div class="font-hero" style="font-family: 'DM Sans';">We help businesses scale with paid advertising.</div>
+        <div class="font-h2" style="font-family: 'DM Sans';">A predictable pipeline of interested investors.</div>
+        <div class="font-body" style="font-family: 'DM Sans';">We take a hands-on marketing approach to scaling education businesses and raising capital for funds with paid advertising.</div>
+        <div class="mini">
+            <div class="mini-card"><div class="mini-num" style="font-family: 'DM Sans';">01 — Education</div><div class="mini-h3" style="font-family: 'DM Sans';">If you're selling education</div><div class="mini-p" style="font-family: 'DM Sans';">Then you need a system, not just a launch.</div><div class="mini-btn" style="font-family: 'DM Sans';">See How We Scale Edu.</div></div>
+            <div class="mini-card"><div class="mini-num" style="font-family: 'DM Sans';">02 — Capital</div><div class="mini-h3" style="font-family: 'DM Sans';">If you're raising capital</div><div class="mini-p" style="font-family: 'DM Sans';">We turn capital raising into a science.</div><div class="mini-btn" style="font-family: 'DM Sans';">See How We Attract LPs</div></div>
+        </div>
+    </div>
+
+    <div class="font-card">
+        <div class="font-header">
+            <div class="font-name">Outfit</div>
+            <div class="font-why">Geometric, rounded, clean. Feels modern and approachable.</div>
+        </div>
+        <div class="font-label" style="font-family: 'Outfit';">THE PROCESS</div>
+        <div class="font-hero" style="font-family: 'Outfit';">We help businesses scale with paid advertising.</div>
+        <div class="font-h2" style="font-family: 'Outfit';">A predictable pipeline of interested investors.</div>
+        <div class="font-body" style="font-family: 'Outfit';">We take a hands-on marketing approach to scaling education businesses and raising capital for funds with paid advertising.</div>
+        <div class="mini">
+            <div class="mini-card"><div class="mini-num" style="font-family: 'Outfit';">01 — Education</div><div class="mini-h3" style="font-family: 'Outfit';">If you're selling education</div><div class="mini-p" style="font-family: 'Outfit';">Then you need a system, not just a launch.</div><div class="mini-btn" style="font-family: 'Outfit';">See How We Scale Edu.</div></div>
+            <div class="mini-card"><div class="mini-num" style="font-family: 'Outfit';">02 — Capital</div><div class="mini-h3" style="font-family: 'Outfit';">If you're raising capital</div><div class="mini-p" style="font-family: 'Outfit';">We turn capital raising into a science.</div><div class="mini-btn" style="font-family: 'Outfit';">See How We Attract LPs</div></div>
+        </div>
+    </div>
+
+    <div class="font-card">
+        <div class="font-header">
+            <div class="font-name">Urbanist</div>
+            <div class="font-why">Geometric with personality. Slightly condensed. Sharp and editorial.</div>
+        </div>
+        <div class="font-label" style="font-family: 'Urbanist';">THE PROCESS</div>
+        <div class="font-hero" style="font-family: 'Urbanist';">We help businesses scale with paid advertising.</div>
+        <div class="font-h2" style="font-family: 'Urbanist';">A predictable pipeline of interested investors.</div>
+        <div class="font-body" style="font-family: 'Urbanist';">We take a hands-on marketing approach to scaling education businesses and raising capital for funds with paid advertising.</div>
+        <div class="mini">
+            <div class="mini-card"><div class="mini-num" style="font-family: 'Urbanist';">01 — Education</div><div class="mini-h3" style="font-family: 'Urbanist';">If you're selling education</div><div class="mini-p" style="font-family: 'Urbanist';">Then you need a system, not just a launch.</div><div class="mini-btn" style="font-family: 'Urbanist';">See How We Scale Edu.</div></div>
+            <div class="mini-card"><div class="mini-num" style="font-family: 'Urbanist';">02 — Capital</div><div class="mini-h3" style="font-family: 'Urbanist';">If you're raising capital</div><div class="mini-p" style="font-family: 'Urbanist';">We turn capital raising into a science.</div><div class="mini-btn" style="font-family: 'Urbanist';">See How We Attract LPs</div></div>
+        </div>
+    </div>
+
+    <div class="font-card">
+        <div class="font-header">
+            <div class="font-name">Sora</div>
+            <div class="font-why">Geometric, wide, confident. Strong presence at headline sizes.</div>
+        </div>
+        <div class="font-label" style="font-family: 'Sora';">THE PROCESS</div>
+        <div class="font-hero" style="font-family: 'Sora';">We help businesses scale with paid advertising.</div>
+        <div class="font-h2" style="font-family: 'Sora';">A predictable pipeline of interested investors.</div>
+        <div class="font-body" style="font-family: 'Sora';">We take a hands-on marketing approach to scaling education businesses and raising capital for funds with paid advertising.</div>
+        <div class="mini">
+            <div class="mini-card"><div class="mini-num" style="font-family: 'Sora';">01 — Education</div><div class="mini-h3" style="font-family: 'Sora';">If you're selling education</div><div class="mini-p" style="font-family: 'Sora';">Then you need a system, not just a launch.</div><div class="mini-btn" style="font-family: 'Sora';">See How We Scale Edu.</div></div>
+            <div class="mini-card"><div class="mini-num" style="font-family: 'Sora';">02 — Capital</div><div class="mini-h3" style="font-family: 'Sora';">If you're raising capital</div><div class="mini-p" style="font-family: 'Sora';">We turn capital raising into a science.</div><div class="mini-btn" style="font-family: 'Sora';">See How We Attract LPs</div></div>
+        </div>
+    </div>
+
+    <div class="section-label">Grotesque — more character, slightly quirky</div>
+
+    <div class="font-card">
+        <div class="font-header">
+            <div class="font-name">Space Grotesk</div>
+            <div class="font-why">Monospace-influenced sans. Techy, distinctive, pairs well with B&W.</div>
+        </div>
+        <div class="font-label" style="font-family: 'Space Grotesk';">THE PROCESS</div>
+        <div class="font-hero" style="font-family: 'Space Grotesk';">We help businesses scale with paid advertising.</div>
+        <div class="font-h2" style="font-family: 'Space Grotesk';">A predictable pipeline of interested investors.</div>
+        <div class="font-body" style="font-family: 'Space Grotesk';">We take a hands-on marketing approach to scaling education businesses and raising capital for funds with paid advertising.</div>
+        <div class="mini">
+            <div class="mini-card"><div class="mini-num" style="font-family: 'Space Grotesk';">01 — Education</div><div class="mini-h3" style="font-family: 'Space Grotesk';">If you're selling education</div><div class="mini-p" style="font-family: 'Space Grotesk';">Then you need a system, not just a launch.</div><div class="mini-btn" style="font-family: 'Space Grotesk';">See How We Scale Edu.</div></div>
+            <div class="mini-card"><div class="mini-num" style="font-family: 'Space Grotesk';">02 — Capital</div><div class="mini-h3" style="font-family: 'Space Grotesk';">If you're raising capital</div><div class="mini-p" style="font-family: 'Space Grotesk';">We turn capital raising into a science.</div><div class="mini-btn" style="font-family: 'Space Grotesk';">See How We Attract LPs</div></div>
+        </div>
+    </div>
+
+    <div class="font-card">
+        <div class="font-header">
+            <div class="font-name">Bricolage Grotesque</div>
+            <div class="font-why">Variable axes, quirky details, editorial feel. Stands out at large sizes.</div>
+        </div>
+        <div class="font-label" style="font-family: 'Bricolage Grotesque';">THE PROCESS</div>
+        <div class="font-hero" style="font-family: 'Bricolage Grotesque';">We help businesses scale with paid advertising.</div>
+        <div class="font-h2" style="font-family: 'Bricolage Grotesque';">A predictable pipeline of interested investors.</div>
+        <div class="font-body" style="font-family: 'Bricolage Grotesque';">We take a hands-on marketing approach to scaling education businesses and raising capital for funds with paid advertising.</div>
+        <div class="mini">
+            <div class="mini-card"><div class="mini-num" style="font-family: 'Bricolage Grotesque';">01 — Education</div><div class="mini-h3" style="font-family: 'Bricolage Grotesque';">If you're selling education</div><div class="mini-p" style="font-family: 'Bricolage Grotesque';">Then you need a system, not just a launch.</div><div class="mini-btn" style="font-family: 'Bricolage Grotesque';">See How We Scale Edu.</div></div>
+            <div class="mini-card"><div class="mini-num" style="font-family: 'Bricolage Grotesque';">02 — Capital</div><div class="mini-h3" style="font-family: 'Bricolage Grotesque';">If you're raising capital</div><div class="mini-p" style="font-family: 'Bricolage Grotesque';">We turn capital raising into a science.</div><div class="mini-btn" style="font-family: 'Bricolage Grotesque';">See How We Attract LPs</div></div>
+        </div>
+    </div>
+
+    <div class="font-card">
+        <div class="font-header">
+            <div class="font-name">Schibsted Grotesk</div>
+            <div class="font-why">Nordic grotesque. Clean, confident, slightly narrower. Has weight.</div>
+        </div>
+        <div class="font-label" style="font-family: 'Schibsted Grotesk';">THE PROCESS</div>
+        <div class="font-hero" style="font-family: 'Schibsted Grotesk';">We help businesses scale with paid advertising.</div>
+        <div class="font-h2" style="font-family: 'Schibsted Grotesk';">A predictable pipeline of interested investors.</div>
+        <div class="font-body" style="font-family: 'Schibsted Grotesk';">We take a hands-on marketing approach to scaling education businesses and raising capital for funds with paid advertising.</div>
+        <div class="mini">
+            <div class="mini-card"><div class="mini-num" style="font-family: 'Schibsted Grotesk';">01 — Education</div><div class="mini-h3" style="font-family: 'Schibsted Grotesk';">If you're selling education</div><div class="mini-p" style="font-family: 'Schibsted Grotesk';">Then you need a system, not just a launch.</div><div class="mini-btn" style="font-family: 'Schibsted Grotesk';">See How We Scale Edu.</div></div>
+            <div class="mini-card"><div class="mini-num" style="font-family: 'Schibsted Grotesk';">02 — Capital</div><div class="mini-h3" style="font-family: 'Schibsted Grotesk';">If you're raising capital</div><div class="mini-p" style="font-family: 'Schibsted Grotesk';">We turn capital raising into a science.</div><div class="mini-btn" style="font-family: 'Schibsted Grotesk';">See How We Attract LPs</div></div>
+        </div>
+    </div>
+
+    <div class="section-label">Humanist — warm, readable, natural</div>
+
+    <div class="font-card">
+        <div class="font-header">
+            <div class="font-name">Plus Jakarta Sans</div>
+            <div class="font-why">Warm, rounded, modern. Between geometric and humanist. Very clean.</div>
+        </div>
+        <div class="font-label" style="font-family: 'Plus Jakarta Sans';">THE PROCESS</div>
+        <div class="font-hero" style="font-family: 'Plus Jakarta Sans';">We help businesses scale with paid advertising.</div>
+        <div class="font-h2" style="font-family: 'Plus Jakarta Sans';">A predictable pipeline of interested investors.</div>
+        <div class="font-body" style="font-family: 'Plus Jakarta Sans';">We take a hands-on marketing approach to scaling education businesses and raising capital for funds with paid advertising.</div>
+        <div class="mini">
+            <div class="mini-card"><div class="mini-num" style="font-family: 'Plus Jakarta Sans';">01 — Education</div><div class="mini-h3" style="font-family: 'Plus Jakarta Sans';">If you're selling education</div><div class="mini-p" style="font-family: 'Plus Jakarta Sans';">Then you need a system, not just a launch.</div><div class="mini-btn" style="font-family: 'Plus Jakarta Sans';">See How We Scale Edu.</div></div>
+            <div class="mini-card"><div class="mini-num" style="font-family: 'Plus Jakarta Sans';">02 — Capital</div><div class="mini-h3" style="font-family: 'Plus Jakarta Sans';">If you're raising capital</div><div class="mini-p" style="font-family: 'Plus Jakarta Sans';">We turn capital raising into a science.</div><div class="mini-btn" style="font-family: 'Plus Jakarta Sans';">See How We Attract LPs</div></div>
+        </div>
+    </div>
+
+    <div class="font-card">
+        <div class="font-header">
+            <div class="font-name">Manrope</div>
+            <div class="font-why">Semi-rounded, versatile, slightly wider. Good at all sizes.</div>
+        </div>
+        <div class="font-label" style="font-family: 'Manrope';">THE PROCESS</div>
+        <div class="font-hero" style="font-family: 'Manrope';">We help businesses scale with paid advertising.</div>
+        <div class="font-h2" style="font-family: 'Manrope';">A predictable pipeline of interested investors.</div>
+        <div class="font-body" style="font-family: 'Manrope';">We take a hands-on marketing approach to scaling education businesses and raising capital for funds with paid advertising.</div>
+        <div class="mini">
+            <div class="mini-card"><div class="mini-num" style="font-family: 'Manrope';">01 — Education</div><div class="mini-h3" style="font-family: 'Manrope';">If you're selling education</div><div class="mini-p" style="font-family: 'Manrope';">Then you need a system, not just a launch.</div><div class="mini-btn" style="font-family: 'Manrope';">See How We Scale Edu.</div></div>
+            <div class="mini-card"><div class="mini-num" style="font-family: 'Manrope';">02 — Capital</div><div class="mini-h3" style="font-family: 'Manrope';">If you're raising capital</div><div class="mini-p" style="font-family: 'Manrope';">We turn capital raising into a science.</div><div class="mini-btn" style="font-family: 'Manrope';">See How We Attract LPs</div></div>
+        </div>
+    </div>
+
+    <div class="font-card">
+        <div class="font-header">
+            <div class="font-name">Figtree</div>
+            <div class="font-why">Friendly, rounded terminals. Soft but professional. New-generation feel.</div>
+        </div>
+        <div class="font-label" style="font-family: 'Figtree';">THE PROCESS</div>
+        <div class="font-hero" style="font-family: 'Figtree';">We help businesses scale with paid advertising.</div>
+        <div class="font-h2" style="font-family: 'Figtree';">A predictable pipeline of interested investors.</div>
+        <div class="font-body" style="font-family: 'Figtree';">We take a hands-on marketing approach to scaling education businesses and raising capital for funds with paid advertising.</div>
+        <div class="mini">
+            <div class="mini-card"><div class="mini-num" style="font-family: 'Figtree';">01 — Education</div><div class="mini-h3" style="font-family: 'Figtree';">If you're selling education</div><div class="mini-p" style="font-family: 'Figtree';">Then you need a system, not just a launch.</div><div class="mini-btn" style="font-family: 'Figtree';">See How We Scale Edu.</div></div>
+            <div class="mini-card"><div class="mini-num" style="font-family: 'Figtree';">02 — Capital</div><div class="mini-h3" style="font-family: 'Figtree';">If you're raising capital</div><div class="mini-p" style="font-family: 'Figtree';">We turn capital raising into a science.</div><div class="mini-btn" style="font-family: 'Figtree';">See How We Attract LPs</div></div>
+        </div>
+    </div>
+
+    <div class="section-label">Readability-first — designed for clarity</div>
+
+    <div class="font-card">
+        <div class="font-header">
+            <div class="font-name">Lexend</div>
+            <div class="font-why">Designed for reading ease. Wide, open, clear. Strong at body and headline.</div>
+        </div>
+        <div class="font-label" style="font-family: 'Lexend';">THE PROCESS</div>
+        <div class="font-hero" style="font-family: 'Lexend';">We help businesses scale with paid advertising.</div>
+        <div class="font-h2" style="font-family: 'Lexend';">A predictable pipeline of interested investors.</div>
+        <div class="font-body" style="font-family: 'Lexend';">We take a hands-on marketing approach to scaling education businesses and raising capital for funds with paid advertising.</div>
+        <div class="mini">
+            <div class="mini-card"><div class="mini-num" style="font-family: 'Lexend';">01 — Education</div><div class="mini-h3" style="font-family: 'Lexend';">If you're selling education</div><div class="mini-p" style="font-family: 'Lexend';">Then you need a system, not just a launch.</div><div class="mini-btn" style="font-family: 'Lexend';">See How We Scale Edu.</div></div>
+            <div class="mini-card"><div class="mini-num" style="font-family: 'Lexend';">02 — Capital</div><div class="mini-h3" style="font-family: 'Lexend';">If you're raising capital</div><div class="mini-p" style="font-family: 'Lexend';">We turn capital raising into a science.</div><div class="mini-btn" style="font-family: 'Lexend';">See How We Attract LPs</div></div>
+        </div>
+    </div>
+
+    <div class="font-card">
+        <div class="font-header">
+            <div class="font-name">Albert Sans</div>
+            <div class="font-why">Geometric, neutral, slightly narrower than Inter. Crisp and efficient.</div>
+        </div>
+        <div class="font-label" style="font-family: 'Albert Sans';">THE PROCESS</div>
+        <div class="font-hero" style="font-family: 'Albert Sans';">We help businesses scale with paid advertising.</div>
+        <div class="font-h2" style="font-family: 'Albert Sans';">A predictable pipeline of interested investors.</div>
+        <div class="font-body" style="font-family: 'Albert Sans';">We take a hands-on marketing approach to scaling education businesses and raising capital for funds with paid advertising.</div>
+        <div class="mini">
+            <div class="mini-card"><div class="mini-num" style="font-family: 'Albert Sans';">01 — Education</div><div class="mini-h3" style="font-family: 'Albert Sans';">If you're selling education</div><div class="mini-p" style="font-family: 'Albert Sans';">Then you need a system, not just a launch.</div><div class="mini-btn" style="font-family: 'Albert Sans';">See How We Scale Edu.</div></div>
+            <div class="mini-card"><div class="mini-num" style="font-family: 'Albert Sans';">02 — Capital</div><div class="mini-h3" style="font-family: 'Albert Sans';">If you're raising capital</div><div class="mini-p" style="font-family: 'Albert Sans';">We turn capital raising into a science.</div><div class="mini-btn" style="font-family: 'Albert Sans';">See How We Attract LPs</div></div>
+        </div>
+    </div>
+
+    <div class="font-card">
+        <div class="font-header">
+            <div class="font-name">Onest</div>
+            <div class="font-why">Rounded, friendly, slightly playful. Stands out without being loud.</div>
+        </div>
+        <div class="font-label" style="font-family: 'Onest';">THE PROCESS</div>
+        <div class="font-hero" style="font-family: 'Onest';">We help businesses scale with paid advertising.</div>
+        <div class="font-h2" style="font-family: 'Onest';">A predictable pipeline of interested investors.</div>
+        <div class="font-body" style="font-family: 'Onest';">We take a hands-on marketing approach to scaling education businesses and raising capital for funds with paid advertising.</div>
+        <div class="mini">
+            <div class="mini-card"><div class="mini-num" style="font-family: 'Onest';">01 — Education</div><div class="mini-h3" style="font-family: 'Onest';">If you're selling education</div><div class="mini-p" style="font-family: 'Onest';">Then you need a system, not just a launch.</div><div class="mini-btn" style="font-family: 'Onest';">See How We Scale Edu.</div></div>
+            <div class="mini-card"><div class="mini-num" style="font-family: 'Onest';">02 — Capital</div><div class="mini-h3" style="font-family: 'Onest';">If you're raising capital</div><div class="mini-p" style="font-family: 'Onest';">We turn capital raising into a science.</div><div class="mini-btn" style="font-family: 'Onest';">See How We Attract LPs</div></div>
+        </div>
+    </div>
+
+    <div class="section-label">Classics — proven, widely used</div>
+
+    <div class="font-card">
+        <div class="font-header">
+            <div class="font-name">Poppins</div>
+            <div class="font-why">Geometric, round, clean. One of the most popular Google Fonts. Solid everywhere.</div>
+        </div>
+        <div class="font-label" style="font-family: 'Poppins';">THE PROCESS</div>
+        <div class="font-hero" style="font-family: 'Poppins';">We help businesses scale with paid advertising.</div>
+        <div class="font-h2" style="font-family: 'Poppins';">A predictable pipeline of interested investors.</div>
+        <div class="font-body" style="font-family: 'Poppins';">We take a hands-on marketing approach to scaling education businesses and raising capital for funds with paid advertising.</div>
+        <div class="mini">
+            <div class="mini-card"><div class="mini-num" style="font-family: 'Poppins';">01 — Education</div><div class="mini-h3" style="font-family: 'Poppins';">If you're selling education</div><div class="mini-p" style="font-family: 'Poppins';">Then you need a system, not just a launch.</div><div class="mini-btn" style="font-family: 'Poppins';">See How We Scale Edu.</div></div>
+            <div class="mini-card"><div class="mini-num" style="font-family: 'Poppins';">02 — Capital</div><div class="mini-h3" style="font-family: 'Poppins';">If you're raising capital</div><div class="mini-p" style="font-family: 'Poppins';">We turn capital raising into a science.</div><div class="mini-btn" style="font-family: 'Poppins';">See How We Attract LPs</div></div>
+        </div>
+    </div>
+
+    <div class="font-card">
+        <div class="font-header">
+            <div class="font-name">Montserrat</div>
+            <div class="font-why">Classic geometric. Strong headlines, wide set. The OG modern sans.</div>
+        </div>
+        <div class="font-label" style="font-family: 'Montserrat';">THE PROCESS</div>
+        <div class="font-hero" style="font-family: 'Montserrat';">We help businesses scale with paid advertising.</div>
+        <div class="font-h2" style="font-family: 'Montserrat';">A predictable pipeline of interested investors.</div>
+        <div class="font-body" style="font-family: 'Montserrat';">We take a hands-on marketing approach to scaling education businesses and raising capital for funds with paid advertising.</div>
+        <div class="mini">
+            <div class="mini-card"><div class="mini-num" style="font-family: 'Montserrat';">01 — Education</div><div class="mini-h3" style="font-family: 'Montserrat';">If you're selling education</div><div class="mini-p" style="font-family: 'Montserrat';">Then you need a system, not just a launch.</div><div class="mini-btn" style="font-family: 'Montserrat';">See How We Scale Edu.</div></div>
+            <div class="mini-card"><div class="mini-num" style="font-family: 'Montserrat';">02 — Capital</div><div class="mini-h3" style="font-family: 'Montserrat';">If you're raising capital</div><div class="mini-p" style="font-family: 'Montserrat';">We turn capital raising into a science.</div><div class="mini-btn" style="font-family: 'Montserrat';">See How We Attract LPs</div></div>
+        </div>
+    </div>
+
+    <div class="font-card">
+        <div class="font-header">
+            <div class="font-name">Instrument Sans</div>
+            <div class="font-why">Narrow, efficient, professional. Like Inter's sharper cousin.</div>
+        </div>
+        <div class="font-label" style="font-family: 'Instrument Sans';">THE PROCESS</div>
+        <div class="font-hero" style="font-family: 'Instrument Sans';">We help businesses scale with paid advertising.</div>
+        <div class="font-h2" style="font-family: 'Instrument Sans';">A predictable pipeline of interested investors.</div>
+        <div class="font-body" style="font-family: 'Instrument Sans';">We take a hands-on marketing approach to scaling education businesses and raising capital for funds with paid advertising.</div>
+        <div class="mini">
+            <div class="mini-card"><div class="mini-num" style="font-family: 'Instrument Sans';">01 — Education</div><div class="mini-h3" style="font-family: 'Instrument Sans';">If you're selling education</div><div class="mini-p" style="font-family: 'Instrument Sans';">Then you need a system, not just a launch.</div><div class="mini-btn" style="font-family: 'Instrument Sans';">See How We Scale Edu.</div></div>
+            <div class="mini-card"><div class="mini-num" style="font-family: 'Instrument Sans';">02 — Capital</div><div class="mini-h3" style="font-family: 'Instrument Sans';">If you're raising capital</div><div class="mini-p" style="font-family: 'Instrument Sans';">We turn capital raising into a science.</div><div class="mini-btn" style="font-family: 'Instrument Sans';">See How We Attract LPs</div></div>
+        </div>
+    </div>
+
+    <div style="text-align: center; padding: 40px 0; font-size: 0.8rem; color: #999;">
+        Pick one. The site is currently running Inter — I'll swap in whatever you choose.
+    </div>
+</div>
+</body>
+</html>

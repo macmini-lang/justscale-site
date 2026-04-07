@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Shortlist — Round 2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Schoolbell&family=Covered+By+Your+Grace&family=Gloria+Hallelujah&family=Gaegu:wght@400;700&family=Handlee&family=Short+Stack&family=Sriracha&family=Sue+Ellen+Francisco&family=Swanky+and+Moo+Moo&family=Walter+Turncoat&family=Neucha&family=Pangolin&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #FFFFFF;
+            color: #111;
+            background-image: radial-gradient(circle, rgba(0,0,0,0.10) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 28px; }
+        h1 { font-size: 1.4rem; font-weight: 700; margin-bottom: 4px; font-family: Inter, sans-serif; }
+        .subtitle { font-size: 0.85rem; color: #999; margin-bottom: 16px; font-family: Inter, sans-serif; }
+        .picks { font-size: 0.8rem; color: #555; margin-bottom: 48px; font-family: Inter, sans-serif; padding: 12px 16px; background: #F7F7F7; border-radius: 8px; border: 2px solid rgba(0,0,0,0.08); }
+
+        .section-label {
+            font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em;
+            text-transform: uppercase; color: #999; margin: 40px 0 16px;
+            font-family: Inter, sans-serif;
+        }
+
+        .font-card {
+            border: 2px solid rgba(0,0,0,0.16);
+            border-radius: 14px;
+            padding: 32px;
+            margin-bottom: 20px;
+            background: #fff;
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 28px;
+            align-items: start;
+            transition: border-color 0.2s;
+        }
+        .font-card:hover { border-color: rgba(0,0,0,0.35); }
+        .font-card.fav { border-color: #111; border-width: 3px; }
+
+        .font-meta { font-family: Inter, sans-serif; }
+        .font-name { font-size: 0.85rem; font-weight: 700; margin-bottom: 4px; }
+        .font-vibe { font-size: 0.72rem; color: #777; line-height: 1.5; }
+
+        .font-samples {}
+        .font-hero {
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            line-height: 1.3;
+            margin-bottom: 16px;
+            color: #111;
+        }
+        .font-section {
+            font-size: 1.35rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            color: #111;
+        }
+        .font-card-title {
+            font-size: 1.05rem;
+            line-height: 1.35;
+            color: #333;
+            margin-bottom: 12px;
+        }
+        .font-body {
+            font-family: Inter, sans-serif;
+            font-size: 0.85rem;
+            color: #777;
+            line-height: 1.6;
+        }
+
+        /* Mini preview card to show how it looks in a real component */
+        .mini-card {
+            border: 2px solid rgba(0,0,0,0.16);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 16px;
+            background: #fff;
+            max-width: 340px;
+        }
+        .mini-num {
+            font-size: 0.6rem; font-weight: 600; letter-spacing: 0.1em;
+            text-transform: uppercase; color: #999; margin-bottom: 8px;
+            font-family: Inter, sans-serif;
+        }
+        .mini-h3 { font-size: 1.05rem; color: #111; margin-bottom: 6px; }
+        .mini-p { font-family: Inter, sans-serif; font-size: 0.8rem; color: #777; line-height: 1.6; }
+
+        @media (max-width: 640px) {
+            .font-card { grid-template-columns: 1fr; gap: 16px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Round 2 — Your top 3 + 9 in the same zone</h1>
+    <p class="subtitle">Schoolbell, Covered By Your Grace, Gloria Hallelujah — plus 9 more that live in the same space.</p>
+    <div class="picks">Your picks share: natural print (not cursive), slightly imperfect, readable at headline size, personality without being gimmicky. Every font below fits that profile.</div>
+
+    <div class="section-label">Your top 3 picks</div>
+
+    <!-- SCHOOLBELL -->
+    <div class="font-card fav">
+        <div class="font-meta">
+            <div class="font-name">Schoolbell</div>
+            <div class="font-vibe">Simple, clean print. Unassuming. Reads fast. Like neat whiteboard notes.</div>
+        </div>
+        <div class="font-samples">
+            <div class="font-hero" style="font-family: 'Schoolbell', cursive;">We help businesses scale with paid advertising.</div>
+            <div class="font-section" style="font-family: 'Schoolbell', cursive;">A predictable pipeline of interested investors.</div>
+            <div class="mini-card">
+                <div class="mini-num">01 — Education</div>
+                <div class="mini-h3" style="font-family: 'Schoolbell', cursive;">If you're selling education</div>
+                <div class="mini-p">Then you need a system, not just a launch. We use direct response advertising to predictably scale.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- COVERED BY YOUR GRACE -->
+    <div class="font-card fav">
+        <div class="font-meta">
+            <div class="font-name">Covered By Your Grace</div>
+            <div class="font-vibe">Fast, tilted, urgent. Like ideas mid-conversation. Has forward energy.</div>
+        </div>
+        <div class="font-samples">
+            <div class="font-hero" style="font-family: 'Covered By Your Grace', cursive;">We help businesses scale with paid advertising.</div>
+            <div class="font-section" style="font-family: 'Covered By Your Grace', cursive;">A predictable pipeline of interested investors.</div>
+            <div class="mini-card">
+                <div class="mini-num">01 — Education</div>
+                <div class="mini-h3" style="font-family: 'Covered By Your Grace', cursive;">If you're selling education</div>
+                <div class="mini-p">Then you need a system, not just a launch. We use direct response advertising to predictably scale.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- GLORIA HALLELUJAH -->
+    <div class="font-card fav">
+        <div class="font-meta">
+            <div class="font-name">Gloria Hallelujah</div>
+            <div class="font-vibe">Bold sketch strokes. Playful but punchy. Whiteboard brainstorm energy.</div>
+        </div>
+        <div class="font-samples">
+            <div class="font-hero" style="font-family: 'Gloria Hallelujah', cursive;">We help businesses scale with paid advertising.</div>
+            <div class="font-section" style="font-family: 'Gloria Hallelujah', cursive;">A predictable pipeline of interested investors.</div>
+            <div class="mini-card">
+                <div class="mini-num">01 — Education</div>
+                <div class="mini-h3" style="font-family: 'Gloria Hallelujah', cursive;">If you're selling education</div>
+                <div class="mini-p">Then you need a system, not just a launch. We use direct response advertising to predictably scale.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-label">Same zone — 9 more to consider</div>
+
+    <!-- GAEGU -->
+    <div class="font-card">
+        <div class="font-meta">
+            <div class="font-name">Gaegu</div>
+            <div class="font-vibe">Korean-influenced print. Rounded, warm, slightly wobbly. Friendly and approachable.</div>
+        </div>
+        <div class="font-samples">
+            <div class="font-hero" style="font-family: 'Gaegu', cursive; font-weight: 700;">We help businesses scale with paid advertising.</div>
+            <div class="font-section" style="font-family: 'Gaegu', cursive; font-weight: 700;">A predictable pipeline of interested investors.</div>
+            <div class="mini-card">
+                <div class="mini-num">01 — Education</div>
+                <div class="mini-h3" style="font-family: 'Gaegu', cursive; font-weight: 700;">If you're selling education</div>
+                <div class="mini-p">Then you need a system, not just a launch. We use direct response advertising to predictably scale.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HANDLEE -->
+    <div class="font-card">
+        <div class="font-meta">
+            <div class="font-name">Handlee</div>
+            <div class="font-vibe">Smooth, flowing print. More polished than Schoolbell but still hand-drawn. Good middle ground.</div>
+        </div>
+        <div class="font-samples">
+            <div class="font-hero" style="font-family: 'Handlee', cursive;">We help businesses scale with paid advertising.</div>
+            <div class="font-section" style="font-family: 'Handlee', cursive;">A predictable pipeline of interested investors.</div>
+            <div class="mini-card">
+                <div class="mini-num">01 — Education</div>
+                <div class="mini-h3" style="font-family: 'Handlee', cursive;">If you're selling education</div>
+                <div class="mini-p">Then you need a system, not just a launch. We use direct response advertising to predictably scale.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SHORT STACK -->
+    <div class="font-card">
+        <div class="font-meta">
+            <div class="font-name">Short Stack</div>
+            <div class="font-vibe">Chunky, rounded print. Like writing with a thick marker. Strong presence at any size.</div>
+        </div>
+        <div class="font-samples">
+            <div class="font-hero" style="font-family: 'Short Stack', cursive;">We help businesses scale with paid advertising.</div>
+            <div class="font-section" style="font-family: 'Short Stack', cursive;">A predictable pipeline of interested investors.</div>
+            <div class="mini-card">
+                <div class="mini-num">01 — Education</div>
+                <div class="mini-h3" style="font-family: 'Short Stack', cursive;">If you're selling education</div>
+                <div class="mini-p">Then you need a system, not just a launch. We use direct response advertising to predictably scale.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SRIRACHA -->
+    <div class="font-card">
+        <div class="font-meta">
+            <div class="font-name">Sriracha</div>
+            <div class="font-vibe">Thick brush strokes. Bold, slightly slanted. Like writing fast with a fat marker. Has swagger.</div>
+        </div>
+        <div class="font-samples">
+            <div class="font-hero" style="font-family: 'Sriracha', cursive;">We help businesses scale with paid advertising.</div>
+            <div class="font-section" style="font-family: 'Sriracha', cursive;">A predictable pipeline of interested investors.</div>
+            <div class="mini-card">
+                <div class="mini-num">01 — Education</div>
+                <div class="mini-h3" style="font-family: 'Sriracha', cursive;">If you're selling education</div>
+                <div class="mini-p">Then you need a system, not just a launch. We use direct response advertising to predictably scale.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SUE ELLEN FRANCISCO -->
+    <div class="font-card">
+        <div class="font-meta">
+            <div class="font-name">Sue Ellen Francisco</div>
+            <div class="font-vibe">Tall, narrow, casual print. Like quick notes on a legal pad. Efficient energy.</div>
+        </div>
+        <div class="font-samples">
+            <div class="font-hero" style="font-family: 'Sue Ellen Francisco', cursive;">We help businesses scale with paid advertising.</div>
+            <div class="font-section" style="font-family: 'Sue Ellen Francisco', cursive;">A predictable pipeline of interested investors.</div>
+            <div class="mini-card">
+                <div class="mini-num">01 — Education</div>
+                <div class="mini-h3" style="font-family: 'Sue Ellen Francisco', cursive;">If you're selling education</div>
+                <div class="mini-p">Then you need a system, not just a launch. We use direct response advertising to predictably scale.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SWANKY AND MOO MOO -->
+    <div class="font-card">
+        <div class="font-meta">
+            <div class="font-name">Swanky and Moo Moo</div>
+            <div class="font-vibe">Loose, sketchy, imperfect. Like drawing letters instead of writing them. Most raw option.</div>
+        </div>
+        <div class="font-samples">
+            <div class="font-hero" style="font-family: 'Swanky and Moo Moo', cursive;">We help businesses scale with paid advertising.</div>
+            <div class="font-section" style="font-family: 'Swanky and Moo Moo', cursive;">A predictable pipeline of interested investors.</div>
+            <div class="mini-card">
+                <div class="mini-num">01 — Education</div>
+                <div class="mini-h3" style="font-family: 'Swanky and Moo Moo', cursive;">If you're selling education</div>
+                <div class="mini-p">Then you need a system, not just a launch. We use direct response advertising to predictably scale.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WALTER TURNCOAT -->
+    <div class="font-card">
+        <div class="font-meta">
+            <div class="font-name">Walter Turncoat</div>
+            <div class="font-vibe">Sketchy, slightly messy. Comic-book feel. Between Gloria Hallelujah and Schoolbell.</div>
+        </div>
+        <div class="font-samples">
+            <div class="font-hero" style="font-family: 'Walter Turncoat', cursive;">We help businesses scale with paid advertising.</div>
+            <div class="font-section" style="font-family: 'Walter Turncoat', cursive;">A predictable pipeline of interested investors.</div>
+            <div class="mini-card">
+                <div class="mini-num">01 — Education</div>
+                <div class="mini-h3" style="font-family: 'Walter Turncoat', cursive;">If you're selling education</div>
+                <div class="mini-p">Then you need a system, not just a launch. We use direct response advertising to predictably scale.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NEUCHA -->
+    <div class="font-card">
+        <div class="font-meta">
+            <div class="font-name">Neucha</div>
+            <div class="font-vibe">Clean, slightly tilted print. Russian/European feel. Confident, no-nonsense handwriting.</div>
+        </div>
+        <div class="font-samples">
+            <div class="font-hero" style="font-family: 'Neucha', cursive;">We help businesses scale with paid advertising.</div>
+            <div class="font-section" style="font-family: 'Neucha', cursive;">A predictable pipeline of interested investors.</div>
+            <div class="mini-card">
+                <div class="mini-num">01 — Education</div>
+                <div class="mini-h3" style="font-family: 'Neucha', cursive;">If you're selling education</div>
+                <div class="mini-p">Then you need a system, not just a launch. We use direct response advertising to predictably scale.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PANGOLIN -->
+    <div class="font-card">
+        <div class="font-meta">
+            <div class="font-name">Pangolin</div>
+            <div class="font-vibe">Warm, rounded, consistent. Like careful handwriting with a good pen. Most readable of the batch.</div>
+        </div>
+        <div class="font-samples">
+            <div class="font-hero" style="font-family: 'Pangolin', cursive;">We help businesses scale with paid advertising.</div>
+            <div class="font-section" style="font-family: 'Pangolin', cursive;">A predictable pipeline of interested investors.</div>
+            <div class="mini-card">
+                <div class="mini-num">01 — Education</div>
+                <div class="mini-h3" style="font-family: 'Pangolin', cursive;">If you're selling education</div>
+                <div class="mini-p">Then you need a system, not just a launch. We use direct response advertising to predictably scale.</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center; padding: 40px 0; font-size: 0.8rem; color: #999;">
+        Pick one (or two — one for headlines, one for card titles) and I'll swap it in.
+    </div>
+</div>
+</body>
+</html>
