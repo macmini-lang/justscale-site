@@ -1,6 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="36" height="32" viewBox="0 0 36 32">
-  <polygon points="1,1 35,1 18,30" fill="#111111"/>
-  <line x1="5.5" y1="7" x2="30.5" y2="7" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
-  <line x1="9" y1="13" x2="27" y2="13" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
-  <line x1="12.5" y1="19" x2="23.5" y2="19" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="44" viewBox="0 0 40 44">
+  <!-- Tier 1: widest, thick -->
+  <polygon points="1,0 39,0 34,8 6,8" fill="#111111"/>
+  <!-- Tier 2 -->
+  <polygon points="7,10.5 33,10.5 28.5,18.5 11.5,18.5" fill="#111111"/>
+  <!-- Tier 3: narrowest tier -->
+  <polygon points="12.5,21 27.5,21 24,29 16,29" fill="#111111"/>
+  <!-- Spout: small square, gap above -->
+  <rect x="16.5" y="33" width="7" height="7" fill="#111111"/>
 </svg>
