@@ -1,6 +1,5 @@
-<svg width="36" height="32" viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Funnel icon matching YouTube @zacregan banner exactly -->
-  <path d="M1 1 L18 30 L35 1 Z" fill="#111111"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="32" viewBox="0 0 36 32">
+  <polygon points="1,1 35,1 18,30" fill="#111111"/>
   <line x1="5.5" y1="7" x2="30.5" y2="7" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
   <line x1="9" y1="13" x2="27" y2="13" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
   <line x1="12.5" y1="19" x2="23.5" y2="19" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
