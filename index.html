@@ -17,6 +17,55 @@
         /* Index: tighten hero so cards show above the fold */
         .hero { min-height: auto; padding: 140px 28px 48px; }
         .cards-section { padding-top: 0; }
+
+        /* 3-card row layout (desktop) */
+        .cards-section .cards-grid {
+            grid-template-columns: repeat(3, 1fr);
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        /* Tablet: 2 on top, 1 centered below (inverse triangle) */
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .cards-section .cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .cards-section .cards-grid .card:nth-child(3) {
+                grid-column: 1 / -1;
+                max-width: calc(50% - 9px);
+                justify-self: center;
+            }
+        }
+
+        /* Mobile: single column */
+        @media (max-width: 768px) {
+            .cards-section .cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Service card icon — prominent, not floated */
+        .cards-section .card .card-icon {
+            float: none;
+            width: 48px;
+            height: 48px;
+            margin: 0 0 20px 0;
+            padding: 10px;
+            background: rgba(0,0,0,0.04);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .cards-section .card .card-icon svg {
+            width: 26px;
+            height: 26px;
+            stroke: #111111;
+        }
+        .cards-section .card .card-num {
+            clear: both;
+            margin-bottom: 8px;
+        }
     </style>
 </head>
 <body>
