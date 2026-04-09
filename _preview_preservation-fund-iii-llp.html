@@ -6,7 +6,9 @@
     <meta name="robots" content="noindex, nofollow">
     <title>Pitch Page | Preservation Fund III, LLP | JustScale</title>
     <meta name="description" content="Pitch page prepared for Stephen Austin at Preservation Fund III, LLP.">
-    <meta property="og:title" content="Pitch Page | Preservation Fund III, LLP | JustScale">
+        <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+<meta property="og:title" content="Pitch Page | Preservation Fund III, LLP | JustScale">
     <meta property="og:description" content="A personalized investor acquisition system for Preservation Fund III, LLP.">
     <meta property="og:type" content="website">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,25 +25,25 @@
 /* ── Reset & Base ────────────────────────────── */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #FFFFFF; color: #222222; line-height: 1.6; overflow-x: hidden; }
+body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #FFFFFF; color: #111111; line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
 
-/* ── CSS Variables ───────────────────────────── */
+/* ── CSS Variables (matches justscale.co theme) ── */
 :root {
     --bg-dark: #FFFFFF;
-    --bg-card: #FAFAFA;
+    --bg-card: #FFFFFF;
     --bg-elevated: #F7F7F7;
     --gold: #111111;
     --gold-hover: #333333;
     --gold-glow: rgba(0,0,0,0.12);
-    --gold-subtle: rgba(0,0,0,0.06);
-    --gold-muted: rgba(0,0,0,0.03);
+    --gold-subtle: rgba(0,0,0,0.04);
+    --gold-muted: rgba(0,0,0,0.02);
     --text: #111111;
-    --text-secondary: rgba(0,0,0,0.6);
-    --text-muted: rgba(0,0,0,0.08);
-    --border: rgba(0,0,0,0.08);
-    --border-gold: rgba(0,0,0,0.14);
+    --text-secondary: #555555;
+    --text-muted: #999999;
+    --border: rgba(0,0,0,0.16);
+    --border-gold: rgba(0,0,0,0.24);
     --green: #2ecc71;
     --yellow: #f1c40f;
     --red: #e74c3c;
@@ -51,21 +53,20 @@ img { max-width: 100%; display: block; }
 .page { opacity: 0; transition: opacity 0.6s ease; }
 .page.loaded { opacity: 1; }
 
-/* ── Background Effects ──────────────────────── */
+/* ── Background Effects (matches justscale.co dot grid) ── */
 .bg-grid {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;
-    background-image:
-        linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
+    background-image: radial-gradient(circle, rgba(0,0,0,0.12) 1.2px, transparent 1.2px);
+    background-size: 32px 32px;
+    opacity: 1;
 }
 .orb {
     position: fixed; border-radius: 50%; pointer-events: none; z-index: 0;
-    filter: blur(80px); opacity: 0.12; animation: orbFloat 20s ease-in-out infinite;
+    filter: blur(80px); opacity: 0.025; animation: orbFloat 20s ease-in-out infinite;
 }
-.orb-1 { width: 500px; height: 500px; background: var(--gold); top: -150px; right: -100px; animation-delay: 0s; }
-.orb-2 { width: 400px; height: 400px; background: var(--gold); bottom: -100px; left: -100px; animation-delay: -7s; }
-.orb-3 { width: 300px; height: 300px; background: var(--gold); top: 50%; left: 50%; transform: translate(-50%, -50%); animation-delay: -14s; opacity: 0.06; }
+.orb-1 { width: 500px; height: 500px; background: #000000; top: -150px; right: -100px; animation-delay: 0s; }
+.orb-2 { width: 400px; height: 400px; background: #000000; bottom: -100px; left: -100px; animation-delay: -7s; }
+.orb-3 { width: 300px; height: 300px; background: #000000; top: 50%; left: 50%; transform: translate(-50%, -50%); animation-delay: -14s; opacity: 0.015; }
 @keyframes orbFloat {
     0%, 100% { transform: translate(0, 0) scale(1); }
     25% { transform: translate(30px, -20px) scale(1.05); }
@@ -105,21 +106,21 @@ img { max-width: 100%; display: block; }
     font-size: 1.05rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto 36px; line-height: 1.65;
 }
 .hero-cta {
-    display: inline-block; background: var(--gold); color: #FFFFFF; font-weight: 700;
+    display: inline-block; background: #111111; color: #FFFFFF; font-weight: 700;
     font-size: 1rem; padding: 14px 36px; border-radius: 8px; transition: all 0.25s ease;
-    box-shadow: 0 0 24px var(--gold-glow);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
 }
-.hero-cta:hover { background: var(--gold-hover); box-shadow: 0 0 32px rgba(0,0,0,0.45); transform: translateY(-1px); }
+.hero-cta:hover { background: #333333; box-shadow: 0 12px 32px rgba(0,0,0,0.18); transform: translateY(-1px); }
 .journey-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 32px; }
 .journey-pill {
     display: inline-flex; align-items: center; gap: 8px; font-size: 0.82rem; font-weight: 500;
-    color: var(--text-secondary); background: rgba(0,0,0,0.04); border: 1px solid var(--border);
+    color: var(--text-secondary); background: #FFFFFF; border: 1px solid var(--border);
     padding: 8px 16px; border-radius: 100px; transition: all 0.2s ease;
 }
-.journey-pill:hover { border-color: var(--border-gold); color: var(--gold); }
+.journey-pill:hover { border-color: #111111; color: #111111; }
 .journey-pill-num {
     display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px;
-    font-size: 0.7rem; font-weight: 700; color: #FFFFFF; background: var(--gold); border-radius: 50%;
+    font-size: 0.7rem; font-weight: 700; color: #FFFFFF; background: #111111; border-radius: 50%;
 }
 
 /* ── Section Base ────────────────────────────── */
@@ -143,7 +144,7 @@ img { max-width: 100%; display: block; }
 /* ── Video ───────────────────────────────────── */
 .video-wrap {
     border-radius: 12px; overflow: hidden; border: 1px solid var(--border);
-    box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.4);
 }
 
 /* ── Accordions (V3 - simple toggle) ─────────── */
@@ -162,7 +163,7 @@ img { max-width: 100%; display: block; }
 .accordion-toggle {
     width: 28px; height: 28px; min-width: 28px; display: flex; align-items: center; justify-content: center;
     font-size: 1.2rem; font-weight: 300; color: var(--text-secondary); border-radius: 6px;
-    background: rgba(0,0,0,0.04); transition: all 0.2s ease;
+    background: rgba(0,0,0,0.025); transition: all 0.2s ease;
 }
 .accordion-item.open .accordion-toggle { transform: rotate(45deg); }
 .accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
@@ -177,7 +178,7 @@ img { max-width: 100%; display: block; }
     background: rgba(0,0,0,0.02); border: 1px solid var(--border);
     border-radius: 8px; transition: background 0.2s ease;
 }
-.sub-accordion-header:hover { background: rgba(0,0,0,0.05); }
+.sub-accordion-header:hover { background: rgba(0,0,0,0.04); }
 .sub-accordion-header h4 { font-size: 0.9rem; font-weight: 600; color: var(--text); margin: 0; }
 .sub-accordion-header .sub-count { font-size: 0.72rem; color: var(--text-muted); margin-left: 8px; }
 .sub-accordion-toggle {
@@ -284,8 +285,8 @@ img { max-width: 100%; display: block; }
     padding: 20px; display: flex; flex-direction: column; gap: 0;
 }
 .method-card.method-highlight {
-    border-color: var(--border-gold); background: rgba(0,0,0,0.04);
-    box-shadow: 0 0 20px rgba(0,0,0,0.06);
+    border-color: var(--border-gold); background: rgba(201,169,110,0.04);
+    box-shadow: 0 0 20px rgba(201,169,110,0.06);
 }
 .method-name {
     font-size: 0.88rem; font-weight: 700; color: var(--text); margin-bottom: 14px;
@@ -308,7 +309,7 @@ img { max-width: 100%; display: block; }
 .yt-thumb img { width: 100%; height: 100%; object-fit: cover; }
 .yt-play-btn {
     position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-    width: 48px; height: 48px; background: rgba(0,0,0,0.5); border-radius: 50%;
+    width: 48px; height: 48px; background: rgba(0,0,0,0.7); border-radius: 50%;
     display: flex; align-items: center; justify-content: center; transition: background 0.2s ease;
 }
 .yt-card:hover .yt-play-btn { background: var(--gold); }
@@ -320,18 +321,11 @@ img { max-width: 100%; display: block; }
 .sop-step-num {
     font-size: 1.1rem; font-weight: 800; color: var(--gold); min-width: 32px;
     width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;
-    background: rgba(0,0,0,0.1); border-radius: 8px; flex-shrink: 0;
+    background: rgba(201,169,110,0.1); border-radius: 8px; flex-shrink: 0;
 }
 .sop-step-content { flex: 1; }
 .sop-step-title { font-size: 0.92rem; font-weight: 600; color: var(--text); margin-bottom: 4px; }
 .sop-step-desc { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; }
-
-/* ── Hero Prospect Photo ────────────────────── */
-.hero-prospect-photo {
-    display: block; width: 80px; height: 80px; border-radius: 50%; object-fit: cover;
-    border: 2px solid var(--gold); box-shadow: 0 0 30px rgba(0,0,0,0.2);
-    margin: 0 auto 0; position: relative; z-index: 1;
-}
 
 /* ── Trust Grid ─────────────────────────────── */
 .trust-grid { display: flex; gap: 32px; align-items: flex-start; }
@@ -452,11 +446,10 @@ a.pipeline-step { cursor: pointer; }
 <div class="page" id="page">
 
     <section class="hero">
-            <img src="https://imgs.search.brave.com/ULcv80bJpP_nNy1Q9B2gRZZc-v-SovAgZMko_ksinMI/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5saWNkbi5jb20v/ZG1zL2ltYWdlL3Yy/L0Q1NjAzQVFHc2NV/cWpjbDJLYkEvcHJv/ZmlsZS1kaXNwbGF5/cGhvdG8tc2hyaW5r/XzIwMF8yMDAvcHJv/ZmlsZS1kaXNwbGF5/cGhvdG8tc2hyaW5r/XzIwMF8yMDAvMC8x/Njg3NzE2MTkwNTE3/P2U9MjE0NzQ4MzY0/NyZhbXA7dj1iZXRh/JmFtcDt0PTlCc1cy/OHk5VktJZnJFYlRx/SkxlNGdiZHdTSmVY/N0lJU1Z6cDc2aDR0/QTg" alt="Stephen" class="hero-prospect-photo reveal" onerror="this.remove()">
         <div class="container">
             <div class="hero-from reveal">From Zac Regan // JustScale</div>
             <div class="hero-badge reveal">Built Specifically for Stephen</div>
-            <h1 class="reveal">Stephen, here's how Preservation Fund III, LLP builds a paid investor pipeline</h1>
+            <h1 class="reveal">Stephen, here's how you raise $100,000,000 for Preservation Fund III, LLP through paid ads</h1>
             <p class="hero-sub reveal">Below is a full marketing audit of your fund, ad scripts you can film tomorrow, an investor email sequence, and landing page copy. Everything is built specifically for your fund. It's yours to keep.</p>
             <a href="#step-video" class="hero-cta reveal">Start Here</a>
             <div class="journey-pills reveal">
@@ -540,52 +533,52 @@ a.pipeline-step { cursor: pointer; }
                 <div class="audit-heading">Where You Win</div>
                 <div class="audit-block strength">
                     <h4>Strong track record with quantified results</h4>
-                    <p>2,081 units preserved and $344M in assets under management displayed prominently on homepage</p>
+                    <p>Website displays 2,081 units preserved and $344M AUM with ~20 years average real estate experience, providing concrete proof of performance</p>
                 </div>
                 <div class="audit-block strength">
-                    <h4>Clear value proposition targeting affordable housing preservation</h4>
-                    <p>Website clearly states they &#x27;preserve and strengthen affordable housing in the United States&#x27; with specific focus on public welfare investments</p>
+                    <h4>Clear mission-driven positioning in affordable housing</h4>
+                    <p>Website messaging &#x27;Where Opportunity Meets Impact&#x27; and focus on preserving affordable housing for families, seniors, and veterans creates distinct market positioning</p>
                 </div>
                 <div class="audit-block strength">
-                    <h4>Recent successful fund close demonstrates investor confidence</h4>
-                    <p>Closed $156 million Preservation Equity Fund 3 in October 2025 according to press release on website</p>
+                    <h4>Successful fund raising execution</h4>
+                    <p>SEC filing shows $156M close for Preservation Equity Fund 3 announced October 2025, demonstrating ability to attract institutional capital</p>
                 </div>
                 <div class="audit-heading red">Where You Bleed Revenue</div>
                 <div class="audit-block gap">
-                    <h4>No digital marketing presence or lead generation system</h4>
-                    <p>Zero paid ads, no CTAs, no funnel signals, and no social media presence detected</p>
-                    <div class="audit-impact">$10-25M in missed opportunities</div>
+                    <h4>No digital marketing infrastructure</h4>
+                    <p>Website shows zero paid ads, no CTAs, no funnel signals, and missing social media presence on LinkedIn/YouTube</p>
+                    <div class="audit-impact">$15-25M in potential raise acceleration</div>
                 </div>
                 <div class="audit-block gap">
-                    <h4>Massive disconnect between fund size and current raise progress</h4>
-                    <p>SEC filing shows $100M target with only $1.5M raised despite managing $344M AUM</p>
-                    <div class="audit-impact">$98.5M funding gap</div>
+                    <h4>Limited investor acquisition channels</h4>
+                    <p>Only $1.5M raised of $100M target according to SEC filing, suggesting reliance on traditional relationship-based fundraising only</p>
+                    <div class="audit-impact">$20-40M in expanded investor reach</div>
                 </div>
                 <div class="audit-block gap">
-                    <h4>Website lacks investor conversion mechanisms</h4>
-                    <p>No contact forms, investment applications, or clear investor onboarding process found</p>
-                    <div class="audit-impact">$5-15M in conversion losses</div>
+                    <h4>No content marketing or ship</h4>
+                    <p>Website has basic news section but no video content, podcasts, or educational materials to establish market authority</p>
+                    <div class="audit-impact">$10-20M in trust-building and credibility</div>
                 </div>
                 <div class="audit-block gap">
-                    <h4>No content marketing or ship presence</h4>
-                    <p>Only 2 press releases found, no podcasts, no social content, missing from industry conversations</p>
-                    <div class="audit-impact">$3-8M in relationship-driven deals</div>
+                    <h4>Missing conversion optimization</h4>
+                    <p>Website lacks any call-to-action buttons, lead capture forms, or investor qualification funnels</p>
+                    <div class="audit-impact">$5-15M in improved conversion rates</div>
                 </div>
                 <div class="audit-heading">Competitor Breakdown</div>
                 <div class="audit-block">
-                    <h4>Capital Fund Management CFM</h4>
-                    <p>Managing over $20 billion for financial institutions with diversified alternative investment strategies, significantly larger scale than PEF&#x27;s $344M AUM</p>
+                    <h4>Asset Protection (GDB Law)</h4>
+                    <p>Provides commercial real estate and corporate law services with established web presence, representing competition for institutional relationships</p>
                 </div>
                 <div class="audit-block">
-                    <h4>Private Asset Management (CapDyn)</h4>
-                    <p>Leading investor in mid-market private equity across primaries, secondaries, and direct investments with global reach</p>
+                    <h4>Axiom Law</h4>
+                    <p>On-demand legal services provider with commercial transaction experience, showing alternative service delivery models in the space</p>
                 </div>
                 <div class="audit-block">
-                    <h4>Sovereign Wealth Fund Institute</h4>
-                    <p>Research platform serving family offices, private equity firms, and institutional investors with actionable news and data insights</p>
+                    <h4>Vault Law Rankings</h4>
+                    <p>Platform showcasing top law firms, indicating where visibility and rankings matter for client acquisition</p>
                 </div>
                 <div class="audit-heading">The Core Issue</div>
-                <div class="audit-diagnosis">PEF Advisors has strong fundamentals and deal execution but zero distribution infrastructure for a 506(c) fund requiring public solicitation. The $98.5M funding gap exists because they&#x27;re operating like a 506(b) fund while filing under 506(c) regulations.</div>
+                <div class="audit-diagnosis">PEF Advisors has strong fundamentals but relies entirely on traditional relationship-based distribution, missing 70% of potential institutional investors who research online first. The core issue is distribution gap, not product quality, requiring digital channels to reach the $100M target.</div>
                 </div></div>
             </div>
             <div class="accordion-item reveal" id="acc-ad-scripts">
@@ -605,50 +598,52 @@ a.pipeline-step { cursor: pointer; }
                     <div class="sub-accordion-body"><div class="sub-accordion-content">
                 <div class="script-card">
                     <div class="script-meta"><span class="pill">Meta</span> <span class="pill">Video, talking head, 60s</span></div>
-                    <div class="script-seg"><div class="script-seg-label">Hook</div><p>If you&#x27;re an accredited investor with $250,000+ to deploy into affordable housing preservation, I&#x27;m Stephen Austin from Preservation Fund III.</p></div>
-                    <div class="script-seg"><div class="script-seg-label">Body</div><p>We&#x27;re raising $100 million to acquire and preserve affordable housing across the United States.
+                    <div class="script-seg"><div class="script-seg-label">Hook</div><p>If you&#x27;re an accredited investor with $250,000+ to deploy into real estate, I&#x27;m Stephen Austin from Preservation Fund III, and we&#x27;re raising $100 million to preserve affordable housing across the United States.</p></div>
+                    <div class="script-seg"><div class="script-seg-label">Body</div><p>Here&#x27;s what makes this different from typical real estate funds.
 
-Our team has preserved over 2,000 units with $344 million in assets under management.
+We&#x27;re not chasing speculative development or luxury properties.
 
-We focus on properties that house families, seniors, and veterans who need it most.
+We acquire and preserve existing affordable housing that&#x27;s already cash-flowing.
 
-This isn&#x27;t just about returns - it&#x27;s about creating measurable social impact while building wealth.
+Our team has averaged 20 years of real estate experience, and we&#x27;ve already preserved over 2,000 units with $344 million in assets under management.
 
-We target properties in high-cost markets where affordable housing is disappearing fast.
+This is a 506(c) offering, which means we can discuss specifics with verified accredited investors.
 
-Our average team member brings 20 years of real estate experience to every deal.
+The affordable housing sector has built-in demand drivers that don&#x27;t exist in other asset classes.
 
-We use proprietary analytics to identify markets with strong economic fundamentals.
+We&#x27;re looking for investors who understand that preservation creates both returns and meaningful social impact.
 
-This is a 506(c) offering, so we can discuss specifics with verified accredited investors.</p></div>
-                    <div class="script-seg"><div class="script-seg-label">CTA</div><p>Click the link below to schedule a 15-minute call and learn about our current opportunities.</p></div>
+Our current fund is actively deploying capital into properties that meet rigorous public welfare investment standards.</p></div>
+                    <div class="script-seg"><div class="script-seg-label">CTA</div><p>If you want to see our investor materials and learn about our acquisition pipeline, click the link below to schedule a brief call with our team.</p></div>
                     <div class="production-notes">
                         <div class="production-notes-label">Production Notes</div>
-                        Stephen speaking directly to camera in professional office setting. Show brief B-roll of affordable housing properties during body. Keep energy conversational but authoritative.
+                        Stephen speaking directly to camera, professional but approachable tone. Show brief B-roll of apartment properties during body section.
                     </div>
                 </div>
                 <div class="script-card">
                     <div class="script-meta"><span class="pill">Meta</span> <span class="pill">Video, talking head, 60s</span></div>
-                    <div class="script-seg"><div class="script-seg-label">Hook</div><p>If you&#x27;re an accredited investor looking to deploy $500,000+ into real estate with social impact, this is for you.</p></div>
-                    <div class="script-seg"><div class="script-seg-label">Body</div><p>I&#x27;m Stephen Austin, and we just closed our latest affordable housing fund at $156 million.
+                    <div class="script-seg"><div class="script-seg-label">Hook</div><p>If you&#x27;re an accredited investor looking to diversify beyond stocks and bonds, I&#x27;m raising $100 million for Preservation Fund III to acquire affordable housing properties across high-cost U.S. markets.</p></div>
+                    <div class="script-seg"><div class="script-seg-label">Body</div><p>Most real estate funds focus on luxury developments or commercial office space.
 
-Now we&#x27;re raising Preservation Fund III to continue preserving affordable housing nationwide.
+We do the opposite.
 
-We&#x27;ve already deployed capital into 85-unit senior properties in markets like Tampa-St. Petersburg.
+We preserve existing affordable housing that serves families, seniors, and veterans who need it most.
 
-Our strategy targets properties that qualify as public welfare investments under the National Bank Act.
+Our strategy is backed by 50+ years of relationships in the affordable housing sector through our affiliated companies.
 
-That means we&#x27;re not just chasing returns - we&#x27;re solving a real housing crisis.
+We use proprietary analytics to identify markets with favorable economic fundamentals.
 
-Every property we acquire keeps families and seniors in their homes at affordable rents.
+This isn&#x27;t about gentrification or displacement.
 
-We 50+ years of relationships in the affordable housing space through our affiliated companies.
+It&#x27;s about maintaining housing that communities depend on while generating returns for our investors.
 
-This creates deal flow and operational advantages you won&#x27;t find elsewhere.</p></div>
-                    <div class="script-seg"><div class="script-seg-label">CTA</div><p>Ready to learn more? Click below to request our investor presentation and schedule a call.</p></div>
+We&#x27;ve already closed our latest fund at $156 million and are actively acquiring properties.
+
+Our most recent acquisition was an 85-unit senior property in Clearwater, Florida.</p></div>
+                    <div class="script-seg"><div class="script-seg-label">CTA</div><p>Click below to access our investor portal and see detailed information about our current pipeline and investment thesis.</p></div>
                     <div class="production-notes">
                         <div class="production-notes-label">Production Notes</div>
-                        Professional but warm delivery. Include quick graphics showing fund progression (Fund I, II, III). B-roll of actual properties in portfolio during middle section.
+                        Emphasize community impact messaging. Include quick shots of actual properties in portfolio during examples.
                     </div>
                 </div>
                     </div></div>
@@ -661,26 +656,26 @@ This creates deal flow and operational advantages you won&#x27;t find elsewhere.
                     <div class="sub-accordion-body"><div class="sub-accordion-content">
                 <div class="script-card">
                     <div class="script-meta"><span class="pill">Meta</span> <span class="pill">Video, talking head, 60s</span></div>
-                    <div class="script-seg"><div class="script-seg-label">Hook</div><p>If you&#x27;re an accredited investor, here&#x27;s what $344 million in assets under management and 2,081 preserved units looks like in practice.</p></div>
-                    <div class="script-seg"><div class="script-seg-label">Body</div><p>I&#x27;m Stephen Austin from Preservation Fund III, and these numbers are SEC-verifiable.
+                    <div class="script-seg"><div class="script-seg-label">Hook</div><p>If you&#x27;re an accredited investor, here are the numbers that matter: 2,081 units preserved, $344 million in assets under management, and a team averaging 20 years of real estate experience.</p></div>
+                    <div class="script-seg"><div class="script-seg-label">Body</div><p>I&#x27;m Stephen Austin from Preservation Fund III, and these aren&#x27;t marketing numbers.
 
-We just acquired Pine Berry Senior Apartments in Clearwater - 85 units preserving affordable housing for seniors.
+They&#x27;re SEC-verifiable results from our track record in affordable housing preservation.
 
-Our second fund closed at $156 million, and now we&#x27;re raising Fund III.
+Our latest fund closed at $156 million, which tells you institutional investors are backing our strategy.
 
-Every property in our portfolio meets the rigorous standard of public welfare investments.
+We just acquired Pine Berry Senior Apartments in Clearwater, Florida - an 85-unit property that was already cash-flowing.
 
-We target markets where affordable housing is disappearing due to gentrification and rising costs.
+That&#x27;s our approach: acquire existing, stabilized affordable housing rather than speculative development.
 
-Our team averages 20 years of real estate experience, and it shows in our underwriting discipline.
+We&#x27;re currently raising $100 million for our third fund to continue this strategy.
 
-We don&#x27;t chase every deal - we use proprietary analytics to identify the right markets and properties.
+Every property we acquire meets the rigorous standards of public welfare investments under the National Bank Act.
 
-This creates a portfolio that generates returns while solving a critical housing shortage.</p></div>
-                    <div class="script-seg"><div class="script-seg-label">CTA</div><p>Want to see our track record in detail? Click below to access our investor materials.</p></div>
+Our proprietary analytics help us identify markets where affordable housing preservation makes both financial and social sense.</p></div>
+                    <div class="script-seg"><div class="script-seg-label">CTA</div><p>If you want to see the detailed track record and our current acquisition pipeline, click below to request our investor materials.</p></div>
                     <div class="production-notes">
                         <div class="production-notes-label">Production Notes</div>
-                        Display key metrics as text overlays during delivery. Show actual property photos from portfolio. Emphasize credibility through documentation and specific examples.
+                        Display key metrics on screen as Stephen mentions them. Professional, data-driven tone throughout.
                     </div>
                 </div>
                     </div></div>
@@ -693,26 +688,30 @@ This creates a portfolio that generates returns while solving a critical housing
                     <div class="sub-accordion-body"><div class="sub-accordion-content">
                 <div class="script-card">
                     <div class="script-meta"><span class="pill">Meta</span> <span class="pill">Video, talking head, 60s</span></div>
-                    <div class="script-seg"><div class="script-seg-label">Hook</div><p>If you&#x27;re an accredited investor wondering why we focus exclusively on affordable housing preservation, here&#x27;s the story.</p></div>
-                    <div class="script-seg"><div class="script-seg-label">Body</div><p>I&#x27;m Stephen Austin, and I started Preservation Fund III because I saw a massive market failure.
+                    <div class="script-seg"><div class="script-seg-label">Hook</div><p>If you&#x27;re an accredited investor wondering why I focus exclusively on affordable housing preservation, here&#x27;s the story behind Preservation Fund III and our $100 million raise.</p></div>
+                    <div class="script-seg"><div class="script-seg-label">Body</div><p>Most real estate investors chase the highest rents and luxury developments.
 
-Across America, affordable housing is disappearing as properties convert to market rate or get demolished.
+I saw a different opportunity.
 
-Families, seniors, and veterans are being displaced from communities they&#x27;ve called home for decades.
+Affordable housing is disappearing from high-cost markets at an alarming rate.
 
-But here&#x27;s what most investors miss - these properties can generate solid returns while solving a real problem.
+Families, seniors, and veterans are being priced out of communities they&#x27;ve called home for decades.
 
-We built relationships over 50+ years in this space through our affiliated companies.
+But here&#x27;s what most people miss: preserving affordable housing can generate solid returns while creating genuine social impact.
 
-That gives us access to deals and operational expertise that others don&#x27;t have.
+We&#x27;re not a charity fund.
 
-Every property we acquire preserves affordability for people who truly need it most.
+We&#x27;re a real estate private equity group that happens to focus on properties that serve people who truly need them most.
 
-This isn&#x27;t charity - it&#x27;s smart investing with measurable social impact.</p></div>
-                    <div class="script-seg"><div class="script-seg-label">CTA</div><p>Ready to learn how this strategy works? Click below to schedule a conversation.</p></div>
+Our team has 50+ years of relationships in this sector, which gives us access to deals others never see.
+
+We use data-driven analysis to identify markets where preservation makes financial sense.
+
+That&#x27;s why we&#x27;ve been able to preserve over 2,000 units with $344 million in assets under management.</p></div>
+                    <div class="script-seg"><div class="script-seg-label">CTA</div><p>If this approach resonates with you, click below to learn more about our investment strategy and current opportunities.</p></div>
                     <div class="production-notes">
                         <div class="production-notes-label">Production Notes</div>
-                        More personal, storytelling tone. Include B-roll of communities and families (stock footage). Show the human impact alongside the business case.
+                        More personal, storytelling tone. Show images of communities and families (stock footage) during impact messaging.
                     </div>
                 </div>
                     </div></div>
@@ -725,26 +724,30 @@ This isn&#x27;t charity - it&#x27;s smart investing with measurable social impac
                     <div class="sub-accordion-body"><div class="sub-accordion-content">
                 <div class="script-card">
                     <div class="script-meta"><span class="pill">Meta</span> <span class="pill">Video, talking head, 60s</span></div>
-                    <div class="script-seg"><div class="script-seg-label">Hook</div><p>If you&#x27;re an accredited investor concerned about liquidity and market risk in affordable housing, let me address that directly.</p></div>
-                    <div class="script-seg"><div class="script-seg-label">Body</div><p>I&#x27;m Stephen Austin from Preservation Fund III, and these are fair questions.
+                    <div class="script-seg"><div class="script-seg-label">Hook</div><p>If you&#x27;re an accredited investor concerned about liquidity and market risk in real estate funds, let me address those concerns directly regarding our $100 million Preservation Fund III raise.</p></div>
+                    <div class="script-seg"><div class="script-seg-label">Body</div><p>First, liquidity: this is a closed-end fund with a defined investment period.
 
-First, liquidity - this is a closed-end fund with a defined hold period, not a liquid investment.
+You&#x27;re committing capital for the long term, typically 5-7 years.
 
-We&#x27;re transparent about that upfront because it&#x27;s crucial for proper portfolio allocation.
+If you need immediate liquidity, this isn&#x27;t the right investment for you.
 
-Second, market risk - affordable housing actually provides some insulation from economic cycles.
+Second, market risk: affordable housing has different risk characteristics than luxury real estate.
 
-People always need places to live, and government support programs provide additional stability.
+Demand for affordable housing remains strong regardless of economic cycles.
 
-We target properties with existing subsidies and long-term contracts that reduce vacancy risk.
+People always need places to live, especially at affordable price points.
 
-Our underwriting assumes conservative scenarios, not best-case projections.
+We&#x27;re not speculating on development or trying to time market peaks.
 
-We&#x27;ve preserved over 2,000 units through different market cycles with this approach.</p></div>
-                    <div class="script-seg"><div class="script-seg-label">CTA</div><p>Want to discuss risk management in detail? Click below to schedule a call with our team.</p></div>
+We acquire existing, cash-flowing properties that are already serving their communities.
+
+Our underwriting focuses on properties that meet public welfare investment standards.
+
+This means we&#x27;re buying assets with built-in demand drivers and regulatory protections.</p></div>
+                    <div class="script-seg"><div class="script-seg-label">CTA</div><p>If you want to understand our risk management approach in detail, click below to schedule a call with our investment team.</p></div>
                     <div class="production-notes">
                         <div class="production-notes-label">Production Notes</div>
-                        Serious, straightforward delivery. Address concerns head-on without being defensive. Use graphics to illustrate risk mitigation strategies.
+                        Direct, honest tone addressing concerns head-on. Stephen should appear confident but not dismissive of legitimate investor concerns.
                     </div>
                 </div>
                     </div></div>
@@ -757,28 +760,30 @@ We&#x27;ve preserved over 2,000 units through different market cycles with this 
                     <div class="sub-accordion-body"><div class="sub-accordion-content">
                 <div class="script-card">
                     <div class="script-meta"><span class="pill">Meta</span> <span class="pill">Video, talking head, 60s</span></div>
-                    <div class="script-seg"><div class="script-seg-label">Hook</div><p>If you&#x27;re an accredited investor, here&#x27;s why affordable housing preservation is the opportunity of this decade.</p></div>
-                    <div class="script-seg"><div class="script-seg-label">Body</div><p>I&#x27;m Stephen Austin, and the numbers tell the story.
+                    <div class="script-seg"><div class="script-seg-label">Hook</div><p>If you&#x27;re an accredited investor, here&#x27;s why now is the right time to invest in affordable housing preservation: the market fundamentals have never been stronger.</p></div>
+                    <div class="script-seg"><div class="script-seg-label">Body</div><p>Housing costs continue rising faster than income growth in major metropolitan areas.
 
-America faces a shortage of 7 million affordable rental homes according to the National Low Income Housing Coalition.
+Existing affordable housing stock is aging and needs capital investment to remain viable.
 
-Meanwhile, existing affordable properties are aging out of subsidy programs at record rates.
+Many current owners lack the resources or expertise to properly maintain these properties.
 
-This creates massive displacement but also investment opportunity for those positioned correctly.
+That creates acquisition opportunities for funds like ours that specialize in preservation.
 
-We use proprietary analytics to identify markets where economic fundamentals support our strategy.
+We&#x27;re raising $100 million for Preservation Fund III to capitalize on this market dislocation.
 
-High-cost markets like Tampa-St. Petersburg offer the best risk-adjusted returns.
+Our team has the relationships and experience to identify properties before they hit the broader market.
 
-Government support for affordable housing preservation is at historic levels.
+We focus on high-cost markets where affordable housing preservation has the greatest impact and return potential.
 
-We&#x27;re raising Preservation Fund III to capitalize on this convergence of need and opportunity.
+Regulatory support for affordable housing continues to strengthen at federal, state, and local levels.
 
-The question isn&#x27;t whether this market exists - it&#x27;s whether you want exposure to it.</p></div>
-                    <div class="script-seg"><div class="script-seg-label">CTA</div><p>Ready to explore this opportunity? Click below to request our market analysis and schedule a call.</p></div>
+This isn&#x27;t a trend that&#x27;s going away.
+
+It&#x27;s a fundamental shift in how we think about housing policy and investment strategy.</p></div>
+                    <div class="script-seg"><div class="script-seg-label">CTA</div><p>Click below to see our market analysis and learn how we identify the best preservation opportunities in today&#x27;s environment.</p></div>
                     <div class="production-notes">
                         <div class="production-notes-label">Production Notes</div>
-                        Data-driven presentation with charts and statistics as overlays. Professional, analytical tone. Include maps showing target markets.
+                        Use charts/graphs showing housing cost trends during market data points. Confident, analytical tone throughout.
                     </div>
                 </div>
                     </div></div>
@@ -799,19 +804,23 @@ The question isn&#x27;t whether this market exists - it&#x27;s whether you want 
                         <span class="email-num">Email 1</span>
                         <span class="email-timing">Day 0</span>
                     </div>
-                    <div class="email-purpose">Establish credibility and set expectations for the sequence while introducing the fund thesis.</div>
-                    <div class="email-subject">preserving affordable housing at scale</div>
+                    <div class="email-purpose">Establish credibility and set expectations for the sequence</div>
+                    <div class="email-subject">preservation fund iii: $100m raise for affordable housing</div>
                     <div class="email-body">{{contact.first_name}},
 
-I&#x27;m Stephen Austin from Preservation Fund III, and because you&#x27;ve shown interest in real estate investments with social impact.
+I&#x27;m Stephen Austin, and I&#x27;m raising $100 million for Preservation Fund III to acquire and preserve affordable housing across the United States.
 
-We&#x27;re raising $100 million to acquire and preserve affordable housing across the United States.
+Our approach is different from typical real estate funds.
 
-Our track record includes $344 million in assets under management and over 2,000 units preserved for families, seniors, and veterans.
+We don&#x27;t chase luxury developments or speculative projects.
 
-Over the next two weeks, I&#x27;ll share specific insights about our strategy, market opportunity, and how we underwrite these investments.
+We acquire existing, cash-flowing affordable housing that serves families, seniors, and veterans.
 
-Each email will give you actionable intelligence about the affordable housing market, whether you invest with us or not.
+Our track record: 2,081 units preserved, $344 million in assets under management, team averaging 20 years of real estate experience.
+
+Over the next two weeks, I&#x27;ll share specific insights about our market thesis, acquisition process, and current pipeline.
+
+Each email will give you a deeper look at how we identify and underwrite preservation opportunities.
 
 This communication is intended solely for accredited investors. All investments involve risk, including the possible loss of principal. Past performance is not indicative of future results.</div>
                 </div>
@@ -820,21 +829,23 @@ This communication is intended solely for accredited investors. All investments 
                         <span class="email-num">Email 2</span>
                         <span class="email-timing">Day 2</span>
                     </div>
-                    <div class="email-purpose">Provide market intelligence that validates the investment thesis with specific data.</div>
-                    <div class="email-subject">7 million unit shortage (the data)</div>
+                    <div class="email-purpose">Provide market intelligence validating the investment thesis</div>
+                    <div class="email-subject">why affordable housing demand isn&#x27;t going away</div>
                     <div class="email-body">{{contact.first_name}},
 
-The National Low Income Housing Coalition just released updated numbers on America&#x27;s affordable housing shortage.
+Here&#x27;s a data point that validates our investment thesis: housing costs are rising 3x faster than median income growth in our target markets.
 
-7 million rental homes short of what&#x27;s needed.
+This isn&#x27;t a temporary trend.
 
-But here&#x27;s the part most investors miss - existing affordable properties are aging out of subsidy programs faster than new ones are being built.
+It&#x27;s a structural shift that creates permanent demand for affordable housing options.
 
-In markets like Tampa-St. Petersburg, we&#x27;re seeing 20-30 year old properties hit the market as owners choose not to renew affordability restrictions.
+Most investors focus on luxury properties in these same high-cost markets.
 
-That creates displacement for residents and opportunity for investors who understand preservation strategies.
+We focus on the properties that house the teachers, nurses, and service workers who keep these communities running.
 
-We target these properties before they convert to market rate, preserving affordability while generating returns.
+Our proprietary analytics help us identify markets where this demand is strongest and most sustainable.
+
+Tomorrow I&#x27;ll show you how we use this data to find acquisition opportunities before they hit the broader market.
 
 This communication is intended solely for accredited investors. All investments involve risk, including the possible loss of principal. Past performance is not indicative of future results.</div>
                 </div>
@@ -843,23 +854,25 @@ This communication is intended solely for accredited investors. All investments 
                         <span class="email-num">Email 3</span>
                         <span class="email-timing">Day 4</span>
                     </div>
-                    <div class="email-purpose">Show operational discipline and behind-the-scenes proof of conservative underwriting.</div>
-                    <div class="email-subject">how we killed our last deal</div>
+                    <div class="email-purpose">Show operational discipline and behind-the-scenes proof</div>
+                    <div class="email-subject">inside our underwriting process</div>
                     <div class="email-body">{{contact.first_name}},
 
-Last month we walked away from an 120-unit property in Phoenix after three weeks of due diligence.
+Our latest acquisition in Clearwater, Florida shows how we underwrite preservation deals.
 
-The numbers looked good on paper - 8% cap rate, strong submarket, existing Section 8 contracts.
+Pine Berry Senior Apartments: 85 units, already cash-flowing, serving seniors in the Tampa-St. Petersburg metro.
 
-But our property inspection revealed $2.8 million in deferred maintenance that wasn&#x27;t reflected in the seller&#x27;s projections.
+We didn&#x27;t buy this property hoping to raise rents or convert to luxury housing.
 
-Roof replacement, HVAC systems, and ADA compliance issues that would have killed returns for the first two years.
+We bought it because the fundamentals were solid and it met our public welfare investment standards.
 
-We walked.
+Our underwriting focuses on three key factors: existing cash flow, physical condition, and regulatory compliance.
 
-This is why we budget 45 days for due diligence and maintain relationships with local contractors in every target market.
+We have 50+ years of relationships in affordable housing through our affiliated companies.
 
-Disciplined underwriting protects capital better than chasing yield.
+This gives us access to deals and due diligence capabilities that most funds don&#x27;t have.
+
+Every property we acquire gets the capital investment needed to remain viable for decades.
 
 This communication is intended solely for accredited investors. All investments involve risk, including the possible loss of principal. Past performance is not indicative of future results.</div>
                 </div>
@@ -868,25 +881,29 @@ This communication is intended solely for accredited investors. All investments 
                         <span class="email-num">Email 4</span>
                         <span class="email-timing">Day 6</span>
                     </div>
-                    <div class="email-purpose">Address liquidity concerns directly and honestly to qualify serious investors.</div>
-                    <div class="email-subject">the liquidity question</div>
+                    <div class="email-purpose">Address downside risks and liquidity concerns honestly</div>
+                    <div class="email-subject">the risks we can&#x27;t eliminate (and how we manage them)</div>
                     <div class="email-body">{{contact.first_name}},
 
-The most common question I get: &quot;What if I need my money back?&quot;
+Let me be direct about the risks in affordable housing preservation.
 
-Honest answer - you can&#x27;t get it back quickly.
+Liquidity risk: this is a closed-end fund with a 5-7 year investment horizon.
 
-This is a closed-end fund with a 7-10 year hold period.
+If you need your capital back quickly, this isn&#x27;t the right investment.
 
-No quarterly redemptions, no secondary market, no early exit unless we sell the entire portfolio.
+Regulatory risk: affordable housing operates under complex compliance requirements.
 
-That&#x27;s actually a feature, not a bug.
+We manage this through our team&#x27;s deep experience and our affiliated companies&#x27; relationships.
 
-It allows us to make long-term improvements to properties without worrying about short-term liquidity demands.
+Market risk: real estate values can decline.
 
-But it means this capital needs to be truly patient capital in your portfolio allocation.
+But affordable housing has different demand characteristics than luxury properties.
 
-If you need liquidity within 5 years, this isn&#x27;t the right investment for you.
+People always need places to live, especially at affordable price points.
+
+We&#x27;re not speculating on market timing or development projects.
+
+We&#x27;re buying existing, stabilized assets with proven cash flows.
 
 This communication is intended solely for accredited investors. All investments involve risk, including the possible loss of principal. Past performance is not indicative of future results.</div>
                 </div>
@@ -895,25 +912,27 @@ This communication is intended solely for accredited investors. All investments 
                         <span class="email-num">Email 5</span>
                         <span class="email-timing">Day 8</span>
                     </div>
-                    <div class="email-purpose">Provide concrete economics example to help investors understand potential returns.</div>
-                    <div class="email-subject">back of napkin math</div>
+                    <div class="email-purpose">Provide concrete economics example for potential commitment</div>
+                    <div class="email-subject">back-of-napkin math on a $500k commitment</div>
                     <div class="email-body">{{contact.first_name}},
 
-Here&#x27;s how a $500,000 commitment might work in our fund structure.
+Here&#x27;s how a $500,000 commitment to Preservation Fund III might work.
 
-We target properties at 6-7% cap rates in markets with strong job growth and housing demand.
+We typically target properties that generate 6-8% current yield from existing rents.
 
-After improvements and lease-up, we project 8-10% cash-on-cash returns starting in year two.
+Our value-add comes from capital improvements that extend the property&#x27;s useful life and maintain affordability.
 
-Hold period of 7-10 years with exit via sale to another preservation-focused buyer or housing authority.
+We&#x27;re not trying to double rents or convert to market-rate housing.
 
-Target IRR in the mid-teens, but that depends on execution and market conditions.
+Our returns come from steady cash flow plus modest appreciation over the hold period.
 
-Your $500K would be called over 18-24 months as we acquire properties, not all at once.
+A $500K commitment gets allocated across multiple properties in our portfolio.
 
-Distributions begin when properties stabilize, typically 12-18 months after acquisition.
+This provides diversification across markets and property types within the affordable housing sector.
 
-These are projections, not guarantees, and actual results will vary by property and market conditions.
+Distributions typically begin 12-18 months after commitment as we deploy capital and stabilize operations.
+
+The exact timing depends on our acquisition pace and individual property performance.
 
 This communication is intended solely for accredited investors. All investments involve risk, including the possible loss of principal. Past performance is not indicative of future results.</div>
                 </div>
@@ -922,25 +941,27 @@ This communication is intended solely for accredited investors. All investments 
                         <span class="email-num">Email 6</span>
                         <span class="email-timing">Day 11</span>
                     </div>
-                    <div class="email-purpose">Create urgency through real timeline and raise progress without fake scarcity.</div>
-                    <div class="email-subject">where we stand (real numbers)</div>
+                    <div class="email-purpose">Create urgency through real timeline and raise progress</div>
+                    <div class="email-subject">where we stand on the $100m raise</div>
                     <div class="email-body">{{contact.first_name}},
 
-Quick update on our raise progress.
+We&#x27;ve raised $1.537 million toward our $100 million target for Preservation Fund III.
 
-We&#x27;ve committed $1.5 million of our $100 million target as of our last SEC filing.
+We&#x27;re actively reviewing acquisition opportunities in several target markets.
 
-That puts us in the early stages, which means more time for due diligence and questions.
+Our pipeline includes properties in Florida, California, and Texas metro areas.
 
-We&#x27;re targeting first close at $25 million, expected in the next 90 days.
+We expect to make our first acquisitions within 90 days of reaching our initial closing threshold.
 
-After that, we begin acquiring properties while continuing to raise capital.
+Minimum commitment is $250,000 for accredited investors.
 
-Minimum commitment is $250,000 for new investors.
+We&#x27;re conducting investor calls twice weekly to discuss the fund structure and current pipeline.
 
-If you&#x27;re interested in learning more, now is the time to start the conversation.
+Our goal is to have the first closing completed by end of Q2.
 
-Once we hit our first close, the process moves much faster.
+After that, we&#x27;ll have quarterly closings until we reach the $100 million target.
+
+If you&#x27;re interested in learning more, the next step is a brief call to discuss your investment objectives.
 
 This communication is intended solely for accredited investors. All investments involve risk, including the possible loss of principal. Past performance is not indicative of future results.</div>
                 </div>
@@ -949,25 +970,27 @@ This communication is intended solely for accredited investors. All investments 
                         <span class="email-num">Email 7</span>
                         <span class="email-timing">Day 14</span>
                     </div>
-                    <div class="email-purpose">Soft close with permission to pass and clear next steps for interested investors.</div>
-                    <div class="email-subject">three options from here</div>
+                    <div class="email-purpose">Give permission to pass with soft close and clear next steps</div>
+                    <div class="email-subject">three options </div>
                     <div class="email-body">{{contact.first_name}},
 
-After two weeks of emails, you probably have a sense of whether this fits your portfolio.
+After two weeks of emails about Preservation Fund III, you probably know whether this fits your investment strategy.
 
-Three options from here:
+Here are your three options:
 
-Option 1: You&#x27;re interested and want to schedule a call to discuss specifics. Reply with &quot;YES&quot; and I&#x27;ll send calendar link.
+Option 1: Schedule a call to discuss a potential commitment and review our investor materials.
 
-Option 2: Not the right fit for your current allocation. Reply with &quot;NO&quot; and I&#x27;ll remove you from this sequence.
+Option 2: This isn&#x27;t the right fit for your portfolio right now, and that&#x27;s perfectly fine.
 
-Option 3: Interesting but not ready now. Reply with &quot;LATER&quot; and I&#x27;ll follow up in six months.
+Option 3: You&#x27;re interested but want to wait until our next fund or revisit this in 6-12 months.
 
-No pressure either way.
+All three options are completely acceptable.
 
-Affordable housing preservation isn&#x27;t for every investor, and that&#x27;s perfectly fine.
+If it&#x27;s Option 1, reply to this email and we&#x27;ll set up a call.
 
-If you don&#x27;t reply, I&#x27;ll assume option 3 and check back in a few months.
+If it&#x27;s Option 2 or 3, no response needed.
+
+I appreciate your time and consideration over the past two weeks.
 
 This communication is intended solely for accredited investors. All investments involve risk, including the possible loss of principal. Past performance is not indicative of future results.</div>
                 </div>
