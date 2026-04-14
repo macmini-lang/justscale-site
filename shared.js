@@ -66,6 +66,16 @@
         requestAnimationFrame(function() { page.classList.add('loaded'); });
     });
 
+    /* ---- 4b. Fix back-button: restore page on bfcache ---- */
+    window.addEventListener('pageshow', function(e) {
+        if (e.persisted || performance.getEntriesByType('navigation')[0].type === 'back_forward') {
+            page.classList.remove('exit');
+            page.classList.add('loaded');
+            page.style.opacity = '1';
+            page.style.transform = 'none';
+        }
+    });
+
     /* ---- 5. Nav scroll ---- */
     var nav = document.getElementById('nav');
     window.addEventListener('scroll', function() {
