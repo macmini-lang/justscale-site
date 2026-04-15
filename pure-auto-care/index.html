@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pure Auto Care — Detailed by hand. Protected for 4 years. Starting at $120.</title>
+  <meta name="description" content="Pure Auto Care. Hand wash, full detail, and ceramic coating. Book online in under a minute.">
+  <meta property="og:title" content="Pure Auto Care — Your car, done right.">
+  <meta property="og:description" content="Hand wash, detail, and ceramic coating done right.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --red: #E50914;
+      --red-hover: #C40810;
+      --red-dim: rgba(229, 9, 20, 0.08);
+      --red-glow: rgba(229, 9, 20, 0.25);
+
+      /* Dark core palette */
+      --bg: #000000;
+      --bg-1: #0A0A0A;
+      --bg-2: #111111;
+      --bg-card: #141414;
+      --bg-card-hover: #1A1A1A;
+
+      /* Text — off-white, never pure white */
+      --text: #F2F2EE;
+      --text-2: #B8B8B4;
+      --text-3: #7A7A77;
+      --text-4: #4A4A48;
+
+      --border: rgba(255, 255, 255, 0.06);
+      --border-strong: rgba(255, 255, 255, 0.12);
+
+      --r-sm: 8px;
+      --r: 14px;
+      --r-lg: 20px;
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      overflow-x: clip;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+      color: var(--text);
+    }
+    h1 { font-size: clamp(2.75rem, 1.3rem + 6.5vw, 6rem); font-weight: 900; letter-spacing: -0.055em; }
+    h2 { font-size: clamp(2rem, 1.2rem + 3.5vw, 3.75rem); font-weight: 800; letter-spacing: -0.045em; }
+    h3 { font-size: clamp(1.15rem, 0.95rem + 0.9vw, 1.5rem); font-weight: 700; letter-spacing: -0.025em; }
+    p { max-width: 60ch; color: var(--text-2); }
+
+    a { color: inherit; text-decoration: none; transition: color 180ms var(--ease); }
+    img, svg { display: block; max-width: 100%; }
+    ul { list-style: none; }
+
+    .wrap { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 36px); }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: var(--red);
+      margin-bottom: 18px;
+    }
+
+    /* ========== BUTTONS ========== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: -0.01em;
+      padding: 15px 26px;
+      border-radius: var(--r);
+      border: none;
+      cursor: pointer;
+      transition: transform 200ms var(--ease), background 200ms var(--ease), box-shadow 260ms var(--ease), color 200ms var(--ease), border-color 200ms var(--ease);
+    }
+    .btn svg { transition: transform 260ms var(--ease); width: 14px; height: 14px; }
+    .btn:hover svg { transform: translateX(4px); }
+    .btn--primary { background: var(--red); color: #fff; }
+    .btn--primary:hover { background: var(--red-hover); color: #fff; box-shadow: 0 12px 28px -8px var(--red-glow); transform: translateY(-1px); }
+    .btn--light { background: var(--text); color: #000; }
+    .btn--light:hover { background: #fff; color: #000; transform: translateY(-1px); }
+    .btn--outline { background: transparent; color: var(--text); border: 1.5px solid var(--border-strong); }
+    .btn--outline:hover { background: var(--text); color: #000; border-color: var(--text); }
+
+    /* ========== ANNOUNCE ========== */
+    .announce {
+      background: var(--red);
+      color: #fff;
+      font-size: 0.82rem;
+      font-weight: 500;
+      padding: 9px 0;
+      text-align: center;
+    }
+    .announce .dot { display: inline-block; width: 7px; height: 7px; background: #fff; border-radius: 50%; margin-right: 8px; animation: pulse 2s var(--ease) infinite; vertical-align: 1px; }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+    /* ========== NAV ========== */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+    }
+    .nav__logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1.1rem;
+      letter-spacing: -0.035em;
+      color: var(--text);
+    }
+    .nav__logo-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: var(--red);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1rem;
+      letter-spacing: -0.05em;
+      overflow: hidden;
+    }
+    .nav__logo-mark img { width: 100%; height: 100%; object-fit: cover; }
+    .nav__links { display: none; gap: 32px; }
+    .nav__links a { font-size: 0.9rem; font-weight: 500; color: var(--text-2); }
+    .nav__links a:hover { color: var(--text); }
+    .nav__cta { display: flex; align-items: center; gap: 14px; }
+    .nav__phone { display: none; font-weight: 600; font-size: 0.9rem; color: var(--text-2); }
+    .nav__phone:hover { color: var(--red); }
+    .nav .btn { padding: 11px 20px; font-size: 0.85rem; }
+
+    @media (min-width: 900px) {
+      .nav__links { display: flex; }
+      .nav__phone { display: inline-flex; }
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      position: relative;
+      background: var(--bg);
+      padding: clamp(88px, 12vw, 160px) 0 clamp(80px, 12vw, 140px);
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(50% 70% at 85% 15%, rgba(229, 9, 20, 0.18), transparent 60%),
+        radial-gradient(40% 60% at 5% 95%, rgba(229, 9, 20, 0.08), transparent 65%);
+      z-index: -1;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+      opacity: 0.08;
+      pointer-events: none;
+      z-index: -1;
+      mix-blend-mode: overlay;
+    }
+    .hero__inner { position: relative; z-index: 1; }
+    .hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-2);
+      margin-bottom: 28px;
+    }
+    .hero__badge .dot { width: 7px; height: 7px; background: var(--red); border-radius: 50%; box-shadow: 0 0 10px var(--red-glow); animation: pulse 2s var(--ease) infinite; }
+
+    .hero h1 { max-width: 13ch; }
+    .hero h1 .accent { color: var(--red); }
+    .hero p {
+      font-size: clamp(1.05rem, 0.95rem + 0.4vw, 1.25rem);
+      margin: 28px 0 40px;
+      max-width: 52ch;
+    }
+    .hero__ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero__proof {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(16px, 3vw, 40px);
+      margin-top: clamp(60px, 8vw, 88px);
+      padding-top: 36px;
+      border-top: 1px solid var(--border);
+      max-width: 620px;
+    }
+    .hero__stat-n {
+      font-size: clamp(1.8rem, 1.2rem + 2vw, 2.5rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.045em;
+    }
+    .hero__stat-n .accent { color: var(--red); }
+    .hero__stat-l { font-size: 0.82rem; color: var(--text-3); margin-top: 8px; font-weight: 400; }
+
+    /* ========== MARQUEE ========== */
+    .marquee {
+      background: var(--bg-1);
+      padding: 20px 0;
+      overflow: hidden;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .marquee__track {
+      display: flex;
+      gap: 48px;
+      white-space: nowrap;
+      animation: marquee 42s linear infinite;
+      font-weight: 700;
+      font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .marquee__track span { display: inline-flex; align-items: center; gap: 48px; }
+    .marquee__track span::after {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: var(--red);
+      border-radius: 50%;
+    }
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ========== SECTION DEFAULTS ========== */
+    section { padding: clamp(80px, 10vw, 130px) 0; position: relative; }
+    .section-head { max-width: 720px; margin-bottom: clamp(48px, 6vw, 72px); }
+    .section-head h2 { margin-bottom: 18px; }
+    .section-head p { font-size: 1.05rem; max-width: 58ch; }
+    .section-foot { margin-top: clamp(40px, 5vw, 56px); display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+    .section-foot__note { color: var(--text-3); font-size: 0.95rem; }
+
+    /* ========== SERVICES ========== */
+    .services { background: var(--bg); }
+    .svc-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    @media (min-width: 720px) { .svc-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; } }
+    @media (min-width: 1100px) { .svc-grid { grid-template-columns: repeat(4, 1fr); } }
+
+    .svc {
+      position: relative;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 320ms var(--ease), box-shadow 320ms var(--ease), border-color 320ms var(--ease), background 320ms var(--ease);
+    }
+    .svc:hover { transform: translateY(-4px); background: var(--bg-card-hover); border-color: var(--border-strong); }
+    .svc--featured { background: var(--bg-card); border-color: var(--red); }
+    .svc--featured:hover { box-shadow: 0 30px 60px -16px var(--red-glow); }
+
+    .svc__tag {
+      position: absolute;
+      top: -11px;
+      left: 28px;
+      background: var(--red);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 5px 12px;
+      border-radius: 999px;
+    }
+    .svc__name { font-size: 1.3rem; margin-bottom: 4px; letter-spacing: -0.03em; }
+    .svc__time { font-size: 0.82rem; color: var(--text-3); font-weight: 500; margin-bottom: 22px; }
+    .svc__prices {
+      display: flex;
+      gap: 22px;
+      padding: 20px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 22px;
+    }
+    .svc__price-row { flex: 1; }
+    .svc__price-label { font-size: 0.72rem; color: var(--text-3); font-weight: 500; margin-bottom: 4px; }
+    .svc__price {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.04em;
+    }
+    .svc__includes { flex: 1; margin-bottom: 26px; }
+    .svc__includes li {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 10px;
+      font-size: 0.93rem;
+      color: var(--text-2);
+      line-height: 1.55;
+    }
+    .svc__includes li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 6px;
+      height: 6px;
+      background: var(--red);
+      border-radius: 50%;
+    }
+    .svc .btn { width: 100%; padding: 13px 20px; font-size: 0.85rem; }
+
+    /* ========== PROCESS ========== */
+    .process { background: var(--bg-1); }
+    .steps {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    @media (min-width: 760px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+    .step {
+      position: relative;
+      padding: 36px 30px 32px;
+      background: var(--bg-card);
+      border-radius: var(--r-lg);
+      border: 1px solid var(--border);
+      transition: transform 320ms var(--ease), border-color 320ms var(--ease);
+    }
+    .step:hover { transform: translateY(-4px); border-color: var(--border-strong); }
+    .step__num {
+      display: inline-block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--red);
+      margin-bottom: 48px;
+    }
+    .step h3 { margin-bottom: 10px; }
+    .step p { max-width: none; font-size: 0.96rem; }
+
+    /* ========== GALLERY ========== */
+    .gallery { background: var(--bg); }
+    .gal-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    @media (min-width: 760px) { .gal-grid { grid-template-columns: repeat(4, 1fr); } }
+    .gal-item {
+      aspect-ratio: 4 / 5;
+      background: linear-gradient(135deg, #1A1A1A 0%, #050505 100%);
+      border-radius: var(--r);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-4);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid var(--border);
+      transition: transform 420ms var(--ease);
+    }
+    .gal-item:hover { transform: scale(1.015); }
+    .gal-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 20%, rgba(229,9,20,0.15), transparent 55%);
+    }
+    .gal-ig {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 32px;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .gal-ig:hover { color: var(--red); }
+    .gal-ig svg { width: 18px; height: 18px; }
+
+    /* ========== WHY ========== */
+    .why { background: var(--bg-1); overflow: hidden; }
+    .why::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(50% 70% at 15% 50%, rgba(229,9,20,0.08), transparent 60%);
+      pointer-events: none;
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      position: relative;
+    }
+    @media (min-width: 800px) { .why-grid { grid-template-columns: repeat(3, 1fr); } }
+    .why__item {
+      padding: 32px 28px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      transition: border-color 320ms var(--ease), transform 320ms var(--ease), background 320ms var(--ease);
+    }
+    .why__item:hover { background: var(--bg-card-hover); border-color: var(--border-strong); transform: translateY(-4px); }
+    .why__icon {
+      width: 40px;
+      height: 40px;
+      background: var(--red);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.9rem;
+      margin-bottom: 22px;
+      letter-spacing: -0.02em;
+    }
+    .why__item h3 { font-size: 1.2rem; margin-bottom: 10px; }
+    .why__item p { max-width: none; font-size: 0.96rem; }
+
+    /* ========== REVIEWS ========== */
+    .reviews { background: var(--bg); }
+    .review-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    @media (min-width: 820px) { .review-grid { grid-template-columns: repeat(3, 1fr); } }
+    .review {
+      background: var(--bg-card);
+      padding: 32px 28px;
+      border-radius: var(--r-lg);
+      border: 1px solid var(--border);
+      position: relative;
+      transition: transform 320ms var(--ease), border-color 320ms var(--ease);
+    }
+    .review:hover { transform: translateY(-4px); border-color: var(--border-strong); }
+    .review__stars { color: var(--red); font-size: 0.95rem; letter-spacing: 2px; margin-bottom: 18px; }
+    .review__body { font-size: 1rem; color: var(--text); line-height: 1.55; margin-bottom: 22px; letter-spacing: -0.005em; }
+    .review__name { font-weight: 700; font-size: 0.95rem; color: var(--text); }
+    .review__meta { font-size: 0.82rem; color: var(--text-3); margin-top: 2px; }
+
+    /* ========== FAQ ========== */
+    .faq { background: var(--bg-1); }
+    .faq-list { max-width: 880px; }
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      margin-bottom: 10px;
+      overflow: hidden;
+      transition: border-color 240ms var(--ease);
+    }
+    .faq-item[open] { border-color: var(--border-strong); }
+    .faq-q {
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      padding: 22px 24px;
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      font-family: inherit;
+      letter-spacing: -0.02em;
+      list-style: none;
+    }
+    .faq-q::-webkit-details-marker { display: none; }
+    .faq-q::after {
+      content: '';
+      width: 13px;
+      height: 13px;
+      flex-shrink: 0;
+      background: center / contain no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E50914' stroke-width='2.5' stroke-linecap='round'%3E%3Cpath d='M12 5v14M5 12h14'/%3E%3C/svg%3E");
+      transition: transform 260ms var(--ease);
+    }
+    .faq-item[open] .faq-q::after { transform: rotate(135deg); }
+    .faq-a { padding: 0 24px 22px; color: var(--text-2); font-size: 0.97rem; line-height: 1.6; max-width: 72ch; }
+
+    /* ========== BOOKING ========== */
+    .book { background: var(--bg); overflow: hidden; }
+    .book::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(50% 60% at 90% 10%, rgba(229,9,20,0.12), transparent 60%);
+      pointer-events: none;
+    }
+    .book__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      position: relative;
+    }
+    @media (min-width: 900px) { .book__grid { grid-template-columns: 1fr 1.15fr; gap: 64px; } }
+    .book__intro p { margin-bottom: 28px; max-width: 46ch; }
+    .book__contact { margin-top: 36px; display: grid; gap: 0; }
+    .book__contact-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 18px 0;
+      border-top: 1px solid var(--border);
+    }
+    .book__contact-item:first-child { border-top: none; padding-top: 0; }
+    .book__contact-label { font-size: 0.72rem; color: var(--text-3); font-weight: 500; margin-bottom: 4px; }
+    .book__contact-val { color: var(--text); font-weight: 500; font-size: 1rem; letter-spacing: -0.01em; }
+    .book__contact-val:hover { color: var(--red); }
+
+    .form {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 36px;
+      border-radius: var(--r-lg);
+      position: relative;
+    }
+    @media (max-width: 560px) { .form { padding: 26px 22px; } }
+    .form h3 { margin-bottom: 6px; font-size: 1.5rem; }
+    .form__sub { font-size: 0.95rem; color: var(--text-3); margin-bottom: 26px; }
+    .form__row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    @media (min-width: 520px) { .form__row--2 { grid-template-columns: 1fr 1fr; } }
+    .form__field label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-2);
+      margin-bottom: 7px;
+    }
+    .form__field input,
+    .form__field select,
+    .form__field textarea {
+      width: 100%;
+      padding: 13px 15px;
+      border: 1px solid var(--border-strong);
+      border-radius: var(--r-sm);
+      font-family: inherit;
+      font-size: 0.97rem;
+      color: var(--text);
+      background: var(--bg-1);
+      transition: border-color 180ms var(--ease), box-shadow 180ms var(--ease);
+    }
+    .form__field input::placeholder,
+    .form__field textarea::placeholder { color: var(--text-3); }
+    .form__field input:focus,
+    .form__field select:focus,
+    .form__field textarea:focus {
+      outline: none;
+      border-color: var(--red);
+      box-shadow: 0 0 0 4px var(--red-dim);
+    }
+    .form__field textarea { resize: vertical; min-height: 110px; }
+    .form .btn { width: 100%; margin-top: 8px; padding: 16px; }
+    .form__note { font-size: 0.82rem; color: var(--text-3); margin-top: 14px; text-align: center; }
+    .form__success {
+      display: none;
+      background: rgba(34, 197, 94, 0.08);
+      color: #8FE3A8;
+      border: 1px solid rgba(34, 197, 94, 0.25);
+      padding: 14px;
+      border-radius: var(--r-sm);
+      text-align: center;
+      font-weight: 500;
+      font-size: 0.92rem;
+      margin-bottom: 18px;
+    }
+
+    /* ========== FOOTER ========== */
+    footer { background: var(--bg); color: var(--text-3); padding: 72px 0 36px; font-size: 0.92rem; border-top: 1px solid var(--border); }
+    .foot {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 44px;
+      margin-bottom: 48px;
+    }
+    @media (min-width: 760px) { .foot { grid-template-columns: 2fr 1fr 1fr; gap: 56px; } }
+    .foot h4 { font-size: 0.75rem; color: var(--text-2); margin-bottom: 16px; font-weight: 500; letter-spacing: 0; }
+    .foot a { color: var(--text-3); display: flex; align-items: center; gap: 8px; padding: 5px 0; transition: color 200ms var(--ease); }
+    .foot a:hover { color: var(--red); }
+    .foot__logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: var(--text);
+      margin-bottom: 14px;
+      letter-spacing: -0.035em;
+    }
+    .foot__logo-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      background: var(--red);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      font-weight: 900;
+      letter-spacing: -0.05em;
+      overflow: hidden;
+    }
+    .foot__logo-mark img { width: 100%; height: 100%; object-fit: cover; }
+    .foot__about { max-width: 38ch; color: var(--text-3); font-size: 0.92rem; line-height: 1.6; }
+    .foot__social { display: flex; gap: 10px; margin-top: 18px; }
+    .foot__social a {
+      width: 36px;
+      height: 36px;
+      border-radius: 9px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      transition: background 200ms var(--ease), border-color 200ms var(--ease);
+    }
+    .foot__social a:hover { background: var(--red); border-color: var(--red); }
+    .foot__social svg { width: 16px; height: 16px; color: var(--text); }
+    .foot-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      color: var(--text-4);
+    }
+
+    /* ========== SCROLL REVEAL ========== */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 700ms var(--ease), transform 700ms var(--ease); }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .marquee__track { animation: none; }
+      .announce .dot, .hero__badge .dot { animation: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ANNOUNCE -->
+  <div class="announce">
+    <span class="dot"></span>
+    Booking next available slots this week
+  </div>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="wrap nav__inner">
+      <a href="#top" class="nav__logo">
+        <span class="nav__logo-mark"><img src="logo.png" alt="" onerror="this.style.display='none'; this.parentElement.innerHTML='P.';"></span>
+        Pure Auto Care
+      </a>
+      <div class="nav__links">
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="nav__cta">
+        <a href="tel:{{PHONE_RAW}}" class="nav__phone">{{PHONE_DISPLAY}}</a>
+        <a href="#book" class="btn btn--primary">Book Now
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO — The Promise -->
+  <section class="hero" id="top">
+    <div class="wrap hero__inner">
+      <div class="hero__badge">
+        <span class="dot"></span>
+        Taking bookings now
+      </div>
+      <h1>Detailed by hand.<br>Protected for <span class="accent">4 years.</span><br>Starting at $120.</h1>
+      <p>Pick your package, tell us about your car, and we'll text you back within hours. You don't lift a finger. You pay only when you see the result.</p>
+      <div class="hero__ctas">
+        <a href="#book" class="btn btn--primary">Book A Detail
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#services" class="btn btn--outline">See The Packages</a>
+      </div>
+      <div class="hero__proof">
+        <div>
+          <div class="hero__stat-n">500<span class="accent">+</span></div>
+          <div class="hero__stat-l">Cars Detailed</div>
+        </div>
+        <div>
+          <div class="hero__stat-n">5.0<span class="accent">★</span></div>
+          <div class="hero__stat-l">Average Rating</div>
+        </div>
+        <div>
+          <div class="hero__stat-n">4<span class="accent">yr</span></div>
+          <div class="hero__stat-l">Coating Warranty</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee">
+    <div class="marquee__track">
+      <span>Hand Wash</span>
+      <span>Full Interior Detail</span>
+      <span>Paint Correction</span>
+      <span>Ceramic Coating</span>
+      <span>Odor Treatment</span>
+      <span>Leather Conditioning</span>
+      <span>Hand Wash</span>
+      <span>Full Interior Detail</span>
+      <span>Paint Correction</span>
+      <span>Ceramic Coating</span>
+      <span>Odor Treatment</span>
+      <span>Leather Conditioning</span>
+    </div>
+  </div>
+
+  <!-- SERVICES — The Options -->
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">The Packages</div>
+        <h2>Pick your package. We do the rest.</h2>
+        <p>Priced flat, start to finish. Every package includes the full interior — vacuum, surfaces, seats, carpets, odor treatment. The only difference is what we do to the paint.</p>
+      </div>
+
+      <div class="svc-grid">
+        <div class="svc reveal">
+          <h3 class="svc__name">Hand Wash & Interior</h3>
+          <div class="svc__time">2–3 hour service</div>
+          <div class="svc__prices">
+            <div class="svc__price-row">
+              <div class="svc__price-label">Sedan</div>
+              <div class="svc__price">$120</div>
+            </div>
+            <div class="svc__price-row">
+              <div class="svc__price-label">SUV / Truck</div>
+              <div class="svc__price">$160</div>
+            </div>
+          </div>
+          <ul class="svc__includes">
+            <li>Two-bucket exterior hand wash</li>
+            <li>Wheels, tires, door jambs cleaned</li>
+            <li>Full interior vacuum and wipe-down</li>
+            <li>Seat shampoo and carpet extraction</li>
+            <li>Odor treatment and final dress</li>
+          </ul>
+          <a href="#book" class="btn btn--outline" data-prefill="Hand Wash & Interior">Book This
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+
+        <div class="svc svc--featured reveal">
+          <span class="svc__tag">Most Popular</span>
+          <h3 class="svc__name">Wash & Wax</h3>
+          <div class="svc__time">3–4 hour service</div>
+          <div class="svc__prices">
+            <div class="svc__price-row">
+              <div class="svc__price-label">Sedan</div>
+              <div class="svc__price">$160</div>
+            </div>
+            <div class="svc__price-row">
+              <div class="svc__price-label">SUV / Truck</div>
+              <div class="svc__price">$200</div>
+            </div>
+          </div>
+          <ul class="svc__includes">
+            <li>Everything in Hand Wash & Interior</li>
+            <li>Clay bar decontamination</li>
+            <li>4-month wax sealant on paint</li>
+            <li>Tire shine and trim dress</li>
+            <li>Glass cleaned inside and out</li>
+          </ul>
+          <a href="#book" class="btn btn--primary" data-prefill="Wash & Wax">Book This
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+
+        <div class="svc reveal">
+          <h3 class="svc__name">Full Detail</h3>
+          <div class="svc__time">4–6 hour service</div>
+          <div class="svc__prices">
+            <div class="svc__price-row">
+              <div class="svc__price-label">Sedan</div>
+              <div class="svc__price">$250</div>
+            </div>
+            <div class="svc__price-row">
+              <div class="svc__price-label">SUV / Truck</div>
+              <div class="svc__price">$300</div>
+            </div>
+          </div>
+          <ul class="svc__includes">
+            <li>Everything in Wash & Wax</li>
+            <li>Single-stage machine polish</li>
+            <li>Removes light scratches and swirls</li>
+            <li>6-month ceramic sealant</li>
+            <li>Leather conditioning included</li>
+          </ul>
+          <a href="#book" class="btn btn--outline" data-prefill="Full Detail">Book This
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+
+        <div class="svc reveal">
+          <h3 class="svc__name">The PURE Package</h3>
+          <div class="svc__time">1–2 day service</div>
+          <div class="svc__prices">
+            <div class="svc__price-row">
+              <div class="svc__price-label">Sedan</div>
+              <div class="svc__price">$500</div>
+            </div>
+            <div class="svc__price-row">
+              <div class="svc__price-label">SUV / Truck</div>
+              <div class="svc__price">$700</div>
+            </div>
+          </div>
+          <ul class="svc__includes">
+            <li>Everything in Full Detail</li>
+            <li>2-stage machine paint correction</li>
+            <li>Cuts deep swirls and oxidation</li>
+            <li>4-year professional ceramic coating</li>
+            <li>Locks in a glass-like finish</li>
+          </ul>
+          <a href="#book" class="btn btn--outline" data-prefill="The PURE Package">Book This
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="section-foot reveal">
+        <span class="section-foot__note">Picked one? Here's what happens next.</span>
+        <a href="#process" class="btn btn--outline" style="padding: 10px 18px; font-size: 0.85rem;">See The Process
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS — How -->
+  <section class="process" id="process">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">The Process</div>
+        <h2>Three steps. No back and forth.</h2>
+        <p>Booking a detail shouldn't take longer than the detail itself. Here's the whole thing, start to finish.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <div class="step__num">01 — Book</div>
+          <h3>Book online</h3>
+          <p>Pick your package and tell us a little about your car. Takes less than a minute. We'll text you back within a few hours to lock in a time.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step__num">02 — Service</div>
+          <h3>We show up ready</h3>
+          <p>Full kit, water, power — everything we need. You don't lift a finger. {{MOBILE_OR_SHOP_LINE}}</p>
+        </div>
+        <div class="step reveal">
+          <div class="step__num">03 — Done</div>
+          <h3>You get your car back</h3>
+          <p>Clean inside and out. Before-and-after photos to your phone. Pay only when you're happy with the result.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY — Proof -->
+  <section class="gallery">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">The Work</div>
+        <h2>What a Pure detail actually looks like.</h2>
+        <p>Every car that leaves us gets the same standard. See it up close before you book.</p>
+      </div>
+      <div class="gal-grid reveal">
+        <div class="gal-item">01</div>
+        <div class="gal-item">02</div>
+        <div class="gal-item">03</div>
+        <div class="gal-item">04</div>
+        <div class="gal-item">05</div>
+        <div class="gal-item">06</div>
+        <div class="gal-item">07</div>
+        <div class="gal-item">08</div>
+      </div>
+      <a href="https://instagram.com/autocarebypure" class="gal-ig">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        See the full gallery on @autocarebypure
+      </a>
+    </div>
+  </section>
+
+  <!-- WHY — Why It Works -->
+  <section class="why">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Why It Works</div>
+        <h2>We do it the long way. On purpose.</h2>
+        <p>Most detail shops run a car through a tunnel and call it done. We don't. Every wash is by hand. Every paint correction is done with proper pads and compounds. Every interior gets pulled apart, cleaned, and put back the way you'd want it.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why__item reveal">
+          <div class="why__icon">01</div>
+          <h3>Hand wash only</h3>
+          <p>Automatic washes leave micro-scratches that dull your paint over time. We use the two-bucket method with soft mitts. Your clear coat stays clear.</p>
+        </div>
+        <div class="why__item reveal">
+          <div class="why__icon">02</div>
+          <h3>Real products</h3>
+          <p>Professional-grade coatings and compounds. Not the stuff from a gas station shelf. The difference shows up in six months, not six days.</p>
+        </div>
+        <div class="why__item reveal">
+          <div class="why__icon">03</div>
+          <h3>Straight pricing</h3>
+          <p>What you see is what you pay. No upsells after the fact. If your car needs more than the package covers, we tell you up front and let you decide.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS — Social Proof -->
+  <section class="reviews" id="reviews">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">What People Say</div>
+        <h2>Don't take our word for it.</h2>
+      </div>
+      <div class="review-grid">
+        <div class="review reveal">
+          <div class="review__stars">★★★★★</div>
+          <p class="review__body">"{{REVIEW_1_BODY}}"</p>
+          <div class="review__name">{{REVIEW_1_NAME}}</div>
+          <div class="review__meta">{{REVIEW_1_META}}</div>
+        </div>
+        <div class="review reveal">
+          <div class="review__stars">★★★★★</div>
+          <p class="review__body">"{{REVIEW_2_BODY}}"</p>
+          <div class="review__name">{{REVIEW_2_NAME}}</div>
+          <div class="review__meta">{{REVIEW_2_META}}</div>
+        </div>
+        <div class="review reveal">
+          <div class="review__stars">★★★★★</div>
+          <p class="review__body">"{{REVIEW_3_BODY}}"</p>
+          <div class="review__name">{{REVIEW_3_NAME}}</div>
+          <div class="review__meta">{{REVIEW_3_META}}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ — Remove Friction -->
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Common Questions</div>
+        <h2>Still on the fence?</h2>
+        <p>The answer is probably below. If it isn't, text us — we'll give it to you straight.</p>
+      </div>
+      <div class="faq-list reveal">
+        <details class="faq-item">
+          <summary class="faq-q">Do you come to me or do I come to you?</summary>
+          <div class="faq-a">{{MOBILE_OR_SHOP_ANSWER}}</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">How long does each service take?</summary>
+          <div class="faq-a">Hand Wash & Interior runs 2–3 hours. Wash & Wax is 3–4 hours. Full Detail takes 4–6 hours. The PURE Package with full paint correction and ceramic coating is a 1–2 day job — the coating needs to cure properly.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">What's the difference between a sealant and a ceramic coating?</summary>
+          <div class="faq-a">A wax or sealant lasts a few months and sits on top of the paint. A ceramic coating bonds chemically to the clear coat and lasts multiple years. It's the closest thing to permanent protection — repels water, dirt, and road grime, and makes washing the car dramatically easier. If you plan to keep your car more than a couple of years, coating pays for itself.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">Why is the SUV/truck price higher?</summary>
+          <div class="faq-a">More panels, more paint, more interior surface. A full-size truck takes roughly 40% more product and time than a sedan. The price reflects the actual work, not the vehicle you own.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">What if my car is really rough — pet hair, heavy stains, neglected paint?</summary>
+          <div class="faq-a">We'll still take it. If it's beyond what the package covers, we'll send you a quote before starting any extra work. No surprise charges at pickup.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">How do I pay?</summary>
+          <div class="faq-a">Card, cash, Venmo, or Zelle. Payment is due when you see the finished car — not before.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">Do you offer gift certificates?</summary>
+          <div class="faq-a">Yes. Text or call us and we'll send one over. A Full Detail makes a genuinely good gift for anyone who cares about their car.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOK — The Ask -->
+  <section class="book" id="book">
+    <div class="wrap">
+      <div class="book__grid">
+        <div class="book__intro reveal">
+          <div class="eyebrow">Book</div>
+          <h2>Get your car on the schedule.</h2>
+          <p>Fill out the form. We text you back within hours to confirm a time. Most bookings go out the same week.</p>
+
+          <div class="book__contact">
+            <div class="book__contact-item">
+              <div>
+                <div class="book__contact-label">Call or text</div>
+                <a href="tel:{{PHONE_RAW}}" class="book__contact-val">{{PHONE_DISPLAY}}</a>
+              </div>
+            </div>
+            <div class="book__contact-item">
+              <div>
+                <div class="book__contact-label">Email</div>
+                <a href="mailto:{{EMAIL}}" class="book__contact-val">{{EMAIL}}</a>
+              </div>
+            </div>
+            <div class="book__contact-item">
+              <div>
+                <div class="book__contact-label">Service area</div>
+                <div class="book__contact-val">{{SERVICE_AREA}}</div>
+              </div>
+            </div>
+            <div class="book__contact-item">
+              <div>
+                <div class="book__contact-label">Hours</div>
+                <div class="book__contact-val">{{HOURS}}</div>
+              </div>
+            </div>
+            <div class="book__contact-item">
+              <div>
+                <div class="book__contact-label">Instagram</div>
+                <a href="https://instagram.com/autocarebypure" class="book__contact-val">@autocarebypure</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form class="form reveal" id="bookForm" method="POST" action="{{FORM_ENDPOINT}}">
+          <div class="form__success" id="formSuccess">Got it. We'll text you back shortly.</div>
+          <h3>Book your detail</h3>
+          <p class="form__sub">Takes less than a minute.</p>
+
+          <div class="form__row form__row--2">
+            <div class="form__field">
+              <label for="f-name">Name</label>
+              <input type="text" id="f-name" name="name" required>
+            </div>
+            <div class="form__field">
+              <label for="f-phone">Phone</label>
+              <input type="tel" id="f-phone" name="phone" required>
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="form__field">
+              <label for="f-email">Email</label>
+              <input type="email" id="f-email" name="email" required>
+            </div>
+          </div>
+
+          <div class="form__row form__row--2">
+            <div class="form__field">
+              <label for="f-service">Package</label>
+              <select id="f-service" name="service" required>
+                <option value="">Choose one...</option>
+                <option>Hand Wash & Interior</option>
+                <option>Wash & Wax</option>
+                <option>Full Detail</option>
+                <option>The PURE Package</option>
+                <option>Not sure — help me pick</option>
+              </select>
+            </div>
+            <div class="form__field">
+              <label for="f-vehicle-type">Vehicle type</label>
+              <select id="f-vehicle-type" name="vehicle_type" required>
+                <option value="">Choose one...</option>
+                <option>Sedan / Coupe</option>
+                <option>SUV</option>
+                <option>Truck</option>
+                <option>Van / Minivan</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="form__field">
+              <label for="f-vehicle">Year / Make / Model</label>
+              <input type="text" id="f-vehicle" name="vehicle" placeholder="e.g. 2021 Toyota Tacoma" required>
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="form__field">
+              <label for="f-notes">Anything we should know? (optional)</label>
+              <textarea id="f-notes" name="notes" placeholder="Pet hair, stains, specific concerns, preferred date..."></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn--primary">Request Booking
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+          <p class="form__note">We'll text you back within a few hours. No spam, ever.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <div class="foot">
+        <div>
+          <div class="foot__logo">
+            <span class="foot__logo-mark"><img src="logo.png" alt="" onerror="this.style.display='none'; this.parentElement.innerHTML='P.';"></span>
+            Pure Auto Care
+          </div>
+          <p class="foot__about">Hand wash, detail, and ceramic coating done by people who actually care about your car. Serving {{SERVICE_AREA}}.</p>
+          <div class="foot__social">
+            <a href="https://instagram.com/autocarebypure" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4>Menu</h4>
+          <a href="#services">Services</a>
+          <a href="#process">Process</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#faq">FAQ</a>
+          <a href="#book">Book</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <a href="tel:{{PHONE_RAW}}">{{PHONE_DISPLAY}}</a>
+          <a href="mailto:{{EMAIL}}">{{EMAIL}}</a>
+          <a href="https://instagram.com/autocarebypure">@autocarebypure</a>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <div>© <span id="year"></span> Pure Auto Care. All rights reserved.</div>
+        <div>Detailed by hand. Protected for 4 years.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.querySelectorAll('[data-prefill]').forEach(el => {
+      el.addEventListener('click', () => {
+        const pkg = el.getAttribute('data-prefill');
+        const sel = document.getElementById('f-service');
+        if (sel) {
+          for (const opt of sel.options) {
+            if (opt.value === pkg || opt.text === pkg) { sel.value = opt.value || opt.text; break; }
+          }
+        }
+      });
+    });
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    const form = document.getElementById('bookForm');
+    const success = document.getElementById('formSuccess');
+    form.addEventListener('submit', (e) => {
+      const action = form.getAttribute('action');
+      if (!action || action.includes('{{')) {
+        e.preventDefault();
+        success.style.display = 'block';
+        form.reset();
+        success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    });
+  </script>
+</body>
+</html>
