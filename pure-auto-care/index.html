@@ -59,7 +59,7 @@
       letter-spacing: -0.04em;
       color: var(--text);
     }
-    h1 { font-size: clamp(2.25rem, 1.3rem + 3.5vw, 4.25rem); font-weight: 900; letter-spacing: -0.05em; }
+    h1 { font-size: clamp(2rem, 1.1rem + 3vw, 3.5rem); font-weight: 900; letter-spacing: -0.05em; }
     h2 { font-size: clamp(2rem, 1.2rem + 3.5vw, 3.75rem); font-weight: 800; letter-spacing: -0.045em; }
     h3 { font-size: clamp(1.15rem, 0.95rem + 0.9vw, 1.5rem); font-weight: 700; letter-spacing: -0.025em; }
     p { max-width: 60ch; color: var(--text-2); }
@@ -198,7 +198,7 @@
       mix-blend-mode: overlay;
     }
     .hero__inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr; gap: clamp(48px, 6vw, 72px); align-items: center; }
-    @media (min-width: 960px) { .hero__inner { grid-template-columns: 1.05fr 0.95fr; } }
+    @media (min-width: 960px) { .hero__inner { grid-template-columns: 1.4fr 0.7fr; } }
 
     .hero__video {
       position: relative;
@@ -263,7 +263,8 @@
     }
     .hero__badge .dot { width: 7px; height: 7px; background: var(--red); border-radius: 50%; box-shadow: 0 0 10px var(--red-glow); animation: pulse 2s var(--ease) infinite; }
 
-    .hero h1 { max-width: 22ch; }
+    .hero h1 { max-width: none; }
+    .hero h1 span { display: block; }
     .hero h1 .accent { color: var(--red); }
     .hero p {
       font-size: clamp(1.05rem, 0.95rem + 0.4vw, 1.2rem);
@@ -784,7 +785,7 @@
           <span class="dot"></span>
           Taking bookings now
         </div>
-        <h1>Make your car look like<br>the day you drove it<br>off the lot.</h1>
+        <h1><span>Make your car look like</span><span>the day you drove it</span><span>off the lot.</span></h1>
         <p>Hand wash, full interior, and ceramic coating up to 4 years. Four flat-priced packages starting at $120. Book in under a minute. Pay only when you see the result.</p>
         <div class="hero__ctas">
           <a href="#book" class="btn btn--primary">Book A Detail
