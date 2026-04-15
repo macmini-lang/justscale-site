@@ -59,7 +59,7 @@
       letter-spacing: -0.04em;
       color: var(--text);
     }
-    h1 { font-size: clamp(2.75rem, 1.3rem + 6.5vw, 6rem); font-weight: 900; letter-spacing: -0.055em; }
+    h1 { font-size: clamp(2.25rem, 1.3rem + 3.5vw, 4.25rem); font-weight: 900; letter-spacing: -0.05em; }
     h2 { font-size: clamp(2rem, 1.2rem + 3.5vw, 3.75rem); font-weight: 800; letter-spacing: -0.045em; }
     h3 { font-size: clamp(1.15rem, 0.95rem + 0.9vw, 1.5rem); font-weight: 700; letter-spacing: -0.025em; }
     p { max-width: 60ch; color: var(--text-2); }
@@ -106,14 +106,15 @@
 
     /* ========== ANNOUNCE ========== */
     .announce {
-      background: var(--red);
-      color: #fff;
-      font-size: 0.82rem;
+      background: var(--bg-1);
+      color: var(--text-2);
+      font-size: 0.8rem;
       font-weight: 500;
       padding: 9px 0;
       text-align: center;
+      border-bottom: 1px solid var(--border);
     }
-    .announce .dot { display: inline-block; width: 7px; height: 7px; background: #fff; border-radius: 50%; margin-right: 8px; animation: pulse 2s var(--ease) infinite; vertical-align: 1px; }
+    .announce .dot { display: inline-block; width: 7px; height: 7px; background: var(--red); border-radius: 50%; margin-right: 8px; animation: pulse 2s var(--ease) infinite; vertical-align: 1px; box-shadow: 0 0 8px var(--red-glow); }
     @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
 
     /* ========== NAV ========== */
@@ -196,7 +197,57 @@
       z-index: -1;
       mix-blend-mode: overlay;
     }
-    .hero__inner { position: relative; z-index: 1; }
+    .hero__inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr; gap: clamp(48px, 6vw, 72px); align-items: center; }
+    @media (min-width: 960px) { .hero__inner { grid-template-columns: 1.05fr 0.95fr; } }
+
+    .hero__video {
+      position: relative;
+      aspect-ratio: 9 / 16;
+      max-width: 380px;
+      width: 100%;
+      margin: 0 auto;
+      background: linear-gradient(135deg, #1A1A1A 0%, #050505 100%);
+      border-radius: 20px;
+      border: 1px solid var(--border-strong);
+      overflow: hidden;
+      box-shadow: 0 40px 80px -24px rgba(0,0,0,0.5);
+    }
+    .hero__video::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 40%, rgba(229,9,20,0.15), transparent 60%);
+      pointer-events: none;
+    }
+    .hero__video-play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.92);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 260ms var(--ease), background 260ms var(--ease);
+      z-index: 2;
+    }
+    .hero__video-play:hover { transform: translate(-50%, -50%) scale(1.06); background: #fff; }
+    .hero__video-play svg { width: 24px; height: 24px; color: #000; margin-left: 3px; }
+    .hero__video-label {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      color: var(--text-3);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      z-index: 2;
+    }
     .hero__badge {
       display: inline-flex;
       align-items: center;
@@ -728,31 +779,40 @@
   <!-- HERO — The Promise -->
   <section class="hero" id="top">
     <div class="wrap hero__inner">
-      <div class="hero__badge">
-        <span class="dot"></span>
-        Taking bookings now
+      <div class="hero__left">
+        <div class="hero__badge">
+          <span class="dot"></span>
+          Taking bookings now
+        </div>
+        <h1>Detailed by hand.<br>Protected for <span class="accent">4 years.</span><br>Starting at $120.</h1>
+        <p>Pick your package, tell us about your car, and we'll text you back within hours. You don't lift a finger. You pay only when you see the result.</p>
+        <div class="hero__ctas">
+          <a href="#book" class="btn btn--primary">Book A Detail
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#services" class="btn btn--outline">See The Packages</a>
+        </div>
+        <div class="hero__proof">
+          <div>
+            <div class="hero__stat-n">500<span class="accent">+</span></div>
+            <div class="hero__stat-l">Cars Detailed</div>
+          </div>
+          <div>
+            <div class="hero__stat-n">5.0<span class="accent">★</span></div>
+            <div class="hero__stat-l">Average Rating</div>
+          </div>
+          <div>
+            <div class="hero__stat-n">4<span class="accent">yr</span></div>
+            <div class="hero__stat-l">Coating Warranty</div>
+          </div>
+        </div>
       </div>
-      <h1>Detailed by hand.<br>Protected for <span class="accent">4 years.</span><br>Starting at $120.</h1>
-      <p>Pick your package, tell us about your car, and we'll text you back within hours. You don't lift a finger. You pay only when you see the result.</p>
-      <div class="hero__ctas">
-        <a href="#book" class="btn btn--primary">Book A Detail
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-        <a href="#services" class="btn btn--outline">See The Packages</a>
-      </div>
-      <div class="hero__proof">
-        <div>
-          <div class="hero__stat-n">500<span class="accent">+</span></div>
-          <div class="hero__stat-l">Cars Detailed</div>
+
+      <div class="hero__video">
+        <div class="hero__video-play">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
         </div>
-        <div>
-          <div class="hero__stat-n">5.0<span class="accent">★</span></div>
-          <div class="hero__stat-l">Average Rating</div>
-        </div>
-        <div>
-          <div class="hero__stat-n">4<span class="accent">yr</span></div>
-          <div class="hero__stat-l">Coating Warranty</div>
-        </div>
+        <div class="hero__video-label">Video placeholder — drop a 9:16 reel here</div>
       </div>
     </div>
   </section>
@@ -921,6 +981,13 @@
           <p>Clean inside and out. Before-and-after photos to your phone. Pay only when you're happy with the result.</p>
         </div>
       </div>
+
+      <div class="section-foot reveal">
+        <a href="#book" class="btn btn--primary">Book Your Detail
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <span class="section-foot__note">Takes under a minute. We text back in hours.</span>
+      </div>
     </div>
   </section>
 
@@ -932,7 +999,8 @@
         <h2>What a Pure detail actually looks like.</h2>
         <p>Every car that leaves us gets the same standard. See it up close before you book.</p>
       </div>
-      <div class="gal-grid reveal">
+      <!-- LIVE INSTAGRAM FEED — replace the .gal-grid below with your LightWidget/Elfsight/SnapWidget embed code when ready -->
+      <div class="gal-grid reveal" id="igFeed">
         <div class="gal-item">01</div>
         <div class="gal-item">02</div>
         <div class="gal-item">03</div>
@@ -942,10 +1010,16 @@
         <div class="gal-item">07</div>
         <div class="gal-item">08</div>
       </div>
-      <a href="https://instagram.com/autocarebypure" class="gal-ig">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-        See the full gallery on @autocarebypure
-      </a>
+
+      <div class="section-foot reveal">
+        <a href="#book" class="btn btn--primary">Book Your Detail
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="https://instagram.com/autocarebypure" class="gal-ig">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          Follow on @autocarebypure
+        </a>
+      </div>
     </div>
   </section>
 
@@ -954,8 +1028,8 @@
     <div class="wrap">
       <div class="section-head reveal">
         <div class="eyebrow">Why It Works</div>
-        <h2>We do it the long way. On purpose.</h2>
-        <p>Most detail shops run a car through a tunnel and call it done. We don't. Every wash is by hand. Every paint correction is done with proper pads and compounds. Every interior gets pulled apart, cleaned, and put back the way you'd want it.</p>
+        <h2>The three things that make Pure different.</h2>
+        <p>Most shops run your car through a tunnel and call it done. We don't. Here's what actually changes when the work is done by hand with the right products.</p>
       </div>
       <div class="why-grid">
         <div class="why__item reveal">
@@ -973,6 +1047,13 @@
           <h3>Straight pricing</h3>
           <p>What you see is what you pay. No upsells after the fact. If your car needs more than the package covers, we tell you up front and let you decide.</p>
         </div>
+      </div>
+
+      <div class="section-foot reveal">
+        <a href="#book" class="btn btn--primary">Start Booking
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <span class="section-foot__note">Next available slots this week.</span>
       </div>
     </div>
   </section>
@@ -1003,6 +1084,13 @@
           <div class="review__name">{{REVIEW_3_NAME}}</div>
           <div class="review__meta">{{REVIEW_3_META}}</div>
         </div>
+      </div>
+
+      <div class="section-foot reveal">
+        <a href="#book" class="btn btn--primary">Join Them
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <span class="section-foot__note">Book in under a minute.</span>
       </div>
     </div>
   </section>
