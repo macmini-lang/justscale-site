@@ -736,6 +736,53 @@
       color: var(--text-4);
     }
 
+    /* ========== MOBILE TIGHTENING ========== */
+    @media (max-width: 720px) {
+      body { font-size: 15.5px; }
+      h1 { letter-spacing: -0.04em; }
+      section { padding: 56px 0 !important; }
+      .section-head { margin-bottom: 36px; }
+      .section-head p { font-size: 0.98rem; }
+      .hero { padding: 16px 0 48px; }
+      .hero__inner { gap: 32px; }
+      .hero__badge { margin-bottom: 16px; padding: 6px 12px; font-size: 0.75rem; }
+      .hero p { margin: 16px 0 24px; font-size: 1rem; }
+      .hero__proof { margin-top: 32px; padding-top: 24px; gap: 14px; }
+      .hero__stat-n { font-size: 1.5rem; }
+      .hero__stat-l { font-size: 0.72rem; margin-top: 4px; }
+      .hero__video { display: none; }
+      .hero__ctas .btn { flex: 1; padding: 14px 20px; font-size: 0.9rem; }
+      .marquee { padding: 14px 0; }
+      .marquee__track { gap: 32px; font-size: 1rem; }
+      .marquee__track span { gap: 32px; }
+      .svc { padding: 26px 22px; }
+      .svc__name { font-size: 1.2rem; }
+      .svc__time { margin-bottom: 18px; }
+      .svc__prices { padding: 16px 0; margin-bottom: 18px; gap: 16px; }
+      .svc__price { font-size: 1.45rem; }
+      .svc__includes { margin-bottom: 22px; }
+      .svc__includes li { font-size: 0.9rem; margin-bottom: 8px; }
+      .step { padding: 28px 24px; }
+      .step__num { margin-bottom: 32px; }
+      .why__item { padding: 26px 22px; }
+      .why__icon { margin-bottom: 18px; }
+      .review { padding: 26px 22px; }
+      .review__body { font-size: 0.96rem; margin-bottom: 18px; }
+      .faq-q { padding: 18px 20px; font-size: 0.96rem; }
+      .faq-a { padding: 0 20px 20px; font-size: 0.94rem; }
+      .book__grid { gap: 40px; }
+      .book__contact { margin-top: 28px; }
+      .book__contact-item { padding: 14px 0; }
+      .form { padding: 24px 20px; }
+      .form h3 { font-size: 1.3rem; }
+      .form__sub { margin-bottom: 20px; }
+      .gal-grid { gap: 8px; }
+      .gal-ig { margin-top: 20px; font-size: 0.9rem; }
+      footer { padding: 52px 0 28px; }
+      .foot { gap: 32px; margin-bottom: 36px; }
+      .section-foot { margin-top: 32px; }
+    }
+
     /* ========== SCROLL REVEAL ========== */
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity 700ms var(--ease), transform 700ms var(--ease); }
     .reveal.is-visible { opacity: 1; transform: translateY(0); }
