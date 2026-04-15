@@ -753,11 +753,23 @@
       .hero__proof { margin-top: 32px; padding-top: 24px; gap: 14px; }
       .hero__stat-n { font-size: 1.5rem; }
       .hero__stat-l { font-size: 0.72rem; margin-top: 4px; }
-      .hero__video { display: block; aspect-ratio: 9 / 16; max-width: 220px; border-radius: 16px; }
+      .hero__video {
+        display: block;
+        aspect-ratio: 9 / 16;
+        max-width: 220px;
+        border-radius: 16px;
+        transform-origin: center center;
+        will-change: transform, opacity;
+        transition: none;
+      }
+      .hero { overflow: visible; }
       .hero__video-play { width: 56px; height: 56px; }
       .hero__video-play svg { width: 20px; height: 20px; }
       .hero__video-label { bottom: 14px; font-size: 0.68rem; }
-      .hero__ctas .btn { flex: 1; padding: 14px 20px; font-size: 0.9rem; }
+      .hero__ctas { gap: 10px; }
+      .hero__ctas .btn { flex: 1; padding: 12px 14px; font-size: 0.8rem; white-space: nowrap; gap: 6px; }
+      .hero__ctas .btn svg { width: 12px; height: 12px; }
+      .nav__inner { padding: 14px 0 18px; }
       .marquee { padding: 14px 0; }
       .marquee__track { gap: 32px; font-size: 1rem; }
       .marquee__track span { gap: 32px; }
@@ -1377,6 +1389,50 @@
         success.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
     });
+
+    // Scroll-enlarge + fade on hero video (mobile only, <720px)
+    const heroVideo = document.querySelector('.hero__video');
+    let videoTicking = false;
+
+    function updateHeroVideoScroll() {
+      videoTicking = false;
+      if (!heroVideo || window.innerWidth > 720) {
+        if (heroVideo) {
+          heroVideo.style.transform = '';
+          heroVideo.style.opacity = '';
+        }
+        return;
+      }
+      const rect = heroVideo.getBoundingClientRect();
+      const vh = window.innerHeight;
+      const start = vh * 0.7;
+      const end = -rect.height * 0.6;
+      const progress = Math.max(0, Math.min(1, (start - rect.top) / (start - end)));
+
+      let scale, opacity;
+      if (progress < 0.65) {
+        const p = progress / 0.65;
+        scale = 1 + p * 1.2;
+        opacity = 1;
+      } else {
+        const p = (progress - 0.65) / 0.35;
+        scale = 2.2 - p * 0.3;
+        opacity = 1 - p;
+      }
+      heroVideo.style.transform = `scale(${scale})`;
+      heroVideo.style.opacity = Math.max(0, opacity).toFixed(3);
+    }
+
+    function onVideoScroll() {
+      if (!videoTicking) {
+        requestAnimationFrame(updateHeroVideoScroll);
+        videoTicking = true;
+      }
+    }
+
+    window.addEventListener('scroll', onVideoScroll, { passive: true });
+    window.addEventListener('resize', onVideoScroll, { passive: true });
+    updateHeroVideoScroll();
   </script>
 </body>
 </html>
