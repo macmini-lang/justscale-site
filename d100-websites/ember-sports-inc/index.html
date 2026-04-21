@@ -184,6 +184,19 @@
     .footer__compliance { margin-top: 24px; font-size: 0.72rem; color: var(--text-tertiary); line-height: 1.5; max-width: 80ch; margin-left: auto; margin-right: auto; text-align: center; }
     @media (max-width: 768px) { .footer__inner { grid-template-columns: 1fr 1fr; gap: 36px; } }
     @media (max-width: 480px) { .footer__inner { grid-template-columns: 1fr; } .footer__bottom { flex-direction: column; gap: 8px; text-align: center; } }
+
+    @media (max-width: 640px) {
+      .hero__headline { font-size: 1.75rem; }
+      .hero__sub { font-size: 0.9rem; }
+      .hero__trust { gap: 16px; }
+      .hero__trust-item { font-size: 0.72rem; }
+      .service-card { padding: 24px 20px; }
+      .service-card h3 { font-size: 1.1rem; }
+      .service-card p { font-size: 0.82rem; }
+      .why__feature h4 { font-size: 0.9rem; }
+      .why__feature p { font-size: 0.82rem; }
+      .trust-bar__badge { font-size: 0.78rem; }
+    }
   </style>
 </head>
 <body>
@@ -219,8 +232,8 @@
     <div class="container hero__inner">
       <div class="hero__text">
         <p class="overline hero__overline">506(c) Offering</p>
-        <h1 class="hero__headline">Professional Baseball Analytics From a Smartphone. No $30K Hardware Required.</h1>
-        <p class="hero__sub">Ember Sports turns any iPhone or tablet into a professional-grade hitting and pitching analyzer. The technology works, the app is live, and MLB coaches are already using it. This round scales distribution.</p>
+        <h1 class="hero__headline">Pro Baseball Analytics. Just a Phone.</h1>
+        <p class="hero__sub">Turns any iPhone into a pro-grade hitting and pitching analyzer used by MLB coaches.</p>
         <div class="hero__actions">
           <a href="mailto:invest@embersports.com?subject=Ember%20Sports%20Investment" class="btn btn--primary">Request Investment Materials</a>
           <a href="#platform" class="btn btn--secondary">See the Platform</a>
@@ -292,28 +305,28 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
           </div>
           <h3>Hitting Analyzer</h3>
-          <p>Exit velocity, launch angle, bat path visualization, and video comparison. All captured through the device camera, no sensors or wearables needed.</p>
+          <p>Exit velocity, launch angle, and bat path visualization from the device camera alone.</p>
         </div>
         <div class="service-card reveal">
           <div class="service-card__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
           </div>
           <h3>Pitching Analyzer</h3>
-          <p>Velocity tracking, flight path analysis, and strike zone mapping. Pitchers see their mechanics in real data, not just feel.</p>
+          <p>Velocity tracking, flight path analysis, and strike zone mapping from real data.</p>
         </div>
         <div class="service-card reveal">
           <div class="service-card__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           </div>
           <h3>VR Training</h3>
-          <p>Quest 3 compatible simulation with customizable pitch scenarios. Players face live-speed pitching in a virtual batting cage from anywhere.</p>
+          <p>Quest 3 VR simulation with customizable pitch scenarios at live speed.</p>
         </div>
         <div class="service-card reveal">
           <div class="service-card__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
           </div>
           <h3>Team Analytics</h3>
-          <p>Coaches track every player on the roster. Compare swings, monitor velocity trends, and make data-driven lineup decisions from a single dashboard.</p>
+          <p>Track every player on the roster with data-driven lineup decisions from one dashboard.</p>
         </div>
       </div>
     </div>

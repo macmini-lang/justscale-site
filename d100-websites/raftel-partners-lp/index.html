@@ -196,6 +196,19 @@
     .footer__compliance { margin-top: 24px; font-size: 0.72rem; color: var(--text-tertiary); line-height: 1.5; max-width: 80ch; margin-left: auto; margin-right: auto; text-align: center; }
     @media (max-width: 768px) { .footer__inner { grid-template-columns: 1fr 1fr; gap: 36px; } }
     @media (max-width: 480px) { .footer__inner { grid-template-columns: 1fr; } .footer__bottom { flex-direction: column; gap: 8px; text-align: center; } }
+
+    @media (max-width: 640px) {
+      .hero__headline { font-size: 1.75rem; }
+      .hero__sub { font-size: 0.9rem; }
+      .hero__trust { gap: 16px; }
+      .hero__trust-item { font-size: 0.72rem; }
+      .service-card { padding: 24px 20px; }
+      .service-card h3 { font-size: 1.1rem; }
+      .service-card p { font-size: 0.82rem; }
+      .why__feature h4 { font-size: 0.9rem; }
+      .why__feature p { font-size: 0.82rem; }
+      .trust-bar__badge { font-size: 0.78rem; }
+    }
   </style>
 </head>
 <body>
@@ -229,8 +242,8 @@
     <div class="container hero__inner">
       <div class="hero__text">
         <p class="overline hero__overline">Raftel Partners LP</p>
-        <h1 class="hero__headline">A Pooled Investment Vehicle Built for Accredited Investors Who Want Active Management</h1>
-        <p class="hero__sub">Raftel Partners LP offers accredited investors access to a professionally managed pooled fund. $10M raised to date. Dylan Richman leads investment selection and portfolio management.</p>
+        <h1 class="hero__headline">$10M Raised. Active Management. Accredited Only.</h1>
+        <p class="hero__sub">Professionally managed pooled fund with $10M raised, led by Dylan Richman.</p>
         <div class="hero__actions">
           <a href="mailto:dylan@raftelpartners.com?subject=Raftel%20Partners%20LP%20Materials" class="btn btn--primary">Request Fund Materials</a>
           <a href="#strategy" class="btn btn--secondary">Investment Strategy</a>
@@ -302,28 +315,28 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
           </div>
           <h3>Pooled Structure</h3>
-          <p>Investor capital is pooled into a single fund vehicle. This structure provides diversification across multiple positions that individual investors could not access alone.</p>
+          <p>Capital pooled into one vehicle for diversification across positions most investors can't access alone.</p>
         </div>
         <div class="service-card reveal">
           <div class="service-card__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
           </div>
           <h3>Active Selection</h3>
-          <p>Every investment goes through a defined underwriting process. The fund does not passively track an index. Positions are selected based on fundamental analysis.</p>
+          <p>Every position selected through fundamental analysis, not passive index tracking.</p>
         </div>
         <div class="service-card reveal">
           <div class="service-card__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
           <h3>Risk Management</h3>
-          <p>Position sizing, portfolio concentration limits, and drawdown management are built into the fund's operating framework from day one.</p>
+          <p>Position sizing, concentration limits, and drawdown management built in from day one.</p>
         </div>
         <div class="service-card reveal">
           <div class="service-card__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
           </div>
           <h3>LP Reporting</h3>
-          <p>Regular performance updates, portfolio composition reports, and transparent fee accounting. Investors see exactly where their capital is allocated.</p>
+          <p>Regular performance updates and transparent fee accounting so investors see where capital goes.</p>
         </div>
       </div>
     </div>
