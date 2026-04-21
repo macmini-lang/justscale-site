@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Thesis Capital Partners — Operator-Led Private Equity</title>
+  <meta name="description" content="Thesis Capital Partners invests in US-based family-owned businesses through an operator-led model. Thesis Partners II targeting $150M.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== RESET & FOUNDATIONS ===== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --brand: #0b2545;
+      --brand-dark: #091d38;
+      --accent: #ffc90e;
+      --accent-hover: #e6b400;
+      --accent-muted: rgba(255, 201, 14, 0.08);
+      --text: #1a1b1f;
+      --text-secondary: #4a4a5a;
+      --text-tertiary: #758696;
+      --bg: #ffffff;
+      --bg-warm: #f9f6f1;
+      --bg-card: #ffffff;
+      --border: rgba(11, 37, 69, 0.08);
+      --border-strong: rgba(11, 37, 69, 0.14);
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04);
+      --shadow-lg: 0 8px 32px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+    }
+
+    html {
+      font-size: 18px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--brand);
+    }
+
+    h1 { font-size: clamp(2.25rem, 1.5rem + 3.2vw, 3.2rem); letter-spacing: -0.02em; }
+    h2 { font-size: clamp(1.75rem, 1.2rem + 2.4vw, 2.4rem); letter-spacing: -0.01em; }
+    h3 { font-size: clamp(1.25rem, 1rem + 1.2vw, 1.75rem); }
+    h4 { font-size: 1.25rem; }
+
+    p {
+      max-width: 65ch;
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 200ms ease;
+    }
+    a:hover { color: var(--accent-hover); }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    ul { list-style: none; }
+
+    /* ===== UTILITIES ===== */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 clamp(20px, 5vw, 32px);
+    }
+
+    .container--wide {
+      max-width: 1320px;
+    }
+
+    .overline {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .section-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 16px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.88rem;
+      border: none;
+      cursor: pointer;
+      transition: background 200ms ease, transform 150ms ease, box-shadow 200ms ease;
+      text-decoration: none;
+      gap: 8px;
+    }
+
+    .btn--primary {
+      background: var(--accent);
+      color: var(--brand);
+      padding: 16px 36px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+    }
+    .btn--primary:hover {
+      background: var(--accent-hover);
+      color: var(--brand);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(255, 201, 14, 0.35);
+    }
+
+    .btn--secondary {
+      background: transparent;
+      color: var(--brand);
+      padding: 16px 36px;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--border-strong);
+    }
+    .btn--secondary:hover {
+      border-color: var(--brand);
+      color: var(--brand);
+      background: rgba(11, 37, 69, 0.03);
+    }
+
+    .btn--white {
+      background: #fff;
+      color: var(--brand);
+      padding: 16px 36px;
+      border-radius: var(--radius-sm);
+    }
+    .btn--white:hover {
+      color: var(--brand);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+    }
+
+    /* ===== ANIMATIONS ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 600ms ease-out, transform 600ms ease-out;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-group > .reveal:nth-child(1) { transition-delay: 0ms; }
+    .reveal-group > .reveal:nth-child(2) { transition-delay: 100ms; }
+    .reveal-group > .reveal:nth-child(3) { transition-delay: 200ms; }
+    .reveal-group > .reveal:nth-child(4) { transition-delay: 300ms; }
+    .reveal-group > .reveal:nth-child(5) { transition-delay: 400ms; }
+    .reveal-group > .reveal:nth-child(6) { transition-delay: 500ms; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* ===== NAV ===== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow 300ms ease;
+    }
+    .nav.scrolled {
+      box-shadow: var(--shadow-sm);
+    }
+    .nav__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .nav__logo img {
+      height: 40px;
+      width: auto;
+    }
+    .nav__links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+    .nav__links a {
+      font-size: 0.83rem;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      transition: color 200ms ease;
+      letter-spacing: 0.01em;
+    }
+    .nav__links a:hover {
+      color: var(--brand);
+    }
+    .nav__phone {
+      font-size: 0.83rem;
+      font-weight: 600;
+      color: var(--brand);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav__phone svg {
+      width: 16px;
+      height: 16px;
+    }
+    .nav__cta {
+      font-size: 0.8rem;
+      padding: 10px 24px;
+    }
+    .nav__cta-wrap {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .nav__mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+    .nav__mobile-toggle svg {
+      width: 24px;
+      height: 24px;
+      color: var(--brand);
+    }
+
+    @media (max-width: 900px) {
+      .nav__links { display: none; }
+      .nav__cta-wrap { display: none; }
+      .nav__mobile-toggle { display: block; }
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      padding-top: 72px;
+    }
+    .hero__inner {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      align-items: center;
+      gap: clamp(32px, 5vw, 72px);
+      padding: clamp(64px, 10vw, 120px) 0;
+      min-height: calc(100vh - 72px);
+    }
+    .hero__text {
+      max-width: 600px;
+    }
+    .hero__overline {
+      margin-bottom: 20px;
+    }
+    .hero__headline {
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+    .hero__sub {
+      font-size: clamp(1rem, 0.9rem + 0.4vw, 1.1rem);
+      color: var(--text-secondary);
+      margin-bottom: 36px;
+      max-width: 48ch;
+      line-height: 1.6;
+    }
+    .hero__actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .hero__trust {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+    .hero__trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+    .hero__trust-item svg {
+      flex-shrink: 0;
+    }
+
+    /* Video placeholder */
+    .hero__media {
+      position: relative;
+      width: 100%;
+    }
+    .video-placeholder {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: #000;
+      box-shadow: var(--shadow-lg);
+      cursor: pointer;
+    }
+    .video-placeholder__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.8;
+    }
+    .video-placeholder__play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 72px;
+      height: 72px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+      transition: transform 200ms ease, box-shadow 200ms ease;
+    }
+    .video-placeholder:hover .video-placeholder__play {
+      transform: translate(-50%, -50%) scale(1.08);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    }
+    .video-placeholder__play svg {
+      width: 28px;
+      height: 28px;
+      color: var(--brand);
+      margin-left: 3px;
+    }
+    .video-placeholder__note {
+      position: absolute;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.7);
+      white-space: nowrap;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    @media (max-width: 900px) {
+      .hero__inner {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding: 48px 0 64px;
+      }
+      .hero__media {
+        max-width: 520px;
+      }
+    }
+
+    /* ===== TRUST BAR ===== */
+    .trust-bar {
+      background: var(--brand);
+      padding: clamp(36px, 5vw, 56px) 0;
+    }
+    .trust-bar__inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(32px, 5vw, 64px);
+      flex-wrap: wrap;
+    }
+    .trust-bar__badge {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #fff;
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+    .trust-bar__badge-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .trust-bar__badge-icon svg {
+      width: 22px;
+      height: 22px;
+      color: #fff;
+    }
+    .trust-bar__divider {
+      width: 1px;
+      height: 32px;
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    @media (max-width: 640px) {
+      .trust-bar__inner {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .trust-bar__divider {
+        display: none;
+      }
+    }
+
+    /* ===== SERVICES ===== */
+    .services {
+      padding: clamp(64px, 10vw, 120px) 0;
+    }
+    .services__header {
+      text-align: center;
+      margin-bottom: clamp(48px, 6vw, 72px);
+    }
+    .services__header h2 {
+      margin-top: 12px;
+      margin-bottom: 16px;
+    }
+    .services__header p {
+      color: var(--text-secondary);
+      margin: 0 auto;
+      font-size: 1rem;
+    }
+    .services__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+    }
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 36px 28px;
+      transition: border-color 200ms ease, box-shadow 300ms ease, transform 200ms ease;
+    }
+    .service-card:hover {
+      border-color: var(--border-strong);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+    .service-card__icon {
+      width: 48px;
+      height: 48px;
+      background: var(--accent-muted);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+    .service-card__icon svg {
+      width: 24px;
+      height: 24px;
+      color: var(--accent);
+    }
+    .service-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+    }
+    .service-card p {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 1024px) {
+      .services__grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .services__grid { grid-template-columns: 1fr; }
+    }
+
+    /* ===== PROJECTS ===== */
+    .projects {
+      padding: clamp(64px, 10vw, 120px) 0;
+      background: var(--bg-warm);
+    }
+    .projects__header {
+      text-align: center;
+      margin-bottom: clamp(48px, 6vw, 72px);
+    }
+    .projects__header h2 {
+      margin-top: 12px;
+      margin-bottom: 16px;
+    }
+    .projects__header p {
+      color: var(--text-secondary);
+      margin: 0 auto;
+      font-size: 1rem;
+    }
+    .projects__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .project-card {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      background: var(--bg-warm);
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow 300ms ease, transform 200ms ease;
+    }
+    .project-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+    .project-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .project-card__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(11, 37, 69, 0.8) 0%, rgba(11, 37, 69, 0.05) 50%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 300ms ease;
+    }
+    .project-card:hover .project-card__overlay {
+      opacity: 1;
+    }
+    .project-card__label {
+      font-size: 0.83rem;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .projects__grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .projects__grid { grid-template-columns: 1fr; max-width: 320px; }
+    }
+
+    /* ===== WHY CHOOSE US ===== */
+    .why {
+      padding: clamp(64px, 10vw, 120px) 0;
+    }
+    .why__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(48px, 6vw, 96px);
+      align-items: center;
+    }
+    .why__text h2 {
+      margin-bottom: 20px;
+    }
+    .why__text > p {
+      color: var(--text-secondary);
+      margin-bottom: 48px;
+      font-size: 1rem;
+    }
+    .why__features {
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+    }
+    .why__feature {
+      display: flex;
+      gap: 20px;
+    }
+    .why__feature-icon {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      background: var(--accent-muted);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .why__feature-icon svg {
+      width: 22px;
+      height: 22px;
+      color: var(--accent);
+    }
+    .why__feature h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--brand);
+      margin-bottom: 6px;
+    }
+    .why__feature p {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    .why__image {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    .why__image img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    .why__image-caption {
+      text-align: center;
+      padding: 16px 20px 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand);
+      background: var(--bg-card);
+    }
+
+    @media (max-width: 900px) {
+      .why__inner { grid-template-columns: 1fr; }
+      .why__image { max-width: 500px; }
+    }
+
+    /* ===== TESTIMONIALS / TEAM ===== */
+    .testimonials {
+      padding: clamp(64px, 10vw, 120px) 0;
+      background: var(--bg-warm);
+    }
+    .testimonials__header {
+      text-align: center;
+      margin-bottom: clamp(48px, 6vw, 72px);
+    }
+    .testimonials__header h2 {
+      margin-top: 12px;
+    }
+    .testimonials__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .testimonial-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 36px 28px;
+    }
+
+    /* Team card styles */
+    .team-card { text-align: center; padding: 40px 28px; }
+    .team-card__photo { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin: 0 auto 20px; display: block; border: 2px solid var(--border); }
+    .team-card__name { font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 600; color: var(--brand); margin-bottom: 4px; }
+    .team-card__title { font-size: 0.83rem; color: var(--accent); font-weight: 500; margin-bottom: 12px; }
+    .team-card__desc { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; font-style: italic; }
+
+    @media (max-width: 768px) {
+      .testimonials__grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+    }
+
+    /* ===== SERVICE AREAS ===== */
+    .service-areas {
+      padding: clamp(64px, 10vw, 100px) 0;
+    }
+    .service-areas__header {
+      text-align: center;
+      margin-bottom: clamp(36px, 5vw, 56px);
+    }
+    .service-areas__header h2 {
+      margin-top: 12px;
+      margin-bottom: 16px;
+    }
+    .service-areas__header p {
+      color: var(--text-secondary);
+      margin: 0 auto;
+      font-size: 1rem;
+    }
+    .service-areas__list {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .service-areas__tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-sm);
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text);
+      transition: border-color 200ms ease, background 200ms ease;
+    }
+    .service-areas__tag:hover {
+      border-color: var(--accent);
+      background: var(--accent-muted);
+    }
+    .service-areas__tag svg {
+      width: 16px;
+      height: 16px;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ===== CTA SECTION ===== */
+    .cta-section {
+      background: var(--brand);
+      padding: clamp(64px, 10vw, 100px) 0;
+      text-align: center;
+    }
+    .cta-section h2 {
+      color: #fff;
+      margin-bottom: 16px;
+    }
+    .cta-section p {
+      color: rgba(255, 255, 255, 0.75);
+      margin: 0 auto 36px;
+      font-size: 1.05rem;
+      max-width: 48ch;
+    }
+    .cta-section__actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .cta-section__phone {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.94rem;
+      font-weight: 500;
+      margin-top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .cta-section__phone svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      padding: 64px 0 40px;
+      border-top: 1px solid var(--border);
+    }
+    .footer__inner {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 48px;
+    }
+    .footer__brand img {
+      height: 36px;
+      margin-bottom: 16px;
+      width: auto;
+    }
+    .footer__brand p {
+      font-size: 0.83rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      max-width: 28ch;
+    }
+    .footer__col h5 {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: 20px;
+    }
+    .footer__col ul {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .footer__col a {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      transition: color 200ms ease;
+    }
+    .footer__col a:hover {
+      color: var(--brand);
+    }
+    .footer__bottom {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: var(--text-tertiary);
+    }
+    .footer__bottom a {
+      color: var(--text-tertiary);
+    }
+    .footer__bottom a:hover {
+      color: var(--brand);
+    }
+    .footer__compliance {
+      margin-top: 24px;
+      font-size: 0.72rem;
+      color: var(--text-tertiary);
+      line-height: 1.5;
+      max-width: 80ch;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .footer__inner { grid-template-columns: 1fr 1fr; gap: 36px; }
+    }
+    @media (max-width: 480px) {
+      .footer__inner { grid-template-columns: 1fr; }
+      .footer__bottom { flex-direction: column; gap: 8px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav" id="nav">
+    <div class="container container--wide nav__inner">
+      <a href="#" class="nav__logo">
+        <img src="https://cdn.prod.website-files.com/67ab9a18414cf7b915da6d46/67ab9a18414cf7b915da6dc4_ThesisCapital-logo.png" alt="Thesis Capital Partners" width="160" height="40">
+      </a>
+      <ul class="nav__links">
+        <li><a href="#thesis">About</a></li>
+        <li><a href="#services">Investment Thesis</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#fund">Fund</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav__cta-wrap">
+        <a href="mailto:connor@thesiscapital.com" class="nav__phone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,4 12,13 2,4"/></svg>
+          connor@thesiscapital.com
+        </a>
+        <a href="mailto:connor@thesiscapital.com?subject=Thesis%20Partners%20II%20Materials" class="btn btn--primary nav__cta">Request Materials</a>
+      </div>
+      <button class="nav__mobile-toggle" aria-label="Menu" id="mobileToggle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__text">
+        <p class="overline hero__overline">Thesis Partners II</p>
+        <h1 class="hero__headline">Every Fund Says Operator-Led. One Actually Did It First.</h1>
+        <p class="hero__sub">Thesis Capital Partners hired six operating executives before sourcing a single deal. That sequencing decision changes everything about how this fund performs.</p>
+        <div class="hero__actions">
+          <a href="mailto:connor@thesiscapital.com?subject=Thesis%20Partners%20II" class="btn btn--primary">Request Fund Materials</a>
+          <a href="#thesis" class="btn btn--secondary">Learn More</a>
+        </div>
+        <div class="hero__trust">
+          <div class="hero__trust-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffc90e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>6 Operators on Bench</span>
+          </div>
+          <div class="hero__trust-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffc90e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+            <span>$150M Target Raise</span>
+          </div>
+          <div class="hero__trust-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffc90e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>Long-Term Hold</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero__media">
+        <div class="video-placeholder">
+          <img class="video-placeholder__img" src="https://cdn.prod.website-files.com/67ab9a18414cf7b915da6d46/692fce34a7274865e80d4ac1_banner-img.webp" alt="Thesis Capital Partners fund overview" width="800" height="500">
+          <div class="video-placeholder__play">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+          </div>
+          <span class="video-placeholder__note">2-minute fund overview</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRUST BAR ===== -->
+  <section class="trust-bar reveal">
+    <div class="container trust-bar__inner">
+      <div class="trust-bar__badge reveal">
+        <div class="trust-bar__badge-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        Operator-Led Thesis
+      </div>
+      <div class="trust-bar__divider"></div>
+      <div class="trust-bar__badge reveal">
+        <div class="trust-bar__badge-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        506(c) Qualified
+      </div>
+      <div class="trust-bar__divider"></div>
+      <div class="trust-bar__badge reveal">
+        <div class="trust-bar__badge-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+        </div>
+        Aligned GP Capital
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES (The Thesis Model) ===== -->
+  <section class="services" id="thesis">
+    <div class="container">
+      <div class="services__header reveal">
+        <p class="section-label">How It Works</p>
+        <h2>An Investment Model Built Around Operations</h2>
+        <p>Four structural decisions that change how returns are generated.</p>
+      </div>
+      <div class="services__grid reveal-group">
+        <div class="service-card reveal">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3>Operator Bench</h3>
+          <p>Six Executives in Residence recruited and ready before a single deal is sourced. The operator is in the building on day one.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+          </div>
+          <h3>Acquisition Criteria</h3>
+          <p>US family-owned businesses with $15M-$80M enterprise value and $3M-$25M in free cash flow. Proven operational upside.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>Long-Term Hold</h3>
+          <p>No predetermined exit timeline. When a business is compounding, Thesis keeps it. The fund rewards patience.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+          </div>
+          <h3>LP Alignment</h3>
+          <p>Material GP ownership in every transaction. The team's financial outcome is directly tied to portfolio performance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS (Investment Focus) ===== -->
+  <section class="projects" id="services">
+    <div class="container">
+      <div class="projects__header reveal">
+        <p class="section-label">Target Sectors</p>
+        <h2>Where Operators Create Value</h2>
+        <p>Industries where operating intensity, not financial complexity, drives returns.</p>
+      </div>
+      <div class="projects__grid reveal-group">
+        <div class="project-card reveal">
+          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80" alt="Manufacturing" loading="lazy" width="600" height="450">
+          <div class="project-card__overlay">
+            <div class="project-card__label">Manufacturing</div>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80" alt="Business Services" loading="lazy" width="600" height="450">
+          <div class="project-card__overlay">
+            <div class="project-card__label">Business Services</div>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80" alt="Distribution" loading="lazy" width="600" height="450">
+          <div class="project-card__overlay">
+            <div class="project-card__label">Distribution</div>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="Specialty Trade" loading="lazy" width="600" height="450">
+          <div class="project-card__overlay">
+            <div class="project-card__label">Specialty Trade</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY CHOOSE US ===== -->
+  <section class="why" id="why">
+    <div class="container why__inner">
+      <div class="why__text reveal">
+        <p class="section-label">Why Thesis</p>
+        <h2>Why Experienced LPs Choose This Model</h2>
+        <p>The conventional PE approach breaks in a high-rate environment. Here's what's different.</p>
+        <div class="why__features">
+          <div class="why__feature">
+            <div class="why__feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+            <div>
+              <h4>The Operator Question Is Already Answered</h4>
+              <p>When a deal closes, a known operator deploys into a known role. No search. No ramp period. No learning curve destroying value.</p>
+            </div>
+          </div>
+          <div class="why__feature">
+            <div class="why__feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+            </div>
+            <div>
+              <h4>Returns From Operations, Not Financial Engineering</h4>
+              <p>At 7-9% debt costs, multiple expansion alone does not generate returns. Thesis creates value by making the business better, not by loading it with debt.</p>
+            </div>
+          </div>
+          <div class="why__feature">
+            <div class="why__feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div>
+              <h4>Fundless Sponsor Track Record</h4>
+              <p>The team completed multiple acquisitions deal-by-deal before raising a formal fund. That model demands more rigor because there is no blind pool to absorb mistakes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="why__image reveal">
+        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80" alt="Business leadership meeting" loading="lazy" width="800" height="600">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TEAM ===== -->
+  <section class="testimonials" id="team">
+    <div class="container">
+      <div class="testimonials__header reveal">
+        <p class="section-label">Leadership</p>
+        <h2>The People Behind This</h2>
+      </div>
+      <div class="testimonials__grid reveal-group">
+        <div class="testimonial-card team-card reveal">
+          <img class="team-card__photo" src="https://cdn.prod.website-files.com/67ab9a18414cf7b915da6d6c/67ab9a18414cf7b915da6e45_Ian%201.jpeg" alt="Ian J.H. Reynolds" loading="lazy" width="100" height="100">
+          <div class="team-card__name">Ian J.H. Reynolds</div>
+          <div class="team-card__title">Partner</div>
+          <p class="team-card__desc">Operator turned investor. Built the firm around operational conviction.</p>
+        </div>
+        <div class="testimonial-card team-card reveal">
+          <img class="team-card__photo" src="https://cdn.prod.website-files.com/67ab9a18414cf7b915da6d6c/6810e2ecf71590ea191ab353_WhatsApp%20Image%202025-04-29%20at%2011.31.49.jpeg" alt="Connor Chakeen" loading="lazy" width="100" height="100">
+          <div class="team-card__name">Connor Chakeen</div>
+          <div class="team-card__title">Partner</div>
+          <p class="team-card__desc">Former wealth advisor. Leads all investor conversations.</p>
+        </div>
+        <div class="testimonial-card team-card reveal">
+          <img class="team-card__photo" src="https://cdn.prod.website-files.com/67ab9a18414cf7b915da6d6c/6966c508f78377b313931d3a_joshua%20profile%202%20.jpg" alt="Joshua Wolf" loading="lazy" width="100" height="100">
+          <div class="team-card__name">Joshua Wolf</div>
+          <div class="team-card__title">Partner</div>
+          <p class="team-card__desc">Focused on deal origination and portfolio oversight.</p>
+        </div>
+        <div class="testimonial-card team-card reveal">
+          <img class="team-card__photo" src="https://cdn.prod.website-files.com/67ab9a18414cf7b915da6d6c/67ab9a18414cf7b915da6e4b_WhatsApp%20Image%202024-09-18%20at%2012.05.02.jpeg" alt="Tim Belton" loading="lazy" width="100" height="100">
+          <div class="team-card__name">Tim Belton</div>
+          <div class="team-card__title">Independent Director</div>
+          <p class="team-card__desc">Governance and board-level oversight.</p>
+        </div>
+        <div class="testimonial-card team-card reveal">
+          <img class="team-card__photo" src="https://cdn.prod.website-files.com/67ab9a18414cf7b915da6d6c/69824baccd56c02b37a1592a_wesley%20profile%20thesis.png" alt="Wesley Leblanc" loading="lazy" width="100" height="100">
+          <div class="team-card__name">Wesley Leblanc</div>
+          <div class="team-card__title">Director</div>
+          <p class="team-card__desc">Investment analysis and deal execution.</p>
+        </div>
+        <div class="testimonial-card team-card reveal">
+          <img class="team-card__photo" src="https://cdn.prod.website-files.com/67ab9a18414cf7b915da6d6c/69825200a049bbda8506d3df_Alan%20profile%20thesis.jpg" alt="Alan Hebert" loading="lazy" width="100" height="100">
+          <div class="team-card__name">Alan Hebert</div>
+          <div class="team-card__title">Senior Associate</div>
+          <p class="team-card__desc">Capital markets and institutional outreach.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FUND DETAILS ===== -->
+  <section class="service-areas" id="fund">
+    <div class="container">
+      <div class="service-areas__header reveal">
+        <p class="section-label">Thesis Partners II</p>
+        <h2>Current Offering</h2>
+        <p>Pre-first close. Targeting June/July 2026.</p>
+      </div>
+      <div class="service-areas__list reveal">
+        <div class="service-areas__tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          $150M Target
+        </div>
+        <div class="service-areas__tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+          $15M-$80M EV
+        </div>
+        <div class="service-areas__tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          $3M-$25M FCF
+        </div>
+        <div class="service-areas__tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Long-Term Hold
+        </div>
+        <div class="service-areas__tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          506(c)
+        </div>
+        <div class="service-areas__tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Accredited Investors
+        </div>
+        <div class="service-areas__tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Houston, TX
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA SECTION ===== -->
+  <section class="cta-section" id="contact">
+    <div class="container reveal">
+      <h2>Request the Fund Materials</h2>
+      <p>Connor Chakeen will send the teaser and investment memo within 24 hours.</p>
+      <div class="cta-section__actions">
+        <a href="mailto:connor@thesiscapital.com?subject=Thesis%20Partners%20II%20Materials" class="btn btn--white">Request Materials</a>
+      </div>
+      <div class="cta-section__phone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,4 12,13 2,4"/></svg>
+        <a href="mailto:connor@thesiscapital.com" style="color: #fff; font-weight: 700; text-decoration: none;">connor@thesiscapital.com</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <img src="https://cdn.prod.website-files.com/67ab9a18414cf7b915da6d46/67ab9a18414cf7b915da6dc4_ThesisCapital-logo.png" alt="Thesis Capital Partners" width="140" height="36">
+          <p>Thesis Capital Partners invests in US-based family-owned businesses. Our favorite holding period is forever.</p>
+        </div>
+        <div class="footer__col">
+          <h5>Fund</h5>
+          <ul>
+            <li><a href="#thesis">About</a></li>
+            <li><a href="#services">Investment Thesis</a></li>
+            <li><a href="#fund">Current Fund</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h5>Team</h5>
+          <ul>
+            <li><a href="#team">Leadership</a></li>
+            <li><a href="#team">Executives in Residence</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="mailto:connor@thesiscapital.com">connor@thesiscapital.com</a></li>
+            <li><a href="#">Houston, TX</a></li>
+            <li><a href="https://www.linkedin.com/company/thesis-capital-partners" target="_blank" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>2026 Thesis Capital Partners. All rights reserved.</span>
+        <span><a href="#">Terms</a> | <a href="#">Privacy</a></span>
+      </div>
+      <p class="footer__compliance">This website is for informational purposes only. Thesis Partners II is offered only to accredited investors under 506(c). Past performance is not indicative of future results.</p>
+    </div>
+  </footer>
+
+  <script>
+    /* ===== Scroll Reveal ===== */
+    (function() {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('.reveal').forEach(function(el) {
+        observer.observe(el);
+      });
+    })();
+
+    /* ===== Nav scroll shadow ===== */
+    (function() {
+      var nav = document.getElementById('nav');
+      var scrolled = false;
+      window.addEventListener('scroll', function() {
+        var isScrolled = window.scrollY > 20;
+        if (isScrolled !== scrolled) {
+          scrolled = isScrolled;
+          nav.classList.toggle('scrolled', isScrolled);
+        }
+      }, { passive: true });
+    })();
+
+    /* ===== Smooth scroll for anchor links ===== */
+    document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

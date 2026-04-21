@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>APEX Capital — Athlete-Backed Sports Investment</title>
+  <meta name="description" content="APEX Capital is an athlete-backed sports investment firm operating across venture capital, growth, and private equity. Backed by 100+ elite athletes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== RESET & FOUNDATIONS ===== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --brand: #1a1230;
+      --brand-dark: #110c1d;
+      --accent: #00d79b;
+      --accent-hover: #00b882;
+      --accent-muted: rgba(0, 215, 155, 0.08);
+      --text: #1a1b1f;
+      --text-secondary: #4a4a5a;
+      --text-tertiary: #758696;
+      --bg: #ffffff;
+      --bg-warm: #f7f8fa;
+      --bg-card: #ffffff;
+      --border: rgba(26, 18, 48, 0.08);
+      --border-strong: rgba(26, 18, 48, 0.14);
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04);
+      --shadow-lg: 0 8px 32px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+    }
+
+    html {
+      font-size: 18px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--brand);
+    }
+
+    h1 { font-size: clamp(2.25rem, 1.5rem + 3.2vw, 3.2rem); letter-spacing: -0.02em; }
+    h2 { font-size: clamp(1.75rem, 1.2rem + 2.4vw, 2.4rem); letter-spacing: -0.01em; }
+    h3 { font-size: clamp(1.25rem, 1rem + 1.2vw, 1.75rem); }
+    h4 { font-size: 1.25rem; }
+
+    p { max-width: 65ch; line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; transition: color 200ms ease; }
+    a:hover { color: var(--accent-hover); }
+    img { display: block; max-width: 100%; }
+    ul { list-style: none; }
+
+    /* ===== UTILITIES ===== */
+    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 32px); }
+    .container--wide { max-width: 1320px; }
+
+    .overline {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .section-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 16px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.88rem;
+      border: none;
+      cursor: pointer;
+      transition: background 200ms ease, transform 150ms ease, box-shadow 200ms ease;
+      text-decoration: none;
+      gap: 8px;
+    }
+
+    .btn--primary {
+      background: var(--accent);
+      color: var(--brand);
+      padding: 16px 36px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+    }
+    .btn--primary:hover {
+      background: var(--accent-hover);
+      color: var(--brand);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(0, 215, 155, 0.35);
+    }
+
+    .btn--secondary {
+      background: transparent;
+      color: var(--brand);
+      padding: 16px 36px;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--border-strong);
+    }
+    .btn--secondary:hover {
+      border-color: var(--brand);
+      color: var(--brand);
+      background: rgba(26, 18, 48, 0.03);
+    }
+
+    .btn--white {
+      background: #fff;
+      color: var(--brand);
+      padding: 16px 36px;
+      border-radius: var(--radius-sm);
+    }
+    .btn--white:hover {
+      color: var(--brand);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+    }
+
+    /* ===== ANIMATIONS ===== */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 600ms ease-out, transform 600ms ease-out; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-group > .reveal:nth-child(1) { transition-delay: 0ms; }
+    .reveal-group > .reveal:nth-child(2) { transition-delay: 100ms; }
+    .reveal-group > .reveal:nth-child(3) { transition-delay: 200ms; }
+    .reveal-group > .reveal:nth-child(4) { transition-delay: 300ms; }
+    .reveal-group > .reveal:nth-child(5) { transition-delay: 400ms; }
+    .reveal-group > .reveal:nth-child(6) { transition-delay: 500ms; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+    }
+
+    /* ===== NAV ===== */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); transition: box-shadow 300ms ease; }
+    .nav.scrolled { box-shadow: var(--shadow-sm); }
+    .nav__inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .nav__logo img { height: 40px; width: auto; }
+    .nav__links { display: flex; align-items: center; gap: 36px; }
+    .nav__links a { font-size: 0.83rem; font-weight: 500; color: var(--text); text-decoration: none; transition: color 200ms ease; letter-spacing: 0.01em; }
+    .nav__links a:hover { color: var(--brand); }
+    .nav__phone { font-size: 0.83rem; font-weight: 600; color: var(--brand); display: flex; align-items: center; gap: 6px; }
+    .nav__phone svg { width: 16px; height: 16px; }
+    .nav__cta { font-size: 0.8rem; padding: 10px 24px; }
+    .nav__cta-wrap { display: flex; align-items: center; gap: 24px; }
+    .nav__mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+    .nav__mobile-toggle svg { width: 24px; height: 24px; color: var(--brand); }
+
+    @media (max-width: 900px) {
+      .nav__links { display: none; }
+      .nav__cta-wrap { display: none; }
+      .nav__mobile-toggle { display: block; }
+    }
+
+    /* ===== HERO ===== */
+    .hero { padding-top: 72px; }
+    .hero__inner { display: grid; grid-template-columns: 1.4fr 1fr; align-items: center; gap: clamp(32px, 5vw, 72px); padding: clamp(64px, 10vw, 120px) 0; min-height: calc(100vh - 72px); }
+    .hero__text { max-width: 600px; }
+    .hero__overline { margin-bottom: 20px; }
+    .hero__headline { margin-bottom: 20px; line-height: 1.1; }
+    .hero__sub { font-size: clamp(1rem, 0.9rem + 0.4vw, 1.1rem); color: var(--text-secondary); margin-bottom: 36px; max-width: 48ch; line-height: 1.6; }
+    .hero__actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .hero__trust { display: flex; align-items: center; gap: 32px; margin-top: 40px; flex-wrap: wrap; }
+    .hero__trust-item { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--text-secondary); }
+    .hero__trust-item svg { flex-shrink: 0; }
+    .hero__media { position: relative; width: 100%; }
+    .video-placeholder { position: relative; aspect-ratio: 16 / 10; border-radius: var(--radius-lg); overflow: hidden; background: #000; box-shadow: var(--shadow-lg); cursor: pointer; }
+    .video-placeholder__img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
+    .video-placeholder__play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 72px; height: 72px; background: rgba(255, 255, 255, 0.95); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15); transition: transform 200ms ease, box-shadow 200ms ease; }
+    .video-placeholder:hover .video-placeholder__play { transform: translate(-50%, -50%) scale(1.08); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); }
+    .video-placeholder__play svg { width: 28px; height: 28px; color: var(--brand); margin-left: 3px; }
+    .video-placeholder__note { position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); font-size: 0.72rem; color: rgba(255, 255, 255, 0.7); white-space: nowrap; font-weight: 500; letter-spacing: 0.02em; }
+
+    @media (max-width: 900px) {
+      .hero__inner { grid-template-columns: 1fr; min-height: auto; padding: 48px 0 64px; }
+      .hero__media { max-width: 520px; }
+    }
+
+    /* ===== TRUST BAR ===== */
+    .trust-bar { background: var(--brand); padding: clamp(36px, 5vw, 56px) 0; }
+    .trust-bar__inner { display: flex; align-items: center; justify-content: center; gap: clamp(32px, 5vw, 64px); flex-wrap: wrap; }
+    .trust-bar__badge { display: flex; align-items: center; gap: 12px; color: #fff; font-size: 0.88rem; font-weight: 600; letter-spacing: 0.02em; white-space: nowrap; }
+    .trust-bar__badge-icon { width: 40px; height: 40px; background: rgba(255, 255, 255, 0.15); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .trust-bar__badge-icon svg { width: 22px; height: 22px; color: #fff; }
+    .trust-bar__divider { width: 1px; height: 32px; background: rgba(255, 255, 255, 0.2); }
+
+    @media (max-width: 640px) { .trust-bar__inner { flex-direction: column; gap: 20px; } .trust-bar__divider { display: none; } }
+
+    /* ===== SERVICES ===== */
+    .services { padding: clamp(64px, 10vw, 120px) 0; }
+    .services__header { text-align: center; margin-bottom: clamp(48px, 6vw, 72px); }
+    .services__header h2 { margin-top: 12px; margin-bottom: 16px; }
+    .services__header p { color: var(--text-secondary); margin: 0 auto; font-size: 1rem; }
+    .services__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+    .service-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 36px 28px; transition: border-color 200ms ease, box-shadow 300ms ease, transform 200ms ease; }
+    .service-card:hover { border-color: var(--border-strong); box-shadow: var(--shadow-md); transform: translateY(-3px); }
+    .service-card__icon { width: 48px; height: 48px; background: var(--accent-muted); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; margin-bottom: 24px; }
+    .service-card__icon svg { width: 24px; height: 24px; color: var(--accent); }
+    .service-card h3 { font-size: 1.25rem; margin-bottom: 12px; }
+    .service-card p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; }
+
+    @media (max-width: 1024px) { .services__grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .services__grid { grid-template-columns: 1fr; } }
+
+    /* ===== PROJECTS ===== */
+    .projects { padding: clamp(64px, 10vw, 120px) 0; background: var(--bg-warm); }
+    .projects__header { text-align: center; margin-bottom: clamp(48px, 6vw, 72px); }
+    .projects__header h2 { margin-top: 12px; margin-bottom: 16px; }
+    .projects__header p { color: var(--text-secondary); margin: 0 auto; font-size: 1rem; }
+    .projects__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; max-width: 1000px; margin: 0 auto; }
+    .project-card { position: relative; border-radius: var(--radius-md); overflow: hidden; aspect-ratio: 4 / 3; background: var(--bg-warm); box-shadow: var(--shadow-sm); transition: box-shadow 300ms ease, transform 200ms ease; }
+    .project-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+    .project-card img { width: 100%; height: 100%; object-fit: cover; }
+    .project-card__overlay { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(26, 18, 48, 0.8) 0%, rgba(26, 18, 48, 0.05) 50%); display: flex; flex-direction: column; justify-content: flex-end; padding: 20px; opacity: 0; transition: opacity 300ms ease; }
+    .project-card:hover .project-card__overlay { opacity: 1; }
+    .project-card__label { font-size: 0.83rem; color: #fff; font-weight: 600; }
+
+    @media (max-width: 768px) { .projects__grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .projects__grid { grid-template-columns: 1fr; max-width: 320px; } }
+
+    /* ===== WHY CHOOSE US ===== */
+    .why { padding: clamp(64px, 10vw, 120px) 0; }
+    .why__inner { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(48px, 6vw, 96px); align-items: center; }
+    .why__text h2 { margin-bottom: 20px; }
+    .why__text > p { color: var(--text-secondary); margin-bottom: 48px; font-size: 1rem; }
+    .why__features { display: flex; flex-direction: column; gap: 36px; }
+    .why__feature { display: flex; gap: 20px; }
+    .why__feature-icon { flex-shrink: 0; width: 44px; height: 44px; background: var(--accent-muted); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; }
+    .why__feature-icon svg { width: 22px; height: 22px; color: var(--accent); }
+    .why__feature h4 { font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 600; color: var(--brand); margin-bottom: 6px; }
+    .why__feature p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; }
+    .why__image { position: relative; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); }
+    .why__image img { width: 100%; height: auto; object-fit: cover; }
+
+    @media (max-width: 900px) { .why__inner { grid-template-columns: 1fr; } .why__image { max-width: 500px; } }
+
+    /* ===== TEAM ===== */
+    .testimonials { padding: clamp(64px, 10vw, 120px) 0; background: var(--bg-warm); }
+    .testimonials__header { text-align: center; margin-bottom: clamp(48px, 6vw, 72px); }
+    .testimonials__header h2 { margin-top: 12px; }
+    .testimonials__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .testimonial-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 36px 28px; }
+    .team-card { text-align: center; padding: 40px 28px; }
+    .team-card__photo { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin: 0 auto 20px; display: block; border: 2px solid var(--border); }
+    .team-card__name { font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 600; color: var(--brand); margin-bottom: 4px; }
+    .team-card__title { font-size: 0.83rem; color: var(--accent); font-weight: 500; margin-bottom: 12px; }
+    .team-card__desc { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; font-style: italic; }
+
+    @media (max-width: 768px) { .testimonials__grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; } }
+
+    /* ===== FUND DETAILS ===== */
+    .service-areas { padding: clamp(64px, 10vw, 100px) 0; }
+    .service-areas__header { text-align: center; margin-bottom: clamp(36px, 5vw, 56px); }
+    .service-areas__header h2 { margin-top: 12px; margin-bottom: 16px; }
+    .service-areas__header p { color: var(--text-secondary); margin: 0 auto; font-size: 1rem; }
+    .service-areas__list { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; max-width: 800px; margin: 0 auto; }
+    .service-areas__tag { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border: 1px solid var(--border-strong); border-radius: var(--radius-sm); font-size: 0.88rem; font-weight: 500; color: var(--text); transition: border-color 200ms ease, background 200ms ease; }
+    .service-areas__tag:hover { border-color: var(--accent); background: var(--accent-muted); }
+    .service-areas__tag svg { width: 16px; height: 16px; color: var(--accent); flex-shrink: 0; }
+
+    /* ===== CTA SECTION ===== */
+    .cta-section { background: var(--brand); padding: clamp(64px, 10vw, 100px) 0; text-align: center; }
+    .cta-section h2 { color: #fff; margin-bottom: 16px; }
+    .cta-section p { color: rgba(255, 255, 255, 0.75); margin: 0 auto 36px; font-size: 1.05rem; max-width: 48ch; }
+    .cta-section__actions { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .cta-section__phone { color: rgba(255, 255, 255, 0.8); font-size: 0.94rem; font-weight: 500; margin-top: 24px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+    .cta-section__phone svg { width: 18px; height: 18px; }
+
+    /* ===== FOOTER ===== */
+    .footer { padding: 64px 0 40px; border-top: 1px solid var(--border); }
+    .footer__inner { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px; }
+    .footer__brand img { height: 36px; margin-bottom: 16px; width: auto; }
+    .footer__brand p { font-size: 0.83rem; color: var(--text-secondary); line-height: 1.6; max-width: 28ch; }
+    .footer__col h5 { font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--brand); margin-bottom: 20px; }
+    .footer__col ul { display: flex; flex-direction: column; gap: 12px; }
+    .footer__col a { font-size: 0.88rem; color: var(--text-secondary); transition: color 200ms ease; }
+    .footer__col a:hover { color: var(--brand); }
+    .footer__bottom { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; font-size: 0.78rem; color: var(--text-tertiary); }
+    .footer__bottom a { color: var(--text-tertiary); }
+    .footer__bottom a:hover { color: var(--brand); }
+    .footer__compliance { margin-top: 24px; font-size: 0.72rem; color: var(--text-tertiary); line-height: 1.5; max-width: 80ch; margin-left: auto; margin-right: auto; text-align: center; }
+
+    @media (max-width: 768px) { .footer__inner { grid-template-columns: 1fr 1fr; gap: 36px; } }
+    @media (max-width: 480px) { .footer__inner { grid-template-columns: 1fr; } .footer__bottom { flex-direction: column; gap: 8px; text-align: center; } }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav" id="nav">
+    <div class="container container--wide nav__inner">
+      <a href="#" class="nav__logo">
+        <img src="https://apex-cp.com/wp-content/uploads/2025/03/APEX_logo.svg" alt="APEX Capital" width="160" height="40">
+      </a>
+      <ul class="nav__links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Strategy</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#fund">Fund</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav__cta-wrap">
+        <a href="mailto:ir@apex-cp.com" class="nav__phone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,4 12,13 2,4"/></svg>
+          ir@apex-cp.com
+        </a>
+        <a href="mailto:ir@apex-cp.com?subject=APEX%20Fund%20Materials" class="btn btn--primary nav__cta">Request Materials</a>
+      </div>
+      <button class="nav__mobile-toggle" aria-label="Menu" id="mobileToggle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__text">
+        <p class="overline hero__overline">APEX Capital Partners</p>
+        <h1 class="hero__headline">100+ Elite Athletes Already Committed Capital. The Question Is Whether You Want Access to What They See.</h1>
+        <p class="hero__sub">APEX is the only sports investment firm where the athletes are the investors. That network creates deal flow, due diligence, and market access no traditional fund can replicate.</p>
+        <div class="hero__actions">
+          <a href="mailto:ir@apex-cp.com?subject=APEX%20Fund%20Materials" class="btn btn--primary">Request Fund Materials</a>
+          <a href="#about" class="btn btn--secondary">Learn More</a>
+        </div>
+        <div class="hero__trust">
+          <div class="hero__trust-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00d79b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>100+ Athlete Investors</span>
+          </div>
+          <div class="hero__trust-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00d79b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+            <span>Sports PE &amp; Venture</span>
+          </div>
+          <div class="hero__trust-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00d79b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>Multi-Country Platform</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero__media">
+        <div class="video-placeholder">
+          <img class="video-placeholder__img" src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=800&q=80" alt="APEX Capital sports investment overview" width="800" height="500">
+          <div class="video-placeholder__play">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+          </div>
+          <span class="video-placeholder__note">2-minute fund overview</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRUST BAR ===== -->
+  <section class="trust-bar reveal">
+    <div class="container trust-bar__inner">
+      <div class="trust-bar__badge reveal">
+        <div class="trust-bar__badge-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        Athlete-Backed Platform
+      </div>
+      <div class="trust-bar__divider"></div>
+      <div class="trust-bar__badge reveal">
+        <div class="trust-bar__badge-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        506(c) Qualified
+      </div>
+      <div class="trust-bar__divider"></div>
+      <div class="trust-bar__badge reveal">
+        <div class="trust-bar__badge-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+        </div>
+        Red Bull Ventures Backed
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES (Investment Strategy) ===== -->
+  <section class="services" id="about">
+    <div class="container">
+      <div class="services__header reveal">
+        <p class="section-label">Investment Strategy</p>
+        <h2>Capital Deployed Where Athletes Create Asymmetric Advantage</h2>
+        <p>Three verticals. One structural edge: the athletes who invest are also the network.</p>
+      </div>
+      <div class="services__grid reveal-group">
+        <div class="service-card reveal">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+          </div>
+          <h3>Venture Capital</h3>
+          <p>Early-stage companies redefining sports performance and consumption. Athlete investors provide diligence no analyst can replicate.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+          </div>
+          <h3>Growth Equity</h3>
+          <p>Scaling sports businesses past inflection points with capital and strategic access to the world's most connected athlete network.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Private Equity</h3>
+          <p>Premium sports assets with expansion potential. Club ownership, media rights, and franchise-grade properties across Europe and beyond.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3>Athlete Network</h3>
+          <p>100+ world-class athletes across F1, NFL, Premier League, and more. Strategic access and market insight no traditional fund can replicate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS (Investment Focus) ===== -->
+  <section class="projects" id="services">
+    <div class="container">
+      <div class="projects__header reveal">
+        <p class="section-label">Target Sectors</p>
+        <h2>Where Athlete Capital Creates Value</h2>
+        <p>Sports verticals where insider access and athlete endorsement drive outsized returns.</p>
+      </div>
+      <div class="projects__grid reveal-group">
+        <div class="project-card reveal">
+          <img src="https://images.unsplash.com/photo-1461896836934-bd45ba5291b7?w=600&q=80" alt="Sports Technology" loading="lazy" width="600" height="450">
+          <div class="project-card__overlay">
+            <div class="project-card__label">Sports Technology</div>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=600&q=80" alt="Club Ownership" loading="lazy" width="600" height="450">
+          <div class="project-card__overlay">
+            <div class="project-card__label">Club Ownership</div>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=600&q=80" alt="Media Rights" loading="lazy" width="600" height="450">
+          <div class="project-card__overlay">
+            <div class="project-card__label">Media &amp; Rights</div>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80" alt="Performance" loading="lazy" width="600" height="450">
+          <div class="project-card__overlay">
+            <div class="project-card__label">Performance &amp; Wellness</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY CHOOSE US ===== -->
+  <section class="why" id="why">
+    <div class="container why__inner">
+      <div class="why__text reveal">
+        <p class="section-label">Why APEX</p>
+        <h2>Why This Fund Sees Deals Others Never Will</h2>
+        <p>Traditional sports investors buy assets at market price. APEX investors are the market.</p>
+        <div class="why__features">
+          <div class="why__feature">
+            <div class="why__feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+            <div>
+              <h4>Proprietary Deal Flow Through Athletes</h4>
+              <p>When your investors are F1 champions and NFL players, deal flow comes from relationships no cold outreach can access. The athletes are the sourcing engine.</p>
+            </div>
+          </div>
+          <div class="why__feature">
+            <div class="why__feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+            </div>
+            <div>
+              <h4>Built-In Market Validation</h4>
+              <p>Athlete investors test products, provide feedback, and validate market fit before capital is deployed. Due diligence from the field, not a spreadsheet.</p>
+            </div>
+          </div>
+          <div class="why__feature">
+            <div class="why__feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div>
+              <h4>Multi-Country Sports Platform</h4>
+              <p>Offices across Portugal, UK, and the US. APEX operates where the highest-value sports assets trade. Global access, local execution.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="why__image reveal">
+        <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?w=800&q=80" alt="Elite sports investment" loading="lazy" width="800" height="600">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TEAM ===== -->
+  <section class="testimonials" id="team">
+    <div class="container">
+      <div class="testimonials__header reveal">
+        <p class="section-label">Leadership</p>
+        <h2>The Team Behind APEX</h2>
+      </div>
+      <div class="testimonials__grid reveal-group">
+        <div class="testimonial-card team-card reveal">
+          <img class="team-card__photo" src="https://apex-cp.com/wp-content/uploads/2025/03/Antonio-Cacorino-1-725x845-1.jpg" alt="Antonio Cacorino" loading="lazy" width="100" height="100">
+          <div class="team-card__name">Antonio Cacorino</div>
+          <div class="team-card__title">Founder &amp; CEO</div>
+          <p class="team-card__desc">Built APEX from the ground up at the intersection of sports, media, and finance.</p>
+        </div>
+        <div class="testimonial-card team-card reveal">
+          <img class="team-card__photo" src="https://apex-cp.com/wp-content/uploads/2026/01/704-x-806.png" alt="Pedro Felix da Costa" loading="lazy" width="100" height="100">
+          <div class="team-card__name">Pedro Felix da Costa</div>
+          <div class="team-card__title">Co-Founder &amp; CCO</div>
+          <p class="team-card__desc">Leads commercial strategy and athlete relationships across the platform.</p>
+        </div>
+        <div class="testimonial-card team-card reveal">
+          <img class="team-card__photo" src="https://apex-cp.com/wp-content/uploads/2025/03/KoenBosma-725x845-1.jpg" alt="Koen Bosma" loading="lazy" width="100" height="100">
+          <div class="team-card__name">Koen Bosma</div>
+          <div class="team-card__title">Head of Venture Capital</div>
+          <p class="team-card__desc">Sources and evaluates early-stage sports technology investments.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FUND DETAILS ===== -->
+  <section class="service-areas" id="fund">
+    <div class="container">
+      <div class="service-areas__header reveal">
+        <p class="section-label">Current Offering</p>
+        <h2>Fund Details</h2>
+        <p>Athlete-backed sports investment across venture, growth, and private equity.</p>
+      </div>
+      <div class="service-areas__list reveal">
+        <div class="service-areas__tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          Raising Capital
+        </div>
+        <div class="service-areas__tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+          100+ Athlete Investors
+        </div>
+        <div class="service-areas__tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+          VC + Growth + PE
+        </div>
+        <div class="service-areas__tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          506(c)
+        </div>
+        <div class="service-areas__tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Accredited Investors
+        </div>
+        <div class="service-areas__tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Portugal / UK / US
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA SECTION ===== -->
+  <section class="cta-section" id="contact">
+    <div class="container reveal">
+      <h2>Request the Fund Materials</h2>
+      <p>Our investor relations team will send the teaser and investment memo within 24 hours.</p>
+      <div class="cta-section__actions">
+        <a href="mailto:ir@apex-cp.com?subject=APEX%20Fund%20Materials" class="btn btn--white">Request Materials</a>
+      </div>
+      <div class="cta-section__phone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,4 12,13 2,4"/></svg>
+        <a href="mailto:ir@apex-cp.com" style="color: #fff; font-weight: 700; text-decoration: none;">ir@apex-cp.com</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <img src="https://apex-cp.com/wp-content/uploads/2025/03/APEX_logo.svg" alt="APEX Capital" width="140" height="36">
+          <p>APEX Capital is an athlete-backed sports investment firm operating across venture, growth, and private equity.</p>
+        </div>
+        <div class="footer__col">
+          <h5>Fund</h5>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Strategy</a></li>
+            <li><a href="#fund">Current Fund</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h5>Team</h5>
+          <ul>
+            <li><a href="#team">Leadership</a></li>
+            <li><a href="#team">Advisory Board</a></li>
+            <li><a href="https://apex-cp.com" target="_blank" rel="noopener">Main Site</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="mailto:ir@apex-cp.com">ir@apex-cp.com</a></li>
+            <li><a href="#">Portugal / UK / US</a></li>
+            <li><a href="https://apex-cp.com" target="_blank" rel="noopener">Website</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>2026 APEX Capital. All rights reserved.</span>
+        <span><a href="#">Terms</a> | <a href="#">Privacy</a></span>
+      </div>
+      <p class="footer__compliance">This website is for informational purposes only. This offering is available only to accredited investors under Regulation D 506(c). Past performance is not indicative of future results. Securities offered involve risk and may result in partial or total loss of investment.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) { entry.target.classList.add('visible'); }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+    })();
+    (function() {
+      var nav = document.getElementById('nav');
+      var scrolled = false;
+      window.addEventListener('scroll', function() {
+        var isScrolled = window.scrollY > 20;
+        if (isScrolled !== scrolled) { scrolled = isScrolled; nav.classList.toggle('scrolled', isScrolled); }
+      }, { passive: true });
+    })();
+    document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+    });
+  </script>
+
+</body>
+</html>
