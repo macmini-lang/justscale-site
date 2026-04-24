@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Vesci Team — Vanderbilt Beach, Pelican Bay &amp; Moraya Bay Luxury</title>
+  <meta name="description" content="Mari Vesci and the Vesci Team. 32+ years representing luxury buyers and sellers along Vanderbilt Beach, Pelican Bay, Naples Cay, and Moraya Bay. Realty Alliance and Luxury Portfolio member.">
+  <meta property="og:title" content="Vesci Team — Vanderbilt Beach Luxury Real Estate">
+  <meta property="og:description" content="32+ years representing Vanderbilt Beach, Pelican Bay, and Moraya Bay. Luxury Portfolio member.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://justscale.co/d100-websites/vesci-team/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prata&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --wine: #6E1B2B;
+      --wine-deep: #4F121D;
+      --wine-soft: rgba(110, 27, 43, 0.1);
+      --rose: #C98A9A;
+      --champagne: #E3D1A8;
+      --ivory: #FAF4E9;
+      --ivory-warm: #EFE7D2;
+      --ink: #1E1416;
+      --ink-soft: #44383B;
+      --mute: #716264;
+      --line: rgba(30, 20, 22, 0.14);
+      --line-soft: rgba(30, 20, 22, 0.07);
+    }
+
+    html { font-size: 17px; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-weight: 400;
+      line-height: 1.7;
+      color: var(--ink-soft);
+      background: var(--ivory);
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Prata', Georgia, serif;
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.12;
+      letter-spacing: -0.005em;
+    }
+    h1 { font-size: clamp(2.8rem, 1.8rem + 4.6vw, 5.6rem); }
+    h2 { font-size: clamp(2rem, 1.4rem + 2.4vw, 3.2rem); }
+    h3 { font-size: clamp(1.4rem, 1.1rem + 1vw, 1.9rem); }
+    h4 { font-size: 1.1rem; }
+
+    p { max-width: 64ch; }
+
+    a { color: var(--wine); text-decoration: none; transition: color 200ms; }
+    a:hover { color: var(--wine-deep); }
+
+    ul { list-style: none; }
+
+    .container { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 48px); }
+
+    .eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--wine);
+    }
+
+    .rule-center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .rule-center::before, .rule-center::after {
+      content: '';
+      width: 40px;
+      height: 1px;
+      background: var(--wine);
+      opacity: 0.5;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 42px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 250ms ease;
+      border: 1px solid var(--wine);
+      background: var(--wine);
+      color: var(--ivory);
+    }
+    .btn:hover { background: var(--wine-deep); border-color: var(--wine-deep); transform: translateY(-1px); }
+    .btn--outline { background: transparent; color: var(--wine); }
+    .btn--outline:hover { background: var(--wine); color: var(--ivory); }
+    .btn--ivory { background: var(--ivory); color: var(--wine); border-color: var(--ivory); }
+    .btn--ivory:hover { background: var(--ink); color: var(--ivory); border-color: var(--ink); }
+
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 700ms ease-out, transform 700ms ease-out; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+    }
+
+    /* ===== NAV ===== */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(250, 244, 233, 0.88);
+      backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line-soft);
+    }
+    .nav__inner {
+      display: flex; align-items: center; justify-content: space-between; height: 82px;
+    }
+    .nav__logo {
+      font-family: 'Prata', serif;
+      font-size: 1.6rem;
+      color: var(--wine);
+      letter-spacing: 0.08em;
+    }
+    .nav__logo small {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--mute);
+      margin-top: -4px;
+      font-weight: 500;
+    }
+    .nav__links { display: flex; gap: 36px; }
+    .nav__links a {
+      font-size: 0.76rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+    .nav__links a:hover { color: var(--wine); }
+    .nav__cta {
+      padding: 12px 24px;
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+    }
+    @media (max-width: 900px) {
+      .nav__links, .nav__cta { display: none; }
+    }
+
+    /* ===== HERO (centered formal with radial gradient) ===== */
+    .hero {
+      padding: 200px 0 140px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      background:
+        radial-gradient(ellipse 80% 70% at 50% 30%, rgba(227, 209, 168, 0.35) 0%, transparent 55%),
+        radial-gradient(ellipse 60% 50% at 50% 100%, rgba(110, 27, 43, 0.08) 0%, transparent 70%),
+        var(--ivory);
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 110px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      opacity: 0.4;
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 210px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 400px;
+      height: 400px;
+      border: 1px solid var(--line-soft);
+      border-radius: 50%;
+      opacity: 0.4;
+      pointer-events: none;
+    }
+    .hero__inner {
+      position: relative;
+      z-index: 1;
+      max-width: 920px;
+      margin: 0 auto;
+    }
+    .hero__eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--wine);
+      margin-bottom: 36px;
+    }
+    .hero__crest {
+      margin-bottom: 48px;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: 'Prata', serif;
+      color: var(--wine);
+    }
+    .hero__crest-line {
+      font-size: 0.7rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--wine);
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+    .hero__monogram {
+      font-family: 'Prata', serif;
+      font-size: 5rem;
+      color: var(--wine);
+      line-height: 1;
+      font-weight: 400;
+      padding: 24px 48px;
+      border-top: 1px solid var(--wine);
+      border-bottom: 1px solid var(--wine);
+      letter-spacing: 0.08em;
+    }
+    .hero__headline {
+      font-size: clamp(3rem, 2rem + 4.8vw, 5.8rem);
+      line-height: 1.02;
+      margin: 44px auto 32px;
+      max-width: 18ch;
+    }
+    .hero__headline em {
+      font-style: italic;
+      color: var(--wine);
+    }
+    .hero__sub {
+      font-family: 'Prata', serif;
+      font-size: 1.2rem;
+      color: var(--ink-soft);
+      line-height: 1.6;
+      max-width: 52ch;
+      margin: 0 auto 48px;
+      font-style: italic;
+    }
+    .hero__actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .hero__coords {
+      margin-top: 56px;
+      padding-top: 32px;
+      border-top: 1px solid var(--line-soft);
+      font-size: 0.72rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--mute);
+    }
+    .hero__coords strong { color: var(--wine); font-weight: 500; }
+    @media (max-width: 900px) {
+      .hero { padding: 140px 0 80px; }
+      .hero__monogram { font-size: 3.5rem; padding: 20px 32px; }
+    }
+
+    /* ===== AFFILIATION BANNER ===== */
+    .aff {
+      background: var(--ink);
+      color: var(--ivory);
+      padding: 56px 0;
+      border-top: 1px solid var(--wine);
+      border-bottom: 1px solid var(--wine);
+    }
+    .aff__inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      align-items: center;
+    }
+    .aff__item {
+      text-align: center;
+      padding: 0 16px;
+      border-right: 1px solid rgba(250, 244, 233, 0.15);
+    }
+    .aff__item:last-child { border-right: none; }
+    .aff__item-name {
+      font-family: 'Prata', serif;
+      font-size: 1.1rem;
+      color: var(--champagne);
+      margin-bottom: 6px;
+      letter-spacing: 0.06em;
+    }
+    .aff__item-caption {
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(250, 244, 233, 0.6);
+    }
+    @media (max-width: 780px) {
+      .aff__inner { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      .aff__item:nth-child(2) { border-right: none; }
+    }
+
+    /* ===== ABOUT ===== */
+    .about {
+      padding: 140px 0;
+    }
+    .about__inner {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 96px;
+      align-items: start;
+    }
+    .about__side {
+      position: sticky;
+      top: 120px;
+    }
+    .about__side h2 { margin-top: 20px; }
+    .about__side h2 em { font-style: italic; color: var(--wine); }
+    .about__portrait {
+      margin-top: 40px;
+      aspect-ratio: 3 / 4;
+      background:
+        linear-gradient(135deg, var(--wine) 0%, var(--wine-deep) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .about__portrait::before {
+      content: 'MV';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Prata', serif;
+      font-size: 8rem;
+      color: var(--champagne);
+      opacity: 0.4;
+      letter-spacing: 0.08em;
+    }
+    .about__portrait::after {
+      content: '';
+      position: absolute;
+      inset: 20px;
+      border: 1px solid rgba(227, 209, 168, 0.3);
+    }
+    .about__body p {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      margin-bottom: 28px;
+      color: var(--ink-soft);
+    }
+    .about__body p strong { color: var(--ink); font-weight: 600; }
+    .about__body .intro {
+      font-family: 'Prata', serif;
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--wine);
+      line-height: 1.5;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 40px;
+    }
+    .about__signoff {
+      margin-top: 40px;
+      padding-top: 32px;
+      border-top: 1px solid var(--line);
+      font-family: 'Prata', serif;
+      font-size: 1.05rem;
+      color: var(--wine);
+      font-style: italic;
+    }
+    .about__signoff small {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mute);
+      font-style: normal;
+      margin-top: 8px;
+    }
+    @media (max-width: 900px) {
+      .about__inner { grid-template-columns: 1fr; gap: 48px; }
+      .about__side { position: static; }
+      .about__portrait { max-width: 360px; }
+    }
+
+    /* ===== NEIGHBORHOODS ===== */
+    .neighborhoods {
+      padding: 140px 0;
+      background:
+        radial-gradient(ellipse at 20% 0%, rgba(227, 209, 168, 0.3), transparent 50%),
+        var(--ivory-warm);
+    }
+    .neighborhoods__header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+    .neighborhoods__header h2 { margin-top: 20px; max-width: 22ch; margin-left: auto; margin-right: auto; }
+    .neighborhoods__header h2 em { font-style: italic; color: var(--wine); }
+    .neighborhoods__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+    .hood {
+      padding: 48px 44px;
+      background: var(--ivory);
+      border: 1px solid var(--line);
+      transition: all 350ms;
+      position: relative;
+      overflow: hidden;
+    }
+    .hood::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 3px;
+      background: var(--wine);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 400ms ease;
+    }
+    .hood:hover::before { transform: scaleX(1); }
+    .hood:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(110, 27, 43, 0.1); }
+
+    .hood__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--line-soft);
+    }
+    .hood__num {
+      font-family: 'Prata', serif;
+      font-size: 2rem;
+      color: var(--wine);
+      line-height: 1;
+      font-weight: 400;
+    }
+    .hood__badge {
+      font-size: 0.66rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--mute);
+      border: 1px solid var(--line);
+      padding: 6px 14px;
+    }
+    .hood h3 {
+      font-size: 1.85rem;
+      margin-bottom: 14px;
+    }
+    .hood__line {
+      font-size: 0.98rem;
+      line-height: 1.7;
+      margin-bottom: 28px;
+      color: var(--ink-soft);
+    }
+    .hood__price {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding-top: 20px;
+      border-top: 1px solid var(--line-soft);
+    }
+    .hood__price-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--mute);
+    }
+    .hood__price-num {
+      font-family: 'Prata', serif;
+      font-size: 1.4rem;
+      color: var(--wine);
+    }
+    @media (max-width: 780px) { .neighborhoods__grid { grid-template-columns: 1fr; } }
+
+    /* ===== PROPERTIES ===== */
+    .properties {
+      padding: 140px 0;
+    }
+    .properties__header {
+      text-align: center;
+      margin-bottom: 72px;
+    }
+    .properties__header h2 { margin-top: 20px; max-width: 24ch; margin-left: auto; margin-right: auto; }
+    .properties__header h2 em { font-style: italic; color: var(--wine); }
+    .properties__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .listing {
+      background: var(--ivory);
+      border: 1px solid var(--line);
+      transition: all 300ms;
+      overflow: hidden;
+    }
+    .listing:hover { transform: translateY(-4px); box-shadow: 0 20px 48px rgba(30, 20, 22, 0.1); border-color: var(--wine); }
+
+    .listing__visual {
+      aspect-ratio: 4 / 3;
+      position: relative;
+      background:
+        linear-gradient(180deg, rgba(110, 27, 43, 0.8) 0%, var(--wine) 100%),
+        linear-gradient(135deg, var(--wine), var(--wine-deep));
+      overflow: hidden;
+    }
+    .listing__visual::before {
+      content: '';
+      position: absolute;
+      inset: 20px;
+      border: 1px solid rgba(227, 209, 168, 0.3);
+    }
+    .listing__visual::after {
+      content: '';
+      position: absolute;
+      left: 50%; top: 50%;
+      transform: translate(-50%, -50%);
+      width: 64px; height: 64px;
+      border: 1px solid var(--champagne);
+      border-radius: 50%;
+    }
+    .listing__tag {
+      position: absolute;
+      top: 24px; left: 24px;
+      background: var(--ivory);
+      padding: 6px 14px;
+      font-size: 0.66rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--wine);
+      font-weight: 500;
+      z-index: 1;
+    }
+    .listing__body {
+      padding: 32px 28px 36px;
+    }
+    .listing__address {
+      font-family: 'Prata', serif;
+      font-size: 1.4rem;
+      color: var(--ink);
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+    .listing__hood {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--wine);
+      margin-bottom: 24px;
+    }
+    .listing__price {
+      font-family: 'Prata', serif;
+      font-size: 2rem;
+      color: var(--wine);
+      margin-bottom: 20px;
+    }
+    .listing__specs {
+      display: flex;
+      gap: 18px;
+      font-size: 0.78rem;
+      color: var(--mute);
+      padding-top: 20px;
+      border-top: 1px solid var(--line-soft);
+    }
+    .listing__specs strong { color: var(--ink); font-weight: 600; }
+    @media (max-width: 900px) { .properties__grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; } }
+
+    /* ===== TESTIMONIALS ===== */
+    .testimonials {
+      padding: 140px 0;
+      background: var(--ivory-warm);
+    }
+    .testimonials__header {
+      text-align: center;
+      margin-bottom: 72px;
+    }
+    .testimonials__header h2 { margin-top: 20px; max-width: 22ch; margin-left: auto; margin-right: auto; }
+    .testimonials__header h2 em { font-style: italic; color: var(--wine); }
+    .testimonials__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .quote {
+      padding: 44px 38px;
+      background: var(--ivory);
+      border: 1px solid var(--line);
+      position: relative;
+    }
+    .quote::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 2px;
+      background: linear-gradient(90deg, var(--wine) 0%, var(--champagne) 100%);
+    }
+    .quote__mark {
+      font-family: 'Prata', serif;
+      font-size: 3.4rem;
+      color: var(--wine);
+      line-height: 0.6;
+      margin-bottom: 20px;
+      opacity: 0.5;
+    }
+    .quote__text {
+      font-family: 'Prata', serif;
+      font-size: 1.2rem;
+      line-height: 1.55;
+      color: var(--ink);
+      margin-bottom: 32px;
+      font-style: italic;
+    }
+    .quote__who {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--ink);
+    }
+    .quote__where {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--wine);
+      margin-top: 6px;
+    }
+    @media (max-width: 900px) { .testimonials__grid { grid-template-columns: 1fr; max-width: 540px; margin: 0 auto; } }
+
+    /* ===== CREDENTIALS ===== */
+    .credentials {
+      padding: 120px 0;
+      background: var(--ink);
+      color: var(--ivory);
+      position: relative;
+      overflow: hidden;
+    }
+    .credentials::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 70%; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--champagne) 50%, transparent);
+    }
+    .credentials__header {
+      text-align: center;
+      margin-bottom: 72px;
+    }
+    .credentials__header .eyebrow { color: var(--champagne); }
+    .credentials__header h2 { color: var(--ivory); margin-top: 20px; }
+    .credentials__header h2 em { font-style: italic; color: var(--champagne); }
+    .credentials__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+    }
+    .credential {
+      padding: 40px 28px;
+      text-align: center;
+      background: rgba(250, 244, 233, 0.03);
+      border: 1px solid rgba(250, 244, 233, 0.1);
+      transition: all 300ms;
+    }
+    .credential:hover { border-color: var(--champagne); background: rgba(227, 209, 168, 0.06); }
+    .credential__num {
+      font-family: 'Prata', serif;
+      font-size: clamp(2.4rem, 1.6rem + 2vw, 3.4rem);
+      color: var(--champagne);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    .credential__label {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(250, 244, 233, 0.75);
+    }
+    @media (max-width: 900px) { .credentials__grid { grid-template-columns: repeat(2, 1fr); } }
+
+    /* ===== INSIGHTS ===== */
+    .insights {
+      padding: 140px 0;
+    }
+    .insights__header {
+      text-align: center;
+      margin-bottom: 72px;
+    }
+    .insights__header h2 { margin-top: 20px; max-width: 22ch; margin-left: auto; margin-right: auto; }
+    .insights__header h2 em { font-style: italic; color: var(--wine); }
+    .insights__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .article {
+      padding: 40px 32px 44px;
+      background: var(--ivory);
+      border: 1px solid var(--line);
+      transition: all 300ms;
+      position: relative;
+    }
+    .article::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 2px;
+      background: var(--wine);
+      transition: width 400ms ease;
+    }
+    .article:hover::before { width: 100%; }
+    .article:hover { transform: translateY(-3px); }
+    .article__tag {
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--wine);
+      margin-bottom: 20px;
+    }
+    .article h3 {
+      font-size: 1.35rem;
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+    .article p {
+      font-size: 0.92rem;
+      line-height: 1.65;
+      color: var(--mute);
+      margin-bottom: 24px;
+    }
+    .article__read {
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink);
+      font-weight: 500;
+      border-bottom: 1px solid var(--wine);
+      padding-bottom: 3px;
+    }
+    @media (max-width: 900px) { .insights__grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; } }
+
+    /* ===== CTA ===== */
+    .cta-section {
+      padding: 140px 0;
+      background:
+        radial-gradient(ellipse at 50% 100%, rgba(227, 209, 168, 0.5) 0%, transparent 60%),
+        var(--wine);
+      color: var(--ivory);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 80%; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--champagne) 50%, transparent);
+    }
+    .cta-section__inner { max-width: 720px; margin: 0 auto; position: relative; z-index: 1; }
+    .cta-section .eyebrow { color: var(--champagne); }
+    .cta-section h2 { color: var(--ivory); margin: 20px 0 28px; }
+    .cta-section h2 em { font-style: italic; color: var(--champagne); }
+    .cta-section p {
+      font-size: 1.08rem;
+      color: rgba(250, 244, 233, 0.85);
+      margin: 0 auto 44px;
+      max-width: 54ch;
+    }
+    .cta-section__note {
+      margin-top: 44px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(250, 244, 233, 0.2);
+      font-size: 0.82rem;
+      color: rgba(250, 244, 233, 0.7);
+    }
+    .cta-section__note a { color: var(--champagne); }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      padding: 56px 0 40px;
+      background: var(--wine-deep);
+      color: rgba(250, 244, 233, 0.6);
+      font-size: 0.82rem;
+    }
+    .footer__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer__brand {
+      font-family: 'Prata', serif;
+      font-size: 1.2rem;
+      color: var(--ivory);
+      letter-spacing: 0.08em;
+    }
+    .footer__note {
+      font-size: 0.74rem;
+      letter-spacing: 0.1em;
+      color: rgba(250, 244, 233, 0.5);
+    }
+    .footer__note a { color: var(--champagne); }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "Vesci Team",
+    "description": "Mari Vesci leads the Vesci Team with more than 32 years representing luxury buyers and sellers along Vanderbilt Beach, Pelican Bay, Naples Cay, and Moraya Bay.",
+    "url": "https://justscale.co/d100-websites/vesci-team/",
+    "areaServed": [
+      { "@type": "Place", "name": "Vanderbilt Beach, FL" },
+      { "@type": "Place", "name": "Pelican Bay, FL" },
+      { "@type": "Place", "name": "Naples Cay, FL" },
+      { "@type": "Place", "name": "Moraya Bay, FL" }
+    ],
+    "address": { "@type": "PostalAddress", "addressLocality": "Naples", "addressRegion": "FL", "postalCode": "34108", "addressCountry": "US" },
+    "founder": { "@type": "Person", "name": "Mari Vesci" },
+    "parentOrganization": { "@type": "Organization", "name": "John R. Wood Properties | Christie's International Real Estate" },
+    "award": ["The Realty Alliance Member", "Luxury Portfolio International Member"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Luxury Residential Real Estate",
+    "provider": { "@type": "RealEstateAgent", "name": "Vesci Team" },
+    "areaServed": "Naples, FL",
+    "description": "Luxury buyer and seller representation along Vanderbilt Beach, Pelican Bay, Naples Cay, and Moraya Bay."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How long has Mari Vesci been selling in Naples?", "acceptedAnswer": { "@type": "Answer", "text": "Mari Vesci has been a licensed Naples real estate professional for more than 32 years, building one of the longest continuous luxury practices along the Vanderbilt Beach and Pelican Bay corridor." } },
+      { "@type": "Question", "name": "Which markets does the Vesci Team specialize in?", "acceptedAnswer": { "@type": "Answer", "text": "Our core markets are Vanderbilt Beach, Pelican Bay, Naples Cay, and Moraya Bay, with significant experience in the Ritz-Carlton residences and Bay Colony along Gulf Shore Drive." } },
+      { "@type": "Question", "name": "What is Luxury Portfolio International?", "acceptedAnswer": { "@type": "Answer", "text": "Luxury Portfolio International is the global luxury network of The Realty Alliance, representing the top 1 percent of real estate properties worldwide. Vesci Team listings receive marketing reach through Luxury Portfolio's international network." } },
+      { "@type": "Question", "name": "Do you represent condominium high-rises as well as single-family estates?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. A significant portion of our work is representing buyers and sellers in the Gulf-front towers along Vanderbilt Beach and in Pelican Bay, alongside estate home representation throughout the surrounding single-family neighborhoods." } },
+      { "@type": "Question", "name": "What price points does the team typically represent?", "acceptedAnswer": { "@type": "Answer", "text": "We represent properties from $2M through $20M+, with particular activity in the Gulf-front condominium market between $3M and $8M and in the luxury single-family segment from $5M upward." } }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="#" class="nav__logo">Vesci<small>Team &middot; Naples, FL</small></a>
+      <ul class="nav__links">
+        <li><a href="#about">About Mari</a></li>
+        <li><a href="#neighborhoods">Markets</a></li>
+        <li><a href="#properties">Portfolio</a></li>
+        <li><a href="#insights">Journal</a></li>
+      </ul>
+      <a href="#contact" class="btn btn--outline nav__cta">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__crest">
+        <div class="hero__crest-line">Est. 1992 &middot; Naples, Florida</div>
+        <div class="hero__monogram">V</div>
+      </div>
+      <h1 class="hero__headline">Naples' most <em>coveted beach addresses</em>, represented since 1992.</h1>
+      <p class="hero__sub">Mari Vesci has quietly represented the Vanderbilt Beach, Pelican Bay, Naples Cay, and Moraya Bay corridor for more than three decades &mdash; a practice long enough to have watched these communities become what they are.</p>
+      <div class="hero__actions">
+        <a href="#contact" class="btn">Request a Private Consultation</a>
+        <a href="#properties" class="btn btn--outline">View Current Portfolio</a>
+      </div>
+      <div class="hero__coords">
+        <strong>27&deg;13' N &middot; 81&deg;47' W</strong> &middot; Naples, Florida &middot; 34108
+      </div>
+    </div>
+  </section>
+
+  <!-- AFFILIATIONS -->
+  <section class="aff">
+    <div class="container aff__inner">
+      <div class="aff__item">
+        <div class="aff__item-name">Christie's International</div>
+        <div class="aff__item-caption">Real Estate</div>
+      </div>
+      <div class="aff__item">
+        <div class="aff__item-name">Luxury Portfolio</div>
+        <div class="aff__item-caption">International Member</div>
+      </div>
+      <div class="aff__item">
+        <div class="aff__item-name">The Realty Alliance</div>
+        <div class="aff__item-caption">Network Member</div>
+      </div>
+      <div class="aff__item">
+        <div class="aff__item-name">John R. Wood</div>
+        <div class="aff__item-caption">Since 1992</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container about__inner">
+      <div class="about__side reveal">
+        <p class="eyebrow">About Mari Vesci</p>
+        <h2>Thirty-two years, <em>one corridor</em>.</h2>
+        <div class="about__portrait"></div>
+      </div>
+      <div class="about__body reveal">
+        <p class="intro">Some agents sell across Naples. Mari Vesci has spent thirty-two years learning four neighborhoods along the Gulf exceptionally well.</p>
+        <p><strong>Mari Vesci founded the Vesci Team in 1992</strong>, and in the three decades since, she has quietly become one of the longest-tenured luxury specialists in the Vanderbilt Beach and Pelican Bay corridor. Her practice is narrow by design: Vanderbilt Beach, Pelican Bay, Naples Cay, Moraya Bay, and the surrounding Gulf-front towers. That narrow focus &mdash; in a market where most agents spread themselves across twenty-plus neighborhoods &mdash; is precisely what makes the work valuable.</p>
+        <p>The team operates under John R. Wood Properties, the exclusive Christie's International Real Estate affiliate for Southwest Florida, and every listing additionally benefits from the marketing reach of <strong>Luxury Portfolio International</strong> and <strong>The Realty Alliance</strong>. The result is a practice small enough to remain personal, with distribution large enough to put every listing in front of the international luxury buyers it deserves.</p>
+        <p>Across three decades and multiple market cycles, Mari has guided two and three generations of the same family through Gulf-front purchases, sale transitions, and portfolio rebalances. That is not marketing language &mdash; it is what a thirty-two year practice along four neighborhoods actually produces.</p>
+        <div class="about__signoff">
+          "The best Gulf-front transaction I ever closed was the third home I had sold that same family. That is what longevity in this business actually looks like."
+          <small>Mari Vesci &middot; Team Principal</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEIGHBORHOODS -->
+  <section class="neighborhoods" id="neighborhoods">
+    <div class="container">
+      <div class="neighborhoods__header reveal">
+        <div class="rule-center"><p class="eyebrow">Represented Markets</p></div>
+        <h2>Four communities, one <em>stretch of coastline</em>.</h2>
+      </div>
+      <div class="neighborhoods__grid">
+        <div class="hood reveal">
+          <div class="hood__header">
+            <div class="hood__num">I.</div>
+            <div class="hood__badge">Gulf Front</div>
+          </div>
+          <h3>Vanderbilt Beach</h3>
+          <p class="hood__line">The Ritz-Carlton beachfront, Gulf Shore Drive high-rises, and the last true walk-the-beach community at this price tier in Naples.</p>
+          <div class="hood__price">
+            <div class="hood__price-label">Avg Sale Price</div>
+            <div class="hood__price-num">$4.8M</div>
+          </div>
+        </div>
+        <div class="hood reveal">
+          <div class="hood__header">
+            <div class="hood__num">II.</div>
+            <div class="hood__badge">Master Community</div>
+          </div>
+          <h3>Pelican Bay</h3>
+          <p class="hood__line">Private beach tram, Waterside Shops, three miles of Gulf-front beach access, and the most tenured high-rise towers on the coast.</p>
+          <div class="hood__price">
+            <div class="hood__price-label">Avg Sale Price</div>
+            <div class="hood__price-num">$4.4M</div>
+          </div>
+        </div>
+        <div class="hood reveal">
+          <div class="hood__header">
+            <div class="hood__num">III.</div>
+            <div class="hood__badge">Gated Beach</div>
+          </div>
+          <h3>Naples Cay</h3>
+          <p class="hood__line">A quiet 32-acre gated enclave between Pelican Bay and Park Shore, with Gulf-front towers and a deliberately small resident population.</p>
+          <div class="hood__price">
+            <div class="hood__price-label">Avg Sale Price</div>
+            <div class="hood__price-num">$3.6M</div>
+          </div>
+        </div>
+        <div class="hood reveal">
+          <div class="hood__header">
+            <div class="hood__num">IV.</div>
+            <div class="hood__badge">Boutique Tower</div>
+          </div>
+          <h3>Moraya Bay</h3>
+          <p class="hood__line">The newest luxury Gulf-front tower on Vanderbilt Beach. Concierge service, full-service beach club, and an ownership roster that reads like a family office roll call.</p>
+          <div class="hood__price">
+            <div class="hood__price-label">Avg Sale Price</div>
+            <div class="hood__price-num">$6.2M</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROPERTIES -->
+  <section class="properties" id="properties">
+    <div class="container">
+      <div class="properties__header reveal">
+        <div class="rule-center"><p class="eyebrow">Current Portfolio</p></div>
+        <h2>A selection of <em>current representations</em>.</h2>
+      </div>
+      <div class="properties__grid">
+        <div class="listing reveal">
+          <div class="listing__visual">
+            <div class="listing__tag">Feature</div>
+          </div>
+          <div class="listing__body">
+            <div class="listing__address">9115 Strada Place, #1202</div>
+            <div class="listing__hood">Moraya Bay</div>
+            <div class="listing__price">$8,950,000</div>
+            <div class="listing__specs">
+              <span><strong>3</strong> bed</span>
+              <span><strong>4</strong> bath</span>
+              <span><strong>4,180</strong> sqft</span>
+            </div>
+          </div>
+        </div>
+        <div class="listing reveal">
+          <div class="listing__visual">
+            <div class="listing__tag">For Sale</div>
+          </div>
+          <div class="listing__body">
+            <div class="listing__address">10851 Gulf Shore Drive, #PH1</div>
+            <div class="listing__hood">Vanderbilt Beach</div>
+            <div class="listing__price">$6,495,000</div>
+            <div class="listing__specs">
+              <span><strong>3</strong> bed</span>
+              <span><strong>4</strong> bath</span>
+              <span><strong>3,950</strong> sqft</span>
+            </div>
+          </div>
+        </div>
+        <div class="listing reveal">
+          <div class="listing__visual">
+            <div class="listing__tag">New Listing</div>
+          </div>
+          <div class="listing__body">
+            <div class="listing__address">7425 Pelican Bay Blvd, #1902</div>
+            <div class="listing__hood">Pelican Bay &middot; St. Raphael</div>
+            <div class="listing__price">$4,250,000</div>
+            <div class="listing__specs">
+              <span><strong>3</strong> bed</span>
+              <span><strong>3.5</strong> bath</span>
+              <span><strong>3,280</strong> sqft</span>
+            </div>
+          </div>
+        </div>
+        <div class="listing reveal">
+          <div class="listing__visual">
+            <div class="listing__tag">Just Represented</div>
+          </div>
+          <div class="listing__body">
+            <div class="listing__address">385 Seaview Court, #PH</div>
+            <div class="listing__hood">Naples Cay</div>
+            <div class="listing__price">$3,795,000</div>
+            <div class="listing__specs">
+              <span><strong>3</strong> bed</span>
+              <span><strong>3</strong> bath</span>
+              <span><strong>3,100</strong> sqft</span>
+            </div>
+          </div>
+        </div>
+        <div class="listing reveal">
+          <div class="listing__visual">
+            <div class="listing__tag">Private Offering</div>
+          </div>
+          <div class="listing__body">
+            <div class="listing__address">8960 Bay Colony Drive, #903</div>
+            <div class="listing__hood">Pelican Bay &middot; Bay Colony</div>
+            <div class="listing__price">$7,450,000</div>
+            <div class="listing__specs">
+              <span><strong>4</strong> bed</span>
+              <span><strong>4.5</strong> bath</span>
+              <span><strong>4,620</strong> sqft</span>
+            </div>
+          </div>
+        </div>
+        <div class="listing reveal">
+          <div class="listing__visual">
+            <div class="listing__tag">Coming Soon</div>
+          </div>
+          <div class="listing__body">
+            <div class="listing__address">315 Dunes Boulevard, #1401</div>
+            <div class="listing__hood">Vanderbilt Beach &middot; The Dunes</div>
+            <div class="listing__price">$3,595,000</div>
+            <div class="listing__specs">
+              <span><strong>3</strong> bed</span>
+              <span><strong>3</strong> bath</span>
+              <span><strong>2,840</strong> sqft</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="testimonials__header reveal">
+        <div class="rule-center"><p class="eyebrow">Client Voices</p></div>
+        <h2>Three decades of <em>clients who came back</em>.</h2>
+      </div>
+      <div class="testimonials__grid">
+        <div class="quote reveal">
+          <div class="quote__mark">&ldquo;</div>
+          <p class="quote__text">Mari sold my mother her first Pelican Bay condo in 1998. She sold me one in 2011. And she just sold my daughter her first in Moraya Bay. Three generations. Same agent.</p>
+          <div class="quote__who">P. Abernathy</div>
+          <div class="quote__where">Pelican Bay &middot; 2024</div>
+        </div>
+        <div class="quote reveal">
+          <div class="quote__mark">&ldquo;</div>
+          <p class="quote__text">We were buying our first Gulf-front Vanderbilt Beach tower. Mari walked us through four buildings and explained exactly why three of them were the wrong call for us. We closed on the right one in under a week.</p>
+          <div class="quote__who">C. Whitmore</div>
+          <div class="quote__where">Vanderbilt Beach &middot; 2023</div>
+        </div>
+        <div class="quote reveal">
+          <div class="quote__mark">&ldquo;</div>
+          <p class="quote__text">Our Naples Cay sale had unusual complications &mdash; trust transfers, out-of-state buyer, mid-season closing. Mari handled every piece of it with the same steady calm. A completely different experience from our last agent.</p>
+          <div class="quote__who">L. &amp; H. Erickson</div>
+          <div class="quote__where">Naples Cay &middot; 2024</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREDENTIALS -->
+  <section class="credentials">
+    <div class="container">
+      <div class="credentials__header reveal">
+        <p class="eyebrow">The Record</p>
+        <h2>Three decades of <em>steady production</em>.</h2>
+      </div>
+      <div class="credentials__grid">
+        <div class="credential reveal">
+          <div class="credential__num">32+</div>
+          <div class="credential__label">Years in Naples</div>
+        </div>
+        <div class="credential reveal">
+          <div class="credential__num">$400M+</div>
+          <div class="credential__label">Career Sales Volume</div>
+        </div>
+        <div class="credential reveal">
+          <div class="credential__num">1%</div>
+          <div class="credential__label">Luxury Portfolio Int'l</div>
+        </div>
+        <div class="credential reveal">
+          <div class="credential__num">81%</div>
+          <div class="credential__label">Repeat &amp; Referral</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSIGHTS -->
+  <section class="insights" id="insights">
+    <div class="container">
+      <div class="insights__header reveal">
+        <div class="rule-center"><p class="eyebrow">The Journal</p></div>
+        <h2>Notes from thirty-two years on <em>one stretch of coastline</em>.</h2>
+      </div>
+      <div class="insights__grid">
+        <article class="article reveal">
+          <div class="article__tag">Tower Market &middot; 2026</div>
+          <h3>Why Pelican Bay High-Rise Pricing is Pulling Apart by Building</h3>
+          <p>Within Pelican Bay alone, the gap between the weakest and strongest towers has widened meaningfully in the last eighteen months. What is driving it.</p>
+          <span class="article__read">Read the Analysis</span>
+        </article>
+        <article class="article reveal">
+          <div class="article__tag">Buyer Guide</div>
+          <h3>Vanderbilt Beach vs. Pelican Bay: How to Actually Choose</h3>
+          <p>They look the same from the beach. They price differently, they trade differently, and the right choice depends on five specific questions. A practical guide.</p>
+          <span class="article__read">Read the Guide</span>
+        </article>
+        <article class="article reveal">
+          <div class="article__tag">Moraya Bay</div>
+          <h3>The Case for Moraya Bay, Ten Years In</h3>
+          <p>Ten years after its Gulf-front debut, Moraya Bay's pricing and ownership profile have matured. A revised look at what the building offers today.</p>
+          <span class="article__read">Read the Note</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="contact">
+    <div class="container cta-section__inner reveal">
+      <p class="eyebrow">Begin The Conversation</p>
+      <h2>A thirty-two-year Naples practice is <em>easy to reach</em>.</h2>
+      <p>Mari personally responds to every inquiry. Fifteen minutes is usually enough to know whether the Vesci Team is the right fit for your transaction.</p>
+      <a href="https://calendly.com/zac-justscale/local-business" class="btn btn--ivory">Schedule 15 Minutes</a>
+      <div class="cta-section__note">
+        This page is a mock rebuild of vesci.com by <a href="https://justscale.co">justscale</a>. Want the real thing? Book 15 minutes above.
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">Vesci Team &middot; Naples, FL</div>
+      <div class="footer__note">Prepared for the Vesci Team by <a href="https://justscale.co">justscale</a> &middot; justscale.co</div>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var io = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
+    })();
+    document.querySelectorAll('a[href^="#"]').forEach(function(l) {
+      l.addEventListener('click', function(e) {
+        var t = document.querySelector(this.getAttribute('href'));
+        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>The Samuel Team — Old Naples, Park Shore &amp; Naples Luxury Real Estate</title>
+  <meta name="description" content="Karyn &amp; Rowan Samuel of The Samuel Team. Christie's Masters Circle 2024. Representing luxury buyers and sellers across Naples, Old Naples, and Park Shore.">
+  <meta property="og:title" content="The Samuel Team — Christie's Masters Circle Naples">
+  <meta property="og:description" content="Karyn &amp; Rowan Samuel. Christie's Masters Circle 2024. Naples, Old Naples, Park Shore.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://justscale.co/d100-websites/samuel-team/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --slate: #2F3E46;
+      --slate-deep: #1F2A32;
+      --slate-mid: #52646C;
+      --copper: #B87A3D;
+      --copper-soft: rgba(184, 122, 61, 0.1);
+      --bone: #EFEAE1;
+      --bone-warm: #E2DBCC;
+      --paper: #FAF7F1;
+      --ink: #1A1F22;
+      --ink-soft: #3D474C;
+      --mute: #6E777C;
+      --line: rgba(47, 62, 70, 0.14);
+      --line-soft: rgba(47, 62, 70, 0.07);
+    }
+
+    html { font-size: 17px; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-weight: 400;
+      line-height: 1.65;
+      color: var(--ink-soft);
+      background: var(--paper);
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.1;
+      letter-spacing: -0.015em;
+    }
+    h1 { font-size: clamp(2.6rem, 1.6rem + 5.2vw, 5.6rem); font-weight: 300; }
+    h2 { font-size: clamp(1.9rem, 1.3rem + 2.4vw, 3rem); font-weight: 400; }
+    h3 { font-size: clamp(1.35rem, 1.1rem + 1vw, 1.85rem); font-weight: 500; }
+    h4 { font-size: 1.1rem; font-weight: 500; }
+
+    p { max-width: 64ch; }
+
+    a { color: var(--copper); text-decoration: none; transition: color 200ms; }
+    a:hover { color: var(--slate); }
+
+    ul { list-style: none; }
+
+    .container { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 48px); }
+
+    .eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--copper);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 42px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 250ms ease;
+      border: 1px solid var(--slate);
+      background: var(--slate);
+      color: var(--paper);
+    }
+    .btn:hover { background: var(--copper); border-color: var(--copper); transform: translateY(-1px); }
+    .btn--outline { background: transparent; color: var(--slate); }
+    .btn--outline:hover { background: var(--slate); color: var(--paper); }
+    .btn--copper { background: var(--copper); border-color: var(--copper); }
+    .btn--copper:hover { background: var(--slate); border-color: var(--slate); }
+
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 700ms ease-out, transform 700ms ease-out; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+    }
+
+    /* ===== NAV ===== */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(250, 247, 241, 0.86);
+      backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line-soft);
+    }
+    .nav__inner {
+      display: flex; align-items: center; justify-content: space-between; height: 80px;
+    }
+    .nav__logo {
+      font-family: 'Fraunces', serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--slate);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .nav__links { display: flex; gap: 36px; }
+    .nav__links a {
+      font-size: 0.76rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+    .nav__links a:hover { color: var(--copper); }
+    .nav__cta {
+      padding: 12px 24px;
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+    }
+    @media (max-width: 900px) {
+      .nav__links, .nav__cta { display: none; }
+    }
+
+    /* ===== HERO — OVERSIZED PULL QUOTE ===== */
+    .hero {
+      padding: 180px 0 140px;
+      position: relative;
+      overflow: hidden;
+      background: var(--paper);
+    }
+    .hero__quote-mark {
+      position: absolute;
+      top: 120px;
+      left: 4vw;
+      font-family: 'Fraunces', serif;
+      font-size: clamp(20rem, 50vw, 40rem);
+      color: var(--slate);
+      opacity: 0.04;
+      line-height: 0.7;
+      pointer-events: none;
+      font-weight: 300;
+      z-index: 0;
+    }
+    .hero__inner {
+      position: relative;
+      z-index: 1;
+    }
+    .hero__eyebrow {
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: var(--copper);
+    }
+    .hero__eyebrow::before { content: ''; width: 48px; height: 1px; background: var(--copper); }
+    .hero__headline {
+      font-size: clamp(3rem, 1.8rem + 5.4vw, 6.4rem);
+      line-height: 0.98;
+      margin-bottom: 56px;
+      max-width: 16ch;
+      letter-spacing: -0.03em;
+    }
+    .hero__headline em {
+      font-style: italic;
+      color: var(--copper);
+      font-weight: 300;
+    }
+    .hero__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+      margin-top: 48px;
+    }
+    .hero__sub {
+      font-size: 1.1rem;
+      color: var(--ink-soft);
+      line-height: 1.75;
+      max-width: 48ch;
+    }
+    .hero__meta {
+      padding: 32px 36px;
+      background: var(--bone);
+      border-left: 2px solid var(--copper);
+    }
+    .hero__meta-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--copper);
+      margin-bottom: 16px;
+    }
+    .hero__meta-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .hero__meta-item {
+      font-family: 'Fraunces', serif;
+      font-size: 1rem;
+      color: var(--ink);
+      letter-spacing: 0.01em;
+    }
+    .hero__meta-item strong {
+      display: inline-block;
+      min-width: 140px;
+      color: var(--slate);
+      font-weight: 500;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-family: 'Inter', sans-serif;
+    }
+    .hero__cta {
+      margin-top: 48px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    @media (max-width: 900px) {
+      .hero { padding: 140px 0 80px; }
+      .hero__grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+
+    /* ===== BANNER ===== */
+    .banner {
+      background: var(--slate);
+      color: var(--paper);
+      padding: 72px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--copper) 50%, transparent);
+    }
+    .banner__inner {
+      text-align: center;
+    }
+    .banner__badge {
+      display: inline-block;
+      padding: 8px 20px;
+      border: 1px solid var(--copper);
+      color: var(--copper);
+      font-size: 0.68rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+    .banner__headline {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(1.8rem, 1.2rem + 2.4vw, 2.8rem);
+      color: var(--paper);
+      font-weight: 300;
+      max-width: 32ch;
+      margin: 0 auto;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+    }
+    .banner__headline em {
+      font-style: italic;
+      color: var(--copper);
+    }
+
+    /* ===== ABOUT ===== */
+    .about {
+      padding: 140px 0;
+    }
+    .about__inner {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 96px;
+      align-items: start;
+    }
+    .about__aside {
+      position: sticky;
+      top: 120px;
+    }
+    .about__aside h2 {
+      margin: 20px 0 32px;
+    }
+    .about__aside h2 em { font-style: italic; color: var(--copper); font-weight: 400; }
+    .about__portrait {
+      aspect-ratio: 3 / 4;
+      background: linear-gradient(135deg, var(--slate) 0%, var(--slate-mid) 100%);
+      position: relative;
+      overflow: hidden;
+      margin-top: 32px;
+    }
+    .about__portrait::before {
+      content: 'K + R';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Fraunces', serif;
+      font-size: 6rem;
+      color: var(--copper);
+      opacity: 0.3;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+    }
+    .about__portrait::after {
+      content: '';
+      position: absolute;
+      inset: 16px;
+      border: 1px solid rgba(239, 234, 225, 0.2);
+    }
+    .about__body p {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      margin-bottom: 28px;
+      color: var(--ink-soft);
+    }
+    .about__body p strong { color: var(--ink); font-weight: 600; }
+    .about__body p:first-child {
+      font-size: 1.25rem;
+      color: var(--ink);
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      line-height: 1.55;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 36px;
+      max-width: none;
+    }
+    @media (max-width: 900px) {
+      .about__inner { grid-template-columns: 1fr; gap: 40px; }
+      .about__aside { position: static; }
+    }
+
+    /* ===== NEIGHBORHOODS ===== */
+    .neighborhoods {
+      padding: 140px 0;
+      background: var(--bone);
+    }
+    .neighborhoods__header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+    .neighborhoods__header h2 { margin-top: 20px; max-width: 22ch; margin-left: auto; margin-right: auto; }
+    .neighborhoods__header h2 em { font-style: italic; color: var(--copper); font-weight: 400; }
+    .neighborhoods__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .hood {
+      padding: 40px 32px 44px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      transition: all 350ms;
+      position: relative;
+    }
+    .hood:hover {
+      background: var(--slate);
+      color: var(--paper);
+      border-color: var(--slate);
+      transform: translateY(-4px);
+    }
+    .hood:hover h3 { color: var(--paper); }
+    .hood:hover .hood__line { color: rgba(239, 234, 225, 0.8); }
+    .hood:hover .hood__num { color: var(--copper); }
+    .hood:hover .hood__price { border-top-color: rgba(239, 234, 225, 0.2); color: rgba(239, 234, 225, 0.6); }
+    .hood:hover .hood__price strong { color: var(--copper); }
+
+    .hood__num {
+      font-family: 'Fraunces', serif;
+      font-size: 2rem;
+      color: var(--copper);
+      line-height: 1;
+      margin-bottom: 24px;
+      font-weight: 300;
+      font-style: italic;
+    }
+    .hood h3 {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      transition: color 200ms;
+    }
+    .hood__line {
+      font-size: 0.92rem;
+      line-height: 1.7;
+      margin-bottom: 28px;
+      min-height: 5em;
+      color: var(--ink-soft);
+      transition: color 200ms;
+    }
+    .hood__price {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mute);
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      transition: all 200ms;
+    }
+    .hood__price strong {
+      display: block;
+      font-family: 'Fraunces', serif;
+      font-size: 1.25rem;
+      color: var(--ink);
+      letter-spacing: 0;
+      text-transform: none;
+      font-weight: 500;
+      margin-top: 4px;
+      transition: color 200ms;
+    }
+    @media (max-width: 900px) { .neighborhoods__grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .neighborhoods__grid { grid-template-columns: 1fr; } }
+
+    /* ===== PROPERTIES ===== */
+    .properties {
+      padding: 140px 0;
+    }
+    .properties__header {
+      margin-bottom: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .properties__header h2 { max-width: 16ch; margin-top: 20px; }
+    .properties__header h2 em { font-style: italic; color: var(--copper); font-weight: 400; }
+    .properties__header p { color: var(--mute); max-width: 36ch; }
+
+    .properties__list {
+      border-top: 1px solid var(--line);
+    }
+    .listing {
+      display: grid;
+      grid-template-columns: 80px 1fr 1fr 1fr 200px;
+      gap: 32px;
+      padding: 36px 0;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      transition: all 300ms;
+    }
+    .listing:hover { padding: 36px 24px; background: rgba(184, 122, 61, 0.04); }
+    .listing__num {
+      font-family: 'Fraunces', serif;
+      font-size: 1.5rem;
+      color: var(--copper);
+      font-style: italic;
+      font-weight: 300;
+    }
+    .listing__address {
+      font-family: 'Fraunces', serif;
+      font-size: 1.4rem;
+      color: var(--ink);
+      font-weight: 500;
+      line-height: 1.25;
+    }
+    .listing__hood {
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--slate);
+      font-weight: 500;
+    }
+    .listing__specs {
+      font-size: 0.88rem;
+      color: var(--mute);
+    }
+    .listing__specs strong { color: var(--ink); font-weight: 500; }
+    .listing__price {
+      font-family: 'Fraunces', serif;
+      font-size: 1.65rem;
+      color: var(--ink);
+      text-align: right;
+      font-weight: 500;
+    }
+    @media (max-width: 900px) {
+      .listing {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 28px 0;
+      }
+      .listing__price { text-align: left; }
+    }
+
+    /* ===== TESTIMONIALS (pull-quote-driven) ===== */
+    .testimonials {
+      padding: 140px 0;
+      background: var(--slate);
+      color: var(--paper);
+      position: relative;
+      overflow: hidden;
+    }
+    .testimonials::before {
+      content: '"';
+      position: absolute;
+      top: 40px;
+      right: 80px;
+      font-family: 'Fraunces', serif;
+      font-size: 20rem;
+      color: var(--copper);
+      opacity: 0.1;
+      line-height: 0.8;
+      font-weight: 300;
+    }
+    .testimonials__header {
+      margin-bottom: 80px;
+      position: relative;
+    }
+    .testimonials__header h2 { color: var(--paper); margin-top: 20px; max-width: 20ch; }
+    .testimonials__header h2 em { font-style: italic; color: var(--copper); font-weight: 400; }
+
+    .testimonials__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      position: relative;
+    }
+    .quote {
+      padding: 40px 32px;
+      background: rgba(239, 234, 225, 0.04);
+      border-left: 2px solid var(--copper);
+      border-top: 1px solid rgba(239, 234, 225, 0.12);
+      border-right: 1px solid rgba(239, 234, 225, 0.12);
+      border-bottom: 1px solid rgba(239, 234, 225, 0.12);
+      backdrop-filter: blur(10px);
+    }
+    .quote__text {
+      font-family: 'Fraunces', serif;
+      font-size: 1.2rem;
+      line-height: 1.55;
+      color: var(--paper);
+      margin-bottom: 32px;
+      font-weight: 400;
+      font-style: italic;
+    }
+    .quote__who {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--paper);
+    }
+    .quote__where {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--copper);
+      margin-top: 6px;
+    }
+    @media (max-width: 900px) { .testimonials__grid { grid-template-columns: 1fr; max-width: 540px; margin: 0 auto; } }
+
+    /* ===== CREDENTIALS ===== */
+    .credentials {
+      padding: 120px 0;
+    }
+    .credentials__header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .credentials__header h2 { margin-top: 20px; }
+    .credentials__header h2 em { font-style: italic; color: var(--copper); font-weight: 400; }
+    .credentials__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .credential {
+      padding: 36px 28px;
+      text-align: center;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      transition: all 300ms;
+    }
+    .credential:hover { border-color: var(--copper); background: var(--bone); }
+    .credential__num {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2rem, 1.4rem + 1.8vw, 2.8rem);
+      color: var(--slate);
+      font-weight: 400;
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+    .credential__num em { font-style: italic; color: var(--copper); font-weight: 300; }
+    .credential__label {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--mute);
+    }
+    @media (max-width: 900px) { .credentials__grid { grid-template-columns: repeat(2, 1fr); } }
+
+    /* ===== INSIGHTS ===== */
+    .insights {
+      padding: 140px 0;
+      background: var(--bone);
+    }
+    .insights__header {
+      margin-bottom: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .insights__header h2 { max-width: 18ch; }
+    .insights__header h2 em { font-style: italic; color: var(--copper); font-weight: 400; }
+    .insights__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .article {
+      background: var(--paper);
+      padding: 40px 36px;
+      border-top: 1px solid var(--copper);
+      transition: all 300ms;
+    }
+    .article:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(47, 62, 70, 0.08); }
+    .article__tag {
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--copper);
+      margin-bottom: 20px;
+    }
+    .article h3 {
+      font-size: 1.4rem;
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+    .article p {
+      font-size: 0.92rem;
+      line-height: 1.65;
+      color: var(--mute);
+      margin-bottom: 24px;
+    }
+    .article__read {
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--slate);
+      font-weight: 500;
+      border-bottom: 1px solid var(--copper);
+      padding-bottom: 3px;
+    }
+    @media (max-width: 900px) { .insights__grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; } }
+
+    /* ===== CTA ===== */
+    .cta-section {
+      padding: 140px 0;
+      background: var(--paper);
+    }
+    .cta-section__inner {
+      max-width: 880px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 80px 48px;
+      border: 1px solid var(--line);
+      background: var(--bone);
+      position: relative;
+    }
+    .cta-section__inner::before, .cta-section__inner::after {
+      content: '';
+      position: absolute;
+      width: 32px; height: 32px;
+      border: 1px solid var(--copper);
+    }
+    .cta-section__inner::before { top: -1px; left: -1px; border-right: none; border-bottom: none; }
+    .cta-section__inner::after { bottom: -1px; right: -1px; border-left: none; border-top: none; }
+
+    .cta-section h2 { margin: 20px 0 24px; }
+    .cta-section h2 em { font-style: italic; color: var(--copper); font-weight: 400; }
+    .cta-section p {
+      font-size: 1.05rem;
+      margin: 0 auto 40px;
+      max-width: 52ch;
+      color: var(--ink-soft);
+    }
+    .cta-section__note {
+      margin-top: 36px;
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+      font-size: 0.82rem;
+      color: var(--mute);
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      padding: 56px 0 40px;
+      background: var(--slate-deep);
+      color: rgba(239, 234, 225, 0.6);
+      font-size: 0.82rem;
+    }
+    .footer__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer__brand {
+      font-family: 'Fraunces', serif;
+      font-size: 1.15rem;
+      color: var(--paper);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+    .footer__note {
+      font-size: 0.74rem;
+      letter-spacing: 0.1em;
+      color: rgba(239, 234, 225, 0.5);
+    }
+    .footer__note a { color: var(--copper); }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "The Samuel Team",
+    "description": "Karyn and Rowan Samuel lead The Samuel Team, a Christie's International Masters Circle practice representing luxury buyers and sellers across Naples, Old Naples, and Park Shore.",
+    "url": "https://justscale.co/d100-websites/samuel-team/",
+    "areaServed": [
+      { "@type": "Place", "name": "Naples, FL" },
+      { "@type": "Place", "name": "Old Naples, FL" },
+      { "@type": "Place", "name": "Park Shore, FL" }
+    ],
+    "address": { "@type": "PostalAddress", "addressLocality": "Naples", "addressRegion": "FL", "postalCode": "34102", "addressCountry": "US" },
+    "founder": [
+      { "@type": "Person", "name": "Karyn Samuel" },
+      { "@type": "Person", "name": "Rowan Samuel" }
+    ],
+    "parentOrganization": { "@type": "Organization", "name": "John R. Wood Properties | Christie's International Real Estate" },
+    "award": "Christie's International Masters Circle 2024"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Luxury Residential Real Estate",
+    "provider": { "@type": "RealEstateAgent", "name": "The Samuel Team" },
+    "areaServed": "Naples, FL",
+    "description": "Luxury buyer and listing representation across Old Naples, Park Shore, and greater Naples."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What is Christie's Masters Circle?", "acceptedAnswer": { "@type": "Answer", "text": "Masters Circle recognizes the highest-producing advisors within the Christie's International Real Estate affiliate network worldwide. The Samuel Team earned Masters Circle designation in 2024 on the strength of their luxury production across Naples." } },
+      { "@type": "Question", "name": "Which neighborhoods does The Samuel Team represent?", "acceptedAnswer": { "@type": "Answer", "text": "Our primary markets are Old Naples, Park Shore, and greater Naples. We also advise buyers and sellers across Aqualane Shores, Moorings, and the Gulf Shore corridor." } },
+      { "@type": "Question", "name": "Do you work as a true team, or as individual agents?", "acceptedAnswer": { "@type": "Answer", "text": "Karyn and Rowan operate as a true two-principal team. Every client works directly with both of us, which means consistent access, two perspectives on every decision, and a genuine backup on every transaction." } },
+      { "@type": "Question", "name": "What is the typical price point of your listings?", "acceptedAnswer": { "@type": "Answer", "text": "We represent properties from $2M through $25M, with particular concentration in the $4M to $12M band across Old Naples and Park Shore." } },
+      { "@type": "Question", "name": "Do you represent relocation buyers from out of state?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. A meaningful portion of our work is guiding out-of-state buyers, particularly from the Northeast and Midwest, through the specific rhythms of the Naples seasonal market and helping them select the right neighborhood for their lifestyle." } }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="#" class="nav__logo">SAMUEL</a>
+      <ul class="nav__links">
+        <li><a href="#about">The Principals</a></li>
+        <li><a href="#neighborhoods">Neighborhoods</a></li>
+        <li><a href="#properties">Portfolio</a></li>
+        <li><a href="#insights">Perspectives</a></li>
+      </ul>
+      <a href="#contact" class="btn btn--outline nav__cta">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__quote-mark">"</div>
+    <div class="container hero__inner">
+      <div class="hero__eyebrow">Karyn &amp; Rowan Samuel &middot; Christie's Masters Circle 2024</div>
+      <h1 class="hero__headline">A quieter <em>kind</em> of luxury representation.</h1>
+      <div class="hero__grid">
+        <div>
+          <p class="hero__sub">Karyn and Rowan Samuel represent Naples' most discerning buyers and sellers. A true two-principal team with a Christie's Masters Circle record, built on the kind of referral relationships that only come from years of careful work.</p>
+          <div class="hero__cta">
+            <a href="#contact" class="btn">Begin a Conversation</a>
+            <a href="#properties" class="btn btn--outline">Current Portfolio</a>
+          </div>
+        </div>
+        <div class="hero__meta">
+          <div class="hero__meta-label">The Practice</div>
+          <div class="hero__meta-list">
+            <div class="hero__meta-item"><strong>Recognition</strong>Masters Circle 2024</div>
+            <div class="hero__meta-item"><strong>Affiliation</strong>Christie's International</div>
+            <div class="hero__meta-item"><strong>Brokerage</strong>John R. Wood Properties</div>
+            <div class="hero__meta-item"><strong>Home Market</strong>Naples, FL &middot; 34102</div>
+            <div class="hero__meta-item"><strong>Focus</strong>Old Naples &middot; Park Shore</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BANNER ===== -->
+  <section class="banner">
+    <div class="container banner__inner reveal">
+      <div class="banner__badge">Christie's Masters Circle &middot; 2024</div>
+      <h2 class="banner__headline">Ranked among the highest-producing advisors in the <em>Christie's International</em> network worldwide.</h2>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container about__inner">
+      <div class="about__aside reveal">
+        <p class="eyebrow">The Principals</p>
+        <h2>Karyn &amp; <em>Rowan</em> Samuel.</h2>
+        <div class="about__portrait"></div>
+      </div>
+      <div class="about__body reveal">
+        <p>A true two-principal team is rare. Two principals who genuinely work every transaction together &mdash; that is rarer still.</p>
+        <p><strong>Karyn and Rowan Samuel represent the Samuel Team</strong> as a true partnership. Every client works directly with both of them. That structure is deliberate: it gives sellers two minds on pricing and strategy, it gives buyers a backup on every showing and every negotiation, and it gives both sides the kind of always-on responsiveness that a luxury transaction in Naples often demands. It also tends to compound &mdash; their book is heavily weighted toward repeat clients and the referrals those clients make.</p>
+        <p>The team operates under John R. Wood Properties, the exclusive Christie's International Real Estate affiliate for Southwest Florida, and was recognized with Christie's <strong>Masters Circle distinction in 2024</strong> &mdash; placing the practice among the highest-producing advisors in the Christie's network worldwide. That recognition matters most for what it signals to the market: when Karyn and Rowan bring a listing forward, it travels through the same international channels as the most coveted properties on earth.</p>
+        <p>The day-to-day work remains specific and local. Old Naples. Park Shore. Estate homes within walking distance of 5th Avenue. Towers along Gulf Shore Boulevard. The neighborhoods where one or two well-placed conversations move more real estate than any open-house weekend ever has.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEIGHBORHOODS -->
+  <section class="neighborhoods" id="neighborhoods">
+    <div class="container">
+      <div class="neighborhoods__header reveal">
+        <p class="eyebrow">Neighborhoods Represented</p>
+        <h2>Four of Naples' most deliberately chosen <em>addresses</em>.</h2>
+      </div>
+      <div class="neighborhoods__grid">
+        <div class="hood reveal">
+          <div class="hood__num">I.</div>
+          <h3>Old Naples</h3>
+          <p class="hood__line">Historic cottages, teardown-to-new estate builds, and the walkable 5th Avenue / Third Street corridor.</p>
+          <div class="hood__price">Avg Sale<strong>$7.4M</strong></div>
+        </div>
+        <div class="hood reveal">
+          <div class="hood__num">II.</div>
+          <h3>Park Shore</h3>
+          <p class="hood__line">Private beach, Venetian Village dining, and the most tenured Gulf-front high-rise towers in Naples.</p>
+          <div class="hood__price">Avg Sale<strong>$3.9M</strong></div>
+        </div>
+        <div class="hood reveal">
+          <div class="hood__num">III.</div>
+          <h3>The Moorings</h3>
+          <p class="hood__line">Quiet mid-priced beach community with residents-only beach park. An under-recognized value on the Gulf.</p>
+          <div class="hood__price">Avg Sale<strong>$2.6M</strong></div>
+        </div>
+        <div class="hood reveal">
+          <div class="hood__num">IV.</div>
+          <h3>Aqualane Shores</h3>
+          <p class="hood__line">Direct Gulf-access boating, private docks, and the finest yachting address south of Port Royal.</p>
+          <div class="hood__price">Avg Sale<strong>$9.2M</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROPERTIES -->
+  <section class="properties" id="properties">
+    <div class="container">
+      <div class="properties__header reveal">
+        <div>
+          <p class="eyebrow">Current Portfolio</p>
+          <h2>A selection of <em>current representations</em>.</h2>
+        </div>
+        <p>Currently listed, recently represented, and select private offerings. Additional opportunities available upon private inquiry.</p>
+      </div>
+      <div class="properties__list">
+        <div class="listing reveal">
+          <div class="listing__num">01</div>
+          <div>
+            <div class="listing__address">745 Gulf Shore Blvd S</div>
+            <div class="listing__hood">Old Naples &middot; Gulf Front</div>
+          </div>
+          <div class="listing__specs">
+            Feature Listing
+          </div>
+          <div class="listing__specs">
+            <strong>5</strong> bed &middot; <strong>6</strong> bath &middot; <strong>6,840</strong> sqft
+          </div>
+          <div class="listing__price">$17,450,000</div>
+        </div>
+        <div class="listing reveal">
+          <div class="listing__num">02</div>
+          <div>
+            <div class="listing__address">4041 Gulf Shore Blvd N, #1401</div>
+            <div class="listing__hood">Park Shore &middot; Regent</div>
+          </div>
+          <div class="listing__specs">
+            For Sale
+          </div>
+          <div class="listing__specs">
+            <strong>3</strong> bed &middot; <strong>4</strong> bath &middot; <strong>3,600</strong> sqft
+          </div>
+          <div class="listing__price">$6,950,000</div>
+        </div>
+        <div class="listing reveal">
+          <div class="listing__num">03</div>
+          <div>
+            <div class="listing__address">210 11th Avenue South</div>
+            <div class="listing__hood">Old Naples</div>
+          </div>
+          <div class="listing__specs">
+            New Listing
+          </div>
+          <div class="listing__specs">
+            <strong>5</strong> bed &middot; <strong>5.5</strong> bath &middot; <strong>5,420</strong> sqft
+          </div>
+          <div class="listing__price">$9,750,000</div>
+        </div>
+        <div class="listing reveal">
+          <div class="listing__num">04</div>
+          <div>
+            <div class="listing__address">450 Bay Colony Drive</div>
+            <div class="listing__hood">The Moorings</div>
+          </div>
+          <div class="listing__specs">
+            Just Represented
+          </div>
+          <div class="listing__specs">
+            <strong>4</strong> bed &middot; <strong>4</strong> bath &middot; <strong>4,100</strong> sqft
+          </div>
+          <div class="listing__price">$4,250,000</div>
+        </div>
+        <div class="listing reveal">
+          <div class="listing__num">05</div>
+          <div>
+            <div class="listing__address">1640 Galleon Drive</div>
+            <div class="listing__hood">Aqualane Shores</div>
+          </div>
+          <div class="listing__specs">
+            Private Offering
+          </div>
+          <div class="listing__specs">
+            <strong>5</strong> bed &middot; <strong>6</strong> bath &middot; <strong>6,280</strong> sqft
+          </div>
+          <div class="listing__price">$12,900,000</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="testimonials__header reveal">
+        <p class="eyebrow">Client Voices</p>
+        <h2>The most valuable metric we track: <em>what clients say after closing</em>.</h2>
+      </div>
+      <div class="testimonials__grid">
+        <div class="quote reveal">
+          <p class="quote__text">Karyn and Rowan both showed up to every single meeting. Every single one. In a market this expensive, that kind of attention is what you are actually paying for.</p>
+          <div class="quote__who">R. Harrington</div>
+          <div class="quote__where">Old Naples &middot; 2024</div>
+        </div>
+        <div class="quote reveal">
+          <p class="quote__text">Our Park Shore tower unit sold in fourteen days at $200k over ask. But what we will remember is how they explained every decision, every step of the way. Completely over-delivered.</p>
+          <div class="quote__who">M. &amp; D. Patel</div>
+          <div class="quote__where">Park Shore &middot; 2024</div>
+        </div>
+        <div class="quote reveal">
+          <p class="quote__text">We bought our Old Naples cottage from the Samuel Team. Two years later we sold it through them. Both transactions were clean, quick, and fair. That is not common in this market.</p>
+          <div class="quote__who">J. Ferraro</div>
+          <div class="quote__where">Old Naples &middot; 2023</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREDENTIALS -->
+  <section class="credentials">
+    <div class="container">
+      <div class="credentials__header reveal">
+        <p class="eyebrow">The Record</p>
+        <h2>Evidence, not <em>adjectives</em>.</h2>
+      </div>
+      <div class="credentials__grid">
+        <div class="credential reveal">
+          <div class="credential__num">2024</div>
+          <div class="credential__label">Christie's Masters Circle</div>
+        </div>
+        <div class="credential reveal">
+          <div class="credential__num"><em>2</em></div>
+          <div class="credential__label">True Principal Partnership</div>
+        </div>
+        <div class="credential reveal">
+          <div class="credential__num">$125M+</div>
+          <div class="credential__label">Recent Annual Volume</div>
+        </div>
+        <div class="credential reveal">
+          <div class="credential__num">72%</div>
+          <div class="credential__label">Repeat &amp; Referral</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSIGHTS -->
+  <section class="insights" id="insights">
+    <div class="container">
+      <div class="insights__header reveal">
+        <div>
+          <p class="eyebrow">Perspectives</p>
+          <h2>Field notes from the <em>Naples luxury market</em>.</h2>
+        </div>
+      </div>
+      <div class="insights__grid">
+        <article class="article reveal">
+          <div class="article__tag">Market Note &middot; Q2 2026</div>
+          <h3>Why Old Naples Lot Values Are Still Climbing in a Soft National Market</h3>
+          <p>The teardown arithmetic in Old Naples has shifted meaningfully in the last eighteen months. A data-led look at what is driving it.</p>
+          <span class="article__read">Read the Note</span>
+        </article>
+        <article class="article reveal">
+          <div class="article__tag">Buyer Guide</div>
+          <h3>Choosing a Gulf-Front Tower in Park Shore: What the Comps Do Not Tell You</h3>
+          <p>Four residents-only beach accesses, ten buildings, and pricing that varies by $1M+ for nearly identical floor plans. The why matters.</p>
+          <span class="article__read">Read the Guide</span>
+        </article>
+        <article class="article reveal">
+          <div class="article__tag">Seller Advisory</div>
+          <h3>The Case for a Private, Invite-Only Listing Process at $10M+</h3>
+          <p>For owners of Naples' most distinctive estates, the case for a quiet, relationship-driven sale has never been more persuasive. Here is how we approach it.</p>
+          <span class="article__read">Read the Advisory</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="contact">
+    <div class="container">
+      <div class="cta-section__inner reveal">
+        <p class="eyebrow">Begin A Conversation</p>
+        <h2>When you are ready &mdash; <em>we are easy to reach</em>.</h2>
+        <p>Karyn and Rowan personally respond to every inquiry. Fifteen minutes is usually enough to know whether we are the right fit for your transaction.</p>
+        <a href="https://calendly.com/zac-justscale/local-business" class="btn btn--copper">Schedule 15 Minutes</a>
+        <div class="cta-section__note">
+          This page is a mock rebuild of realestateinnaplesflorida.net by <a href="https://justscale.co">justscale</a>. Want the real thing? Book 15 minutes above.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">THE SAMUEL TEAM</div>
+      <div class="footer__note">Prepared for The Samuel Team by <a href="https://justscale.co">justscale</a> &middot; justscale.co</div>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var io = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
+    })();
+    document.querySelectorAll('a[href^="#"]').forEach(function(l) {
+      l.addEventListener('click', function(e) {
+        var t = document.querySelector(this.getAttribute('href'));
+        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+    });
+  </script>
+</body>
+</html>

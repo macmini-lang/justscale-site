@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>The A Team Naples — Anthony Dwyer at Compass | 45 Years of Naples Luxury</title>
+  <meta name="description" content="Anthony Dwyer and The A Team Naples at Compass. 45 years of Naples tenure, five-agent team. Port Royal, Pelican Bay, Park Shore, and Moorings specialists.">
+  <meta property="og:title" content="The A Team Naples — Anthony Dwyer at Compass">
+  <meta property="og:description" content="45 years of Naples tenure. Port Royal, Pelican Bay, Park Shore, Moorings. A five-agent team at Compass.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://justscale.co/d100-websites/a-team-naples/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --slate: #2e3642;
+      --slate-dark: #1c222b;
+      --slate-light: #4a5667;
+      --stone: #8b92a0;
+      --fog: #c4c9d1;
+      --ink: #1a1f27;
+      --text: #44505e;
+      --muted: #7c8493;
+      --line: rgba(26, 31, 39, 0.1);
+      --line-strong: rgba(26, 31, 39, 0.22);
+      --paper: #f5f5f2;
+      --paper-warm: #ebe9e3;
+      --bone: #f9f8f5;
+      --accent: #9b7d54;
+      --accent-dark: #7d6341;
+      --bg: #ffffff;
+    }
+
+    html { font-size: 17px; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-weight: 400;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Libre Caslon Text', Georgia, serif;
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.15;
+      letter-spacing: -0.005em;
+    }
+    h1 { font-size: clamp(2.6rem, 5vw, 4.4rem); }
+    h2 { font-size: clamp(2rem, 3.6vw, 3rem); }
+    h3 { font-size: clamp(1.25rem, 2vw, 1.6rem); }
+    h4 { font-size: 1.1rem; }
+
+    p { line-height: 1.7; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 44px); }
+
+    .eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 18px 34px;
+      transition: all 280ms ease;
+      border: none;
+      cursor: pointer;
+    }
+    .btn--primary {
+      background: var(--slate);
+      color: var(--paper);
+    }
+    .btn--primary:hover { background: var(--ink); }
+    .btn--ghost {
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--line-strong);
+    }
+    .btn--ghost:hover { border-color: var(--ink); background: var(--ink); color: var(--paper); }
+    .btn--accent {
+      background: var(--accent);
+      color: var(--bone);
+    }
+    .btn--accent:hover { background: var(--accent-dark); }
+
+    /* NAV */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 22px 0;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid transparent;
+      transition: all 300ms ease;
+    }
+    .nav.scrolled { padding: 14px 0; border-bottom-color: var(--line); }
+    .nav__inner {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 40px;
+    }
+    .nav__brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .nav__mark {
+      width: 44px; height: 44px;
+      background: var(--slate);
+      color: var(--paper);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    .nav__wordmark {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1.2rem;
+      color: var(--ink);
+      line-height: 1.1;
+      font-weight: 400;
+    }
+    .nav__wordmark small {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.58rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-top: 4px;
+    }
+    .nav__links {
+      display: flex;
+      gap: 36px;
+      justify-content: center;
+    }
+    .nav__links a {
+      font-size: 0.74rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ink);
+      transition: color 200ms ease;
+    }
+    .nav__links a:hover { color: var(--accent); }
+    .nav__cta {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 13px 26px;
+      color: var(--paper);
+      background: var(--slate);
+      font-weight: 600;
+    }
+    .nav__cta:hover { background: var(--ink); }
+    @media (max-width: 960px) { .nav__links { display: none; } .nav__inner { grid-template-columns: auto auto; } }
+
+    /* HERO — architectural grid */
+    .hero {
+      padding: 140px 0 0;
+      background: var(--bone);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero__grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      min-height: calc(100vh - 140px);
+    }
+    .hero__text {
+      padding: clamp(48px, 8vw, 100px) clamp(24px, 5vw, 80px) clamp(48px, 8vw, 100px) 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .hero__tenure {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      padding: 0;
+      margin-bottom: 32px;
+    }
+    .hero__tenure-num {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 3.2rem;
+      color: var(--accent);
+      line-height: 1;
+      font-weight: 700;
+    }
+    .hero__tenure-text {
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--slate);
+      line-height: 1.4;
+      font-weight: 600;
+    }
+    .hero__h1 {
+      margin-bottom: 32px;
+    }
+    .hero__h1 em { font-style: italic; color: var(--accent); }
+    .hero__sub {
+      max-width: 520px;
+      font-size: 1.1rem;
+      color: var(--text);
+      margin-bottom: 40px;
+    }
+    .hero__cta-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .hero__tags {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      padding-top: 32px;
+      border-top: 1px solid var(--line);
+    }
+    .hero__tag {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .hero__tag::before {
+      content: "";
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+    .hero__visual {
+      background:
+        radial-gradient(ellipse at 30% 30%, rgba(155, 125, 84, 0.22), transparent 55%),
+        linear-gradient(160deg, var(--slate) 0%, var(--ink) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero__visual-grid {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+    .hero__vcell {
+      border-right: 1px solid rgba(245, 245, 242, 0.08);
+      border-bottom: 1px solid rgba(245, 245, 242, 0.08);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      color: var(--paper);
+      position: relative;
+      transition: background 350ms ease;
+    }
+    .hero__vcell:hover { background: rgba(155, 125, 84, 0.08); }
+    .hero__vcell:nth-child(even) { border-right: none; }
+    .hero__vcell:nth-child(n+3) { border-bottom: none; }
+    .hero__vcell-num {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 0.85rem;
+      color: var(--accent);
+      margin-bottom: 14px;
+      font-style: italic;
+    }
+    .hero__vcell-name {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1.6rem;
+      line-height: 1.1;
+      color: var(--paper);
+    }
+    .hero__vcell-price {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-top: 10px;
+      font-weight: 600;
+    }
+    @media (max-width: 900px) {
+      .hero__grid { grid-template-columns: 1fr; }
+      .hero__text { padding: 40px 0; }
+      .hero__visual { min-height: 500px; }
+    }
+
+    /* BAND */
+    .band {
+      background: var(--slate);
+      color: var(--paper);
+      padding: 24px 0;
+    }
+    .band__inner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .band__item {
+      font-size: 0.76rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(245, 245, 242, 0.85);
+    }
+    .band__item strong {
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .band__sep {
+      width: 4px; height: 4px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+
+    /* ABOUT */
+    .about {
+      padding: clamp(90px, 12vw, 140px) 0;
+      background: var(--bg);
+    }
+    .about__header {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: clamp(48px, 6vw, 100px);
+      margin-bottom: 80px;
+    }
+    .about__header h2 { margin-top: 20px; }
+    .about__header h2 em { font-style: italic; color: var(--accent); }
+    .about__body p {
+      margin-bottom: 22px;
+      font-size: 1.02rem;
+      color: var(--text);
+    }
+    .about__team {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      padding-top: 48px;
+      border-top: 1px solid var(--line);
+    }
+    .tmember {
+      text-align: center;
+      padding: 24px 16px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      transition: transform 280ms ease, border-color 280ms ease;
+    }
+    .tmember:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+    }
+    .tmember__avatar {
+      width: 56px; height: 56px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--slate) 0%, var(--slate-light) 100%);
+      color: var(--paper);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+    .tmember:nth-child(1) .tmember__avatar { background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%); }
+    .tmember__name {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 0.95rem;
+      color: var(--ink);
+      margin-bottom: 4px;
+      font-weight: 400;
+    }
+    .tmember__role {
+      font-size: 0.64rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    @media (max-width: 900px) {
+      .about__header { grid-template-columns: 1fr; gap: 24px; margin-bottom: 48px; }
+      .about__team { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* NEIGHBORHOODS — architectural grid style */
+    .nhoods {
+      padding: clamp(90px, 12vw, 140px) 0;
+      background: var(--paper);
+    }
+    .nhoods__header {
+      margin-bottom: 64px;
+      text-align: center;
+    }
+    .nhoods__header h2 { margin-top: 16px; }
+    .nhoods__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border: 1px solid var(--line-strong);
+    }
+    .hood {
+      background: var(--bone);
+      padding: 44px 32px 36px;
+      border-right: 1px solid var(--line-strong);
+      transition: background 350ms ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      min-height: 300px;
+    }
+    .hood:last-child { border-right: none; }
+    .hood:hover { background: var(--paper-warm); }
+    .hood__idx {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 0.9rem;
+      color: var(--accent);
+      font-style: italic;
+      margin-bottom: 24px;
+    }
+    .hood__name {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1.7rem;
+      color: var(--ink);
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+    .hood__desc {
+      font-size: 0.9rem;
+      color: var(--text);
+      flex: 1;
+      margin-bottom: 24px;
+    }
+    .hood__meta {
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .hood__meta-label {
+      font-size: 0.66rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .hood__meta-val {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1.15rem;
+      color: var(--slate);
+      font-weight: 700;
+    }
+    @media (max-width: 1000px) {
+      .nhoods__grid { grid-template-columns: repeat(2, 1fr); }
+      .hood { border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); }
+      .hood:nth-child(2n) { border-right: none; }
+      .hood:nth-last-child(-n+2) { border-bottom: none; }
+    }
+    @media (max-width: 560px) {
+      .nhoods__grid { grid-template-columns: 1fr; }
+      .hood { border-right: none; border-bottom: 1px solid var(--line-strong); }
+      .hood:last-child { border-bottom: none; }
+    }
+
+    /* LISTINGS */
+    .listings {
+      padding: clamp(90px, 12vw, 140px) 0;
+      background: var(--bg);
+    }
+    .listings__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 56px;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .listings__header h2 { margin-top: 14px; max-width: 620px; }
+    .listings__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .prop {
+      background: var(--bone);
+      transition: transform 350ms ease, box-shadow 350ms ease;
+      cursor: pointer;
+      overflow: hidden;
+    }
+    .prop:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 50px rgba(26, 31, 39, 0.1);
+    }
+    .prop__visual {
+      aspect-ratio: 3 / 2;
+      position: relative;
+      overflow: hidden;
+    }
+    .prop--1 .prop__visual { background: linear-gradient(155deg, #2e3642 0%, #1c222b 100%); }
+    .prop--2 .prop__visual { background: linear-gradient(150deg, #4a5667 0%, #2e3642 100%); }
+    .prop--3 .prop__visual { background: linear-gradient(145deg, #6a7380 0%, #3a434f 100%); }
+    .prop--4 .prop__visual { background: linear-gradient(160deg, #2e3642 0%, #4a5667 100%); }
+    .prop--5 .prop__visual { background: linear-gradient(150deg, #1c222b 0%, #3a434f 100%); }
+    .prop--6 .prop__visual { background: linear-gradient(140deg, #8b92a0 0%, #4a5667 100%); }
+    .prop__visual::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(155, 125, 84, 0.28), transparent 55%),
+        linear-gradient(180deg, transparent 55%, rgba(28, 34, 43, 0.55) 100%);
+    }
+    .prop__status {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: var(--paper);
+      color: var(--ink);
+      font-size: 0.6rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 7px 14px;
+      font-weight: 700;
+      z-index: 2;
+    }
+    .prop__price {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1.7rem;
+      color: var(--paper);
+      z-index: 2;
+      font-weight: 400;
+    }
+    .prop__body {
+      padding: 26px 28px 30px;
+    }
+    .prop__addr {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1.2rem;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+    .prop__hood {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    .prop__specs {
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+    @media (max-width: 900px) { .listings__grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .listings__grid { grid-template-columns: 1fr; } }
+
+    /* TESTIMONIALS — large editorial */
+    .quotes {
+      padding: clamp(90px, 12vw, 140px) 0;
+      background: var(--slate);
+      color: var(--paper);
+      position: relative;
+    }
+    .quotes__header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .quotes__header h2 { color: var(--paper); margin-top: 14px; }
+    .quotes__header .eyebrow { color: var(--accent); }
+    .quotes__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid rgba(245, 245, 242, 0.1);
+    }
+    .qitem {
+      padding: 44px 36px;
+      border-right: 1px solid rgba(245, 245, 242, 0.1);
+      display: flex;
+      flex-direction: column;
+    }
+    .qitem:last-child { border-right: none; }
+    .qitem__mark {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 2.5rem;
+      color: var(--accent);
+      line-height: 0.5;
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+    .qitem__quote {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1.15rem;
+      line-height: 1.55;
+      color: rgba(245, 245, 242, 0.95);
+      margin-bottom: 32px;
+      flex: 1;
+      font-style: italic;
+      font-weight: 400;
+    }
+    .qitem__author {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.86rem;
+      color: var(--paper);
+      font-weight: 600;
+    }
+    .qitem__context {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-top: 6px;
+    }
+    @media (max-width: 900px) {
+      .quotes__grid { grid-template-columns: 1fr; }
+      .qitem { border-right: none; border-bottom: 1px solid rgba(245, 245, 242, 0.1); }
+      .qitem:last-child { border-bottom: none; }
+    }
+
+    /* CREDS */
+    .creds {
+      padding: clamp(80px, 10vw, 120px) 0;
+      background: var(--bone);
+    }
+    .creds__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+    .creds__item {
+      text-align: center;
+      padding: 48px 24px;
+      border-right: 1px solid var(--line-strong);
+    }
+    .creds__item:last-child { border-right: none; }
+    .creds__item:first-child { border-left: 3px solid var(--accent); }
+    .creds__val {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: clamp(2.4rem, 4vw, 3.6rem);
+      color: var(--ink);
+      line-height: 1;
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+    .creds__val em {
+      color: var(--accent);
+      font-style: italic;
+      font-weight: 400;
+    }
+    .creds__label {
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    @media (max-width: 900px) {
+      .creds__grid { grid-template-columns: 1fr 1fr; }
+      .creds__item:nth-child(even) { border-right: none; }
+      .creds__item:nth-child(-n+2) { border-bottom: 1px solid var(--line-strong); }
+      .creds__item:first-child { border-left: none; border-top: 3px solid var(--accent); }
+    }
+
+    /* INSIGHTS */
+    .insights {
+      padding: clamp(90px, 12vw, 140px) 0;
+      background: var(--bg);
+    }
+    .insights__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 56px;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .insights__header h2 { margin-top: 14px; max-width: 620px; }
+    .insights__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .icard {
+      padding: 40px 32px;
+      background: var(--bone);
+      border-left: 3px solid var(--accent);
+      transition: transform 300ms ease, background 300ms ease;
+      cursor: pointer;
+    }
+    .icard:hover {
+      transform: translateY(-3px);
+      background: var(--paper);
+    }
+    .icard__kicker {
+      font-size: 0.68rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+    .icard__title {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1.4rem;
+      color: var(--ink);
+      margin-bottom: 18px;
+      line-height: 1.25;
+    }
+    .icard__excerpt {
+      font-size: 0.92rem;
+      color: var(--text);
+      margin-bottom: 24px;
+    }
+    .icard__meta {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    @media (max-width: 900px) { .insights__grid { grid-template-columns: 1fr; } }
+
+    /* CTA */
+    .cta {
+      padding: clamp(90px, 12vw, 140px) 0;
+      background: linear-gradient(160deg, var(--slate-dark) 0%, var(--slate) 100%);
+      color: var(--paper);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 30%, rgba(155, 125, 84, 0.2), transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(245, 245, 242, 0.04), transparent 50%);
+    }
+    .cta__inner { position: relative; z-index: 2; }
+    .cta .eyebrow { color: var(--accent); }
+    .cta h2 { color: var(--paper); margin: 24px auto 28px; max-width: 820px; }
+    .cta p {
+      color: rgba(245, 245, 242, 0.8);
+      max-width: 640px;
+      margin: 0 auto 40px;
+      font-size: 1.05rem;
+    }
+    .cta__note { margin-top: 36px; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(155, 125, 84, 0.85); }
+
+    /* FOOTER */
+    .footer {
+      background: var(--slate-dark);
+      color: rgba(245, 245, 242, 0.55);
+      padding: 48px 0 36px;
+      border-top: 1px solid rgba(155, 125, 84, 0.25);
+    }
+    .footer__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .footer__brand { font-family: 'Libre Caslon Text', serif; font-size: 1.15rem; color: var(--paper); font-style: italic; }
+    .footer__credit { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); }
+    .footer__credit a { color: var(--accent); border-bottom: 1px solid rgba(155, 125, 84, 0.45); }
+
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 700ms ease, transform 700ms ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: 0.01ms !important; } }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "The A Team Naples",
+    "description": "Anthony Dwyer and The A Team Naples at Compass. 45 years of Naples tenure. Five-agent team specializing in Port Royal, Pelican Bay, Park Shore, and Moorings.",
+    "url": "https://ateam239.com",
+    "areaServed": [
+      { "@type": "Place", "name": "Naples, FL" },
+      { "@type": "Place", "name": "Port Royal" },
+      { "@type": "Place", "name": "Pelican Bay" },
+      { "@type": "Place", "name": "Park Shore" },
+      { "@type": "Place", "name": "Moorings" }
+    ],
+    "employee": { "@type": "Person", "name": "Anthony Dwyer", "jobTitle": "Team Principal" },
+    "parentOrganization": { "@type": "Organization", "name": "Compass" },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Naples",
+      "addressRegion": "FL",
+      "postalCode": "34108",
+      "addressCountry": "US"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Luxury Real Estate Representation",
+    "provider": { "@type": "RealEstateAgent", "name": "The A Team Naples at Compass" },
+    "areaServed": "Naples, FL",
+    "description": "Buyer and seller representation for Naples coastal luxury: Port Royal, Pelican Bay, Park Shore, Moorings, and adjacent Gulf-front markets."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How long has The A Team Naples been active?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Anthony Dwyer has 45 years of Naples real estate tenure. The A Team Naples, as a five-agent team structure under Compass, represents the consolidation of that career into a modern luxury practice." }
+      },
+      {
+        "@type": "Question",
+        "name": "Which neighborhoods does The A Team Naples specialize in?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Our primary markets are Port Royal, Pelican Bay, Park Shore, and Moorings &mdash; the four core Naples coastal addresses." }
+      },
+      {
+        "@type": "Question",
+        "name": "How many agents are on The A Team?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Five. The structure is deliberately kept small so each client receives direct principal-level attention without handoff to transaction coordinators." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does The A Team handle both buyer and seller representation?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our book is roughly 55% seller-represented, 45% buyer-represented, with a significant portion of private off-market transactions each year." }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is The A Team Naples located?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Our office is in Naples, FL, zip 34108, directly adjacent to the Pelican Bay and Park Shore corridors we represent most actively." }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="container nav__inner">
+    <a href="#" class="nav__brand">
+      <span class="nav__mark">A</span>
+      <span class="nav__wordmark">The A Team Naples<small>Anthony Dwyer &middot; Compass</small></span>
+    </a>
+    <div class="nav__links">
+      <a href="#about">The Team</a>
+      <a href="#nhoods">Neighborhoods</a>
+      <a href="#listings">Listings</a>
+      <a href="#insights">Insights</a>
+    </div>
+    <a href="#contact" class="nav__cta">Consult</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__grid">
+    <div class="container hero__text reveal" style="grid-column: 1;">
+      <div class="hero__tenure">
+        <span class="hero__tenure-num">45</span>
+        <span class="hero__tenure-text">Years of<br>Naples Tenure</span>
+      </div>
+      <span class="eyebrow">Anthony Dwyer &middot; Compass</span>
+      <h1 class="hero__h1" style="margin-top: 24px;">Forty-five years on the Naples coast. A <em>five-agent team</em> that remembers every transaction.</h1>
+      <p class="hero__sub">Port Royal. Pelican Bay. Park Shore. Moorings. The A Team Naples represents the addresses Anthony Dwyer has been closing since 1980 &mdash; now with the bench depth of a modern Compass luxury team.</p>
+      <div class="hero__cta-row">
+        <a href="#contact" class="btn btn--primary">Request a Consultation</a>
+        <a href="#listings" class="btn btn--ghost">View Listings</a>
+      </div>
+      <div class="hero__tags">
+        <span class="hero__tag">Compass SWFL</span>
+        <span class="hero__tag">5-Agent Structure</span>
+        <span class="hero__tag">Zip 34108</span>
+      </div>
+    </div>
+    <div class="hero__visual reveal">
+      <div class="hero__visual-grid">
+        <div class="hero__vcell">
+          <div class="hero__vcell-num">&mdash; 01</div>
+          <div class="hero__vcell-name">Port Royal</div>
+          <div class="hero__vcell-price">Avg $22.5M</div>
+        </div>
+        <div class="hero__vcell">
+          <div class="hero__vcell-num">&mdash; 02</div>
+          <div class="hero__vcell-name">Pelican Bay</div>
+          <div class="hero__vcell-price">Avg $3.8M</div>
+        </div>
+        <div class="hero__vcell">
+          <div class="hero__vcell-num">&mdash; 03</div>
+          <div class="hero__vcell-name">Park Shore</div>
+          <div class="hero__vcell-price">Avg $5.4M</div>
+        </div>
+        <div class="hero__vcell">
+          <div class="hero__vcell-num">&mdash; 04</div>
+          <div class="hero__vcell-name">Moorings</div>
+          <div class="hero__vcell-price">Avg $4.9M</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BAND -->
+<section class="band">
+  <div class="container band__inner">
+    <span class="band__item"><strong>45 yr</strong> Naples Practice</span>
+    <span class="band__sep"></span>
+    <span class="band__item"><strong>5 Agents</strong> Deliberate Team Size</span>
+    <span class="band__sep"></span>
+    <span class="band__item"><strong>4 Markets</strong> Coastal Specialty</span>
+    <span class="band__sep"></span>
+    <span class="band__item"><strong>Compass</strong> SWFL Luxury</span>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about__header reveal">
+      <div>
+        <span class="eyebrow">The Team</span>
+        <h2>The team you want when the transaction <em>needs to be right.</em></h2>
+      </div>
+      <div class="about__body">
+        <p>Anthony Dwyer has been closing Naples coastal estates since 1980. Across four decades, he has represented three generations of buyers in Port Royal, watched Pelican Bay go from greenfield to one of America's most coveted gated communities, and personally closed enough Park Shore and Moorings transactions to know which buildings have which HOA issues, which streets flood, which architects worked on which floor plates.</p>
+        <p>The A Team Naples is the consolidation of that 45-year career into a disciplined five-agent structure at Compass. The team size is deliberate: small enough that every client receives direct principal-level attention, large enough to cover every Naples coastal micro-market simultaneously. That is the combination Anthony built the team around, and it is what sets us apart from both solo practitioners and the larger production teams you encounter at other firms.</p>
+      </div>
+    </div>
+    <div class="about__team">
+      <div class="tmember">
+        <div class="tmember__avatar">AD</div>
+        <div class="tmember__name">Anthony Dwyer</div>
+        <div class="tmember__role">Principal</div>
+      </div>
+      <div class="tmember">
+        <div class="tmember__avatar">KM</div>
+        <div class="tmember__name">K. Mahoney</div>
+        <div class="tmember__role">Sr. Agent</div>
+      </div>
+      <div class="tmember">
+        <div class="tmember__avatar">SL</div>
+        <div class="tmember__name">S. Larrabee</div>
+        <div class="tmember__role">Sr. Agent</div>
+      </div>
+      <div class="tmember">
+        <div class="tmember__avatar">RB</div>
+        <div class="tmember__name">R. Burrows</div>
+        <div class="tmember__role">Agent</div>
+      </div>
+      <div class="tmember">
+        <div class="tmember__avatar">EP</div>
+        <div class="tmember__name">E. Parrish</div>
+        <div class="tmember__role">Client Ops</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEIGHBORHOODS -->
+<section class="nhoods" id="nhoods">
+  <div class="container">
+    <div class="nhoods__header reveal">
+      <span class="eyebrow">Coastal Specialty</span>
+      <h2>Four Naples addresses. Four decades of fluency.</h2>
+    </div>
+    <div class="nhoods__grid">
+      <div class="hood reveal">
+        <div class="hood__idx">&mdash; 01</div>
+        <h3 class="hood__name">Port Royal</h3>
+        <p class="hood__desc">Club-eligible Gulf-front estates. The apex of the Naples market &mdash; and the neighborhood Anthony has represented buyers and sellers in since 1982.</p>
+        <div class="hood__meta">
+          <span class="hood__meta-label">Avg 2024</span>
+          <span class="hood__meta-val">$22.5M</span>
+        </div>
+      </div>
+      <div class="hood reveal">
+        <div class="hood__idx">&mdash; 02</div>
+        <h3 class="hood__name">Pelican Bay</h3>
+        <p class="hood__desc">Gated, amenity-rich, private beach tram. High-rise, villa, and single-family product, with Bay Colony at the top tier.</p>
+        <div class="hood__meta">
+          <span class="hood__meta-label">Avg 2024</span>
+          <span class="hood__meta-val">$3.8M</span>
+        </div>
+      </div>
+      <div class="hood reveal">
+        <div class="hood__idx">&mdash; 03</div>
+        <h3 class="hood__name">Park Shore</h3>
+        <p class="hood__desc">Gulf Shore Boulevard high-rises with direct beachfront and Venetian Bay dockage. The strongest residential waterfront corridor in Naples.</p>
+        <div class="hood__meta">
+          <span class="hood__meta-label">Avg 2024</span>
+          <span class="hood__meta-val">$5.4M</span>
+        </div>
+      </div>
+      <div class="hood reveal">
+        <div class="hood__idx">&mdash; 04</div>
+        <h3 class="hood__name">Moorings</h3>
+        <p class="hood__desc">Quiet waterfront enclave between Park Shore and downtown. Private beach association. Understated by design.</p>
+        <div class="hood__meta">
+          <span class="hood__meta-label">Avg 2024</span>
+          <span class="hood__meta-val">$4.9M</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LISTINGS -->
+<section class="listings" id="listings">
+  <div class="container">
+    <div class="listings__header reveal">
+      <div>
+        <span class="eyebrow">Current Portfolio</span>
+        <h2>Representation in motion across the Naples coast.</h2>
+      </div>
+      <a href="#contact" class="btn btn--ghost">Request Off-Market</a>
+    </div>
+    <div class="listings__grid">
+      <div class="prop prop--1 reveal">
+        <div class="prop__visual">
+          <span class="prop__status">For Sale</span>
+          <span class="prop__price">$19,500,000</span>
+        </div>
+        <div class="prop__body">
+          <h3 class="prop__addr">1050 Galleon Drive</h3>
+          <div class="prop__hood">Port Royal</div>
+          <div class="prop__specs">6 bed &middot; 7 bath &middot; 8,400 sqft &middot; 160' canal frontage</div>
+        </div>
+      </div>
+      <div class="prop prop--2 reveal">
+        <div class="prop__visual">
+          <span class="prop__status">For Sale</span>
+          <span class="prop__price">$4,250,000</span>
+        </div>
+        <div class="prop__body">
+          <h3 class="prop__addr">8430 Bay Colony Dr #502</h3>
+          <div class="prop__hood">Pelican Bay</div>
+          <div class="prop__specs">3 bed &middot; 3.5 bath &middot; 3,400 sqft &middot; Bay Colony</div>
+        </div>
+      </div>
+      <div class="prop prop--3 reveal">
+        <div class="prop__visual">
+          <span class="prop__status">For Sale</span>
+          <span class="prop__price">$6,850,000</span>
+        </div>
+        <div class="prop__body">
+          <h3 class="prop__addr">4100 Gulf Shore Blvd N #PH-2</h3>
+          <div class="prop__hood">Park Shore</div>
+          <div class="prop__specs">4 bed &middot; 4.5 bath &middot; 4,100 sqft &middot; penthouse</div>
+        </div>
+      </div>
+      <div class="prop prop--4 reveal">
+        <div class="prop__visual">
+          <span class="prop__status">Under Contract</span>
+          <span class="prop__price">$5,475,000</span>
+        </div>
+        <div class="prop__body">
+          <h3 class="prop__addr">2410 Hickory Road</h3>
+          <div class="prop__hood">Moorings</div>
+          <div class="prop__specs">4 bed &middot; 4.5 bath &middot; 4,300 sqft</div>
+        </div>
+      </div>
+      <div class="prop prop--5 reveal">
+        <div class="prop__visual">
+          <span class="prop__status">Sold 2024</span>
+          <span class="prop__price">$28,750,000</span>
+        </div>
+        <div class="prop__body">
+          <h3 class="prop__addr">3280 Gin Lane</h3>
+          <div class="prop__hood">Port Royal</div>
+          <div class="prop__specs">7 bed &middot; 8.5 bath &middot; 10,200 sqft &middot; Gulf-front</div>
+        </div>
+      </div>
+      <div class="prop prop--6 reveal">
+        <div class="prop__visual">
+          <span class="prop__status">Off-Market</span>
+          <span class="prop__price">By Request</span>
+        </div>
+        <div class="prop__body">
+          <h3 class="prop__addr">Pelican Bay Estate</h3>
+          <div class="prop__hood">Pelican Bay</div>
+          <div class="prop__specs">5 bed &middot; 6 bath &middot; 5,600 sqft &middot; private listing</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTES -->
+<section class="quotes">
+  <div class="container">
+    <div class="quotes__header reveal">
+      <span class="eyebrow">Client Voice</span>
+      <h2>Three client stories. One consistent standard.</h2>
+    </div>
+    <div class="quotes__grid">
+      <div class="qitem reveal">
+        <div class="qitem__mark">&ldquo;</div>
+        <p class="qitem__quote">Anthony has closed three transactions for our family over fifteen years. Every time, the level of preparation is extraordinary and the follow-through after closing is even better. That kind of continuity does not exist at most firms.</p>
+        <div class="qitem__author">G. &amp; L. Callan</div>
+        <div class="qitem__context">Port Royal &middot; 2024</div>
+      </div>
+      <div class="qitem reveal">
+        <p class="qitem__quote">The A Team's Bay Colony fluency was the difference on our purchase. They flagged three specific HOA issues the inspector could not have caught &mdash; and gave us leverage to negotiate a $220K credit that paid for the representation many times over.</p>
+        <div class="qitem__author">M. Rastegar</div>
+        <div class="qitem__context">Pelican Bay &middot; 2024</div>
+      </div>
+      <div class="qitem reveal">
+        <p class="qitem__quote">We listed our Park Shore PH with two other agents before landing with the A Team. Within nineteen days of re-listing with Anthony it was under contract at full ask. The buyer came from his personal book, not a public showing.</p>
+        <div class="qitem__author">D. Kirchner</div>
+        <div class="qitem__context">Park Shore &middot; 2023</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDS -->
+<section class="creds">
+  <div class="container">
+    <div class="creds__grid">
+      <div class="creds__item reveal">
+        <div class="creds__val">45<em> yr</em></div>
+        <div class="creds__label">Anthony's Naples<br>Tenure</div>
+      </div>
+      <div class="creds__item reveal">
+        <div class="creds__val">5</div>
+        <div class="creds__label">Deliberate<br>Team Size</div>
+      </div>
+      <div class="creds__item reveal">
+        <div class="creds__val">4</div>
+        <div class="creds__label">Core Naples<br>Coastal Markets</div>
+      </div>
+      <div class="creds__item reveal">
+        <div class="creds__val">Compass</div>
+        <div class="creds__label">SWFL Luxury<br>Division</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSIGHTS -->
+<section class="insights">
+  <div class="container">
+    <div class="insights__header reveal">
+      <div>
+        <span class="eyebrow">Insights</span>
+        <h2>Forty-five years of Naples intelligence, now on the page.</h2>
+      </div>
+    </div>
+    <div class="insights__grid">
+      <article class="icard reveal">
+        <div class="icard__kicker">Bay Colony Report</div>
+        <h3 class="icard__title">Why Bay Colony inventory stays tighter than the rest of Pelican Bay</h3>
+        <p class="icard__excerpt">A look at the structural limits on Bay Colony supply, why resale velocity has diverged from outer Pelican Bay, and what it means for 2026 pricing.</p>
+        <div class="icard__meta">Analysis &middot; 6 min read</div>
+      </article>
+      <article class="icard reveal">
+        <div class="icard__kicker">Port Royal Notes</div>
+        <h3 class="icard__title">Club-eligibility economics: the real premium in 2024 and 2025 comps</h3>
+        <p class="icard__excerpt">The Port Royal Club-eligibility premium has tightened from $3M to $5.2M on comparable estates &mdash; here's why, and what non-member buyers should expect.</p>
+        <div class="icard__meta">Analysis &middot; 8 min read</div>
+      </article>
+      <article class="icard reveal">
+        <div class="icard__kicker">Buyer Guide</div>
+        <h3 class="icard__title">Park Shore vs. Moorings: a Gulf-front access comparison</h3>
+        <p class="icard__excerpt">The four criteria that actually differentiate the two most-compared Naples coastal neighborhoods &mdash; and which buyers should lean which direction.</p>
+        <div class="icard__meta">Guide &middot; 9 min read</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="container cta__inner reveal">
+    <span class="eyebrow">A Proposal</span>
+    <h2>This is a mock rebuild of ateam239.com by justscale.</h2>
+    <p>Forty-five years of Naples representation deserves a web home that looks and reads like it. If this feels closer to right, we would build the real version in 4&ndash;6 weeks. Fifteen minutes to see if it fits.</p>
+    <a href="https://calendly.com/zac-justscale/local-business" class="btn btn--accent">Book 15 Minutes with Zac</a>
+    <div class="cta__note">Website &middot; SEO &middot; AEO &middot; No ads. Done for you.</div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">Prepared for The A Team Naples</div>
+    <div class="footer__credit">by <a href="https://justscale.co">justscale.co</a></div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
+})();
+(function() {
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function() { nav.classList.toggle('scrolled', window.scrollY > 20); }, { passive: true });
+})();
+document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+  link.addEventListener('click', function(e) {
+    var t = document.querySelector(this.getAttribute('href'));
+    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+  });
+});
+</script>
+
+</body>
+</html>

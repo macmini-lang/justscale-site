@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Patrick Dearborn Team — Port Royal &amp; Old Naples Waterfront Specialists</title>
+  <meta name="description" content="The Patrick Dearborn Team. Nearly $1 billion in career sales representing waterfront and estate properties across Old Naples, Port Royal, Pelican Bay, and Aqualane Shores.">
+  <meta property="og:title" content="Patrick Dearborn Team — Old Naples &amp; Port Royal">
+  <meta property="og:description" content="Nearly $1 billion in career sales. Representing the finest waterfront and estate properties in Naples since 2004.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://justscale.co/d100-websites/dearborn-team/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --gold: #B08D57;
+      --gold-deep: #8C6E3F;
+      --gold-light: rgba(176, 141, 87, 0.08);
+      --ink: #1C1B18;
+      --ink-soft: #3F3D38;
+      --paper: #FAF7F2;
+      --paper-warm: #F2EDE4;
+      --paper-card: #FFFFFF;
+      --line: rgba(28, 27, 24, 0.12);
+      --line-soft: rgba(28, 27, 24, 0.06);
+      --mute: #736F66;
+    }
+
+    html { font-size: 17px; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--ink-soft);
+      background: var(--paper);
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+    }
+
+    h1 { font-size: clamp(3rem, 2rem + 5vw, 6rem); font-weight: 400; }
+    h2 { font-size: clamp(2rem, 1.4rem + 2.4vw, 3.2rem); font-weight: 400; }
+    h3 { font-size: clamp(1.4rem, 1.1rem + 1vw, 1.9rem); font-weight: 500; }
+    h4 { font-size: 1.15rem; font-family: 'Inter', sans-serif; font-weight: 500; letter-spacing: 0.02em; }
+
+    p { max-width: 62ch; font-weight: 300; }
+
+    a { color: var(--gold); text-decoration: none; transition: color 200ms; }
+    a:hover { color: var(--gold-deep); }
+
+    ul { list-style: none; }
+
+    .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 48px); }
+    .container--narrow { max-width: 1040px; }
+
+    .eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .rule {
+      display: inline-block;
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+      vertical-align: middle;
+      margin-right: 16px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 40px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      transition: all 250ms ease;
+      cursor: pointer;
+      border: 1px solid var(--ink);
+      background: var(--ink);
+      color: var(--paper);
+    }
+    .btn:hover { background: var(--gold); border-color: var(--gold); color: var(--paper); transform: translateY(-1px); }
+
+    .btn--ghost { background: transparent; color: var(--ink); }
+    .btn--ghost:hover { background: var(--ink); color: var(--paper); }
+
+    .btn--gold { background: var(--gold); border-color: var(--gold); color: #fff; }
+    .btn--gold:hover { background: var(--gold-deep); border-color: var(--gold-deep); }
+
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 700ms ease-out, transform 700ms ease-out; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+    }
+
+    /* ===== NAV ===== */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(250, 247, 242, 0.88);
+      backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line-soft);
+    }
+    .nav__inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 84px;
+    }
+    .nav__logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.55rem;
+      color: var(--ink);
+      letter-spacing: 0.02em;
+    }
+    .nav__logo span { color: var(--gold); }
+    .nav__links { display: flex; gap: 40px; }
+    .nav__links a {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+    .nav__links a:hover { color: var(--gold); }
+    .nav__cta {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink);
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 4px;
+    }
+    @media (max-width: 880px) {
+      .nav__links, .nav__cta { display: none; }
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      padding: 200px 0 120px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: end;
+    }
+    .hero__label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .hero__label::after {
+      content: ''; flex: 1; height: 1px; background: var(--gold); opacity: 0.4;
+    }
+    .hero__headline {
+      font-size: clamp(3.4rem, 2.2rem + 5.4vw, 6.6rem);
+      letter-spacing: -0.02em;
+      line-height: 0.98;
+      margin-bottom: 40px;
+    }
+    .hero__headline em {
+      font-style: italic;
+      color: var(--gold);
+      font-weight: 400;
+    }
+    .hero__right p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 36px;
+      color: var(--ink-soft);
+    }
+    .hero__meta {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mute);
+      margin-bottom: 40px;
+      line-height: 2.2;
+    }
+    .hero__meta strong { color: var(--ink); font-weight: 500; }
+
+    /* Decorative element */
+    .hero__ornament {
+      position: absolute;
+      right: -120px;
+      top: 140px;
+      width: 480px;
+      height: 480px;
+      background: radial-gradient(circle at 30% 30%, rgba(176, 141, 87, 0.12), transparent 65%);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    @media (max-width: 900px) {
+      .hero { padding: 160px 0 80px; }
+      .hero__grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    /* ===== MARQUEE STATS ===== */
+    .marquee {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 56px 0;
+    }
+    .marquee__inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 48px;
+      text-align: center;
+    }
+    .marquee__item {
+      border-right: 1px solid rgba(250, 247, 242, 0.15);
+      padding: 8px 0;
+    }
+    .marquee__item:last-child { border-right: none; }
+    .marquee__num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 1.4rem + 1.8vw, 3rem);
+      font-weight: 500;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .marquee__label {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(250, 247, 242, 0.7);
+    }
+    @media (max-width: 800px) {
+      .marquee__inner { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+      .marquee__item:nth-child(2) { border-right: none; }
+    }
+
+    /* ===== ABOUT ===== */
+    .about {
+      padding: 140px 0;
+      background: var(--paper-warm);
+    }
+    .about__grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 100px;
+      align-items: start;
+    }
+    .about__side h2 {
+      font-size: clamp(2rem, 1.5rem + 2vw, 3rem);
+      margin-top: 20px;
+    }
+    .about__body p {
+      font-size: 1.02rem;
+      line-height: 1.85;
+      margin-bottom: 24px;
+    }
+    .about__signature {
+      margin-top: 40px;
+      padding-top: 32px;
+      border-top: 1px solid var(--line);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      color: var(--ink);
+      font-style: italic;
+    }
+    .about__signature small {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-style: normal;
+      margin-top: 8px;
+    }
+    @media (max-width: 900px) { .about__grid { grid-template-columns: 1fr; gap: 48px; } }
+
+    /* ===== NEIGHBORHOODS ===== */
+    .neighborhoods {
+      padding: 140px 0;
+    }
+    .neighborhoods__header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+    .neighborhoods__header h2 {
+      margin-top: 20px;
+      max-width: 20ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .neighborhoods__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+    .hood-card {
+      padding: 48px 40px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      position: relative;
+      background: var(--paper);
+      transition: background 300ms;
+    }
+    .hood-card:hover { background: var(--paper-warm); }
+    .hood-card__num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.95rem;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      margin-bottom: 16px;
+    }
+    .hood-card h3 {
+      font-size: 1.9rem;
+      margin-bottom: 12px;
+    }
+    .hood-card__line {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 24px;
+      color: var(--ink-soft);
+    }
+    .hood-card__price {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--mute);
+      padding-top: 20px;
+      border-top: 1px solid var(--line-soft);
+    }
+    .hood-card__price strong { color: var(--ink); font-weight: 500; }
+    @media (max-width: 720px) { .neighborhoods__grid { grid-template-columns: 1fr; } }
+
+    /* ===== PROPERTIES ===== */
+    .properties {
+      padding: 140px 0;
+      background: var(--ink);
+      color: var(--paper);
+    }
+    .properties__header {
+      margin-bottom: 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .properties__header h2 { color: var(--paper); max-width: 14ch; }
+    .properties__header p { color: rgba(250, 247, 242, 0.7); max-width: 36ch; font-size: 0.95rem; }
+    .properties__header .eyebrow { color: var(--gold); }
+    .properties__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .prop-card {
+      background: rgba(250, 247, 242, 0.04);
+      border: 1px solid rgba(250, 247, 242, 0.12);
+      padding: 32px 28px;
+      transition: all 300ms ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .prop-card:hover {
+      background: rgba(176, 141, 87, 0.08);
+      border-color: var(--gold);
+      transform: translateY(-4px);
+    }
+    .prop-card__status {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+    }
+    .prop-card__visual {
+      aspect-ratio: 5/3;
+      margin-bottom: 28px;
+      background: linear-gradient(135deg, rgba(176, 141, 87, 0.25) 0%, rgba(140, 110, 63, 0.08) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .prop-card__visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(250, 247, 242, 0.04) 40px, rgba(250, 247, 242, 0.04) 41px);
+    }
+    .prop-card__visual::after {
+      content: '';
+      position: absolute;
+      left: 50%; top: 50%;
+      transform: translate(-50%, -50%);
+      width: 56px; height: 56px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+    }
+    .prop-card__address {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      color: var(--paper);
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+    .prop-card__hood {
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+    .prop-card__price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: var(--paper);
+      font-weight: 400;
+      margin-bottom: 16px;
+    }
+    .prop-card__specs {
+      display: flex;
+      gap: 20px;
+      font-size: 0.78rem;
+      color: rgba(250, 247, 242, 0.7);
+      padding-top: 20px;
+      border-top: 1px solid rgba(250, 247, 242, 0.08);
+    }
+    .prop-card__specs span strong { color: var(--paper); font-weight: 500; }
+    @media (max-width: 900px) { .properties__grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; } }
+
+    /* ===== TESTIMONIALS ===== */
+    .testimonials {
+      padding: 140px 0;
+    }
+    .testimonials__header {
+      text-align: center;
+      margin-bottom: 72px;
+    }
+    .testimonials__header h2 { margin-top: 20px; }
+    .testimonials__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+    .quote {
+      padding: 48px 40px;
+      background: var(--paper-card);
+      border-top: 2px solid var(--gold);
+      position: relative;
+    }
+    .quote__mark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 5rem;
+      color: var(--gold);
+      line-height: 0.6;
+      opacity: 0.3;
+      margin-bottom: 16px;
+    }
+    .quote__text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--ink);
+      margin-bottom: 32px;
+      font-style: italic;
+    }
+    .quote__who {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--ink);
+    }
+    .quote__where {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 6px;
+    }
+    @media (max-width: 900px) { .testimonials__grid { grid-template-columns: 1fr; max-width: 540px; margin: 0 auto; } }
+
+    /* ===== INSIGHTS ===== */
+    .insights {
+      padding: 140px 0;
+      background: var(--paper-warm);
+    }
+    .insights__header {
+      margin-bottom: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .insights__header h2 { max-width: 16ch; }
+    .insights__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .article-card {
+      padding: 36px 32px 40px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      transition: all 300ms;
+    }
+    .article-card:hover { border-color: var(--gold); transform: translateY(-3px); }
+    .article-card__tag {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .article-card h3 {
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin-bottom: 16px;
+      line-height: 1.25;
+    }
+    .article-card p {
+      font-size: 0.92rem;
+      line-height: 1.6;
+      color: var(--mute);
+      margin-bottom: 24px;
+    }
+    .article-card__read {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink);
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 3px;
+      font-weight: 500;
+    }
+    @media (max-width: 900px) { .insights__grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; } }
+
+    /* ===== CTA ===== */
+    .cta-section {
+      padding: 140px 0;
+      background: var(--paper);
+      text-align: center;
+    }
+    .cta-section__box {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 80px 60px;
+      background: var(--paper-card);
+      border: 1px solid var(--gold);
+      position: relative;
+    }
+    .cta-section__box::before, .cta-section__box::after {
+      content: '';
+      position: absolute;
+      width: 24px; height: 24px;
+      border: 1px solid var(--gold);
+    }
+    .cta-section__box::before { top: -1px; left: -1px; border-right: none; border-bottom: none; }
+    .cta-section__box::after { bottom: -1px; right: -1px; border-left: none; border-top: none; }
+
+    .cta-section h2 { margin-bottom: 24px; }
+    .cta-section p {
+      font-size: 1.02rem;
+      margin: 0 auto 40px;
+      max-width: 52ch;
+      color: var(--ink-soft);
+    }
+    .cta-section__note {
+      margin-top: 32px;
+      font-size: 0.78rem;
+      color: var(--mute);
+      letter-spacing: 0.08em;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      padding: 64px 0 40px;
+      background: var(--ink);
+      color: rgba(250, 247, 242, 0.6);
+      font-size: 0.82rem;
+    }
+    .footer__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer__brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      color: var(--paper);
+      letter-spacing: 0.03em;
+    }
+    .footer__note {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      color: rgba(250, 247, 242, 0.5);
+    }
+    .footer__note a { color: var(--gold); }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "Patrick Dearborn Team",
+    "description": "Luxury real estate team specializing in waterfront and estate properties across Old Naples, Port Royal, Pelican Bay, and Aqualane Shores. Nearly $1 billion in career sales since 2004.",
+    "url": "https://justscale.co/d100-websites/dearborn-team/",
+    "areaServed": [
+      { "@type": "Place", "name": "Old Naples, FL" },
+      { "@type": "Place", "name": "Port Royal, FL" },
+      { "@type": "Place", "name": "Pelican Bay, FL" },
+      { "@type": "Place", "name": "Aqualane Shores, FL" }
+    ],
+    "address": { "@type": "PostalAddress", "addressLocality": "Naples", "addressRegion": "FL", "postalCode": "34103", "addressCountry": "US" },
+    "founder": { "@type": "Person", "name": "Patrick Dearborn" },
+    "parentOrganization": { "@type": "Organization", "name": "John R. Wood Properties | Christie's International Real Estate" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Luxury Residential Real Estate Representation",
+    "provider": { "@type": "RealEstateAgent", "name": "Patrick Dearborn Team" },
+    "areaServed": "Naples, FL",
+    "description": "Listing and buyer representation for waterfront estates, Gulf-front condominiums, and premier Naples properties."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What neighborhoods does the Patrick Dearborn Team specialize in?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Our primary markets are Old Naples, Port Royal, Pelican Bay, and Aqualane Shores. We also represent buyers and sellers across Gordon Drive, Gulf Shore Boulevard, and the luxury coastal corridor of Collier County." }
+      },
+      {
+        "@type": "Question",
+        "name": "How much real estate has the Patrick Dearborn Team sold?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Patrick Dearborn has closed nearly $1 billion in career sales volume since 2004, representing buyers and sellers of waterfront, estate, and Gulf-front properties throughout Naples." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you represent both buyers and sellers?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. We represent both sides of the transaction and frequently advise clients on complex, high-value acquisitions as well as multi-million dollar listings requiring a discreet, white-glove approach." }
+      },
+      {
+        "@type": "Question",
+        "name": "What price range of properties do you represent?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Our listings and buyer representations typically range from $2 million to north of $40 million, with particular expertise at the ultra-luxury tier of $10 million and above." }
+      },
+      {
+        "@type": "Question",
+        "name": "Are you affiliated with Christie's International Real Estate?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. The Patrick Dearborn Team operates under John R. Wood Properties, the exclusive Christie's International Real Estate affiliate for Southwest Florida." }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="#" class="nav__logo">Dearborn<span>.</span></a>
+      <ul class="nav__links">
+        <li><a href="#about">The Team</a></li>
+        <li><a href="#neighborhoods">Neighborhoods</a></li>
+        <li><a href="#properties">Portfolio</a></li>
+        <li><a href="#insights">Journal</a></li>
+      </ul>
+      <a href="#contact" class="nav__cta">Private Consultation</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__ornament"></div>
+    <div class="container hero__grid">
+      <div class="hero__left">
+        <div class="hero__label">Patrick Dearborn Team &middot; Est. 2004</div>
+        <h1 class="hero__headline">Naples' most coveted <em>addresses</em>, represented with rare fluency.</h1>
+      </div>
+      <div class="hero__right">
+        <p>Nearly $1 billion in career sales volume. Two decades representing the finest waterfront estates, Gulf-front residences, and historic properties across Old Naples, Port Royal, Pelican Bay, and Aqualane Shores.</p>
+        <div class="hero__meta">
+          <div><strong>PATRICK DEARBORN</strong> &middot; Team Principal</div>
+          <div>JOHN R. WOOD PROPERTIES &middot; CHRISTIE'S INTERNATIONAL</div>
+          <div>NAPLES &middot; FLORIDA &middot; 34103</div>
+        </div>
+        <a href="#contact" class="btn btn--gold">Begin a Private Conversation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE STATS -->
+  <section class="marquee">
+    <div class="container marquee__inner">
+      <div class="marquee__item">
+        <div class="marquee__num">~$1B</div>
+        <div class="marquee__label">Career Sales</div>
+      </div>
+      <div class="marquee__item">
+        <div class="marquee__num">20+</div>
+        <div class="marquee__label">Years in Naples</div>
+      </div>
+      <div class="marquee__item">
+        <div class="marquee__num">$40M+</div>
+        <div class="marquee__label">Top Transaction</div>
+      </div>
+      <div class="marquee__item">
+        <div class="marquee__num">CHRISTIE'S</div>
+        <div class="marquee__label">International Affiliate</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container about__grid">
+      <div class="about__side reveal">
+        <p class="eyebrow"><span class="rule"></span>The Principal</p>
+        <h2>A quieter kind of expertise.</h2>
+      </div>
+      <div class="about__body reveal">
+        <p>Patrick Dearborn has represented Naples' most discerning buyers and sellers since 2004 &mdash; closing nearly $1 billion in career sales across Old Naples, Port Royal, Pelican Bay, and Aqualane Shores. His work is defined less by volume than by discretion: the ability to move high-stakes transactions forward quietly, with the institutional knowledge to value a rare Gordon Drive lot, a tear-down tucked inside a 34102 zip code, or an estate that has never touched the open market.</p>
+        <p>The team operates as a boutique within John R. Wood Properties, the exclusive Christie's International Real Estate affiliate for Southwest Florida. Clients receive direct access to Patrick, an international marketing reach shared with the most exclusive properties in the world, and a depth of relationships across Naples that can only be earned across two decades in a market this specific.</p>
+        <div class="about__signature">
+          "Every property in Naples has a story. Our work is telling it to precisely the right audience."
+          <small>&mdash; Patrick Dearborn</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEIGHBORHOODS -->
+  <section class="neighborhoods" id="neighborhoods">
+    <div class="container">
+      <div class="neighborhoods__header reveal">
+        <p class="eyebrow"><span class="rule"></span>Represented Markets</p>
+        <h2>Four of the most storied addresses in American real estate.</h2>
+      </div>
+      <div class="neighborhoods__grid">
+        <div class="hood-card reveal">
+          <div class="hood-card__num">01 / Port Royal</div>
+          <h3>Port Royal</h3>
+          <p class="hood-card__line">Gulf-front estates, deep-water canal access, and the Port Royal Club. The rarest zip code in Southwest Florida.</p>
+          <div class="hood-card__price">Avg. Sale Price &middot; <strong>$14.2M</strong></div>
+        </div>
+        <div class="hood-card reveal">
+          <div class="hood-card__num">02 / Old Naples</div>
+          <h3>Old Naples</h3>
+          <p class="hood-card__line">Walkable to 5th Avenue and Third Street South. Historic cottages, architect-built new construction, steps to the pier.</p>
+          <div class="hood-card__price">Avg. Sale Price &middot; <strong>$7.8M</strong></div>
+        </div>
+        <div class="hood-card reveal">
+          <div class="hood-card__num">03 / Pelican Bay</div>
+          <h3>Pelican Bay</h3>
+          <p class="hood-card__line">Private beach tram, Waterside Shops, and the most tenured luxury high-rise towers on the Gulf coast.</p>
+          <div class="hood-card__price">Avg. Sale Price &middot; <strong>$4.6M</strong></div>
+        </div>
+        <div class="hood-card reveal">
+          <div class="hood-card__num">04 / Aqualane Shores</div>
+          <h3>Aqualane Shores</h3>
+          <p class="hood-card__line">Direct Gulf access, private docks, and the most coveted yachting community south of Port Royal.</p>
+          <div class="hood-card__price">Avg. Sale Price &middot; <strong>$9.4M</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROPERTIES -->
+  <section class="properties" id="properties">
+    <div class="container">
+      <div class="properties__header reveal">
+        <div>
+          <p class="eyebrow">Current Portfolio</p>
+          <h2 style="margin-top: 20px;">Select representations.</h2>
+        </div>
+        <p>A curated view of currently listed and recently represented properties. Additional off-market opportunities available on private request.</p>
+      </div>
+      <div class="properties__grid">
+        <div class="prop-card reveal">
+          <div class="prop-card__status">Featured Listing</div>
+          <div class="prop-card__visual"></div>
+          <div class="prop-card__address">300 Gordon Drive</div>
+          <div class="prop-card__hood">Port Royal</div>
+          <div class="prop-card__price">$24,500,000</div>
+          <div class="prop-card__specs">
+            <span><strong>6</strong> bed</span>
+            <span><strong>8</strong> bath</span>
+            <span><strong>12,400</strong> sqft</span>
+          </div>
+        </div>
+        <div class="prop-card reveal">
+          <div class="prop-card__status">Featured Listing</div>
+          <div class="prop-card__visual"></div>
+          <div class="prop-card__address">165 2nd Street South</div>
+          <div class="prop-card__hood">Old Naples</div>
+          <div class="prop-card__price">$11,950,000</div>
+          <div class="prop-card__specs">
+            <span><strong>5</strong> bed</span>
+            <span><strong>6</strong> bath</span>
+            <span><strong>6,820</strong> sqft</span>
+          </div>
+        </div>
+        <div class="prop-card reveal">
+          <div class="prop-card__status">Just Represented</div>
+          <div class="prop-card__visual"></div>
+          <div class="prop-card__address">4401 Gulf Shore Blvd N</div>
+          <div class="prop-card__hood">Pelican Bay &middot; PH</div>
+          <div class="prop-card__price">$8,750,000</div>
+          <div class="prop-card__specs">
+            <span><strong>4</strong> bed</span>
+            <span><strong>5</strong> bath</span>
+            <span><strong>5,200</strong> sqft</span>
+          </div>
+        </div>
+        <div class="prop-card reveal">
+          <div class="prop-card__status">Private Listing</div>
+          <div class="prop-card__visual"></div>
+          <div class="prop-card__address">1720 Galleon Drive</div>
+          <div class="prop-card__hood">Aqualane Shores</div>
+          <div class="prop-card__price">$18,900,000</div>
+          <div class="prop-card__specs">
+            <span><strong>6</strong> bed</span>
+            <span><strong>7</strong> bath</span>
+            <span><strong>9,100</strong> sqft</span>
+          </div>
+        </div>
+        <div class="prop-card reveal">
+          <div class="prop-card__status">Featured Listing</div>
+          <div class="prop-card__visual"></div>
+          <div class="prop-card__address">730 13th Avenue South</div>
+          <div class="prop-card__hood">Old Naples</div>
+          <div class="prop-card__price">$9,250,000</div>
+          <div class="prop-card__specs">
+            <span><strong>5</strong> bed</span>
+            <span><strong>5</strong> bath</span>
+            <span><strong>5,640</strong> sqft</span>
+          </div>
+        </div>
+        <div class="prop-card reveal">
+          <div class="prop-card__status">Off-Market</div>
+          <div class="prop-card__visual"></div>
+          <div class="prop-card__address">2700 Gordon Drive</div>
+          <div class="prop-card__hood">Port Royal &middot; Gulf Front</div>
+          <div class="prop-card__price">Price Upon Request</div>
+          <div class="prop-card__specs">
+            <span><strong>7</strong> bed</span>
+            <span><strong>9</strong> bath</span>
+            <span><strong>14,800</strong> sqft</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="testimonials__header reveal">
+        <p class="eyebrow"><span class="rule"></span>Client Voices</p>
+        <h2>Represented across generations.</h2>
+      </div>
+      <div class="testimonials__grid">
+        <div class="quote reveal">
+          <div class="quote__mark">&ldquo;</div>
+          <p class="quote__text">Patrick walked our Port Royal sale from a quiet private offering to a closed transaction in six weeks. We never once saw a sign in the yard. His discretion is unmatched.</p>
+          <div class="quote__who">R. &amp; L. Whitman</div>
+          <div class="quote__where">Port Royal &middot; 2024</div>
+        </div>
+        <div class="quote reveal">
+          <div class="quote__mark">&ldquo;</div>
+          <p class="quote__text">Our Old Naples cottage had been in my family for forty years. Patrick understood what it meant to hand it to the right buyer &mdash; and found them before anyone else knew we were selling.</p>
+          <div class="quote__who">M. Hadley</div>
+          <div class="quote__where">Old Naples &middot; 2023</div>
+        </div>
+        <div class="quote reveal">
+          <div class="quote__mark">&ldquo;</div>
+          <p class="quote__text">We were relocating from Greenwich and knew exactly which Pelican Bay tower we wanted. Patrick had three units lined up for us privately before we had even scheduled a second visit.</p>
+          <div class="quote__who">D. Callahan</div>
+          <div class="quote__where">Pelican Bay &middot; 2024</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSIGHTS -->
+  <section class="insights" id="insights">
+    <div class="container">
+      <div class="insights__header reveal">
+        <div>
+          <p class="eyebrow"><span class="rule"></span>The Journal</p>
+          <h2>Notes from the Naples market.</h2>
+        </div>
+        <a href="#" class="nav__cta">All Market Notes</a>
+      </div>
+      <div class="insights__grid">
+        <article class="article-card reveal">
+          <div class="article-card__tag">Market Outlook &middot; Q2 2026</div>
+          <h3>Why Port Royal Pricing Has Held Its Ceiling Through the Cycle</h3>
+          <p>Scarcity, waterfront access, and the Port Royal Club membership structure continue to insulate this market from broader luxury corrections.</p>
+          <span class="article-card__read">Read the Note</span>
+        </article>
+        <article class="article-card reveal">
+          <div class="article-card__tag">Buyer Guide</div>
+          <h3>What Out-of-State Buyers Misunderstand About Old Naples Lots</h3>
+          <p>A 50-foot lot inside 34102 often trades higher than a 90-foot lot two streets east. Here is what drives that premium &mdash; and how to read it.</p>
+          <span class="article-card__read">Read the Guide</span>
+        </article>
+        <article class="article-card reveal">
+          <div class="article-card__tag">Insight</div>
+          <h3>The Quiet Return of Off-Market Transactions in Naples</h3>
+          <p>For sellers at the $10M+ tier, the case for a private, invite-only sale process has never been stronger. A look at the shift we are seeing.</p>
+          <span class="article-card__read">Read the Insight</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="contact">
+    <div class="container">
+      <div class="cta-section__box reveal">
+        <p class="eyebrow">Begin a Private Consultation</p>
+        <h2 style="margin-top: 20px;">Whether you are listing an estate or searching quietly, we begin with a conversation.</h2>
+        <p>Patrick personally reviews every inquiry. Fifteen minutes is usually enough to know whether we are the right fit for your transaction.</p>
+        <a href="https://calendly.com/zac-justscale/local-business" class="btn btn--gold">Schedule 15 Minutes</a>
+        <div class="cta-section__note">
+          This page is a mock rebuild of ilovenaplesfla.com by <a href="https://justscale.co">justscale</a>. Want the real thing? Book 15 minutes above.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">Patrick Dearborn Team</div>
+      <div class="footer__note">Prepared for the Patrick Dearborn Team by <a href="https://justscale.co">justscale</a> &middot; justscale.co</div>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var io = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
+    })();
+    document.querySelectorAll('a[href^="#"]').forEach(function(l) {
+      l.addEventListener('click', function(e) {
+        var t = document.querySelector(this.getAttribute('href'));
+        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+    });
+  </script>
+</body>
+</html>

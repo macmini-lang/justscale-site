@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Monika DeBenedictis Team — North Naples, Pelican Marsh, Mediterra &amp; Quail West</title>
+  <meta name="description" content="The Monika DeBenedictis Team. An $80M+ annual team specializing in North Naples estate communities — Pelican Marsh, Mediterra, Quail West, and the finest gated addresses in 34110.">
+  <meta property="og:title" content="Monika DeBenedictis Team — North Naples Luxury">
+  <meta property="og:description" content="An $80M+ annual team representing Pelican Marsh, Mediterra, and Quail West.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://justscale.co/d100-websites/debenedictis-team/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --sage: #6C8068;
+      --sage-deep: #4F6251;
+      --sage-soft: rgba(108, 128, 104, 0.1);
+      --clay: #C7A789;
+      --stone: #F3F0EA;
+      --stone-warm: #EAE5DB;
+      --paper: #FBFAF6;
+      --ink: #1F2520;
+      --ink-soft: #464B46;
+      --mute: #6E7268;
+      --line: rgba(31, 37, 32, 0.12);
+      --line-soft: rgba(31, 37, 32, 0.06);
+    }
+
+    html { font-size: 17px; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-weight: 400;
+      line-height: 1.7;
+      color: var(--ink-soft);
+      background: var(--paper);
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Libre Caslon Text', Georgia, serif;
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.15;
+      letter-spacing: -0.005em;
+    }
+    h1 { font-size: clamp(2.6rem, 1.8rem + 4vw, 4.8rem); }
+    h2 { font-size: clamp(1.9rem, 1.3rem + 2.2vw, 2.8rem); }
+    h3 { font-size: clamp(1.3rem, 1.1rem + 0.9vw, 1.8rem); }
+    h4 { font-size: 1.1rem; }
+
+    p { max-width: 64ch; }
+
+    a { color: var(--sage); text-decoration: none; transition: color 200ms; }
+    a:hover { color: var(--sage-deep); }
+
+    ul { list-style: none; }
+
+    .container { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 48px); }
+    .container--wide { max-width: 1340px; }
+
+    .eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--sage);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 36px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 250ms ease;
+      border: 1px solid var(--sage);
+      background: var(--sage);
+      color: var(--paper);
+      border-radius: 2px;
+    }
+    .btn:hover { background: var(--sage-deep); border-color: var(--sage-deep); transform: translateY(-1px); }
+    .btn--ghost { background: transparent; color: var(--ink); }
+    .btn--ghost:hover { background: var(--sage); color: var(--paper); }
+
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 700ms ease-out, transform 700ms ease-out; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+    }
+
+    /* ===== NAV ===== */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(251, 250, 246, 0.88);
+      backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line-soft);
+    }
+    .nav__inner {
+      display: flex; align-items: center; justify-content: space-between; height: 80px;
+    }
+    .nav__logo {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1.35rem;
+      color: var(--ink);
+      letter-spacing: 0.02em;
+    }
+    .nav__logo span { color: var(--sage); }
+    .nav__links { display: flex; gap: 36px; }
+    .nav__links a {
+      font-size: 0.76rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+    .nav__links a:hover { color: var(--sage); }
+    .nav__cta {
+      padding: 12px 26px;
+      font-size: 0.72rem;
+    }
+    @media (max-width: 900px) {
+      .nav__links, .nav__cta { display: none; }
+    }
+
+    /* ===== HERO (Magazine editorial layout) ===== */
+    .hero {
+      padding: 180px 0 100px;
+      background: var(--stone);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero__grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .hero__left {
+      text-align: right;
+      padding-right: 8px;
+      border-right: 1px solid var(--line);
+    }
+    .hero__issue {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      color: var(--mute);
+      font-style: italic;
+      margin-bottom: 12px;
+    }
+    .hero__vol {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--sage);
+    }
+    .hero__center {
+      text-align: center;
+    }
+    .hero__masthead {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: clamp(2rem, 1.4rem + 2.2vw, 3rem);
+      color: var(--ink);
+      line-height: 1;
+      margin-bottom: 20px;
+      letter-spacing: -0.01em;
+    }
+    .hero__masthead em { font-style: italic; color: var(--sage); }
+    .hero__tagline {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--mute);
+      margin-bottom: 56px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--line);
+    }
+    .hero__headline {
+      font-size: clamp(2.8rem, 1.9rem + 4.4vw, 5.2rem);
+      line-height: 1.02;
+      margin-bottom: 36px;
+      max-width: 18ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero__headline em { font-style: italic; color: var(--sage); }
+    .hero__lede {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1.25rem;
+      line-height: 1.6;
+      color: var(--ink-soft);
+      max-width: 52ch;
+      margin: 0 auto 40px;
+      font-style: italic;
+    }
+    .hero__right {
+      text-align: left;
+      padding-left: 8px;
+      border-left: 1px solid var(--line);
+    }
+    .hero__right-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 12px;
+    }
+    .hero__right-text {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--mute);
+      line-height: 1.6;
+    }
+    .hero__cta {
+      margin-top: 32px;
+      display: flex;
+      justify-content: center;
+    }
+    @media (max-width: 900px) {
+      .hero__grid { grid-template-columns: 1fr; gap: 32px; }
+      .hero__left, .hero__right { border: none; text-align: center; padding: 0; }
+    }
+
+    /* ===== STAT STRIP ===== */
+    .strip {
+      background: var(--paper);
+      padding: 48px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .strip__inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      text-align: center;
+    }
+    .strip__item {
+      border-right: 1px solid var(--line);
+      padding: 4px 0;
+    }
+    .strip__item:last-child { border-right: none; }
+    .strip__num {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: clamp(1.6rem, 1.2rem + 1.2vw, 2.2rem);
+      color: var(--ink);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .strip__num em { font-style: italic; color: var(--sage); }
+    .strip__label {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mute);
+    }
+    @media (max-width: 700px) {
+      .strip__inner { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+      .strip__item:nth-child(2) { border-right: none; }
+    }
+
+    /* ===== ABOUT (magazine article) ===== */
+    .about {
+      padding: 140px 0;
+    }
+    .about__article {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    .about__article .eyebrow {
+      display: block;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .about__article h2 {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .about__article h2 em { font-style: italic; color: var(--sage); }
+    .about__byline {
+      text-align: center;
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 0.88rem;
+      color: var(--mute);
+      font-style: italic;
+      margin-bottom: 56px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--line);
+    }
+    .about__body p {
+      font-size: 1.08rem;
+      line-height: 1.85;
+      margin-bottom: 28px;
+    }
+    .about__body p:first-of-type::first-letter {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 4.4rem;
+      color: var(--sage);
+      float: left;
+      line-height: 0.9;
+      padding: 8px 14px 0 0;
+      font-weight: 400;
+    }
+    .about__body p strong { color: var(--ink); font-weight: 600; }
+    .about__pullquote {
+      margin: 48px 0;
+      padding: 36px 40px;
+      border-left: 3px solid var(--sage);
+      background: var(--stone);
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.5;
+    }
+    .about__pullquote cite {
+      display: block;
+      margin-top: 16px;
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--sage);
+      font-style: normal;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* ===== NEIGHBORHOODS (horizontal magazine cards) ===== */
+    .neighborhoods {
+      padding: 140px 0;
+      background: var(--stone);
+    }
+    .neighborhoods__header {
+      margin-bottom: 72px;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 48px;
+      align-items: end;
+    }
+    .neighborhoods__header h2 { margin-top: 16px; }
+    .neighborhoods__header h2 em { font-style: italic; color: var(--sage); }
+    .neighborhoods__header p { color: var(--ink-soft); font-size: 1rem; max-width: 46ch; }
+
+    .hood-row {
+      display: grid;
+      grid-template-columns: 120px 1fr auto;
+      gap: 48px;
+      align-items: center;
+      padding: 40px 0;
+      border-top: 1px solid var(--line);
+      transition: background 250ms;
+    }
+    .hood-row:last-child { border-bottom: 1px solid var(--line); }
+    .hood-row:hover { background: rgba(108, 128, 104, 0.04); padding: 40px 24px; }
+    .hood-row__num {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 3.2rem;
+      color: var(--sage);
+      line-height: 1;
+      font-style: italic;
+    }
+    .hood-row__body h3 { margin-bottom: 10px; }
+    .hood-row__body p { font-size: 0.98rem; max-width: 56ch; }
+    .hood-row__price {
+      text-align: right;
+    }
+    .hood-row__price-label {
+      font-size: 0.66rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--mute);
+      margin-bottom: 8px;
+    }
+    .hood-row__price-num {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1.8rem;
+      color: var(--ink);
+    }
+    .hood-row__price-num em { font-style: italic; color: var(--sage); }
+    @media (max-width: 780px) {
+      .hood-row { grid-template-columns: 1fr; gap: 16px; text-align: center; }
+      .hood-row__price { text-align: center; }
+      .neighborhoods__header { grid-template-columns: 1fr; }
+    }
+
+    /* ===== PROPERTIES ===== */
+    .properties {
+      padding: 140px 0;
+    }
+    .properties__header {
+      text-align: center;
+      margin-bottom: 72px;
+    }
+    .properties__header h2 { margin-top: 20px; }
+    .properties__header h2 em { font-style: italic; color: var(--sage); }
+    .properties__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .listing {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      overflow: hidden;
+      transition: all 300ms;
+    }
+    .listing:hover {
+      border-color: var(--sage);
+      box-shadow: 0 16px 40px rgba(31, 37, 32, 0.06);
+      transform: translateY(-4px);
+    }
+    .listing__visual {
+      aspect-ratio: 3 / 2;
+      position: relative;
+      background:
+        linear-gradient(135deg, var(--sage) 0%, var(--sage-deep) 100%);
+      overflow: hidden;
+    }
+    .listing__visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(251, 250, 246, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(251, 250, 246, 0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .listing__visual::after {
+      content: '';
+      position: absolute;
+      left: 24px; bottom: 24px;
+      right: 24px; top: 24px;
+      border: 1px solid rgba(251, 250, 246, 0.25);
+    }
+    .listing__tag {
+      position: absolute;
+      top: 20px; left: 20px;
+      background: var(--paper);
+      padding: 6px 14px;
+      font-size: 0.66rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--sage-deep);
+      font-weight: 500;
+      z-index: 1;
+    }
+    .listing__body {
+      padding: 32px 28px;
+    }
+    .listing__address {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1.35rem;
+      color: var(--ink);
+      margin-bottom: 4px;
+      line-height: 1.25;
+    }
+    .listing__hood {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 22px;
+    }
+    .listing__price {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1.7rem;
+      color: var(--ink);
+      margin-bottom: 20px;
+    }
+    .listing__specs {
+      display: flex;
+      gap: 18px;
+      font-size: 0.78rem;
+      color: var(--mute);
+      padding-top: 20px;
+      border-top: 1px solid var(--line-soft);
+    }
+    .listing__specs strong { color: var(--ink); font-weight: 600; }
+    @media (max-width: 900px) { .properties__grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; } }
+
+    /* ===== TESTIMONIALS ===== */
+    .testimonials {
+      padding: 140px 0;
+      background: var(--stone-warm);
+    }
+    .testimonials__header {
+      text-align: center;
+      margin-bottom: 72px;
+    }
+    .testimonials__header h2 { margin-top: 20px; }
+    .testimonials__header h2 em { font-style: italic; color: var(--sage); }
+    .testimonials__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 36px;
+    }
+    .quote {
+      padding: 44px 36px;
+      background: var(--paper);
+      position: relative;
+    }
+    .quote__mark {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 4rem;
+      color: var(--sage);
+      line-height: 0.7;
+      margin-bottom: 8px;
+      opacity: 0.5;
+    }
+    .quote__text {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1.15rem;
+      line-height: 1.55;
+      color: var(--ink);
+      margin-bottom: 32px;
+      font-style: italic;
+    }
+    .quote__who {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--ink);
+    }
+    .quote__where {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-top: 6px;
+    }
+    @media (max-width: 900px) { .testimonials__grid { grid-template-columns: 1fr; max-width: 540px; margin: 0 auto; } }
+
+    /* ===== INSIGHTS ===== */
+    .insights {
+      padding: 140px 0;
+    }
+    .insights__header {
+      text-align: center;
+      margin-bottom: 72px;
+    }
+    .insights__header h2 { margin-top: 20px; }
+    .insights__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .article {
+      padding: 36px 32px 40px;
+      background: var(--stone);
+      transition: all 300ms;
+    }
+    .article:hover { background: var(--sage); color: var(--paper); transform: translateY(-3px); }
+    .article:hover h3 { color: var(--paper); }
+    .article:hover p { color: rgba(251, 250, 246, 0.85); }
+    .article:hover .article__tag { color: var(--clay); }
+    .article:hover .article__read { color: var(--paper); border-bottom-color: var(--clay); }
+    .article__tag {
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 20px;
+      transition: color 200ms;
+    }
+    .article h3 {
+      font-size: 1.35rem;
+      margin-bottom: 16px;
+      line-height: 1.3;
+      transition: color 200ms;
+    }
+    .article p {
+      font-size: 0.92rem;
+      line-height: 1.65;
+      color: var(--mute);
+      margin-bottom: 24px;
+      transition: color 200ms;
+    }
+    .article__read {
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink);
+      font-weight: 500;
+      border-bottom: 1px solid var(--sage);
+      padding-bottom: 3px;
+      transition: all 200ms;
+    }
+    @media (max-width: 900px) { .insights__grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; } }
+
+    /* ===== CTA ===== */
+    .cta-section {
+      padding: 140px 0;
+      background: var(--sage);
+      color: var(--paper);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 28px;
+      border: 1px solid rgba(251, 250, 246, 0.25);
+      pointer-events: none;
+    }
+    .cta-section__inner { max-width: 720px; margin: 0 auto; position: relative; z-index: 1; }
+    .cta-section .eyebrow { color: var(--clay); }
+    .cta-section h2 { color: var(--paper); margin: 20px 0 28px; }
+    .cta-section h2 em { font-style: italic; color: var(--clay); }
+    .cta-section p {
+      font-size: 1.05rem;
+      color: rgba(251, 250, 246, 0.85);
+      margin: 0 auto 44px;
+      max-width: 54ch;
+    }
+    .cta-section .btn {
+      background: var(--paper);
+      color: var(--sage-deep);
+      border-color: var(--paper);
+    }
+    .cta-section .btn:hover {
+      background: var(--ink);
+      color: var(--paper);
+      border-color: var(--ink);
+    }
+    .cta-section__note {
+      margin-top: 44px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(251, 250, 246, 0.25);
+      font-size: 0.82rem;
+      color: rgba(251, 250, 246, 0.7);
+    }
+    .cta-section__note a { color: var(--clay); }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      padding: 52px 0 36px;
+      background: var(--ink);
+      color: rgba(251, 250, 246, 0.6);
+      font-size: 0.82rem;
+    }
+    .footer__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer__brand {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1.2rem;
+      color: var(--paper);
+    }
+    .footer__note {
+      font-size: 0.74rem;
+      letter-spacing: 0.1em;
+      color: rgba(251, 250, 246, 0.5);
+    }
+    .footer__note a { color: var(--clay); }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "Monika DeBenedictis Team",
+    "description": "An $80M+ annual team specializing in North Naples luxury estate communities including Pelican Marsh, Mediterra, and Quail West.",
+    "url": "https://justscale.co/d100-websites/debenedictis-team/",
+    "areaServed": [
+      { "@type": "Place", "name": "North Naples, FL" },
+      { "@type": "Place", "name": "Pelican Marsh, FL" },
+      { "@type": "Place", "name": "Mediterra, FL" },
+      { "@type": "Place", "name": "Quail West, FL" }
+    ],
+    "address": { "@type": "PostalAddress", "addressLocality": "Naples", "addressRegion": "FL", "postalCode": "34110", "addressCountry": "US" },
+    "founder": { "@type": "Person", "name": "Monika DeBenedictis" },
+    "parentOrganization": { "@type": "Organization", "name": "John R. Wood Properties | Christie's International Real Estate" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Luxury Residential Real Estate",
+    "provider": { "@type": "RealEstateAgent", "name": "Monika DeBenedictis Team" },
+    "areaServed": "North Naples, FL",
+    "description": "Luxury buyer and seller representation across Pelican Marsh, Mediterra, Quail West, and the gated estate communities of North Naples."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Which North Naples communities does the DeBenedictis Team specialize in?", "acceptedAnswer": { "@type": "Answer", "text": "Our primary markets are Pelican Marsh, Mediterra, Quail West, and The Strand. We also represent clients across Tiburon, Talis Park, Bay Colony, and the gated estate communities of 34110." } },
+      { "@type": "Question", "name": "What is the team's annual sales volume?", "acceptedAnswer": { "@type": "Answer", "text": "The Monika DeBenedictis Team consistently closes more than $80 million in annual sales volume across North Naples estate and golf communities." } },
+      { "@type": "Question", "name": "Do you handle new construction and resale properties?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We represent buyers and sellers of both new-construction estate homes in Mediterra and Quail West and resale properties across Pelican Marsh and the established North Naples communities." } },
+      { "@type": "Question", "name": "Are you affiliated with Christie's International Real Estate?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The Monika DeBenedictis Team is part of John R. Wood Properties, the exclusive Christie's International Real Estate affiliate for Southwest Florida." } },
+      { "@type": "Question", "name": "What should out-of-state buyers know about North Naples gated communities?", "acceptedAnswer": { "@type": "Answer", "text": "Each community carries distinct membership structures, initiation fees, and amenity access. We walk every buyer through the financial and lifestyle implications of Pelican Marsh, Mediterra, and Quail West before they commit." } }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="#" class="nav__logo">DeBenedictis<span>.</span></a>
+      <ul class="nav__links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#neighborhoods">Communities</a></li>
+        <li><a href="#properties">Portfolio</a></li>
+        <li><a href="#insights">Journal</a></li>
+      </ul>
+      <a href="#contact" class="btn nav__cta">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero__grid">
+      <div class="hero__left reveal">
+        <div class="hero__issue">Vol. XIX</div>
+        <div class="hero__vol">Naples &middot; Est. 2005</div>
+      </div>
+      <div class="hero__center reveal">
+        <div class="hero__masthead">Monika <em>DeBenedictis</em> Team</div>
+        <div class="hero__tagline">North Naples &middot; Pelican Marsh &middot; Mediterra &middot; Quail West</div>
+        <h1 class="hero__headline">The quiet authority on <em>North Naples</em>.</h1>
+        <p class="hero__lede">Twenty years, more than $80 million a year, and a practice built inside the gates of Naples' most private communities.</p>
+        <div class="hero__cta">
+          <a href="#contact" class="btn">Begin the Conversation</a>
+        </div>
+      </div>
+      <div class="hero__right reveal">
+        <div class="hero__right-label">Editor's Note</div>
+        <div class="hero__right-text">"Local knowledge has become a scarce commodity in a national market. It remains our entire practice."</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAT STRIP -->
+  <section class="strip">
+    <div class="container strip__inner">
+      <div class="strip__item">
+        <div class="strip__num"><em>$80M+</em></div>
+        <div class="strip__label">Annual Sales Volume</div>
+      </div>
+      <div class="strip__item">
+        <div class="strip__num"><em>20</em> yrs</div>
+        <div class="strip__label">In North Naples</div>
+      </div>
+      <div class="strip__item">
+        <div class="strip__num">CHRISTIE'S</div>
+        <div class="strip__label">Int'l Affiliate</div>
+      </div>
+      <div class="strip__item">
+        <div class="strip__num"><em>34110</em></div>
+        <div class="strip__label">Our Home Market</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT (MAGAZINE FEATURE) -->
+  <section class="about" id="about">
+    <div class="container">
+      <article class="about__article reveal">
+        <p class="eyebrow">A Feature on the Principal</p>
+        <h2>The case for a team built entirely inside the gates.</h2>
+        <div class="about__byline">By The Editors &middot; Naples, FL</div>
+        <div class="about__body">
+          <p>Monika DeBenedictis built her Naples real estate practice on a single conviction: that the finest North Naples communities &mdash; Pelican Marsh, Mediterra, Quail West &mdash; are worlds unto themselves, and that the only way to represent them well is to live and work inside them. Twenty years later, the team she leads closes more than <strong>$80 million a year</strong> across those gates, with a client list that has quietly become a referral engine of its own.</p>
+          <p>The team operates under John R. Wood Properties, the exclusive Southwest Florida affiliate of Christie's International Real Estate, giving every listing the weight of a global luxury network. But the work itself &mdash; the knowing which Mediterra villa traded off-market last season, which Quail West lot backs onto the wrong lake for reliable resale, which Pelican Marsh buyer is quietly looking to upgrade &mdash; that remains, as it should, deeply local.</p>
+          <div class="about__pullquote">
+            "The best real estate in North Naples never touches the MLS twice. It moves between the families who know the communities &mdash; and the agents who earned their seat at that table."
+            <cite>&mdash; Monika DeBenedictis, Team Principal</cite>
+          </div>
+          <p>What follows is a snapshot of the markets the team represents, the properties it is currently bringing forward, and the clients who have returned for second and third transactions across a career now twenty years in.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- NEIGHBORHOODS -->
+  <section class="neighborhoods" id="neighborhoods">
+    <div class="container">
+      <div class="neighborhoods__header reveal">
+        <div>
+          <p class="eyebrow">The Communities</p>
+          <h2>Four gated <em>worlds</em>, each with its own logic.</h2>
+        </div>
+        <p>We do not treat North Naples as a single market. Each of these communities trades on its own comp basis, membership structure, and buyer profile &mdash; and we read them community-by-community.</p>
+      </div>
+      <div class="neighborhoods__list">
+        <div class="hood-row reveal">
+          <div class="hood-row__num">I.</div>
+          <div class="hood-row__body">
+            <h3>Pelican Marsh</h3>
+            <p>Established gated community at the heart of North Naples with Troon-managed golf, tennis, and pickleball. The team's home market.</p>
+          </div>
+          <div class="hood-row__price">
+            <div class="hood-row__price-label">Avg Sale</div>
+            <div class="hood-row__price-num"><em>$2.1M</em></div>
+          </div>
+        </div>
+        <div class="hood-row reveal">
+          <div class="hood-row__num">II.</div>
+          <div class="hood-row__body">
+            <h3>Mediterra</h3>
+            <p>Tuscany-inspired estate community with two Tom Fazio courses and a private beach club. The standard for new-construction luxury in North Naples.</p>
+          </div>
+          <div class="hood-row__price">
+            <div class="hood-row__price-label">Avg Sale</div>
+            <div class="hood-row__price-num"><em>$4.8M</em></div>
+          </div>
+        </div>
+        <div class="hood-row reveal">
+          <div class="hood-row__num">III.</div>
+          <div class="hood-row__body">
+            <h3>Quail West</h3>
+            <p>Two 18-hole championship courses, 70,000-square-foot clubhouse, and some of the largest estate parcels in Collier County.</p>
+          </div>
+          <div class="hood-row__price">
+            <div class="hood-row__price-label">Avg Sale</div>
+            <div class="hood-row__price-num"><em>$5.2M</em></div>
+          </div>
+        </div>
+        <div class="hood-row reveal">
+          <div class="hood-row__num">IV.</div>
+          <div class="hood-row__body">
+            <h3>The Strand</h3>
+            <p>Walkable gated community with 27 holes of championship golf. A strong entry point for buyers moving into North Naples for the first time.</p>
+          </div>
+          <div class="hood-row__price">
+            <div class="hood-row__price-label">Avg Sale</div>
+            <div class="hood-row__price-num"><em>$1.4M</em></div>
+          </div>
+        </div>
+        <div class="hood-row reveal">
+          <div class="hood-row__num">V.</div>
+          <div class="hood-row__body">
+            <h3>Talis Park &middot; Tiburon</h3>
+            <p>Two of North Naples' most distinctive gated addresses. Greg Norman golf, Ritz-Carlton adjacency, and a markedly younger buyer profile.</p>
+          </div>
+          <div class="hood-row__price">
+            <div class="hood-row__price-label">Avg Sale</div>
+            <div class="hood-row__price-num"><em>$2.9M</em></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROPERTIES -->
+  <section class="properties" id="properties">
+    <div class="container">
+      <div class="properties__header reveal">
+        <p class="eyebrow">Current Portfolio</p>
+        <h2>A selection of <em>current representations</em>.</h2>
+      </div>
+      <div class="properties__grid">
+        <div class="listing reveal">
+          <div class="listing__visual">
+            <div class="listing__tag">Feature</div>
+          </div>
+          <div class="listing__body">
+            <div class="listing__address">15240 Medici Way</div>
+            <div class="listing__hood">Mediterra</div>
+            <div class="listing__price">$6,850,000</div>
+            <div class="listing__specs">
+              <span><strong>5</strong> bed</span>
+              <span><strong>6.5</strong> bath</span>
+              <span><strong>6,420</strong> sqft</span>
+            </div>
+          </div>
+        </div>
+        <div class="listing reveal">
+          <div class="listing__visual">
+            <div class="listing__tag">For Sale</div>
+          </div>
+          <div class="listing__body">
+            <div class="listing__address">6210 Burnham Road</div>
+            <div class="listing__hood">Quail West</div>
+            <div class="listing__price">$5,295,000</div>
+            <div class="listing__specs">
+              <span><strong>4</strong> bed</span>
+              <span><strong>5</strong> bath</span>
+              <span><strong>5,840</strong> sqft</span>
+            </div>
+          </div>
+        </div>
+        <div class="listing reveal">
+          <div class="listing__visual">
+            <div class="listing__tag">New</div>
+          </div>
+          <div class="listing__body">
+            <div class="listing__address">1836 Marsh Wren Lane</div>
+            <div class="listing__hood">Pelican Marsh</div>
+            <div class="listing__price">$2,395,000</div>
+            <div class="listing__specs">
+              <span><strong>4</strong> bed</span>
+              <span><strong>4</strong> bath</span>
+              <span><strong>4,120</strong> sqft</span>
+            </div>
+          </div>
+        </div>
+        <div class="listing reveal">
+          <div class="listing__visual">
+            <div class="listing__tag">Just Represented</div>
+          </div>
+          <div class="listing__body">
+            <div class="listing__address">2740 Talon Court</div>
+            <div class="listing__hood">Talis Park</div>
+            <div class="listing__price">$3,150,000</div>
+            <div class="listing__specs">
+              <span><strong>4</strong> bed</span>
+              <span><strong>4.5</strong> bath</span>
+              <span><strong>4,480</strong> sqft</span>
+            </div>
+          </div>
+        </div>
+        <div class="listing reveal">
+          <div class="listing__visual">
+            <div class="listing__tag">Private Offering</div>
+          </div>
+          <div class="listing__body">
+            <div class="listing__address">5820 Strand Boulevard</div>
+            <div class="listing__hood">The Strand</div>
+            <div class="listing__price">$1,695,000</div>
+            <div class="listing__specs">
+              <span><strong>3</strong> bed</span>
+              <span><strong>3</strong> bath</span>
+              <span><strong>3,240</strong> sqft</span>
+            </div>
+          </div>
+        </div>
+        <div class="listing reveal">
+          <div class="listing__visual">
+            <div class="listing__tag">Coming Soon</div>
+          </div>
+          <div class="listing__body">
+            <div class="listing__address">15910 Pisano Way</div>
+            <div class="listing__hood">Mediterra</div>
+            <div class="listing__price">$8,950,000</div>
+            <div class="listing__specs">
+              <span><strong>6</strong> bed</span>
+              <span><strong>7</strong> bath</span>
+              <span><strong>7,980</strong> sqft</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="testimonials__header reveal">
+        <p class="eyebrow">Client Voices</p>
+        <h2>What buyers and sellers tell us, <em>after closing</em>.</h2>
+      </div>
+      <div class="testimonials__grid">
+        <div class="quote reveal">
+          <div class="quote__mark">&ldquo;</div>
+          <p class="quote__text">Monika sold our Mediterra estate in six weeks at full ask when two prior agents had it on the market for a year. She knew exactly which buyer was quietly looking.</p>
+          <div class="quote__who">A. &amp; J. Rhodes</div>
+          <div class="quote__where">Mediterra &middot; 2024</div>
+        </div>
+        <div class="quote reveal">
+          <div class="quote__mark">&ldquo;</div>
+          <p class="quote__text">We shopped Quail West and Mediterra for three months with another firm. Monika walked us through both in two afternoons and we had a signed contract that same weekend.</p>
+          <div class="quote__who">S. &amp; K. Werner</div>
+          <div class="quote__where">Quail West &middot; 2023</div>
+        </div>
+        <div class="quote reveal">
+          <div class="quote__mark">&ldquo;</div>
+          <p class="quote__text">Our Pelican Marsh listing went under contract the day it hit the MLS &mdash; but the real win was how quietly and cleanly the transaction moved from there. A masterclass in execution.</p>
+          <div class="quote__who">M. Delaney</div>
+          <div class="quote__where">Pelican Marsh &middot; 2024</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSIGHTS -->
+  <section class="insights" id="insights">
+    <div class="container">
+      <div class="insights__header reveal">
+        <p class="eyebrow">The Journal</p>
+        <h2>Field notes from North Naples.</h2>
+      </div>
+      <div class="insights__grid">
+        <article class="article reveal">
+          <div class="article__tag">Market Outlook &middot; 2026</div>
+          <h3>Why Mediterra New-Construction is Outperforming the Resale Curve</h3>
+          <p>Builder-direct pricing, Fazio course desirability, and the private beach club membership structure have created an unusual premium. A field read.</p>
+          <span class="article__read">Read the Analysis</span>
+        </article>
+        <article class="article reveal">
+          <div class="article__tag">Buyer Guide</div>
+          <h3>How to Read a Quail West Comp: A Guide to What the MLS Does Not Show</h3>
+          <p>Two identical floor plans can trade $1.5M apart depending on lot orientation, membership type, and course exposure. A practical walkthrough.</p>
+          <span class="article__read">Read the Guide</span>
+        </article>
+        <article class="article reveal">
+          <div class="article__tag">Community Profile</div>
+          <h3>Pelican Marsh at Twenty-Five: What a Mature Community Looks Like Now</h3>
+          <p>Twenty-five years in, the teardown-and-rebuild cycle has begun to reset Pelican Marsh's inventory. What it means for both ends of the market.</p>
+          <span class="article__read">Read the Profile</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="contact">
+    <div class="container cta-section__inner reveal">
+      <p class="eyebrow">Begin The Conversation</p>
+      <h2>When it is time to list, buy, or simply <em>understand the market</em> &mdash; we begin by listening.</h2>
+      <p>Monika personally responds to every inquiry. Fifteen minutes is usually enough to know whether we are the right fit for your transaction.</p>
+      <a href="https://calendly.com/zac-justscale/local-business" class="btn">Schedule 15 Minutes</a>
+      <div class="cta-section__note">
+        This page is a mock rebuild of yourhomeinnaples.com by <a href="https://justscale.co">justscale</a>. Want the real thing? Book 15 minutes above.
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">Monika DeBenedictis Team</div>
+      <div class="footer__note">Prepared for the Monika DeBenedictis Team by <a href="https://justscale.co">justscale</a> &middot; justscale.co</div>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var io = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
+    })();
+    document.querySelectorAll('a[href^="#"]').forEach(function(l) {
+      l.addEventListener('click', function(e) {
+        var t = document.querySelector(this.getAttribute('href'));
+        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+    });
+  </script>
+</body>
+</html>
