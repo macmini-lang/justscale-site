@@ -147,9 +147,9 @@
       letter-spacing: -0.015em;
     }
 
-    h1 { font-size: clamp(3rem, 7vw, 6.5rem); font-weight: 600; }
-    h2 { font-size: clamp(2.2rem, 4.2vw, 3.6rem); font-weight: 600; }
-    h3 { font-size: clamp(1.5rem, 2.2vw, 2rem); font-weight: 600; }
+    h1 { font-size: clamp(2.4rem, 5vw, 4.25rem); font-weight: 600; }
+    h2 { font-size: clamp(2rem, 3.6vw, 3rem); font-weight: 600; }
+    h3 { font-size: clamp(1.4rem, 2vw, 1.8rem); font-weight: 600; }
     strong, b { font-weight: 600; color: var(--ink); }
     p { max-width: 62ch; }
 
@@ -226,7 +226,7 @@
 
     /* ===== HERO ===== */
     .hero {
-      padding: clamp(80px, 14vw, 180px) 0 clamp(60px, 10vw, 120px);
+      padding: clamp(64px, 9vw, 120px) 0 clamp(56px, 8vw, 96px);
       position: relative;
       overflow: hidden;
     }
@@ -249,8 +249,8 @@
       background: var(--gold);
     }
     .hero__title {
-      max-width: 16ch;
-      margin-bottom: 40px;
+      max-width: 18ch;
+      margin-bottom: 32px;
     }
     .hero__title em {
       font-style: italic;
@@ -310,15 +310,7 @@
       color: var(--ink);
     }
 
-    .hero__ornament {
-      position: absolute;
-      top: 10%;
-      right: -120px;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle at 30% 30%, rgba(168, 138, 74, 0.08) 0%, transparent 60%);
-      pointer-events: none;
-    }
+    .hero__ornament { display: none; }
 
     /* ===== ABOUT ===== */
     .about {
