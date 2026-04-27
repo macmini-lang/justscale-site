@@ -210,6 +210,21 @@
       .why__feature p { font-size: 0.82rem; }
       .trust-bar__badge { font-size: 0.78rem; }
     }
+    .img-placeholder {
+      background: var(--bg-warm, #f5f5f5);
+      border: 2px dashed rgba(0,0,0,0.12);
+      border-radius: var(--radius-md, 12px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 0.82rem;
+      color: var(--text-tertiary, #999);
+      font-style: italic;
+      line-height: 1.4;
+      min-height: 200px;
+    }
   </style>
 </head>
 <body>
@@ -266,7 +281,7 @@
       </div>
       <div class="hero__media">
         <div class="video-placeholder">
-          <img class="video-placeholder__img" src="https://pefadvisors.com/wp-content/uploads/GettyImages-1022480824.jpg" alt="Affordable housing community" width="800" height="500">
+          <div class="img-placeholder video-placeholder__img" style="opacity:0.8;">60-second fund overview video</div>
           <div class="video-placeholder__play">
             <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"/></svg>
           </div>
@@ -336,19 +351,19 @@
       </div>
       <div class="projects__grid reveal-group">
         <div class="project-card reveal">
-          <img src="https://pefadvisors.com/wp-content/uploads/GettyImages-1091920420.jpg" alt="Multifamily Housing" loading="lazy" width="600" height="450">
+          <div class="img-placeholder">[Photo: Multifamily affordable housing property]</div>
           <div class="project-card__overlay"><div class="project-card__label">Multifamily Affordable</div></div>
         </div>
         <div class="project-card reveal">
-          <img src="https://pefadvisors.com/wp-content/uploads/GettyImages-1369999607.jpg" alt="Workforce Housing" loading="lazy" width="600" height="450">
+          <div class="img-placeholder">[Photo: Workforce housing property]</div>
           <div class="project-card__overlay"><div class="project-card__label">Workforce Housing</div></div>
         </div>
         <div class="project-card reveal">
-          <img src="https://pefadvisors.com/wp-content/uploads/GettyImages-1357468051.jpg" alt="Section 8" loading="lazy" width="600" height="450">
+          <div class="img-placeholder">[Photo: Section 8 / LIHTC property]</div>
           <div class="project-card__overlay"><div class="project-card__label">Section 8 / LIHTC</div></div>
         </div>
         <div class="project-card reveal">
-          <img src="https://pefadvisors.com/wp-content/uploads/GettyImages-1073872726.jpg" alt="Sustainability" loading="lazy" width="600" height="450">
+          <div class="img-placeholder">[Photo: Sustainable rehab property]</div>
           <div class="project-card__overlay"><div class="project-card__label">Sustainable Rehab</div></div>
         </div>
       </div>

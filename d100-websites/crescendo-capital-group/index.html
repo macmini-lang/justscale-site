@@ -209,6 +209,21 @@
       .why__feature p { font-size: 0.82rem; }
       .trust-bar__badge { font-size: 0.78rem; }
     }
+    .img-placeholder {
+      background: var(--bg-warm, #f5f5f5);
+      border: 2px dashed rgba(0,0,0,0.12);
+      border-radius: var(--radius-md, 12px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 0.82rem;
+      color: var(--text-tertiary, #999);
+      font-style: italic;
+      line-height: 1.4;
+      min-height: 200px;
+    }
   </style>
 </head>
 <body>
@@ -345,7 +360,7 @@
           <div class="project-card__overlay"><div class="project-card__label">Business Services</div></div>
         </div>
         <div class="project-card reveal">
-          <img src="https://www.crescendocap.com/wp-content/uploads/2023/05/Arcline-Logo-Clear-Background-1.png" alt="Distribution" loading="lazy" width="600" height="450">
+          <div class="img-placeholder">[Photo: Distribution portfolio company]</div>
           <div class="project-card__overlay"><div class="project-card__label">Distribution</div></div>
         </div>
       </div>
@@ -383,7 +398,7 @@
         </div>
       </div>
       <div class="why__image reveal">
-        <img src="https://www.crescendocap.com/wp-content/uploads/2026/03/NWWI-Project-Photo.jpg" alt="Business leadership" loading="lazy" width="800" height="600">
+        <div class="img-placeholder">[Photo: Crescendo Capital team or portfolio company]</div>
       </div>
     </div>
   </section>
