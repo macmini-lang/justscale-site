@@ -1,0 +1,756 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Weinreb Ventures Holdings | An Operator's Family Office</title>
+<meta name="description" content="Weinreb Ventures Holdings is a Dallas-based family office that develops, invests, and advises across real estate, private equity, and venture capital. Led by David R. Weinreb, former CEO of The Howard Hughes Corporation.">
+<meta property="og:title" content="Weinreb Ventures Holdings">
+<meta property="og:description" content="An operator's family office. Real estate, private equity, venture capital, advisory.">
+<meta property="og:image" content="assets/ward-village.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200;300;400;500;600;700&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #000000;
+    --bg-alt: #0a0a0a;
+    --bg-card: #141414;
+    --line: #222222;
+    --text: #ffffff;
+    --text-dim: #d5dade;
+    --text-muted: #8a8e93;
+    --accent: #F8BA00;
+    --accent-bright: #FFC820;
+    --display: "Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+    --sans: "Barlow", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+
+  /* ---------- Header ---------- */
+  header.site {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 28px 56px;
+    display: flex; justify-content: space-between; align-items: center;
+    background: linear-gradient(to bottom, rgba(10,10,10,0.85), rgba(10,10,10,0));
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  header.site .logo img { height: 38px; }
+  header.site nav { display: flex; gap: 40px; align-items: center; }
+  header.site nav a {
+    font-size: 13px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--text-dim); transition: color 0.3s;
+  }
+  header.site nav a:hover { color: var(--text); }
+  header.site .cta {
+    border: 1px solid var(--accent);
+    color: var(--accent-bright);
+    padding: 11px 22px;
+    font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+    transition: all 0.3s;
+  }
+  header.site .cta:hover { background: var(--accent); color: var(--bg); }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative; min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 0 56px;
+    overflow: hidden;
+  }
+  .hero .bg {
+    position: absolute; inset: 0;
+    background-image: url('assets/ward-village.jpg');
+    background-size: cover; background-position: center;
+    transform: scale(1.05);
+    animation: drift 20s ease-in-out infinite alternate;
+  }
+  @keyframes drift {
+    from { transform: scale(1.05) translateX(0); }
+    to   { transform: scale(1.1) translateX(-2%); }
+  }
+  .hero .overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(120deg, rgba(10,10,10,0.92) 0%, rgba(10,10,10,0.72) 50%, rgba(10,10,10,0.4) 100%);
+  }
+  .hero .content {
+    position: relative; z-index: 2;
+    max-width: 880px; padding-top: 80px;
+  }
+  .hero .eyebrow {
+    font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--accent-bright);
+    margin-bottom: 32px;
+  }
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: clamp(56px, 8vw, 108px);
+    line-height: 1;
+    letter-spacing: -0.005em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--accent);
+    font-weight: 500;
+  }
+  .hero .lede {
+    font-size: 19px; line-height: 1.6;
+    color: var(--text-dim);
+    max-width: 640px; margin-bottom: 48px;
+  }
+  .hero .lede strong { color: var(--text); font-weight: 400; }
+  .hero .actions { display: flex; gap: 20px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block;
+    padding: 16px 32px;
+    font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase;
+    transition: all 0.3s;
+    border: 1px solid;
+  }
+  .btn.primary {
+    background: var(--accent); color: var(--bg);
+    border-color: var(--accent);
+  }
+  .btn.primary:hover { background: var(--accent-bright); border-color: var(--accent-bright); }
+  .btn.ghost {
+    background: transparent; color: var(--text);
+    border-color: rgba(255,255,255,0.25);
+  }
+  .btn.ghost:hover { border-color: var(--text); }
+  .scroll-cue {
+    position: absolute; bottom: 36px; left: 56px;
+    font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--text-dim);
+    z-index: 2;
+  }
+
+  /* ---------- Track record band ---------- */
+  .stats {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: var(--bg-alt);
+    padding: 80px 56px;
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 48px;
+    max-width: 1280px; margin: 0 auto;
+  }
+  .stat .num {
+    font-family: var(--display);
+    font-size: clamp(48px, 6vw, 80px);
+    font-weight: 600;
+    color: var(--accent);
+    line-height: 1;
+    letter-spacing: -0.01em;
+    margin-bottom: 12px;
+  }
+  .stat .label {
+    font-size: 13px; letter-spacing: 0.1em;
+    color: var(--text-dim);
+    line-height: 1.5;
+  }
+
+  /* ---------- Sections ---------- */
+  section.block {
+    padding: 140px 56px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .section-eyebrow {
+    font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--accent-bright);
+    margin-bottom: 28px;
+  }
+  .section-h {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: clamp(40px, 5vw, 64px);
+    line-height: 1.05;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    max-width: 900px;
+  }
+  .section-sub {
+    font-size: 18px; line-height: 1.7;
+    color: var(--text-dim);
+    max-width: 720px;
+  }
+
+  /* ---------- What We Do ---------- */
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1px;
+    margin-top: 80px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .pillar {
+    background: var(--bg);
+    padding: 48px 36px;
+    transition: background 0.3s;
+  }
+  .pillar:hover { background: var(--bg-card); }
+  .pillar .num {
+    font-family: var(--display);
+    font-size: 14px;
+    color: var(--accent);
+    margin-bottom: 24px;
+  }
+  .pillar h3 {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin-bottom: 16px;
+    line-height: 1.15;
+  }
+  .pillar p {
+    font-size: 15px;
+    color: var(--text-dim);
+    line-height: 1.7;
+  }
+
+  /* ---------- Founder ---------- */
+  .founder {
+    background: var(--bg-alt);
+    padding: 140px 56px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .founder-inner {
+    max-width: 1280px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 96px;
+    align-items: center;
+  }
+  .founder-photo {
+    position: relative;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+  }
+  .founder-photo img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: grayscale(0.15) contrast(1.05);
+  }
+  .founder-photo::after {
+    content: ""; position: absolute; inset: 0;
+    box-shadow: inset 0 0 120px rgba(10,10,10,0.4);
+  }
+  .founder h2 {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: clamp(36px, 4vw, 56px);
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: -0.005em;
+    margin-bottom: 32px;
+  }
+  .founder .body p {
+    font-size: 16px; line-height: 1.8;
+    color: var(--text-dim);
+    margin-bottom: 18px;
+  }
+  .founder .body p strong { color: var(--text); font-weight: 400; }
+  .founder .signature {
+    margin-top: 36px;
+    font-family: var(--display);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 20px;
+    color: var(--text);
+  }
+  .founder .signature span {
+    display: block;
+    font-family: var(--sans);
+    font-style: normal;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-top: 6px;
+  }
+
+  /* ---------- Portfolio ---------- */
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 72px;
+  }
+  .project {
+    position: relative;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .project img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.7s ease;
+  }
+  .project:hover img { transform: scale(1.05); }
+  .project .caption {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 28px;
+    background: linear-gradient(to top, rgba(10,10,10,0.92), rgba(10,10,10,0));
+  }
+  .project .caption .name {
+    font-family: var(--display);
+    font-size: 24px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin-bottom: 4px;
+  }
+  .project .caption .meta {
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent-bright);
+  }
+
+  /* ---------- Team ---------- */
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+    margin-top: 72px;
+  }
+  .person { }
+  .person .photo {
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    margin-bottom: 24px;
+    background: var(--bg-card);
+  }
+  .person .photo img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: grayscale(0.2) contrast(1.05);
+    transition: filter 0.5s;
+  }
+  .person:hover .photo img { filter: grayscale(0) contrast(1.05); }
+  .person .name {
+    font-family: var(--display);
+    font-size: 24px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin-bottom: 4px;
+  }
+  .person .title {
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent-bright);
+    margin-bottom: 16px;
+  }
+  .person .bio {
+    font-size: 14px;
+    color: var(--text-dim);
+    line-height: 1.7;
+  }
+
+  /* ---------- CTA ---------- */
+  .cta-block {
+    padding: 140px 56px;
+    background: var(--bg-alt);
+    border-top: 1px solid var(--line);
+  }
+  .cta-inner {
+    max-width: 1080px; margin: 0 auto;
+    text-align: center;
+  }
+  .cta-inner h2 {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: clamp(44px, 5.5vw, 72px);
+    line-height: 1.05;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  .cta-inner p {
+    font-size: 18px;
+    color: var(--text-dim);
+    max-width: 640px; margin: 0 auto 56px;
+    line-height: 1.7;
+  }
+  .cta-paths {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 880px; margin: 0 auto;
+    text-align: left;
+  }
+  .cta-path {
+    border: 1px solid var(--line);
+    padding: 36px;
+    transition: all 0.3s;
+    background: var(--bg);
+  }
+  .cta-path:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+  .cta-path .label {
+    font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--accent-bright);
+    margin-bottom: 18px;
+  }
+  .cta-path h3 {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    margin-bottom: 14px;
+  }
+  .cta-path p {
+    font-size: 15px;
+    color: var(--text-dim);
+    line-height: 1.7;
+    margin: 0 0 24px 0;
+    max-width: none;
+  }
+  .cta-path .arrow {
+    font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--accent-bright);
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    background: var(--bg);
+    border-top: 1px solid var(--line);
+    padding: 72px 56px 36px;
+  }
+  .footer-grid {
+    max-width: 1280px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 56px;
+    border-bottom: 1px solid var(--line);
+  }
+  .footer-grid .col h4 {
+    font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 20px;
+    font-weight: 400;
+  }
+  .footer-grid .col a {
+    display: block;
+    font-size: 14px;
+    color: var(--text);
+    margin-bottom: 10px;
+    transition: color 0.3s;
+  }
+  .footer-grid .col a:hover { color: var(--accent-bright); }
+  .footer-grid .brand img { height: 32px; margin-bottom: 20px; }
+  .footer-grid .brand p {
+    font-size: 14px;
+    color: var(--text-dim);
+    line-height: 1.7;
+    max-width: 360px;
+  }
+  .footer-bottom {
+    max-width: 1280px; margin: 0 auto;
+    padding-top: 28px;
+    display: flex; justify-content: space-between;
+    font-size: 12px;
+    color: var(--text-dim);
+    letter-spacing: 0.05em;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 1100px) {
+    .pillars { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 960px) {
+    header.site { padding: 20px 24px; }
+    header.site nav { display: none; }
+    .hero { padding: 0 24px; }
+    .scroll-cue { left: 24px; }
+    .stats { padding: 56px 24px; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 36px; }
+    section.block { padding: 96px 24px; }
+    .pillars { grid-template-columns: 1fr 1fr; }
+    .founder { padding: 96px 24px; }
+    .founder-inner { grid-template-columns: 1fr; gap: 48px; }
+    .portfolio-grid { grid-template-columns: 1fr; }
+    .team-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .cta-block { padding: 96px 24px; }
+    .cta-paths { grid-template-columns: 1fr; }
+    footer { padding: 56px 24px 28px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+    .footer-bottom { flex-direction: column; gap: 12px; }
+  }
+  @media (max-width: 560px) {
+    .stats-grid { grid-template-columns: 1fr; }
+    .pillars { grid-template-columns: 1fr; }
+    .team-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <a href="#" class="logo">
+    <img src="assets/logo.svg" alt="Weinreb Ventures Holdings">
+  </a>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#what">What We Do</a>
+    <a href="#portfolio">Track Record</a>
+    <a href="#team">Team</a>
+    <a href="#contact" class="cta">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="bg"></div>
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="eyebrow">Dallas · Established 2020</div>
+    <h1>An operator's <em>family office.</em></h1>
+    <p class="lede">
+      Weinreb Ventures Holdings develops, invests, and advises across <strong>real estate, hospitality, technology, and entertainment</strong>. Led by the team that grew The Howard Hughes Corporation from a $500M market cap into a $6B publicly traded developer.
+    </p>
+    <div class="actions">
+      <a href="#contact" class="btn primary">Bring Us a Deal</a>
+      <a href="#what" class="btn ghost">How We Invest</a>
+    </div>
+  </div>
+  <div class="scroll-cue">Scroll ↓</div>
+</section>
+
+<section class="stats">
+  <div class="stats-grid">
+    <div class="stat">
+      <div class="num">$6B</div>
+      <div class="label">Howard Hughes market cap built under David's leadership (from ~$500M, 2010 to 2019)</div>
+    </div>
+    <div class="stat">
+      <div class="num">$23B</div>
+      <div class="label">Active development pipeline at Dar Global (LSE: DAR), where David serves as Chairman</div>
+    </div>
+    <div class="stat">
+      <div class="num">5</div>
+      <div class="label">Disciplines: real estate, hospitality, technology, entertainment, advisory</div>
+    </div>
+    <div class="stat">
+      <div class="num">2020</div>
+      <div class="label">Founded by David R. Weinreb following his tenure as CEO of The Howard Hughes Corporation</div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="about">
+  <div class="section-eyebrow">Mission</div>
+  <h2 class="section-h">A platform built by the people who built the assets, not the spreadsheets.</h2>
+  <p class="section-sub">
+    Weinreb Ventures Holdings is a Dallas-based family office and multi-strategy investment platform. We deploy permanent capital and partner with select operators across real estate, hospitality, technology, and entertainment. We don't manage outside money. We don't chase fees. We invest in what we know, and we know how to build.
+  </p>
+</section>
+
+<section class="block" id="what" style="padding-top: 0;">
+  <div class="section-eyebrow">Capabilities</div>
+  <h2 class="section-h">Five disciplines. One operator's lens.</h2>
+  <div class="pillars">
+    <div class="pillar">
+      <div class="num">01</div>
+      <h3>Real Estate</h3>
+      <p>Development, investment, and operation of rental and for-sale residential, mixed-use, and special-situation assets, domestically and internationally.</p>
+    </div>
+    <div class="pillar">
+      <div class="num">02</div>
+      <h3>Hospitality</h3>
+      <p>Hotel, resort, and experiential hospitality assets developed and operated alongside best-in-class brand and management partners.</p>
+    </div>
+    <div class="pillar">
+      <div class="num">03</div>
+      <h3>Technology</h3>
+      <p>Venture capital and growth equity into emerging managers and operators building durable, category-defining technology businesses.</p>
+    </div>
+    <div class="pillar">
+      <div class="num">04</div>
+      <h3>Entertainment</h3>
+      <p>Selective investments in live entertainment, sports, media, and the venues, IP, and platforms that scale them.</p>
+    </div>
+    <div class="pillar">
+      <div class="num">05</div>
+      <h3>Advisory &amp; Partnership</h3>
+      <p>Bespoke engagements with privately held companies and high-net-worth families on capital strategy, real estate, and platform building.</p>
+    </div>
+  </div>
+</section>
+
+<section class="founder">
+  <div class="founder-inner">
+    <div class="founder-photo">
+      <img src="assets/david-weinreb.jpg" alt="David R. Weinreb">
+    </div>
+    <div>
+      <div class="section-eyebrow">Founder &amp; Chairman</div>
+      <h2>David R. Weinreb has spent thirty years turning land into communities, and capital into compounding platforms.</h2>
+      <div class="body">
+        <p>As <strong>co-founder and CEO of The Howard Hughes Corporation</strong> from 2010 through 2019, David led the company from a ~$500M market cap to nearly $6B, building master-planned communities including Ward Village in Honolulu, the Las Vegas Ballpark, and The Woodlands in Houston.</p>
+        <p>Today he serves as <strong>Chairman of Dar Global</strong> (LSE: DAR), with roughly $23B in active development underway across global markets. In 2013 he was named <strong>Ernst &amp; Young Entrepreneur of the Year</strong> in Real Estate, and serves on the national board of the Alzheimer's Drug Discovery Foundation.</p>
+        <p>Weinreb Ventures Holdings is the platform he built to deploy that experience, alongside a senior team drawn from Howard Hughes, Cushman &amp; Wakefield, PIMCO, and Invitation Homes.</p>
+      </div>
+      <div class="signature">
+        David R. Weinreb
+        <span>Founder &amp; Chairman</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="portfolio">
+  <div class="section-eyebrow">Track Record</div>
+  <h2 class="section-h">Cities. Communities. Compounding assets.</h2>
+  <p class="section-sub">A representative selection of master-planned developments led during David's tenure as CEO of The Howard Hughes Corporation.</p>
+  <div class="portfolio-grid">
+    <div class="project">
+      <img src="assets/ward-village.jpg" alt="Ward Village">
+      <div class="caption">
+        <div class="name">Ward Village</div>
+        <div class="meta">Honolulu, HI · Master-Planned</div>
+      </div>
+    </div>
+    <div class="project">
+      <img src="assets/las-vegas-ballpark.jpg" alt="Las Vegas Ballpark">
+      <div class="caption">
+        <div class="name">Las Vegas Ballpark</div>
+        <div class="meta">Summerlin, NV · Mixed-Use Anchor</div>
+      </div>
+    </div>
+    <div class="project">
+      <img src="assets/woodlands.jpg" alt="The Woodlands Towers at The Waterway">
+      <div class="caption">
+        <div class="name">The Woodlands Towers</div>
+        <div class="meta">The Woodlands, TX · Office &amp; Mixed-Use</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="team" style="padding-top: 0;">
+  <div class="section-eyebrow">Our Team</div>
+  <h2 class="section-h">Operators, underwriters, and builders.</h2>
+  <p class="section-sub">A senior team drawn from The Howard Hughes Corporation, PIMCO, Cushman &amp; Wakefield, Accenture, and Invitation Homes.</p>
+  <div class="team-grid">
+    <div class="person">
+      <div class="photo"><img src="assets/david-weinreb.jpg" alt="David R. Weinreb"></div>
+      <div class="name">David R. Weinreb</div>
+      <div class="title">Chairman &amp; Founder</div>
+      <p class="bio">Co-founder &amp; former CEO, The Howard Hughes Corporation (2010 to 2019). Chairman, Dar Global (LSE: DAR). 2013 EY Entrepreneur of the Year, Real Estate.</p>
+    </div>
+    <div class="person">
+      <div class="photo"><img src="assets/moshe.jpeg" alt="Moshe Itzhakov"></div>
+      <div class="name">Moshe Itzhakov</div>
+      <div class="title">President</div>
+      <p class="bio">Partner since 2020. Former leadership at The Howard Hughes Corporation overseeing strategy and communications across Seaport District and Ward Village. Accenture strategy alum.</p>
+    </div>
+    <div class="person">
+      <div class="photo"><img src="assets/carly.jpg" alt="Carly Finer"></div>
+      <div class="name">Carly Finer</div>
+      <div class="title">Executive Vice President</div>
+      <p class="bio">Underwriting, development, and asset management. Former Senior Associate, Cushman &amp; Wakefield. MS Real Estate Development, Columbia. BS, USC.</p>
+    </div>
+    <div class="person">
+      <div class="photo"><img src="assets/jay.png" alt="Jay Martinez"></div>
+      <div class="name">Jay Martinez</div>
+      <div class="title">VP, Investments</div>
+      <p class="bio">Investment execution across the real estate platform. Former Associate, Invitation Homes (NYSE: INVH). $10B+ in transaction experience. BBA Finance, Andrews University.</p>
+    </div>
+    <div class="person">
+      <div class="photo"><img src="assets/fred.webp" alt="Fred Afshari"></div>
+      <div class="name">Fred Afshari</div>
+      <div class="title">VP, Finance</div>
+      <p class="bio">Financial planning, treasury, and accounting. Prior senior roles in investor relations at Arena Capital Advisors and PIMCO. Former FINRA examiner. BBA, SMU. MBA, USC.</p>
+    </div>
+    <div class="person">
+      <div class="photo"><img src="assets/kyle.jpeg" alt="Kyle M. Weinreb"></div>
+      <div class="name">Kyle M. Weinreb</div>
+      <div class="title">Development Manager</div>
+      <p class="bio">Real estate investment and development. BA, USC. Certificate in Real Estate Investing, Wharton. CRE Analyst's Fast Track Program graduate.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-block" id="contact">
+  <div class="cta-inner">
+    <div class="section-eyebrow">Get in Touch</div>
+    <h2>Two ways to start a conversation.</h2>
+    <p>We move quickly when something fits. Choose the path that matches what you have in front of you, or write us directly at info@weinrebventures.com.</p>
+    <div class="cta-paths">
+      <a href="mailto:info@weinrebventures.com?subject=Investment%20Opportunity" class="cta-path">
+        <div class="label">For Sponsors &amp; Operators</div>
+        <h3>Bring us a deal.</h3>
+        <p>Real estate development, value-add real estate, growth-stage businesses, or emerging managers. Send the deck, the address, or the thesis. We'll respond within five business days.</p>
+        <div class="arrow">Submit Opportunity →</div>
+      </a>
+      <a href="mailto:info@weinrebventures.com?subject=Advisory%20Inquiry" class="cta-path">
+        <div class="label">For Founders &amp; Families</div>
+        <h3>Inquire about advisory.</h3>
+        <p>Bespoke engagements with privately held companies and HNW families on capital strategy, real estate, and platform building. Selective by design.</p>
+        <div class="arrow">Request Conversation →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="col brand">
+      <img src="assets/logo.svg" alt="Weinreb Ventures Holdings">
+      <p>A Dallas-based family office and multi-strategy investment platform. Real estate, private equity, venture capital, and advisory.</p>
+    </div>
+    <div class="col">
+      <h4>Firm</h4>
+      <a href="#about">About</a>
+      <a href="#what">What We Do</a>
+      <a href="#team">Team</a>
+    </div>
+    <div class="col">
+      <h4>Activity</h4>
+      <a href="#portfolio">Track Record</a>
+      <a href="#contact">Bring Us a Deal</a>
+      <a href="#contact">Advisory</a>
+    </div>
+    <div class="col">
+      <h4>Contact</h4>
+      <a href="mailto:info@weinrebventures.com">info@weinrebventures.com</a>
+      <a href="#">Dallas, Texas</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© Weinreb Ventures Holdings. All rights reserved.</span>
+    <span>Dallas · New York · Honolulu</span>
+  </div>
+</footer>
+
+</body>
+</html>
