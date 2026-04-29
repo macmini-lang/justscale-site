@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WebsterRogers LLP | Local Relationships. Global Reach.</title>
+<meta name="description" content="WebsterRogers LLP is a leading South Carolina-based accounting and consulting firm. 140+ staff across 8 offices, BDO Alliance USA member with reach to 162 countries.">
+<meta property="og:title" content="WebsterRogers LLP">
+<meta property="og:description" content="Local Relationships. Global Reach. Depth of Expertise.">
+<meta property="og:image" content="assets/building-relationships.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #172a6e;
+    --navy-2: #313a86;
+    --ink: #1a1a1a;
+    --body: #444;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --bg: #ffffff;
+    --bg-soft: #f7f8fb;
+    --bg-grey: #ebebeb;
+    --display: "Krona One", Georgia, serif;
+    --sans: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--body);
+    font-family: var(--sans);
+    font-weight: 400;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+
+  /* ---------- Top bar ---------- */
+  .topbar {
+    background: var(--navy);
+    color: #fff;
+    font-size: 13px;
+  }
+  .topbar-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 10px 32px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .topbar a { color: rgba(255,255,255,0.85); margin-left: 24px; }
+  .topbar a:hover { color: #fff; }
+  .topbar .phone { font-weight: 500; }
+
+  /* ---------- Header ---------- */
+  header.site {
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    position: sticky; top: 0; z-index: 50;
+  }
+  .header-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .logo img { height: 52px; width: auto; }
+  nav.main { display: flex; gap: 32px; align-items: center; }
+  nav.main a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+    transition: color 0.2s;
+  }
+  nav.main a:hover { color: var(--navy); }
+  .btn {
+    display: inline-block;
+    padding: 12px 22px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 2px;
+    transition: all 0.2s;
+    border: 2px solid transparent;
+    cursor: pointer;
+  }
+  .btn.primary {
+    background: var(--navy);
+    color: #fff;
+    border-color: var(--navy);
+  }
+  .btn.primary:hover { background: var(--navy-2); border-color: var(--navy-2); }
+  .btn.outline {
+    background: transparent;
+    color: var(--navy);
+    border-color: var(--navy);
+  }
+  .btn.outline:hover { background: var(--navy); color: #fff; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    background: var(--bg-soft);
+    padding: 96px 0 80px;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .hero .eyebrow {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 22px;
+  }
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(36px, 4.5vw, 58px);
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 24px;
+  }
+  .hero h1 .accent { color: var(--navy); }
+  .hero .lede {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--body);
+    margin-bottom: 36px;
+    max-width: 540px;
+  }
+  .hero .actions {
+    display: flex; gap: 14px; flex-wrap: wrap;
+  }
+  .hero .img {
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px -25px rgba(23,42,110,0.25);
+  }
+  .hero .img img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/3; }
+
+  /* ---------- Stats ---------- */
+  .stats {
+    background: #fff;
+    padding: 64px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    text-align: center;
+  }
+  .stat .num {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(36px, 4vw, 52px);
+    color: var(--navy);
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  .stat .label {
+    font-size: 14px;
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  /* ---------- Section base ---------- */
+  section.block {
+    padding: 96px 0;
+  }
+  .section-eyebrow {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 18px;
+  }
+  .section-h {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(28px, 3.5vw, 42px);
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 16px;
+    max-width: 760px;
+  }
+  .section-sub {
+    font-size: 17px;
+    color: var(--body);
+    max-width: 720px;
+    line-height: 1.7;
+  }
+  .section-head {
+    text-align: center;
+    margin: 0 auto 56px;
+  }
+  .section-head .section-h,
+  .section-head .section-sub {
+    margin-left: auto; margin-right: auto;
+  }
+
+  /* ---------- Services ---------- */
+  .services { background: var(--bg-soft); }
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+  }
+  .service {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--navy);
+    padding: 32px 24px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .service:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px -16px rgba(23,42,110,0.25);
+  }
+  .service h3 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 17px;
+    color: var(--ink);
+    margin-bottom: 14px;
+    line-height: 1.3;
+  }
+  .service p {
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--body);
+  }
+
+  /* ---------- Industries ---------- */
+  .industries { background: #fff; }
+  .industry-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .industry {
+    position: relative;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+  .industry img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .industry:hover img { transform: scale(1.06); }
+  .industry .overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(23,42,110,0.92) 0%, rgba(23,42,110,0.5) 50%, rgba(23,42,110,0.2) 100%);
+    display: flex; align-items: flex-end;
+    padding: 22px;
+  }
+  .industry .label {
+    color: #fff;
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  /* ---------- BDO + Tax Guide combined CTA ---------- */
+  .cta-row { background: var(--navy); color: #fff; padding: 80px 0; }
+  .cta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .cta-row .eyebrow {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 16px;
+  }
+  .cta-row h2 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(26px, 3vw, 36px);
+    line-height: 1.2;
+    color: #fff;
+    margin-bottom: 18px;
+  }
+  .cta-row p {
+    font-size: 16px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+  .cta-row .bdo-logo {
+    background: #fff;
+    padding: 24px 32px;
+    border-radius: 4px;
+    margin-top: 16px;
+    display: inline-block;
+  }
+  .cta-row .bdo-logo img { height: 56px; }
+  .cta-row .btn.white {
+    background: #fff;
+    color: var(--navy);
+    border-color: #fff;
+  }
+  .cta-row .btn.white:hover { background: rgba(255,255,255,0.9); }
+  .cta-row .btn.ghost {
+    background: transparent;
+    color: #fff;
+    border-color: rgba(255,255,255,0.5);
+  }
+  .cta-row .btn.ghost:hover { border-color: #fff; }
+  .tax-guide {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 4px;
+    padding: 32px;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+  .tax-guide img { width: 110px; height: auto; flex-shrink: 0; box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+  .tax-guide h3 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .tax-guide p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 12px;
+  }
+  .tax-guide a {
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+    padding-bottom: 2px;
+  }
+
+  /* ---------- Locations ---------- */
+  .locations { background: var(--bg-soft); }
+  .location-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .location {
+    background: #fff;
+    border: 1px solid var(--line);
+    padding: 24px;
+    border-radius: 2px;
+  }
+  .location .city {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 17px;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+  .location .phone {
+    font-size: 14px;
+    color: var(--body);
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    background: #0d1a47;
+    color: rgba(255,255,255,0.75);
+    padding: 56px 0 24px;
+    font-size: 14px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  footer .brand img { height: 44px; margin-bottom: 16px; filter: brightness(0) invert(1); }
+  footer .brand p { color: rgba(255,255,255,0.7); line-height: 1.7; max-width: 380px; }
+  footer h4 {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 16px;
+  }
+  footer .col a {
+    display: block;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 8px;
+    transition: color 0.2s;
+  }
+  footer .col a:hover { color: #fff; }
+  .footer-bottom {
+    padding-top: 24px;
+    display: flex; justify-content: space-between;
+    color: rgba(255,255,255,0.5);
+    font-size: 13px;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 960px) {
+    .topbar-inner { flex-direction: column; gap: 6px; }
+    nav.main { display: none; }
+    .hero { padding: 64px 0; }
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+    section.block { padding: 64px 0; }
+    .service-grid { grid-template-columns: repeat(2, 1fr); }
+    .industry-grid { grid-template-columns: repeat(2, 1fr); }
+    .cta-grid { grid-template-columns: 1fr; gap: 40px; }
+    .tax-guide { flex-direction: column; text-align: center; }
+    .location-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .footer-bottom { flex-direction: column; gap: 8px; }
+  }
+  @media (max-width: 560px) {
+    .stats-grid { grid-template-columns: 1fr; }
+    .service-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <span class="phone">(843) 665-5900</span>
+    <div>
+      <a href="#">Client Portals</a>
+      <a href="#">Make a Payment</a>
+      <a href="#">Careers</a>
+    </div>
+  </div>
+</div>
+
+<header class="site">
+  <div class="header-inner">
+    <a href="#" class="logo"><img src="assets/logo.png" alt="WebsterRogers LLP"></a>
+    <nav class="main">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#industries">Industries</a>
+      <a href="#resources">Resources</a>
+      <a href="#locations">Locations</a>
+      <a href="#contact" class="btn primary">Book a Consultation</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">South Carolina · Established 1984</div>
+        <h1>Local Relationships. <span class="accent">Global Reach.</span> Depth of Expertise.</h1>
+        <p class="lede">WebsterRogers is a leading South Carolina-based accounting and consulting firm. 140 staff and partners across 8 offices, with worldwide resources through our BDO Alliance USA membership.</p>
+        <div class="actions">
+          <a href="#contact" class="btn primary">Book a Consultation</a>
+          <a href="#services" class="btn outline">View Services</a>
+        </div>
+      </div>
+      <div class="img">
+        <img src="assets/building-relationships.png" alt="Building Relationships That Endure">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat"><div class="num">1984</div><div class="label">Founded in South Carolina</div></div>
+      <div class="stat"><div class="num">140+</div><div class="label">Staff &amp; Partners</div></div>
+      <div class="stat"><div class="num">8</div><div class="label">Offices Across the State</div></div>
+      <div class="stat"><div class="num">162</div><div class="label">Countries Reached via BDO Alliance</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">What We Do</div>
+      <h2 class="section-h">Five core practices, working together for your business.</h2>
+      <p class="section-sub">From audit and tax to outsourced accounting and strategic consulting, our partners deliver the technical depth of a national firm with the responsiveness of a local one.</p>
+    </div>
+    <div class="service-grid">
+      <div class="service">
+        <h3>Assurance</h3>
+        <p>Audit, attest, and review engagements that meet the highest professional standards for public and private companies.</p>
+      </div>
+      <div class="service">
+        <h3>Tax</h3>
+        <p>Compliance, planning, international, estate, and M&amp;A tax services for individuals and businesses of every size.</p>
+      </div>
+      <div class="service">
+        <h3>Accounting</h3>
+        <p>Bookkeeping, financial statements, and accounting support engineered for accuracy and timeliness.</p>
+      </div>
+      <div class="service">
+        <h3>Outsourced</h3>
+        <p>Outsourced controller, CFO, and back-office services that give you a full finance team without the overhead.</p>
+      </div>
+      <div class="service">
+        <h3>Consulting</h3>
+        <p>Healthcare advisory, valuations, litigation support, HR, and strategic consulting led by senior practitioners.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block industries" id="industries">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">Industries Served</div>
+      <h2 class="section-h">Specialized expertise across eight industries.</h2>
+      <p class="section-sub">We work with the operators, owners, and boards who define South Carolina's economy.</p>
+    </div>
+    <div class="industry-grid">
+      <div class="industry"><img src="assets/industry-manufacturing.jpg" alt="Manufacturing"><div class="overlay"><div class="label">Manufacturing &amp; Distribution</div></div></div>
+      <div class="industry"><img src="assets/industry-healthcare.jpg" alt="Healthcare"><div class="overlay"><div class="label">Healthcare</div></div></div>
+      <div class="industry"><img src="assets/industry-construction.jpg" alt="Construction &amp; Real Estate"><div class="overlay"><div class="label">Construction &amp; Real Estate</div></div></div>
+      <div class="industry"><img src="assets/industry-government.jpg" alt="Government &amp; Nonprofits"><div class="overlay"><div class="label">Government &amp; Nonprofits</div></div></div>
+      <div class="industry"><img src="assets/industry-hospitality.jpg" alt="Hospitality"><div class="overlay"><div class="label">Hospitality</div></div></div>
+      <div class="industry"><img src="assets/industry-agriculture.jpg" alt="Agriculture"><div class="overlay"><div class="label">Agriculture</div></div></div>
+      <div class="industry"><img src="assets/industry-auto.jpg" alt="Auto Dealerships"><div class="overlay"><div class="label">Auto Dealerships</div></div></div>
+      <div class="industry"><img src="assets/industry-prof-services.jpg" alt="Professional Services"><div class="overlay"><div class="label">Professional Services</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-row" id="resources">
+  <div class="wrap">
+    <div class="cta-grid">
+      <div>
+        <div class="eyebrow">Global Resources, Local Service</div>
+        <h2>Member of the BDO Alliance USA.</h2>
+        <p>Through our BDO Alliance membership, our clients have direct access to the resources, expertise, and reach of a global accounting network spanning 1,500+ offices in 162 countries, while still working with the same South Carolina partners who know their business.</p>
+        <div class="bdo-logo"><img src="assets/bdo-alliance.jpg" alt="BDO Alliance USA"></div>
+      </div>
+      <div class="tax-guide">
+        <img src="assets/tax-guide-cover.png" alt="2025-2026 Tax Planning Guide">
+        <div>
+          <h3>2025 to 2026 Tax Planning Guide</h3>
+          <p>Year-end tax strategies, retirement contributions, charitable giving, and business deductions. Free download.</p>
+          <a href="#">Download the Guide →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block locations" id="locations">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">Eight Offices Across South Carolina</div>
+      <h2 class="section-h">Find your local team.</h2>
+    </div>
+    <div class="location-grid">
+      <div class="location"><div class="city">Charleston</div><div class="phone">(843) 723-1717</div></div>
+      <div class="location"><div class="city">Columbia</div><div class="phone">(803) 256-7150</div></div>
+      <div class="location"><div class="city">Florence</div><div class="phone">(843) 665-5900</div></div>
+      <div class="location"><div class="city">Greenville</div><div class="phone">(864) 271-9100</div></div>
+      <div class="location"><div class="city">Hilton Head</div><div class="phone">(843) 785-7300</div></div>
+      <div class="location"><div class="city">Myrtle Beach</div><div class="phone">(843) 449-1717</div></div>
+      <div class="location"><div class="city">Pawleys Island</div><div class="phone">(843) 237-9050</div></div>
+      <div class="location"><div class="city">Sumter</div><div class="phone">(803) 773-1409</div></div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="brand">
+        <img src="assets/logo.png" alt="WebsterRogers LLP">
+        <p>Local relationships. Global reach. Depth of expertise. A leading South Carolina-based accounting and consulting firm since 1984.</p>
+      </div>
+      <div class="col">
+        <h4>Firm</h4>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#industries">Industries</a>
+        <a href="#">Careers</a>
+      </div>
+      <div class="col">
+        <h4>Resources</h4>
+        <a href="#">Tax Planning Guide</a>
+        <a href="#">Client Portals</a>
+        <a href="#">Make a Payment</a>
+        <a href="#">News &amp; Insights</a>
+      </div>
+      <div class="col">
+        <h4>Contact</h4>
+        <a href="tel:8436655900">(843) 665-5900</a>
+        <a href="mailto:info@websterrogers.com">info@websterrogers.com</a>
+        <a href="#locations">All 8 Offices</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© WebsterRogers LLP. All rights reserved.</span>
+      <span>South Carolina · Member, BDO Alliance USA</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
