@@ -143,13 +143,14 @@
   }
   .hero .video-wrap {
     position: relative;
+    display: block;
     border-radius: 4px;
     overflow: hidden;
     box-shadow: 0 30px 60px -25px rgba(23,42,110,0.3);
     background: var(--navy);
     aspect-ratio: 16/10;
   }
-  .hero .video-wrap video {
+  .hero .video-wrap img {
     width: 100%; height: 100%; object-fit: cover;
     display: block;
   }
@@ -398,6 +399,49 @@
     padding-bottom: 2px;
   }
 
+  /* ---------- Partners ---------- */
+  .partners { background: #fff; }
+  .partner-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+    margin-top: 8px;
+  }
+  .partner {
+    text-align: left;
+  }
+  .partner .photo {
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    margin-bottom: 18px;
+    background: var(--bg-grey);
+    border-radius: 2px;
+  }
+  .partner .photo img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.4s;
+  }
+  .partner:hover .photo img { transform: scale(1.04); }
+  .partner .name {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--ink);
+    margin-bottom: 4px;
+    line-height: 1.2;
+  }
+  .partner .title {
+    font-size: 13px;
+    color: var(--navy);
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  .partner .practice {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
   /* ---------- Locations ---------- */
   .locations { background: var(--bg-soft); }
   .location-grid {
@@ -413,15 +457,23 @@
   }
   .location .city {
     font-family: var(--display);
-    font-weight: 500;
+    font-weight: 600;
     font-size: 17px;
     color: var(--navy);
     margin-bottom: 8px;
   }
+  .location .address {
+    font-size: 13px;
+    color: var(--body);
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
   .location .phone {
     font-size: 14px;
-    color: var(--body);
+    color: var(--ink);
+    font-weight: 500;
   }
+  .location .phone a:hover { color: var(--navy); }
 
   /* ---------- Footer ---------- */
   footer {
@@ -471,6 +523,7 @@
     section.block { padding: 64px 0; }
     .service-grid { grid-template-columns: repeat(2, 1fr); }
     .industry-grid { grid-template-columns: repeat(2, 1fr); }
+    .partner-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
     .cta-grid { grid-template-columns: 1fr; gap: 40px; }
     .tax-guide { flex-direction: column; text-align: center; }
     .location-grid { grid-template-columns: repeat(2, 1fr); }
@@ -500,10 +553,9 @@
   <div class="header-inner">
     <a href="#" class="logo"><img src="assets/logo.png" alt="WebsterRogers LLP"></a>
     <nav class="main">
-      <a href="#about">About</a>
       <a href="#services">Services</a>
       <a href="#industries">Industries</a>
-      <a href="#resources">Resources</a>
+      <a href="#partners">Partners</a>
       <a href="#locations">Locations</a>
       <a href="#contact" class="btn primary">Book a Consultation</a>
     </nav>
@@ -516,22 +568,19 @@
       <div>
         <div class="eyebrow">South Carolina · Established 1984</div>
         <h1>South Carolina's <span class="accent">Audit, Tax &amp; Advisory</span> Firm. Backed by <span class="num">162</span> Countries.</h1>
-        <p class="lede">WebsterRogers LLP delivers the technical depth of a national firm with the responsiveness of a local one. 140 partners and staff across 8 offices, serving South Carolina businesses since 1984.</p>
+        <p class="lede">WebsterRogers LLP delivers the technical depth of a national firm with the responsiveness of a local one. 140 partners and staff across 7 offices, serving South Carolina businesses since 1984.</p>
         <div class="actions">
           <a href="#contact" class="btn primary">Book a Consultation</a>
           <a href="#services" class="btn outline">See What We Do</a>
         </div>
       </div>
-      <div class="video-wrap">
-        <video poster="assets/building-relationships.png" controls preload="none">
-          <source src="" type="video/mp4">
-          Your browser does not support video playback.
-        </video>
-        <div class="play-overlay" onclick="this.style.display='none'; this.parentElement.querySelector('video').play();">
+      <a href="#contact" class="video-wrap" aria-label="Watch our story">
+        <img src="assets/building-relationships.png" alt="Building Relationships That Endure">
+        <div class="play-overlay">
           <div class="play-btn"></div>
         </div>
         <div class="video-caption">Building Relationships That Endure · Watch the Story</div>
-      </div>
+      </a>
     </div>
   </div>
 </section>
@@ -541,7 +590,7 @@
     <div class="stats-grid">
       <div class="stat"><div class="num">1984</div><div class="label">Founded in South Carolina</div></div>
       <div class="stat"><div class="num">140+</div><div class="label">Staff &amp; Partners</div></div>
-      <div class="stat"><div class="num">8</div><div class="label">Offices Across the State</div></div>
+      <div class="stat"><div class="num">7</div><div class="label">Offices Across South Carolina</div></div>
       <div class="stat"><div class="num">162</div><div class="label">Countries Reached via BDO Alliance</div></div>
     </div>
   </div>
@@ -599,6 +648,42 @@
   </div>
 </section>
 
+<section class="block partners" id="partners">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">Leadership</div>
+      <h2 class="section-h">The partners answering your call.</h2>
+      <p class="section-sub">Senior practitioners on every engagement. No first-year associates running point.</p>
+    </div>
+    <div class="partner-grid">
+      <div class="partner">
+        <div class="photo"><img src="assets/partner-amy.jpg" alt="Amy F. Urquhart"></div>
+        <div class="name">Amy F. Urquhart</div>
+        <div class="title">Managing Partner &amp; CEO</div>
+        <div class="practice">Individual Tax · Trusts &amp; Estates · Financial Planning</div>
+      </div>
+      <div class="partner">
+        <div class="photo"><img src="assets/partner-tom.jpg" alt="Thomas E. Fitzsimmons"></div>
+        <div class="name">Thomas E. Fitzsimmons</div>
+        <div class="title">Assurance Services Partner</div>
+        <div class="practice">Audit &amp; Attest · Quality Control</div>
+      </div>
+      <div class="partner">
+        <div class="photo"><img src="assets/partner-stephen.jpg" alt="Stephen M. Holladay"></div>
+        <div class="name">Stephen M. Holladay</div>
+        <div class="title">Partner</div>
+        <div class="practice">Tax Compliance &amp; Consulting</div>
+      </div>
+      <div class="partner">
+        <div class="photo"><img src="assets/partner-lavonne.jpg" alt="LaVonne J. Rosenberg"></div>
+        <div class="name">LaVonne J. Rosenberg</div>
+        <div class="title">Tax Services Leader</div>
+        <div class="practice">Manufacturing · Distribution · International Tax</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="cta-row" id="resources">
   <div class="wrap">
     <div class="cta-grid">
@@ -624,18 +709,45 @@
   <div class="wrap">
     <div class="section-head">
       <div class="section-eyebrow">Locations</div>
-      <h2 class="section-h">Eight offices. One phone call away.</h2>
+      <h2 class="section-h">Seven offices. One phone call away.</h2>
       <p class="section-sub">From the coast to the upstate, your local WebsterRogers team is in your market.</p>
     </div>
     <div class="location-grid">
-      <div class="location"><div class="city">Charleston</div><div class="phone">(843) 723-1717</div></div>
-      <div class="location"><div class="city">Columbia</div><div class="phone">(803) 256-7150</div></div>
-      <div class="location"><div class="city">Florence</div><div class="phone">(843) 665-5900</div></div>
-      <div class="location"><div class="city">Greenville</div><div class="phone">(864) 271-9100</div></div>
-      <div class="location"><div class="city">Hilton Head</div><div class="phone">(843) 785-7300</div></div>
-      <div class="location"><div class="city">Myrtle Beach</div><div class="phone">(843) 449-1717</div></div>
-      <div class="location"><div class="city">Pawleys Island</div><div class="phone">(843) 237-9050</div></div>
-      <div class="location"><div class="city">Sumter</div><div class="phone">(803) 773-1409</div></div>
+      <div class="location">
+        <div class="city">Charleston</div>
+        <div class="address">40 Calhoun Street, Suite 460<br>Charleston, SC 29401</div>
+        <div class="phone"><a href="tel:8435775843">(843) 577-5843</a></div>
+      </div>
+      <div class="location">
+        <div class="city">Columbia</div>
+        <div class="address">1320 Main Street, Suite 300<br>Columbia, SC 29201</div>
+        <div class="phone"><a href="tel:8033120001">(803) 312-0001</a></div>
+      </div>
+      <div class="location">
+        <div class="city">Florence</div>
+        <div class="address">1411 Second Loop Road<br>Florence, SC 29505</div>
+        <div class="phone"><a href="tel:8436655900">(843) 665-5900</a></div>
+      </div>
+      <div class="location">
+        <div class="city">Hilton Head</div>
+        <div class="address">1 Westbury Park Way, Suite 200<br>Bluffton, SC 29910</div>
+        <div class="phone"><a href="tel:8437068440">(843) 706-8440</a></div>
+      </div>
+      <div class="location">
+        <div class="city">Myrtle Beach</div>
+        <div class="address">950 48th Avenue North, Suite 201<br>Myrtle Beach, SC 29577</div>
+        <div class="phone"><a href="tel:8434481500">(843) 448-1500</a></div>
+      </div>
+      <div class="location">
+        <div class="city">Pawleys Island</div>
+        <div class="address">147 Professional Lane, Unit A<br>Pawleys Island, SC 29585</div>
+        <div class="phone"><a href="tel:8432379004">(843) 237-9004</a></div>
+      </div>
+      <div class="location">
+        <div class="city">Spartanburg</div>
+        <div class="address">100 Dunbar Street, Suite 100<br>Spartanburg, SC 29306</div>
+        <div class="phone"><a href="tel:8436655900">(843) 665-5900</a></div>
+      </div>
     </div>
   </div>
 </section>
@@ -665,7 +777,7 @@
         <h4>Contact</h4>
         <a href="tel:8436655900">(843) 665-5900</a>
         <a href="mailto:info@websterrogers.com">info@websterrogers.com</a>
-        <a href="#locations">All 8 Offices</a>
+        <a href="#locations">All 7 Offices</a>
       </div>
     </div>
     <div class="footer-bottom">
