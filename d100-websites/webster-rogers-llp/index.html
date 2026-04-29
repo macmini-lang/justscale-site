@@ -10,7 +10,7 @@
 <meta property="og:image" content="assets/building-relationships.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --navy: #172a6e;
@@ -22,7 +22,7 @@
     --bg: #ffffff;
     --bg-soft: #f7f8fb;
     --bg-grey: #ebebeb;
-    --display: "Krona One", Georgia, serif;
+    --display: "Lora", Georgia, "Times New Roman", serif;
     --sans: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -122,13 +122,15 @@
   }
   .hero h1 {
     font-family: var(--display);
-    font-weight: 400;
-    font-size: clamp(36px, 4.5vw, 58px);
-    line-height: 1.1;
+    font-weight: 500;
+    font-size: clamp(34px, 4vw, 52px);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
     color: var(--ink);
     margin-bottom: 24px;
   }
-  .hero h1 .accent { color: var(--navy); }
+  .hero h1 .accent { color: var(--navy); font-weight: 600; }
+  .hero h1 .num { color: var(--navy); font-weight: 600; }
   .hero .lede {
     font-size: 18px;
     line-height: 1.7;
@@ -139,12 +141,55 @@
   .hero .actions {
     display: flex; gap: 14px; flex-wrap: wrap;
   }
-  .hero .img {
+  .hero .video-wrap {
+    position: relative;
     border-radius: 4px;
     overflow: hidden;
-    box-shadow: 0 30px 60px -25px rgba(23,42,110,0.25);
+    box-shadow: 0 30px 60px -25px rgba(23,42,110,0.3);
+    background: var(--navy);
+    aspect-ratio: 16/10;
   }
-  .hero .img img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/3; }
+  .hero .video-wrap video {
+    width: 100%; height: 100%; object-fit: cover;
+    display: block;
+  }
+  .hero .play-overlay {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, rgba(23,42,110,0.25) 0%, rgba(23,42,110,0.55) 100%);
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  .hero .play-overlay:hover { background: linear-gradient(135deg, rgba(23,42,110,0.15) 0%, rgba(23,42,110,0.45) 100%); }
+  .hero .play-btn {
+    width: 88px; height: 88px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.95);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 12px 36px rgba(0,0,0,0.3);
+    transition: transform 0.2s;
+  }
+  .hero .play-overlay:hover .play-btn { transform: scale(1.08); }
+  .hero .play-btn::before {
+    content: "";
+    display: block;
+    width: 0; height: 0;
+    border-left: 26px solid var(--navy);
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+    margin-left: 6px;
+  }
+  .hero .video-caption {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 18px 24px;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    z-index: 2;
+  }
 
   /* ---------- Stats ---------- */
   .stats {
@@ -160,7 +205,7 @@
   }
   .stat .num {
     font-family: var(--display);
-    font-weight: 400;
+    font-weight: 600;
     font-size: clamp(36px, 4vw, 52px);
     color: var(--navy);
     line-height: 1;
@@ -186,7 +231,7 @@
   }
   .section-h {
     font-family: var(--display);
-    font-weight: 400;
+    font-weight: 500;
     font-size: clamp(28px, 3.5vw, 42px);
     line-height: 1.15;
     color: var(--ink);
@@ -228,7 +273,7 @@
   }
   .service h3 {
     font-family: var(--display);
-    font-weight: 400;
+    font-weight: 500;
     font-size: 17px;
     color: var(--ink);
     margin-bottom: 14px;
@@ -268,7 +313,7 @@
   .industry .label {
     color: #fff;
     font-family: var(--display);
-    font-weight: 400;
+    font-weight: 500;
     font-size: 16px;
     line-height: 1.2;
   }
@@ -291,7 +336,7 @@
   }
   .cta-row h2 {
     font-family: var(--display);
-    font-weight: 400;
+    font-weight: 500;
     font-size: clamp(26px, 3vw, 36px);
     line-height: 1.2;
     color: #fff;
@@ -335,7 +380,7 @@
   .tax-guide img { width: 110px; height: auto; flex-shrink: 0; box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
   .tax-guide h3 {
     font-family: var(--display);
-    font-weight: 400;
+    font-weight: 500;
     font-size: 18px;
     color: #fff;
     margin-bottom: 8px;
@@ -368,7 +413,7 @@
   }
   .location .city {
     font-family: var(--display);
-    font-weight: 400;
+    font-weight: 500;
     font-size: 17px;
     color: var(--navy);
     margin-bottom: 8px;
@@ -470,15 +515,22 @@
     <div class="hero-grid">
       <div>
         <div class="eyebrow">South Carolina · Established 1984</div>
-        <h1>Local Relationships. <span class="accent">Global Reach.</span> Depth of Expertise.</h1>
-        <p class="lede">WebsterRogers is a leading South Carolina-based accounting and consulting firm. 140 staff and partners across 8 offices, with worldwide resources through our BDO Alliance USA membership.</p>
+        <h1>South Carolina's <span class="accent">Audit, Tax &amp; Advisory</span> Firm. Backed by <span class="num">162</span> Countries.</h1>
+        <p class="lede">WebsterRogers LLP delivers the technical depth of a national firm with the responsiveness of a local one. 140 partners and staff across 8 offices, serving South Carolina businesses since 1984.</p>
         <div class="actions">
           <a href="#contact" class="btn primary">Book a Consultation</a>
-          <a href="#services" class="btn outline">View Services</a>
+          <a href="#services" class="btn outline">See What We Do</a>
         </div>
       </div>
-      <div class="img">
-        <img src="assets/building-relationships.png" alt="Building Relationships That Endure">
+      <div class="video-wrap">
+        <video poster="assets/building-relationships.png" controls preload="none">
+          <source src="" type="video/mp4">
+          Your browser does not support video playback.
+        </video>
+        <div class="play-overlay" onclick="this.style.display='none'; this.parentElement.querySelector('video').play();">
+          <div class="play-btn"></div>
+        </div>
+        <div class="video-caption">Building Relationships That Endure · Watch the Story</div>
       </div>
     </div>
   </div>
@@ -498,30 +550,30 @@
 <section class="block services" id="services">
   <div class="wrap">
     <div class="section-head">
-      <div class="section-eyebrow">What We Do</div>
-      <h2 class="section-h">Five core practices, working together for your business.</h2>
-      <p class="section-sub">From audit and tax to outsourced accounting and strategic consulting, our partners deliver the technical depth of a national firm with the responsiveness of a local one.</p>
+      <div class="section-eyebrow">Services</div>
+      <h2 class="section-h">Everything your business needs from an accounting partner.</h2>
+      <p class="section-sub">Five practices. One team. Senior partners on every engagement.</p>
     </div>
     <div class="service-grid">
       <div class="service">
         <h3>Assurance</h3>
-        <p>Audit, attest, and review engagements that meet the highest professional standards for public and private companies.</p>
+        <p>Independent audits and reviews that satisfy lenders, investors, and regulators with no surprises at year-end.</p>
       </div>
       <div class="service">
         <h3>Tax</h3>
-        <p>Compliance, planning, international, estate, and M&amp;A tax services for individuals and businesses of every size.</p>
+        <p>Federal, state, international, and estate tax planning that minimizes liability and keeps you ahead of every deadline.</p>
       </div>
       <div class="service">
         <h3>Accounting</h3>
-        <p>Bookkeeping, financial statements, and accounting support engineered for accuracy and timeliness.</p>
+        <p>Books, financial statements, and monthly reporting handled accurately and on time, every month.</p>
       </div>
       <div class="service">
         <h3>Outsourced</h3>
-        <p>Outsourced controller, CFO, and back-office services that give you a full finance team without the overhead.</p>
+        <p>A full controller, CFO, and back-office team. None of the headcount, all of the output.</p>
       </div>
       <div class="service">
         <h3>Consulting</h3>
-        <p>Healthcare advisory, valuations, litigation support, HR, and strategic consulting led by senior practitioners.</p>
+        <p>Healthcare advisory, business valuations, litigation support, and HR consulting led by senior partners.</p>
       </div>
     </div>
   </div>
@@ -530,9 +582,9 @@
 <section class="block industries" id="industries">
   <div class="wrap">
     <div class="section-head">
-      <div class="section-eyebrow">Industries Served</div>
-      <h2 class="section-h">Specialized expertise across eight industries.</h2>
-      <p class="section-sub">We work with the operators, owners, and boards who define South Carolina's economy.</p>
+      <div class="section-eyebrow">Industries</div>
+      <h2 class="section-h">Built for the businesses that built South Carolina.</h2>
+      <p class="section-sub">Specialized teams for the eight industries that drive our state's economy.</p>
     </div>
     <div class="industry-grid">
       <div class="industry"><img src="assets/industry-manufacturing.jpg" alt="Manufacturing"><div class="overlay"><div class="label">Manufacturing &amp; Distribution</div></div></div>
@@ -551,16 +603,16 @@
   <div class="wrap">
     <div class="cta-grid">
       <div>
-        <div class="eyebrow">Global Resources, Local Service</div>
-        <h2>Member of the BDO Alliance USA.</h2>
-        <p>Through our BDO Alliance membership, our clients have direct access to the resources, expertise, and reach of a global accounting network spanning 1,500+ offices in 162 countries, while still working with the same South Carolina partners who know their business.</p>
+        <div class="eyebrow">Global Resources, Local Partners</div>
+        <h2>When the work goes global, we go with you.</h2>
+        <p>As a member of the BDO Alliance USA, our clients tap into 1,500+ offices in 162 countries for international tax, cross-border M&amp;A, and multi-state expansion. Same South Carolina partner on the call. Global firepower behind them.</p>
         <div class="bdo-logo"><img src="assets/bdo-alliance.jpg" alt="BDO Alliance USA"></div>
       </div>
       <div class="tax-guide">
-        <img src="assets/tax-guide-cover.png" alt="2025-2026 Tax Planning Guide">
+        <img src="assets/tax-guide-cover.png" alt="2025 to 2026 Tax Planning Guide">
         <div>
           <h3>2025 to 2026 Tax Planning Guide</h3>
-          <p>Year-end tax strategies, retirement contributions, charitable giving, and business deductions. Free download.</p>
+          <p>Year-end strategies, retirement contributions, charitable giving, and business deductions. Free PDF.</p>
           <a href="#">Download the Guide →</a>
         </div>
       </div>
@@ -571,8 +623,9 @@
 <section class="block locations" id="locations">
   <div class="wrap">
     <div class="section-head">
-      <div class="section-eyebrow">Eight Offices Across South Carolina</div>
-      <h2 class="section-h">Find your local team.</h2>
+      <div class="section-eyebrow">Locations</div>
+      <h2 class="section-h">Eight offices. One phone call away.</h2>
+      <p class="section-sub">From the coast to the upstate, your local WebsterRogers team is in your market.</p>
     </div>
     <div class="location-grid">
       <div class="location"><div class="city">Charleston</div><div class="phone">(843) 723-1717</div></div>
