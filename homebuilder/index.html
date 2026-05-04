@@ -1,0 +1,2054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{COMPANY_NAME}} | Custom homes built for the way you actually live.</title>
+  <meta name="description" content="{{COMPANY_NAME}}. Architecture, construction, and design under one roof. A small number of homes a year. Every one delivered on time, on the lot you've been dreaming on.">
+  <meta property="og:title" content="{{COMPANY_NAME}} | Custom homes built for the way you actually live.">
+  <meta property="og:description" content="Architecture, construction, and design under one roof. A small number of homes a year. Every one delivered on time, on the lot you've been dreaming on.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!--
+    DISPLAY FONT OPTIONS — four candidates loaded for testing.
+    Active font is set in the :root CSS variable --font-display below.
+    To swap: change the var(...) value to one of the four font names.
+      1. 'Cormorant Garamond' . classical, elegant, traditional luxury
+      2. 'Playfair Display'   . modern editorial serif (most popular for luxury)
+      3. 'DM Serif Display'   . bold, contemporary, confident
+      4. 'Fraunces'           . modern variable serif with character (original)
+  -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=DM+Serif+Display:ital@0;1&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      /* Display font. Swap between 'Cormorant Garamond', 'Playfair Display', 'DM Serif Display', 'Fraunces'. */
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+
+      /* Forest accent. Deep, timeless */
+      --accent: #2D3F2A;
+      --accent-hover: #1F2C1D;
+      --accent-dim: rgba(45, 63, 42, 0.08);
+      --accent-glow: rgba(45, 63, 42, 0.18);
+
+      /* Warm cream core */
+      --bg: #F7F4ED;
+      --bg-1: #EFEBDF;
+      --bg-2: #FBFAF5;
+      --bg-card: #FFFFFF;
+      --bg-card-hover: #FBFAF5;
+
+      /* Text. Warm charcoal, never pure black */
+      --text: #1F1D1A;
+      --text-2: #5C564E;
+      --text-3: #8B847A;
+      --text-4: #B8B2A6;
+
+      --border: rgba(31, 29, 26, 0.08);
+      --border-strong: rgba(31, 29, 26, 0.16);
+
+      --r-sm: 6px;
+      --r: 10px;
+      --r-lg: 16px;
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--bg);
+      overflow-x: clip;
+    }
+
+    h1, h2 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+      color: var(--text);
+    }
+    h3, h4 {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -0.018em;
+      color: var(--text);
+    }
+    h1 { font-size: clamp(2.2rem, 1.3rem + 2.8vw, 3.65rem); font-weight: 700; letter-spacing: -0.035em; }
+    h2 { font-size: clamp(2.1rem, 1.3rem + 3vw, 3.75rem); font-weight: 700; letter-spacing: -0.03em; }
+    h3 { font-size: clamp(1.3rem, 1.05rem + 1vw, 1.65rem); font-weight: 700; letter-spacing: -0.018em; }
+    p { max-width: 62ch; color: var(--text-2); }
+
+    a { color: inherit; text-decoration: none; transition: color 200ms var(--ease); }
+    img, svg { display: block; max-width: 100%; }
+    ul { list-style: none; }
+
+    .wrap { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 40px); }
+
+    .eyebrow {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 22px;
+    }
+
+    /* ========== BUTTONS ========== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 0.92rem;
+      letter-spacing: -0.005em;
+      padding: 16px 28px;
+      border-radius: var(--r);
+      border: none;
+      cursor: pointer;
+      transition: transform 220ms var(--ease), background 220ms var(--ease), box-shadow 280ms var(--ease), color 220ms var(--ease), border-color 220ms var(--ease);
+    }
+    .btn svg { transition: transform 280ms var(--ease); width: 14px; height: 14px; }
+    .btn:hover svg { transform: translateX(4px); }
+    .btn--primary { background: var(--accent); color: #fff; }
+    .btn--primary:hover { background: var(--accent-hover); color: #fff; box-shadow: 0 16px 32px -10px var(--accent-glow); transform: translateY(-1px); }
+    .btn--dark { background: var(--text); color: var(--bg); }
+    .btn--dark:hover { background: #000; color: var(--bg); transform: translateY(-1px); }
+    .btn--outline { background: transparent; color: var(--text); border: 1.5px solid var(--border-strong); }
+    .btn--outline:hover { background: var(--text); color: var(--bg); border-color: var(--text); }
+
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.45; } }
+
+    /* ========== NAV ========== */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247, 244, 237, 0.88);
+      backdrop-filter: saturate(160%) blur(18px);
+      -webkit-backdrop-filter: saturate(160%) blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+    }
+    .nav__logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.25rem;
+      letter-spacing: -0.025em;
+      color: var(--text);
+    }
+    .nav__logo-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.05rem;
+      letter-spacing: -0.04em;
+      overflow: hidden;
+    }
+    .nav__logo-mark img { width: 100%; height: 100%; object-fit: cover; }
+    .nav__links { display: none; gap: 36px; }
+    .nav__links a { font-size: 0.9rem; font-weight: 500; color: var(--text-2); }
+    .nav__links a:hover { color: var(--text); }
+    .nav__cta { display: flex; align-items: center; gap: 16px; }
+    .nav__phone { display: none; font-weight: 500; font-size: 0.9rem; color: var(--text-2); }
+    .nav__phone:hover { color: var(--accent); }
+    .nav .btn { padding: 11px 22px; font-size: 0.85rem; }
+
+    @media (min-width: 920px) {
+      .nav__links { display: flex; }
+      .nav__phone { display: inline-flex; }
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      position: relative;
+      background: var(--bg);
+      padding: clamp(20px, 3vw, 36px) 0 clamp(40px, 6vw, 72px);
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(60% 70% at 90% 10%, rgba(45, 63, 42, 0.08), transparent 65%),
+        radial-gradient(40% 50% at 10% 95%, rgba(45, 63, 42, 0.04), transparent 70%);
+      z-index: -1;
+    }
+    .hero__inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: clamp(18px, 2.5vw, 30px);
+    }
+    .hero__main {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(36px, 5vw, 56px);
+      align-items: center;
+    }
+    @media (min-width: 960px) {
+      .hero__main {
+        grid-template-columns: 0.95fr 1.1fr;
+        column-gap: clamp(40px, 4vw, 60px);
+        align-items: center;
+      }
+    }
+
+    .hero__media {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      background: linear-gradient(135deg, #E5DFD0 0%, #C9C0A9 100%);
+      border-radius: 10px;
+      border: 1px solid var(--border-strong);
+      overflow: hidden;
+      box-shadow: 0 40px 80px -28px rgba(31, 29, 26, 0.2);
+    }
+    .hero__media::after {
+      content: 'Hero media. Drop a finished-home photo or short video here.';
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+      color: var(--text-3);
+      font-family: 'Inter', sans-serif;
+      font-style: italic;
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+    }
+    .hero__media img,
+    .hero__media video { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .hero__media:has(img)::after,
+    .hero__media:has(video)::after { display: none; }
+
+    .hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(45, 63, 42, 0.05);
+      border: 1px solid rgba(45, 63, 42, 0.16);
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--accent);
+      margin-bottom: 24px;
+      letter-spacing: 0.01em;
+    }
+    .hero__badge .dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; animation: pulse 2.4s var(--ease) infinite; }
+
+    .hero h1 { max-width: none; }
+    .hero h1 span { display: block; }
+    .hero h1 .accent { font-style: italic; color: var(--accent); font-weight: 600; }
+    .hero p {
+      font-size: clamp(1.05rem, 0.95rem + 0.4vw, 1.2rem);
+      margin: 24px 0 32px;
+      max-width: 52ch;
+      line-height: 1.55;
+    }
+    .hero__ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero__proof {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(20px, 3vw, 44px);
+      padding-top: 22px;
+      border-top: 1px solid var(--border);
+      max-width: 720px;
+    }
+    .hero__stat-n {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 1.4rem + 2vw, 2.85rem);
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -0.035em;
+    }
+    .hero__stat-n .accent { color: var(--accent); font-style: italic; font-weight: 400; }
+    .hero__stat-l { font-family: 'Inter', sans-serif; font-size: 0.78rem; color: var(--text-3); margin-top: 10px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; }
+
+    /* ========== MARQUEE ========== */
+    .marquee {
+      background: var(--bg-1);
+      padding: 22px 0;
+      overflow: hidden;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .marquee__track {
+      display: flex;
+      gap: 56px;
+      white-space: nowrap;
+      animation: marquee 48s linear infinite;
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-style: italic;
+      font-size: clamp(1.05rem, 0.9rem + 0.6vw, 1.4rem);
+      letter-spacing: -0.015em;
+      color: var(--text);
+    }
+    .marquee__track span { display: inline-flex; align-items: center; gap: 56px; }
+    .marquee__track span::after {
+      content: '';
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ========== SECTION DEFAULTS ========== */
+    section { padding: clamp(80px, 10vw, 140px) 0; position: relative; }
+    .section-head { max-width: 740px; margin-bottom: clamp(48px, 6vw, 80px); }
+    .section-head h2 { margin-bottom: 20px; }
+    .section-head h2 .accent { font-style: italic; color: var(--accent); font-weight: 600; display: block; }
+    .section-head p { font-size: 1.05rem; max-width: 60ch; }
+    .section-foot { margin-top: clamp(40px, 5vw, 60px); display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+    .section-foot__note { color: var(--text-3); font-size: 0.95rem; font-style: italic; }
+
+    /* ========== SERVICES ========== */
+    .services { background: var(--bg); }
+    .svc-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    @media (min-width: 720px) { .svc-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; } }
+    @media (min-width: 1100px) { .svc-grid { grid-template-columns: repeat(4, 1fr); } }
+
+    .svc {
+      position: relative;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 36px 30px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 320ms var(--ease), box-shadow 320ms var(--ease), border-color 320ms var(--ease);
+    }
+    .svc:hover { transform: translateY(-4px); border-color: var(--border-strong); box-shadow: 0 30px 60px -28px rgba(31, 29, 26, 0.12); }
+    .svc--featured { border-color: var(--accent); }
+    .svc--featured:hover { box-shadow: 0 30px 60px -16px var(--accent-glow); }
+
+    .svc__tag {
+      position: absolute;
+      top: -11px;
+      left: 30px;
+      background: var(--accent);
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 999px;
+    }
+    .svc__num {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 12px;
+      letter-spacing: 0.02em;
+    }
+    .svc__name { font-size: 1.4rem; margin-bottom: 8px; letter-spacing: -0.025em; }
+    .svc__lede { font-size: 0.95rem; color: var(--text-2); margin-bottom: 22px; line-height: 1.55; }
+    .svc__divider {
+      height: 1px;
+      background: var(--border);
+      margin-bottom: 22px;
+    }
+    .svc__includes { flex: 1; margin-bottom: 26px; }
+    .svc__includes li {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 10px;
+      font-size: 0.92rem;
+      color: var(--text-2);
+      line-height: 1.55;
+    }
+    .svc__includes li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+    .svc .btn { width: 100%; padding: 13px 20px; font-size: 0.85rem; }
+
+    /* ========== PROCESS (flowchart) ========== */
+    .process { background: var(--bg-1); }
+    .steps {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    @media (min-width: 760px) {
+      .steps {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+      }
+    }
+    .step {
+      position: relative;
+      text-align: center;
+      padding: 0 8px;
+    }
+    .step__circle {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--bg-1);
+      border: 1.5px solid var(--accent);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 700;
+      font-size: 1.4rem;
+      letter-spacing: -0.02em;
+      margin: 0 auto 22px;
+      position: relative;
+      z-index: 2;
+      transition: background 240ms var(--ease), color 240ms var(--ease);
+    }
+    .step:hover .step__circle { background: var(--accent); color: var(--bg-1); }
+    .step__label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .step h3 { margin-bottom: 10px; font-size: 1.18rem; }
+    .step p {
+      font-size: 0.92rem;
+      line-height: 1.6;
+      color: var(--text-2);
+      max-width: 30ch;
+      margin: 0 auto;
+    }
+    /* Connector lines */
+    @media (min-width: 760px) {
+      .step:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        top: 32px;
+        left: calc(50% + 36px);
+        right: calc(-50% + 36px);
+        height: 1px;
+        background: var(--border-strong);
+        z-index: 1;
+      }
+    }
+    @media (max-width: 759px) {
+      .step:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        top: 64px;
+        left: 50%;
+        width: 1px;
+        height: 40px;
+        background: var(--border-strong);
+        transform: translateX(-50%);
+        z-index: 1;
+      }
+    }
+
+    /* ========== PORTFOLIO (dark contrast) ========== */
+    .portfolio {
+      background: #1A2618;
+      color: #F0EDE6;
+      position: relative;
+      overflow: hidden;
+    }
+    .portfolio::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(60% 70% at 15% 80%, rgba(200, 212, 188, 0.07), transparent 65%);
+      pointer-events: none;
+    }
+    .portfolio .section-head { position: relative; z-index: 1; }
+    .portfolio .eyebrow { color: #B5C6AA; }
+    .portfolio .section-head h2 { color: #F7F4ED; }
+    .portfolio .section-head h2 .accent { color: #B5C6AA; }
+    .portfolio .section-head p { color: rgba(247, 244, 237, 0.72); }
+    .portfolio .section-foot__note { color: rgba(247, 244, 237, 0.55); }
+    .portfolio .pf-ig { color: #F0EDE6; }
+    .portfolio .pf-ig:hover { color: #B5C6AA; }
+
+    .pf-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      position: relative;
+      z-index: 1;
+    }
+    @media (min-width: 760px) { .pf-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; } }
+    .pf-item {
+      aspect-ratio: 4 / 3;
+      background: linear-gradient(135deg, #2D3F2A 0%, #131D11 100%);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(247, 244, 237, 0.4);
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      transition: transform 420ms var(--ease);
+    }
+    .pf-item { cursor: pointer; }
+    .pf-item:hover { transform: scale(1.012); }
+    .pf-item:hover .pf-item__hint { opacity: 1; transform: translateY(0); }
+    .pf-item__hint {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 6px 12px;
+      border-radius: 999px;
+      opacity: 0;
+      transform: translateY(-6px);
+      transition: opacity 280ms var(--ease), transform 280ms var(--ease);
+      z-index: 3;
+      pointer-events: none;
+    }
+    .pf-item img { width: 100%; height: 100%; object-fit: cover; }
+    .pf-item__caption {
+      position: absolute;
+      bottom: 16px;
+      left: 18px;
+      right: 18px;
+      color: rgba(255, 255, 255, 0.95);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      z-index: 2;
+      display: none;
+    }
+    .pf-item:has(img) .pf-item__caption { display: block; }
+    .pf-item:has(img)::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.5));
+      z-index: 1;
+    }
+    .pf-ig {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 32px;
+      color: var(--text);
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+    .pf-ig:hover { color: var(--accent); }
+    .pf-ig svg { width: 18px; height: 18px; }
+
+    /* ========== WHY ========== */
+    .why { background: var(--bg-1); overflow: hidden; }
+    .why::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(50% 70% at 85% 50%, rgba(45, 63, 42, 0.05), transparent 60%);
+      pointer-events: none;
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      position: relative;
+    }
+    @media (min-width: 760px) { .why-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1100px) { .why-grid { grid-template-columns: repeat(4, 1fr); } }
+    .why__item {
+      padding: 36px 30px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      transition: border-color 320ms var(--ease), transform 320ms var(--ease), box-shadow 320ms var(--ease);
+    }
+    .why__item:hover { border-color: var(--border-strong); transform: translateY(-4px); box-shadow: 0 30px 60px -28px rgba(31, 29, 26, 0.12); }
+    .why__icon {
+      width: 44px;
+      height: 44px;
+      background: var(--accent);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-style: italic;
+      font-size: 1rem;
+      margin-bottom: 24px;
+    }
+    .why__item h3 { font-size: 1.25rem; margin-bottom: 12px; }
+    .why__item p { max-width: none; font-size: 0.96rem; line-height: 1.6; }
+    .why__pledge {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-family: 'Inter', sans-serif;
+      font-style: italic;
+      font-size: 0.86rem;
+      color: var(--accent);
+      font-weight: 500;
+      letter-spacing: -0.005em;
+      line-height: 1.5;
+    }
+
+    /* ========== REVIEWS ========== */
+    .reviews { background: var(--bg); }
+    .review-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    @media (min-width: 820px) { .review-grid { grid-template-columns: repeat(3, 1fr); } }
+    .review {
+      background: var(--bg-card);
+      padding: 36px 32px;
+      border-radius: var(--r-lg);
+      border: 1px solid var(--border);
+      position: relative;
+      transition: transform 320ms var(--ease), border-color 320ms var(--ease), box-shadow 320ms var(--ease);
+    }
+    .review:hover { transform: translateY(-4px); border-color: var(--border-strong); box-shadow: 0 30px 60px -28px rgba(31, 29, 26, 0.12); }
+    .review__quote {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 2.5rem;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    .review__body { font-family: var(--font-display); font-weight: 400; font-size: 1.1rem; color: var(--text); line-height: 1.45; margin-bottom: 24px; letter-spacing: -0.01em; }
+    .review__name { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.92rem; color: var(--text); }
+    .review__meta { font-family: 'Inter', sans-serif; font-size: 0.82rem; color: var(--text-3); margin-top: 4px; }
+
+    /* ========== FAQ ========== */
+    .faq { background: var(--bg-1); }
+    .faq-list { max-width: 920px; }
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      margin-bottom: 10px;
+      overflow: hidden;
+      transition: border-color 240ms var(--ease);
+    }
+    .faq-item[open] { border-color: var(--border-strong); }
+    .faq-q {
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      padding: 24px 28px;
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: -0.012em;
+      list-style: none;
+    }
+    .faq-q::-webkit-details-marker { display: none; }
+    .faq-q::after {
+      content: '';
+      width: 13px;
+      height: 13px;
+      flex-shrink: 0;
+      background: center / contain no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232D3F2A' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M12 5v14M5 12h14'/%3E%3C/svg%3E");
+      transition: transform 260ms var(--ease);
+    }
+    .faq-item[open] .faq-q::after { transform: rotate(135deg); }
+    .faq-a { padding: 0 28px 24px; color: var(--text-2); font-size: 0.97rem; line-height: 1.7; max-width: 78ch; }
+
+    /* ========== INQUIRE ========== */
+    .inquire { background: var(--bg); overflow: hidden; }
+    .inquire::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(50% 60% at 90% 10%, rgba(45, 63, 42, 0.06), transparent 60%);
+      pointer-events: none;
+    }
+    .inquire__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      position: relative;
+    }
+    @media (min-width: 920px) { .inquire__grid { grid-template-columns: 1fr 1.15fr; gap: 72px; } }
+    .inquire__intro p { margin-bottom: 28px; max-width: 46ch; }
+    .inquire__contact { margin-top: 36px; display: grid; gap: 0; }
+    .inquire__contact-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 20px 0;
+      border-top: 1px solid var(--border);
+    }
+    .inquire__contact-item:first-child { border-top: none; padding-top: 0; }
+    .inquire__contact-label { font-size: 0.7rem; color: var(--text-3); font-weight: 500; margin-bottom: 6px; letter-spacing: 0.08em; text-transform: uppercase; }
+    .inquire__contact-val { color: var(--text); font-weight: 500; font-size: 1rem; letter-spacing: -0.01em; }
+    .inquire__contact-val:hover { color: var(--accent); }
+
+    .form {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 40px;
+      border-radius: var(--r-lg);
+      position: relative;
+      box-shadow: 0 30px 60px -28px rgba(31, 29, 26, 0.1);
+    }
+    @media (max-width: 560px) { .form { padding: 28px 22px; } }
+    .form h3 { margin-bottom: 8px; font-size: 1.6rem; }
+    .form__sub { font-size: 0.95rem; color: var(--text-3); margin-bottom: 28px; }
+    .form__row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    @media (min-width: 520px) { .form__row--2 { grid-template-columns: 1fr 1fr; } }
+    .form__field label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-2);
+      margin-bottom: 8px;
+      letter-spacing: 0.02em;
+    }
+    .form__field input,
+    .form__field select,
+    .form__field textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid var(--border-strong);
+      border-radius: var(--r-sm);
+      font-family: inherit;
+      font-size: 0.97rem;
+      color: var(--text);
+      background: var(--bg-2);
+      transition: border-color 200ms var(--ease), box-shadow 200ms var(--ease), background 200ms var(--ease);
+    }
+    .form__field input::placeholder,
+    .form__field textarea::placeholder { color: var(--text-3); }
+    .form__field input:focus,
+    .form__field select:focus,
+    .form__field textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      background: #fff;
+      box-shadow: 0 0 0 4px var(--accent-dim);
+    }
+    .form__field textarea { resize: vertical; min-height: 120px; }
+    .form .btn { width: 100%; margin-top: 10px; padding: 17px; font-size: 0.95rem; }
+    .form__note { font-size: 0.82rem; color: var(--text-3); margin-top: 16px; text-align: center; font-style: italic; }
+    .form__success {
+      display: none;
+      background: rgba(45, 63, 42, 0.06);
+      color: var(--accent);
+      border: 1px solid rgba(45, 63, 42, 0.2);
+      padding: 16px;
+      border-radius: var(--r-sm);
+      text-align: center;
+      font-weight: 500;
+      font-size: 0.94rem;
+      margin-bottom: 20px;
+    }
+
+    /* ========== FOOTER ========== */
+    footer { background: var(--bg); color: var(--text-3); padding: 80px 0 40px; font-size: 0.92rem; border-top: 1px solid var(--border); }
+    .foot {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      margin-bottom: 52px;
+    }
+    @media (min-width: 760px) { .foot { grid-template-columns: 2fr 1fr 1fr; gap: 64px; } }
+    .foot h4 { font-family: 'Inter', sans-serif; font-size: 0.72rem; color: var(--text-2); margin-bottom: 18px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+    .foot a { color: var(--text-3); display: flex; align-items: center; gap: 8px; padding: 6px 0; transition: color 220ms var(--ease); }
+    .foot a:hover { color: var(--accent); }
+    .foot__logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.3rem;
+      color: var(--text);
+      margin-bottom: 16px;
+      letter-spacing: -0.025em;
+    }
+    .foot__logo-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 9px;
+      background: var(--accent);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      overflow: hidden;
+    }
+    .foot__logo-mark img { width: 100%; height: 100%; object-fit: cover; }
+    .foot__about { max-width: 40ch; color: var(--text-3); font-size: 0.92rem; line-height: 1.7; }
+    .foot__social { display: flex; gap: 10px; margin-top: 20px; }
+    .foot__social a {
+      width: 38px;
+      height: 38px;
+      border-radius: 9px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      transition: background 220ms var(--ease), border-color 220ms var(--ease);
+    }
+    .foot__social a:hover { background: var(--accent); border-color: var(--accent); }
+    .foot__social a:hover svg { color: #fff; }
+    .foot__social svg { width: 16px; height: 16px; color: var(--text-2); transition: color 220ms var(--ease); }
+    .foot-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 26px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      color: var(--text-4);
+    }
+
+    /* ========== MOBILE TIGHTENING ========== */
+    @media (max-width: 720px) {
+      body { font-size: 15.5px; }
+      h1 { letter-spacing: -0.03em; }
+      h2 { font-size: 1.85rem; letter-spacing: -0.025em; }
+      .wrap { padding: 0 24px; }
+      section { padding: 60px 0 !important; }
+      .section-head { margin-bottom: 36px; }
+      .section-head p { font-size: 0.98rem; }
+      .announce { display: none; }
+      .hero { padding: 12px 0 48px; }
+      .hero__inner { gap: 32px; }
+      .hero__badge { margin-bottom: 18px; padding: 6px 12px; font-size: 0.74rem; }
+      .hero p { margin: 18px 0 26px; font-size: 1rem; }
+      .hero__proof { margin-top: 36px; padding-top: 28px; gap: 16px; }
+      .hero__stat-n { font-size: 1.7rem; }
+      .hero__stat-l { font-size: 0.7rem; margin-top: 6px; }
+      .hero__media { border-radius: 6px; }
+      .hero__ctas { gap: 10px; }
+      .hero__ctas .btn { flex: 1; padding: 13px 16px; font-size: 0.82rem; white-space: nowrap; gap: 6px; }
+      .hero__ctas .btn svg { width: 12px; height: 12px; }
+      .nav__inner { padding: 14px 0; }
+      .nav__logo { font-size: 1.1rem; }
+      .nav__logo-mark { width: 32px; height: 32px; font-size: 0.95rem; }
+      .marquee { padding: 16px 0; }
+      .marquee__track { gap: 36px; font-size: 1.1rem; }
+      .marquee__track span { gap: 36px; }
+      .svc { padding: 30px 26px; }
+      .svc__name { font-size: 1.6rem; letter-spacing: -0.03em; }
+      .svc__lede { margin-bottom: 18px; }
+      .svc__divider { margin-bottom: 18px; }
+      .svc__includes { margin-bottom: 22px; }
+      .svc__includes li { font-size: 0.92rem; margin-bottom: 8px; }
+      .step__circle { width: 56px; height: 56px; font-size: 1.25rem; margin-bottom: 18px; }
+      .step:not(:last-child)::after { top: 56px; height: 36px; }
+      .why__item { padding: 28px 24px; }
+      .why__icon { margin-bottom: 20px; }
+      .review { padding: 28px 24px; }
+      .review__body { font-size: 1.02rem; margin-bottom: 20px; }
+      .faq-q { padding: 20px 22px; font-size: 1rem; }
+      .faq-a { padding: 0 22px 22px; font-size: 0.94rem; }
+      .inquire__grid { gap: 40px; }
+      .inquire__contact { margin-top: 28px; }
+      .inquire__contact-item { padding: 16px 0; }
+      .form { padding: 26px 22px; }
+      .form h3 { font-size: 1.4rem; }
+      .form__sub { margin-bottom: 22px; }
+      .pf-grid { gap: 10px; }
+      .pf-ig { margin-top: 24px; font-size: 0.9rem; }
+      footer { padding: 56px 0 30px; }
+      .foot { gap: 36px; margin-bottom: 40px; }
+      .section-foot { margin-top: 32px; }
+    }
+
+    /* ========== ABOUT (dark contrast) ========== */
+    .about {
+      background: #1A2618;
+      color: #F0EDE6;
+      position: relative;
+      overflow: hidden;
+    }
+    .about::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(60% 70% at 85% 20%, rgba(200, 212, 188, 0.07), transparent 65%);
+      pointer-events: none;
+    }
+    .about .section-head { position: relative; z-index: 1; }
+    .about .eyebrow { color: #B5C6AA; }
+    .about .section-head h2 { color: #F7F4ED; }
+    .about .section-head h2 .accent { color: #B5C6AA; font-style: italic; font-weight: 600; display: block; }
+    .about .section-head p { color: rgba(247, 244, 237, 0.72); }
+    .about .section-foot { position: relative; z-index: 1; }
+    .about .section-foot__note { color: rgba(247, 244, 237, 0.55); }
+
+    /* High-contrast button on dark sections */
+    .about .btn--primary,
+    .portfolio .btn--primary {
+      background: #F7F4ED;
+      color: #1A2618;
+    }
+    .about .btn--primary:hover,
+    .portfolio .btn--primary:hover {
+      background: #FFFFFF;
+      color: #1A2618;
+      box-shadow: 0 16px 32px -10px rgba(0, 0, 0, 0.45);
+    }
+
+    .about__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(36px, 5vw, 56px);
+      align-items: start;
+      position: relative;
+      z-index: 1;
+    }
+    @media (min-width: 960px) {
+      .about__grid {
+        grid-template-columns: 1fr 1.2fr;
+        column-gap: clamp(40px, 4vw, 60px);
+      }
+    }
+
+    .about__media {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      width: 100%;
+      background: linear-gradient(135deg, #2D3F2A 0%, #131D11 100%);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      overflow: hidden;
+      box-shadow: 0 40px 80px -32px rgba(0, 0, 0, 0.4);
+    }
+    .about__media::after {
+      content: 'Team photo. 4:5 ratio. Drop a group photo or studio shot here.';
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+      color: rgba(247, 244, 237, 0.4);
+      font-family: 'Inter', sans-serif;
+      font-style: italic;
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+    }
+    .about__media img,
+    .about__media video { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .about__media:has(img)::after,
+    .about__media:has(video)::after { display: none; }
+
+    .about__copy h3 {
+      color: #F7F4ED;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: -0.018em;
+      margin-bottom: 12px;
+    }
+    .about__copy h3:not(:first-child) { margin-top: 28px; }
+    .about__copy p {
+      color: rgba(247, 244, 237, 0.78);
+      font-size: 0.98rem;
+      line-height: 1.7;
+      max-width: none;
+    }
+
+    .about__stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(16px, 2vw, 32px);
+      padding-top: 28px;
+      margin-top: 36px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .about__stat-n {
+      font-family: var(--font-display);
+      font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.3rem);
+      font-weight: 700;
+      color: #F7F4ED;
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+    .about__stat-n .accent { color: #B5C6AA; font-style: italic; font-weight: 500; }
+    .about__stat-l {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      color: rgba(247, 244, 237, 0.5);
+      margin-top: 8px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .form__alt {
+      display: block;
+      text-align: center;
+      margin-top: 16px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: -0.005em;
+      transition: color 200ms var(--ease);
+    }
+    .form__alt:hover { color: var(--accent-hover); text-decoration: underline; text-underline-offset: 4px; }
+
+    /* ========== LIGHTBOX ========== */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(20, 18, 16, 0.92);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+      opacity: 0;
+      transition: opacity 280ms var(--ease);
+      overflow-y: auto;
+    }
+    .lightbox.is-open { display: flex; opacity: 1; }
+    .lightbox__inner {
+      position: relative;
+      width: 100%;
+      max-width: 1100px;
+      background: #1F1D1A;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 60px 120px -40px rgba(0, 0, 0, 0.6);
+    }
+    .lightbox__close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      z-index: 5;
+      background: rgba(0, 0, 0, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #F7F4ED;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 200ms var(--ease), transform 200ms var(--ease);
+    }
+    .lightbox__close:hover { background: rgba(0, 0, 0, 0.8); transform: scale(1.06); }
+    .lightbox__body {
+      position: relative;
+      width: 100%;
+    }
+    .lightbox__stage {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: linear-gradient(135deg, #2A2826 0%, #1A1816 100%);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(247, 244, 237, 0.4);
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+      padding: 24px;
+      text-align: center;
+    }
+    .lightbox__stage img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .lightbox__nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #F7F4ED;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 200ms var(--ease), transform 200ms var(--ease);
+      z-index: 2;
+    }
+    .lightbox__nav:hover { background: rgba(0, 0, 0, 0.78); }
+    .lightbox__nav--prev { left: 16px; }
+    .lightbox__nav--next { right: 16px; }
+    .lightbox__counter {
+      position: absolute;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.6);
+      color: rgba(247, 244, 237, 0.92);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.76rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      z-index: 2;
+    }
+    .lightbox__info {
+      padding: 32px 36px 36px;
+      background: #1F1D1A;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .lightbox__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 1.05rem + 1.1vw, 1.85rem);
+      font-weight: 500;
+      letter-spacing: -0.025em;
+      color: #F7F4ED;
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+    .lightbox__meta {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.76rem;
+      font-weight: 500;
+      color: rgba(247, 244, 237, 0.5);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .lightbox__desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.97rem;
+      line-height: 1.7;
+      color: rgba(247, 244, 237, 0.78);
+      max-width: 72ch;
+    }
+
+    @media (max-width: 720px) {
+      .lightbox { padding: 16px; align-items: flex-start; }
+      .lightbox__inner { border-radius: 10px; }
+      .lightbox__close { top: 12px; right: 12px; width: 34px; height: 34px; }
+      .lightbox__nav { width: 38px; height: 38px; }
+      .lightbox__nav--prev { left: 10px; }
+      .lightbox__nav--next { right: 10px; }
+      .lightbox__info { padding: 24px 22px 28px; }
+      .lightbox__meta { margin-bottom: 14px; }
+      .lightbox__desc { font-size: 0.94rem; line-height: 1.65; }
+    }
+
+    /* ========== SCROLL REVEAL ========== */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity 720ms var(--ease), transform 720ms var(--ease); }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .marquee__track { animation: none; }
+      .announce .dot, .hero__badge .dot { animation: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="wrap nav__inner">
+      <a href="#top" class="nav__logo">
+        <span class="nav__logo-mark"><img src="logo.png" alt="" onerror="this.style.display='none'; this.parentElement.innerHTML='{{COMPANY_INITIAL}}';"></span>
+        {{COMPANY_NAME}}
+      </a>
+      <div class="nav__links">
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="nav__cta">
+        <a href="tel:{{PHONE_RAW}}" class="nav__phone">{{PHONE_DISPLAY}}</a>
+        <a href="#inquire" class="btn btn--primary">Contact Us
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO: The Promise -->
+  <section class="hero" id="top">
+    <div class="wrap hero__inner">
+      <div class="hero__main">
+        <div class="hero__content">
+          <div class="hero__badge">
+            <span class="dot"></span>
+            Now accepting 2026 projects
+          </div>
+          <h1><span>Custom homes built</span><span class="accent">for the way you live.</span></h1>
+          <p>Architecture, construction, and interior design under one roof. We build a small number of homes a year. Every one delivered on time, on budget, and on the lot you've been dreaming on.</p>
+          <div class="hero__ctas">
+            <a href="#inquire" class="btn btn--primary">Let's Explore Your Goals
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#portfolio" class="btn btn--outline">See Our Work</a>
+          </div>
+        </div>
+
+        <!--
+          HERO MEDIA. Landscape. Drop one of:
+            IMAGE:  <img src="hero.jpg" alt="">
+            VIDEO:  <video src="hero.mp4" autoplay muted loop playsinline poster="hero-poster.jpg"></video>
+          Best content: a finished-home exterior at golden hour, OR a 6-15 second silent loop of a recent build.
+        -->
+        <div class="hero__media"></div>
+      </div>
+
+      <div class="hero__proof">
+        <div>
+          <div class="hero__stat-n">250<span class="accent">+</span></div>
+          <div class="hero__stat-l">Homes Delivered</div>
+        </div>
+        <div>
+          <div class="hero__stat-n">96<span class="accent">%</span></div>
+          <div class="hero__stat-l">On-Time Delivery</div>
+        </div>
+        <div>
+          <div class="hero__stat-n">70<span class="accent">%</span></div>
+          <div class="hero__stat-l">Client Referrals</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee">
+    <div class="marquee__track">
+      <span>Custom Homes</span>
+      <span>Whole-Home Remodels</span>
+      <span>Additions</span>
+      <span>Design-Build</span>
+      <span>Mountain Modern</span>
+      <span>Farmhouse</span>
+      <span>Contemporary Estate</span>
+      <span>Custom Homes</span>
+      <span>Whole-Home Remodels</span>
+      <span>Additions</span>
+      <span>Design-Build</span>
+      <span>Mountain Modern</span>
+      <span>Farmhouse</span>
+      <span>Contemporary Estate</span>
+    </div>
+  </div>
+
+  <!-- SERVICES: What We Do -->
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Services</div>
+        <h2>What we build all in-house.</h2>
+        <p>Every project, from a ground-up custom build to a single-room addition, runs through the same in-house team of architects, designers, and builders. No subcontracted handoffs. No finger-pointing.</p>
+      </div>
+
+      <div class="svc-grid">
+        <div class="svc reveal">
+          <div class="svc__num">01</div>
+          <h3 class="svc__name">New Custom Homes</h3>
+          <div class="svc__lede">Built from your land, your story, and the way you actually want to live.</div>
+          <div class="svc__divider"></div>
+          <ul class="svc__includes">
+            <li>Lot evaluation and site planning</li>
+            <li>In-house architectural design</li>
+            <li>Interior selections and finishes</li>
+            <li>Fixed-price contracts before ground breaks</li>
+            <li>Lifetime structural warranty</li>
+          </ul>
+          <a href="#inquire" class="btn btn--outline" data-prefill="New Custom Home">Learn More
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+
+        <div class="svc svc--featured reveal">
+          <span class="svc__tag">Most Requested</span>
+          <div class="svc__num">02</div>
+          <h3 class="svc__name">Whole-Home Remodels</h3>
+          <div class="svc__lede">When the bones are right but the layout isn't. We rework, reimagine, and rebuild.</div>
+          <div class="svc__divider"></div>
+          <ul class="svc__includes">
+            <li>Full design and feasibility study</li>
+            <li>Structural and mechanical updates</li>
+            <li>Kitchen, bath, and primary suite remodels</li>
+            <li>Permit and compliance management</li>
+            <li>Phased construction options to live in</li>
+          </ul>
+          <a href="#inquire" class="btn btn--primary" data-prefill="Whole-Home Remodel">Learn More
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+
+        <div class="svc reveal">
+          <div class="svc__num">03</div>
+          <h3 class="svc__name">Additions & Renovations</h3>
+          <div class="svc__lede">Add the room, the wing, the second story. Done with the same care as a new build.</div>
+          <div class="svc__divider"></div>
+          <ul class="svc__includes">
+            <li>Master suite and second-story additions</li>
+            <li>Garage, ADU, and guest house builds</li>
+            <li>Outdoor living and porches</li>
+            <li>Matched roof lines and finishes</li>
+            <li>Minimal disruption to daily life</li>
+          </ul>
+          <a href="#inquire" class="btn btn--outline" data-prefill="Addition or Renovation">Learn More
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+
+        <div class="svc reveal">
+          <div class="svc__num">04</div>
+          <h3 class="svc__name">Design-Build</h3>
+          <div class="svc__lede">One team, one contract. Architecture and construction together. Fewer surprises, faster timeline.</div>
+          <div class="svc__divider"></div>
+          <ul class="svc__includes">
+            <li>Single point of accountability</li>
+            <li>Real-time budget visibility from day one</li>
+            <li>Architect and builder in the same room</li>
+            <li>Faster permits, fewer change orders</li>
+            <li>One schedule, one phone number</li>
+          </ul>
+          <a href="#inquire" class="btn btn--outline" data-prefill="Design-Build">Learn More
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="section-foot reveal">
+        <span class="section-foot__note">Not sure which fits? Start with a conversation.</span>
+        <a href="#process" class="btn btn--outline" style="padding: 11px 20px; font-size: 0.85rem;">See How It Works
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS: How It Works -->
+  <section class="process" id="process">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Process</div>
+        <h2>From discovery to move-in.</h2>
+        <p>A custom home is a 12 to 18 month commitment. Most builders make that feel like guesswork. We don't. Here's exactly what happens, when it happens, and what you'll see at every step.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <div class="step__circle">01</div>
+          <div class="step__label">Discovery</div>
+          <h3>Walk the lot. Talk vision.</h3>
+          <p>We listen to how you live, how the land sits, and what's non-negotiable. No commitment, no design fees.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step__circle">02</div>
+          <div class="step__label">Design</div>
+          <h3>Plans + selections.</h3>
+          <p>In-house architects draw. Interior designers walk you through finishes. We lock pricing before a permit pulls.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step__circle">03</div>
+          <div class="step__label">Build</div>
+          <h3>One PM. Weekly updates.</h3>
+          <p>Permits, foundation, framing, finishes, all coordinated by a single point of contact. Weekly photo updates and a live schedule.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step__circle">04</div>
+          <div class="step__label">Move-In</div>
+          <h3>Walkthrough + warranty.</h3>
+          <p>Final walkthrough together. Punch list closed inside two weeks. Lifetime structural warranty.</p>
+        </div>
+      </div>
+
+      <div class="section-foot reveal">
+        <a href="#inquire" class="btn btn--primary">Let's Explore Your Goals
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <span class="section-foot__note">Most discoveries booked within the same week.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO: Proof -->
+  <section class="portfolio" id="portfolio">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Portfolio</div>
+        <h2>Recent projects.</h2>
+        <p>Every home gets the same standard, whether it's a 2,200 sqft farmhouse or a 9,000 sqft mountain estate. Six recent projects below. Full portfolio available on request.</p>
+      </div>
+
+      <!-- PORTFOLIO GRID. Each tile opens a lightbox of project images. To add real photos, edit the PROJECTS array in the script block at the bottom of this file. -->
+      <div class="pf-grid reveal">
+        <div class="pf-item" data-project="0">
+          <span>Project 01</span>
+          <div class="pf-item__hint">View Project →</div>
+          <div class="pf-item__caption">Mountain Modern · 6,400 sqft</div>
+        </div>
+        <div class="pf-item" data-project="1">
+          <span>Project 02</span>
+          <div class="pf-item__hint">View Project →</div>
+          <div class="pf-item__caption">Farmhouse · 3,200 sqft</div>
+        </div>
+        <div class="pf-item" data-project="2">
+          <span>Project 03</span>
+          <div class="pf-item__hint">View Project →</div>
+          <div class="pf-item__caption">Contemporary · 4,800 sqft</div>
+        </div>
+        <div class="pf-item" data-project="3">
+          <span>Project 04</span>
+          <div class="pf-item__hint">View Project →</div>
+          <div class="pf-item__caption">Whole-Home Remodel</div>
+        </div>
+        <div class="pf-item" data-project="4">
+          <span>Project 05</span>
+          <div class="pf-item__hint">View Project →</div>
+          <div class="pf-item__caption">Estate · 9,200 sqft</div>
+        </div>
+        <div class="pf-item" data-project="5">
+          <span>Project 06</span>
+          <div class="pf-item__hint">View Project →</div>
+          <div class="pf-item__caption">ADU Addition</div>
+        </div>
+      </div>
+
+      <div class="section-foot reveal">
+        <a href="#inquire" class="btn btn--primary">Let's Explore Your Goals
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="https://instagram.com/{{INSTAGRAM_HANDLE}}" class="pf-ig">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          Follow on @{{INSTAGRAM_HANDLE}}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY: Why It Works -->
+  <section class="why">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Our Rules</div>
+        <h2>The four rules.</h2>
+        <p>Most builders bid low, change-order high, and disappear after closing. We'd rather lose the bid than break one of these. What follows are the four rules every project we take runs by, and the stake we put behind each one.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why__item reveal">
+          <div class="why__icon">01</div>
+          <h3>Five homes a year. That's the cap.</h3>
+          <p>One project manager per build. One architect. One designer. Every project gets the same standard because we never have more than five running at once. We turn down more work than we take on.</p>
+          <div class="why__pledge">If we ever take a sixth, hold us to this page.</div>
+        </div>
+        <div class="why__item reveal">
+          <div class="why__icon">02</div>
+          <h3>Every change order in writing. No exceptions.</h3>
+          <p>No verbal handshakes. No "we'll figure it out at the end." If a change isn't priced and signed before work begins, the change doesn't happen. You'll never see a number at closing you didn't authorize on the day.</p>
+          <div class="why__pledge">If a charge appears we didn't write down, you don't pay it.</div>
+        </div>
+        <div class="why__item reveal">
+          <div class="why__icon">03</div>
+          <h3>Your architect sits ten feet from your builder.</h3>
+          <p>Architecture and construction in the same building, every day. Decisions that take other firms three weeks happen here in three hours. Fewer change orders. Faster permits. A home that's actually buildable on day one.</p>
+          <div class="why__pledge">If we ever say "we'll have to ask the architect," something has gone wrong.</div>
+        </div>
+        <div class="why__item reveal">
+          <div class="why__icon">04</div>
+          <h3>If we miss our date, we eat the carry.</h3>
+          <p>Every project gets a public schedule with weekly milestones. We've hit our dates 96% of the time over the last decade. The 4% of projects that slip get a written reason, and we cover the financing carry until handover.</p>
+          <div class="why__pledge">Late once is on us. Late twice should never happen.</div>
+        </div>
+      </div>
+
+      <div class="section-foot reveal">
+        <a href="#inquire" class="btn btn--primary">Let's Explore Your Goals
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <span class="section-foot__note">Currently booking 2026 starts.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT: Team + Business (dark contrast) -->
+  <section class="about" id="about">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">About</div>
+        <h2>Who builds your home.</h2>
+        <p>Custom homes are built by people, not companies. Here's the team you'll work with, and the business that backs them.</p>
+      </div>
+
+      <div class="about__grid">
+        <!-- Team imagery. 4:5 ratio. Drop <img src="team.jpg" alt=""> here. Best content: a real group photo of the team in the studio or on a job site. -->
+        <div class="about__media reveal"></div>
+
+        <div class="about__copy reveal">
+          <h3>The team.</h3>
+          <p>We're 12 people working under one roof: three architects, two interior designers, a master finish carpenter, four project managers, and a small operations team. The same group that meets you at discovery is the same group that walks you through your finished home. No subcontracted design. No handed-off project management. The people you meet on day one are the people you'll know on move-in day.</p>
+
+          <h3>The business.</h3>
+          <p>Founded in 1995. Family-owned since day one. We've built every project across the same region, one home at a time. We're intentionally small. We turn down more work than we take on, because we'd rather build five homes brilliantly than fifteen acceptably.</p>
+
+          <div class="about__stats">
+            <div>
+              <div class="about__stat-n">12</div>
+              <div class="about__stat-l">In-House Specialists</div>
+            </div>
+            <div>
+              <div class="about__stat-n">1995</div>
+              <div class="about__stat-l">Founded</div>
+            </div>
+            <div>
+              <div class="about__stat-n">100<span class="accent">%</span></div>
+              <div class="about__stat-l">Family-Owned</div>
+            </div>
+          </div>
+
+          <div class="section-foot">
+            <a href="#inquire" class="btn btn--primary">Schedule A Studio Visit
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <span class="section-foot__note">In-person studio tours available by appointment.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS: Social Proof -->
+  <section class="reviews" id="reviews">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Reviews</div>
+        <h2>What our clients say.</h2>
+      </div>
+      <div class="review-grid">
+        <div class="review reveal">
+          <div class="review__quote">"</div>
+          <p class="review__body">{{REVIEW_1_BODY}}</p>
+          <div class="review__name">{{REVIEW_1_NAME}}</div>
+          <div class="review__meta">{{REVIEW_1_META}}</div>
+        </div>
+        <div class="review reveal">
+          <div class="review__quote">"</div>
+          <p class="review__body">{{REVIEW_2_BODY}}</p>
+          <div class="review__name">{{REVIEW_2_NAME}}</div>
+          <div class="review__meta">{{REVIEW_2_META}}</div>
+        </div>
+        <div class="review reveal">
+          <div class="review__quote">"</div>
+          <p class="review__body">{{REVIEW_3_BODY}}</p>
+          <div class="review__name">{{REVIEW_3_NAME}}</div>
+          <div class="review__meta">{{REVIEW_3_META}}</div>
+        </div>
+      </div>
+
+      <div class="section-foot reveal">
+        <a href="#inquire" class="btn btn--primary">Let's Explore Your Goals
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <span class="section-foot__note">References available on request.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ: Remove Friction -->
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">FAQ</div>
+        <h2>Common questions and answers.</h2>
+        <p>The answer is probably below. If it isn't, send a note. We'll give it to you straight.</p>
+      </div>
+      <div class="faq-list reveal">
+        <details class="faq-item">
+          <summary class="faq-q">How long does a custom home take?</summary>
+          <div class="faq-a">From signed design contract to move-in: typically 12 to 18 months for a new build. Three to four months in design, eight to fourteen in construction. Whole-home remodels run six to twelve. We give you a written schedule before construction begins and update it weekly.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">Do I need to own land before we start?</summary>
+          <div class="faq-a">Not necessarily. If you're still searching, we'll walk lots with you and tell you honestly which ones will and won't work for what you want to build. A lot evaluation runs about an hour and costs nothing.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">How much does a custom home cost?</summary>
+          <div class="faq-a">It depends on the home. A 3,000 sqft custom in our market typically runs between $1.5M and $3M turnkey, including land prep, finishes, and landscaping. We'll give you a real range during discovery, based on your lot, your design wishes, and current material costs. Not a generic per-square-foot number.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">Can I bring my own architect?</summary>
+          <div class="faq-a">Yes. We work with outside architects often. If you've already started design with someone you trust, we'll pick up where you are. If you want everything in-house, we have architects on staff. Either way works.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">How are change orders handled?</summary>
+          <div class="faq-a">Every change is written, priced, and signed before any work happens. No verbal agreements, no surprise charges at closing. If you change your mind on a finish in month nine, you'll know exactly what it costs in writing, and you can choose to do it or not.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">What kind of warranty do you offer?</summary>
+          <div class="faq-a">One-year workmanship coverage on everything we built. Two-year coverage on mechanical, electrical, and plumbing systems. Ten-year structural warranty. And a lifetime promise that if you call us about your home, even fifteen years in, we'll pick up.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">Do you build outside your primary service area?</summary>
+          <div class="faq-a">{{SERVICE_AREA}} is home base, but we travel for the right project. Anywhere within a half-day drive is straightforward. Beyond that, we'll have a candid conversation about logistics, costs, and whether we're the right fit.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">How do payments and financing work?</summary>
+          <div class="faq-a">Most clients use a construction-to-permanent loan from a local bank. We work with several lenders and can make introductions. Payments to us follow a draw schedule tied to construction milestones. Never up-front lump sums. Final payment is due only after walkthrough and punch list closure.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- INQUIRE: The Ask -->
+  <section class="inquire" id="inquire">
+    <div class="wrap">
+      <div class="inquire__grid">
+        <div class="inquire__intro reveal">
+          <div class="eyebrow">Contact Us</div>
+          <h2>Tell us about your project. <span class="accent">We'll respond in a day.</span></h2>
+          <p>The first conversation is just that. A conversation. Tell us about the home you're imagining. We'll tell you honestly whether we're the right team to build it. No pressure, no design fees, no commitment.</p>
+
+          <div class="inquire__contact">
+            <div class="inquire__contact-item">
+              <div>
+                <div class="inquire__contact-label">Call or text</div>
+                <a href="tel:{{PHONE_RAW}}" class="inquire__contact-val">{{PHONE_DISPLAY}}</a>
+              </div>
+            </div>
+            <div class="inquire__contact-item">
+              <div>
+                <div class="inquire__contact-label">Email</div>
+                <a href="mailto:{{EMAIL}}" class="inquire__contact-val">{{EMAIL}}</a>
+              </div>
+            </div>
+            <div class="inquire__contact-item">
+              <div>
+                <div class="inquire__contact-label">Service area</div>
+                <div class="inquire__contact-val">{{SERVICE_AREA}}</div>
+              </div>
+            </div>
+            <div class="inquire__contact-item">
+              <div>
+                <div class="inquire__contact-label">Studio hours</div>
+                <div class="inquire__contact-val">{{HOURS}}</div>
+              </div>
+            </div>
+            <div class="inquire__contact-item">
+              <div>
+                <div class="inquire__contact-label">Instagram</div>
+                <a href="https://instagram.com/{{INSTAGRAM_HANDLE}}" class="inquire__contact-val">@{{INSTAGRAM_HANDLE}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form class="form reveal" id="inquireForm" method="POST" action="{{FORM_ENDPOINT}}">
+          <div class="form__success" id="formSuccess">Got it. We'll be in touch within one business day.</div>
+          <h3>Tell us about your project</h3>
+          <p class="form__sub">Five minutes. Honest answers. No commitment.</p>
+
+          <div class="form__row form__row--2">
+            <div class="form__field">
+              <label for="f-name">Name</label>
+              <input type="text" id="f-name" name="name" required>
+            </div>
+            <div class="form__field">
+              <label for="f-phone">Phone</label>
+              <input type="tel" id="f-phone" name="phone" required>
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="form__field">
+              <label for="f-email">Email</label>
+              <input type="email" id="f-email" name="email" required>
+            </div>
+          </div>
+
+          <div class="form__row form__row--2">
+            <div class="form__field">
+              <label for="f-project">Project type</label>
+              <select id="f-project" name="project_type" required>
+                <option value="">Choose one...</option>
+                <option>New Custom Home</option>
+                <option>Whole-Home Remodel</option>
+                <option>Addition or Renovation</option>
+                <option>Design-Build</option>
+                <option>Not sure yet, exploring</option>
+              </select>
+            </div>
+            <div class="form__field">
+              <label for="f-lot">Lot status</label>
+              <select id="f-lot" name="lot_status" required>
+                <option value="">Choose one...</option>
+                <option>I own the land</option>
+                <option>I'm searching for land</option>
+                <option>I have a home to remodel</option>
+                <option>Not applicable</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form__row form__row--2">
+            <div class="form__field">
+              <label for="f-budget">Budget range</label>
+              <select id="f-budget" name="budget" required>
+                <option value="">Choose one...</option>
+                <option>Under $750K</option>
+                <option>$750K – $1.5M</option>
+                <option>$1.5M – $3M</option>
+                <option>$3M – $5M</option>
+                <option>$5M+</option>
+                <option>Prefer to discuss</option>
+              </select>
+            </div>
+            <div class="form__field">
+              <label for="f-timeline">Target start</label>
+              <select id="f-timeline" name="timeline" required>
+                <option value="">Choose one...</option>
+                <option>As soon as possible</option>
+                <option>Within 6 months</option>
+                <option>6 – 12 months out</option>
+                <option>12+ months, planning ahead</option>
+                <option>Just exploring</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="form__field">
+              <label for="f-location">Project location</label>
+              <input type="text" id="f-location" name="location" placeholder="City, region, or county" required>
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="form__field">
+              <label for="f-notes">Tell us about the home you're imagining (optional)</label>
+              <textarea id="f-notes" name="notes" placeholder="Square footage, must-haves, style references, lot details, anything else we should know..."></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn--primary">Send Inquiry
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+          <p class="form__note">We respond within one business day. Every inquiry read by a human, not a bot.</p>
+          <a href="portfolio.pdf" class="form__alt">Or download our portfolio PDF →</a>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <div class="foot">
+        <div>
+          <div class="foot__logo">
+            <span class="foot__logo-mark"><img src="logo.png" alt="" onerror="this.style.display='none'; this.parentElement.innerHTML='{{COMPANY_INITIAL}}';"></span>
+            {{COMPANY_NAME}}
+          </div>
+          <p class="foot__about">Custom homes, remodels, and additions built by people who actually live in the homes they make. Serving {{SERVICE_AREA}}.</p>
+          <div class="foot__social">
+            <a href="https://instagram.com/{{INSTAGRAM_HANDLE}}" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4>Menu</h4>
+          <a href="#services">Services</a>
+          <a href="#process">Process</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#about">About</a>
+          <a href="#faq">FAQ</a>
+          <a href="#inquire">Contact Us</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <a href="tel:{{PHONE_RAW}}">{{PHONE_DISPLAY}}</a>
+          <a href="mailto:{{EMAIL}}">{{EMAIL}}</a>
+          <a href="https://instagram.com/{{INSTAGRAM_HANDLE}}">@{{INSTAGRAM_HANDLE}}</a>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <div>© <span id="year"></span> {{COMPANY_NAME}}. All rights reserved.</div>
+        <div>Built for the way you actually live.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lbTitle">
+    <div class="lightbox__inner">
+      <button class="lightbox__close" id="lbClose" aria-label="Close">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <div class="lightbox__body">
+        <div class="lightbox__stage" id="lbStage"></div>
+        <button class="lightbox__nav lightbox__nav--prev" id="lbPrev" aria-label="Previous image">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="lightbox__nav lightbox__nav--next" id="lbNext" aria-label="Next image">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+        <div class="lightbox__counter" id="lbCounter"></div>
+      </div>
+      <div class="lightbox__info">
+        <div class="lightbox__title" id="lbTitle"></div>
+        <div class="lightbox__meta" id="lbMeta"></div>
+        <p class="lightbox__desc" id="lbDesc"></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ===== PORTFOLIO PROJECTS =====
+    // Each project's images array can hold real photo paths (e.g. ['projects/p1/01.jpg', ...]).
+    // Empty array → lightbox shows numbered placeholder slides so you can preview the flow.
+    const PROJECTS = [
+      {
+        title: 'Mountain Modern',
+        meta: '6,400 sqft · Custom Build · 2024',
+        description: 'A glass-and-timber retreat set against alpine ridgelines. Built to disappear into the landscape. Wide-plank reclaimed oak, blackened steel, and floor-to-ceiling glazing on three sides. Designed for two empty-nesters who entertain often.',
+        images: []
+      },
+      {
+        title: 'Farmhouse',
+        meta: '3,200 sqft · Custom Build · 2024',
+        description: 'A working family\'s homestead. Open kitchen at the heart of the plan, a wraparound porch built for late summer dinners, and a primary suite tucked at the quiet end. White board-and-batten exterior, standing seam metal roof.',
+        images: []
+      },
+      {
+        title: 'Contemporary',
+        meta: '4,800 sqft · Custom Build · 2023',
+        description: 'A clean-lined contemporary on a sloped urban infill lot. Cantilevered second story, polished concrete floors, and a private courtyard between the kitchen and primary suite. Minimal by design, warm by detail.',
+        images: []
+      },
+      {
+        title: 'Whole-Home Remodel',
+        meta: 'Full Renovation · 2024',
+        description: 'A 1980s ranch reborn. Original footprint preserved, but every interior wall reimagined: open kitchen-living-dining, primary suite expansion, vaulted ceilings exposed. New mechanical, new envelope, same address.',
+        images: []
+      },
+      {
+        title: 'Estate',
+        meta: '9,200 sqft · Custom Build · 2023',
+        description: 'A multi-generational estate built across two structures: main residence and detached guest house, joined by a covered breezeway. Custom millwork throughout, two primary suites, and a wine cellar built into the slope.',
+        images: []
+      },
+      {
+        title: 'ADU Addition',
+        meta: 'Guest House Build · 2024',
+        description: 'A 750 sqft accessory dwelling unit added to an existing property: full kitchen, bath, and lofted sleeping area. Matched roof pitch and exterior finishes to the main house. Designed to flex between guest quarters, rental income, and aging-in-place.',
+        images: []
+      }
+    ];
+    const PLACEHOLDER_SLIDE_COUNT = 6;
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.querySelectorAll('[data-prefill]').forEach(el => {
+      el.addEventListener('click', () => {
+        const pkg = el.getAttribute('data-prefill');
+        const sel = document.getElementById('f-project');
+        if (sel) {
+          for (const opt of sel.options) {
+            if (opt.value === pkg || opt.text === pkg) { sel.value = opt.value || opt.text; break; }
+          }
+        }
+      });
+    });
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    const form = document.getElementById('inquireForm');
+    const success = document.getElementById('formSuccess');
+    form.addEventListener('submit', (e) => {
+      const action = form.getAttribute('action');
+      if (!action || action.includes('{{')) {
+        e.preventDefault();
+        success.style.display = 'block';
+        form.reset();
+        success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    });
+
+    // ===== LIGHTBOX =====
+    const lightbox = document.getElementById('lightbox');
+    const lbStage = document.getElementById('lbStage');
+    const lbTitle = document.getElementById('lbTitle');
+    const lbMeta = document.getElementById('lbMeta');
+    const lbDesc = document.getElementById('lbDesc');
+    const lbCounter = document.getElementById('lbCounter');
+    let currentProject = null;
+    let currentIndex = 0;
+
+    function slideTotal() {
+      if (!currentProject) return 0;
+      return currentProject.images.length || PLACEHOLDER_SLIDE_COUNT;
+    }
+
+    function renderSlide() {
+      if (!currentProject) return;
+      lbStage.innerHTML = '';
+      const img = currentProject.images[currentIndex];
+      if (img) {
+        const el = document.createElement('img');
+        el.src = img;
+        el.alt = `${currentProject.title}, image ${currentIndex + 1}`;
+        lbStage.appendChild(el);
+      } else {
+        lbStage.textContent = `Image ${currentIndex + 1}, drop ${currentProject.title} photo here.`;
+      }
+      lbCounter.textContent = `${currentIndex + 1} / ${slideTotal()}`;
+    }
+
+    function openLightbox(idx) {
+      currentProject = PROJECTS[idx];
+      if (!currentProject) return;
+      currentIndex = 0;
+      lbTitle.textContent = currentProject.title;
+      lbMeta.textContent = currentProject.meta;
+      lbDesc.textContent = currentProject.description || '';
+      renderSlide();
+      lightbox.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('is-open');
+      document.body.style.overflow = '';
+      currentProject = null;
+    }
+
+    function nav(dir) {
+      const total = slideTotal();
+      if (!total) return;
+      currentIndex = (currentIndex + dir + total) % total;
+      renderSlide();
+    }
+
+    document.querySelectorAll('.pf-item').forEach((el) => {
+      el.addEventListener('click', () => {
+        const idx = parseInt(el.getAttribute('data-project'), 10);
+        if (!isNaN(idx)) openLightbox(idx);
+      });
+    });
+
+    document.getElementById('lbClose').addEventListener('click', closeLightbox);
+    document.getElementById('lbPrev').addEventListener('click', () => nav(-1));
+    document.getElementById('lbNext').addEventListener('click', () => nav(1));
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('is-open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      else if (e.key === 'ArrowLeft') nav(-1);
+      else if (e.key === 'ArrowRight') nav(1);
+    });
+  </script>
+</body>
+</html>
