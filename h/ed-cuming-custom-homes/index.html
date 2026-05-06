@@ -20,6 +20,8 @@
   --border-2: rgba(0,0,0,0.08);
   --accent: #111111;
   --accent-hover: #333333;
+  --google-blue: #1a73e8;
+  --google-green: #006621;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, -apple-system, sans-serif; line-height: 1.55; -webkit-font-smoothing: antialiased; }
@@ -28,43 +30,82 @@ body {
   background-image: radial-gradient(circle, rgba(0,0,0,0.06) 1.2px, transparent 1.2px);
   background-size: 32px 32px;
 }
-.container { max-width: 920px; margin: 0 auto; padding: 32px 24px 80px; }
+.container { max-width: 980px; margin: 0 auto; padding: 32px 24px 80px; }
+
 header { display: flex; align-items: center; justify-content: space-between; padding-bottom: 24px; border-bottom: 1px solid var(--border); margin-bottom: 56px; }
 .brand { font-weight: 700; letter-spacing: -0.02em; font-size: 18px; }
 .brand a { color: var(--text); text-decoration: none; }
+
 .eyebrow { color: var(--text-3); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; }
-h1 { font-size: clamp(28px, 4.5vw, 46px); font-weight: 800; letter-spacing: -0.02em; margin: 12px 0 20px; line-height: 1.1; }
-h2 { font-size: clamp(22px, 3vw, 32px); font-weight: 700; letter-spacing: -0.02em; margin: 12px 0 24px; line-height: 1.15; }
-h3 { font-size: 18px; font-weight: 700; margin: 24px 0 12px; }
-.lede { color: var(--text-2); font-size: 18px; margin-bottom: 40px; max-width: 740px; }
-p { color: var(--text); font-size: 16px; margin-bottom: 14px; max-width: 740px; }
-p.muted { color: var(--text-2); }
+h1 { font-size: clamp(30px, 5vw, 52px); font-weight: 800; letter-spacing: -0.025em; margin: 12px 0 20px; line-height: 1.05; max-width: 880px; }
+h2 { font-size: clamp(24px, 3.5vw, 36px); font-weight: 800; letter-spacing: -0.025em; margin: 12px 0 16px; line-height: 1.1; max-width: 800px; }
+h3 { font-size: 17px; font-weight: 700; margin: 16px 0 8px; letter-spacing: -0.01em; }
+.lede { color: var(--text-2); font-size: 19px; margin-bottom: 40px; max-width: 740px; line-height: 1.5; }
+.subhead { color: var(--text-2); font-size: 17px; margin-bottom: 36px; max-width: 720px; line-height: 1.5; }
 
-.video-wrap { background: var(--bg-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin-bottom: 64px; }
+.video-wrap { background: var(--bg-2); border: 1px solid var(--border); border-radius: 14px; padding: 16px; margin-bottom: 80px; }
 
-.section { padding: 56px 0; border-top: 1px solid var(--border-2); }
-.section:first-of-type { border-top: none; }
+.section { padding: 64px 0; border-top: 1px solid var(--border-2); }
+.section:first-of-type { border-top: none; padding-top: 0; }
 
-.cta-block { background: var(--bg-2); border: 1px solid var(--border); border-radius: 12px; padding: 40px 32px; text-align: center; margin: 32px 0; }
-.cta-block h2 { font-size: 24px; margin-bottom: 8px; }
-.cta-block p { color: var(--text-2); margin-bottom: 24px; max-width: 520px; margin-left: auto; margin-right: auto; }
-.cta-button { display: inline-block; background: var(--accent); color: #fff; padding: 14px 28px; border-radius: 8px; font-weight: 600; text-decoration: none; transition: background 0.15s; font-size: 15px; }
-.cta-button:hover { background: var(--accent-hover); }
+.outcomes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 32px 0 40px; }
+.card { background: var(--bg-3); border: 1px solid var(--border-2); border-radius: 12px; padding: 28px; transition: transform 0.15s, border-color 0.15s; }
+.card:hover { border-color: var(--border); }
+.card-icon { width: 36px; height: 36px; margin-bottom: 16px; color: var(--text); }
+.card h3 { margin: 0 0 8px; font-size: 17px; font-weight: 700; }
+.card p { color: var(--text-2); font-size: 14.5px; line-height: 1.55; }
 
-.pipeline-row { display: flex; gap: 8px; flex-wrap: wrap; margin: 16px 0 8px; }
-.pipeline-row span { background: var(--bg-3); border: 1px solid var(--border-2); padding: 6px 12px; border-radius: 6px; font-size: 13px; font-weight: 500; }
+/* SEARCH RESULT MOCKUP */
+.search-mock { background: #fff; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin: 24px 0 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.04); }
+.search-mock-bar { display: flex; align-items: center; gap: 8px; padding: 10px 16px; background: var(--bg-2); border-bottom: 1px solid var(--border-2); }
+.search-mock-dots { display: flex; gap: 6px; }
+.search-mock-dots span { width: 11px; height: 11px; border-radius: 50%; background: rgba(0,0,0,0.12); }
+.search-mock-url { color: var(--text-3); font-size: 12px; }
+.search-mock-body { padding: 24px 28px 28px; }
+.search-mock-input { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: var(--bg-2); border-radius: 24px; border: 1px solid var(--border-2); font-size: 14px; color: var(--text); margin-bottom: 24px; max-width: 520px; }
+.search-mock-input svg { width: 16px; height: 16px; color: var(--text-3); flex-shrink: 0; }
+.search-mock-result { padding-top: 8px; }
+.search-mock-result-rank { display: inline-flex; align-items: center; gap: 6px; background: var(--text); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 0.04em; padding: 3px 8px; border-radius: 4px; margin-bottom: 10px; text-transform: uppercase; }
+.search-mock-result-meta { color: var(--google-green); font-size: 12.5px; margin-bottom: 4px; }
+.search-mock-result-title { color: var(--google-blue); font-size: 19px; font-weight: 500; line-height: 1.25; margin-bottom: 6px; }
+.search-mock-result-desc { color: var(--text-2); font-size: 13.5px; line-height: 1.5; }
+
+/* PIPELINE FLOW */
+.pipeline-flow { display: flex; align-items: center; gap: 8px; margin: 28px 0 8px; padding: 24px; background: var(--bg-3); border: 1px solid var(--border-2); border-radius: 12px; overflow-x: auto; }
+.pipeline-node { flex-shrink: 0; padding: 10px 16px; background: #fff; border: 1px solid var(--border-2); border-radius: 8px; font-size: 13px; font-weight: 500; white-space: nowrap; }
+.pipeline-node.terminal { background: var(--text); color: #fff; border-color: var(--text); font-weight: 600; }
+.pipeline-arrow { flex-shrink: 0; color: var(--text-3); }
+.pipeline-arrow svg { display: block; width: 16px; height: 16px; }
+
+/* THREE-MEETING ROW */
+.meeting-row { display: flex; gap: 12px; flex-wrap: wrap; margin: 8px 0 4px; }
+.meeting-row .meeting { display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid var(--border-2); padding: 10px 16px; border-radius: 8px; font-size: 14px; font-weight: 500; }
+.meeting-row .meeting svg { width: 16px; height: 16px; color: var(--text-2); }
+
+.cta-block { background: var(--text); color: #fff; border-radius: 14px; padding: 48px 32px; text-align: center; margin: 32px 0; }
+.cta-block h2 { color: #fff; font-size: 28px; margin: 0 0 8px; max-width: 560px; margin-left: auto; margin-right: auto; }
+.cta-block p { color: rgba(255,255,255,0.7); margin: 0 auto 28px; max-width: 520px; font-size: 15.5px; }
+.cta-button { display: inline-block; background: #fff; color: var(--text); padding: 16px 32px; border-radius: 10px; font-weight: 600; text-decoration: none; transition: transform 0.15s; font-size: 15px; }
+.cta-button:hover { transform: translateY(-1px); }
 
 footer { margin-top: 72px; padding-top: 32px; border-top: 1px solid var(--border); color: var(--text-3); font-size: 13px; text-align: center; }
 footer a { color: var(--text-2); text-decoration: none; }
 
+@media (max-width: 760px) {
+  .outcomes-grid { grid-template-columns: 1fr; }
+}
 @media (max-width: 600px) {
   .container { padding: 16px 16px 48px; }
   header { padding-bottom: 16px; margin-bottom: 32px; flex-direction: column; align-items: flex-start; gap: 8px; }
-  h1 { font-size: 26px; }
+  h1 { font-size: 28px; }
+  h2 { font-size: 24px; }
   .lede { font-size: 16px; margin-bottom: 32px; }
-  .cta-block { padding: 28px 20px; }
-  .video-wrap { margin-bottom: 40px; }
-  .section { padding: 40px 0; }
+  .video-wrap { margin-bottom: 56px; }
+  .section { padding: 48px 0; }
+  .cta-block { padding: 36px 20px; }
+  .cta-block h2 { font-size: 22px; }
+  .search-mock-body { padding: 20px; }
+  .search-mock-result-title { font-size: 17px; }
 }
 </style>
 </head>
@@ -76,61 +117,111 @@ footer a { color: var(--text-2); text-decoration: none; }
   </header>
 
   <div class="eyebrow">A short walkthrough</div>
-  <h1>Hey Ed, here's how to sign more custom home builds and stop losing the ones you've already earned.</h1>
-  <p class="lede">Under five minutes. Two parts. How the website does the lifting your reputation has been doing alone, and how the backend stops leads from leaking out the bottom.</p>
+  <h1>Stop losing the custom home builds you've already earned, Ed.</h1>
+  <p class="lede">Two changes that close the gap between someone finding Ed Cuming Custom Homes and someone signing your contract.</p>
 
   <div class="video-wrap">
     <div style="position: relative; padding-bottom: 64.63195691202873%; height: 0;"><iframe src="https://www.loom.com/embed/127b0f43e9a74594a2d47dfca191664e" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
   </div>
 
   <div class="section">
-    <div class="eyebrow">Part one</div>
-    <h2>The website most custom builders are running is doing nothing for them.</h2>
-    <p>Either it's overcomplicated and forgets visitors halfway through.</p>
-    <p>Or it's too simple and outdated, and the brand can't carry the conversation on its own.</p>
-    <p>Either way, you end up running on Google reviews, your network, and referrals. That's worked. The problem is when it slows, there's no system underneath catching the gap.</p>
+    <div class="eyebrow">Outcome 1</div>
+    <h2>Get found first. Convert on the page. From the same lead flow you already have.</h2>
+    <p class="subhead">Buyers in California are choosing whichever builder shows up first on Google and ChatGPT. The website fixes both ends of that.</p>
 
-    <h3>What it actually looks like</h3>
-    <p>The site does two things at the same time.</p>
-    <p><strong>It ranks.</strong> Built for SEO and AEO so you come up first when somebody types "custom homes in California" into Google. And first when somebody asks ChatGPT the same question. Most builders haven't even heard of AEO yet. The ones who add it before the rest of the market does are the ones who take it.</p>
-    <p><strong>It walks the visitor through your pitch.</strong> One question, one answer. Then the next question. Then the booking. No 40 flavors of Monster — your visitor doesn't have to figure out where to click.</p>
-    <p>Each section sells the next. By the time they hit the bottom of the page, they're already filling out the form.</p>
+    <div class="outcomes-grid">
+      <div class="card">
+        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+        <h3>Found before your competition</h3>
+        <p>Built to rank for SEO and AEO. You come up first when someone searches "custom homes in California" on Google, and first when they ask ChatGPT the same thing.</p>
+      </div>
+      <div class="card">
+        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-5v12L3 14v-3z"></path><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg>
+        <h3>Converts on the page</h3>
+        <p>One question, one answer, then the next. By the time visitors reach the bottom of the site, they're already filling out the form.</p>
+      </div>
+      <div class="card">
+        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+        <h3>Brand carries the trust</h3>
+        <p>Stops your reputation and referrals from being the only thing selling for you. The site does the lifting now.</p>
+      </div>
+    </div>
+
+    <div class="search-mock">
+      <div class="search-mock-bar">
+        <div class="search-mock-dots"><span></span><span></span><span></span></div>
+        <div class="search-mock-url">google.com</div>
+      </div>
+      <div class="search-mock-body">
+        <div class="search-mock-input">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          <span>custom homes in California</span>
+        </div>
+        <div class="search-mock-result">
+          <div class="search-mock-result-rank">Top result</div>
+          <div class="search-mock-result-meta">Ed Cuming Custom Homes &middot; Custom Home Builder in California</div>
+          <div class="search-mock-result-title">Ed Cuming Custom Homes</div>
+          <div class="search-mock-result-desc">Custom home building serving California. Browse finished projects, get a quote, and book a walkthrough with the team.</div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="section">
-    <div class="eyebrow">Part two</div>
-    <h2>The backend that catches every lead and works the long ones.</h2>
-    <p>Three meeting types built into the system from day one:</p>
-    <div class="pipeline-row">
-      <span>Discovery Call</span>
-      <span>Walkthrough</span>
-      <span>Estimate Review</span>
-    </div>
-    <p>When somebody fills the form, they get a message inside five minutes. Not after lunch. Not the next morning. Five minutes.</p>
-    <p>Before the walkthrough, the system sends them material that sets you up. By the time you shake their hand, they already trust you. You're the authority before you've said a word.</p>
+    <div class="eyebrow">Outcome 2</div>
+    <h2>Close the buyers who weren't ready in week one.</h2>
+    <p class="subhead">Most builders lose every lead who isn't ready to sign immediately. The backend keeps you in front of them until they are.</p>
 
-    <h3>And you can see exactly where every prospect sits.</h3>
-    <div class="pipeline-row">
-      <span>New Lead</span>
-      <span>Discovery Booked</span>
-      <span>Discovery Complete</span>
-      <span>Walkthrough Booked</span>
-      <span>Walkthrough Completed</span>
-      <span>Estimate In Progress</span>
-      <span>Estimate Sent</span>
-      <span>Contract Signed</span>
+    <div class="outcomes-grid">
+      <div class="card">
+        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+        <h3>Caught in five minutes</h3>
+        <p>The moment a form is filled, a message goes out inside five minutes. The first builder to respond usually wins the deal.</p>
+      </div>
+      <div class="card">
+        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path><path d="M21 3v5h-5"></path><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path><path d="M8 16H3v5"></path></svg>
+        <h3>Worked until they're ready</h3>
+        <p>The buyer who's eight months out doesn't forget you. The system stays in their inbox with useful material until they're ready to sign.</p>
+      </div>
+      <div class="card">
+        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect></svg>
+        <h3>You see every lead, every stage</h3>
+        <p>Discovery booked, walkthrough done, estimate sent, contract signed. Nothing slips. You're not the one chasing.</p>
+      </div>
     </div>
-    <p>Nothing slips. Nothing gets forgotten. You're not the one chasing anybody.</p>
+
+    <h3>Three meeting types built into the system</h3>
+    <div class="meeting-row">
+      <div class="meeting"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>Discovery Call</div>
+      <div class="meeting"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>Walkthrough</div>
+      <div class="meeting"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>Estimate Review</div>
+    </div>
+
+    <h3>Every prospect, every stage, in one view</h3>
+    <div class="pipeline-flow">
+      <span class="pipeline-node">New Lead</span>
+      <span class="pipeline-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></span>
+      <span class="pipeline-node">Discovery Booked</span>
+      <span class="pipeline-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></span>
+      <span class="pipeline-node">Walkthrough</span>
+      <span class="pipeline-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></span>
+      <span class="pipeline-node">Estimate Sent</span>
+      <span class="pipeline-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></span>
+      <span class="pipeline-node terminal">Contract Signed</span>
+    </div>
   </div>
 
   <div class="section">
-    <h2>The combined effect.</h2>
-    <p>If all you did was three things — upgraded the website, got it ranking on Google and ChatGPT for buyers in California, and added a backend that works every lead automatically — you would blow every other custom builder in your market out of the water.</p>
-    <p>I'll say it directly: I guarantee you no other builders in your area are doing all three.</p>
+    <h2>Become the builder buyers in California find first and choose first.</h2>
+    <p class="subhead">Three things separate the builders who own a market from the ones who chase it.</p>
+    <p>Get the website ranking on Google and ChatGPT.</p>
+    <p>Make it convert visitors into bookings.</p>
+    <p>Add a backend that works every lead automatically.</p>
+    <p style="margin-top:24px;font-weight:600;">I guarantee no other builders in your area are doing all three.</p>
   </div>
 
   <div class="cta-block">
-    <h2>Want to see what this looks like for Ed Cuming Custom Homes?</h2>
+    <h2>See what this would look like for Ed Cuming Custom Homes.</h2>
     <p>Book a 15-minute call. We'll go through what you currently have end to end and show you exactly where it's leaking. No pitch.</p>
     <a href="https://calendly.com/zac-justscale/local-business" class="cta-button">Book a 15-min call</a>
   </div>
