@@ -62,6 +62,27 @@ h3 { font-size: 17px; font-weight: 700; margin: 16px 0 8px; letter-spacing: -0.0
 /* INBOX MOMENT */
 .inbox-line { padding: 20px 24px; background: var(--bg-3); border-left: 3px solid var(--text); border-radius: 0 8px 8px 0; margin: 24px 0; font-style: italic; color: var(--text-2); font-size: 16px; max-width: 760px; }
 
+/* THEN vs NOW COMPARISON */
+.compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 32px 0 16px; }
+.compare-col { background: var(--bg-3); border: 1px solid var(--border-2); border-radius: 12px; padding: 28px; }
+.compare-col.now { border-color: var(--text); }
+.compare-eyebrow { color: var(--text-3); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; }
+.compare-col.now .compare-eyebrow { color: var(--text); }
+.compare-title { font-size: 17px; font-weight: 700; margin-bottom: 16px; line-height: 1.25; }
+.compare-list { list-style: none; padding: 0; margin: 0 0 16px 0; }
+.compare-list li { font-size: 14.5px; color: var(--text-2); padding: 6px 0 6px 22px; position: relative; line-height: 1.5; }
+.compare-list li:before { content: "✓"; position: absolute; left: 0; color: var(--text); font-weight: 700; }
+.compare-summary { font-size: 14px; font-weight: 600; padding-top: 14px; border-top: 1px solid var(--border-2); color: var(--text); }
+
+/* RECAP CHECKLIST */
+.recap-list { list-style: none; padding: 0; margin: 24px 0 16px; }
+.recap-list li { font-size: 18px; font-weight: 600; padding: 14px 0 14px 40px; position: relative; color: var(--text); border-bottom: 1px solid var(--border-2); }
+.recap-list li:last-child { border-bottom: none; }
+.recap-list li:before { content: "✓"; position: absolute; left: 4px; top: 13px; color: var(--text); font-weight: 800; font-size: 22px; }
+.recap-guarantee { font-size: 17px; font-weight: 600; padding-top: 20px; margin-top: 8px; }
+
+@media (max-width: 760px) { .compare-grid { grid-template-columns: 1fr; } }
+
 /* CTA BULLETS */
 .cta-bullets { list-style: none; margin: 0 auto 28px; padding: 0; max-width: 540px; text-align: left; }
 .cta-bullets li { color: rgba(255,255,255,0.85); font-size: 15px; padding: 8px 0 8px 28px; position: relative; line-height: 1.5; }
@@ -158,8 +179,8 @@ footer a { color: var(--text-2); text-decoration: none; }
   </div>
 
   <div class="section">
-    <div class="eyebrow">Outcome 1</div>
-    <h2>Show up first on Google. Book more estimates from your site.</h2>
+    <div class="eyebrow">Step 1</div>
+    <h2>Be the first to show up on Google so you can book more estimates from your site.</h2>
     <p class="subhead">Buyers in Wyoming are picking whichever builder they find first. This website makes that you.</p>
 
     <div class="outcomes-grid">
@@ -201,8 +222,8 @@ footer a { color: var(--text-2); text-decoration: none; }
   </div>
 
   <div class="section">
-    <div class="eyebrow">Outcome 2</div>
-    <h2>Win the deals you'd otherwise lose 8 months later.</h2>
+    <div class="eyebrow">Step 2</div>
+    <h2>Follow up with every lead automatically so you can close the buyers you'd otherwise lose 8 months later.</h2>
     <p class="subhead">Most builders email a new lead once and forget them. This system stays in front of every buyer for as long as it takes them to sign.</p>
 
     <div class="outcomes-grid">
@@ -247,21 +268,42 @@ footer a { color: var(--text-2); text-decoration: none; }
   </div>
 
   <div class="section">
-    <div class="eyebrow">The window</div>
-    <h2>The 12-month window that closes the door on every builder who waits.</h2>
-    <p class="subhead">Most builders haven't even heard of AEO yet. It's the same thing SEO was in 2010, a window most missed.</p>
-    <p>The builders who locked in Google rankings around 2010 still own their markets today. Every buyer in their state finds them first, calls them first, hires them first. Every other builder is still chasing.</p>
-    <p>The same window is open right now with ChatGPT and AI search.</p>
-    <p>Buyers are already asking ChatGPT before they ask Google. The builders who get ranked on AEO this year are going to own the next decade. The ones who wait until 2027 will be too late.</p>
+    <div class="eyebrow">Why now</div>
+    <h2>AEO right now is what SEO was in 2010.</h2>
+    <p class="subhead">Most builders haven't heard of it yet. The first ones who lock it in own the next decade. Same way the builders who got Google in 2010 still own their markets today.</p>
+
+    <div class="compare-grid">
+      <div class="compare-col">
+        <div class="compare-eyebrow">2010</div>
+        <h3 class="compare-title">Builders who locked in Google</h3>
+        <ul class="compare-list">
+          <li>Found first when buyers searched</li>
+          <li>Called first when buyers called</li>
+          <li>Hired first when buyers signed</li>
+        </ul>
+        <div class="compare-summary">Still own their markets today.</div>
+      </div>
+      <div class="compare-col now">
+        <div class="compare-eyebrow">Right now</div>
+        <h3 class="compare-title">Builders who lock in AEO</h3>
+        <ul class="compare-list">
+          <li>Found first on Google and ChatGPT</li>
+          <li>Called first by buyers in Wyoming</li>
+          <li>Hired first for the next decade</li>
+        </ul>
+        <div class="compare-summary">Will own their markets in 2030.</div>
+      </div>
+    </div>
   </div>
 
   <div class="section">
-    <h2>Be the first builder buyers in Wyoming hear about. And the one they pick.</h2>
-    <p class="subhead">Three things separate the builders who own a market from the ones who chase it.</p>
-    <p>Get the website ranking on Google and ChatGPT.</p>
-    <p>Make it convert visitors into booked estimates.</p>
-    <p>Add a backend that works every lead automatically.</p>
-    <p style="margin-top:24px;font-weight:600;">I guarantee no other builders in Wyoming are doing all three.</p>
+    <h2>Be the first builder in Wyoming doing all three.</h2>
+    <ul class="recap-list">
+      <li>Show up first on Google and ChatGPT</li>
+      <li>Convert visitors into booked estimates</li>
+      <li>Catch and follow up with every lead</li>
+    </ul>
+    <p class="recap-guarantee">I guarantee no other builders in Wyoming are doing all three.</p>
   </div>
 
   <div class="cta-block">
