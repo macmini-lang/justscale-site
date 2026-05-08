@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Thesis Capital Partners — JustScale Preview</title>
+    <meta name="description" content="Thesis Partners II — Every fund says operator-led. One actually did it first.">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="shared.css?v=20260407k">
+    <style>
+        .hero-sub { margin-bottom: 36px; }
+        /* Team photos */
+        .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; max-width: 800px; margin: 40px auto 0; }
+        .team-card { text-align: center; }
+        .team-photo { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin: 0 auto 16px; display: block; border: 2px solid rgba(0,0,0,0.08); }
+        .team-name { font-size: 0.95rem; font-weight: 600; color: var(--text); }
+        .team-title { font-size: 0.82rem; color: var(--text-m); margin-top: 4px; }
+        /* Fund stats row */
+        .fund-stats { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; margin: 40px 0 24px; }
+        .fund-stat { text-align: center; }
+        .fund-stat-num { font-size: 1.8rem; font-weight: 700; color: var(--text); }
+        .fund-stat-label { font-size: 0.75rem; color: var(--text-m); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px; }
+        @media (max-width: 768px) {
+            .team-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+            .fund-stats { gap: 24px; }
+        }
+    </style>
+</head>
+<body>
+<div class="scroll-progress"></div>
+<div class="page" id="page">
+
+    <!-- NAV -->
+    <nav id="nav">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="JustScale" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="education.html">Education</a></li>
+                <li><a href="capital.html">Capital</a></li>
+                <li><a href="local.html">Local</a></li>
+                <li><a href="book/" class="btn mag-btn">Book a call</a></li>
+            </ul>
+            <div class="ham" onclick="this.classList.toggle('open');document.querySelector('.nav-links').classList.toggle('mobile-open')">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SECTION 1: HERO -->
+    <section class="hero">
+        <div class="orb"></div>
+        <div class="hero-content">
+            <h1>Every Fund Says Operator-Led. One Actually Did It First.</h1>
+            <div class="gold-rule" id="rule"></div>
+            <p class="hero-sub" id="sub">Thesis Capital Partners hired six operating executives before sourcing a single deal. That sequencing decision changes everything about how this fund performs.</p>
+            <div class="hero-cta" id="heroCta">
+                <a href="#deliverable" class="btn btn-lg mag-btn">See What We Built</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: PROBLEM AGITATION -->
+    <section class="section">
+        <div class="container">
+            <div class="agitation-text" id="agitation" style="max-width: 680px; margin: 0 auto; text-align: center;">
+                <div class="section-label sr">THE PROBLEM</div>
+                <h2 class="section-title sr">You Have Seen This Pitch Before</h2>
+                <p>Value creation through operational improvement.</p>
+                <p>Proprietary deal flow in the lower middle market.</p>
+                <p>A team with decades of combined experience.</p>
+                <p>You have heard every version of this.</p>
+                <p>The part that never gets explained is who actually runs the company after close.</p>
+                <p>When you press, the answer gets vague.</p>
+                <p class="gold-text">That's the gap. Thesis Capital built the fund around the answer.</p>
+                <div style="margin-top: 28px;">
+                    <a href="#deliverable" class="btn btn-lg mag-btn sr">See What We Built</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: TRANSITION LINE -->
+    <section class="section section--dark transition-section">
+        <div class="container">
+            <div class="transition-big sr">The operator is not a post-close hire.</div>
+            <div class="transition-gold sr">The operator is the thesis.</div>
+            <div class="transition-line"></div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: FOUR PROBLEM CARDS -->
+    <section class="section">
+        <div class="floating-shape shape-circle"></div>
+        <div class="container">
+            <div class="section-label sr">THE BREAKDOWN</div>
+            <h2 class="section-title sr">What Breaks When the Operator Comes Second</h2>
+            <div class="cards-grid" id="problemCards">
+                <div class="card" data-d="0">
+                    <div class="card-glow"></div>
+                    <div class="card-border-glow"></div>
+                    <div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                    <div class="card-num">01</div>
+                    <h3>Integration Drift</h3>
+                    <p>The new management team spends 6-12 months learning the business while value erodes. The operating team was never in the building when the deal closed.</p>
+                </div>
+                <div class="card" data-d="1">
+                    <div class="card-glow"></div>
+                    <div class="card-border-glow"></div>
+                    <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                    <div class="card-num">02</div>
+                    <h3>Talent Mismatch</h3>
+                    <p>A deal person runs an operating company. They know how to buy businesses. They don't know how to run them. The skill sets are not the same.</p>
+                </div>
+                <div class="card" data-d="2">
+                    <div class="card-glow"></div>
+                    <div class="card-border-glow"></div>
+                    <div class="card-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+                    <div class="card-num">03</div>
+                    <h3>Forced Exits</h3>
+                    <p>The fund lifecycle demands a sale whether the business is ready or not. Good companies get sold at bad times because the clock ran out.</p>
+                </div>
+                <div class="card" data-d="3">
+                    <div class="card-glow"></div>
+                    <div class="card-border-glow"></div>
+                    <div class="card-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+                    <div class="card-num">04</div>
+                    <h3>Misaligned Economics</h3>
+                    <p>When the GP earns fees regardless of performance, capital allocation decisions get made differently than when every partner's net worth is on the line.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: THREE-PART FRAMEWORK -->
+    <section class="section section--dark">
+        <div class="floating-shape shape-diamond"></div>
+        <div class="container section-center">
+            <h2 class="section-title sr">How Thesis Capital Is Structured Differently</h2>
+            <p class="section-sub sr">Three decisions Ian Reynolds made before raising a dollar of fund capital.</p>
+            <div class="framework-grid">
+                <div class="fw-card sr">
+                    <div class="fw-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                    <div class="fw-num">01</div>
+                    <h3>Built the Operator Bench First</h3>
+                    <p>Six Executives in Residence recruited, compensated, and ready to deploy into portfolio companies the day a deal closes. Not after. Not eventually. Day one.</p>
+                </div>
+                <div class="fw-card sr">
+                    <div class="fw-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                    <div class="fw-num">02</div>
+                    <h3>Long-Term Hold by Design</h3>
+                    <p>No predetermined exit timeline. When a business is compounding, Thesis keeps it. The fund structure rewards patience instead of punishing it.</p>
+                </div>
+                <div class="fw-card sr">
+                    <div class="fw-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+                    <div class="fw-num">03</div>
+                    <h3>Material GP Ownership</h3>
+                    <p>Every partner has real capital at stake in Thesis Partners II. Their financial outcome is directly tied to how the portfolio performs, not the management fee.</p>
+                </div>
+            </div>
+            <a href="#deliverable" class="btn btn-lg mag-btn sr">See What We Built</a>
+        </div>
+    </section>
+
+    <!-- SECTION 6: TEAM -->
+    <section class="section">
+        <div class="container section-center">
+            <div class="section-label sr">THE PEOPLE</div>
+            <h2 class="section-title sr">The Team Behind This</h2>
+            <p class="section-sub sr">Ian Reynolds founded Thesis after spending his career operating businesses, not just buying them.</p>
+            <div class="team-grid">
+                <div class="team-card sr">
+                    <img src="https://cdn.prod.website-files.com/67ab9a18414cf7b915da6d6c/67ab9a18414cf7b915da6e45_Ian%201.jpeg" alt="Ian J.H. Reynolds" class="team-photo">
+                    <div class="team-name">Ian J.H. Reynolds</div>
+                    <div class="team-title">Partner</div>
+                </div>
+                <div class="team-card sr">
+                    <img src="https://cdn.prod.website-files.com/67ab9a18414cf7b915da6d6c/6810e2ecf71590ea191ab353_WhatsApp%20Image%202025-04-29%20at%2011.31.49.jpeg" alt="Connor Chakeen" class="team-photo">
+                    <div class="team-name">Connor Chakeen</div>
+                    <div class="team-title">Partner</div>
+                </div>
+                <div class="team-card sr">
+                    <img src="https://cdn.prod.website-files.com/67ab9a18414cf7b915da6d6c/6966c508f78377b313931d3a_joshua%20profile%202%20.jpg" alt="Joshua Wolf" class="team-photo">
+                    <div class="team-name">Joshua Wolf</div>
+                    <div class="team-title">Partner</div>
+                </div>
+                <div class="team-card sr">
+                    <img src="https://cdn.prod.website-files.com/67ab9a18414cf7b915da6d6c/67ab9a18414cf7b915da6e4b_WhatsApp%20Image%202024-09-18%20at%2012.05.02.jpeg" alt="Tim Belton" class="team-photo">
+                    <div class="team-name">Tim Belton</div>
+                    <div class="team-title">Independent Director</div>
+                </div>
+                <div class="team-card sr">
+                    <img src="https://cdn.prod.website-files.com/67ab9a18414cf7b915da6d6c/69824baccd56c02b37a1592a_wesley%20profile%20thesis.png" alt="Wesley Leblanc" class="team-photo">
+                    <div class="team-name">Wesley Leblanc</div>
+                    <div class="team-title">Director</div>
+                </div>
+                <div class="team-card sr">
+                    <img src="https://cdn.prod.website-files.com/67ab9a18414cf7b915da6d6c/69825200a049bbda8506d3df_Alan%20profile%20thesis.jpg" alt="Alan Hebert" class="team-photo">
+                    <div class="team-name">Alan Hebert</div>
+                    <div class="team-title">Senior Associate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: MATH QUOTE -->
+    <section class="section section--dark section-center">
+        <div class="container">
+            <div class="math-quote">
+                <div class="math-big sr">Six operators on the bench. Zero deals sourced yet. That's the thesis.</div>
+                <a href="#deliverable" class="btn btn-lg mag-btn sr">See What We Built</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 8: FUND DETAILS -->
+    <section class="section" id="deliverable">
+        <div class="container section-center">
+            <h2 class="section-title sr">Thesis Partners II</h2>
+            <p class="section-sub sr">Pre-first close. Targeting June/July 2026.</p>
+            <div class="fund-stats">
+                <div class="fund-stat sr">
+                    <div class="fund-stat-num">$150M</div>
+                    <div class="fund-stat-label">Target Fund Size</div>
+                </div>
+                <div class="fund-stat sr">
+                    <div class="fund-stat-num">$15M&ndash;$80M</div>
+                    <div class="fund-stat-label">Enterprise Value</div>
+                </div>
+                <div class="fund-stat sr">
+                    <div class="fund-stat-num">$3M&ndash;$25M</div>
+                    <div class="fund-stat-label">Free Cash Flow</div>
+                </div>
+                <div class="fund-stat sr">
+                    <div class="fund-stat-num">Long-Term</div>
+                    <div class="fund-stat-label">Hold Period</div>
+                </div>
+            </div>
+            <p class="section-sub sr" style="font-size: 0.78rem; opacity: 0.7; margin-top: 16px;">506(c). Accredited investors and qualified purchasers only.</p>
+        </div>
+    </section>
+
+    <!-- SECTION 9: FINAL CTA -->
+    <section class="section section--dark final-cta">
+        <div class="container">
+            <h2 class="section-title sr">Request the Fund Materials</h2>
+            <p class="sr">Connor Chakeen will send the teaser and investment memo within 24 hours. Schedule a call to walk through the thesis, the operator bench, and where the fund stands.</p>
+            <a href="mailto:connor@thesiscapital.com?subject=Thesis%20Partners%20II%20Materials" class="btn btn-lg mag-btn sr">Request Materials</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="logo-white.png" alt="JustScale" class="logo-img">
+            </a>
+            <ul class="foot-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="capital.html">Capital</a></li>
+                <li><a href="local.html">Local</a></li>
+            </ul>
+            <span class="foot-copy">&copy; 2026 JustScale. All rights reserved.</span>
+            <p style="font-size: 0.68rem; color: rgba(255,255,255,0.35); margin-top: 12px; max-width: 600px; margin-left: auto; margin-right: auto; text-align: center;">This page was built by JustScale as a demonstration of investor-facing web design for Thesis Capital Partners. Not an offer to sell securities.</p>
+        </div>
+    </footer>
+
+</div><!-- /page -->
+
+<!-- GSAP + ScrollTrigger CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="shared.js?v=20260407b"></script>
+</body>
+</html>

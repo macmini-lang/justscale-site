@@ -457,6 +457,14 @@
       transition: transform 420ms var(--ease);
     }
     .gal-item:hover { transform: scale(1.015); }
+    .gal-item:has(iframe) { background: #fff; }
+    .gal-item:has(iframe)::after { display: none; }
+    .gal-item iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
     .gal-item::after {
       content: '';
       position: absolute;
@@ -1065,17 +1073,8 @@
         <h2>What a Pure detail actually looks like.</h2>
         <p>Every car that leaves us gets the same standard. See it up close before you book.</p>
       </div>
-      <!-- LIVE INSTAGRAM FEED — replace the .gal-grid below with your LightWidget/Elfsight/SnapWidget embed code when ready -->
-      <div class="gal-grid reveal" id="igFeed">
-        <div class="gal-item">01</div>
-        <div class="gal-item">02</div>
-        <div class="gal-item">03</div>
-        <div class="gal-item">04</div>
-        <div class="gal-item">05</div>
-        <div class="gal-item">06</div>
-        <div class="gal-item">07</div>
-        <div class="gal-item">08</div>
-      </div>
+      <!-- LIVE INSTAGRAM FEED — populated by JS. To update: visit https://instagram.com/autocarebypure, copy 8 recent post URLs (https://instagram.com/p/SHORTCODE/), paste shortcodes into IG_POSTS array at top of <script> block below. Refresh every few weeks. -->
+      <div class="gal-grid reveal" id="igFeed"></div>
 
       <div class="section-foot reveal">
         <a href="#book" class="btn btn--primary">Book Your Detail
@@ -1354,6 +1353,33 @@
   </footer>
 
   <script>
+    // ===== INSTAGRAM FEED =====
+    // Swap these 8 shortcodes when @autocarebypure posts new work.
+    // Each IG post URL is https://instagram.com/p/SHORTCODE/ — use the SHORTCODE part.
+    // Leave any slot as 'REPLACE_N' to show the numbered placeholder tile instead.
+    const IG_POSTS = [
+      'DL5SIq1Ow-b', 'REPLACE_2', 'REPLACE_3', 'REPLACE_4',
+      'REPLACE_5', 'REPLACE_6', 'REPLACE_7', 'REPLACE_8'
+    ];
+    const igFeed = document.getElementById('igFeed');
+    if (igFeed) {
+      IG_POSTS.forEach((code, i) => {
+        const item = document.createElement('div');
+        item.className = 'gal-item';
+        if (code && !code.startsWith('REPLACE_')) {
+          const frame = document.createElement('iframe');
+          frame.src = `https://www.instagram.com/p/${code}/embed/`;
+          frame.loading = 'lazy';
+          frame.setAttribute('allowtransparency', 'true');
+          frame.setAttribute('scrolling', 'no');
+          item.appendChild(frame);
+        } else {
+          item.textContent = String(i + 1).padStart(2, '0');
+        }
+        igFeed.appendChild(item);
+      });
+    }
+
     document.getElementById('year').textContent = new Date().getFullYear();
 
     document.querySelectorAll('[data-prefill]').forEach(el => {
