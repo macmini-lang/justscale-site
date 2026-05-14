@@ -426,13 +426,14 @@
     .faq-item summary { font-size: 16px; padding: 18px 20px; }
     .faq-a { padding: 0 20px 20px; }
     .mid-cta { margin-top: 36px; }
-    body { padding-bottom: 70px; }
+    body { padding-bottom: calc(70px + env(safe-area-inset-bottom)); }
     .mobile-cta {
       display: block;
       position: fixed; left: 0; right: 0; bottom: 0; z-index: 90;
       background: var(--ink); color: #FFFFFF;
       text-align: center; text-decoration: none;
-      font-weight: 600; font-size: 16px; padding: 16px;
+      font-weight: 600; font-size: 16px;
+      padding: 16px 16px calc(16px + env(safe-area-inset-bottom));
       box-shadow: 0 -8px 24px rgba(14,27,46,0.16);
     }
   }
