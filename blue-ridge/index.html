@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blue Ridge Investor Lunch &amp; Learn: Private 2-Resort Portfolio Showcase</title>
-<meta name="description" content="Now's your opportunity to check out the Blue Ridge Collection. Saturday, May 30, 2026. A private tour of Willow Falls and The Ellijay Resort for 10 accredited investors.">
+<meta name="description" content="Walk the Blue Ridge Collection in person before you invest. Saturday, May 30, 2026. A private tour of Willow Falls and The Ellijay Resort for 10 accredited investors.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -82,6 +82,8 @@
   }
   .cta:hover { background: var(--blue); color: #FFFFFF; }
   .cta-sub { font-size: 14px; color: var(--body); margin-top: 13px; }
+  .mid-cta { text-align: center; margin-top: 48px; }
+  .mobile-cta { display: none; }
 
   /* Top bar */
   .topbar {
@@ -403,8 +405,10 @@
 
   /* Responsive */
   @media (max-width: 860px) {
-    section { padding: 58px 0; }
-    .hero { padding: 40px 0 56px; }
+    section { padding: 56px 0; }
+    .wrap { padding: 0 22px; }
+    .hero { padding: 30px 0 48px; }
+    .hero .lede { margin: 14px auto 24px; }
     .team-grid { grid-template-columns: repeat(2, 1fr); }
     .portfolio-grid { grid-template-columns: 1fr; }
     .prop-grid { grid-template-columns: 1fr; }
@@ -412,11 +416,23 @@
     .deal-stats { columns: 1; }
     .split { grid-template-columns: 1fr; }
     .agenda-row { flex-direction: column; gap: 2px; }
-    .logo { height: 44px; }
-    .topbar .cta { padding: 10px 18px; font-size: 13px; }
-    .prop-body, .split-col { padding-left: 26px; padding-right: 26px; }
+    .agenda-time { min-width: 0; }
+    .logo { height: 42px; }
+    .topbar .cta { padding: 10px 16px; font-size: 13px; }
+    .prop-body { padding: 24px 24px 28px; }
+    .split-col { padding: 28px 24px; }
     .faq-item summary { font-size: 16px; padding: 18px 20px; }
     .faq-a { padding: 0 20px 20px; }
+    .mid-cta { margin-top: 36px; }
+    body { padding-bottom: 70px; }
+    .mobile-cta {
+      display: block;
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 90;
+      background: var(--ink); color: #FFFFFF;
+      text-align: center; text-decoration: none;
+      font-weight: 600; font-size: 16px; padding: 16px;
+      box-shadow: 0 -8px 24px rgba(14,27,46,0.16);
+    }
   }
 </style>
 </head>
@@ -434,7 +450,7 @@
 <section class="hero">
   <div class="wrap hero-stack">
     <div class="eyebrow">Blue Ridge Investor Lunch &amp; Learn</div>
-    <h1 class="hero-h1">Now's your opportunity to check out the Blue Ridge Collection</h1>
+    <h1 class="hero-h1">Now's your opportunity to walk the Blue Ridge Collection in person, before you invest</h1>
     <div class="hero-date">Saturday, May 30, 2026</div>
     <p class="lede">We're taking 10 accredited investors through Willow Falls and The Ellijay Resort. Both are bought, titled, and generating revenue right now.</p>
     <div class="hero-video">
@@ -472,7 +488,7 @@
     <p>You don't have to take any of that from a video. The day is built so you can test it in person, before you ever look hard at the numbers.</p>
     <div class="team-grid">
       <div class="team-card">
-        <img class="team-photo top" src="images/team-blake.png" alt="Blake Dailey">
+        <img class="team-photo top" src="images/team-blake.jpg" alt="Blake Dailey">
         <div class="team-info"><div class="team-name">Blake Dailey</div><div class="team-title">Founder &amp; CEO</div></div>
       </div>
       <div class="team-card">
@@ -480,7 +496,7 @@
         <div class="team-info"><div class="team-name">Victoria Slade</div><div class="team-title">Director of Operations</div></div>
       </div>
       <div class="team-card">
-        <img class="team-photo" src="images/team-lauren.png" alt="Lauren DuBois">
+        <img class="team-photo" src="images/team-lauren.jpg" alt="Lauren DuBois">
         <div class="team-info"><div class="team-name">Lauren DuBois</div><div class="team-title">Asset &amp; Acquisition Manager</div></div>
       </div>
       <div class="team-card">
@@ -507,11 +523,11 @@
         <div class="portfolio-info"><div class="portfolio-name">Seaside Escape</div><div class="portfolio-status hold">Current hold · Acquired 2021</div></div>
       </div>
       <div class="portfolio-card">
-        <img class="portfolio-img" src="images/portfolio-tahoe-14.webp" alt="South Lake Tahoe boutique hotel">
+        <img class="portfolio-img" src="images/portfolio-tahoe-14.jpg" alt="South Lake Tahoe boutique hotel">
         <div class="portfolio-info"><div class="portfolio-name">South Lake Tahoe</div><div class="portfolio-status exit">14 units · Sold 2022</div></div>
       </div>
       <div class="portfolio-card">
-        <img class="portfolio-img" src="images/portfolio-tahoe-20.webp" alt="South Lake Tahoe boutique hotel">
+        <img class="portfolio-img" src="images/portfolio-tahoe-20.jpg" alt="South Lake Tahoe boutique hotel">
         <div class="portfolio-info"><div class="portfolio-name">South Lake Tahoe</div><div class="portfolio-status exit">20 units · Sold 2022</div></div>
       </div>
       <div class="portfolio-card">
@@ -519,7 +535,7 @@
         <div class="portfolio-info"><div class="portfolio-name">Panama City Beach</div><div class="portfolio-status exit">15 units · Sold 2022</div></div>
       </div>
       <div class="portfolio-card">
-        <img class="portfolio-img" src="images/portfolio-pcb-18.png" alt="Panama City Beach boutique hotel">
+        <img class="portfolio-img" src="images/portfolio-pcb-18.jpg" alt="Panama City Beach boutique hotel">
         <div class="portfolio-info"><div class="portfolio-name">Panama City Beach</div><div class="portfolio-status exit">18 units · Sold 2022</div></div>
       </div>
     </div>
@@ -536,7 +552,7 @@
     <div class="prop-grid">
       <a class="prop-card" href="#lb-willowfalls">
         <div class="prop-imgwrap">
-          <img class="prop-img" src="images/property-willowfalls-1.webp" alt="Willow Falls">
+          <img class="prop-img" src="images/property-willowfalls-1.jpg" alt="Willow Falls">
           <span class="prop-tag">View Willow Falls</span>
         </div>
         <div class="prop-body">
@@ -558,6 +574,10 @@
       </a>
     </div>
     <p class="prop-close">Both are acquired. Both are titled. Both are generating revenue right now. On May 30, you walk them.</p>
+    <div class="mid-cta">
+      <a class="cta" href="https://www.eventbrite.com/e/blue-ridge-investor-lunch-learn-private-2-resort-portfolio-showcase-tickets-1988932959021">Reserve your spot for May 30</a>
+      <div class="cta-sub">Free to attend. Accredited investors only. 10 seats.</div>
+    </div>
   </div>
 </section>
 
@@ -566,7 +586,7 @@
   <a class="lightbox-bg" href="#"></a>
   <div class="lightbox-inner">
     <a class="lightbox-close" href="#" aria-label="Close">&times;</a>
-    <img class="lightbox-img" src="images/property-willowfalls-1.webp" alt="Willow Falls">
+    <img class="lightbox-img" src="images/property-willowfalls-1.jpg" alt="Willow Falls">
     <div class="lightbox-caption">
       <h3>Willow Falls</h3>
       <p>An operating wedding venue and lakeside cabin resort on 15 acres, built around a spring-fed, 2.5-acre stocked lake. A 7,000 square foot event venue, indoor and outdoor ceremony sites, a commercial-grade kitchen, and bride and groom suites. 3 rentable cabins today, with 7 modern cabins coming, plus a separate 4.8-acre parcel for expansion. You'll walk all of it on May 30.</p>
@@ -619,9 +639,11 @@
 <!-- THE ELLIJAY RESORT, RENDERED -->
 <section>
   <div class="wrap">
-    <div class="eyebrow">The vision</div>
-    <h2>The Ellijay Resort, rendered</h2>
-    <p class="rationale">A visual walkthrough of the property. On May 30, you walk it in person.</p>
+    <div class="eyebrow">A closer look</div>
+    <h2>See The Ellijay Resort, rendered</h2>
+    <p class="rationale">Square footage and unit counts don't tell you what a property feels like.</p>
+    <p>So we had The Ellijay Resort rendered, top to bottom: the lodge on the 10th hole, the pool and deck, the grounds, and the way all 15 rooms come together as one property. It's the closest look at the asset you'll get without standing on it.</p>
+    <p>On May 30, you stand on it. You walk the rooms and the grounds, and you put your questions to the team that runs it.</p>
     <div class="render-video">
       <wistia-player media-id="jix18yxxvf" aspect="1.7777777777777777"></wistia-player>
     </div>
@@ -643,6 +665,10 @@
       <div class="agenda-row"><div class="agenda-time">Mid-afternoon</div><div class="agenda-what">Wrap</div></div>
     </div>
     <p class="agenda-note">Blue Ridge is about 90 minutes from Atlanta and two hours from Chattanooga. Drive up Saturday morning, be home by dinner.</p>
+    <div class="mid-cta">
+      <a class="cta" href="https://www.eventbrite.com/e/blue-ridge-investor-lunch-learn-private-2-resort-portfolio-showcase-tickets-1988932959021">Reserve your spot for May 30</a>
+      <div class="cta-sub">Free to attend. Accredited investors only. 10 seats.</div>
+    </div>
   </div>
 </section>
 
@@ -726,6 +752,9 @@
     <p class="disclaimer">This event and webpage are intended solely for accredited investors. This relates to a Rule 506(c) private offering. Registration does not constitute an offer to sell or a solicitation of an offer to buy securities. All projected returns are targets only and are not guaranteed. Past performance is not indicative of future results. All investments involve risk, including the possible loss of principal. Please consult your financial and tax advisors before making any investment decision. Verification of accredited investor status is required prior to any investment.</p>
   </div>
 </footer>
+
+<!-- MOBILE STICKY CTA -->
+<a class="mobile-cta" href="https://www.eventbrite.com/e/blue-ridge-investor-lunch-learn-private-2-resort-portfolio-showcase-tickets-1988932959021">Reserve your spot for May 30</a>
 
 </body>
 </html>
