@@ -10,6 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://fast.wistia.com/player.js" async></script>
 <script src="https://fast.wistia.com/embed/tlp5xs0xrq.js" async type="module"></script>
+<script src="https://fast.wistia.com/embed/jix18yxxvf.js" async type="module"></script>
 <style>
   :root {
     --bg: #FFFFFF;
@@ -132,18 +133,26 @@
     background: var(--blue); transform: translateY(-50%);
   }
 
-  /* Wistia VSL */
-  .hero-video wistia-player {
+  /* Wistia video */
+  .hero-video wistia-player,
+  .render-video wistia-player {
     display: block;
     border-radius: var(--radius);
     overflow: hidden;
   }
-  wistia-player[media-id='tlp5xs0xrq']:not(:defined) {
-    background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/tlp5xs0xrq/swatch');
+  .render-video { max-width: 920px; margin: 28px auto 0; }
+  wistia-player[media-id='tlp5xs0xrq']:not(:defined),
+  wistia-player[media-id='jix18yxxvf']:not(:defined) {
     display: block;
     filter: blur(5px);
     padding-top: 56.25%;
     border-radius: var(--radius);
+  }
+  wistia-player[media-id='tlp5xs0xrq']:not(:defined) {
+    background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/tlp5xs0xrq/swatch');
+  }
+  wistia-player[media-id='jix18yxxvf']:not(:defined) {
+    background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/jix18yxxvf/swatch');
   }
 
   /* Agenda */
@@ -607,8 +616,20 @@
   </div>
 </section>
 
-<!-- THE DAY -->
+<!-- THE ELLIJAY RESORT, RENDERED -->
 <section>
+  <div class="wrap">
+    <div class="eyebrow">The vision</div>
+    <h2>The Ellijay Resort, rendered</h2>
+    <p class="rationale">A visual walkthrough of the property. On May 30, you walk it in person.</p>
+    <div class="render-video">
+      <wistia-player media-id="jix18yxxvf" aspect="1.7777777777777777"></wistia-player>
+    </div>
+  </div>
+</section>
+
+<!-- THE DAY -->
+<section class="tint">
   <div class="wrap">
     <div class="eyebrow">The day</div>
     <h2>What the day looks like</h2>
@@ -626,7 +647,7 @@
 </section>
 
 <!-- WHO THIS IS FOR -->
-<section class="tint">
+<section>
   <div class="wrap">
     <div class="eyebrow">Fit</div>
     <h2>Who this is for</h2>
@@ -654,7 +675,7 @@
 </section>
 
 <!-- FAQ -->
-<section>
+<section class="tint">
   <div class="wrap">
     <div class="eyebrow">Questions</div>
     <h2>Questions, answered</h2>
@@ -688,7 +709,7 @@
 </section>
 
 <!-- FINAL CTA -->
-<section class="final tint">
+<section class="final">
   <div class="wrap">
     <div class="eyebrow">Register</div>
     <h2>10 seats. One Saturday. Both properties.</h2>
