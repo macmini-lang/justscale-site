@@ -102,7 +102,8 @@
   /* Hero: stacked, centered */
   .hero { padding: 56px 0 78px; text-align: center; }
   .hero-stack { display: flex; flex-direction: column; align-items: center; }
-  .hero-h1 { font-size: clamp(30px, 4vw, 50px); max-width: 880px; letter-spacing: -0.02em; }
+  .hero-h1 { font-size: clamp(28px, 3.4vw, 40px); max-width: 1080px; letter-spacing: -0.02em; }
+  .h1-break { display: inline; }
   .hero-date {
     font-size: clamp(19px, 2vw, 27px);
     font-weight: 600;
@@ -409,6 +410,7 @@
     .wrap { padding: 0 22px; }
     .hero { padding: 30px 0 48px; }
     .hero .lede { margin: 14px auto 24px; }
+    .h1-break { display: none; }
     .team-grid { grid-template-columns: repeat(2, 1fr); }
     .portfolio-grid { grid-template-columns: 1fr; }
     .prop-grid { grid-template-columns: 1fr; }
@@ -450,7 +452,7 @@
 <section class="hero">
   <div class="wrap hero-stack">
     <div class="eyebrow">Blue Ridge Investor Lunch &amp; Learn</div>
-    <h1 class="hero-h1">Now's your opportunity to walk the Blue Ridge Collection in person, before you invest</h1>
+    <h1 class="hero-h1">Now's your opportunity to walk the <br class="h1-break">Blue Ridge Collection in person, before you invest</h1>
     <div class="hero-date">Saturday, May 30, 2026</div>
     <p class="lede">We're taking 10 accredited investors through Willow Falls and The Ellijay Resort. Both are bought, titled, and generating revenue right now.</p>
     <div class="hero-video">
