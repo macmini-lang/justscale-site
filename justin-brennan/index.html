@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Free Live Training with Justin Brennan — Buy Your First Apartment Building in 90 Days</title>
+<meta name="description" content="Live with Justin Brennan: how to buy your first apartment building in the next 90 days, even without a pile of your own cash. Save your seat free." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --navy: #1f2a36;
+    --navy-2: #2b3b4a;
+    --orange: #e98c30;
+    --orange-cta: #db532b;
+    --gray: #8f8f8f;
+    --ink: #1f2a36;
+    --paper: #ffffff;
+    --muted: #c3ccd6;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Montserrat', system-ui, sans-serif;
+    color: var(--paper);
+    background: var(--navy);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  .wrap { width: 100%; max-width: 720px; margin: 0 auto; padding: 0 22px; }
+
+  /* Top bar */
+  .topbar {
+    background: var(--orange);
+    color: #18222c;
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* Hero */
+  .hero {
+    min-height: calc(100vh - 40px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px 0 60px;
+    background:
+      radial-gradient(900px 480px at 50% -10%, rgba(233,140,48,0.16), transparent 62%),
+      linear-gradient(180deg, #1b242e 0%, #23303d 58%, #2c2218 100%);
+    position: relative;
+  }
+  /* subtle orange glow rising from bottom, echoing the brand banner */
+  .hero::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 160px;
+    background: linear-gradient(180deg, transparent, rgba(219,83,43,0.22));
+    pointer-events: none;
+  }
+  .hero > * { position: relative; z-index: 2; }
+
+  .logo-badge {
+    display: inline-flex;
+    background: #fff;
+    border-radius: 16px;
+    padding: 12px 16px;
+    margin-bottom: 22px;
+    box-shadow: 0 10px 26px rgba(0,0,0,0.28);
+  }
+  .logo-badge img { width: 96px; height: auto; }
+
+  .eyebrow {
+    display: inline-block;
+    border: 1px solid rgba(233,140,48,0.55);
+    background: rgba(233,140,48,0.12);
+    color: var(--orange);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 7px 15px;
+    border-radius: 999px;
+    margin-bottom: 22px;
+  }
+  h1 {
+    font-size: clamp(28px, 5.2vw, 46px);
+    font-weight: 900;
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    max-width: 16ch;
+    margin: 0 auto 18px;
+  }
+  h1 .accent { color: var(--orange); }
+  .sub {
+    font-size: clamp(15px, 2.2vw, 18px);
+    color: var(--muted);
+    max-width: 46ch;
+    margin: 0 auto 26px;
+  }
+  .sub b { color: #fff; font-weight: 700; }
+
+  /* What you'll learn — tight, three items */
+  .learn {
+    list-style: none;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+    margin: 0 auto 30px;
+  }
+  .learn li {
+    position: relative;
+    padding-left: 30px;
+    font-size: 15.5px;
+    color: #eaf0f6;
+    font-weight: 500;
+  }
+  .learn li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 4px;
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    background: var(--orange);
+  }
+  .learn li::after {
+    content: "";
+    position: absolute;
+    left: 5px; top: 7px;
+    width: 4px; height: 8px;
+    border: solid #1b242e;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+  /* Form card */
+  .card {
+    background: #fff;
+    color: var(--ink);
+    border-radius: 16px;
+    padding: 26px 24px 22px;
+    width: 100%;
+    max-width: 440px;
+    box-shadow: 0 26px 60px rgba(0,0,0,0.45);
+  }
+  .card-head {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 19px;
+    color: var(--navy);
+    margin-bottom: 3px;
+  }
+  .card-date { font-size: 14px; color: #5a6672; font-weight: 600; margin-bottom: 18px; }
+
+  .countdown { display: flex; justify-content: center; gap: 9px; margin-bottom: 20px; }
+  .cd-box {
+    background: var(--navy);
+    color: #fff;
+    border-radius: 9px;
+    padding: 9px 0 6px;
+    width: 62px;
+  }
+  .cd-box .num { font-weight: 800; font-size: 25px; line-height: 1; }
+  .cd-box .lbl { font-size: 10px; text-transform: uppercase; letter-spacing: 0.07em; opacity: 0.7; margin-top: 5px; }
+
+  .field { margin-bottom: 12px; }
+  .field input {
+    width: 100%;
+    padding: 14px 15px;
+    font-size: 16px;
+    font-family: inherit;
+    border: 1.5px solid #d4dae1;
+    border-radius: 10px;
+    background: #f6f8fa;
+    color: var(--ink);
+    transition: border-color .15s, background .15s;
+  }
+  .field input:focus { outline: none; border-color: var(--orange); background: #fff; }
+  .cta {
+    width: 100%;
+    border: 0;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 16px 18px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--orange) 0%, var(--orange-cta) 100%);
+    box-shadow: 0 12px 26px rgba(219,83,43,0.4);
+    transition: transform .12s, box-shadow .12s;
+  }
+  .cta:hover { transform: translateY(-2px); box-shadow: 0 16px 32px rgba(219,83,43,0.5); }
+  .card-fine { font-size: 12px; color: #8a939c; margin-top: 11px; }
+  .card-fine b { color: var(--orange-cta); }
+
+  /* Proof line — one line, the host */
+  .proof {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 30px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 999px;
+    padding: 10px 20px 10px 12px;
+    max-width: 540px;
+  }
+  .proof img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; object-position: 50% 25%; flex: 0 0 auto; }
+  .proof p { font-size: 13.5px; color: var(--muted); text-align: left; line-height: 1.4; }
+  .proof p b { color: #fff; font-weight: 700; }
+
+  /* Footer */
+  footer { background: #18222c; padding: 28px 0; text-align: center; }
+  footer .logo-badge { margin: 0 auto 14px; padding: 9px 13px; }
+  footer .logo-badge img { width: 50px; }
+  footer p { color: #75808b; font-size: 12px; max-width: 60ch; margin: 0 auto 5px; }
+  footer a { color: var(--orange); text-decoration: none; }
+
+  @media (max-width: 480px) {
+    .cd-box { width: 54px; }
+    .cd-box .num { font-size: 21px; }
+    .proof { flex-direction: column; text-align: center; border-radius: 16px; }
+    .proof p { text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Top bar -->
+  <div class="topbar">Free Live Training &nbsp;·&nbsp; [DAY, MONTH DATE] at [TIME] [TZ] &nbsp;·&nbsp; Limited Seats</div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <span class="logo-badge"><img src="ms-logo.png" alt="Multifamily Schooled" /></span>
+
+    <span class="eyebrow">Live Online Training · 60–90 Minutes</span>
+
+    <h1>How to Buy Your First Apartment Building in the Next <span class="accent">90 Days</span> — Even Without a Pile of Your Own Cash</h1>
+
+    <p class="sub">Live with <b>Justin Brennan</b>, third-generation multifamily operator. <b>[DAY, MONTH DATE] · [TIME] [TZ]</b></p>
+
+    <ul class="learn">
+      <li>The four phases that take you from zero to your first apartment deal</li>
+      <li>How to do a first deal without funding the whole thing yourself</li>
+      <li>Why this market window is the best entry point in years</li>
+    </ul>
+
+    <!-- Registration card -->
+    <div class="card" id="register">
+      <div class="card-head">Save My Seat — Free</div>
+      <div class="card-date">[DAY, MONTH DATE] at [TIME] [TZ]</div>
+
+      <div class="countdown" id="countdown" aria-label="Time until the training starts">
+        <div class="cd-box"><div class="num" id="cd-d">00</div><div class="lbl">Days</div></div>
+        <div class="cd-box"><div class="num" id="cd-h">00</div><div class="lbl">Hrs</div></div>
+        <div class="cd-box"><div class="num" id="cd-m">00</div><div class="lbl">Min</div></div>
+        <div class="cd-box"><div class="num" id="cd-s">00</div><div class="lbl">Sec</div></div>
+      </div>
+
+      <form id="regForm" novalidate>
+        <div class="field"><input type="text" id="name" name="name" placeholder="First name" autocomplete="given-name" required /></div>
+        <div class="field"><input type="email" id="email" name="email" placeholder="Email address" autocomplete="email" required /></div>
+        <button type="submit" class="cta">Save My Seat</button>
+      </form>
+      <p class="card-fine"><b>Show up live</b> — the deal breakdowns and Q&A aren't recorded.</p>
+    </div>
+
+    <!-- One line of proof: the host -->
+    <div class="proof">
+      <img src="justin.png" alt="Justin Brennan" />
+      <p><b>Justin Brennan</b> is a third-generation multifamily operator who has bought, built, and managed apartment communities across the U.S. — the same playbook he'll walk you through live.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="wrap">
+      <span class="logo-badge"><img src="ms-logo.png" alt="Multifamily Schooled" /></span>
+      <p>This is an educational training. Results are not guaranteed. Nothing presented is financial, tax, or legal advice. Real estate investing carries risk, including loss of principal.</p>
+      <p>© <span id="year">2026</span> Multifamily Schooled. All rights reserved. · <a href="https://multifamilyschooled.com">multifamilyschooled.com</a></p>
+    </div>
+  </footer>
+
+<script>
+  // ---- Countdown ----
+  // Set the live training start time (ISO 8601 with timezone offset).
+  // Example for 5:00 PM Pacific (PDT, -07:00): "2026-06-12T17:00:00-07:00"
+  var CLASS_START = "2026-06-12T17:00:00-07:00";
+
+  (function () {
+    var target = new Date(CLASS_START).getTime();
+    var d = document.getElementById('cd-d'), h = document.getElementById('cd-h'),
+        m = document.getElementById('cd-m'), s = document.getElementById('cd-s');
+    function pad(n) { return (n < 10 ? '0' : '') + n; }
+    function tick() {
+      if (isNaN(target)) return;
+      var diff = target - Date.now();
+      if (diff < 0) diff = 0;
+      d.textContent = pad(Math.floor(diff / 86400000));
+      h.textContent = pad(Math.floor((diff % 86400000) / 3600000));
+      m.textContent = pad(Math.floor((diff % 3600000) / 60000));
+      s.textContent = pad(Math.floor((diff % 60000) / 1000));
+    }
+    tick();
+    setInterval(tick, 1000);
+  })();
+
+  // ---- Form submit (wire to GHL / your form endpoint) ----
+  document.getElementById('regForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = document.getElementById('name').value.trim();
+    var email = document.getElementById('email').value.trim();
+    if (!name || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+      alert('Please enter your first name and a valid email.');
+      return;
+    }
+    // TODO: POST to your GHL form / registration endpoint, then redirect to the
+    // confirmation (thank-you) page. Placeholder behavior below:
+    window.location.href = "thank-you.html";
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
