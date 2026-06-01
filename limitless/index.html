@@ -51,10 +51,27 @@
         .ds-reveal--delay-1 { transition-delay: 0.1s; } .ds-reveal--delay-2 { transition-delay: 0.2s; }
         @media (prefers-reduced-motion: reduce) { .ds-reveal { opacity: 1 !important; transform: none !important; transition: none !important; } }
 
-        /* Brand bar */
-        .kk-logobar { padding: 20px 0; text-align: center; border-bottom: 1px solid var(--ds-border); }
-        .kk-logobar span { font-family: var(--ds-font-display); font-weight: 700; letter-spacing: 0.04em; font-size: 1.15rem; }
-        .kk-logobar b { color: var(--ds-accent); font-weight: 700; }
+        /* Buttons */
+        .kk-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: var(--ds-accent); color: #fff; font-family: var(--ds-font-display); font-weight: 600; font-size: 0.98rem; padding: 15px 36px; border-radius: 11px; box-shadow: 0 10px 34px rgba(205,41,26,0.28); transition: transform var(--ds-duration-normal) var(--ds-ease), box-shadow var(--ds-duration-normal); }
+        .kk-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 44px rgba(205,41,26,0.42); }
+        .kk-btn--sm { padding: 10px 22px; font-size: 0.85rem; box-shadow: none; }
+
+        /* Top bar: logo left + CTA right */
+        .kk-topbar { border-bottom: 1px solid var(--ds-border); position: relative; z-index: 5; }
+        .kk-topbar__wrap { max-width: 1080px; margin: 0 auto; padding: 15px 24px; display: flex; align-items: center; justify-content: space-between; }
+        .kk-logo { font-family: var(--ds-font-display); font-weight: 700; letter-spacing: 0.04em; font-size: 1.12rem; }
+        .kk-logo b { color: var(--ds-accent); }
+
+        /* Hero CTA */
+        .kk-cta-main { margin-top: var(--ds-space-6); }
+        .kk-cta-sub { margin-top: 14px; font-size: var(--ds-text-sm); color: var(--ds-text-muted); }
+
+        /* Sticky mobile CTA */
+        .kk-mobile-cta { display: none; }
+        @media (max-width: 768px) {
+            .kk-mobile-cta { display: block; position: fixed; left: 14px; right: 14px; bottom: 14px; z-index: 60; background: var(--ds-accent); color: #fff; text-align: center; font-family: var(--ds-font-display); font-weight: 600; font-size: 0.98rem; padding: 16px; border-radius: 12px; box-shadow: 0 10px 34px rgba(0,0,0,0.55); }
+            body { padding-bottom: 84px; }
+        }
 
         /* Hero */
         .kk-hero { position: relative; text-align: center; padding: var(--ds-space-10) 0 var(--ds-space-6); overflow: hidden; }
@@ -92,7 +109,12 @@
 </head>
 <body>
 
-    <div class="kk-logobar"><span>KRIS <b>KROHN</b></span></div>
+    <header class="kk-topbar">
+        <div class="kk-topbar__wrap">
+            <span class="kk-logo">KRIS <b>KROHN</b></span>
+            <a class="kk-btn kk-btn--sm" href="#apply">Apply Now</a>
+        </div>
+    </header>
 
     <!-- HERO: headline -> subheadline -> VSL -->
     <section class="kk-hero">
@@ -111,11 +133,13 @@
                     <span class="kk-vsl__tag">VSL goes here</span>
                 </div>
             </div>
+            <a class="kk-btn kk-cta-main ds-reveal ds-reveal--delay-2" href="#apply">Apply for Limitless Mentoring &rarr;</a>
+            <div class="kk-cta-sub ds-reveal ds-reveal--delay-2">Takes about 2 minutes. If you're a fit, we'll set up a call.</div>
         </div>
     </section>
 
     <!-- APPLICATION: Typeform embed (placeholder) -->
-    <section class="kk-apply">
+    <section class="kk-apply" id="apply">
         <div class="ds-container">
             <p class="kk-apply__eyebrow ds-reveal">Apply</p>
             <h2 class="kk-apply__title ds-reveal">See if you're a fit for Limitless Mentoring</h2>
@@ -129,6 +153,8 @@
             </div>
         </div>
     </section>
+
+    <a class="kk-mobile-cta" href="#apply">Apply for Limitless Mentoring</a>
 
 <script>
 (function(){
