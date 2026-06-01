@@ -7,14 +7,13 @@
 <meta name="description" content="Live with Justin Brennan: how to buy your first apartment building in the next 90 days, even without a pile of your own cash. Save your seat free." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
 <style>
   :root {
     --navy: #1f2a36;
-    --navy-2: #2b3b4a;
+    --navy-dark: #18222c;
     --orange: #e98c30;
     --orange-cta: #db532b;
-    --gray: #8f8f8f;
     --ink: #1f2a36;
     --paper: #ffffff;
     --muted: #c3ccd6;
@@ -22,125 +21,118 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
-    font-family: 'Montserrat', system-ui, sans-serif;
+    font-family: 'Roboto', system-ui, sans-serif;
     color: var(--paper);
     background: var(--navy);
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
   }
+  h1, h2, h3, .h { font-family: 'Montserrat', sans-serif; letter-spacing: -0.01em; }
   img { max-width: 100%; display: block; }
-  .wrap { width: 100%; max-width: 720px; margin: 0 auto; padding: 0 22px; }
+  .wrap { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 24px; }
 
   /* Top bar */
   .topbar {
-    background: var(--orange);
-    color: #18222c;
+    background: var(--navy-dark);
     text-align: center;
-    padding: 10px 16px;
+    padding: 11px 16px;
     font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.05em;
+    font-weight: 600;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
+    color: #fff;
   }
+  .topbar b { color: var(--orange); }
 
   /* Hero */
   .hero {
-    min-height: calc(100vh - 40px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 30px 22px 60px;
     background:
-      radial-gradient(900px 480px at 50% -10%, rgba(233,140,48,0.16), transparent 62%),
-      linear-gradient(180deg, #1b242e 0%, #23303d 58%, #2c2218 100%);
+      radial-gradient(1100px 520px at 78% -8%, rgba(233,140,48,0.16), transparent 60%),
+      linear-gradient(155deg, #1b242e 0%, #23303d 54%, #1b242e 100%);
+    padding: 28px 0 64px;
     position: relative;
+    overflow: hidden;
   }
-  /* subtle orange glow rising from bottom, echoing the brand banner */
   .hero::after {
     content: "";
     position: absolute;
-    left: 0; right: 0; bottom: 0;
-    height: 160px;
-    background: linear-gradient(180deg, transparent, rgba(219,83,43,0.22));
+    inset: 0;
+    background: radial-gradient(760px 400px at 12% 116%, rgba(219,83,43,0.28), transparent 60%);
     pointer-events: none;
   }
-  .hero > * { position: relative; z-index: 2; }
-
+  .logo-wrap { text-align: center; }
   .logo-badge {
     display: inline-flex;
     background: #fff;
-    border-radius: 16px;
-    padding: 12px 16px;
-    margin-bottom: 22px;
-    box-shadow: 0 10px 26px rgba(0,0,0,0.28);
+    border-radius: 14px;
+    padding: 10px 14px;
+    margin: 6px auto 0;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.28);
   }
-  .logo-badge img { width: 96px; height: auto; }
-
+  .logo-badge img { height: 56px; width: auto; }
+  .hero-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 48px;
+    align-items: center;
+    margin-top: 40px;
+  }
   .eyebrow {
     display: inline-block;
-    border: 1px solid rgba(233,140,48,0.55);
-    background: rgba(233,140,48,0.12);
+    background: rgba(233,140,48,0.14);
+    border: 1px solid rgba(233,140,48,0.5);
     color: var(--orange);
+    font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    font-size: 12px;
-    letter-spacing: 0.14em;
+    font-size: 12.5px;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    padding: 7px 15px;
+    padding: 7px 14px;
     border-radius: 999px;
     margin-bottom: 22px;
   }
   h1 {
-    font-size: clamp(28px, 5.2vw, 46px);
+    font-size: clamp(31px, 4.8vw, 50px);
     font-weight: 900;
-    line-height: 1.08;
-    letter-spacing: -0.015em;
-    max-width: 16ch;
-    margin: 0 auto 18px;
+    line-height: 1.05;
+    margin-bottom: 20px;
   }
   h1 .accent { color: var(--orange); }
   .sub {
-    font-size: clamp(15px, 2.2vw, 18px);
+    font-size: clamp(16px, 2vw, 19px);
     color: var(--muted);
-    max-width: 46ch;
-    margin: 0 auto 26px;
+    max-width: 40ch;
+    margin-bottom: 26px;
   }
-  .sub b { color: #fff; font-weight: 700; }
+  .sub b { color: #fff; font-weight: 600; }
 
-  /* What you'll learn — tight, three items */
-  .learn {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    text-align: left;
-    width: 100%;
-    max-width: 440px;
-    margin: 0 auto 30px;
-  }
-  .learn li {
+  .bullets { list-style: none; margin: 0 0 30px; }
+  .bullets li {
     position: relative;
-    padding-left: 30px;
-    font-size: 15.5px;
-    color: #eaf0f6;
-    font-weight: 500;
+    padding: 9px 0 9px 36px;
+    font-size: 16.5px;
+    color: #eef2f6;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
   }
-  .learn li::before {
+  .bullets li:last-child { border-bottom: 0; }
+  .bullets li::before {
     content: "";
     position: absolute;
-    left: 0; top: 4px;
-    width: 16px; height: 16px;
+    left: 4px; top: 14px;
+    width: 18px; height: 18px;
     border-radius: 50%;
     background: var(--orange);
+    box-shadow: 0 0 0 4px rgba(233,140,48,0.18);
   }
-  .learn li::after {
+  .bullets li::after {
     content: "";
     position: absolute;
-    left: 5px; top: 7px;
-    width: 4px; height: 8px;
+    left: 10px; top: 18px;
+    width: 5px; height: 9px;
     border: solid #1b242e;
-    border-width: 0 2px 2px 0;
+    border-width: 0 2.5px 2.5px 0;
     transform: rotate(45deg);
   }
 
@@ -149,38 +141,49 @@
     background: #fff;
     color: var(--ink);
     border-radius: 16px;
-    padding: 26px 24px 22px;
-    width: 100%;
-    max-width: 440px;
-    box-shadow: 0 26px 60px rgba(0,0,0,0.45);
+    padding: 30px 28px 26px;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.45);
   }
   .card-head {
+    text-align: center;
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
-    font-size: 19px;
+    font-size: 20px;
     color: var(--navy);
-    margin-bottom: 3px;
+    margin-bottom: 4px;
   }
-  .card-date { font-size: 14px; color: #5a6672; font-weight: 600; margin-bottom: 18px; }
-
-  .countdown { display: flex; justify-content: center; gap: 9px; margin-bottom: 20px; }
+  .card-date {
+    text-align: center;
+    font-size: 14.5px;
+    color: #444;
+    font-weight: 500;
+    margin-bottom: 18px;
+  }
+  /* Countdown */
+  .countdown {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 22px;
+  }
   .cd-box {
-    background: var(--navy);
+    background: var(--navy-dark);
     color: #fff;
-    border-radius: 9px;
-    padding: 9px 0 6px;
-    width: 62px;
+    border-radius: 10px;
+    padding: 10px 0 7px;
+    width: 64px;
+    text-align: center;
   }
-  .cd-box .num { font-weight: 800; font-size: 25px; line-height: 1; }
-  .cd-box .lbl { font-size: 10px; text-transform: uppercase; letter-spacing: 0.07em; opacity: 0.7; margin-top: 5px; }
+  .cd-box .num { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 26px; line-height: 1; }
+  .cd-box .lbl { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.75; margin-top: 5px; }
 
-  .field { margin-bottom: 12px; }
+  .field { margin-bottom: 13px; }
   .field input {
     width: 100%;
     padding: 14px 15px;
     font-size: 16px;
     font-family: inherit;
-    border: 1.5px solid #d4dae1;
+    border: 1.5px solid #d7dce2;
     border-radius: 10px;
     background: #f6f8fa;
     color: var(--ink);
@@ -195,94 +198,159 @@
     font-weight: 800;
     font-size: 18px;
     letter-spacing: 0.02em;
-    text-transform: uppercase;
     color: #fff;
-    padding: 16px 18px;
+    padding: 17px 18px;
     border-radius: 10px;
     background: linear-gradient(135deg, var(--orange) 0%, var(--orange-cta) 100%);
     box-shadow: 0 12px 26px rgba(219,83,43,0.4);
     transition: transform .12s, box-shadow .12s;
+    text-transform: uppercase;
   }
   .cta:hover { transform: translateY(-2px); box-shadow: 0 16px 32px rgba(219,83,43,0.5); }
-  .card-fine { font-size: 12px; color: #8a939c; margin-top: 11px; }
-  .card-fine b { color: var(--orange-cta); }
+  .card-fine { text-align: center; font-size: 12px; color: #888; margin-top: 12px; }
+  .card-fine span { color: var(--orange-cta); font-weight: 600; }
 
-  /* Proof line — one line, the host */
-  .proof {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-top: 30px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.09);
-    border-radius: 999px;
-    padding: 10px 20px 10px 12px;
-    max-width: 540px;
+  /* Authority strip — the four phases of the crash-course framework */
+  .authority {
+    background: var(--paper);
+    color: var(--ink);
+    padding: 30px 0;
   }
-  .proof img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; object-position: 50% 25%; flex: 0 0 auto; }
-  .proof p { font-size: 13.5px; color: var(--muted); text-align: left; line-height: 1.4; }
-  .proof p b { color: #fff; font-weight: 700; }
+  .auth-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    text-align: center;
+  }
+  .auth-grid .stat { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 30px; color: var(--navy); line-height: 1; }
+  .auth-grid .stat-lbl { font-size: 13px; color: #555; margin-top: 7px; font-weight: 600; }
+
+  /* Host band */
+  .host {
+    background: #f6f7fb;
+    color: var(--ink);
+    padding: 56px 0;
+  }
+  .host-inner { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 44px; align-items: center; }
+  .host-photo {
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 20px 44px rgba(31,42,54,0.18);
+    aspect-ratio: 4/5;
+    background: linear-gradient(155deg, var(--navy-dark), var(--navy));
+    display: flex; align-items: flex-end; justify-content: center;
+  }
+  .host-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 28%; }
+  .host h2 { font-size: clamp(26px, 3.4vw, 38px); font-weight: 800; color: var(--navy); margin-bottom: 8px; }
+  .host .role { color: var(--orange-cta); font-weight: 700; font-family: 'Montserrat', sans-serif; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 18px; }
+  .host p { font-size: 16.5px; color: #333; margin-bottom: 14px; }
+  .host .host-cta {
+    display: inline-block;
+    margin-top: 10px;
+    background: var(--navy);
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    padding: 14px 28px;
+    border-radius: 10px;
+    transition: background .15s;
+  }
+  .host .host-cta:hover { background: var(--navy-dark); }
 
   /* Footer */
-  footer { background: #18222c; padding: 28px 0; text-align: center; }
-  footer .logo-badge { margin: 0 auto 14px; padding: 9px 13px; }
-  footer .logo-badge img { width: 50px; }
-  footer p { color: #75808b; font-size: 12px; max-width: 60ch; margin: 0 auto 5px; }
+  footer { background: var(--navy-dark); padding: 34px 0; text-align: center; }
+  footer .logo-badge { margin: 0 auto 14px; padding: 8px 12px; }
+  footer .logo-badge img { height: 44px; }
+  footer p { color: #828d98; font-size: 12.5px; max-width: 60ch; margin: 0 auto 6px; }
   footer a { color: var(--orange); text-decoration: none; }
 
-  @media (max-width: 480px) {
-    .cd-box { width: 54px; }
-    .cd-box .num { font-size: 21px; }
-    .proof { flex-direction: column; text-align: center; border-radius: 16px; }
-    .proof p { text-align: center; }
+  @media (max-width: 860px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 34px; }
+    .sub { max-width: none; }
+    .host-inner { grid-template-columns: 1fr; gap: 26px; }
+    .host-photo { max-width: 340px; margin: 0 auto; }
+    .auth-grid { grid-template-columns: repeat(2, 1fr); gap: 26px 12px; }
+  }
+  @media (max-width: 420px) {
+    .cd-box { width: 56px; }
+    .cd-box .num { font-size: 22px; }
   }
 </style>
 </head>
 <body>
 
   <!-- Top bar -->
-  <div class="topbar">Free Live Training &nbsp;·&nbsp; [DAY, MONTH DATE] at [TIME] [TZ] &nbsp;·&nbsp; Limited Seats</div>
+  <div class="topbar">Free Live Training &nbsp;·&nbsp; <b>Limited Seats</b> &nbsp;·&nbsp; [DAY, MONTH DATE] at [TIME] [TZ]</div>
 
   <!-- Hero -->
   <section class="hero">
-    <span class="logo-badge"><img src="ms-logo.png" alt="Multifamily Schooled" /></span>
+    <div class="wrap">
+      <div class="logo-wrap"><span class="logo-badge"><img src="ms-logo.png" alt="Multifamily Schooled" /></span></div>
 
-    <span class="eyebrow">Live Online Training · 60–90 Minutes</span>
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">Live Online Training · 60–90 Minutes</span>
+          <h1>How to Buy Your First Apartment Building in the Next 90 Days — <span class="accent">Even Without a Pile of Your Own Cash</span></h1>
+          <p class="sub">Live with <b>Justin Brennan</b> — third-generation multifamily operator and founder of Multifamily Schooled. <b>[DAY, MONTH DATE] · [TIME] [TZ]</b></p>
 
-    <h1>How to Buy Your First Apartment Building in the Next <span class="accent">90 Days</span> — Even Without a Pile of Your Own Cash</h1>
+          <ul class="bullets">
+            <li>The four phases that take you from zero to your first apartment deal</li>
+            <li>How to do your first deal without funding the whole thing yourself</li>
+            <li>Why this market window is the best entry point in years</li>
+            <li>The mistakes that kill a first apartment deal — and how to avoid them</li>
+            <li>How to do this around a full schedule, using systems and a team</li>
+          </ul>
+        </div>
 
-    <p class="sub">Live with <b>Justin Brennan</b>, third-generation multifamily operator. <b>[DAY, MONTH DATE] · [TIME] [TZ]</b></p>
+        <!-- Registration card -->
+        <div class="card" id="register">
+          <div class="card-head">Save My Seat — Free</div>
+          <div class="card-date">[DAY, MONTH DATE] at [TIME] [TZ]</div>
 
-    <ul class="learn">
-      <li>The four phases that take you from zero to your first apartment deal</li>
-      <li>How to do a first deal without funding the whole thing yourself</li>
-      <li>Why this market window is the best entry point in years</li>
-    </ul>
+          <div class="countdown" id="countdown" aria-label="Time until the training starts">
+            <div class="cd-box"><div class="num" id="cd-d">00</div><div class="lbl">Days</div></div>
+            <div class="cd-box"><div class="num" id="cd-h">00</div><div class="lbl">Hrs</div></div>
+            <div class="cd-box"><div class="num" id="cd-m">00</div><div class="lbl">Min</div></div>
+            <div class="cd-box"><div class="num" id="cd-s">00</div><div class="lbl">Sec</div></div>
+          </div>
 
-    <!-- Registration card -->
-    <div class="card" id="register">
-      <div class="card-head">Save My Seat — Free</div>
-      <div class="card-date">[DAY, MONTH DATE] at [TIME] [TZ]</div>
-
-      <div class="countdown" id="countdown" aria-label="Time until the training starts">
-        <div class="cd-box"><div class="num" id="cd-d">00</div><div class="lbl">Days</div></div>
-        <div class="cd-box"><div class="num" id="cd-h">00</div><div class="lbl">Hrs</div></div>
-        <div class="cd-box"><div class="num" id="cd-m">00</div><div class="lbl">Min</div></div>
-        <div class="cd-box"><div class="num" id="cd-s">00</div><div class="lbl">Sec</div></div>
+          <form id="regForm" novalidate>
+            <div class="field"><input type="text" id="name" name="name" placeholder="First name" autocomplete="given-name" required /></div>
+            <div class="field"><input type="email" id="email" name="email" placeholder="Email address" autocomplete="email" required /></div>
+            <button type="submit" class="cta">Save My Seat</button>
+          </form>
+          <p class="card-fine">No cost. <span>Show up live</span> — the deal breakdowns and Q&amp;A aren't recorded.</p>
+        </div>
       </div>
-
-      <form id="regForm" novalidate>
-        <div class="field"><input type="text" id="name" name="name" placeholder="First name" autocomplete="given-name" required /></div>
-        <div class="field"><input type="email" id="email" name="email" placeholder="Email address" autocomplete="email" required /></div>
-        <button type="submit" class="cta">Save My Seat</button>
-      </form>
-      <p class="card-fine"><b>Show up live</b> — the deal breakdowns and Q&A aren't recorded.</p>
     </div>
+  </section>
 
-    <!-- One line of proof: the host -->
-    <div class="proof">
-      <img src="justin.png" alt="Justin Brennan" />
-      <p><b>Justin Brennan</b> is a third-generation multifamily operator who has bought, built, and managed apartment communities across the U.S. — the same playbook he'll walk you through live.</p>
+  <!-- Authority strip: the four-phase framework -->
+  <section class="authority">
+    <div class="wrap">
+      <div class="auth-grid">
+        <div><div class="stat">01</div><div class="stat-lbl">The First Deal</div></div>
+        <div><div class="stat">02</div><div class="stat-lbl">The Money</div></div>
+        <div><div class="stat">03</div><div class="stat-lbl">The Operations</div></div>
+        <div><div class="stat">04</div><div class="stat-lbl">Scale &amp; Growth</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Host band -->
+  <section class="host">
+    <div class="wrap host-inner">
+      <div class="host-photo">
+        <img src="justin.png" alt="Justin Brennan" onerror="this.style.display='none'" />
+      </div>
+      <div>
+        <h2>Why listen to Justin</h2>
+        <div class="role">Third-Generation Multifamily Operator · Founder, Multifamily Schooled</div>
+        <p>Justin Brennan is a third-generation multifamily operator who has bought, built, and managed apartment communities across the U.S. He teaches the exact four-phase system he uses to find, fund, and run real deals — not theory from the sidelines.</p>
+        <p>This training is that system laid out step by step: the market timing, the numbers, and the moves that get a first apartment deal done — even without a pile of your own cash.</p>
+        <a href="#register" class="host-cta">Save My Seat</a>
+      </div>
     </div>
   </section>
 
@@ -297,23 +365,27 @@
 
 <script>
   // ---- Countdown ----
-  // Set the live training start time (ISO 8601 with timezone offset).
+  // Set the live training start time here (ISO 8601 with timezone offset).
   // Example for 5:00 PM Pacific (PDT, -07:00): "2026-06-12T17:00:00-07:00"
   var CLASS_START = "2026-06-12T17:00:00-07:00";
 
   (function () {
     var target = new Date(CLASS_START).getTime();
-    var d = document.getElementById('cd-d'), h = document.getElementById('cd-h'),
-        m = document.getElementById('cd-m'), s = document.getElementById('cd-s');
+    var d = document.getElementById('cd-d'),
+        h = document.getElementById('cd-h'),
+        m = document.getElementById('cd-m'),
+        s = document.getElementById('cd-s');
     function pad(n) { return (n < 10 ? '0' : '') + n; }
     function tick() {
-      if (isNaN(target)) return;
       var diff = target - Date.now();
+      if (isNaN(target)) return;
       if (diff < 0) diff = 0;
-      d.textContent = pad(Math.floor(diff / 86400000));
-      h.textContent = pad(Math.floor((diff % 86400000) / 3600000));
-      m.textContent = pad(Math.floor((diff % 3600000) / 60000));
-      s.textContent = pad(Math.floor((diff % 60000) / 1000));
+      var days = Math.floor(diff / 86400000);
+      var hrs  = Math.floor((diff % 86400000) / 3600000);
+      var mins = Math.floor((diff % 3600000) / 60000);
+      var secs = Math.floor((diff % 60000) / 1000);
+      d.textContent = pad(days); h.textContent = pad(hrs);
+      m.textContent = pad(mins); s.textContent = pad(secs);
     }
     tick();
     setInterval(tick, 1000);
