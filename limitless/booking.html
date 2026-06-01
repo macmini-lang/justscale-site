@@ -1,0 +1,154 @@
+<!-- ================================================
+     Kris Krohn — Limitless Mentoring Call Funnel — PAGE 3 of 4: Calendar
+     Built on design-system template: templates/call-funnel-calendar.html
+     Replace REPLACE_GHL_CALENDAR with the real booking embed before live.
+     ================================================ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book your Limitless Mentoring call.">
+    <title>Book Your Call | Limitless Mentoring</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --ds-bg: #0c0c0c; --ds-bg-secondary: #130505; --ds-surface: #161010;
+            --ds-text: #f5f5f0; --ds-text-secondary: #9a8d8d; --ds-text-muted: #6a5a5a;
+            --ds-accent: #cd291a; --ds-accent-light: #e0392a; --ds-accent-dim: #a3140a;
+            --ds-accent-glow: rgba(205,41,26,0.08); --ds-accent-glow-strong: rgba(205,41,26,0.22);
+            --ds-border: rgba(255,255,255,0.06); --ds-border-light: rgba(255,255,255,0.10);
+            --ds-success: #22c55e;
+            --ds-font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --ds-font-display: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+            --ds-font-semibold: 600; --ds-font-bold: 700;
+            --ds-text-xs: 0.72rem; --ds-text-sm: 0.82rem; --ds-text-base: 1rem; --ds-text-lg: 1.05rem;
+            --ds-heading-lg: clamp(2rem, 4vw, 3rem);
+            --ds-leading-tight: 1.15; --ds-leading-normal: 1.6; --ds-leading-relaxed: 1.75;
+            --ds-tracking-tight: -0.035em; --ds-tracking-wide: 0.12em;
+            --ds-space-1: 8px; --ds-space-2: 16px; --ds-space-3: 24px; --ds-space-4: 32px; --ds-space-5: 40px;
+            --ds-space-6: 48px; --ds-space-8: 64px; --ds-space-10: 80px; --ds-space-section: 90px;
+            --ds-radius-sm: 8px; --ds-radius-md: 14px; --ds-radius-lg: 20px; --ds-radius-full: 9999px;
+            --ds-ease: cubic-bezier(0.16, 1, 0.3, 1); --ds-duration-normal: 0.3s; --ds-duration-slow: 0.5s;
+            --ds-container-max: 1140px; --ds-container-padding: 28px; --ds-container-narrow: 760px;
+        }
+        html { font-size: 16px; scroll-behavior: smooth; }
+        body { font-family: var(--ds-font-primary); background: var(--ds-bg); color: var(--ds-text); line-height: var(--ds-leading-normal); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        a { color: inherit; text-decoration: none; }
+        .ds-container { max-width: var(--ds-container-max); margin: 0 auto; padding: 0 var(--ds-container-padding); }
+        .ds-container--narrow { max-width: var(--ds-container-narrow); }
+        .ds-section { padding: var(--ds-space-section) 0; position: relative; }
+        .ds-section--alt { background: linear-gradient(180deg, var(--ds-bg) 0%, var(--ds-bg-secondary) 15%, var(--ds-bg-secondary) 85%, var(--ds-bg) 100%); }
+        .ds-section--center { text-align: center; }
+        .ds-section-label { font-size: var(--ds-text-xs); font-weight: var(--ds-font-semibold); letter-spacing: var(--ds-tracking-wide); text-transform: uppercase; color: var(--ds-accent); margin-bottom: var(--ds-space-3); }
+        .ds-section-title { font-size: clamp(1.6rem,2.8vw,2.2rem); font-weight: var(--ds-font-bold); letter-spacing: var(--ds-tracking-tight); line-height: var(--ds-leading-tight); margin-bottom: var(--ds-space-2); }
+        .ds-reveal { opacity: 0; transform: translateY(20px); transition: opacity var(--ds-duration-slow) var(--ds-ease), transform var(--ds-duration-slow) var(--ds-ease); }
+        .ds-reveal--visible { opacity: 1; transform: translateY(0); }
+        .ds-reveal--delay-1 { transition-delay: 0.1s; }
+        @media (prefers-reduced-motion: reduce) { .ds-reveal { opacity: 1 !important; transform: none !important; transition: none !important; } }
+        .ds-confirmation { padding: var(--ds-space-10) 0 var(--ds-space-6); text-align: center; }
+        .ds-confirmation__icon { width: 72px; height: 72px; border-radius: var(--ds-radius-full); background: rgba(34,197,94,0.10); border: 1px solid rgba(34,197,94,0.25); display: flex; align-items: center; justify-content: center; margin: 0 auto var(--ds-space-4); }
+        .ds-confirmation__icon svg { width: 32px; height: 32px; color: var(--ds-success); }
+        .ds-confirmation__title { font-size: var(--ds-heading-lg); font-weight: var(--ds-font-bold); letter-spacing: var(--ds-tracking-tight); line-height: var(--ds-leading-tight); margin-bottom: var(--ds-space-2); }
+        .ds-confirmation__text { font-size: var(--ds-text-lg); color: var(--ds-text-secondary); line-height: var(--ds-leading-relaxed); max-width: 520px; margin: 0 auto; }
+        .ds-calendar { max-width: 700px; margin: 0 auto; }
+        .ds-calendar__embed { background: var(--ds-surface); border: 1px solid var(--ds-border-light); border-radius: var(--ds-radius-lg); min-height: 500px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .ds-calendar__embed iframe { width: 100%; min-height: 700px; border: none; display: block; }
+        .ds-calendar__placeholder { padding: var(--ds-space-5); text-align: center; color: var(--ds-text-muted); font-size: var(--ds-text-sm); }
+        .ds-calendar__placeholder code { display: block; background: var(--ds-bg); border: 1px solid var(--ds-border); border-radius: var(--ds-radius-sm); padding: var(--ds-space-2); margin-top: var(--ds-space-2); font-size: var(--ds-text-xs); word-break: break-all; color: var(--ds-text-secondary); }
+        .ds-expect { max-width: 600px; margin: 0 auto; }
+        .ds-expect__list { list-style: none; display: flex; flex-direction: column; gap: var(--ds-space-3); }
+        .ds-expect__item { display: flex; align-items: flex-start; gap: var(--ds-space-2); padding: var(--ds-space-3); background: var(--ds-surface); border: 1px solid var(--ds-border); border-radius: var(--ds-radius-md); text-align: left; }
+        .ds-expect__number { width: 28px; height: 28px; border-radius: var(--ds-radius-full); background: var(--ds-accent-glow); border: 1px solid var(--ds-accent-dim); display: flex; align-items: center; justify-content: center; font-size: var(--ds-text-xs); font-weight: var(--ds-font-bold); color: var(--ds-accent); flex-shrink: 0; }
+        .ds-expect__content { flex: 1; }
+        .ds-expect__title { font-size: var(--ds-text-sm); font-weight: var(--ds-font-semibold); margin-bottom: 2px; }
+        .ds-expect__desc { font-size: var(--ds-text-sm); color: var(--ds-text-secondary); line-height: var(--ds-leading-relaxed); }
+        /* page-specific (brand chrome) */
+        h1,h2,.ds-confirmation__title,.ds-section-title { font-family: var(--ds-font-display); }
+        .kk-logobar { padding: 18px 0; text-align: center; border-bottom: 1px solid var(--ds-border); }
+        .kk-logobar span { font-family: var(--ds-font-display); font-weight: 800; letter-spacing: 1px; font-size: 1.1rem; }
+        .kk-logobar b { color: var(--ds-accent); font-weight: 800; }
+    </style>
+</head>
+<body>
+
+    <div class="kk-logobar"><span>KRIS <b>KROHN</b></span></div>
+
+    <!-- CONFIRMATION HERO -->
+    <section class="ds-confirmation">
+        <div class="ds-container ds-container--narrow">
+            <div class="ds-reveal">
+                <div class="ds-confirmation__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <h1 class="ds-confirmation__title">You're a fit. Let's talk.</h1>
+                <p class="ds-confirmation__text">Grab a time with our team below. We'll walk through your situation and whether Limitless Mentoring is the right move for you. Bring your spouse or partner if they're part of the decision.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALENDAR EMBED -->
+    <section class="ds-section">
+        <div class="ds-container ds-container--narrow">
+            <div class="ds-calendar ds-reveal ds-reveal--delay-1">
+                <div class="ds-calendar__embed">
+                    <!-- Replace the iframe src with the real booking calendar (GHL widget, Calendly, or Cal.com). -->
+                    <iframe src="REPLACE_GHL_CALENDAR" title="Book your Limitless Mentoring call" scrolling="yes"></iframe>
+                    <!-- Preview placeholder shows if the embed src is not yet set:
+                    <div class="ds-calendar__placeholder"><p>Calendar embed goes here</p><code>Replace REPLACE_GHL_CALENDAR with your GHL / Calendly / Cal.com booking embed</code></div>
+                    -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT TO EXPECT -->
+    <section class="ds-section ds-section--alt ds-section--center">
+        <div class="ds-container">
+            <p class="ds-section-label ds-reveal">On the call</p>
+            <h2 class="ds-section-title ds-reveal">What you'll walk away with</h2>
+            <div class="ds-expect ds-reveal ds-reveal--delay-1">
+                <ul class="ds-expect__list">
+                    <li class="ds-expect__item">
+                        <span class="ds-expect__number">1</span>
+                        <div class="ds-expect__content">
+                            <p class="ds-expect__title">A buy, pass, or wait read</p>
+                            <p class="ds-expect__desc">We look at a real deal in your market, not generic advice, and tell you what we'd do.</p>
+                        </div>
+                    </li>
+                    <li class="ds-expect__item">
+                        <span class="ds-expect__number">2</span>
+                        <div class="ds-expect__content">
+                            <p class="ds-expect__title">A straight answer on your capital</p>
+                            <p class="ds-expect__desc">Whether the money you have is enough to start now or whether you're better off waiting a few months.</p>
+                        </div>
+                    </li>
+                    <li class="ds-expect__item">
+                        <span class="ds-expect__number">3</span>
+                        <div class="ds-expect__content">
+                            <p class="ds-expect__title">A 12-month path, or an honest no</p>
+                            <p class="ds-expect__desc">A clear route to your first cash-flowing rental, or the real reason it's not the right time.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+<script>
+(function(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    document.querySelectorAll('.ds-reveal').forEach(function(el){el.classList.add('ds-reveal--visible')});
+    return;
+  }
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('ds-reveal--visible');obs.unobserve(e.target)}})
+  },{threshold:0.15,rootMargin:'-40px'});
+  document.querySelectorAll('.ds-reveal').forEach(function(el){obs.observe(el)});
+})();
+</script>
+</body>
+</html>
