@@ -27,6 +27,7 @@
     background: var(--navy);
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
   img { max-width: 100%; display: block; }
   .wrap { width: 100%; max-width: 720px; margin: 0 auto; padding: 0 22px; }
@@ -50,7 +51,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 30px 0 60px;
+    padding: 30px 22px 60px;
     background:
       radial-gradient(900px 480px at 50% -10%, rgba(233,140,48,0.16), transparent 62%),
       linear-gradient(180deg, #1b242e 0%, #23303d 58%, #2c2218 100%);
@@ -110,10 +111,12 @@
   /* What you'll learn — tight, three items */
   .learn {
     list-style: none;
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
     gap: 10px;
     text-align: left;
+    width: 100%;
+    max-width: 440px;
     margin: 0 auto 30px;
   }
   .learn li {
