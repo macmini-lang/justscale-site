@@ -1,8 +1,9 @@
 <!-- ================================================
-     First Deal — VSL Call Funnel
-     Built on JustScale design-system: Call Funnel — VSL
-     Theme: Light Clean, re-tokenized to First Deal brand (amber on white)
-     Structure: Logo → Headline → Subheadline → VSL → CTA → (application embed placeholder)
+     First Deal — VSL Call Funnel (Page 1: VSL Landing)
+     Structure per web-design agent / call_funnel_build directive +
+     shipped pattern (blue-ridge): top bar (logo left + CTA right),
+     hero stack (eyebrow > H1 > lede > video > CTA > sub), application embed.
+     Theme: First Deal brand (amber on white, Inter).
      ================================================ -->
 <!DOCTYPE html>
 <html lang="en">
@@ -15,117 +16,90 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* === RESET === */
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-        /* === TOKENS (design-system, Light Clean theme re-tokenized to First Deal brand) === */
         :root {
-            --ds-bg: #FFFFFF;
-            --ds-bg-secondary: #FAFAF8;
-            --ds-surface: #FFFFFF;
-            --ds-surface-hover: #F7F6F3;
-            --ds-text: #1C1917;
-            --ds-text-secondary: #57534E;
-            --ds-text-muted: #A8A29E;
-            --ds-accent: #F59E0B;
-            --ds-accent-light: #FBBF24;
-            --ds-accent-dim: #D97706;
-            --ds-accent-glow: rgba(245,158,11,0.07);
-            --ds-accent-glow-strong: rgba(245,158,11,0.20);
-            --ds-border: rgba(0,0,0,0.07);
-            --ds-border-light: rgba(0,0,0,0.10);
-            --ds-font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            --ds-font-semibold: 600;
-            --ds-font-bold: 700;
-            --ds-font-extrabold: 800;
-            --ds-text-xs: 0.72rem;
-            --ds-text-sm: 0.82rem;
-            --ds-text-base: 1rem;
-            --ds-text-lg: 1.05rem;
-            --ds-heading-sm: clamp(1.1rem, 1.8vw, 1.35rem);
-            /* Headline — intentionally smaller than the ds default xl */
-            --ds-heading-hero: clamp(1.6rem, 3vw, 2.3rem);
-            --ds-leading-tight: 1.18;
-            --ds-leading-normal: 1.6;
-            --ds-leading-relaxed: 1.7;
-            --ds-tracking-tight: -0.02em;
-            --ds-tracking-wide: 0.12em;
-            --ds-space-1: 8px;
-            --ds-space-2: 16px;
-            --ds-space-3: 24px;
-            --ds-space-4: 32px;
-            --ds-space-5: 40px;
-            --ds-space-6: 48px;
-            --ds-radius-sm: 8px;
-            --ds-radius-md: 14px;
-            --ds-radius-lg: 20px;
-            --ds-radius-full: 9999px;
-            --ds-shadow-lg: 0 12px 40px rgba(0,0,0,0.12);
-            --ds-ease: cubic-bezier(0.16, 1, 0.3, 1);
-            --ds-duration-fast: 0.15s;
-            --ds-duration-normal: 0.3s;
-            --ds-duration-slow: 0.5s;
-            --ds-container-narrow: 760px;
+            --bg: #FFFFFF;
+            --bg-tint: #FAFAF8;
+            --ink: #1C1917;
+            --body: #57534E;
+            --body-strong: #292524;
+            --muted: #A8A29E;
+            --accent: #F59E0B;
+            --accent-hover: #D97706;
+            --border-soft: rgba(0,0,0,0.08);
+            --radius: 14px;
+            --shadow: 0 12px 40px rgba(0,0,0,0.10);
+            --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
-        /* === BASE === */
         html { font-size: 16px; scroll-behavior: smooth; }
-        body { font-family: var(--ds-font-primary); background: var(--ds-bg); color: var(--ds-text); line-height: var(--ds-leading-normal); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        body { font-family: var(--font); background: var(--bg); color: var(--body); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
         img { max-width: 100%; height: auto; display: block; }
         a { color: inherit; text-decoration: none; }
-        .ds-container { max-width: var(--ds-container-narrow); margin: 0 auto; padding: 0 24px; }
+        h1, h2 { color: var(--ink); letter-spacing: -0.02em; line-height: 1.15; }
+        .wrap { max-width: 1040px; margin: 0 auto; padding: 0 28px; }
 
-        /* === NAV / HEADER (ds-nav — logo left) === */
-        .ds-viewport { min-height: 100vh; display: flex; flex-direction: column; }
-        .ds-nav { padding: 18px 0; background: var(--ds-bg); border-bottom: 1px solid var(--ds-border); }
-        .ds-nav__container { display: flex; align-items: center; justify-content: flex-start; max-width: 1040px; margin: 0 auto; padding: 0 28px; width: 100%; }
-        .ds-nav__logo { display: inline-flex; align-items: center; }
-        .ds-nav__logo-img { height: 30px; width: auto; filter: invert(1) brightness(0); }
-
-        /* === BUTTON === */
-        .ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--ds-space-1); padding: 16px 40px; background: var(--ds-accent); color: #1C1917; border-radius: 10px; font-size: 1rem; font-weight: var(--ds-font-bold); font-family: inherit; border: none; cursor: pointer; transition: box-shadow var(--ds-duration-normal), transform var(--ds-duration-fast); position: relative; overflow: hidden; isolation: isolate; }
-        .ds-btn:hover { box-shadow: 0 8px 30px var(--ds-accent-glow-strong); transform: translateY(-2px); background: var(--ds-accent-dim); }
-        .ds-btn::after { content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.35) 50%, transparent 70%); z-index: -1; pointer-events: none; }
-        .ds-btn:hover::after { animation: ds-shine 0.4s 0.08s ease-out forwards; }
-        @keyframes ds-shine { to { left: 150%; } }
-
-        /* === REVEAL === */
-        .ds-reveal { opacity: 0; transform: translateY(16px); transition: opacity var(--ds-duration-slow) var(--ds-ease), transform var(--ds-duration-slow) var(--ds-ease); }
-        .ds-reveal--visible { opacity: 1; transform: translateY(0); }
-        .ds-reveal--delay-1 { transition-delay: 0.08s; }
-        .ds-reveal--delay-2 { transition-delay: 0.16s; }
-        @media (prefers-reduced-motion: reduce) { .ds-reveal { opacity: 1 !important; transform: none !important; transition: none !important; } }
-
-        /* === HERO (fills remaining viewport — above the fold) === */
-        .ds-hero { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 32px 0; }
-        .ds-hero__title { font-size: var(--ds-heading-hero); font-weight: var(--ds-font-extrabold); letter-spacing: var(--ds-tracking-tight); line-height: var(--ds-leading-tight); margin-bottom: 12px; max-width: 640px; }
-        .ds-hero__subtitle { font-size: var(--ds-text-base); color: var(--ds-text-secondary); line-height: var(--ds-leading-relaxed); max-width: 540px; margin: 0 auto 22px; }
-        .ds-hero__video-wrap { width: 100%; max-width: 680px; margin: 0 auto; border-radius: var(--ds-radius-lg); overflow: hidden; border: 1px solid var(--ds-border-light); box-shadow: var(--ds-shadow-lg); background: var(--ds-surface); }
-        .ds-hero__video-wrap wistia-player { display: block; width: 100%; }
-        .ds-hero__cta { margin-top: 24px; }
-        .ds-hero__note { margin-top: 12px; font-size: var(--ds-text-xs); color: var(--ds-text-muted); }
-        @media (max-width: 768px) {
-            .ds-hero { padding: 28px 0 40px; }
-            .ds-hero__video-wrap { max-width: 100%; }
-            .ds-hero__cta .ds-btn { width: 100%; }
+        /* === CTA === */
+        .cta {
+            display: inline-block; background: var(--accent); color: var(--ink);
+            font-family: var(--font); font-weight: 700; font-size: 17px;
+            padding: 16px 36px; border-radius: 10px; border: none; cursor: pointer;
+            transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
         }
+        .cta:hover { background: var(--accent-hover); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(245,158,11,0.28); }
+        .cta-sub { font-size: 14px; color: var(--body); margin-top: 13px; }
 
-        /* === APPLICATION EMBED PLACEHOLDER === */
-        .ds-apply { padding: var(--ds-space-6) 0; background: var(--ds-bg-secondary); border-top: 1px solid var(--ds-border); }
-        .ds-apply__box { max-width: 600px; margin: 0 auto; border: 2px dashed var(--ds-border-light); border-radius: var(--ds-radius-lg); background: var(--ds-surface); padding: 64px 32px; text-align: center; color: var(--ds-text-muted); }
-        .ds-apply__box strong { display: block; color: var(--ds-text); font-size: 1.05rem; font-weight: var(--ds-font-semibold); margin-bottom: 6px; }
+        /* === TOP BAR (logo left + CTA right) === */
+        .topbar {
+            background: rgba(255,255,255,0.94); backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border-soft); padding: 12px 0;
+            position: sticky; top: 0; z-index: 50;
+        }
+        .topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+        .logo { height: 34px; width: auto; display: block; filter: invert(1) brightness(0); }
+        .topbar .cta { padding: 11px 22px; font-size: 14px; }
 
-        /* === FOOTER (legal only — required for Meta ads) === */
-        .ds-footer { padding: var(--ds-space-5) 0; text-align: center; border-top: 1px solid var(--ds-border); }
-        .ds-footer__links { display: flex; justify-content: center; gap: var(--ds-space-3); margin-bottom: var(--ds-space-2); flex-wrap: wrap; }
-        .ds-footer__links a { color: var(--ds-text-muted); font-size: var(--ds-text-xs); }
-        .ds-footer__links a:hover { color: var(--ds-text-secondary); }
-        .ds-footer__copy { color: var(--ds-text-muted); font-size: var(--ds-text-xs); }
+        /* === HERO (stacked, centered, above the fold) === */
+        .hero { padding: 30px 0 48px; text-align: center; }
+        .hero-stack { display: flex; flex-direction: column; align-items: center; }
+        .eyebrow { font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-hover); margin-bottom: 12px; }
+        .hero-h1 { font-size: clamp(25px, 3vw, 35px); font-weight: 800; max-width: 700px; }
+        .hero .lede { font-size: 17px; max-width: 580px; margin: 14px auto 24px; color: var(--body); }
+        .hero-video { width: 100%; max-width: 640px; }
+        .hero-video wistia-player { display: block; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--border-soft); }
+        wistia-player[media-id='022kx0j42g']:not(:defined) {
+            display: block; filter: blur(5px); padding-top: 56.25%; border-radius: var(--radius);
+            background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/022kx0j42g/swatch');
+        }
+        .hero .cta { margin-top: 28px; }
+
+        /* === APPLICATION EMBED (placeholder) === */
+        .apply { padding: 64px 0; background: var(--bg-tint); border-top: 1px solid var(--border-soft); }
+        .apply-box {
+            max-width: 620px; margin: 0 auto; border: 2px dashed var(--border-soft);
+            border-radius: var(--radius); background: var(--bg); padding: 72px 32px;
+            text-align: center; color: var(--muted);
+        }
+        .apply-box strong { display: block; color: var(--ink); font-size: 18px; font-weight: 600; margin-bottom: 6px; }
+
+        /* === FOOTER (legal only) === */
+        .footer { padding: 36px 0; text-align: center; border-top: 1px solid var(--border-soft); }
+        .footer-links { display: flex; justify-content: center; gap: 24px; margin-bottom: 12px; flex-wrap: wrap; }
+        .footer-links a { color: var(--muted); font-size: 13px; }
+        .footer-links a:hover { color: var(--body); }
+        .footer-copy { color: var(--muted); font-size: 12px; }
+
+        @media (max-width: 768px) {
+            .hero { padding: 32px 0 48px; }
+            .topbar .cta { display: none; }
+            .hero .cta, .apply-box { width: 100%; }
+            .apply-box { padding: 56px 24px; }
+        }
     </style>
 
     <script src="https://fast.wistia.com/player.js" async></script>
     <script src="https://fast.wistia.com/embed/022kx0j42g.js" async type="module"></script>
-    <style>wistia-player[media-id='022kx0j42g']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/022kx0j42g/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style>
 
     <!-- Meta Pixel - deferred -->
     <script>
@@ -172,71 +146,53 @@
 </head>
 <body>
 
-    <!-- Header + Hero fill the first viewport (above the fold) -->
-    <div class="ds-viewport">
-        <!-- HEADER: logo left -->
-        <header class="ds-nav">
-            <div class="ds-nav__container">
-                <a href="#" class="ds-nav__logo"><img src="assets/fd-logo.png" alt="First Deal" class="ds-nav__logo-img"></a>
-            </div>
-        </header>
-
-        <!-- HERO: headline + subheadline + VSL + CTA -->
-        <section class="ds-hero">
-            <div class="ds-container">
-                <div class="ds-reveal">
-                    <h1 class="ds-hero__title">Buy Your First Rental in the Next 90 Days</h1>
-                    <p class="ds-hero__subtitle">Watch this short video. It walks through the exact framework we've used to help 1,000+ people buy their first rental.</p>
-                </div>
-                <div class="ds-hero__video-wrap ds-reveal ds-reveal--delay-1">
-                    <wistia-player media-id="022kx0j42g" aspect="1.7777777777777777"></wistia-player>
-                </div>
-                <div class="ds-hero__cta ds-reveal ds-reveal--delay-2">
-                    <a href="#apply" class="ds-btn" onclick="revealApply(event)">Book My Strategy Session</a>
-                    <p class="ds-hero__note">Watch the video first. Then book if it's a fit.</p>
-                </div>
-            </div>
-        </section>
+    <!-- TOP BAR: logo left + CTA right -->
+    <div class="topbar">
+        <div class="wrap">
+            <img class="logo" src="assets/fd-logo.png" alt="First Deal">
+            <a class="cta" href="#apply" onclick="revealApply(event)">Book My Strategy Session</a>
+        </div>
     </div>
 
-    <!-- APPLICATION EMBED (placeholder — Typeform/GHL application drops in here) -->
-    <section class="ds-apply" id="apply">
-        <div class="ds-container">
-            <div class="ds-apply__box">
+    <!-- HERO: eyebrow > H1 > lede > VSL > CTA -->
+    <section class="hero">
+        <div class="wrap hero-stack">
+            <div class="eyebrow">Watch This First</div>
+            <h1 class="hero-h1">Buy Your First Rental in the Next 90 Days</h1>
+            <p class="lede">This short video walks through the exact framework we've used to help 1,000+ people buy their first rental.</p>
+            <div class="hero-video">
+                <wistia-player media-id="022kx0j42g" aspect="1.7777777777777777"></wistia-player>
+            </div>
+            <a class="cta" href="#apply" onclick="revealApply(event)">Book My Strategy Session</a>
+            <div class="cta-sub">Watch the video first. Then book if it's a fit.</div>
+        </div>
+    </section>
+
+    <!-- APPLICATION EMBED (placeholder — Typeform / GHL application drops in here) -->
+    <section class="apply" id="apply">
+        <div class="wrap">
+            <div class="apply-box">
                 <strong>Embedded application should go here</strong>
                 Host Typeform / GHL application embed in this block.
             </div>
         </div>
     </section>
 
-    <!-- FOOTER (legal — required for Meta ads compliance) -->
-    <footer class="ds-footer">
-        <div class="ds-container">
-            <div class="ds-footer__links">
+    <!-- FOOTER (legal — required for Meta ads) -->
+    <footer class="footer">
+        <div class="wrap">
+            <div class="footer-links">
                 <a href="https://www.firstdeal.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
                 <a href="https://www.firstdeal.com/terms" target="_blank" rel="noopener">Terms of Service</a>
             </div>
-            <p class="ds-footer__copy">&copy; 2026 First Deal. All rights reserved. This site is not a part of Facebook or Meta Platforms, Inc.</p>
+            <p class="footer-copy">&copy; 2026 First Deal. All rights reserved. This site is not a part of Facebook or Meta Platforms, Inc.</p>
         </div>
     </footer>
 
 <script>
-/* Scroll reveal (ds-system) */
-(function(){
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    document.querySelectorAll('.ds-reveal').forEach(function(el){el.classList.add('ds-reveal--visible')});
-    return;
-  }
-  var obs=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('ds-reveal--visible');obs.unobserve(e.target)}})
-  },{threshold:0.15,rootMargin:'-40px'});
-  document.querySelectorAll('.ds-reveal').forEach(function(el){obs.observe(el)});
-})();
-
-/* CTA → application embed */
 function revealApply(e){
-  e.preventDefault();
-  document.getElementById('apply').scrollIntoView({ behavior:'smooth', block:'start' });
+    e.preventDefault();
+    document.getElementById('apply').scrollIntoView({ behavior:'smooth', block:'start' });
 }
 </script>
 </body>
