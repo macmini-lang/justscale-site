@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Free Live Class with Ken McElroy — Buy Cash-Flowing Real Estate in This Market</title>
+<meta name="description" content="Live with Ken McElroy: how to buy cash-flowing real estate in this market without guessing. Save your seat free." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --blue: #110eb7;
+    --indigo: #0a0970;
+    --magenta: #8b005c;
+    --teal: #59bcb4;
+    --ink: #0c0c1a;
+    --paper: #ffffff;
+    --muted: #cfd2ea;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Roboto', system-ui, sans-serif;
+    color: var(--paper);
+    background: var(--ink);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, .h { font-family: 'Montserrat', sans-serif; letter-spacing: -0.01em; }
+  img { max-width: 100%; display: block; }
+  .wrap { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  /* Top bar */
+  .topbar {
+    background: var(--indigo);
+    text-align: center;
+    padding: 11px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  .topbar b { color: var(--teal); }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(1100px 520px at 78% -8%, rgba(89,188,180,0.18), transparent 60%),
+      linear-gradient(155deg, #0a0970 0%, #110eb7 52%, #0a0970 100%);
+    padding: 28px 0 64px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(700px 380px at 12% 110%, rgba(139,0,92,0.30), transparent 60%);
+    pointer-events: none;
+  }
+  .logo { height: 46px; width: auto; margin: 6px auto 0; }
+  .hero-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 48px;
+    align-items: center;
+    margin-top: 40px;
+  }
+  .eyebrow {
+    display: inline-block;
+    background: rgba(89,188,180,0.16);
+    border: 1px solid rgba(89,188,180,0.5);
+    color: var(--teal);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 12.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 7px 14px;
+    border-radius: 999px;
+    margin-bottom: 22px;
+  }
+  h1 {
+    font-size: clamp(32px, 5vw, 54px);
+    font-weight: 900;
+    line-height: 1.04;
+    margin-bottom: 20px;
+  }
+  h1 .accent { color: var(--teal); }
+  .sub {
+    font-size: clamp(16px, 2vw, 19px);
+    color: var(--muted);
+    max-width: 36ch;
+    margin-bottom: 26px;
+  }
+  .sub b { color: #fff; font-weight: 600; }
+
+  .bullets { list-style: none; margin: 0 0 30px; }
+  .bullets li {
+    position: relative;
+    padding: 9px 0 9px 36px;
+    font-size: 16.5px;
+    color: #eef0ff;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .bullets li:last-child { border-bottom: 0; }
+  .bullets li::before {
+    content: "";
+    position: absolute;
+    left: 4px; top: 14px;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: var(--teal);
+    box-shadow: 0 0 0 4px rgba(89,188,180,0.18);
+  }
+  .bullets li::after {
+    content: "";
+    position: absolute;
+    left: 10px; top: 18px;
+    width: 5px; height: 9px;
+    border: solid var(--indigo);
+    border-width: 0 2.5px 2.5px 0;
+    transform: rotate(45deg);
+  }
+
+  /* Form card */
+  .card {
+    background: #fff;
+    color: var(--ink);
+    border-radius: 16px;
+    padding: 30px 28px 26px;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.45);
+  }
+  .card-head {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    color: var(--blue);
+    margin-bottom: 4px;
+  }
+  .card-date {
+    text-align: center;
+    font-size: 14.5px;
+    color: #444;
+    font-weight: 500;
+    margin-bottom: 18px;
+  }
+  /* Countdown */
+  .countdown {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 22px;
+  }
+  .cd-box {
+    background: var(--indigo);
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px 0 7px;
+    width: 64px;
+    text-align: center;
+  }
+  .cd-box .num { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 26px; line-height: 1; }
+  .cd-box .lbl { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.75; margin-top: 5px; }
+
+  .field { margin-bottom: 13px; }
+  .field input {
+    width: 100%;
+    padding: 14px 15px;
+    font-size: 16px;
+    font-family: inherit;
+    border: 1.5px solid #d7d9e8;
+    border-radius: 10px;
+    background: #f7f8fc;
+    color: var(--ink);
+    transition: border-color .15s, background .15s;
+  }
+  .field input:focus { outline: none; border-color: var(--blue); background: #fff; }
+  .cta {
+    width: 100%;
+    border: 0;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: 0.02em;
+    color: #fff;
+    padding: 17px 18px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--magenta) 0%, #b30077 100%);
+    box-shadow: 0 12px 26px rgba(139,0,92,0.4);
+    transition: transform .12s, box-shadow .12s;
+    text-transform: uppercase;
+  }
+  .cta:hover { transform: translateY(-2px); box-shadow: 0 16px 32px rgba(139,0,92,0.5); }
+  .card-fine { text-align: center; font-size: 12px; color: #888; margin-top: 12px; }
+  .card-fine span { color: var(--blue); font-weight: 600; }
+
+  /* Authority strip */
+  .authority {
+    background: var(--paper);
+    color: var(--ink);
+    padding: 30px 0;
+  }
+  .auth-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    text-align: center;
+  }
+  .auth-grid .stat { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 30px; color: var(--blue); line-height: 1; }
+  .auth-grid .stat-lbl { font-size: 13px; color: #555; margin-top: 7px; font-weight: 500; }
+
+  /* Host band */
+  .host {
+    background: #f6f7fb;
+    color: var(--ink);
+    padding: 56px 0;
+  }
+  .host-inner { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 44px; align-items: center; }
+  .host-photo {
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 20px 44px rgba(10,9,112,0.18);
+    aspect-ratio: 4/5;
+    background: linear-gradient(155deg, var(--indigo), var(--blue));
+    display: flex; align-items: flex-end; justify-content: center;
+  }
+  .host-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .host h2 { font-size: clamp(26px, 3.4vw, 38px); font-weight: 800; color: var(--indigo); margin-bottom: 8px; }
+  .host .role { color: var(--magenta); font-weight: 700; font-family: 'Montserrat', sans-serif; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 18px; }
+  .host p { font-size: 16.5px; color: #333; margin-bottom: 14px; }
+  .host .host-cta {
+    display: inline-block;
+    margin-top: 10px;
+    background: var(--blue);
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    padding: 14px 28px;
+    border-radius: 10px;
+    transition: background .15s;
+  }
+  .host .host-cta:hover { background: var(--indigo); }
+
+  /* Footer */
+  footer { background: var(--ink); padding: 34px 0; text-align: center; }
+  footer img { height: 34px; margin: 0 auto 14px; opacity: 0.9; }
+  footer p { color: #7c7f9e; font-size: 12.5px; max-width: 60ch; margin: 0 auto 6px; }
+  footer a { color: var(--teal); text-decoration: none; }
+
+  @media (max-width: 860px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 34px; }
+    .sub { max-width: none; }
+    .host-inner { grid-template-columns: 1fr; gap: 26px; }
+    .host-photo { max-width: 360px; margin: 0 auto; }
+    .auth-grid { grid-template-columns: repeat(2, 1fr); gap: 26px 12px; }
+  }
+  @media (max-width: 420px) {
+    .cd-box { width: 56px; }
+    .cd-box .num { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Top bar -->
+  <div class="topbar">Free Live Class &nbsp;·&nbsp; <b>Limited Seats</b> &nbsp;·&nbsp; [DAY, MONTH DATE] at [TIME] [TZ]</div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap">
+      <img class="logo" src="https://kenmcelroy.com/wp-content/uploads/2026/04/2026-KM-Solo-Logo-1-1.png" alt="Ken McElroy" />
+
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">Live Online Class · 60–90 Minutes</span>
+          <h1>How to Buy Cash-Flowing Real Estate in This Market <span class="accent">Without Guessing</span></h1>
+          <p class="sub">Live with <b>Ken McElroy</b> — Rich Dad Advisor and operator of a $1B+ real estate portfolio. <b>[DAY, MONTH DATE] · [TIME] [TZ]</b></p>
+
+          <ul class="bullets">
+            <li>The market window open right now — and how long it actually stays open</li>
+            <li>How to find a property that pays you every month, not "someday"</li>
+            <li>The exact numbers that tell you a deal is real before you wire a dollar</li>
+            <li>The mistakes that wipe out new investors — and how to skip them</li>
+            <li>How to do this with a full schedule and a team, not 80-hour weeks</li>
+          </ul>
+        </div>
+
+        <!-- Registration card -->
+        <div class="card" id="register">
+          <div class="card-head">Save My Seat — Free</div>
+          <div class="card-date">[DAY, MONTH DATE] at [TIME] [TZ]</div>
+
+          <div class="countdown" id="countdown" aria-label="Time until the class starts">
+            <div class="cd-box"><div class="num" id="cd-d">00</div><div class="lbl">Days</div></div>
+            <div class="cd-box"><div class="num" id="cd-h">00</div><div class="lbl">Hrs</div></div>
+            <div class="cd-box"><div class="num" id="cd-m">00</div><div class="lbl">Min</div></div>
+            <div class="cd-box"><div class="num" id="cd-s">00</div><div class="lbl">Sec</div></div>
+          </div>
+
+          <form id="regForm" novalidate>
+            <div class="field"><input type="text" id="name" name="name" placeholder="First name" autocomplete="given-name" required /></div>
+            <div class="field"><input type="email" id="email" name="email" placeholder="Email address" autocomplete="email" required /></div>
+            <button type="submit" class="cta">Save My Seat</button>
+          </form>
+          <p class="card-fine">No cost. <span>Show up live</span> — the best parts aren't recorded.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Authority strip -->
+  <section class="authority">
+    <div class="wrap">
+      <div class="auth-grid">
+        <div><div class="stat">$1B+</div><div class="stat-lbl">Real estate owned &amp; operated</div></div>
+        <div><div class="stat">10,000+</div><div class="stat-lbl">Units bought &amp; managed</div></div>
+        <div><div class="stat">9</div><div class="stat-lbl">Best-selling books</div></div>
+        <div><div class="stat">Rich Dad</div><div class="stat-lbl">Real estate Advisor</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Host band -->
+  <section class="host">
+    <div class="wrap host-inner">
+      <div class="host-photo">
+        <!-- Replace src with Ken's approved headshot -->
+        <img src="https://kenmcelroy.com/wp-content/uploads/2026/04/imageedit_1_7247887662.png" alt="Ken McElroy" onerror="this.style.display='none'" />
+      </div>
+      <div>
+        <h2>Why listen to Ken</h2>
+        <div class="role">Rich Dad Advisor · Founder, MC Companies · Host, The Ken McElroy Show</div>
+        <p>Ken has spent his career buying, building, and operating real estate — over $1 billion in assets and more than 10,000 units across the cycle. He is a Rich Dad Advisor to Robert Kiyosaki, a best-selling author, and host of one of the most-watched real estate channels online.</p>
+        <p>This class is the same thinking he uses on his own deals, laid out step by step. No theory, no fluff — the numbers, the timing, and the moves that separate investors who buy well from the ones who wait.</p>
+        <a href="#register" class="host-cta">Save My Seat</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="wrap">
+      <img src="https://kenmcelroy.com/wp-content/uploads/2026/04/2026-KM-Solo-Logo-1-1.png" alt="Ken McElroy" />
+      <p>This is an educational class. Results are not guaranteed. Nothing presented is financial, tax, or legal advice. Real estate investing carries risk, including loss of principal.</p>
+      <p>© <span id="year">2026</span> Ken McElroy. All rights reserved. · <a href="https://kenmcelroy.com">kenmcelroy.com</a></p>
+    </div>
+  </footer>
+
+<script>
+  // ---- Countdown ----
+  // Set the live class start time here (ISO 8601 with timezone offset).
+  // Example for 1:00 PM Mountain (MST, -07:00): "2026-06-12T13:00:00-07:00"
+  var CLASS_START = "2026-06-12T13:00:00-07:00";
+
+  (function () {
+    var target = new Date(CLASS_START).getTime();
+    var d = document.getElementById('cd-d'),
+        h = document.getElementById('cd-h'),
+        m = document.getElementById('cd-m'),
+        s = document.getElementById('cd-s');
+    function pad(n) { return (n < 10 ? '0' : '') + n; }
+    function tick() {
+      var diff = target - Date.now();
+      if (isNaN(target)) return;
+      if (diff < 0) diff = 0;
+      var days = Math.floor(diff / 86400000);
+      var hrs  = Math.floor((diff % 86400000) / 3600000);
+      var mins = Math.floor((diff % 3600000) / 60000);
+      var secs = Math.floor((diff % 60000) / 1000);
+      d.textContent = pad(days); h.textContent = pad(hrs);
+      m.textContent = pad(mins); s.textContent = pad(secs);
+    }
+    tick();
+    setInterval(tick, 1000);
+  })();
+
+  // ---- Form submit (wire to GHL / your form endpoint) ----
+  document.getElementById('regForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = document.getElementById('name').value.trim();
+    var email = document.getElementById('email').value.trim();
+    if (!name || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+      alert('Please enter your first name and a valid email.');
+      return;
+    }
+    // TODO: POST to your registration endpoint / GHL form, then redirect to the
+    // confirmation (thank-you) page. Placeholder behavior below:
+    window.location.href = "thank-you.html";
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
