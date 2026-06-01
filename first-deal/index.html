@@ -1,59 +1,54 @@
 <!-- ================================================
-     First Deal — VSL Call Funnel (single page)
-     Built on JustScale design-system: Call Funnel — VSL + Application
-     Theme: Dark Premium (default ds- tokens)
-     Structure: Headline → Subheadline → VSL → Application
+     First Deal — VSL Call Funnel
+     Built on JustScale design-system: Call Funnel — VSL
+     Theme: Light Clean, re-tokenized to First Deal brand (amber on white)
+     Structure: Logo → Headline → Subheadline → VSL → CTA → (application embed placeholder)
      ================================================ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A short video walks through the framework Brandon Turner has used to help 1,000+ people buy their first rental. Watch it, then apply.">
-    <title>First Deal — Buy Your First Rental in the Next 90 Days</title>
+    <meta name="description" content="A short video walks through the framework we've used to help 1,000+ people buy their first rental.">
+    <title>First Deal | Buy Your First Rental in the Next 90 Days</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         /* === RESET === */
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-        /* === TOKENS (JustScale design-system — Dark Premium) === */
+        /* === TOKENS (design-system, Light Clean theme re-tokenized to First Deal brand) === */
         :root {
-            --ds-bg: #0c0c0c;
-            --ds-bg-secondary: #111111;
-            --ds-surface: #151515;
-            --ds-surface-hover: #1a1a1a;
-            --ds-text: #f5f5f0;
-            --ds-text-secondary: #8a8a82;
-            --ds-text-muted: #5a5a54;
-            --ds-accent: #c9a96e;
-            --ds-accent-light: #d4b87a;
-            --ds-accent-dim: #a08550;
-            --ds-accent-glow: rgba(201,169,110,0.08);
-            --ds-accent-glow-strong: rgba(201,169,110,0.20);
-            --ds-border: rgba(255,255,255,0.06);
-            --ds-border-light: rgba(255,255,255,0.10);
-            --ds-success: #22c55e;
-            --ds-error: #ef4444;
+            --ds-bg: #FFFFFF;
+            --ds-bg-secondary: #FAFAF8;
+            --ds-surface: #FFFFFF;
+            --ds-surface-hover: #F7F6F3;
+            --ds-text: #1C1917;
+            --ds-text-secondary: #57534E;
+            --ds-text-muted: #A8A29E;
+            --ds-accent: #F59E0B;
+            --ds-accent-light: #FBBF24;
+            --ds-accent-dim: #D97706;
+            --ds-accent-glow: rgba(245,158,11,0.07);
+            --ds-accent-glow-strong: rgba(245,158,11,0.20);
+            --ds-border: rgba(0,0,0,0.07);
+            --ds-border-light: rgba(0,0,0,0.10);
             --ds-font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            --ds-font-normal: 400;
-            --ds-font-medium: 500;
             --ds-font-semibold: 600;
             --ds-font-bold: 700;
+            --ds-font-extrabold: 800;
             --ds-text-xs: 0.72rem;
             --ds-text-sm: 0.82rem;
             --ds-text-base: 1rem;
             --ds-text-lg: 1.05rem;
-            --ds-text-xl: 1.25rem;
-            --ds-heading-sm: clamp(1.2rem, 2vw, 1.5rem);
-            --ds-heading-md: clamp(1.6rem, 2.8vw, 2.2rem);
-            --ds-heading-lg: clamp(2rem, 4vw, 3rem);
-            --ds-heading-xl: clamp(2.4rem, 5.2vw, 3.8rem);
-            --ds-leading-tight: 1.15;
+            --ds-heading-sm: clamp(1.1rem, 1.8vw, 1.35rem);
+            /* Headline — intentionally smaller than the ds default xl */
+            --ds-heading-hero: clamp(1.6rem, 3vw, 2.3rem);
+            --ds-leading-tight: 1.18;
             --ds-leading-normal: 1.6;
-            --ds-leading-relaxed: 1.75;
-            --ds-tracking-tight: -0.035em;
+            --ds-leading-relaxed: 1.7;
+            --ds-tracking-tight: -0.02em;
             --ds-tracking-wide: 0.12em;
             --ds-space-1: 8px;
             --ds-space-2: 16px;
@@ -61,21 +56,15 @@
             --ds-space-4: 32px;
             --ds-space-5: 40px;
             --ds-space-6: 48px;
-            --ds-space-8: 64px;
-            --ds-space-10: 80px;
-            --ds-space-12: 96px;
-            --ds-space-section: 90px;
             --ds-radius-sm: 8px;
             --ds-radius-md: 14px;
             --ds-radius-lg: 20px;
             --ds-radius-full: 9999px;
-            --ds-shadow-lg: 0 20px 60px rgba(0,0,0,0.5);
+            --ds-shadow-lg: 0 12px 40px rgba(0,0,0,0.12);
             --ds-ease: cubic-bezier(0.16, 1, 0.3, 1);
             --ds-duration-fast: 0.15s;
             --ds-duration-normal: 0.3s;
             --ds-duration-slow: 0.5s;
-            --ds-container-max: 1140px;
-            --ds-container-padding: 28px;
             --ds-container-narrow: 760px;
         }
 
@@ -84,72 +73,44 @@
         body { font-family: var(--ds-font-primary); background: var(--ds-bg); color: var(--ds-text); line-height: var(--ds-leading-normal); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
         img { max-width: 100%; height: auto; display: block; }
         a { color: inherit; text-decoration: none; }
-        .ds-container { max-width: var(--ds-container-max); margin: 0 auto; padding: 0 var(--ds-container-padding); }
-        .ds-container--narrow { max-width: var(--ds-container-narrow); }
-        .ds-section { padding: var(--ds-space-section) 0; position: relative; }
+        .ds-container { max-width: var(--ds-container-narrow); margin: 0 auto; padding: 0 24px; }
 
-        /* === BUTTONS === */
-        .ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--ds-space-1); padding: 11px 26px; background: var(--ds-accent); color: var(--ds-bg); border-radius: var(--ds-radius-sm); font-size: var(--ds-text-sm); font-weight: var(--ds-font-semibold); font-family: inherit; border: none; cursor: pointer; transition: box-shadow var(--ds-duration-normal), transform var(--ds-duration-fast); position: relative; overflow: hidden; isolation: isolate; }
-        .ds-btn:hover { box-shadow: 0 0 30px var(--ds-accent-glow-strong); transform: translateY(-2px); }
-        .ds-btn--lg { padding: 16px 40px; font-size: 0.92rem; border-radius: 10px; }
-        .ds-btn--full { width: 100%; }
-        .ds-btn--outline { background: transparent; border: 1px solid var(--ds-border-light); color: var(--ds-text); }
-        .ds-btn--outline:hover { border-color: var(--ds-accent-dim); background: var(--ds-accent-glow); box-shadow: none; }
-        .ds-btn::after { content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.22) 50%, transparent 70%); z-index: -1; pointer-events: none; }
+        /* === BUTTON === */
+        .ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--ds-space-1); padding: 16px 40px; background: var(--ds-accent); color: #1C1917; border-radius: 10px; font-size: 1rem; font-weight: var(--ds-font-bold); font-family: inherit; border: none; cursor: pointer; transition: box-shadow var(--ds-duration-normal), transform var(--ds-duration-fast); position: relative; overflow: hidden; isolation: isolate; }
+        .ds-btn:hover { box-shadow: 0 8px 30px var(--ds-accent-glow-strong); transform: translateY(-2px); background: var(--ds-accent-dim); }
+        .ds-btn::after { content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.35) 50%, transparent 70%); z-index: -1; pointer-events: none; }
         .ds-btn:hover::after { animation: ds-shine 0.4s 0.08s ease-out forwards; }
         @keyframes ds-shine { to { left: 150%; } }
 
         /* === REVEAL === */
-        .ds-reveal { opacity: 0; transform: translateY(20px); transition: opacity var(--ds-duration-slow) var(--ds-ease), transform var(--ds-duration-slow) var(--ds-ease); }
+        .ds-reveal { opacity: 0; transform: translateY(16px); transition: opacity var(--ds-duration-slow) var(--ds-ease), transform var(--ds-duration-slow) var(--ds-ease); }
         .ds-reveal--visible { opacity: 1; transform: translateY(0); }
-        .ds-reveal--delay-1 { transition-delay: 0.1s; }
-        .ds-reveal--delay-2 { transition-delay: 0.2s; }
+        .ds-reveal--delay-1 { transition-delay: 0.08s; }
+        .ds-reveal--delay-2 { transition-delay: 0.16s; }
         @media (prefers-reduced-motion: reduce) { .ds-reveal { opacity: 1 !important; transform: none !important; transition: none !important; } }
 
-        /* === HERO (VIDEO) === */
-        .ds-hero { padding: var(--ds-space-12) 0 var(--ds-space-8); text-align: center; }
-        .ds-hero__title { font-size: var(--ds-heading-xl); font-weight: var(--ds-font-bold); letter-spacing: var(--ds-tracking-tight); line-height: var(--ds-leading-tight); margin-bottom: var(--ds-space-3); max-width: 820px; margin-left: auto; margin-right: auto; }
-        .ds-hero__subtitle { font-size: var(--ds-text-lg); color: var(--ds-text-secondary); line-height: var(--ds-leading-relaxed); max-width: 600px; margin: 0 auto var(--ds-space-6); }
-        .ds-hero__video-wrap { max-width: 800px; margin: 0 auto; border-radius: var(--ds-radius-lg); overflow: hidden; border: 1px solid var(--ds-border-light); box-shadow: var(--ds-shadow-lg); background: var(--ds-surface); }
+        /* === HERO (everything above the fold) === */
+        .ds-hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; text-align: center; padding: 24px 0 32px; }
+        .ds-hero__logo { height: 30px; width: auto; filter: invert(1) brightness(0); margin-bottom: 22px; }
+        .ds-hero__title { font-size: var(--ds-heading-hero); font-weight: var(--ds-font-extrabold); letter-spacing: var(--ds-tracking-tight); line-height: var(--ds-leading-tight); margin-bottom: 12px; max-width: 640px; }
+        .ds-hero__subtitle { font-size: var(--ds-text-base); color: var(--ds-text-secondary); line-height: var(--ds-leading-relaxed); max-width: 540px; margin: 0 auto 22px; }
+        .ds-hero__video-wrap { width: 100%; max-width: 680px; margin: 0 auto; border-radius: var(--ds-radius-lg); overflow: hidden; border: 1px solid var(--ds-border-light); box-shadow: var(--ds-shadow-lg); background: var(--ds-surface); }
         .ds-hero__video-wrap wistia-player { display: block; width: 100%; }
-        @media (max-width: 768px) { .ds-hero { padding: var(--ds-space-8) 0 var(--ds-space-6); } }
+        .ds-hero__cta { margin-top: 24px; }
+        .ds-hero__note { margin-top: 12px; font-size: var(--ds-text-xs); color: var(--ds-text-muted); }
+        @media (max-width: 768px) {
+            .ds-hero { min-height: 0; padding: 20px 0 40px; }
+            .ds-hero__video-wrap { max-width: 100%; }
+            .ds-hero__cta .ds-btn { width: 100%; }
+        }
 
-        /* === APPLICATION === */
-        .ds-apply { padding: var(--ds-space-10) 0 var(--ds-space-12); background: linear-gradient(180deg, var(--ds-bg) 0%, var(--ds-bg-secondary) 100%); border-top: 1px solid var(--ds-border); }
-        .ds-apply__head { text-align: center; margin-bottom: var(--ds-space-5); }
-        .ds-apply__label { font-size: var(--ds-text-xs); font-weight: var(--ds-font-semibold); letter-spacing: var(--ds-tracking-wide); text-transform: uppercase; color: var(--ds-accent); margin-bottom: var(--ds-space-2); }
-        .ds-apply__title { font-size: var(--ds-heading-lg); font-weight: var(--ds-font-bold); letter-spacing: var(--ds-tracking-tight); line-height: var(--ds-leading-tight); margin-bottom: var(--ds-space-2); }
-        .ds-apply__sub { font-size: var(--ds-text-base); color: var(--ds-text-secondary); max-width: 480px; margin: 0 auto; }
+        /* === APPLICATION EMBED PLACEHOLDER === */
+        .ds-apply { padding: var(--ds-space-6) 0; background: var(--ds-bg-secondary); border-top: 1px solid var(--ds-border); }
+        .ds-apply__box { max-width: 600px; margin: 0 auto; border: 2px dashed var(--ds-border-light); border-radius: var(--ds-radius-lg); background: var(--ds-surface); padding: 64px 32px; text-align: center; color: var(--ds-text-muted); }
+        .ds-apply__box strong { display: block; color: var(--ds-text); font-size: 1.05rem; font-weight: var(--ds-font-semibold); margin-bottom: 6px; }
 
-        /* === FORM (ds-form component) === */
-        .ds-form { background: var(--ds-surface); border: 1px solid var(--ds-border-light); border-radius: var(--ds-radius-lg); padding: var(--ds-space-5) var(--ds-space-4); max-width: 560px; margin: 0 auto; text-align: left; }
-        @media (min-width: 768px) { .ds-form { padding: var(--ds-space-6) var(--ds-space-5); } }
-        .ds-progress { height: 4px; background: rgba(255,255,255,0.06); border-radius: var(--ds-radius-full); overflow: hidden; margin-bottom: var(--ds-space-4); }
-        .ds-progress__fill { height: 100%; background: var(--ds-accent); border-radius: var(--ds-radius-full); transition: width var(--ds-duration-normal) ease; }
-        .ds-form__group { margin-bottom: var(--ds-space-3); }
-        .ds-form__label { display: block; font-size: var(--ds-text-sm); font-weight: var(--ds-font-medium); color: var(--ds-text-secondary); margin-bottom: var(--ds-space-1); line-height: 1.4; }
-        .ds-form__input,
-        .ds-form__select,
-        .ds-form__textarea { width: 100%; padding: 12px var(--ds-space-2); background: var(--ds-bg); border: 1px solid var(--ds-border-light); border-radius: var(--ds-radius-sm); color: var(--ds-text); font-family: var(--ds-font-primary); font-size: var(--ds-text-base); transition: border-color var(--ds-duration-normal); outline: none; }
-        .ds-form__input:focus,
-        .ds-form__select:focus,
-        .ds-form__textarea:focus { border-color: var(--ds-accent-dim); }
-        .ds-form__input::placeholder, .ds-form__textarea::placeholder { color: var(--ds-text-muted); }
-        .ds-form__textarea { resize: vertical; min-height: 96px; }
-        .ds-form__select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%238a8a82' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; cursor: pointer; }
-        .ds-form__select option { background: var(--ds-bg-secondary); color: var(--ds-text); }
-        .ds-form__privacy { font-size: var(--ds-text-xs); color: var(--ds-text-muted); text-align: center; margin-top: var(--ds-space-2); }
-
-        /* === RESULT PANELS === */
-        .ds-result { background: var(--ds-surface); border: 1px solid var(--ds-border-light); border-radius: var(--ds-radius-lg); padding: var(--ds-space-6) var(--ds-space-4); max-width: 560px; margin: 0 auto; text-align: center; }
-        @media (min-width: 768px) { .ds-result { padding: var(--ds-space-8) var(--ds-space-6); } }
-        .ds-result__icon { width: 56px; height: 56px; border-radius: var(--ds-radius-full); background: var(--ds-accent-glow); border: 1px solid var(--ds-accent-dim); color: var(--ds-accent); display: flex; align-items: center; justify-content: center; margin: 0 auto var(--ds-space-3); font-size: 24px; }
-        .ds-result__title { font-size: var(--ds-heading-sm); font-weight: var(--ds-font-bold); margin-bottom: var(--ds-space-2); }
-        .ds-result__text { font-size: var(--ds-text-base); color: var(--ds-text-secondary); line-height: var(--ds-leading-relaxed); max-width: 460px; margin: 0 auto var(--ds-space-4); }
-        .ds-result__cal { border-radius: var(--ds-radius-md); overflow: hidden; position: relative; }
-
-        /* === FOOTER (minimal / legal) === */
-        .ds-footer { padding: var(--ds-space-6) 0; text-align: center; border-top: 1px solid var(--ds-border); }
+        /* === FOOTER (legal only — required for Meta ads) === */
+        .ds-footer { padding: var(--ds-space-5) 0; text-align: center; border-top: 1px solid var(--ds-border); }
         .ds-footer__links { display: flex; justify-content: center; gap: var(--ds-space-3); margin-bottom: var(--ds-space-2); flex-wrap: wrap; }
         .ds-footer__links a { color: var(--ds-text-muted); font-size: var(--ds-text-xs); }
         .ds-footer__links a:hover { color: var(--ds-text-secondary); }
@@ -205,129 +166,30 @@
 </head>
 <body>
 
-    <!-- HERO: headline + subheadline + VSL -->
+    <!-- HERO: logo + headline + subheadline + VSL + CTA (above the fold) -->
     <section class="ds-hero">
-        <div class="ds-container ds-container--narrow">
+        <div class="ds-container">
             <div class="ds-reveal">
-                <h1 class="ds-hero__title">Buy your first rental in the next 90 days &mdash; without quitting your job or draining your savings.</h1>
-                <p class="ds-hero__subtitle">This short video walks through the exact framework I've used to help 1,000+ people buy their first deal. Watch it, then apply if it makes&nbsp;sense.</p>
+                <img src="assets/fd-logo.png" alt="First Deal" class="ds-hero__logo">
+                <h1 class="ds-hero__title">Buy Your First Rental in the Next 90 Days</h1>
+                <p class="ds-hero__subtitle">Watch this short video. It walks through the exact framework we've used to help 1,000+ people buy their first rental.</p>
             </div>
             <div class="ds-hero__video-wrap ds-reveal ds-reveal--delay-1">
                 <wistia-player media-id="022kx0j42g" aspect="1.7777777777777777"></wistia-player>
             </div>
+            <div class="ds-hero__cta ds-reveal ds-reveal--delay-2">
+                <a href="#apply" class="ds-btn" onclick="revealApply(event)">Book My Strategy Session</a>
+                <p class="ds-hero__note">Watch the video first. Then book if it's a fit.</p>
+            </div>
         </div>
     </section>
 
-    <!-- APPLICATION -->
+    <!-- APPLICATION EMBED (placeholder — Typeform/GHL application drops in here) -->
     <section class="ds-apply" id="apply">
-        <div class="ds-container ds-container--narrow">
-            <div class="ds-apply__head ds-reveal">
-                <p class="ds-apply__label">Apply for First Deal</p>
-                <h2 class="ds-apply__title">See If You're a Fit</h2>
-                <p class="ds-apply__sub">A few quick questions. The more honest you are, the more useful the call.</p>
-            </div>
-
-            <form class="ds-form ds-reveal ds-reveal--delay-1" id="ds-application-form" onsubmit="return false;">
-                <div class="ds-progress"><div class="ds-progress__fill" id="dsProgress" style="width:0%"></div></div>
-
-                <div class="ds-form__group">
-                    <label class="ds-form__label" for="q_name">What's your name?</label>
-                    <input type="text" id="q_name" class="ds-form__input" placeholder="First and last name" autocomplete="name">
-                </div>
-                <div class="ds-form__group">
-                    <label class="ds-form__label" for="q_email">Best email to send call details to?</label>
-                    <input type="email" id="q_email" class="ds-form__input" placeholder="you@example.com" autocomplete="email">
-                </div>
-                <div class="ds-form__group">
-                    <label class="ds-form__label" for="q_phone">Cell number for our team to text your confirmation?</label>
-                    <input type="tel" id="q_phone" class="ds-form__input" placeholder="(555) 123-4567" autocomplete="tel">
-                </div>
-                <div class="ds-form__group">
-                    <label class="ds-form__label" for="q_capital">How much liquid capital do you have ready to deploy into a first deal?</label>
-                    <select id="q_capital" class="ds-form__select">
-                        <option value="" disabled selected>Select one</option>
-                        <option value="lt_15k">Less than $15K</option>
-                        <option value="15k_50k">$15K – $50K</option>
-                        <option value="50k_100k">$50K – $100K</option>
-                        <option value="100k_250k">$100K – $250K</option>
-                        <option value="250k_500k">$250K – $500K</option>
-                        <option value="500k_plus">$500K+</option>
-                    </select>
-                </div>
-                <div class="ds-form__group">
-                    <label class="ds-form__label" for="q_timeline">When are you planning to buy your first rental?</label>
-                    <select id="q_timeline" class="ds-form__select">
-                        <option value="" disabled selected>Select one</option>
-                        <option value="30_days">Next 30 days</option>
-                        <option value="1_3_months">1 – 3 months</option>
-                        <option value="3_6_months">3 – 6 months</option>
-                        <option value="6_12_months">6 – 12 months</option>
-                        <option value="exploring">Just exploring</option>
-                    </select>
-                </div>
-                <div class="ds-form__group">
-                    <label class="ds-form__label" for="q_sticking">What's the one thing stopping you from buying a first deal right now?</label>
-                    <textarea id="q_sticking" class="ds-form__textarea" placeholder="Be specific. The more honest, the better the call."></textarea>
-                </div>
-                <div class="ds-form__group">
-                    <label class="ds-form__label" for="q_partner">Is anyone else involved in this decision with you?</label>
-                    <select id="q_partner" class="ds-form__select">
-                        <option value="" disabled selected>Select one</option>
-                        <option value="just_me">Just me</option>
-                        <option value="spouse_on_call">Spouse or partner (will be on the call too)</option>
-                        <option value="spouse_loop_in">Spouse or partner (not on the call, I'll loop them in)</option>
-                        <option value="business_partner">Business partner</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-                <div class="ds-form__group">
-                    <label class="ds-form__label" for="q_experience">Have you ever owned a rental property before?</label>
-                    <select id="q_experience" class="ds-form__select">
-                        <option value="" disabled selected>Select one</option>
-                        <option value="none">No, this would be my first</option>
-                        <option value="tried">I've tried but never closed</option>
-                        <option value="own_1">I own 1 rental</option>
-                        <option value="own_2_5">I own 2 – 5 rentals</option>
-                        <option value="own_5_plus">I own more than 5 rentals</option>
-                    </select>
-                </div>
-                <div class="ds-form__group">
-                    <label class="ds-form__label" for="q_why">Why First Deal specifically? What made you click apply?</label>
-                    <textarea id="q_why" class="ds-form__textarea" placeholder="A sentence or two is plenty."></textarea>
-                </div>
-
-                <button type="submit" class="ds-btn ds-btn--lg ds-btn--full" onclick="submitApplication()">Submit Application</button>
-                <p class="ds-form__privacy">🔒 Your info is secure. We'll never spam you.</p>
-            </form>
-
-            <!-- Result: Qualified -->
-            <div id="resQualified" style="display:none;">
-                <div class="ds-result">
-                    <div class="ds-result__icon">✓</div>
-                    <h2 class="ds-result__title">You're a Fit. Let's Talk.</h2>
-                    <p class="ds-result__text">Grab a time with our team below. We'll walk through your situation and whether First Deal is the right move. Bring your spouse or partner if they're part of the decision.</p>
-                    <div class="ds-result__cal">
-                        <iframe data-src="https://api.leadconnectorhq.com/widget/booking/Np2N1uBvvVS3RvwENA3p" style="width:100%;border:none;overflow:auto;height:700px;margin-top:-60px;" scrolling="yes" id="ghlCalendar"></iframe>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Result: Freedom Accelerator (owns 5+) -->
-            <div id="resFreedom" style="display:none;">
-                <div class="ds-result">
-                    <h2 class="ds-result__title">You're Past "First Deal."</h2>
-                    <p class="ds-result__text">With more than 5 rentals already, First Deal isn't the right room — but <strong style="color:var(--ds-text);">Freedom Accelerator</strong> is. It's built for operators scaling an existing portfolio.</p>
-                    <a href="https://www.firstdeal.com/freedom-accelerator" target="_blank" rel="noopener" class="ds-btn ds-btn--lg">See Freedom Accelerator →</a>
-                </div>
-            </div>
-
-            <!-- Result: Not yet (under $15K) -->
-            <div id="resNotYet" style="display:none;">
-                <div class="ds-result">
-                    <h2 class="ds-result__title">Looks Like the Timing Isn't Quite Right</h2>
-                    <p class="ds-result__text">No worries. To close a first deal you'll want at least $15K liquid. Here's something to help you get ready:</p>
-                    <a href="https://www.amazon.com/Book-Investing-Real-Estate-Money/dp/1947200976" target="_blank" rel="noopener" class="ds-btn ds-btn--lg">Get Brandon's Book on Amazon →</a>
-                </div>
+        <div class="ds-container">
+            <div class="ds-apply__box">
+                <strong>Embedded application should go here</strong>
+                Host Typeform / GHL application embed in this block.
             </div>
         </div>
     </section>
@@ -344,7 +206,7 @@
     </footer>
 
 <script>
-/* === Scroll reveal (ds-system) === */
+/* Scroll reveal (ds-system) */
 (function(){
   if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
     document.querySelectorAll('.ds-reveal').forEach(function(el){el.classList.add('ds-reveal--visible')});
@@ -356,75 +218,11 @@
   document.querySelectorAll('.ds-reveal').forEach(function(el){obs.observe(el)});
 })();
 
-/* === Application logic === */
-var GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/MW7HgHvCWIultxO2MDPV/webhook-trigger/1b6525dd-a17e-4af6-abfe-d8abe7a79b2c';
-var HIGH_VALUE = ['100k_250k','250k_500k','500k_plus'];
-var FIELD_IDS = ['q_name','q_email','q_phone','q_capital','q_timeline','q_sticking','q_partner','q_experience','q_why'];
-
-function updateProgress(){
-  var filled = FIELD_IDS.filter(function(id){ return document.getElementById(id).value.trim(); }).length;
-  document.getElementById('dsProgress').style.width = Math.round((filled/FIELD_IDS.length)*100) + '%';
+/* CTA → application embed */
+function revealApply(e){
+  e.preventDefault();
+  document.getElementById('apply').scrollIntoView({ behavior:'smooth', block:'start' });
 }
-FIELD_IDS.forEach(function(id){ document.getElementById(id).addEventListener('input', updateProgress); document.getElementById(id).addEventListener('change', updateProgress); });
-
-function splitName(full){ var p = full.trim().split(/\s+/); var first = p.shift() || ''; return { first: first, last: p.join(' ') }; }
-
-function submitApplication(){
-  var v = {};
-  FIELD_IDS.forEach(function(id){ v[id] = document.getElementById(id).value.trim(); });
-
-  if(!v.q_name || !v.q_email || !v.q_phone){ alert('Please add your name, email, and phone.'); return; }
-  if(v.q_email.indexOf('@') === -1){ alert('Please enter a valid email.'); return; }
-  if(!v.q_capital || !v.q_timeline || !v.q_partner || !v.q_experience){ alert('Please answer the dropdown questions.'); return; }
-  if(!v.q_sticking){ alert('Tell us the one thing stopping you — it makes the call far more useful.'); return; }
-
-  var nm = splitName(v.q_name);
-  var ownsFivePlus = (v.q_experience === 'own_5_plus');
-  var underCapital = (v.q_capital === 'lt_15k');
-  var highValue = HIGH_VALUE.indexOf(v.q_capital) !== -1;
-  var qualified = !underCapital && !ownsFivePlus;
-
-  var tags = ['fd-vsl-light'];
-  if(ownsFivePlus) tags.push('route-freedom-accelerator');
-  else if(qualified) tags.push('fd-vsl-qualified');
-  else tags.push('fd-vsl-disqualified');
-  if(highValue) tags.push('high-value-100k-plus');
-  tags.push('capital-' + v.q_capital);
-  tags.push('timeline-' + v.q_timeline);
-
-  var payload = {
-    first_name: nm.first, last_name: nm.last, email: v.q_email, phone: v.q_phone, contactPhone: v.q_phone,
-    source: 'fd-vsl-light', qualified: qualified,
-    route: ownsFivePlus ? 'freedom_accelerator' : (qualified ? 'first_deal' : 'not_yet'),
-    capital_available: v.q_capital, high_value: highValue, timeline: v.q_timeline,
-    sticking_point: v.q_sticking, investing_with: v.q_partner, experience: v.q_experience,
-    why_first_deal: v.q_why, tags: tags.join(',')
-  };
-
-  if(typeof window !== 'undefined' && window.fbq){
-    var ts = Date.now();
-    window.fbq('track','Lead',{ content_name:'fd-vsl-light' },{ eventID:'Lead_'+ts });
-    if(highValue){ window.fbq('trackCustom','HighValueApplicant',{ content_name:'fd-vsl-light', capital:v.q_capital },{ eventID:'HVA_'+ts }); }
-    if(qualified){ window.fbq('trackCustom','SubmitApplication',{ content_name:'fd-vsl-light', qualified:'yes', capital:v.q_capital, timeline:v.q_timeline },{ eventID:'SubApp_'+ts }); }
-  }
-
-  fetch(GHL_WEBHOOK,{ method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload) }).catch(function(){});
-  fetch('/api/applications',{ method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload) }).catch(function(){});
-
-  document.getElementById('ds-application-form').style.display = 'none';
-  if(ownsFivePlus){
-    show('resFreedom');
-  } else if(qualified){
-    var cal = document.getElementById('ghlCalendar');
-    if(cal){ var base = cal.getAttribute('data-src'); cal.src = base + '?first_name=' + encodeURIComponent(nm.first) + '&last_name=' + encodeURIComponent(nm.last) + '&email=' + encodeURIComponent(v.q_email) + '&phone=' + encodeURIComponent(v.q_phone); }
-    show('resQualified');
-  } else {
-    show('resNotYet');
-  }
-}
-
-function show(id){ var el = document.getElementById(id); el.style.display = 'block'; el.scrollIntoView({ behavior:'smooth', block:'start' }); }
 </script>
-<script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
 </body>
 </html>
