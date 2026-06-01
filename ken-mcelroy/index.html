@@ -49,7 +49,7 @@
     background:
       radial-gradient(1100px 520px at 78% -8%, rgba(89,188,180,0.18), transparent 60%),
       linear-gradient(155deg, #0a0970 0%, #110eb7 52%, #0a0970 100%);
-    padding: 28px 0 64px;
+    padding: 18px 0 36px;
     position: relative;
     overflow: hidden;
   }
@@ -60,15 +60,15 @@
     background: radial-gradient(700px 380px at 12% 110%, rgba(139,0,92,0.30), transparent 60%);
     pointer-events: none;
   }
-  .logo { height: 46px; width: auto; margin: 6px auto 0; }
+  .logo { height: 40px; width: auto; margin: 4px auto 0; }
   .hero-grid {
     position: relative;
     z-index: 2;
     display: grid;
     grid-template-columns: 1.15fr 0.85fr;
-    gap: 48px;
+    gap: 44px;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 26px;
   }
   .eyebrow {
     display: inline-block;
@@ -77,33 +77,33 @@
     color: var(--teal);
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    font-size: 12.5px;
+    font-size: 12px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    padding: 7px 14px;
+    padding: 6px 13px;
     border-radius: 999px;
-    margin-bottom: 22px;
+    margin-bottom: 16px;
   }
   h1 {
-    font-size: clamp(32px, 5vw, 54px);
+    font-size: clamp(26px, 3.6vw, 40px);
     font-weight: 900;
-    line-height: 1.04;
-    margin-bottom: 20px;
+    line-height: 1.08;
+    margin-bottom: 14px;
   }
   h1 .accent { color: var(--teal); }
   .sub {
-    font-size: clamp(16px, 2vw, 19px);
+    font-size: clamp(15px, 1.6vw, 17px);
     color: var(--muted);
-    max-width: 36ch;
-    margin-bottom: 26px;
+    max-width: 42ch;
+    margin-bottom: 18px;
   }
   .sub b { color: #fff; font-weight: 600; }
 
-  .bullets { list-style: none; margin: 0 0 30px; }
+  .bullets { list-style: none; margin: 0; }
   .bullets li {
     position: relative;
-    padding: 9px 0 9px 36px;
-    font-size: 16.5px;
+    padding: 7px 0 7px 34px;
+    font-size: 15px;
     color: #eef0ff;
     border-bottom: 1px solid rgba(255,255,255,0.08);
   }
@@ -111,8 +111,8 @@
   .bullets li::before {
     content: "";
     position: absolute;
-    left: 4px; top: 14px;
-    width: 18px; height: 18px;
+    left: 4px; top: 11px;
+    width: 16px; height: 16px;
     border-radius: 50%;
     background: var(--teal);
     box-shadow: 0 0 0 4px rgba(89,188,180,0.18);
@@ -120,8 +120,8 @@
   .bullets li::after {
     content: "";
     position: absolute;
-    left: 10px; top: 18px;
-    width: 5px; height: 9px;
+    left: 9px; top: 14px;
+    width: 4px; height: 8px;
     border: solid var(--indigo);
     border-width: 0 2.5px 2.5px 0;
     transform: rotate(45deg);
@@ -132,7 +132,7 @@
     background: #fff;
     color: var(--ink);
     border-radius: 16px;
-    padding: 30px 28px 26px;
+    padding: 24px 26px 22px;
     box-shadow: 0 30px 70px rgba(0,0,0,0.45);
   }
   .card-head {
