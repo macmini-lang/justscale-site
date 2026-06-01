@@ -75,6 +75,13 @@
         a { color: inherit; text-decoration: none; }
         .ds-container { max-width: var(--ds-container-narrow); margin: 0 auto; padding: 0 24px; }
 
+        /* === NAV / HEADER (ds-nav — logo left) === */
+        .ds-viewport { min-height: 100vh; display: flex; flex-direction: column; }
+        .ds-nav { padding: 18px 0; background: var(--ds-bg); border-bottom: 1px solid var(--ds-border); }
+        .ds-nav__container { display: flex; align-items: center; justify-content: flex-start; max-width: 1040px; margin: 0 auto; padding: 0 28px; width: 100%; }
+        .ds-nav__logo { display: inline-flex; align-items: center; }
+        .ds-nav__logo-img { height: 30px; width: auto; filter: invert(1) brightness(0); }
+
         /* === BUTTON === */
         .ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--ds-space-1); padding: 16px 40px; background: var(--ds-accent); color: #1C1917; border-radius: 10px; font-size: 1rem; font-weight: var(--ds-font-bold); font-family: inherit; border: none; cursor: pointer; transition: box-shadow var(--ds-duration-normal), transform var(--ds-duration-fast); position: relative; overflow: hidden; isolation: isolate; }
         .ds-btn:hover { box-shadow: 0 8px 30px var(--ds-accent-glow-strong); transform: translateY(-2px); background: var(--ds-accent-dim); }
@@ -89,9 +96,8 @@
         .ds-reveal--delay-2 { transition-delay: 0.16s; }
         @media (prefers-reduced-motion: reduce) { .ds-reveal { opacity: 1 !important; transform: none !important; transition: none !important; } }
 
-        /* === HERO (everything above the fold) === */
-        .ds-hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; text-align: center; padding: 24px 0 32px; }
-        .ds-hero__logo { height: 30px; width: auto; filter: invert(1) brightness(0); margin-bottom: 22px; }
+        /* === HERO (fills remaining viewport — above the fold) === */
+        .ds-hero { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 32px 0; }
         .ds-hero__title { font-size: var(--ds-heading-hero); font-weight: var(--ds-font-extrabold); letter-spacing: var(--ds-tracking-tight); line-height: var(--ds-leading-tight); margin-bottom: 12px; max-width: 640px; }
         .ds-hero__subtitle { font-size: var(--ds-text-base); color: var(--ds-text-secondary); line-height: var(--ds-leading-relaxed); max-width: 540px; margin: 0 auto 22px; }
         .ds-hero__video-wrap { width: 100%; max-width: 680px; margin: 0 auto; border-radius: var(--ds-radius-lg); overflow: hidden; border: 1px solid var(--ds-border-light); box-shadow: var(--ds-shadow-lg); background: var(--ds-surface); }
@@ -99,7 +105,7 @@
         .ds-hero__cta { margin-top: 24px; }
         .ds-hero__note { margin-top: 12px; font-size: var(--ds-text-xs); color: var(--ds-text-muted); }
         @media (max-width: 768px) {
-            .ds-hero { min-height: 0; padding: 20px 0 40px; }
+            .ds-hero { padding: 28px 0 40px; }
             .ds-hero__video-wrap { max-width: 100%; }
             .ds-hero__cta .ds-btn { width: 100%; }
         }
@@ -166,23 +172,32 @@
 </head>
 <body>
 
-    <!-- HERO: logo + headline + subheadline + VSL + CTA (above the fold) -->
-    <section class="ds-hero">
-        <div class="ds-container">
-            <div class="ds-reveal">
-                <img src="assets/fd-logo.png" alt="First Deal" class="ds-hero__logo">
-                <h1 class="ds-hero__title">Buy Your First Rental in the Next 90 Days</h1>
-                <p class="ds-hero__subtitle">Watch this short video. It walks through the exact framework we've used to help 1,000+ people buy their first rental.</p>
+    <!-- Header + Hero fill the first viewport (above the fold) -->
+    <div class="ds-viewport">
+        <!-- HEADER: logo left -->
+        <header class="ds-nav">
+            <div class="ds-nav__container">
+                <a href="#" class="ds-nav__logo"><img src="assets/fd-logo.png" alt="First Deal" class="ds-nav__logo-img"></a>
             </div>
-            <div class="ds-hero__video-wrap ds-reveal ds-reveal--delay-1">
-                <wistia-player media-id="022kx0j42g" aspect="1.7777777777777777"></wistia-player>
+        </header>
+
+        <!-- HERO: headline + subheadline + VSL + CTA -->
+        <section class="ds-hero">
+            <div class="ds-container">
+                <div class="ds-reveal">
+                    <h1 class="ds-hero__title">Buy Your First Rental in the Next 90 Days</h1>
+                    <p class="ds-hero__subtitle">Watch this short video. It walks through the exact framework we've used to help 1,000+ people buy their first rental.</p>
+                </div>
+                <div class="ds-hero__video-wrap ds-reveal ds-reveal--delay-1">
+                    <wistia-player media-id="022kx0j42g" aspect="1.7777777777777777"></wistia-player>
+                </div>
+                <div class="ds-hero__cta ds-reveal ds-reveal--delay-2">
+                    <a href="#apply" class="ds-btn" onclick="revealApply(event)">Book My Strategy Session</a>
+                    <p class="ds-hero__note">Watch the video first. Then book if it's a fit.</p>
+                </div>
             </div>
-            <div class="ds-hero__cta ds-reveal ds-reveal--delay-2">
-                <a href="#apply" class="ds-btn" onclick="revealApply(event)">Book My Strategy Session</a>
-                <p class="ds-hero__note">Watch the video first. Then book if it's a fit.</p>
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <!-- APPLICATION EMBED (placeholder — Typeform/GHL application drops in here) -->
     <section class="ds-apply" id="apply">
