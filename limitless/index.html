@@ -67,22 +67,24 @@
         .ds-reveal--visible { opacity: 1; transform: translateY(0); }
         .ds-reveal--delay-1 { transition-delay: 0.1s; } .ds-reveal--delay-2 { transition-delay: 0.2s; }
         @media (prefers-reduced-motion: reduce) { .ds-reveal { opacity: 1 !important; transform: none !important; transition: none !important; } }
-        .ds-hero { padding: var(--ds-space-8) 0 var(--ds-space-8); text-align: center; }
+        .ds-hero { position: relative; min-height: calc(100vh - 63px); display: flex; align-items: center; padding: var(--ds-space-6) 0 var(--ds-space-8); text-align: center; overflow: hidden; }
+        .ds-hero::before { content: ''; position: absolute; top: -180px; left: 50%; transform: translateX(-50%); width: 820px; height: 680px; max-width: 130vw; background: radial-gradient(circle at 50% 50%, rgba(205,41,26,0.18), rgba(205,41,26,0.05) 42%, transparent 68%); pointer-events: none; z-index: 0; }
+        .ds-hero .ds-container { position: relative; z-index: 1; }
         .ds-hero__label { font-size: var(--ds-text-xs); font-weight: var(--ds-font-semibold); letter-spacing: var(--ds-tracking-wide); text-transform: uppercase; color: var(--ds-accent); margin-bottom: var(--ds-space-3); }
-        .ds-hero__title { font-size: var(--ds-heading-xl); font-weight: var(--ds-font-bold); letter-spacing: var(--ds-tracking-tight); line-height: var(--ds-leading-tight); margin-bottom: var(--ds-space-3); max-width: 820px; margin-left: auto; margin-right: auto; }
-        .ds-hero__subtitle { font-size: var(--ds-text-lg); color: var(--ds-text-secondary); line-height: var(--ds-leading-relaxed); max-width: 600px; margin: 0 auto var(--ds-space-6); }
-        .ds-hero__video-wrap { max-width: 800px; margin: 0 auto; border-radius: var(--ds-radius-lg); overflow: hidden; border: 1px solid var(--ds-border-light); box-shadow: var(--ds-shadow-lg); background: var(--ds-surface); }
+        .ds-hero__title { font-size: clamp(1.95rem, 3.4vw, 2.95rem); font-weight: var(--ds-font-bold); letter-spacing: -0.02em; line-height: 1.12; margin-bottom: var(--ds-space-3); max-width: 660px; margin-left: auto; margin-right: auto; hyphens: none; }
+        .ds-hero__subtitle { font-size: var(--ds-text-lg); color: var(--ds-text-secondary); line-height: var(--ds-leading-relaxed); max-width: 560px; margin: 0 auto var(--ds-space-6); }
+        .ds-hero__video-wrap { max-width: 820px; margin: 0 auto var(--ds-space-6); border-radius: var(--ds-radius-lg); overflow: hidden; border: 1px solid var(--ds-border-light); box-shadow: var(--ds-shadow-lg); }
         .ds-hero__video-wrap iframe { width: 100%; aspect-ratio: 16/9; border: none; display: block; }
-        .ds-social-proof { padding: var(--ds-space-6) 0; border-top: 1px solid var(--ds-border); border-bottom: 1px solid var(--ds-border); }
-        .ds-social-proof__label { font-size: var(--ds-text-xs); font-weight: var(--ds-font-semibold); letter-spacing: var(--ds-tracking-wide); text-transform: uppercase; color: var(--ds-text-muted); text-align: center; margin-bottom: var(--ds-space-4); }
-        .ds-cta { padding: var(--ds-space-12) 0; text-align: center; }
-        .ds-cta__box { background: var(--ds-surface); border: 1px solid var(--ds-border-light); border-radius: var(--ds-radius-lg); padding: var(--ds-space-8) var(--ds-space-4); max-width: 680px; margin: 0 auto; position: relative; overflow: hidden; }
-        .ds-cta__box::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 200px; height: 1px; background: linear-gradient(90deg, transparent, var(--ds-accent-dim), transparent); }
-        .ds-cta__title { font-size: var(--ds-heading-md); font-weight: var(--ds-font-bold); letter-spacing: var(--ds-tracking-tight); line-height: var(--ds-leading-tight); margin-bottom: var(--ds-space-2); }
-        .ds-cta__text { font-size: var(--ds-text-base); color: var(--ds-text-secondary); line-height: var(--ds-leading-relaxed); margin-bottom: var(--ds-space-5); max-width: 480px; margin-left: auto; margin-right: auto; }
-        @media (min-width: 768px) { .ds-cta__box { padding: var(--ds-space-10) var(--ds-space-8); } }
+        /* VSL placeholder — swap .kk-vsl for a real <iframe> to go live */
+        .kk-vsl { position: relative; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; cursor: pointer; background: radial-gradient(130% 130% at 50% 0%, #2a1212 0%, #160a0a 55%, #0f0707 100%); }
+        .kk-vsl__play { width: 88px; height: 88px; border-radius: var(--ds-radius-full); background: var(--ds-accent); display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 12px rgba(205,41,26,0.10), 0 14px 40px rgba(205,41,26,0.45); transition: transform var(--ds-duration-normal) var(--ds-ease), box-shadow var(--ds-duration-normal); }
+        .kk-vsl:hover .kk-vsl__play { transform: scale(1.07); box-shadow: 0 0 0 16px rgba(205,41,26,0.12), 0 16px 48px rgba(205,41,26,0.55); }
+        .kk-vsl__play svg { width: 30px; height: 30px; fill: #fff; margin-left: 5px; }
+        .kk-vsl__badge { position: absolute; top: 16px; right: 18px; font-size: var(--ds-text-xs); font-weight: var(--ds-font-semibold); color: var(--ds-text); background: rgba(0,0,0,0.45); border: 1px solid var(--ds-border-light); padding: 5px 12px; border-radius: var(--ds-radius-full); }
+        .kk-vsl__tag { position: absolute; bottom: 18px; left: 0; right: 0; text-align: center; font-size: var(--ds-text-xs); letter-spacing: var(--ds-tracking-wide); text-transform: uppercase; color: var(--ds-text-muted); }
+        @media (max-width: 600px) { .ds-hero { min-height: 0; } .kk-vsl__play { width: 68px; height: 68px; } .kk-vsl__play svg { width: 24px; height: 24px; } }
         /* page-specific (brand chrome) */
-        h1,h2,.ds-hero__title,.ds-cta__title { font-family: var(--ds-font-display); }
+        h1, .ds-hero__title { font-family: var(--ds-font-display); }
         .kk-logobar { padding: 18px 0; text-align: center; border-bottom: 1px solid var(--ds-border); }
         .kk-logobar span { font-family: var(--ds-font-display); font-weight: 800; letter-spacing: 1px; font-size: 1.1rem; }
         .kk-logobar b { color: var(--ds-accent); font-weight: 800; }
@@ -98,12 +100,17 @@
         <div class="ds-container ds-container--narrow">
             <div class="ds-reveal">
                 <p class="ds-hero__label">Limitless Mentoring</p>
-                <h1 class="ds-hero__title">Buy your first cash-flowing rental in the next 12 months, using the same Strait Path framework I used to retire at 26.</h1>
+                <h1 class="ds-hero__title">Buy your first <span style="white-space:nowrap">cash-flowing</span> rental in the next 12 months, using the same Strait Path framework I used to retire at 26.</h1>
                 <p class="ds-hero__subtitle">This 5-minute video walks through the exact framework I've used to help 3,000+ people purchase over $500M in real estate. Watch it, then apply if it makes sense.</p>
             </div>
             <div class="ds-hero__video-wrap ds-reveal ds-reveal--delay-1">
-                <!-- Replace src with the real VSL embed (Wistia: https://fast.wistia.net/embed/iframe/MEDIA_ID, or YouTube embed URL) -->
-                <iframe src="REPLACE_VSL_EMBED_URL" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Limitless Mentoring"></iframe>
+                <!-- VSL PLACEHOLDER. To go live, replace this entire .kk-vsl block with the real embed:
+                     <iframe src="https://fast.wistia.net/embed/iframe/MEDIA_ID" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Limitless Mentoring"></iframe> -->
+                <div class="kk-vsl" role="img" aria-label="Video placeholder">
+                    <span class="kk-vsl__badge">5 min</span>
+                    <div class="kk-vsl__play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+                    <span class="kk-vsl__tag">VSL goes here</span>
+                </div>
             </div>
             <div class="ds-reveal ds-reveal--delay-2" style="margin-top: var(--ds-space-6);">
                 <a href="apply.html" class="ds-btn ds-btn--lg">Apply for Limitless Mentoring &rarr;</a>

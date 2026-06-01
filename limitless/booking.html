@@ -59,6 +59,11 @@
         .ds-calendar__embed iframe { width: 100%; min-height: 700px; border: none; display: block; }
         .ds-calendar__placeholder { padding: var(--ds-space-5); text-align: center; color: var(--ds-text-muted); font-size: var(--ds-text-sm); }
         .ds-calendar__placeholder code { display: block; background: var(--ds-bg); border: 1px solid var(--ds-border); border-radius: var(--ds-radius-sm); padding: var(--ds-space-2); margin-top: var(--ds-space-2); font-size: var(--ds-text-xs); word-break: break-all; color: var(--ds-text-secondary); }
+        .kk-cal { width: 100%; min-height: 500px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: var(--ds-space-6); background: radial-gradient(130% 120% at 50% 0%, #1c0e0e 0%, #140a0a 60%, #110808 100%); }
+        .kk-cal__icon { width: 64px; height: 64px; border-radius: var(--ds-radius-full); background: var(--ds-accent-glow); border: 1px solid var(--ds-accent-dim); display: flex; align-items: center; justify-content: center; color: var(--ds-accent); margin-bottom: var(--ds-space-3); }
+        .kk-cal__icon svg { width: 28px; height: 28px; }
+        .kk-cal__title { font-family: var(--ds-font-display); font-weight: 700; font-size: var(--ds-text-lg); color: var(--ds-text); margin-bottom: var(--ds-space-1); }
+        .kk-cal__sub { font-size: var(--ds-text-sm); color: var(--ds-text-muted); max-width: 340px; line-height: var(--ds-leading-relaxed); }
         .ds-expect { max-width: 600px; margin: 0 auto; }
         .ds-expect__list { list-style: none; display: flex; flex-direction: column; gap: var(--ds-space-3); }
         .ds-expect__item { display: flex; align-items: flex-start; gap: var(--ds-space-2); padding: var(--ds-space-3); background: var(--ds-surface); border: 1px solid var(--ds-border); border-radius: var(--ds-radius-md); text-align: left; }
@@ -95,11 +100,13 @@
         <div class="ds-container ds-container--narrow">
             <div class="ds-calendar ds-reveal ds-reveal--delay-1">
                 <div class="ds-calendar__embed">
-                    <!-- Replace the iframe src with the real booking calendar (GHL widget, Calendly, or Cal.com). -->
-                    <iframe src="REPLACE_GHL_CALENDAR" title="Book your Limitless Mentoring call" scrolling="yes"></iframe>
-                    <!-- Preview placeholder shows if the embed src is not yet set:
-                    <div class="ds-calendar__placeholder"><p>Calendar embed goes here</p><code>Replace REPLACE_GHL_CALENDAR with your GHL / Calendly / Cal.com booking embed</code></div>
-                    -->
+                    <!-- BOOKING PLACEHOLDER. To go live, replace this .kk-cal block with the real embed:
+                         <iframe src="GHL_OR_CALENDLY_EMBED_URL" title="Book your Limitless Mentoring call" scrolling="yes"></iframe> -->
+                    <div class="kk-cal">
+                        <div class="kk-cal__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+                        <p class="kk-cal__title">Booking calendar goes here</p>
+                        <p class="kk-cal__sub">Drop in the GHL, Calendly, or Cal.com embed and applicants pick a time right here.</p>
+                    </div>
                 </div>
             </div>
         </div>
