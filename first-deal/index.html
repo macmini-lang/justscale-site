@@ -1,458 +1,430 @@
+<!-- ================================================
+     First Deal — VSL Call Funnel (single page)
+     Built on JustScale design-system: Call Funnel — VSL + Application
+     Theme: Dark Premium (default ds- tokens)
+     Structure: Headline → Subheadline → VSL → Application
+     ================================================ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>First Deal — Buy Your First Rental in the Next 90 Days</title>
-  <meta name="description" content="A short video walks through the framework Brandon Turner has used to help 1,000+ people buy their first rental. Watch it, then apply.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A short video walks through the framework Brandon Turner has used to help 1,000+ people buy their first rental. Watch it, then apply.">
+    <title>First Deal — Buy Your First Rental in the Next 90 Days</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* === RESET === */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-    :root {
-      --bg: #FFFFFF;
-      --bg-s: #F7F7F7;
-      --ink: #111111;
-      --ink-l: #333333;
-      --text-s: #555555;
-      --text-m: #999999;
-      --line: rgba(0,0,0,0.10);
-      --line-s: rgba(0,0,0,0.06);
-      --ease: cubic-bezier(0.4, 0, 0.2, 1);
-    }
+        /* === TOKENS (JustScale design-system — Dark Premium) === */
+        :root {
+            --ds-bg: #0c0c0c;
+            --ds-bg-secondary: #111111;
+            --ds-surface: #151515;
+            --ds-surface-hover: #1a1a1a;
+            --ds-text: #f5f5f0;
+            --ds-text-secondary: #8a8a82;
+            --ds-text-muted: #5a5a54;
+            --ds-accent: #c9a96e;
+            --ds-accent-light: #d4b87a;
+            --ds-accent-dim: #a08550;
+            --ds-accent-glow: rgba(201,169,110,0.08);
+            --ds-accent-glow-strong: rgba(201,169,110,0.20);
+            --ds-border: rgba(255,255,255,0.06);
+            --ds-border-light: rgba(255,255,255,0.10);
+            --ds-success: #22c55e;
+            --ds-error: #ef4444;
+            --ds-font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --ds-font-normal: 400;
+            --ds-font-medium: 500;
+            --ds-font-semibold: 600;
+            --ds-font-bold: 700;
+            --ds-text-xs: 0.72rem;
+            --ds-text-sm: 0.82rem;
+            --ds-text-base: 1rem;
+            --ds-text-lg: 1.05rem;
+            --ds-text-xl: 1.25rem;
+            --ds-heading-sm: clamp(1.2rem, 2vw, 1.5rem);
+            --ds-heading-md: clamp(1.6rem, 2.8vw, 2.2rem);
+            --ds-heading-lg: clamp(2rem, 4vw, 3rem);
+            --ds-heading-xl: clamp(2.4rem, 5.2vw, 3.8rem);
+            --ds-leading-tight: 1.15;
+            --ds-leading-normal: 1.6;
+            --ds-leading-relaxed: 1.75;
+            --ds-tracking-tight: -0.035em;
+            --ds-tracking-wide: 0.12em;
+            --ds-space-1: 8px;
+            --ds-space-2: 16px;
+            --ds-space-3: 24px;
+            --ds-space-4: 32px;
+            --ds-space-5: 40px;
+            --ds-space-6: 48px;
+            --ds-space-8: 64px;
+            --ds-space-10: 80px;
+            --ds-space-12: 96px;
+            --ds-space-section: 90px;
+            --ds-radius-sm: 8px;
+            --ds-radius-md: 14px;
+            --ds-radius-lg: 20px;
+            --ds-radius-full: 9999px;
+            --ds-shadow-lg: 0 20px 60px rgba(0,0,0,0.5);
+            --ds-ease: cubic-bezier(0.16, 1, 0.3, 1);
+            --ds-duration-fast: 0.15s;
+            --ds-duration-normal: 0.3s;
+            --ds-duration-slow: 0.5s;
+            --ds-container-max: 1140px;
+            --ds-container-padding: 28px;
+            --ds-container-narrow: 760px;
+        }
 
-    html { scroll-behavior: smooth; }
+        /* === BASE === */
+        html { font-size: 16px; scroll-behavior: smooth; }
+        body { font-family: var(--ds-font-primary); background: var(--ds-bg); color: var(--ds-text); line-height: var(--ds-leading-normal); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        img { max-width: 100%; height: auto; display: block; }
+        a { color: inherit; text-decoration: none; }
+        .ds-container { max-width: var(--ds-container-max); margin: 0 auto; padding: 0 var(--ds-container-padding); }
+        .ds-container--narrow { max-width: var(--ds-container-narrow); }
+        .ds-section { padding: var(--ds-space-section) 0; position: relative; }
 
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg);
-      color: var(--ink);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
+        /* === BUTTONS === */
+        .ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--ds-space-1); padding: 11px 26px; background: var(--ds-accent); color: var(--ds-bg); border-radius: var(--ds-radius-sm); font-size: var(--ds-text-sm); font-weight: var(--ds-font-semibold); font-family: inherit; border: none; cursor: pointer; transition: box-shadow var(--ds-duration-normal), transform var(--ds-duration-fast); position: relative; overflow: hidden; isolation: isolate; }
+        .ds-btn:hover { box-shadow: 0 0 30px var(--ds-accent-glow-strong); transform: translateY(-2px); }
+        .ds-btn--lg { padding: 16px 40px; font-size: 0.92rem; border-radius: 10px; }
+        .ds-btn--full { width: 100%; }
+        .ds-btn--outline { background: transparent; border: 1px solid var(--ds-border-light); color: var(--ds-text); }
+        .ds-btn--outline:hover { border-color: var(--ds-accent-dim); background: var(--ds-accent-glow); box-shadow: none; }
+        .ds-btn::after { content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.22) 50%, transparent 70%); z-index: -1; pointer-events: none; }
+        .ds-btn:hover::after { animation: ds-shine 0.4s 0.08s ease-out forwards; }
+        @keyframes ds-shine { to { left: 150%; } }
 
-    h1, h2, h3 { text-wrap: balance; letter-spacing: -0.02em; color: var(--ink); }
-    p { text-wrap: pretty; }
+        /* === REVEAL === */
+        .ds-reveal { opacity: 0; transform: translateY(20px); transition: opacity var(--ds-duration-slow) var(--ds-ease), transform var(--ds-duration-slow) var(--ds-ease); }
+        .ds-reveal--visible { opacity: 1; transform: translateY(0); }
+        .ds-reveal--delay-1 { transition-delay: 0.1s; }
+        .ds-reveal--delay-2 { transition-delay: 0.2s; }
+        @media (prefers-reduced-motion: reduce) { .ds-reveal { opacity: 1 !important; transform: none !important; transition: none !important; } }
 
-    .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+        /* === HERO (VIDEO) === */
+        .ds-hero { padding: var(--ds-space-12) 0 var(--ds-space-8); text-align: center; }
+        .ds-hero__title { font-size: var(--ds-heading-xl); font-weight: var(--ds-font-bold); letter-spacing: var(--ds-tracking-tight); line-height: var(--ds-leading-tight); margin-bottom: var(--ds-space-3); max-width: 820px; margin-left: auto; margin-right: auto; }
+        .ds-hero__subtitle { font-size: var(--ds-text-lg); color: var(--ds-text-secondary); line-height: var(--ds-leading-relaxed); max-width: 600px; margin: 0 auto var(--ds-space-6); }
+        .ds-hero__video-wrap { max-width: 800px; margin: 0 auto; border-radius: var(--ds-radius-lg); overflow: hidden; border: 1px solid var(--ds-border-light); box-shadow: var(--ds-shadow-lg); background: var(--ds-surface); }
+        .ds-hero__video-wrap wistia-player { display: block; width: 100%; }
+        @media (max-width: 768px) { .ds-hero { padding: var(--ds-space-8) 0 var(--ds-space-6); } }
 
-    /* ===== Button ===== */
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      padding: 16px 40px; background: var(--ink); color: var(--bg);
-      border-radius: 10px; font-family: inherit; font-size: 1rem; font-weight: 600;
-      letter-spacing: 0.01em; border: none; cursor: pointer; text-decoration: none;
-      position: relative; overflow: hidden; isolation: isolate;
-      transition: box-shadow 0.3s, transform 0.15s ease;
-    }
-    .btn::before { content: ''; position: absolute; inset: 0; background: var(--ink-l); transform: scaleX(0); transform-origin: left; transition: transform 0.4s var(--ease); z-index: -2; }
-    .btn:hover::before { transform: scaleX(1); }
-    .btn:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.18); transform: translateY(-1px); }
-    .btn:active { transform: translateY(0); }
-    .btn-lg { padding: 18px 48px; font-size: 1.05rem; }
-    @media (max-width: 768px) { .btn, .btn-lg { width: 100%; } }
+        /* === APPLICATION === */
+        .ds-apply { padding: var(--ds-space-10) 0 var(--ds-space-12); background: linear-gradient(180deg, var(--ds-bg) 0%, var(--ds-bg-secondary) 100%); border-top: 1px solid var(--ds-border); }
+        .ds-apply__head { text-align: center; margin-bottom: var(--ds-space-5); }
+        .ds-apply__label { font-size: var(--ds-text-xs); font-weight: var(--ds-font-semibold); letter-spacing: var(--ds-tracking-wide); text-transform: uppercase; color: var(--ds-accent); margin-bottom: var(--ds-space-2); }
+        .ds-apply__title { font-size: var(--ds-heading-lg); font-weight: var(--ds-font-bold); letter-spacing: var(--ds-tracking-tight); line-height: var(--ds-leading-tight); margin-bottom: var(--ds-space-2); }
+        .ds-apply__sub { font-size: var(--ds-text-base); color: var(--ds-text-secondary); max-width: 480px; margin: 0 auto; }
 
-    /* ===== Logo bar ===== */
-    .logobar { padding: 22px 0; border-bottom: 1px solid var(--line-s); text-align: center; }
-    .logobar img { height: 30px; width: auto; filter: invert(1) brightness(0); }
+        /* === FORM (ds-form component) === */
+        .ds-form { background: var(--ds-surface); border: 1px solid var(--ds-border-light); border-radius: var(--ds-radius-lg); padding: var(--ds-space-5) var(--ds-space-4); max-width: 560px; margin: 0 auto; text-align: left; }
+        @media (min-width: 768px) { .ds-form { padding: var(--ds-space-6) var(--ds-space-5); } }
+        .ds-progress { height: 4px; background: rgba(255,255,255,0.06); border-radius: var(--ds-radius-full); overflow: hidden; margin-bottom: var(--ds-space-4); }
+        .ds-progress__fill { height: 100%; background: var(--ds-accent); border-radius: var(--ds-radius-full); transition: width var(--ds-duration-normal) ease; }
+        .ds-form__group { margin-bottom: var(--ds-space-3); }
+        .ds-form__label { display: block; font-size: var(--ds-text-sm); font-weight: var(--ds-font-medium); color: var(--ds-text-secondary); margin-bottom: var(--ds-space-1); line-height: 1.4; }
+        .ds-form__input,
+        .ds-form__select,
+        .ds-form__textarea { width: 100%; padding: 12px var(--ds-space-2); background: var(--ds-bg); border: 1px solid var(--ds-border-light); border-radius: var(--ds-radius-sm); color: var(--ds-text); font-family: var(--ds-font-primary); font-size: var(--ds-text-base); transition: border-color var(--ds-duration-normal); outline: none; }
+        .ds-form__input:focus,
+        .ds-form__select:focus,
+        .ds-form__textarea:focus { border-color: var(--ds-accent-dim); }
+        .ds-form__input::placeholder, .ds-form__textarea::placeholder { color: var(--ds-text-muted); }
+        .ds-form__textarea { resize: vertical; min-height: 96px; }
+        .ds-form__select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%238a8a82' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; cursor: pointer; }
+        .ds-form__select option { background: var(--ds-bg-secondary); color: var(--ds-text); }
+        .ds-form__privacy { font-size: var(--ds-text-xs); color: var(--ds-text-muted); text-align: center; margin-top: var(--ds-space-2); }
 
-    /* ===== Hero ===== */
-    .hero { text-align: center; padding: 56px 0 0; }
-    .hero h1 { font-size: clamp(26px, 4vw, 40px); font-weight: 800; line-height: 1.12; max-width: 720px; margin: 0 auto; }
-    .hero .sub { margin: 18px auto 0; max-width: 560px; font-size: clamp(15px, 2vw, 18px); color: var(--text-s); line-height: 1.6; }
-    @media (max-width: 768px) { .hero { padding: 40px 0 0; } }
+        /* === RESULT PANELS === */
+        .ds-result { background: var(--ds-surface); border: 1px solid var(--ds-border-light); border-radius: var(--ds-radius-lg); padding: var(--ds-space-6) var(--ds-space-4); max-width: 560px; margin: 0 auto; text-align: center; }
+        @media (min-width: 768px) { .ds-result { padding: var(--ds-space-8) var(--ds-space-6); } }
+        .ds-result__icon { width: 56px; height: 56px; border-radius: var(--ds-radius-full); background: var(--ds-accent-glow); border: 1px solid var(--ds-accent-dim); color: var(--ds-accent); display: flex; align-items: center; justify-content: center; margin: 0 auto var(--ds-space-3); font-size: 24px; }
+        .ds-result__title { font-size: var(--ds-heading-sm); font-weight: var(--ds-font-bold); margin-bottom: var(--ds-space-2); }
+        .ds-result__text { font-size: var(--ds-text-base); color: var(--ds-text-secondary); line-height: var(--ds-leading-relaxed); max-width: 460px; margin: 0 auto var(--ds-space-4); }
+        .ds-result__cal { border-radius: var(--ds-radius-md); overflow: hidden; position: relative; }
 
-    /* ===== VSL ===== */
-    .video-wrapper { margin: 36px auto 0; max-width: 720px; position: relative; }
-    #videoEmbed { transition: width 0.35s ease, box-shadow 0.35s ease; border-radius: 12px; overflow: hidden; box-shadow: 0 12px 48px rgba(0,0,0,0.10); }
-    .video-wrapper.is-sticky #videoEmbed {
-      position: fixed; top: 16px; right: 16px; width: 320px; z-index: 999;
-      border-radius: 8px; box-shadow: 0 8px 32px rgba(0,0,0,0.22); border: 1px solid rgba(0,0,0,0.10);
-    }
-    .video-wrapper.is-sticky { aspect-ratio: 16/9; max-width: 720px; }
-    .video-wrapper.is-sticky .sticky-close { display: flex; }
-    .sticky-close { display: none; position: fixed; top: 16px; right: 16px; width: 320px; z-index: 1000; justify-content: flex-end; padding: 4px; }
-    .sticky-close button { background: rgba(0,0,0,0.7); color: #fff; border: none; font-size: 18px; cursor: pointer; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; line-height: 1; }
+        /* === FOOTER (minimal / legal) === */
+        .ds-footer { padding: var(--ds-space-6) 0; text-align: center; border-top: 1px solid var(--ds-border); }
+        .ds-footer__links { display: flex; justify-content: center; gap: var(--ds-space-3); margin-bottom: var(--ds-space-2); flex-wrap: wrap; }
+        .ds-footer__links a { color: var(--ds-text-muted); font-size: var(--ds-text-xs); }
+        .ds-footer__links a:hover { color: var(--ds-text-secondary); }
+        .ds-footer__copy { color: var(--ds-text-muted); font-size: var(--ds-text-xs); }
+    </style>
 
-    .hero-cta { margin-top: 32px; }
-    .hero-note { margin-top: 14px; font-size: 13px; color: var(--text-m); }
+    <script src="https://fast.wistia.com/player.js" async></script>
+    <script src="https://fast.wistia.com/embed/022kx0j42g.js" async type="module"></script>
+    <style>wistia-player[media-id='022kx0j42g']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/022kx0j42g/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style>
 
-    /* ===== Application ===== */
-    .app { margin-top: 88px; padding: 64px 0 96px; background: var(--bg-s); border-top: 1px solid var(--line-s); }
-    @media (max-width: 768px) { .app { margin-top: 56px; padding: 48px 0 72px; } }
-    .app .wrap { max-width: 600px; }
-    .app-head { text-align: center; margin-bottom: 36px; }
-    .app-head h2 { font-size: clamp(24px, 3.5vw, 32px); font-weight: 800; }
-    .app-head p { margin-top: 10px; color: var(--text-s); font-size: 16px; }
-
-    .app-card { background: var(--bg); border: 1px solid var(--line); border-radius: 16px; padding: 36px 30px; box-shadow: 0 4px 32px rgba(0,0,0,0.04); }
-    @media (max-width: 768px) { .app-card { padding: 28px 20px; } }
-
-    .app-progress { height: 5px; background: rgba(0,0,0,0.06); border-radius: 100px; overflow: hidden; margin-bottom: 28px; }
-    .app-progress-fill { height: 100%; background: var(--ink); border-radius: 100px; transition: width 0.3s ease; }
-
-    .field { margin-bottom: 22px; }
-    .field:last-of-type { margin-bottom: 0; }
-    .field label { font-size: 14px; font-weight: 600; color: var(--ink); display: block; margin-bottom: 8px; line-height: 1.4; }
-    .field input, .field textarea {
-      width: 100%; padding: 14px 16px; border: 1px solid var(--line); border-radius: 10px;
-      font-size: 16px; font-family: inherit; background: var(--bg); color: var(--ink); outline: none; transition: border-color 0.2s;
-    }
-    .field textarea { min-height: 90px; resize: vertical; line-height: 1.5; }
-    .field input:focus, .field textarea:focus { border-color: var(--ink); }
-    .opt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-    .opt-grid.one-col { grid-template-columns: 1fr; }
-    @media (max-width: 480px) { .opt-grid { grid-template-columns: 1fr; } }
-    .q-btn {
-      padding: 14px 16px; border: 1px solid var(--line); border-radius: 10px; background: var(--bg);
-      color: var(--ink); font-size: 15px; font-weight: 500; font-family: inherit; cursor: pointer;
-      transition: all 0.18s ease; text-align: center; line-height: 1.3;
-    }
-    .q-btn:hover { border-color: var(--ink); }
-    .q-btn.selected { border-color: var(--ink); background: var(--ink); color: var(--bg); font-weight: 600; }
-    .app-secure { text-align: center; font-size: 12px; color: var(--text-m); margin-top: 16px; }
-
-    /* ===== Result panels ===== */
-    .res-card { background: var(--bg); border: 1px solid var(--line); border-radius: 16px; padding: 36px 30px; text-align: center; }
-    .res-card h2 { font-size: clamp(22px, 3vw, 28px); font-weight: 800; margin-bottom: 10px; }
-    .res-card p { color: var(--text-s); font-size: 16px; max-width: 460px; margin: 0 auto 22px; }
-    .check { width: 56px; height: 56px; border-radius: 50%; background: var(--ink); color: var(--bg); display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; font-size: 24px; }
-
-    /* ===== Footer ===== */
-    footer { padding: 32px 0; text-align: center; border-top: 1px solid var(--line-s); }
-    footer img { height: 22px; width: auto; filter: invert(1) brightness(0); margin-bottom: 14px; }
-    footer .links { display: flex; justify-content: center; gap: 22px; margin-bottom: 12px; flex-wrap: wrap; }
-    footer .links a { color: var(--text-m); font-size: 13px; text-decoration: none; }
-    footer .links a:hover { color: var(--ink); }
-    footer .copy { color: var(--text-m); font-size: 12px; }
-  </style>
-  <script src="https://fast.wistia.com/player.js" async></script>
-  <script src="https://fast.wistia.com/embed/022kx0j42g.js" async type="module"></script>
-  <style>wistia-player[media-id='022kx0j42g']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/022kx0j42g/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style>
-
-  <!-- Meta Pixel - deferred -->
-  <script>
-    window.addEventListener('load', function() {
-      setTimeout(function() {
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '473352432283793');
-        fbq('track', 'PageView');
-      }, 1500);
-    });
-  </script>
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=473352432283793&ev=PageView&noscript=1" alt=""></noscript>
-  <!-- Hyros Tracking - deferred -->
-  <script>
-    window.addEventListener('load', function() {
-      setTimeout(function() {
-        var head = document.head;
-        var script = document.createElement('script');
-        script.type = 'text/javascript';
-        script.src = "https://t.firstdeal.com/v1/lst/universal-script?ph=aca73cebdee9c9e1482888a993a0425bbb9befd97b1b4f96bb395a144223c79f&tag=!clicked&ref_url=" + encodeURI(document.URL);
-        head.appendChild(script);
-      }, 2500);
-    });
-  </script>
-  <!-- Microsoft Clarity - deferred -->
-  <script>
-    window.addEventListener('load', function() {
-      setTimeout(function() {
-        (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "wdd7bcecw5");
-      }, 2000);
-    });
-  </script>
+    <!-- Meta Pixel - deferred -->
+    <script>
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          !function(f,b,e,v,n,t,s)
+          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+          n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s)}(window, document,'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init', '473352432283793');
+          fbq('track', 'PageView');
+        }, 1500);
+      });
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=473352432283793&ev=PageView&noscript=1" alt=""></noscript>
+    <!-- Hyros Tracking - deferred -->
+    <script>
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          var head = document.head;
+          var script = document.createElement('script');
+          script.type = 'text/javascript';
+          script.src = "https://t.firstdeal.com/v1/lst/universal-script?ph=aca73cebdee9c9e1482888a993a0425bbb9befd97b1b4f96bb395a144223c79f&tag=!clicked&ref_url=" + encodeURI(document.URL);
+          head.appendChild(script);
+        }, 2500);
+      });
+    </script>
+    <!-- Microsoft Clarity - deferred -->
+    <script>
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+          })(window, document, "clarity", "script", "wdd7bcecw5");
+        }, 2000);
+      });
+    </script>
 </head>
 <body>
-  <!-- Logo -->
-  <div class="logobar">
-    <img src="assets/fd-logo.png" alt="First Deal" width="332" height="63">
-  </div>
 
-  <!-- Hero: headline + sub + VSL + CTA -->
-  <section class="hero" id="hero">
-    <div class="wrap">
-      <h1>Buy your first rental in the next 90 days &mdash; without quitting your job or draining your savings.</h1>
-      <p class="sub">This short video walks through the exact framework I've used to help 1,000+ people buy their first deal. Watch it, then apply if it makes&nbsp;sense.</p>
-
-      <div class="video-wrapper" id="videoWrapper">
-        <div class="sticky-close" id="stickyClose"><button onclick="dismissSticky()">&times;</button></div>
-        <div id="videoEmbed">
-          <wistia-player media-id="022kx0j42g" aspect="1.7777777777777777"></wistia-player>
+    <!-- HERO: headline + subheadline + VSL -->
+    <section class="ds-hero">
+        <div class="ds-container ds-container--narrow">
+            <div class="ds-reveal">
+                <h1 class="ds-hero__title">Buy your first rental in the next 90 days &mdash; without quitting your job or draining your savings.</h1>
+                <p class="ds-hero__subtitle">This short video walks through the exact framework I've used to help 1,000+ people buy their first deal. Watch it, then apply if it makes&nbsp;sense.</p>
+            </div>
+            <div class="ds-hero__video-wrap ds-reveal ds-reveal--delay-1">
+                <wistia-player media-id="022kx0j42g" aspect="1.7777777777777777"></wistia-player>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <div class="hero-cta">
-        <a href="#apply" class="btn btn-lg">Apply for First Deal →</a>
-      </div>
-      <p class="hero-note">Takes about 2 minutes. No commitment.</p>
-    </div>
-  </section>
+    <!-- APPLICATION -->
+    <section class="ds-apply" id="apply">
+        <div class="ds-container ds-container--narrow">
+            <div class="ds-apply__head ds-reveal">
+                <p class="ds-apply__label">Apply for First Deal</p>
+                <h2 class="ds-apply__title">See If You're a Fit</h2>
+                <p class="ds-apply__sub">A few quick questions. The more honest you are, the more useful the call.</p>
+            </div>
 
-  <!-- Application -->
-  <section class="app" id="apply">
-    <div class="wrap">
-      <div class="app-head">
-        <h2>Apply for First Deal</h2>
-        <p>9 quick questions. The more honest you are, the more useful the call.</p>
-      </div>
+            <form class="ds-form ds-reveal ds-reveal--delay-1" id="ds-application-form" onsubmit="return false;">
+                <div class="ds-progress"><div class="ds-progress__fill" id="dsProgress" style="width:0%"></div></div>
 
-      <div id="appForm" class="app-card">
-        <div class="app-progress"><div class="app-progress-fill" id="appProgress" style="width: 0%;"></div></div>
+                <div class="ds-form__group">
+                    <label class="ds-form__label" for="q_name">What's your name?</label>
+                    <input type="text" id="q_name" class="ds-form__input" placeholder="First and last name" autocomplete="name">
+                </div>
+                <div class="ds-form__group">
+                    <label class="ds-form__label" for="q_email">Best email to send call details to?</label>
+                    <input type="email" id="q_email" class="ds-form__input" placeholder="you@example.com" autocomplete="email">
+                </div>
+                <div class="ds-form__group">
+                    <label class="ds-form__label" for="q_phone">Cell number for our team to text your confirmation?</label>
+                    <input type="tel" id="q_phone" class="ds-form__input" placeholder="(555) 123-4567" autocomplete="tel">
+                </div>
+                <div class="ds-form__group">
+                    <label class="ds-form__label" for="q_capital">How much liquid capital do you have ready to deploy into a first deal?</label>
+                    <select id="q_capital" class="ds-form__select">
+                        <option value="" disabled selected>Select one</option>
+                        <option value="lt_15k">Less than $15K</option>
+                        <option value="15k_50k">$15K – $50K</option>
+                        <option value="50k_100k">$50K – $100K</option>
+                        <option value="100k_250k">$100K – $250K</option>
+                        <option value="250k_500k">$250K – $500K</option>
+                        <option value="500k_plus">$500K+</option>
+                    </select>
+                </div>
+                <div class="ds-form__group">
+                    <label class="ds-form__label" for="q_timeline">When are you planning to buy your first rental?</label>
+                    <select id="q_timeline" class="ds-form__select">
+                        <option value="" disabled selected>Select one</option>
+                        <option value="30_days">Next 30 days</option>
+                        <option value="1_3_months">1 – 3 months</option>
+                        <option value="3_6_months">3 – 6 months</option>
+                        <option value="6_12_months">6 – 12 months</option>
+                        <option value="exploring">Just exploring</option>
+                    </select>
+                </div>
+                <div class="ds-form__group">
+                    <label class="ds-form__label" for="q_sticking">What's the one thing stopping you from buying a first deal right now?</label>
+                    <textarea id="q_sticking" class="ds-form__textarea" placeholder="Be specific. The more honest, the better the call."></textarea>
+                </div>
+                <div class="ds-form__group">
+                    <label class="ds-form__label" for="q_partner">Is anyone else involved in this decision with you?</label>
+                    <select id="q_partner" class="ds-form__select">
+                        <option value="" disabled selected>Select one</option>
+                        <option value="just_me">Just me</option>
+                        <option value="spouse_on_call">Spouse or partner (will be on the call too)</option>
+                        <option value="spouse_loop_in">Spouse or partner (not on the call, I'll loop them in)</option>
+                        <option value="business_partner">Business partner</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="ds-form__group">
+                    <label class="ds-form__label" for="q_experience">Have you ever owned a rental property before?</label>
+                    <select id="q_experience" class="ds-form__select">
+                        <option value="" disabled selected>Select one</option>
+                        <option value="none">No, this would be my first</option>
+                        <option value="tried">I've tried but never closed</option>
+                        <option value="own_1">I own 1 rental</option>
+                        <option value="own_2_5">I own 2 – 5 rentals</option>
+                        <option value="own_5_plus">I own more than 5 rentals</option>
+                    </select>
+                </div>
+                <div class="ds-form__group">
+                    <label class="ds-form__label" for="q_why">Why First Deal specifically? What made you click apply?</label>
+                    <textarea id="q_why" class="ds-form__textarea" placeholder="A sentence or two is plenty."></textarea>
+                </div>
 
-        <div class="field">
-          <label for="fld_name">What's your name?</label>
-          <input type="text" id="fld_name" placeholder="First and last name" autocomplete="name">
+                <button type="submit" class="ds-btn ds-btn--lg ds-btn--full" onclick="submitApplication()">Submit Application</button>
+                <p class="ds-form__privacy">🔒 Your info is secure. We'll never spam you.</p>
+            </form>
+
+            <!-- Result: Qualified -->
+            <div id="resQualified" style="display:none;">
+                <div class="ds-result">
+                    <div class="ds-result__icon">✓</div>
+                    <h2 class="ds-result__title">You're a Fit. Let's Talk.</h2>
+                    <p class="ds-result__text">Grab a time with our team below. We'll walk through your situation and whether First Deal is the right move. Bring your spouse or partner if they're part of the decision.</p>
+                    <div class="ds-result__cal">
+                        <iframe data-src="https://api.leadconnectorhq.com/widget/booking/Np2N1uBvvVS3RvwENA3p" style="width:100%;border:none;overflow:auto;height:700px;margin-top:-60px;" scrolling="yes" id="ghlCalendar"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Result: Freedom Accelerator (owns 5+) -->
+            <div id="resFreedom" style="display:none;">
+                <div class="ds-result">
+                    <h2 class="ds-result__title">You're Past "First Deal."</h2>
+                    <p class="ds-result__text">With more than 5 rentals already, First Deal isn't the right room — but <strong style="color:var(--ds-text);">Freedom Accelerator</strong> is. It's built for operators scaling an existing portfolio.</p>
+                    <a href="https://www.firstdeal.com/freedom-accelerator" target="_blank" rel="noopener" class="ds-btn ds-btn--lg">See Freedom Accelerator →</a>
+                </div>
+            </div>
+
+            <!-- Result: Not yet (under $15K) -->
+            <div id="resNotYet" style="display:none;">
+                <div class="ds-result">
+                    <h2 class="ds-result__title">Looks Like the Timing Isn't Quite Right</h2>
+                    <p class="ds-result__text">No worries. To close a first deal you'll want at least $15K liquid. Here's something to help you get ready:</p>
+                    <a href="https://www.amazon.com/Book-Investing-Real-Estate-Money/dp/1947200976" target="_blank" rel="noopener" class="ds-btn ds-btn--lg">Get Brandon's Book on Amazon →</a>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="field">
-          <label for="fld_email">Best email to send call details to?</label>
-          <input type="email" id="fld_email" placeholder="you@example.com" autocomplete="email">
+    <!-- FOOTER (legal — required for Meta ads compliance) -->
+    <footer class="ds-footer">
+        <div class="ds-container">
+            <div class="ds-footer__links">
+                <a href="https://www.firstdeal.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+                <a href="https://www.firstdeal.com/terms" target="_blank" rel="noopener">Terms of Service</a>
+            </div>
+            <p class="ds-footer__copy">&copy; 2026 First Deal. All rights reserved. This site is not a part of Facebook or Meta Platforms, Inc.</p>
         </div>
+    </footer>
 
-        <div class="field">
-          <label for="fld_phone">Cell number for our team to text your confirmation?</label>
-          <input type="tel" id="fld_phone" placeholder="(555) 123-4567" autocomplete="tel">
-        </div>
+<script>
+/* === Scroll reveal (ds-system) === */
+(function(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    document.querySelectorAll('.ds-reveal').forEach(function(el){el.classList.add('ds-reveal--visible')});
+    return;
+  }
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('ds-reveal--visible');obs.unobserve(e.target)}})
+  },{threshold:0.15,rootMargin:'-40px'});
+  document.querySelectorAll('.ds-reveal').forEach(function(el){obs.observe(el)});
+})();
 
-        <div class="field">
-          <label>How much liquid capital do you have ready to deploy into a first deal?</label>
-          <div class="opt-grid">
-            <button type="button" class="q-btn" data-q="capital" data-v="lt_15k" onclick="selectQ(this)">Less than $15K</button>
-            <button type="button" class="q-btn" data-q="capital" data-v="15k_50k" onclick="selectQ(this)">$15K – $50K</button>
-            <button type="button" class="q-btn" data-q="capital" data-v="50k_100k" onclick="selectQ(this)">$50K – $100K</button>
-            <button type="button" class="q-btn" data-q="capital" data-v="100k_250k" onclick="selectQ(this)">$100K – $250K</button>
-            <button type="button" class="q-btn" data-q="capital" data-v="250k_500k" onclick="selectQ(this)">$250K – $500K</button>
-            <button type="button" class="q-btn" data-q="capital" data-v="500k_plus" onclick="selectQ(this)">$500K+</button>
-          </div>
-        </div>
+/* === Application logic === */
+var GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/MW7HgHvCWIultxO2MDPV/webhook-trigger/1b6525dd-a17e-4af6-abfe-d8abe7a79b2c';
+var HIGH_VALUE = ['100k_250k','250k_500k','500k_plus'];
+var FIELD_IDS = ['q_name','q_email','q_phone','q_capital','q_timeline','q_sticking','q_partner','q_experience','q_why'];
 
-        <div class="field">
-          <label>When are you planning to buy your first rental?</label>
-          <div class="opt-grid">
-            <button type="button" class="q-btn" data-q="timeline" data-v="30_days" onclick="selectQ(this)">Next 30 days</button>
-            <button type="button" class="q-btn" data-q="timeline" data-v="1_3_months" onclick="selectQ(this)">1 – 3 months</button>
-            <button type="button" class="q-btn" data-q="timeline" data-v="3_6_months" onclick="selectQ(this)">3 – 6 months</button>
-            <button type="button" class="q-btn" data-q="timeline" data-v="6_12_months" onclick="selectQ(this)">6 – 12 months</button>
-            <button type="button" class="q-btn" data-q="timeline" data-v="exploring" onclick="selectQ(this)">Just exploring</button>
-          </div>
-        </div>
+function updateProgress(){
+  var filled = FIELD_IDS.filter(function(id){ return document.getElementById(id).value.trim(); }).length;
+  document.getElementById('dsProgress').style.width = Math.round((filled/FIELD_IDS.length)*100) + '%';
+}
+FIELD_IDS.forEach(function(id){ document.getElementById(id).addEventListener('input', updateProgress); document.getElementById(id).addEventListener('change', updateProgress); });
 
-        <div class="field">
-          <label for="fld_sticking">What's the one thing stopping you from buying a first deal right now?</label>
-          <textarea id="fld_sticking" placeholder="Be specific. The more honest, the better the call."></textarea>
-        </div>
+function splitName(full){ var p = full.trim().split(/\s+/); var first = p.shift() || ''; return { first: first, last: p.join(' ') }; }
 
-        <div class="field">
-          <label>Is anyone else involved in this decision with you?</label>
-          <div class="opt-grid one-col">
-            <button type="button" class="q-btn" data-q="partner" data-v="just_me" onclick="selectQ(this)">Just me</button>
-            <button type="button" class="q-btn" data-q="partner" data-v="spouse_on_call" onclick="selectQ(this)">Spouse or partner (will be on the call too)</button>
-            <button type="button" class="q-btn" data-q="partner" data-v="spouse_loop_in" onclick="selectQ(this)">Spouse or partner (not on the call, I'll loop them in)</button>
-            <button type="button" class="q-btn" data-q="partner" data-v="business_partner" onclick="selectQ(this)">Business partner</button>
-            <button type="button" class="q-btn" data-q="partner" data-v="other" onclick="selectQ(this)">Other</button>
-          </div>
-        </div>
+function submitApplication(){
+  var v = {};
+  FIELD_IDS.forEach(function(id){ v[id] = document.getElementById(id).value.trim(); });
 
-        <div class="field">
-          <label>Have you ever owned a rental property before?</label>
-          <div class="opt-grid one-col">
-            <button type="button" class="q-btn" data-q="experience" data-v="none" onclick="selectQ(this)">No, this would be my first</button>
-            <button type="button" class="q-btn" data-q="experience" data-v="tried" onclick="selectQ(this)">I've tried but never closed</button>
-            <button type="button" class="q-btn" data-q="experience" data-v="own_1" onclick="selectQ(this)">I own 1 rental</button>
-            <button type="button" class="q-btn" data-q="experience" data-v="own_2_5" onclick="selectQ(this)">I own 2 – 5 rentals</button>
-            <button type="button" class="q-btn" data-q="experience" data-v="own_5_plus" onclick="selectQ(this)">I own more than 5 rentals</button>
-          </div>
-        </div>
+  if(!v.q_name || !v.q_email || !v.q_phone){ alert('Please add your name, email, and phone.'); return; }
+  if(v.q_email.indexOf('@') === -1){ alert('Please enter a valid email.'); return; }
+  if(!v.q_capital || !v.q_timeline || !v.q_partner || !v.q_experience){ alert('Please answer the dropdown questions.'); return; }
+  if(!v.q_sticking){ alert('Tell us the one thing stopping you — it makes the call far more useful.'); return; }
 
-        <div class="field">
-          <label for="fld_why">Why First Deal specifically? What made you click apply?</label>
-          <textarea id="fld_why" placeholder="A sentence or two is plenty."></textarea>
-        </div>
+  var nm = splitName(v.q_name);
+  var ownsFivePlus = (v.q_experience === 'own_5_plus');
+  var underCapital = (v.q_capital === 'lt_15k');
+  var highValue = HIGH_VALUE.indexOf(v.q_capital) !== -1;
+  var qualified = !underCapital && !ownsFivePlus;
 
-        <button onclick="submitApplication()" id="appSubmit" class="btn btn-lg" style="width: 100%; margin-top: 12px;">Submit Application →</button>
-        <p class="app-secure">🔒 Your info is secure. We'll never spam you.</p>
-      </div>
+  var tags = ['fd-vsl-light'];
+  if(ownsFivePlus) tags.push('route-freedom-accelerator');
+  else if(qualified) tags.push('fd-vsl-qualified');
+  else tags.push('fd-vsl-disqualified');
+  if(highValue) tags.push('high-value-100k-plus');
+  tags.push('capital-' + v.q_capital);
+  tags.push('timeline-' + v.q_timeline);
 
-      <!-- Qualified -->
-      <div id="resQualified" style="display: none;">
-        <div class="res-card">
-          <div class="check">✓</div>
-          <h2>You're a Fit. Let's Talk.</h2>
-          <p>Grab a time with our team below. We'll walk through your situation and whether First Deal is the right move. Bring your spouse or partner if they're part of the decision.</p>
-          <div id="calendarEmbed" style="border-radius: 12px; overflow: hidden; position: relative;">
-            <iframe data-src="https://api.leadconnectorhq.com/widget/booking/Np2N1uBvvVS3RvwENA3p" style="width: 100%; border: none; overflow: auto; height: 700px; margin-top: -60px;" scrolling="yes" id="ghlCalendar"></iframe>
-          </div>
-        </div>
-      </div>
+  var payload = {
+    first_name: nm.first, last_name: nm.last, email: v.q_email, phone: v.q_phone, contactPhone: v.q_phone,
+    source: 'fd-vsl-light', qualified: qualified,
+    route: ownsFivePlus ? 'freedom_accelerator' : (qualified ? 'first_deal' : 'not_yet'),
+    capital_available: v.q_capital, high_value: highValue, timeline: v.q_timeline,
+    sticking_point: v.q_sticking, investing_with: v.q_partner, experience: v.q_experience,
+    why_first_deal: v.q_why, tags: tags.join(',')
+  };
 
-      <!-- Freedom Accelerator (owns 5+) -->
-      <div id="resFreedom" style="display: none;">
-        <div class="res-card">
-          <h2>You're Past "First Deal."</h2>
-          <p>With more than 5 rentals already, First Deal isn't the right room — but <strong>Freedom Accelerator</strong> is. It's built for operators scaling an existing portfolio.</p>
-          <a href="https://www.firstdeal.com/freedom-accelerator" target="_blank" rel="noopener" class="btn">See Freedom Accelerator →</a>
-        </div>
-      </div>
+  if(typeof window !== 'undefined' && window.fbq){
+    var ts = Date.now();
+    window.fbq('track','Lead',{ content_name:'fd-vsl-light' },{ eventID:'Lead_'+ts });
+    if(highValue){ window.fbq('trackCustom','HighValueApplicant',{ content_name:'fd-vsl-light', capital:v.q_capital },{ eventID:'HVA_'+ts }); }
+    if(qualified){ window.fbq('trackCustom','SubmitApplication',{ content_name:'fd-vsl-light', qualified:'yes', capital:v.q_capital, timeline:v.q_timeline },{ eventID:'SubApp_'+ts }); }
+  }
 
-      <!-- Not yet (under $15K) -->
-      <div id="resNotYet" style="display: none;">
-        <div class="res-card">
-          <h2>Looks Like the Timing Isn't Quite Right</h2>
-          <p>No worries. To close a first deal you'll want at least $15K liquid. Here's something to help you get ready:</p>
-          <a href="https://www.amazon.com/Book-Investing-Real-Estate-Money/dp/1947200976" target="_blank" rel="noopener" class="btn">Get Brandon's Book on Amazon →</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  fetch(GHL_WEBHOOK,{ method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload) }).catch(function(){});
+  fetch('/api/applications',{ method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload) }).catch(function(){});
 
-  <!-- Footer -->
-  <footer>
-    <div class="wrap">
-      <img src="assets/fd-logo.png" alt="First Deal" width="166" height="32">
-      <div class="links">
-        <a href="https://www.firstdeal.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
-        <a href="https://www.firstdeal.com/terms" target="_blank" rel="noopener">Terms of Service</a>
-      </div>
-      <p class="copy">&copy; 2026 First Deal. All rights reserved. This site is not a part of Facebook or Meta Platforms, Inc.</p>
-    </div>
-  </footer>
+  document.getElementById('ds-application-form').style.display = 'none';
+  if(ownsFivePlus){
+    show('resFreedom');
+  } else if(qualified){
+    var cal = document.getElementById('ghlCalendar');
+    if(cal){ var base = cal.getAttribute('data-src'); cal.src = base + '?first_name=' + encodeURIComponent(nm.first) + '&last_name=' + encodeURIComponent(nm.last) + '&email=' + encodeURIComponent(v.q_email) + '&phone=' + encodeURIComponent(v.q_phone); }
+    show('resQualified');
+  } else {
+    show('resNotYet');
+  }
+}
 
-  <script>
-    // ===== Sticky video =====
-    var stickyDismissed = false;
-    function dismissSticky() {
-      stickyDismissed = true;
-      document.getElementById('videoWrapper').classList.remove('is-sticky');
-    }
-    (function() {
-      var wrapper = document.getElementById('videoWrapper');
-      if (!wrapper) return;
-      var obs = new IntersectionObserver(function(entries) {
-        if (stickyDismissed) return;
-        wrapper.classList.toggle('is-sticky', !entries[0].isIntersecting);
-      }, { threshold: 0.5 });
-      obs.observe(wrapper);
-    })();
-
-    // ===== Application form =====
-    var answers = {};
-    var GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/MW7HgHvCWIultxO2MDPV/webhook-trigger/1b6525dd-a17e-4af6-abfe-d8abe7a79b2c';
-    var HIGH_VALUE = ['100k_250k', '250k_500k', '500k_plus'];
-    var TOTAL_FIELDS = 9;
-
-    function updateProgress() {
-      var filled = 0;
-      if (document.getElementById('fld_name').value.trim()) filled++;
-      if (document.getElementById('fld_email').value.trim()) filled++;
-      if (document.getElementById('fld_phone').value.trim()) filled++;
-      if (answers.capital) filled++;
-      if (answers.timeline) filled++;
-      if (document.getElementById('fld_sticking').value.trim()) filled++;
-      if (answers.partner) filled++;
-      if (answers.experience) filled++;
-      if (document.getElementById('fld_why').value.trim()) filled++;
-      document.getElementById('appProgress').style.width = Math.round((filled / TOTAL_FIELDS) * 100) + '%';
-    }
-
-    ['fld_name','fld_email','fld_phone','fld_sticking','fld_why'].forEach(function(id) {
-      document.getElementById(id).addEventListener('input', updateProgress);
-    });
-
-    function selectQ(btn) {
-      var q = btn.getAttribute('data-q');
-      answers[q] = btn.getAttribute('data-v');
-      btn.parentElement.querySelectorAll('.q-btn').forEach(function(s) { s.classList.remove('selected'); });
-      btn.classList.add('selected');
-      updateProgress();
-    }
-
-    function splitName(full) {
-      var parts = full.trim().split(/\s+/);
-      var first = parts.shift() || '';
-      return { first: first, last: parts.join(' ') };
-    }
-
-    function submitApplication() {
-      var name = document.getElementById('fld_name').value.trim();
-      var email = document.getElementById('fld_email').value.trim();
-      var phone = document.getElementById('fld_phone').value.trim();
-      var sticking = document.getElementById('fld_sticking').value.trim();
-      var why = document.getElementById('fld_why').value.trim();
-
-      if (!name || !email || !phone) { alert('Please add your name, email, and phone.'); return; }
-      if (!email.includes('@')) { alert('Please enter a valid email.'); return; }
-      if (!answers.capital || !answers.timeline || !answers.partner || !answers.experience) { alert('Please answer the multiple-choice questions.'); return; }
-      if (!sticking) { alert('Tell us the one thing stopping you — it makes the call far more useful.'); return; }
-
-      var nm = splitName(name);
-      var ownsFivePlus = (answers.experience === 'own_5_plus');
-      var underCapital = (answers.capital === 'lt_15k');
-      var highValue = HIGH_VALUE.indexOf(answers.capital) !== -1;
-      var qualified = !underCapital && !ownsFivePlus;
-
-      var tags = ['fd-vsl-light'];
-      if (ownsFivePlus) tags.push('route-freedom-accelerator');
-      else if (qualified) tags.push('fd-vsl-qualified');
-      else tags.push('fd-vsl-disqualified');
-      if (highValue) tags.push('high-value-100k-plus');
-      tags.push('capital-' + answers.capital);
-      tags.push('timeline-' + answers.timeline);
-
-      var payload = {
-        first_name: nm.first, last_name: nm.last, email: email, phone: phone, contactPhone: phone,
-        source: 'fd-vsl-light', qualified: qualified,
-        route: ownsFivePlus ? 'freedom_accelerator' : (qualified ? 'first_deal' : 'not_yet'),
-        capital_available: answers.capital, high_value: highValue, timeline: answers.timeline,
-        sticking_point: sticking, investing_with: answers.partner, experience: answers.experience,
-        why_first_deal: why, tags: tags.join(',')
-      };
-
-      if (typeof window !== 'undefined' && window.fbq) {
-        var ts = Date.now();
-        window.fbq('track', 'Lead', { content_name: 'fd-vsl-light' }, { eventID: 'Lead_' + ts });
-        if (highValue) {
-          window.fbq('trackCustom', 'HighValueApplicant', { content_name: 'fd-vsl-light', capital: answers.capital }, { eventID: 'HVA_' + ts });
-        }
-        if (qualified) {
-          window.fbq('trackCustom', 'SubmitApplication', { content_name: 'fd-vsl-light', qualified: 'yes', capital: answers.capital, timeline: answers.timeline }, { eventID: 'SubApp_' + ts });
-        }
-      }
-
-      fetch(GHL_WEBHOOK, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) }).catch(function() {});
-      fetch('/api/applications', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) }).catch(function() {});
-
-      document.getElementById('appForm').style.display = 'none';
-      if (ownsFivePlus) {
-        document.getElementById('resFreedom').style.display = 'block';
-        document.getElementById('resFreedom').scrollIntoView({ behavior: 'smooth', block: 'start' });
-      } else if (qualified) {
-        var cal = document.getElementById('ghlCalendar');
-        if (cal) {
-          var base = cal.getAttribute('data-src') || 'https://api.leadconnectorhq.com/widget/booking/Np2N1uBvvVS3RvwENA3p';
-          cal.src = base + '?first_name=' + encodeURIComponent(nm.first) + '&last_name=' + encodeURIComponent(nm.last) + '&email=' + encodeURIComponent(email) + '&phone=' + encodeURIComponent(phone);
-        }
-        document.getElementById('resQualified').style.display = 'block';
-        document.getElementById('resQualified').scrollIntoView({ behavior: 'smooth', block: 'start' });
-      } else {
-        document.getElementById('resNotYet').style.display = 'block';
-        document.getElementById('resNotYet').scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }
-  </script>
-  <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
+function show(id){ var el = document.getElementById(id); el.style.display = 'block'; el.scrollIntoView({ behavior:'smooth', block:'start' }); }
+</script>
+<script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
 </body>
 </html>
