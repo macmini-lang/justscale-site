@@ -1,0 +1,198 @@
+<!-- ================================================
+     Coach Carson — RPM VSL Call Funnel (single page)
+     Built on JustScale design-system: Call Funnel — VSL + Application
+     Structure: Logo → Headline → Subheadline → VSL embed → CTA → Application embed
+     Theme: Coach Carson (refined) — brand blue + orange, used with restraint
+     ================================================ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get personal coaching to buy better rentals and build toward financial freedom. Watch the short video, then apply to join Rental Property Mastery.">
+    <title>Rental Property Mastery — Coach Carson</title>
+    <link rel="icon" href="assets/rpm-logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        /* === TOKENS (Coach Carson — refined) === */
+        :root {
+            --bg: #ffffff;
+            --bg-tint: #f3f7fb;
+            --surface: #ffffff;
+            --ink: #1f2a36;
+            --muted: #76838f;
+            --navy: #115290;
+            --navy-deep: #0c3a66;
+            --navy-ink: #0a2c4e;
+            --accent: #fc8043;
+            --accent-deep: #ee6f2c;
+            --hairline: rgba(15,58,102,0.10);
+            --hairline-soft: rgba(15,58,102,0.06);
+            --font: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --ease: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        html { font-size: 16px; scroll-behavior: smooth; }
+        body { font-family: var(--font); background: var(--bg); color: var(--ink); line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        img { max-width: 100%; height: auto; display: block; }
+        a { color: inherit; text-decoration: none; }
+        .container { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+
+        /* === LOGO BAR === */
+        .logobar { padding: 16px 0; text-align: center; border-bottom: 1px solid var(--hairline-soft); }
+        .logobar img { height: 40px; width: auto; margin: 0 auto; }
+
+        /* === HERO === */
+        .hero { padding: 38px 0 44px; text-align: center; background: radial-gradient(120% 90% at 50% -10%, var(--bg-tint) 0%, var(--bg) 60%); }
+        .eyebrow { display: inline-block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent-deep); margin-bottom: 14px; }
+        .headline { font-size: clamp(1.55rem, 3vw, 2.15rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.16; color: var(--navy); max-width: 600px; margin: 0 auto 14px; }
+        .subhead { font-size: 1.04rem; color: var(--muted); line-height: 1.65; max-width: 500px; margin: 0 auto 30px; }
+
+        /* === VSL PLAYER === */
+        .player-wrap { max-width: 600px; margin: 0 auto; }
+        .player { position: relative; aspect-ratio: 16/9; border-radius: 16px; overflow: hidden;
+            background: radial-gradient(130% 120% at 50% 0%, var(--navy-deep) 0%, var(--navy-ink) 100%);
+            box-shadow: 0 30px 60px -20px rgba(12,58,102,0.45), 0 8px 24px -12px rgba(12,58,102,0.30);
+            border: 1px solid rgba(255,255,255,0.06); cursor: pointer; }
+        .player__poster { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .player__poster::after { content: ''; position: absolute; inset: 0; background: radial-gradient(60% 60% at 50% 42%, rgba(255,255,255,0.06) 0%, transparent 70%); }
+        .player__brand { position: relative; z-index: 2; font-size: 0.74rem; font-weight: 600; letter-spacing: 0.26em; text-transform: uppercase; color: rgba(255,255,255,0.82); margin-bottom: 22px; }
+        .player__play { position: relative; z-index: 2; width: 76px; height: 76px; border-radius: 50%; background: var(--accent);
+            display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(252,128,67,0.45);
+            transition: transform var(--ease) 0.25s, box-shadow var(--ease) 0.25s; }
+        .player__play::before { content: ''; position: absolute; inset: -10px; border-radius: 50%; border: 1px solid rgba(252,128,67,0.35); animation: ring 2.6s var(--ease) infinite; }
+        .player__play::after { content: ''; border-style: solid; border-width: 13px 0 13px 22px; border-color: transparent transparent transparent #fff; margin-left: 5px; }
+        .player:hover .player__play { transform: scale(1.06); box-shadow: 0 14px 38px rgba(252,128,67,0.55); }
+        @keyframes ring { 0% { transform: scale(1); opacity: 0.7; } 100% { transform: scale(1.5); opacity: 0; } }
+
+        .player__bar { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 14px 16px 12px; background: linear-gradient(0deg, rgba(8,32,56,0.85) 0%, transparent 100%); }
+        .player__track { height: 4px; border-radius: 4px; background: rgba(255,255,255,0.22); overflow: hidden; margin-bottom: 10px; }
+        .player__track span { display: block; height: 100%; width: 8%; background: var(--accent); border-radius: 4px; }
+        .player__controls { display: flex; align-items: center; gap: 14px; color: rgba(255,255,255,0.85); }
+        .player__controls svg { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; }
+        .player__time { font-size: 0.72rem; font-variant-numeric: tabular-nums; color: rgba(255,255,255,0.75); }
+        .player__spacer { flex: 1; }
+
+        /* === CTA === */
+        .cta { margin-top: 30px; }
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 17px 46px; background: var(--accent); color: #fff; border-radius: 12px; font-size: 1.05rem; font-weight: 600; font-family: inherit; border: none; cursor: pointer; position: relative; overflow: hidden; isolation: isolate; box-shadow: 0 12px 28px -8px rgba(252,128,67,0.5); transition: transform 0.15s var(--ease), box-shadow 0.3s var(--ease); }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 18px 36px -8px rgba(252,128,67,0.6); }
+        .btn svg { width: 17px; height: 17px; transition: transform 0.2s var(--ease); }
+        .btn:hover svg { transform: translateX(3px); }
+        .btn::after { content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.35) 50%, transparent 70%); z-index: -1; }
+        .btn:hover::after { animation: shine 0.5s 0.05s ease-out forwards; }
+        @keyframes shine { to { left: 150%; } }
+        .cta__note { margin-top: 14px; font-size: 0.82rem; color: var(--muted); }
+
+        /* === APPLICATION (same page) === */
+        .apply { padding: 56px 0 72px; border-top: 1px solid var(--hairline-soft); background: linear-gradient(180deg, var(--bg) 0%, var(--bg-tint) 100%); text-align: center; }
+        .apply__head { margin-bottom: 30px; }
+        .apply h2 { font-size: clamp(1.4rem, 2.6vw, 1.9rem); font-weight: 700; color: var(--navy); letter-spacing: -0.02em; line-height: 1.18; margin-bottom: 10px; }
+        .apply p.sub { font-size: 1.0rem; color: var(--muted); max-width: 460px; margin: 0 auto; line-height: 1.65; }
+
+        /* ===== APPLICATION EMBED SLOT ===== */
+        .embed { max-width: 560px; margin: 0 auto; min-height: 460px; border: 1.5px dashed var(--hairline); border-radius: 20px;
+            background: linear-gradient(180deg, #ffffff 0%, #f8fbfd 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 48px 28px;
+            box-shadow: 0 4px 20px -10px rgba(15,58,102,0.12); }
+        .embed__icon { width: 52px; height: 52px; border-radius: 14px; background: rgba(252,128,67,0.10); display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
+        .embed__icon svg { width: 24px; height: 24px; fill: none; stroke: var(--accent); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+        .embed__title { font-size: 1.08rem; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
+        .embed__note { font-size: 0.85rem; color: var(--muted); max-width: 320px; }
+
+        /* === REVEAL === */
+        .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.6s var(--ease), transform 0.6s var(--ease); }
+        .reveal.in { opacity: 1; transform: translateY(0); }
+        .d1 { transition-delay: 0.08s; } .d2 { transition-delay: 0.16s; }
+        @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1 !important; transform: none !important; } .player__play::before { animation: none; } }
+
+        @media (max-width: 768px) { .hero { padding: 28px 0 36px; } .player__play { width: 64px; height: 64px; } .apply { padding: 44px 0 56px; } }
+    </style>
+
+    <!-- ===== PLACEHOLDER: Wistia scripts — uncomment + set media-id once the VSL is live =====
+    <script src="https://fast.wistia.com/player.js" async></script>
+    <script src="https://fast.wistia.com/embed/REPLACE_WITH_WISTIA_ID.js" async type="module"></script>
+    ===== -->
+</head>
+<body>
+
+    <!-- LOGO -->
+    <div class="logobar">
+        <div class="container"><img src="assets/coach-carson-logo.png" alt="Coach Carson"></div>
+    </div>
+
+    <!-- HERO: Logo → Eyebrow → Headline → Subheadline → VSL embed → CTA -->
+    <section class="hero">
+        <div class="container">
+            <div class="reveal">
+                <span class="eyebrow">Rental Property Mastery</span>
+                <h1 class="headline">Get personal coaching to buy better rentals and build toward financial freedom.</h1>
+                <p class="subhead">Watch the short video, then apply below to see if Rental Property Mastery is a fit.</p>
+            </div>
+
+            <!-- VSL EMBED SLOT -->
+            <div class="player-wrap reveal d1">
+                <div class="player" aria-label="Rental Property Mastery video">
+                    <!-- ===== PLACEHOLDER: replace .player__poster + .player__bar with the real embed once the VSL is uploaded =====
+                         Wistia:     <wistia-player media-id="REPLACE_WITH_WISTIA_ID" aspect="1.7777777777777777"></wistia-player>
+                         Vidalytics: paste the Vidalytics embed snippet here
+                         (host on Wistia or Vidalytics, NOT YouTube) -->
+                    <div class="player__poster">
+                        <span class="player__brand">Rental Property Mastery</span>
+                        <div class="player__play"></div>
+                    </div>
+                    <div class="player__bar">
+                        <div class="player__track"><span></span></div>
+                        <div class="player__controls">
+                            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            <span class="player__time">0:00 / 2:00</span>
+                            <span class="player__spacer"></span>
+                            <svg viewBox="0 0 24 24"><path d="M3 10v4h4l5 5V5L7 10H3zm13.5 2a4.5 4.5 0 00-2.5-4v8a4.5 4.5 0 002.5-4z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+                        </div>
+                    </div>
+                    <!-- ===== END PLACEHOLDER ===== -->
+                </div>
+            </div>
+
+            <!-- CTA scrolls to the application below -->
+            <div class="cta reveal d2">
+                <a href="#apply" class="btn">Book My Strategy Session
+                    <svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+                <p class="cta__note">Limited to 300 members. Coach Carson reviews every application personally.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- APPLICATION (same page) -->
+    <section class="apply" id="apply">
+        <div class="container">
+            <div class="apply__head reveal">
+                <h2>Apply to join Rental Property Mastery</h2>
+                <p class="sub">Answer a few quick questions. Coach Carson reads every application, and if it's a fit, the team sets up a short call.</p>
+            </div>
+
+            <!-- ===== PLACEHOLDER: drop Chad's application embed here (GHL form / Typeform / survey) ===== -->
+            <div class="embed reveal d1">
+                <div class="embed__icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+                <p class="embed__title">Embedded application should go here</p>
+                <p class="embed__note">Paste Chad's GHL form / Typeform / survey embed into this slot (see README).</p>
+            </div>
+            <!-- ===== END PLACEHOLDER ===== -->
+        </div>
+    </section>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { els.forEach(function(el){el.classList.add('in')}); return; }
+  var obs = new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } }); }, { threshold: 0.05 });
+  els.forEach(function(el){ obs.observe(el); });
+})();
+</script>
+</body>
+</html>
