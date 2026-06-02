@@ -151,24 +151,6 @@
   .card-fine { text-align: center; font-size: 12px; color: #8a939c; margin-top: 11px; }
   .card-fine span { color: var(--blue); font-weight: 700; }
 
-  /* VSL section */
-  .vsl { background: #f5f8fb; padding: 56px 0; text-align: center; }
-  .section-label { color: var(--blue); font-size: 13px; margin-bottom: 10px; }
-  .vsl h2 { font-size: clamp(22px, 3vw, 30px); color: var(--ink); margin-bottom: 8px; }
-  .vsl p.lead { color: #5a6672; font-size: 16px; max-width: 52ch; margin: 0 auto 26px; }
-  .video {
-    position: relative; max-width: 760px; margin: 0 auto; aspect-ratio: 16/9;
-    background: linear-gradient(150deg, var(--navy), var(--blue-dark));
-    border-radius: 12px; overflow: hidden; box-shadow: 0 24px 56px rgba(15,31,48,0.28);
-    display: flex; align-items: center; justify-content: center;
-  }
-  .video .play {
-    width: 78px; height: 78px; border-radius: 50%; background: rgba(255,255,255,0.95);
-    display: flex; align-items: center; justify-content: center;
-  }
-  .video .play::after { content: ""; border-left: 24px solid var(--blue); border-top: 15px solid transparent; border-bottom: 15px solid transparent; margin-left: 6px; }
-  .video .vtag { position: absolute; bottom: 14px; color: rgba(255,255,255,0.8); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
-
   /* Speaker bio strip */
   .bio { background: #fff; padding: 56px 0; }
   .bio-inner { display: grid; grid-template-columns: 0.7fr 1.3fr; gap: 40px; align-items: center; }
@@ -262,19 +244,6 @@
           </form>
           <p class="card-fine"><span>Live only.</span> No public replay is sent.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- VSL -->
-  <section class="vsl">
-    <div class="wrap">
-      <div class="section-label label">Watch First</div>
-      <h2>Why this training, and why now</h2>
-      <p class="lead">A quick word from Justin on what you'll walk away with, and why it's worth blocking 90 minutes for the live session.</p>
-      <div class="video" role="button" aria-label="Play video">
-        <div class="play"></div>
-        <div class="vtag">Replace with Justin's 90-second intro video</div>
       </div>
     </div>
   </section>
