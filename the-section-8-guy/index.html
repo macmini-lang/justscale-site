@@ -1,0 +1,172 @@
+<!-- ================================================
+     Rhett Wiseman / The Section 8 Guy — Call Funnel (single page: VSL + application)
+     Built via web-design agent — design-system template: templates/call-funnel-vsl.html
+     Brand: dark-premium base, emerald accent (#2fae66), Assistant font (his Shopify brand font).
+     Structure per audit doc: headline → VSL → application (pre-framed) on one page. CTA scrolls to #apply.
+     Replace the video placeholder and embed the real application before going live.
+     ================================================ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Buy your first Section 8 rental with the government backing the rent. Watch the video, then apply to work with Rhett Wiseman and his team across 17 cities.">
+    <title>Buy Your First Section 8 Rental | The Section 8 Guy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --ds-bg: #0c0e0d;
+            --ds-bg-secondary: #101513;
+            --ds-surface: #141a18;
+            --ds-text: #f4f6f5;
+            --ds-text-secondary: #9aa6a1;
+            --ds-text-muted: #66726c;
+            --ds-accent: #2fae66;
+            --ds-accent-light: #45c47c;
+            --ds-accent-dim: #1f8b50;
+            --ds-accent-glow: rgba(47,174,102,0.10);
+            --ds-accent-glow-strong: rgba(47,174,102,0.28);
+            --ds-border: rgba(255,255,255,0.07);
+            --ds-border-light: rgba(255,255,255,0.12);
+            --ds-font-primary: 'Assistant', -apple-system, BlinkMacSystemFont, sans-serif;
+            --ds-font-bold: 700; --ds-font-extrabold: 800;
+            --ds-text-xs: 0.74rem; --ds-text-sm: 0.86rem; --ds-text-base: 1rem; --ds-text-lg: 1.1rem;
+            --ds-heading-md: clamp(1.5rem, 2.6vw, 2rem);
+            --ds-heading-lg: clamp(1.75rem, 3.4vw, 2.5rem);
+            --ds-leading-tight: 1.12; --ds-leading-normal: 1.6; --ds-leading-relaxed: 1.7;
+            --ds-tracking-tight: -0.02em; --ds-tracking-wide: 0.14em;
+            --ds-space-1: 8px; --ds-space-2: 16px; --ds-space-3: 24px; --ds-space-4: 32px; --ds-space-5: 40px; --ds-space-6: 48px; --ds-space-8: 64px; --ds-space-10: 80px;
+            --ds-radius-sm: 8px; --ds-radius-lg: 20px;
+            --ds-shadow-lg: 0 24px 60px rgba(0,0,0,0.55);
+            --ds-ease: cubic-bezier(0.16, 1, 0.3, 1); --ds-duration-fast: 0.15s; --ds-duration-normal: 0.3s; --ds-duration-slow: 0.5s;
+            --ds-container-max: 1140px; --ds-container-padding: 28px; --ds-container-narrow: 760px;
+        }
+        html { font-size: 16px; scroll-behavior: smooth; }
+        body { font-family: var(--ds-font-primary); background: var(--ds-bg); color: var(--ds-text-secondary); line-height: var(--ds-leading-normal); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        img { max-width: 100%; height: auto; display: block; }
+        a { color: inherit; text-decoration: none; }
+        h1, h2 { color: var(--ds-text); }
+        .ds-container { max-width: var(--ds-container-max); margin: 0 auto; padding: 0 var(--ds-container-padding); }
+        .ds-container--narrow { max-width: var(--ds-container-narrow); }
+
+        .ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--ds-space-1); padding: 15px 36px; background: var(--ds-accent); color: #04130a; border-radius: 10px; font-size: 1rem; font-weight: var(--ds-font-extrabold); border: none; cursor: pointer; transition: box-shadow var(--ds-duration-normal), transform var(--ds-duration-fast), background var(--ds-duration-fast); position: relative; overflow: hidden; isolation: isolate; }
+        .ds-btn:hover { background: var(--ds-accent-light); box-shadow: 0 0 36px var(--ds-accent-glow-strong); transform: translateY(-2px); }
+        .ds-btn::after { content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.4) 50%, transparent 70%); z-index: -1; pointer-events: none; }
+        .ds-btn:hover::after { animation: ds-shine 0.4s 0.08s ease-out forwards; }
+        @keyframes ds-shine { to { left: 150%; } }
+
+        .ds-reveal { opacity: 0; transform: translateY(20px); transition: opacity var(--ds-duration-slow) var(--ds-ease), transform var(--ds-duration-slow) var(--ds-ease); }
+        .ds-reveal--visible { opacity: 1; transform: translateY(0); }
+        .ds-reveal--delay-1 { transition-delay: 0.1s; } .ds-reveal--delay-2 { transition-delay: 0.2s; }
+        @media (prefers-reduced-motion: reduce) { .ds-reveal { opacity: 1 !important; transform: none !important; transition: none !important; } }
+
+        /* Brand bar — text wordmark, no nav */
+        .rw-logobar { padding: 16px 0; text-align: center; border-bottom: 1px solid var(--ds-border); }
+        .rw-logobar span { font-weight: var(--ds-font-extrabold); letter-spacing: 0.04em; font-size: 1.05rem; color: var(--ds-text); text-transform: uppercase; }
+        .rw-logobar b { color: var(--ds-accent); }
+
+        /* Hero (above the fold) */
+        .ds-hero { padding: var(--ds-space-5) 0 var(--ds-space-6); text-align: center; background: radial-gradient(900px 380px at 50% -8%, var(--ds-accent-glow), transparent 70%); }
+        .ds-hero__label { font-size: var(--ds-text-xs); font-weight: var(--ds-font-extrabold); letter-spacing: var(--ds-tracking-wide); text-transform: uppercase; color: var(--ds-accent); margin-bottom: var(--ds-space-2); }
+        .ds-hero__title { font-size: var(--ds-heading-lg); font-weight: var(--ds-font-extrabold); letter-spacing: var(--ds-tracking-tight); line-height: var(--ds-leading-tight); margin-bottom: var(--ds-space-2); max-width: 720px; margin-left: auto; margin-right: auto; }
+        .ds-hero__subtitle { font-size: var(--ds-text-base); color: var(--ds-text-secondary); line-height: var(--ds-leading-relaxed); max-width: 560px; margin: 0 auto var(--ds-space-4); }
+        .ds-hero__video-wrap { max-width: 680px; margin: 0 auto; border-radius: var(--ds-radius-lg); overflow: hidden; border: 1px solid var(--ds-border-light); box-shadow: var(--ds-shadow-lg); background: var(--ds-surface); }
+        .ds-hero__video-wrap iframe { width: 100%; aspect-ratio: 16/9; border: none; display: block; }
+        .ds-hero__cta { margin-top: var(--ds-space-5); }
+        .ds-hero__cta-sub { display: block; margin-top: var(--ds-space-2); font-size: var(--ds-text-sm); color: var(--ds-text-muted); font-weight: var(--ds-font-bold); }
+
+        /* Video placeholder (swap for real iframe when shot) */
+        .rw-video-ph { position: relative; aspect-ratio: 16/9; background: linear-gradient(160deg, #16241d, #0a120e 70%); cursor: pointer; }
+        .rw-video-ph::after { content:''; position:absolute; inset:0; background: radial-gradient(360px 170px at 50% 42%, var(--ds-accent-glow), transparent 70%); }
+        .rw-video-ph__play { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2; width:78px; height:78px; border-radius:50%; background:var(--ds-accent); display:grid; place-items:center; box-shadow:0 12px 36px rgba(0,0,0,.45); transition: transform var(--ds-duration-normal) var(--ds-ease); }
+        .rw-video-ph:hover .rw-video-ph__play { transform:translate(-50%,-50%) scale(1.06); }
+        .rw-video-ph__cap { position:absolute; left:0; right:0; bottom:18px; z-index:2; text-align:center; color:#bfe6d0; font-size:var(--ds-text-sm); font-weight:var(--ds-font-bold); padding:0 20px; }
+
+        /* Credibility stat strip */
+        .ds-social-proof { padding: var(--ds-space-5) 0; border-top: 1px solid var(--ds-border); border-bottom: 1px solid var(--ds-border); background: var(--ds-bg-secondary); }
+        .ds-social-proof__label { font-size: var(--ds-text-xs); font-weight: var(--ds-font-extrabold); letter-spacing: var(--ds-tracking-wide); text-transform: uppercase; color: var(--ds-text-muted); text-align: center; margin-bottom: var(--ds-space-3); }
+        .rw-stats { display: flex; justify-content: center; gap: var(--ds-space-8); flex-wrap: wrap; }
+        .rw-stats div { font-size: var(--ds-text-sm); color: var(--ds-text-secondary); text-align: center; }
+        .rw-stats b { display: block; font-size: 1.7rem; color: var(--ds-accent); font-weight: var(--ds-font-extrabold); line-height: 1.2; }
+
+        /* Application (same page) */
+        .rw-apply { padding: var(--ds-space-10) 0; text-align: center; scroll-margin-top: 20px; }
+        .rw-apply__title { font-size: var(--ds-heading-md); font-weight: var(--ds-font-extrabold); letter-spacing: var(--ds-tracking-tight); line-height: var(--ds-leading-tight); margin: var(--ds-space-2) auto; max-width: 560px; color: var(--ds-text); }
+        .rw-apply__sub { font-size: var(--ds-text-base); color: var(--ds-text-secondary); max-width: 540px; margin: 0 auto var(--ds-space-5); line-height: var(--ds-leading-relaxed); }
+        .rw-embed { background: var(--ds-bg-secondary); border: 2px dashed rgba(255,255,255,0.16); border-radius: 16px; min-height: 440px; display: grid; place-items: center; text-align: center; padding: 40px; }
+        .rw-embed span { font-size: 1.05rem; font-weight: var(--ds-font-bold); color: var(--ds-text-muted); }
+    </style>
+    <noscript><style>.ds-reveal{opacity:1!important;transform:none!important;}</style></noscript>
+</head>
+<body>
+
+    <!-- Brand bar (wordmark, no nav) -->
+    <div class="rw-logobar"><span>THE SECTION <b>8</b> GUY</span></div>
+
+    <!-- HERO (above the fold) -->
+    <section class="ds-hero">
+        <div class="ds-container ds-container--narrow">
+            <div class="ds-reveal">
+                <p class="ds-hero__label">Section 8 Investing Coaching</p>
+                <h1 class="ds-hero__title">Buy your first Section 8 rental, with the government backing the rent</h1>
+                <p class="ds-hero__subtitle">Watch this short video on how I buy Section 8 rentals with my team on the ground in 17 cities. Then apply to do it with us.</p>
+            </div>
+            <div class="ds-hero__video-wrap ds-reveal ds-reveal--delay-1">
+                <!-- Replace with the real VSL embed once shot:
+                <iframe src="REPLACE_VSL_EMBED_URL" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="The Section 8 Guy"></iframe> -->
+                <div class="rw-video-ph" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">
+                    <div class="rw-video-ph__play"><svg width="26" height="30" viewBox="0 0 30 34" fill="none"><path d="M28 14.5359C29.3333 15.3056 29.3333 17.2944 28 18.0641L4 31.9234C2.66667 32.6931 1 31.7297 1 30.1903L1 2.40967C1 0.870267 2.66667 -0.0931633 4 0.676537L28 14.5359Z" fill="#04130a"/></svg></div>
+                    <div class="rw-video-ph__cap">How I buy Section 8 rentals, start to finish</div>
+                </div>
+            </div>
+            <div class="ds-hero__cta ds-reveal ds-reveal--delay-2">
+                <a href="#apply" class="ds-btn">Apply to Work With Me</a>
+                <span class="ds-hero__cta-sub">Personal coaching plus my team in 17 cities.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CREDIBILITY (stat strip) -->
+    <section class="ds-social-proof ds-reveal">
+        <div class="ds-container">
+            <p class="ds-social-proof__label">The operator behind it</p>
+            <div class="rw-stats">
+                <div><b>10+ yrs</b> in Section 8</div>
+                <div><b>17 cities</b> team on the ground</div>
+                <div><b>Ex-MLB</b> Vanderbilt grad</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- APPLICATION (same page, pre-framed) -->
+    <section class="rw-apply" id="apply">
+        <div class="ds-container ds-container--narrow">
+            <div class="ds-reveal">
+                <p class="ds-hero__label">Apply to Work Together</p>
+                <h2 class="rw-apply__title">Here's what to expect when you work with us</h2>
+                <p class="rw-apply__sub">Tell me about your goals below. If it's a fit, we get on a call, map your first Section 8 deal, and put my team in your market to work. No pressure, no pitch fest.</p>
+            </div>
+            <!-- Embed the application here (GHL form, Typeform, etc.) -->
+            <div class="rw-embed ds-reveal ds-reveal--delay-1">
+                <span>Embedded application should go here</span>
+            </div>
+        </div>
+    </section>
+
+<script>
+(function(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    document.querySelectorAll('.ds-reveal').forEach(function(el){el.classList.add('ds-reveal--visible')});
+    return;
+  }
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('ds-reveal--visible');obs.unobserve(e.target)}})
+  },{threshold:0.15,rootMargin:'-40px'});
+  document.querySelectorAll('.ds-reveal').forEach(function(el){obs.observe(el)});
+})();
+</script>
+</body>
+</html>
