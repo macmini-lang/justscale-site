@@ -23,7 +23,7 @@
             --navy: #0a1b30; --navy-soft: #12263f;
             --bg: #ffffff; --bg-alt: #f5f7fa; --surface: #ffffff;
             --text: #0a1b30; --text-body: #475569; --text-muted: #7c8aa0;
-            --accent: #b50000; --accent-hover: #930000; --accent-bright: #f82020;
+            --accent: #4faf3a; --accent-hover: #3e9230; --accent-bright: #61ce70;
             --border: #e4e8ee; --border-strong: #d3dae3;
             --success: #2f9e57;
             --font: 'Merriweather Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -67,7 +67,7 @@
         .video { max-width: 760px; margin: 0 auto; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow-card); }
         .video iframe { width: 100%; aspect-ratio: 16/9; border: none; display: block; }
         .vsl-ph { position: relative; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; cursor: pointer; background: linear-gradient(135deg, #0a1b30 0%, #12263f 100%); }
-        .vsl-ph__play { width: 80px; height: 80px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 10px rgba(181,0,0,0.12), 0 14px 40px rgba(181,0,0,0.4); transition: transform 0.25s var(--ease); }
+        .vsl-ph__play { width: 80px; height: 80px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 10px rgba(79,175,58,0.14), 0 14px 40px rgba(79,175,58,0.4); transition: transform 0.25s var(--ease); }
         .vsl-ph:hover .vsl-ph__play { transform: scale(1.07); }
         .vsl-ph__play svg { width: 28px; height: 28px; fill: #fff; margin-left: 4px; }
         .vsl-ph__tag { position: absolute; bottom: 16px; left: 0; right: 0; text-align: center; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: #8fa1b8; }
@@ -75,7 +75,7 @@
         /* Checklist */
         .checklist { max-width: 640px; margin: 0 auto; list-style: none; display: flex; flex-direction: column; gap: 14px; }
         .checklist li { display: flex; gap: 14px; align-items: flex-start; background: #fff; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 18px 20px; }
-        .checklist .num { flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; background: rgba(181,0,0,0.08); color: var(--accent); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; }
+        .checklist .num { flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; background: rgba(79,175,58,0.12); color: var(--accent); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; }
         .checklist b { color: var(--navy); display: block; margin-bottom: 2px; font-size: 0.98rem; }
         .checklist span { font-size: 0.9rem; color: var(--text-body); }
 
@@ -84,7 +84,7 @@
         @media (max-width: 640px) { .res { grid-template-columns: 1fr; } }
         .res a { display: flex; gap: 14px; align-items: center; background: #fff; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 18px 20px; transition: border-color 0.2s, transform 0.15s, box-shadow 0.25s; }
         .res a:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: var(--shadow-card); }
-        .res__ic { flex-shrink: 0; width: 42px; height: 42px; border-radius: 10px; background: rgba(181,0,0,0.08); color: var(--accent); display: flex; align-items: center; justify-content: center; }
+        .res__ic { flex-shrink: 0; width: 42px; height: 42px; border-radius: 10px; background: rgba(79,175,58,0.12); color: var(--accent); display: flex; align-items: center; justify-content: center; }
         .res__ic svg { width: 22px; height: 22px; }
         .res b { color: var(--navy); display: block; font-size: 0.96rem; }
         .res span { font-size: 0.84rem; color: var(--text-muted); }
