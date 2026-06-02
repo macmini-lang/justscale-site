@@ -1,0 +1,229 @@
+<!-- ================================================
+     Daniel Apke / Land Investing Online — Webinar Funnel — PAGE 1 of 2: Registration
+     Built on design-system (call_funnel + webinar_funnel directive), light-clean theme.
+     Brand pulled from landinvestingonline.com: navy #0a1b30, red #ad0000, Merriweather Sans.
+     GO LIVE — replace REPLACE_* :
+       1. REPLACE_LOGO        real Land Investing Online logo (cdn LOGO_1.png)
+       2. REPLACE_WEBINAR_DATE  ISO datetime for the live class (drives the countdown)
+       3. date/time display text + timezone
+       4. REPLACE_FORM_ACTION   registration form endpoint (GHL / Shopify / webinar platform)
+       5. host photo (real photo of Daniel + Ron, no AI render)
+       6. BiggerPockets / Redfin logos (he already uses these as social proof)
+     ================================================ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free live class: how to make your first $10,000 flipping land, without owning a house, a crew, or a pile of cash.">
+    <title>Free Live Class: Make Your First $10,000 Flipping Land | Land Investing Online</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --navy: #0a1b30; --navy-soft: #12263f;
+            --bg: #ffffff; --bg-alt: #f5f7fa; --surface: #ffffff;
+            --text: #0a1b30; --text-body: #475569; --text-muted: #7c8aa0;
+            --accent: #b50000; --accent-hover: #930000; --accent-bright: #f82020;
+            --border: #e4e8ee; --border-strong: #d3dae3;
+            --success: #2f9e57;
+            --font: 'Merriweather Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --radius: 14px; --radius-sm: 10px; --radius-full: 9999px;
+            --shadow-card: 0 18px 50px rgba(10,27,48,0.12), 0 2px 8px rgba(10,27,48,0.06);
+            --ease: cubic-bezier(0.16, 1, 0.3, 1);
+            --max: 1140px; --narrow: 720px;
+        }
+        html { font-size: 16px; scroll-behavior: smooth; }
+        body { font-family: var(--font); background: var(--bg); color: var(--text-body); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+        img { max-width: 100%; height: auto; display: block; }
+        a { color: inherit; text-decoration: none; }
+        h1, h2, h3 { color: var(--text); line-height: 1.12; letter-spacing: -0.01em; font-weight: 800; }
+        .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+        .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s var(--ease), transform 0.6s var(--ease); }
+        .reveal.in { opacity: 1; transform: none; }
+        @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1 !important; transform: none !important; } }
+
+        /* Top bar */
+        .topbar { background: var(--navy); }
+        .topbar__in { max-width: var(--max); margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
+        .logo { font-weight: 800; font-size: 1.02rem; letter-spacing: 0.02em; color: #fff; }
+        .logo b { color: #fff; }
+        .topbar__pill { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #fff; background: var(--accent); padding: 7px 14px; border-radius: var(--radius-full); }
+
+        /* Hero */
+        .hero { background: linear-gradient(180deg, #0a1b30 0%, #0d2236 100%); color: #fff; padding: 56px 0 64px; position: relative; }
+        .hero h1, .hero h2, .hero h3 { color: #fff; }
+        .hero__grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: start; }
+        @media (max-width: 920px) { .hero__grid { grid-template-columns: 1fr; gap: 36px; } }
+        .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #ff6a6a; margin-bottom: 18px; }
+        .eyebrow::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--accent-bright); box-shadow: 0 0 0 4px rgba(248,32,32,0.2); }
+        .hero h1 { font-size: clamp(1.9rem, 3.6vw, 2.9rem); margin-bottom: 18px; text-wrap: balance; }
+        .hero h1 .hl { color: #ff4d4d; }
+        .hero__sub { font-size: clamp(1rem, 1.4vw, 1.18rem); color: #c3cedd; line-height: 1.6; max-width: 32ch; margin-bottom: 28px; }
+        .learn { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-bottom: 28px; }
+        .learn li { display: flex; gap: 12px; align-items: flex-start; font-size: 1rem; color: #e4ebf3; }
+        .learn .ck { flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: rgba(248,32,32,0.18); color: #ff8a8a; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; margin-top: 1px; }
+        .host { display: flex; align-items: center; gap: 14px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.12); }
+        .host__photo { width: 56px; height: 56px; border-radius: 50%; flex-shrink: 0; background: var(--navy-soft); border: 2px solid rgba(255,255,255,0.18); display: flex; align-items: center; justify-content: center; font-weight: 800; color: #fff; }
+        .host__name { font-weight: 700; color: #fff; font-size: 0.98rem; }
+        .host__meta { font-size: 0.86rem; color: #9fb0c4; }
+
+        /* Registration card */
+        .regcard { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow-card); overflow: hidden; position: sticky; top: 24px; }
+        .regcard__head { background: var(--bg-alt); padding: 22px 28px; text-align: center; border-bottom: 1px solid var(--border); }
+        .regcard__when { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+        .regcard__date { font-size: 1.18rem; font-weight: 800; color: var(--navy); }
+        .regcard__tz { font-size: 0.82rem; color: var(--text-muted); margin-top: 2px; }
+        .countdown { display: flex; justify-content: center; gap: 10px; padding: 18px 28px 6px; }
+        .cd { background: var(--navy); color: #fff; border-radius: var(--radius-sm); padding: 10px 0; width: 62px; text-align: center; }
+        .cd b { display: block; font-size: 1.35rem; font-weight: 800; line-height: 1; }
+        .cd span { font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: #9fb0c4; }
+        .regform { padding: 14px 28px 28px; }
+        .regform label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--navy); margin: 12px 0 6px; }
+        .regform input { width: 100%; padding: 14px 16px; border: 1px solid var(--border-strong); border-radius: var(--radius-sm); font-size: 1rem; font-family: inherit; color: var(--navy); outline: none; transition: border-color 0.2s; }
+        .regform input:focus { border-color: var(--accent); }
+        .btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; margin-top: 18px; background: var(--accent); color: #fff; font-family: inherit; font-weight: 800; font-size: 1.05rem; padding: 17px 24px; border: none; border-radius: var(--radius-sm); cursor: pointer; box-shadow: 0 10px 28px rgba(181,0,0,0.30); transition: background 0.2s, transform 0.15s, box-shadow 0.3s; }
+        .btn:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 14px 36px rgba(181,0,0,0.40); }
+        .regform__note { text-align: center; font-size: 0.78rem; color: var(--text-muted); margin-top: 12px; }
+        .seats { text-align: center; font-size: 0.82rem; color: var(--accent); font-weight: 700; margin-top: 10px; }
+
+        /* Trust strip */
+        .trust { background: var(--bg); padding: 30px 0; border-bottom: 1px solid var(--border); }
+        .trust__label { text-align: center; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 18px; }
+        .trust__logos { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
+        .trust__logo { font-weight: 800; font-size: 1.1rem; color: #9aa7b8; letter-spacing: -0.01em; }
+
+        /* Result band */
+        .band { background: var(--bg-alt); padding: 44px 0; text-align: center; }
+        .band__stats { display: flex; justify-content: center; gap: 56px; flex-wrap: wrap; }
+        .band__stat b { display: block; font-size: 2rem; font-weight: 800; color: var(--accent); line-height: 1.1; }
+        .band__stat span { font-size: 0.9rem; color: var(--text-body); }
+
+        /* Footer */
+        footer { background: var(--navy); color: #9fb0c4; padding: 30px 0; text-align: center; font-size: 0.8rem; }
+        footer .logo { display: inline-block; margin-bottom: 10px; }
+        footer p { max-width: 640px; margin: 0 auto; line-height: 1.6; color: #7e8ea3; }
+
+        @media (max-width: 920px) { .regcard { position: static; } }
+        @media (max-width: 600px) { .band__stats { gap: 28px; } .cd { width: 56px; } }
+    </style>
+</head>
+<body>
+
+    <div class="topbar">
+        <div class="topbar__in">
+            <!-- Replace with REPLACE_LOGO (real Land Investing Online logo) -->
+            <span class="logo">LAND INVESTING <b>ONLINE</b></span>
+            <span class="topbar__pill">Free Live Class</span>
+        </div>
+    </div>
+
+    <!-- HERO + REGISTRATION -->
+    <section class="hero">
+        <div class="wrap">
+            <div class="hero__grid">
+                <div class="reveal">
+                    <span class="eyebrow">Free Live Class</span>
+                    <h1>How to make your first <span class="hl">$10,000 flipping land</span>, without owning a house, a crew, or a pile of cash</h1>
+                    <p class="hero__sub">A 90-minute live class with Daniel and Ron Apke on the exact process they used to flip land into a real business.</p>
+                    <ul class="learn">
+                        <li><span class="ck">&#10003;</span> Why land beats houses, wholesaling, and rentals: low competition, low capital, no tenants, no rehab</li>
+                        <li><span class="ck">&#10003;</span> How to find undervalued parcels, evaluate them, and acquire them for a fraction of what they're worth</li>
+                        <li><span class="ck">&#10003;</span> How to sell for the spread, plus the common mistakes that sink a first land deal</li>
+                    </ul>
+                    <div class="host">
+                        <!-- Replace with real photo of Daniel + Ron -->
+                        <div class="host__photo">DA</div>
+                        <div>
+                            <div class="host__name">Daniel &amp; Ron Apke</div>
+                            <div class="host__meta">Built a land business to $10M+. $500K profit in their first 6 months.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="regcard reveal">
+                    <div class="regcard__head">
+                        <div class="regcard__when">Live class starts in</div>
+                        <!-- Replace date text + REPLACE_WEBINAR_DATE (ISO) below -->
+                        <div class="regcard__date" id="dateText">Date to be announced</div>
+                        <div class="regcard__tz" id="tzText">Pick a time, save your seat</div>
+                    </div>
+                    <div class="countdown" id="countdown">
+                        <div class="cd"><b id="cd-d">00</b><span>Days</span></div>
+                        <div class="cd"><b id="cd-h">00</b><span>Hrs</span></div>
+                        <div class="cd"><b id="cd-m">00</b><span>Min</span></div>
+                        <div class="cd"><b id="cd-s">00</b><span>Sec</span></div>
+                    </div>
+                    <form class="regform" action="REPLACE_FORM_ACTION" method="POST" id="regForm">
+                        <label for="f_name">First name</label>
+                        <input type="text" id="f_name" name="name" placeholder="Your first name" autocomplete="given-name" required>
+                        <label for="f_email">Email</label>
+                        <input type="email" id="f_email" name="email" placeholder="you@example.com" autocomplete="email" required>
+                        <button type="submit" class="btn">Save my seat &rarr;</button>
+                        <p class="regform__note">Free to attend. We'll email you the link and reminders.</p>
+                        <p class="seats">Seats are limited. Show up live.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST STRIP (replace with real BiggerPockets / Redfin logos he already uses) -->
+    <section class="trust">
+        <div class="wrap">
+            <p class="trust__label">Daniel's land investing has been featured in</p>
+            <div class="trust__logos">
+                <span class="trust__logo">BiggerPockets</span>
+                <span class="trust__logo">Redfin</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESULT BAND -->
+    <section class="band">
+        <div class="wrap">
+            <div class="band__stats">
+                <div class="band__stat"><b>$10M+</b><span>land business built</span></div>
+                <div class="band__stat"><b>$500K</b><span>profit in first 6 months</span></div>
+                <div class="band__stat"><b>90 min</b><span>live, then Q&amp;A</span></div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="wrap">
+            <span class="logo">LAND INVESTING <b>ONLINE</b></span>
+            <p>Results are not guaranteed and depend on your effort and market. This is education, not legal, tax, or investment advice. &copy; 2026 Land Investing Online. This site is not a part of Facebook or Meta Platforms, Inc.</p>
+        </div>
+    </footer>
+
+<script>
+// Reveal on scroll
+(function(){
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches){ document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in')}); return; }
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:0.12,rootMargin:'-30px'});
+  document.querySelectorAll('.reveal').forEach(function(e){io.observe(e)});
+})();
+
+// Countdown — set REPLACE_WEBINAR_DATE to an ISO datetime, e.g. '2026-06-15T18:00:00-05:00'
+(function(){
+  var TARGET = 'REPLACE_WEBINAR_DATE';
+  var d=document.getElementById('cd-d'),h=document.getElementById('cd-h'),m=document.getElementById('cd-m'),s=document.getElementById('cd-s');
+  var t=Date.parse(TARGET);
+  if (isNaN(t)) { return; } // no date set yet — countdown stays at 00 until REPLACE_WEBINAR_DATE is filled
+  function pad(n){return (n<10?'0':'')+n;}
+  function tick(){
+    var diff=Math.max(0, t - Date.now());
+    var sec=Math.floor(diff/1000);
+    d.textContent=pad(Math.floor(sec/86400));
+    h.textContent=pad(Math.floor(sec%86400/3600));
+    m.textContent=pad(Math.floor(sec%3600/60));
+    s.textContent=pad(sec%60);
+  }
+  tick(); setInterval(tick,1000);
+})();
+</script>
+</body>
+</html>
