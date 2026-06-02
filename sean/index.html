@@ -1,116 +1,134 @@
 <!-- ================================================
      Good Sweet Homes — Masterclass Opt-In (Sean Pan / Sharon Tseung)
-     Built on JustScale design-system call-funnel template + web-design agent
-     directive. Structure per funnel doc §2: headline > proof > VSL > register.
-     Theme: Good Sweet Homes brand (blue #5383ff on white, Montserrat + Nunito Sans).
+     Design-system call-funnel, themed to Good Sweet Homes (purple #B237EC).
+     Structure per funnel doc §2: headline > proof > VSL > register,
+     enriched with live badge, proof chips, "what you'll learn", register card.
      ================================================ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Free live masterclass: how to buy your first rental property this year, even from out of state. Taught by Sharon Tseung and Sean Pan.">
-    <title>How to Buy Your First Rental Property | Free Masterclass</title>
+    <meta name="description" content="Free live masterclass: buy your first cash-flowing rental property this year, even on a normal salary. Taught by Sharon Tseung and Sean Pan.">
+    <title>Free Masterclass | Buy Your First Rental Property</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-        /* === TOKENS (design-system, themed to Good Sweet Homes) === */
         :root {
-            --ds-bg: #FFFFFF;
-            --ds-bg-secondary: #F8F4FE;
-            --ds-surface: #FFFFFF;
-            --ds-ink: #1A1330;
-            --ds-text: #1A1330;
-            --ds-text-secondary: #574F6E;
-            --ds-text-muted: #9B93AE;
-            --ds-accent: #B237EC;
-            --ds-accent-hover: #9A1FD0;
-            --ds-accent-dim: #7C17A8;
-            --ds-accent-glow: rgba(178,55,236,0.10);
-            --ds-accent-glow-strong: rgba(178,55,236,0.28);
-            --ds-border: rgba(26,19,48,0.08);
-            --ds-border-light: rgba(26,19,48,0.12);
-            --ds-font-body: 'Nunito Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            --ds-font-display: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
-            --ds-text-xs: 0.72rem;
-            --ds-text-sm: 0.85rem;
-            --ds-text-base: 1rem;
-            --ds-text-lg: 1.1rem;
-            --ds-heading-sm: clamp(1.2rem, 2vw, 1.5rem);
-            --ds-heading-hero: clamp(1.7rem, 3.2vw, 2.5rem);
-            --ds-leading-tight: 1.16;
-            --ds-leading-relaxed: 1.7;
-            --ds-tracking-tight: -0.02em;
-            --ds-tracking-wide: 0.14em;
-            --ds-space-1: 8px;
-            --ds-space-2: 16px;
-            --ds-space-3: 24px;
-            --ds-space-4: 32px;
-            --ds-space-5: 40px;
-            --ds-space-6: 48px;
-            --ds-space-8: 64px;
-            --ds-radius-sm: 8px;
-            --ds-radius-md: 14px;
-            --ds-radius-lg: 20px;
-            --ds-shadow-lg: 0 16px 50px rgba(124,23,168,0.14);
-            --ds-ease: cubic-bezier(0.16, 1, 0.3, 1);
-            --ds-duration-slow: 0.5s;
-            --ds-container-narrow: 760px;
+            --bg: #FFFFFF;
+            --bg-tint: #F8F4FE;
+            --ink: #1A1330;
+            --body: #574F6E;
+            --muted: #9B93AE;
+            --accent: #B237EC;
+            --accent-hover: #9A1FD0;
+            --accent-dim: #7C17A8;
+            --accent-soft: rgba(178,55,236,0.10);
+            --accent-soft-2: rgba(178,55,236,0.16);
+            --border: rgba(26,19,48,0.08);
+            --border-md: rgba(26,19,48,0.12);
+            --radius: 16px;
+            --radius-lg: 22px;
+            --shadow: 0 14px 44px rgba(124,23,168,0.12);
+            --shadow-sm: 0 4px 18px rgba(124,23,168,0.08);
+            --ease: cubic-bezier(0.16, 1, 0.3, 1);
+            --fbody: 'Nunito Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --fhead: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         html { font-size: 16px; scroll-behavior: smooth; }
-        body { font-family: var(--ds-font-body); background: var(--ds-bg); color: var(--ds-text); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+        body { font-family: var(--fbody); background: var(--bg); color: var(--body); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
         img { max-width: 100%; height: auto; display: block; }
         a { color: inherit; text-decoration: none; }
-        h1, h2, .logo-mark { font-family: var(--ds-font-display); color: var(--ds-ink); }
-        .ds-container { max-width: var(--ds-container-narrow); margin: 0 auto; padding: 0 24px; }
+        h1, h2, h3, .logo-mark { font-family: var(--fhead); color: var(--ink); letter-spacing: -0.02em; }
+        .wrap { max-width: 940px; margin: 0 auto; padding: 0 24px; }
+        .wrap--narrow { max-width: 720px; }
 
-        /* === LOGO (centered) === */
-        .brandbar { padding: 22px 0; text-align: center; border-bottom: 1px solid var(--ds-border); }
-        .logo-mark { font-size: 18px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ds-ink); }
-        .logo-mark span { color: var(--ds-accent); }
+        /* === BUTTON === */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dim));
+            color: #fff; font-family: var(--fhead); font-weight: 700; font-size: 1.05rem;
+            padding: 17px 44px; border-radius: 12px; border: none; cursor: pointer;
+            box-shadow: 0 10px 28px rgba(178,55,236,0.34); transition: transform 0.15s ease, box-shadow 0.25s ease;
+        }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(178,55,236,0.44); }
+
+        /* === LOGO BAR === */
+        .brandbar { padding: 20px 0; text-align: center; border-bottom: 1px solid var(--border); }
+        .logo-mark { font-size: 18px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; }
+        .logo-mark span { color: var(--accent); }
 
         /* === HERO === */
-        .ds-hero { padding: var(--ds-space-6) 0 var(--ds-space-5); text-align: center; }
-        .ds-hero__label { font-size: var(--ds-text-xs); font-weight: 700; letter-spacing: var(--ds-tracking-wide); text-transform: uppercase; color: var(--ds-accent); margin-bottom: 14px; }
-        .ds-hero__title { font-size: var(--ds-heading-hero); font-weight: 800; letter-spacing: var(--ds-tracking-tight); line-height: var(--ds-leading-tight); margin: 0 auto 16px; max-width: 680px; }
-        /* PROOF sits directly under the headline (per funnel doc order) */
-        .ds-hero__proof { font-size: var(--ds-text-lg); color: var(--ds-text-secondary); line-height: var(--ds-leading-relaxed); max-width: 600px; margin: 0 auto var(--ds-space-5); }
-        .ds-hero__proof strong { color: var(--ds-ink); font-weight: 700; }
+        .hero { position: relative; text-align: center; padding: 48px 0 56px; overflow: hidden;
+            background:
+              radial-gradient(60% 50% at 50% 0%, rgba(178,55,236,0.12) 0%, rgba(178,55,236,0) 70%),
+              linear-gradient(180deg, #FBF8FF 0%, #FFFFFF 60%); }
+        .badge {
+            display: inline-flex; align-items: center; gap: 8px; background: var(--accent-soft);
+            border: 1px solid var(--accent-soft-2); color: var(--accent-dim);
+            font-family: var(--fhead); font-weight: 700; font-size: 0.72rem; letter-spacing: 0.12em;
+            text-transform: uppercase; padding: 8px 16px; border-radius: 100px; margin-bottom: 20px;
+        }
+        .badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 0 rgba(178,55,236,0.5); animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(178,55,236,0.5); } 70% { box-shadow: 0 0 0 8px rgba(178,55,236,0); } 100% { box-shadow: 0 0 0 0 rgba(178,55,236,0); } }
+        .hero h1 { font-size: clamp(1.9rem, 3.6vw, 2.9rem); font-weight: 900; line-height: 1.1; max-width: 760px; margin: 0 auto 16px; }
+        .hero h1 .hl { color: var(--accent); }
+        .hero__sub { font-size: clamp(1.05rem, 1.6vw, 1.2rem); color: var(--body); max-width: 600px; margin: 0 auto 22px; }
+        /* proof chips */
+        .chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 0 auto 36px; max-width: 640px; }
+        .chip { display: inline-flex; align-items: center; gap: 7px; background: #fff; border: 1px solid var(--border-md); border-radius: 100px; padding: 8px 16px; font-size: 0.85rem; font-weight: 600; color: var(--ink); box-shadow: var(--shadow-sm); }
+        .chip svg { width: 15px; height: 15px; color: var(--accent); flex-shrink: 0; }
 
         /* === VIDEO === */
-        .ds-video-wrap { max-width: 720px; margin: 0 auto; border-radius: var(--ds-radius-lg); overflow: hidden; border: 1px solid var(--ds-border-light); box-shadow: var(--ds-shadow-lg); background: var(--ds-bg-secondary); }
-        .ds-video-wrap iframe { width: 100%; aspect-ratio: 16/9; border: none; display: block; }
-        .ds-video-ph { aspect-ratio: 16/9; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: var(--ds-text-muted); text-align: center; padding: 24px; }
-        .ds-video-ph svg { width: 56px; height: 56px; color: var(--ds-accent); }
-        .ds-video-ph span { font-size: var(--ds-text-sm); }
-        .ds-video-ph em { font-style: normal; font-size: var(--ds-text-xs); color: var(--ds-text-muted); opacity: 0.8; }
+        .video-wrap { max-width: 720px; margin: 0 auto; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-md); box-shadow: var(--shadow); background: var(--bg-tint); position: relative; }
+        .video-wrap::after { content: ''; position: absolute; inset: 0; border-radius: var(--radius-lg); box-shadow: inset 0 0 0 1px rgba(178,55,236,0.18); pointer-events: none; }
+        .video-wrap iframe { width: 100%; aspect-ratio: 16/9; border: none; display: block; }
+        .video-ph { aspect-ratio: 16/9; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: var(--muted); text-align: center; padding: 24px; }
+        .video-ph .play { width: 64px; height: 64px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 26px rgba(178,55,236,0.4); }
+        .video-ph .play svg { width: 26px; height: 26px; fill: #fff; margin-left: 3px; }
+        .video-ph span { font-size: 0.85rem; font-weight: 600; color: var(--body); }
+        .video-ph em { font-style: normal; font-size: 0.72rem; color: var(--muted); }
 
-        /* === REGISTER (WebinarJam embed placeholder) === */
-        .ds-register { padding: var(--ds-space-8) 0; background: var(--ds-bg-secondary); border-top: 1px solid var(--ds-border); }
-        .ds-register__head { text-align: center; margin-bottom: var(--ds-space-4); }
-        .ds-register__title { font-size: var(--ds-heading-sm); font-weight: 800; margin-bottom: 8px; }
-        .ds-register__sub { font-size: var(--ds-text-base); color: var(--ds-text-secondary); }
-        .ds-register__box { max-width: 600px; margin: 0 auto; border: 2px dashed var(--ds-border-light); border-radius: var(--ds-radius-lg); background: var(--ds-surface); padding: 64px 32px; text-align: center; color: var(--ds-text-muted); }
-        .ds-register__box strong { display: block; font-family: var(--ds-font-display); color: var(--ds-ink); font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+        /* === WHAT YOU'LL LEARN === */
+        .learn { padding: 64px 0; background: var(--bg-tint); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .sec-head { text-align: center; margin-bottom: 40px; }
+        .sec-head .kicker { font-family: var(--fhead); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+        .sec-head h2 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); font-weight: 800; }
+        .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        @media (max-width: 768px) { .cards { grid-template-columns: 1fr; gap: 16px; } }
+        .card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 30px 26px; box-shadow: var(--shadow-sm); transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+        .card__icon { width: 50px; height: 50px; border-radius: 14px; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+        .card__icon svg { width: 24px; height: 24px; color: var(--accent); fill: none; stroke: var(--accent); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+        .card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; line-height: 1.3; }
+        .card p { font-size: 0.95rem; color: var(--body); line-height: 1.6; }
+
+        /* === REGISTER === */
+        .register { padding: 72px 0; text-align: center; }
+        .reg-card { max-width: 620px; margin: 0 auto; background: #fff; border: 1px solid var(--border-md); border-radius: var(--radius-lg); box-shadow: var(--shadow); overflow: hidden; }
+        .reg-card__top { background: linear-gradient(135deg, var(--accent), var(--accent-dim)); padding: 28px 24px; color: #fff; }
+        .reg-card__top h2 { color: #fff; font-size: clamp(1.4rem, 2.4vw, 1.9rem); font-weight: 800; margin-bottom: 6px; }
+        .reg-card__top p { color: rgba(255,255,255,0.9); font-size: 0.95rem; }
+        .reg-card__body { padding: 32px 28px 36px; }
+        .reg-meta { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 22px; margin-bottom: 24px; font-size: 0.9rem; font-weight: 600; color: var(--ink); }
+        .reg-meta span { display: inline-flex; align-items: center; gap: 7px; }
+        .reg-meta svg { width: 16px; height: 16px; color: var(--accent); }
+        .embed-ph { border: 2px dashed var(--border-md); border-radius: var(--radius); background: var(--bg-tint); padding: 44px 24px; color: var(--muted); }
+        .embed-ph strong { display: block; font-family: var(--fhead); color: var(--ink); font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
 
         /* === FOOTER === */
-        .ds-footer { padding: var(--ds-space-5) 0; text-align: center; border-top: 1px solid var(--ds-border); }
-        .ds-footer__copy { color: var(--ds-text-muted); font-size: var(--ds-text-xs); }
+        .footer { padding: 36px 0; text-align: center; border-top: 1px solid var(--border); }
+        .footer p { color: var(--muted); font-size: 0.78rem; }
 
         /* === REVEAL === */
-        .ds-reveal { opacity: 0; transform: translateY(18px); transition: opacity var(--ds-duration-slow) var(--ds-ease), transform var(--ds-duration-slow) var(--ds-ease); }
-        .ds-reveal--visible { opacity: 1; transform: translateY(0); }
-        .ds-reveal--delay-1 { transition-delay: 0.1s; }
-        @media (prefers-reduced-motion: reduce) { .ds-reveal { opacity: 1 !important; transform: none !important; transition: none !important; } }
-
-        @media (max-width: 768px) {
-            .ds-hero { padding: var(--ds-space-5) 0 var(--ds-space-4); }
-            .ds-register__box { padding: 48px 24px; }
-        }
+        .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.5s var(--ease), transform 0.5s var(--ease); }
+        .reveal.vis { opacity: 1; transform: translateY(0); }
+        .reveal.d1 { transition-delay: 0.08s; } .reveal.d2 { transition-delay: 0.16s; }
+        @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1 !important; transform: none !important; } }
     </style>
 </head>
 <body>
@@ -120,18 +138,22 @@
         <div class="logo-mark">Good <span>Sweet</span> Homes</div>
     </div>
 
-    <!-- HERO: headline > proof > VSL -->
-    <section class="ds-hero">
-        <div class="ds-container">
-            <div class="ds-reveal">
-                <p class="ds-hero__label">Free Live Masterclass</p>
-                <h1 class="ds-hero__title">How to Buy Your First Rental Property This Year, Even If You Don't Live Where the Good Deals Are</h1>
-                <p class="ds-hero__proof">Taught live by <strong>Sharon Tseung and Sean Pan</strong>, who built a <strong>34-unit rental portfolio</strong> from scratch while working full-time W-2 jobs and now host the Everything Real Estate Investing show.</p>
+    <!-- HERO: badge > headline > sub > proof chips > VSL -->
+    <section class="hero">
+        <div class="wrap">
+            <div class="reveal">
+                <div class="badge"><span class="dot"></span> Free Live Masterclass</div>
+                <h1>Buy Your First <span class="hl">Cash-Flowing Rental</span> Property This Year</h1>
+                <p class="hero__sub">Even if you work a full-time job, have zero experience, and feel priced out of your own market.</p>
+                <div class="chips">
+                    <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-3"/></svg>34-Unit Rental Portfolio</div>
+                    <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v20M2 12h20"/></svg>Built on W-2 Salaries</div>
+                    <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 1v3M12 20v3M4 12H1M23 12h-3M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>Hosts of the Everything REI Show</div>
+                </div>
             </div>
-            <div class="ds-video-wrap ds-reveal ds-reveal--delay-1" id="ds-video" data-embed-url="" data-wistia-id="">
-                <!-- Set data-wistia-id to a Wistia media id (or data-embed-url to a full Wistia/Vidalytics embed URL). Until then this placeholder shows. -->
-                <div class="ds-video-ph">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16.5 12 10 16 10 8" fill="currentColor" stroke="none"/></svg>
+            <div class="video-wrap reveal d1" id="ds-video" data-wistia-id="" data-embed-url="">
+                <div class="video-ph">
+                    <div class="play"><svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"/></svg></div>
                     <span>Masterclass VSL goes here</span>
                     <em>Host on Wistia or Vidalytics, not YouTube, so viewers stay on the page</em>
                 </div>
@@ -139,29 +161,65 @@
         </div>
     </section>
 
-    <!-- REGISTER (WebinarJam native embed placeholder) -->
-    <section class="ds-register" id="register">
-        <div class="ds-container">
-            <div class="ds-register__head ds-reveal">
-                <h2 class="ds-register__title">Save Your Seat for the Live Class</h2>
-                <p class="ds-register__sub">Pick a time below. It's free, and there's live Q&amp;A at the end.</p>
+    <!-- WHAT YOU'LL LEARN -->
+    <section class="learn">
+        <div class="wrap">
+            <div class="sec-head reveal">
+                <div class="kicker">In This Free Class</div>
+                <h2>What You'll Walk Away Knowing</h2>
             </div>
-            <div class="ds-register__box ds-reveal ds-reveal--delay-1">
-                <strong>WebinarJam registration embed goes here</strong>
-                Drop the native WebinarJam opt-in form into this block.
+            <div class="cards">
+                <div class="card reveal">
+                    <div class="card__icon"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div>
+                    <h3>Why Rentals Beat the Alternatives</h3>
+                    <p>How cash-flowing real estate builds wealth faster and safer than stocks, crypto, or your 401(k), with the math to prove it.</p>
+                </div>
+                <div class="card reveal d1">
+                    <div class="card__icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                    <h3>How to Buy From Anywhere</h3>
+                    <p>Find and analyze cash-flowing deals out of state, so a high-priced local market never stops you from owning your first property.</p>
+                </div>
+                <div class="card reveal d2">
+                    <div class="card__icon"><svg viewBox="0 0 24 24"><path d="M15 7a4 4 0 11-8 0 4 4 0 018 0z"/><path d="M11 11l-7 7 2 2 1.5-1.5L9 21l2-2"/></svg></div>
+                    <h3>Your First-Deal Game Plan</h3>
+                    <p>The exact steps to fund, structure, and close your first rental this year, even starting from scratch on a normal salary.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REGISTER -->
+    <section class="register" id="register">
+        <div class="wrap wrap--narrow">
+            <div class="reg-card reveal">
+                <div class="reg-card__top">
+                    <h2>Save Your Seat for the Live Class</h2>
+                    <p>Taught live by Sharon Tseung &amp; Sean Pan</p>
+                </div>
+                <div class="reg-card__body">
+                    <div class="reg-meta">
+                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Live online</span>
+                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>~60 minutes</span>
+                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>Live Q&amp;A at the end</span>
+                    </div>
+                    <div class="embed-ph">
+                        <strong>WebinarJam registration embed goes here</strong>
+                        Drop the native WebinarJam opt-in form into this block.
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="ds-footer">
-        <div class="ds-container">
-            <p class="ds-footer__copy">&copy; 2026 Good Sweet Homes. All rights reserved.</p>
+    <footer class="footer">
+        <div class="wrap">
+            <p>&copy; 2026 Good Sweet Homes. All rights reserved.</p>
         </div>
     </footer>
 
 <script>
-/* Video embed with graceful fallback: load only a valid Wistia id / embed URL, else keep placeholder */
+/* Video embed with graceful fallback */
 (function(){
   var w = document.getElementById('ds-video'); if(!w) return;
   var id = (w.getAttribute('data-wistia-id')||'').trim();
@@ -169,22 +227,16 @@
   var src = '';
   if (/^[A-Za-z0-9]{8,12}$/.test(id)) src = 'https://fast.wistia.net/embed/iframe/' + id;
   else if (/^https?:\/\//.test(url)) src = url;
-  if (!src) return; // no valid source -> keep placeholder
+  if (!src) return;
   var f = document.createElement('iframe');
   f.src = src; f.setAttribute('allow','autoplay; fullscreen; picture-in-picture'); f.setAttribute('allowfullscreen','');
   w.innerHTML = ''; w.appendChild(f);
 })();
-
 /* Scroll reveal */
 (function(){
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    document.querySelectorAll('.ds-reveal').forEach(function(el){el.classList.add('ds-reveal--visible')});
-    return;
-  }
-  var obs=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('ds-reveal--visible');obs.unobserve(e.target)}})
-  },{threshold:0.15,rootMargin:'-40px'});
-  document.querySelectorAll('.ds-reveal').forEach(function(el){obs.observe(el)});
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){ document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('vis')}); return; }
+  var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');o.unobserve(e.target)}})},{threshold:0.12,rootMargin:'-30px'});
+  document.querySelectorAll('.reveal').forEach(function(e){o.observe(e)});
 })();
 </script>
 </body>
