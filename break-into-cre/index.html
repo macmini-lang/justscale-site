@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Free Live Training with Justin Kivel: The Path Into Commercial Real Estate</title>
+<meta name="description" content="Live with Justin Kivel of Break Into CRE: the underwriting framework and the two paths into commercial real estate, whether you want to work in it or own it. Save your seat free." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --blue: #1a62aa;
+    --blue-dark: #154e88;
+    --blue-light: #5fa8e8;
+    --navy: #0f1f30;
+    --ink: #1f2a36;
+    --paper: #ffffff;
+    --muted: #c4d0dd;
+    --line: #e3e8ee;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Roboto', system-ui, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, .h { font-family: 'Roboto', sans-serif; font-weight: 900; letter-spacing: -0.01em; }
+  img { max-width: 100%; display: block; }
+  .wrap { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  .label { text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; }
+
+  /* Top bar */
+  .topbar {
+    background: var(--blue-dark);
+    color: #fff;
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .topbar b { color: #fff; }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    background:
+      linear-gradient(180deg, rgba(15,31,48,0.92) 0%, rgba(15,31,48,0.86) 55%, rgba(21,78,136,0.92) 100%),
+      url("skyline.jpg") center 30% / cover no-repeat;
+    color: #fff;
+    padding: 18px 0 40px;
+    overflow: hidden;
+  }
+  .logo { height: 34px; width: auto; }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 44px;
+    align-items: center;
+    margin-top: 28px;
+  }
+  .eyebrow {
+    display: inline-block;
+    background: rgba(95,168,232,0.16);
+    border: 1px solid rgba(95,168,232,0.55);
+    color: #cfe4fb;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 6px 13px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+  }
+  h1 {
+    font-size: clamp(27px, 3.6vw, 40px);
+    line-height: 1.1;
+    margin-bottom: 14px;
+  }
+  h1 .accent { color: var(--blue-light); }
+  .sub {
+    font-size: clamp(15px, 1.6vw, 17px);
+    color: var(--muted);
+    max-width: 46ch;
+    margin-bottom: 18px;
+  }
+  .sub b { color: #fff; font-weight: 700; }
+
+  .bullets { list-style: none; margin: 0; }
+  .bullets li {
+    position: relative;
+    padding: 8px 0 8px 32px;
+    font-size: 15px;
+    color: #e8eef5;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .bullets li:last-child { border-bottom: 0; }
+  .bullets li b { color: #fff; font-weight: 700; }
+  .bullets li::before {
+    content: "";
+    position: absolute;
+    left: 2px; top: 11px;
+    width: 16px; height: 16px;
+    border-radius: 3px;
+    background: var(--blue);
+  }
+  .bullets li::after {
+    content: "";
+    position: absolute;
+    left: 7px; top: 13px;
+    width: 4px; height: 8px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+  /* Form card */
+  .card {
+    background: #fff;
+    color: var(--ink);
+    border-radius: 12px;
+    padding: 24px 26px 22px;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.4);
+    border-top: 4px solid var(--blue);
+  }
+  .card-head { text-align: center; font-weight: 900; font-size: 19px; color: var(--blue-dark); margin-bottom: 3px; }
+  .card-date { text-align: center; font-size: 14px; color: #5a6672; font-weight: 500; margin-bottom: 18px; }
+  .countdown { display: flex; justify-content: center; gap: 9px; margin-bottom: 20px; }
+  .cd-box { background: var(--navy); color: #fff; border-radius: 8px; padding: 9px 0 6px; width: 62px; text-align: center; }
+  .cd-box .num { font-weight: 900; font-size: 25px; line-height: 1; }
+  .cd-box .lbl { font-size: 10px; text-transform: uppercase; letter-spacing: 0.07em; opacity: 0.72; margin-top: 5px; }
+  .field { margin-bottom: 12px; }
+  .field input {
+    width: 100%; padding: 14px 15px; font-size: 16px; font-family: inherit;
+    border: 1.5px solid #d4dae1; border-radius: 8px; background: #f6f8fa; color: var(--ink);
+    transition: border-color .15s, background .15s;
+  }
+  .field input:focus { outline: none; border-color: var(--blue); background: #fff; }
+  .cta {
+    width: 100%; border: 0; cursor: pointer; font-family: 'Roboto', sans-serif; font-weight: 900;
+    font-size: 17px; letter-spacing: 0.04em; text-transform: uppercase; color: #fff; padding: 16px 18px;
+    border-radius: 8px; background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
+    box-shadow: 0 12px 26px rgba(26,98,170,0.4); transition: transform .12s, box-shadow .12s;
+  }
+  .cta:hover { transform: translateY(-2px); box-shadow: 0 16px 32px rgba(26,98,170,0.5); }
+  .card-fine { text-align: center; font-size: 12px; color: #8a939c; margin-top: 11px; }
+  .card-fine span { color: var(--blue); font-weight: 700; }
+
+  /* VSL section */
+  .vsl { background: #f5f8fb; padding: 56px 0; text-align: center; }
+  .section-label { color: var(--blue); font-size: 13px; margin-bottom: 10px; }
+  .vsl h2 { font-size: clamp(22px, 3vw, 30px); color: var(--ink); margin-bottom: 8px; }
+  .vsl p.lead { color: #5a6672; font-size: 16px; max-width: 52ch; margin: 0 auto 26px; }
+  .video {
+    position: relative; max-width: 760px; margin: 0 auto; aspect-ratio: 16/9;
+    background: linear-gradient(150deg, var(--navy), var(--blue-dark));
+    border-radius: 12px; overflow: hidden; box-shadow: 0 24px 56px rgba(15,31,48,0.28);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .video .play {
+    width: 78px; height: 78px; border-radius: 50%; background: rgba(255,255,255,0.95);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .video .play::after { content: ""; border-left: 24px solid var(--blue); border-top: 15px solid transparent; border-bottom: 15px solid transparent; margin-left: 6px; }
+  .video .vtag { position: absolute; bottom: 14px; color: rgba(255,255,255,0.8); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+
+  /* Speaker bio strip */
+  .bio { background: #fff; padding: 56px 0; }
+  .bio-inner { display: grid; grid-template-columns: 0.7fr 1.3fr; gap: 40px; align-items: center; }
+  .bio-photo {
+    border-radius: 12px; background: linear-gradient(160deg, #eef3f8, #dde7f1);
+    display: flex; align-items: flex-end; justify-content: center; overflow: hidden; aspect-ratio: 1/1;
+    box-shadow: 0 18px 40px rgba(26,98,170,0.16);
+  }
+  .bio-photo img { width: 92%; height: auto; align-self: flex-end; }
+  .bio h2 { font-size: clamp(24px, 3vw, 34px); color: var(--ink); margin-bottom: 6px; }
+  .bio .role { color: var(--blue); font-weight: 700; font-size: 14px; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 16px; }
+  .bio p { color: #3a4651; font-size: 16px; margin-bottom: 14px; }
+  .firms { margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--line); }
+  .firms .label { font-size: 11.5px; color: #8a939c; margin-bottom: 8px; }
+  .firms .names { font-weight: 900; color: var(--ink); font-size: 15.5px; letter-spacing: 0.01em; }
+
+  /* FAQ */
+  .faq { background: #f5f8fb; padding: 56px 0; }
+  .faq h2 { text-align: center; font-size: clamp(22px, 3vw, 30px); color: var(--ink); margin-bottom: 28px; }
+  .faq-item { background: #fff; border: 1px solid var(--line); border-radius: 10px; margin-bottom: 12px; overflow: hidden; }
+  .faq-q { font-weight: 700; font-size: 16px; color: var(--ink); padding: 16px 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+  .faq-q::after { content: "+"; color: var(--blue); font-weight: 900; font-size: 22px; flex: 0 0 auto; transition: transform .2s; }
+  .faq-item[open] .faq-q::after { transform: rotate(45deg); }
+  .faq-a { padding: 0 20px 18px; color: #4a5560; font-size: 15px; }
+  details > summary { list-style: none; }
+  details > summary::-webkit-details-marker { display: none; }
+  .faq-cta { text-align: center; margin-top: 28px; }
+  .faq-cta a {
+    display: inline-block; background: var(--blue); color: #fff; text-decoration: none; font-weight: 900;
+    text-transform: uppercase; letter-spacing: 0.04em; padding: 15px 34px; border-radius: 8px; transition: background .15s;
+  }
+  .faq-cta a:hover { background: var(--blue-dark); }
+
+  /* Footer */
+  footer { background: var(--navy); padding: 32px 0; text-align: center; }
+  footer img { height: 30px; margin: 0 auto 14px; opacity: 0.95; }
+  footer p { color: #8595a6; font-size: 12px; max-width: 64ch; margin: 0 auto 6px; }
+  footer a { color: var(--blue-light); text-decoration: none; }
+
+  @media (max-width: 860px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 30px; }
+    .sub { max-width: none; }
+    .bio-inner { grid-template-columns: 1fr; gap: 24px; }
+    .bio-photo { max-width: 300px; margin: 0 auto; }
+  }
+  @media (max-width: 420px) {
+    .cd-box { width: 54px; }
+    .cd-box .num { font-size: 21px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Top bar -->
+  <div class="topbar">Free Live Training &nbsp;·&nbsp; <b>[DAY, MONTH DATE] at [TIME] [TZ]</b> &nbsp;·&nbsp; 90 Minutes, Live Only</div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap">
+      <img class="logo" src="logo-white.svg" alt="Break Into CRE" />
+
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">Live Online Training · 90 Minutes</span>
+          <h1>The Path Into Commercial Real Estate, <span class="accent">Whether You Want to Work In It or Own It</span></h1>
+          <p class="sub">A 90-minute live training on the underwriting framework institutional analysts use, plus the two routes into CRE. <b>[DAY, MONTH DATE] · [TIME] [TZ]</b></p>
+
+          <ul class="bullets">
+            <li><b>The underwriting framework</b> institutional analysts use to evaluate any commercial deal</li>
+            <li><b>The two paths into CRE</b> (analyst careers vs. principal investing), and how to pick which one fits your situation</li>
+            <li><b>The exact resources, tools, and next steps</b> to take inside the next 30 days</li>
+          </ul>
+        </div>
+
+        <!-- Registration card -->
+        <div class="card" id="register">
+          <div class="card-head">Save My Free Seat</div>
+          <div class="card-date">[DAY, MONTH DATE] at [TIME] [TZ]</div>
+
+          <div class="countdown" id="countdown" aria-label="Time until the training starts">
+            <div class="cd-box"><div class="num" id="cd-d">00</div><div class="lbl">Days</div></div>
+            <div class="cd-box"><div class="num" id="cd-h">00</div><div class="lbl">Hrs</div></div>
+            <div class="cd-box"><div class="num" id="cd-m">00</div><div class="lbl">Min</div></div>
+            <div class="cd-box"><div class="num" id="cd-s">00</div><div class="lbl">Sec</div></div>
+          </div>
+
+          <form id="regForm" novalidate>
+            <div class="field"><input type="text" id="name" name="name" placeholder="First name" autocomplete="given-name" required /></div>
+            <div class="field"><input type="email" id="email" name="email" placeholder="Email address" autocomplete="email" required /></div>
+            <button type="submit" class="cta">Save My Seat</button>
+          </form>
+          <p class="card-fine"><span>Live only.</span> No public replay is sent.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VSL -->
+  <section class="vsl">
+    <div class="wrap">
+      <div class="section-label label">Watch First</div>
+      <h2>Why this training, and why now</h2>
+      <p class="lead">A quick word from Justin on what you'll walk away with, and why it's worth blocking 90 minutes for the live session.</p>
+      <div class="video" role="button" aria-label="Play video">
+        <div class="play"></div>
+        <div class="vtag">Replace with Justin's 90-second intro video</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Speaker bio strip -->
+  <section class="bio">
+    <div class="wrap bio-inner">
+      <div class="bio-photo">
+        <img src="justin-kivel.png" alt="Justin Kivel" onerror="this.style.display='none'" />
+      </div>
+      <div>
+        <h2>Your host: Justin Kivel</h2>
+        <div class="role">Founder, Break Into CRE</div>
+        <p>Justin spent his career in institutional commercial real estate, working in acquisitions and asset management before founding Break Into CRE. He holds an MBA in Real Estate &amp; Finance and has taught real estate financial modeling to more than 80,000 students.</p>
+        <p>This live training is the same analytical foundation he teaches inside the Academy, condensed into 90 minutes: the underwriting, the deal evaluation, and the two routes into the industry.</p>
+        <div class="firms">
+          <div class="label">Break Into CRE students now work at</div>
+          <div class="names">Eastdil Secured · Hines · KKR · JLL · CBRE · Starwood Capital · Greystar</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="wrap">
+      <h2>Questions, answered</h2>
+
+      <details class="faq-item"><summary class="faq-q">Who is this training for?</summary>
+        <div class="faq-a">Two groups: people who want to work in commercial real estate (analyst and associate paths at investment, development, and brokerage firms), and people who want to buy commercial property themselves. The framework applies to both, and Justin shows you how to pick your route.</div></details>
+
+      <details class="faq-item"><summary class="faq-q">Do I need a finance background or prior experience?</summary>
+        <div class="faq-a">No. The training starts from the underwriting fundamentals and builds up. If you've never modeled a deal, you'll still be able to follow along and know your next step by the end.</div></details>
+
+      <details class="faq-item"><summary class="faq-q">Is it really free?</summary>
+        <div class="faq-a">Yes. The live training is free to attend. Register with your name and email and you're in.</div></details>
+
+      <details class="faq-item"><summary class="faq-q">How long is it?</summary>
+        <div class="faq-a">90 minutes, including live Q&amp;A at the end. Block the full time so you can ask your questions and get them answered on the spot.</div></details>
+
+      <details class="faq-item"><summary class="faq-q">Will it be recorded?</summary>
+        <div class="faq-a">This is a live-only session and no public replay is sent out. The most valuable parts, including the live deal walkthrough and Q&amp;A, happen in the room. Show up live.</div></details>
+
+      <details class="faq-item"><summary class="faq-q">What do I need to attend?</summary>
+        <div class="faq-a">A quiet 90 minutes, something to take notes with, and one specific question about your CRE situation. If you have a deal or a job listing you're looking at, bring it.</div></details>
+
+      <div class="faq-cta"><a href="#register">Save My Seat</a></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="wrap">
+      <img src="logo-white.svg" alt="Break Into CRE" />
+      <p>This is an educational training. Results are not guaranteed. Nothing presented is financial, investment, tax, or legal advice. Commercial real estate investing carries risk, including loss of principal.</p>
+      <p>© <span id="year">2026</span> Break Into CRE. All rights reserved. · <a href="https://breakintocre.com">breakintocre.com</a></p>
+    </div>
+  </footer>
+
+<script>
+  // ---- Countdown ----
+  // Set the live training start time (ISO 8601 with timezone offset).
+  // Example for 12:00 PM Pacific (PDT, -07:00): "2026-06-18T12:00:00-07:00"
+  var CLASS_START = "2026-06-18T12:00:00-07:00";
+
+  (function () {
+    var target = new Date(CLASS_START).getTime();
+    var d = document.getElementById('cd-d'), h = document.getElementById('cd-h'),
+        m = document.getElementById('cd-m'), s = document.getElementById('cd-s');
+    function pad(n) { return (n < 10 ? '0' : '') + n; }
+    function tick() {
+      if (isNaN(target)) return;
+      var diff = target - Date.now();
+      if (diff < 0) diff = 0;
+      d.textContent = pad(Math.floor(diff / 86400000));
+      h.textContent = pad(Math.floor((diff % 86400000) / 3600000));
+      m.textContent = pad(Math.floor((diff % 3600000) / 60000));
+      s.textContent = pad(Math.floor((diff % 60000) / 1000));
+    }
+    tick();
+    setInterval(tick, 1000);
+  })();
+
+  // ---- Form submit (wire to GHL / Gravity Forms / your endpoint) ----
+  // Spec: collect name + email here; ask for phone (optional) on the confirmation page.
+  document.getElementById('regForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = document.getElementById('name').value.trim();
+    var email = document.getElementById('email').value.trim();
+    if (!name || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+      alert('Please enter your first name and a valid email.');
+      return;
+    }
+    // TODO: POST to your registration endpoint, then redirect to the confirmation page.
+    window.location.href = "thank-you.html";
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
