@@ -43,7 +43,11 @@
         }
 
         /* Apply / Typeform */
-        .apply { position: relative; z-index: 2; padding: 0 28px 80px; }
+        .apply { position: relative; z-index: 2; padding: 0 28px 28px; }
+
+        /* Footer: stacked + centered, tight to the form */
+        footer { padding: 28px 0; }
+        footer .container { flex-direction: column; justify-content: center; align-items: center; gap: 14px; text-align: center; }
         .apply h2 {
             text-align: center; font-size: 1.5rem; font-weight: 700;
             letter-spacing: -0.02em; margin-bottom: 26px; max-width: 620px; margin-left: auto; margin-right: auto;
