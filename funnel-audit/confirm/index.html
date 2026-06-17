@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Confirmed | JustScale</title>
+    <meta name="description" content="Your call has been confirmed. Watch the videos below to prepare so we can spend the call on your funnel.">
+    <link rel="icon" type="image/png" href="../../logo.png">
+    <link rel="apple-touch-icon" href="../../logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://fast.wistia.com/player.js" async></script>
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #FFFFFF;
+            color: #111111;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        a { color: #111111; text-decoration: none; }
+
+        .container { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+
+        /* NAV */
+        .nav {
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+        .nav .container { display: flex; align-items: center; justify-content: space-between; }
+        .nav img { height: 22px; width: auto; }
+        .nav-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #111111; }
+
+        /* SECTION */
+        .section { padding: 40px 0; border-bottom: 1px solid rgba(0,0,0,0.08); }
+
+        /* STEP HEADING */
+        .step-heading {
+            background: #111111;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .step-heading h1 {
+            font-size: clamp(16px, 3vw, 20px);
+            font-weight: 700;
+            line-height: 1.3;
+            color: #FFFFFF;
+        }
+        .step-heading h1 strong { color: #FFFFFF; }
+
+        /* HERO */
+        .hero {
+            text-align: center;
+            padding: 60px 0 40px;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+        .hero h1 {
+            font-size: clamp(24px, 5vw, 32px);
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .hero p {
+            font-size: clamp(14px, 2.5vw, 18px);
+            color: #555555;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* VIDEO */
+        .video-wrap {
+            position: relative;
+            width: 100%;
+            background: #F7F7F7;
+            overflow: hidden;
+        }
+        .video-wrap iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            border: 0;
+        }
+
+        /* WISTIA OVERRIDES */
+        wistia-player:not(:defined) {
+            display: block;
+            filter: blur(5px);
+            padding-top: 56.25%;
+        }
+
+        /* BULLET LIST */
+        .prep-list {
+            padding: 0 20px 30px;
+            list-style: disc;
+            margin-left: 20px;
+        }
+        .prep-list li {
+            font-size: 14px;
+            color: #555555;
+            padding: 4px 0;
+            line-height: 1.6;
+        }
+        .prep-list li strong { color: #111111; font-weight: 700; }
+
+        /* PHONE CTA */
+        .phone-cta {
+            text-align: center;
+            padding: 36px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+        .phone-cta p {
+            font-size: clamp(18px, 4vw, 26px);
+            font-weight: 600;
+            color: #111111;
+        }
+        .phone-cta a {
+            color: #111111;
+            text-decoration: none;
+        }
+
+        /* FAQ ROW */
+        .faq-row {
+            display: flex;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.03);
+        }
+        .faq-row:last-child { border-bottom: none; }
+        .faq-row .faq-title {
+            flex: 1;
+            padding: 0 20px;
+        }
+        .faq-row .faq-title h3 {
+            font-size: clamp(13px, 2.2vw, 16px);
+            font-weight: 600;
+            line-height: 1.4;
+            text-align: center;
+        }
+        .faq-row .faq-video {
+            flex: 1;
+            padding: 0 10px;
+        }
+
+        /* FOOTER */
+        .footer {
+            padding: 30px 0;
+            text-align: center;
+            font-size: 12px;
+            color: #999999;
+        }
+
+        /* TABLET */
+        @media (max-width: 768px) {
+            .faq-row { flex-direction: column; }
+            .faq-row .faq-title { margin-bottom: 12px; padding: 0; }
+            .faq-row .faq-video { padding: 0; width: 100%; }
+        }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+            .container { padding: 0 16px; }
+            .hero { padding: 48px 0 32px; }
+            .hero h1 { font-size: 22px; }
+            .hero p { font-size: 14px; }
+            .section { padding: 32px 0; }
+            .step-heading { padding: 16px; }
+            .step-heading h1 { font-size: 16px; }
+            .phone-cta { padding: 28px 0; }
+            .phone-cta p { font-size: 18px; }
+            .faq-row { padding: 16px 0; }
+            .faq-row .faq-title h3 { font-size: 15px; }
+            .prep-list { padding: 0 10px 20px; margin-left: 16px; }
+            .prep-list li { font-size: 13px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav class="nav">
+        <div class="container">
+            <a href="/"><img src="../../logo.png" alt="JustScale"></a>
+            <span class="nav-label">Confirmed</span>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+        <div class="container">
+            <h1>Your Call Has Been Confirmed!</h1>
+            <p>Watch the video below for next steps</p>
+        </div>
+    </div>
+
+    <!-- STEP 1: CONFIRMATION VIDEO -->
+    <div class="section">
+        <div class="container">
+            <div class="step-heading">
+                <h1><strong>STEP 1:</strong> Watch This Video</h1>
+            </div>
+            <div class="video-wrap">
+                <script src="https://fast.wistia.com/embed/aoelatj6rq.js" async type="module"></script>
+                <style>wistia-player[media-id='aoelatj6rq']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/aoelatj6rq/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style>
+                <wistia-player media-id="aoelatj6rq" aspect="1.7777777777777777"></wistia-player>
+            </div>
+        </div>
+    </div>
+
+    <!-- PHONE CTA -->
+    <div class="phone-cta">
+        <div class="container">
+            <p>Message me directly at <a href="tel:9802638010">(980) 263-8010</a></p>
+        </div>
+    </div>
+
+    <!-- PREP BULLETS -->
+    <div class="section">
+        <div class="container">
+            <ul class="prep-list">
+                <li><strong>Punctuality:</strong> Show up on time. We run a tight schedule.</li>
+                <li><strong>Know your numbers:</strong> Revenue, ad spend, conversion rate, close rate. The more specific you are, the more specific we can be about what's broken and what to do about it.</li>
+                <li><strong>Get up to speed:</strong> Watch the videos below so we can skip the basics and spend the call on your business.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- STEP 2: BREAKOUT VIDEOS -->
+    <div class="section">
+        <div class="container">
+            <div class="step-heading">
+                <h1><strong>STEP 2:</strong> Common Questions Answered Before Your Call</h1>
+            </div>
+
+            <!-- 1. What if I'm already running ads? -->
+            <div class="faq-row">
+                <div class="faq-title"><h3>What If I'm Already Running Ads?</h3></div>
+                <div class="faq-video">
+                    <div class="video-wrap">
+                        <script src="https://fast.wistia.com/embed/iuivr4zgzi.js" async type="module"></script>
+                        <style>wistia-player[media-id='iuivr4zgzi']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/iuivr4zgzi/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style>
+                        <wistia-player media-id="iuivr4zgzi" aspect="1.7777777777777777"></wistia-player>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. What if I'm just getting started running ads? -->
+            <div class="faq-row">
+                <div class="faq-title"><h3>What If I'm Just Getting Started Running Ads?</h3></div>
+                <div class="faq-video">
+                    <div class="video-wrap">
+                        <script src="https://fast.wistia.com/embed/ecm53vi3m6.js" async type="module"></script>
+                        <style>wistia-player[media-id='ecm53vi3m6']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/ecm53vi3m6/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style>
+                        <wistia-player media-id="ecm53vi3m6" aspect="1.7777777777777777"></wistia-player>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. How do you get up to speed with my market or offer? -->
+            <div class="faq-row">
+                <div class="faq-title"><h3>How Do You Get Up To Speed With My Market Or Offer?</h3></div>
+                <div class="faq-video">
+                    <div class="video-wrap">
+                        <script src="https://fast.wistia.com/embed/05bpvei3t2.js" async type="module"></script>
+                        <style>wistia-player[media-id='05bpvei3t2']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/05bpvei3t2/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style>
+                        <wistia-player media-id="05bpvei3t2" aspect="1.7777777777777777"></wistia-player>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. What if it doesn't work? -->
+            <div class="faq-row">
+                <div class="faq-title"><h3>What If It Doesn't Work?</h3></div>
+                <div class="faq-video">
+                    <div class="video-wrap">
+                        <script src="https://fast.wistia.com/embed/5njzim3z95.js" async type="module"></script>
+                        <style>wistia-player[media-id='5njzim3z95']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/5njzim3z95/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style>
+                        <wistia-player media-id="5njzim3z95" aspect="1.7777777777777777"></wistia-player>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. I've tried paid ads before and they didn't work -->
+            <div class="faq-row">
+                <div class="faq-title"><h3>I've Tried Paid Ads Before And They Didn't Work. What Happened?</h3></div>
+                <div class="faq-video">
+                    <div class="video-wrap">
+                        <script src="https://fast.wistia.com/embed/q8x74dknnk.js" async type="module"></script>
+                        <style>wistia-player[media-id='q8x74dknnk']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/q8x74dknnk/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style>
+                        <wistia-player media-id="q8x74dknnk" aspect="1.7777777777777777"></wistia-player>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 JustScale. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
