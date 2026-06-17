@@ -31,11 +31,8 @@
 
         /* Funnel-specific: tight hero, VSL sits right under the headline */
         .hero.audit { min-height: auto; padding: 104px 28px 28px; }
-        .hero.audit .hero-content { max-width: 800px; }
-        .hero.audit h1 { font-size: clamp(1.5rem, 3vw, 2.1rem); line-height: 1.2; margin-bottom: 20px; }
-        /* Force a clean two-line break on desktop; let it wrap naturally on phones */
-        .hero.audit h1 .hb { display: inline; }
-        @media (max-width: 560px) { .hero.audit h1 .hb { display: none; } }
+        .hero.audit .hero-content { max-width: 660px; }
+        .hero.audit h1 { font-size: clamp(1.8rem, 3.8vw, 2.5rem); line-height: 1.18; text-wrap: balance; margin-bottom: 20px; }
 
         /* VSL */
         .vsl-wrap { position: relative; z-index: 2; padding: 0 28px 44px; }
@@ -75,7 +72,7 @@
     <!-- HERO -->
     <section class="hero audit">
         <div class="hero-content">
-            <h1>Press play. We'll show you<br class="hb"> exactly what's broken in your funnel.</h1>
+            <h1>Press play. We'll show you exactly what's broken in your funnel.</h1>
             <p class="hero-sub" id="sub">A few minutes to see where your funnel is losing buyers and how to fix it with paid ads.</p>
         </div>
     </section>
