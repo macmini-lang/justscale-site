@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Funnel Audit | JustScale</title>
+    <meta name="description" content="Get on a quick call and I'll show you exactly what's broken in your funnel and how to run ads that bring buyers in.">
+    <link rel="canonical" href="https://justscale.co/funnel-audit/">
+
+    <!-- Social share card -->
+    <meta property="og:title" content="I'll show you what's broken in your funnel.">
+    <meta property="og:description" content="Get on a quick call. I'll walk your funnel live, show you where you're losing buyers, and how to run ads that bring them in.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://justscale.co/funnel-audit/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="I'll show you what's broken in your funnel.">
+    <meta name="twitter:description" content="Get on a quick call. I'll walk your funnel live, show you where you're losing buyers, and how to run ads that bring them in.">
+
+    <link rel="icon" type="image/png" href="../logo.png">
+    <link rel="apple-touch-icon" href="../logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #FFFFFF;
+            --bg-s: #F7F7F7;
+            --text: #111111;
+            --text-s: #555555;
+            --text-m: #999999;
+            --accent: #111111;
+            --border: rgba(0,0,0,0.16);
+            --border-l: rgba(0,0,0,0.24);
+            --r: 14px;
+            --ease: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { font-size: 16px; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        a { color: inherit; text-decoration: none; }
+        .container { max-width: 860px; margin: 0 auto; padding: 0 28px; }
+
+        /* ===== TOP BAR (logo only — distraction-free) ===== */
+        .topbar { padding: 26px 0; text-align: center; border-bottom: 1px solid var(--border); }
+        .topbar img { height: 26px; width: auto; }
+
+        /* ===== HERO ===== */
+        .hero { text-align: center; padding: 80px 28px 36px; }
+        .eyebrow {
+            font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em;
+            text-transform: uppercase; color: var(--text-m); margin-bottom: 18px;
+        }
+        .hero h1 {
+            font-size: 2.6rem; font-weight: 700; line-height: 1.12;
+            letter-spacing: -0.02em; max-width: 720px; margin: 0 auto 18px;
+        }
+        .hero p {
+            color: var(--text-s); font-size: 1.1rem; max-width: 540px; margin: 0 auto;
+        }
+        .rule { width: 56px; height: 2px; background: var(--accent); opacity: 0.5; margin: 28px auto 0; }
+
+        /* ===== VSL ===== */
+        .vsl-wrap { padding: 0 28px 44px; }
+        .vsl {
+            position: relative; width: 100%; max-width: 860px; margin: 0 auto;
+            aspect-ratio: 16 / 9;
+            border: 2px solid var(--border); border-radius: var(--r);
+            background: var(--bg-s); overflow: hidden;
+            display: flex; align-items: center; justify-content: center; flex-direction: column;
+            text-align: center;
+        }
+        .vsl .play {
+            width: 64px; height: 64px; border-radius: 50%;
+            border: 2px solid var(--border-l); display: flex; align-items: center; justify-content: center;
+            margin-bottom: 16px;
+        }
+        .vsl .play svg { width: 22px; height: 22px; fill: var(--text-s); margin-left: 3px; }
+        .vsl .ph-label { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-m); }
+
+        /* ===== APPLY / TYPEFORM ===== */
+        .apply { padding: 0 28px 70px; }
+        .apply .section-label {
+            text-align: center; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em;
+            text-transform: uppercase; color: var(--text-m); margin-bottom: 8px;
+        }
+        .apply h2 {
+            text-align: center; font-size: 1.5rem; font-weight: 700;
+            letter-spacing: -0.01em; margin-bottom: 26px;
+        }
+        .typeform-ph {
+            max-width: 760px; margin: 0 auto;
+            min-height: 540px;
+            border: 2px solid var(--border); border-radius: var(--r);
+            background: var(--bg-s);
+            display: flex; align-items: center; justify-content: center; flex-direction: column;
+            text-align: center; gap: 10px; padding: 40px;
+        }
+        .typeform-ph .ph-label { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-m); }
+        .typeform-ph .ph-sub { font-size: 0.92rem; color: var(--text-s); max-width: 360px; }
+
+        /* ===== FOOTER ===== */
+        footer { border-top: 1px solid var(--border); padding: 30px 0; text-align: center; }
+        footer .copy { font-size: 0.82rem; color: var(--text-m); }
+
+        /* ===== SCROLL REVEAL ===== */
+        .sr { opacity: 0; transform: translateY(20px); transition: opacity 0.8s var(--ease), transform 0.8s var(--ease); }
+        .sr.visible { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 768px) {
+            .hero { padding: 56px 24px 28px; }
+            .hero h1 { font-size: 1.9rem; }
+            .hero p { font-size: 1rem; }
+            .apply h2 { font-size: 1.25rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+        <a href="/"><img src="../logo.png" alt="JustScale"></a>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="eyebrow sr">Free Funnel Audit</div>
+            <h1 class="sr">I'll show you what's broken in your funnel.</h1>
+            <p class="sr">Get on a quick call. I'll walk through your funnel live, show you exactly where you're losing buyers, and how to run ads that bring them in.</p>
+            <div class="rule sr"></div>
+        </div>
+    </section>
+
+    <!-- VSL PLACEHOLDER -->
+    <!-- Swap this block for the real Wistia embed when ready:
+         <script src="https://fast.wistia.com/player.js" async></script>
+         <script src="https://fast.wistia.com/embed/MEDIA_ID.js" async type="module"></script>
+         <wistia-player media-id="MEDIA_ID" aspect="1.7777777777777777"></wistia-player>
+    -->
+    <div class="vsl-wrap">
+        <div class="vsl sr">
+            <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+            <div class="ph-label">VSL Placeholder</div>
+        </div>
+    </div>
+
+    <!-- APPLY / TYPEFORM PLACEHOLDER -->
+    <!-- Swap the .typeform-ph block for the real Typeform embed when ready:
+         <div data-tf-live="TYPEFORM_ID" style="width:100%;height:80vh;min-height:600px;"></div>
+         <script src="//embed.typeform.com/next/embed.js"></script>
+    -->
+    <section class="apply">
+        <div class="section-label sr">Book your call</div>
+        <h2 class="sr">Apply below and I'll be in touch.</h2>
+        <div class="typeform-ph sr">
+            <div class="ph-label">Typeform Placeholder</div>
+            <div class="ph-sub">The application form embeds here.</div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <span class="copy">&copy; 2026 JustScale. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <script>
+        // Lightweight scroll reveal (no external deps)
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach((e, i) => {
+                if (e.isIntersecting) {
+                    const el = e.target;
+                    setTimeout(() => el.classList.add('visible'), i * 80);
+                    obs.unobserve(el);
+                }
+            });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.sr').forEach(el => obs.observe(el));
+    </script>
+</body>
+</html>
