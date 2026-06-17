@@ -12,9 +12,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://fast.wistia.com/player.js" async></script>
     <style>
+        :root { --border: rgba(0,0,0,0.16); }
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: #FFFFFF;
             color: #111111;
             line-height: 1.6;
@@ -22,170 +24,99 @@
         }
         a { color: #111111; text-decoration: none; }
 
-        .container { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+        .container { max-width: 880px; margin: 0 auto; padding: 0 24px; }
 
-        /* NAV */
-        .nav {
-            padding: 16px 0;
-            border-bottom: 1px solid rgba(0,0,0,0.08);
+        /* NAV — same design as the call funnel (fixed, centered logo, blur on scroll) */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            padding: 18px 0;
+            transition: background 0.4s, border 0.4s, backdrop-filter 0.4s;
         }
-        .nav .container { display: flex; align-items: center; justify-content: space-between; }
-        .nav img { height: 22px; width: auto; }
-        .nav-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #111111; }
+        nav.scrolled {
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-bottom: 2px solid var(--border);
+        }
+        nav .container { display: flex; align-items: center; justify-content: center; }
+        .logo-img { height: 44px; width: auto; }
 
         /* SECTION */
-        .section { padding: 40px 0; border-bottom: 1px solid rgba(0,0,0,0.08); }
+        .section { padding: 56px 0; border-bottom: 1px solid rgba(0,0,0,0.08); }
 
         /* STEP HEADING */
         .step-heading {
-            background: #111111;
-            color: #FFFFFF;
-            border: none;
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            margin-bottom: 30px;
+            background: #111111; color: #FFFFFF; border-radius: 12px;
+            padding: 24px; text-align: center; margin-bottom: 36px;
         }
-        .step-heading h1 {
-            font-size: clamp(16px, 3vw, 20px);
-            font-weight: 700;
-            line-height: 1.3;
-            color: #FFFFFF;
-        }
+        .step-heading h1 { font-size: clamp(18px, 3.2vw, 24px); font-weight: 700; line-height: 1.3; color: #FFFFFF; }
         .step-heading h1 strong { color: #FFFFFF; }
 
         /* HERO */
-        .hero {
-            text-align: center;
-            padding: 60px 0 40px;
-            border-bottom: 1px solid rgba(0,0,0,0.08);
-        }
-        .hero h1 {
-            font-size: clamp(24px, 5vw, 32px);
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-        .hero p {
-            font-size: clamp(14px, 2.5vw, 18px);
-            color: #555555;
-            max-width: 600px;
-            margin: 0 auto;
-        }
+        .hero { text-align: center; padding: 132px 0 52px; border-bottom: 1px solid rgba(0,0,0,0.08); }
+        .hero h1 { font-size: clamp(32px, 6vw, 48px); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 16px; }
+        .hero p { font-size: clamp(16px, 2.8vw, 21px); color: #555555; max-width: 600px; margin: 0 auto; }
 
         /* VIDEO */
-        .video-wrap {
-            position: relative;
-            width: 100%;
-            background: #F7F7F7;
-            overflow: hidden;
-        }
-        .video-wrap iframe {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            border: 0;
-        }
-
-        /* WISTIA OVERRIDES */
-        wistia-player:not(:defined) {
-            display: block;
-            filter: blur(5px);
-            padding-top: 56.25%;
-        }
+        .video-wrap { position: relative; width: 100%; background: #F7F7F7; overflow: hidden; border-radius: 10px; }
+        .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        wistia-player:not(:defined) { display: block; filter: blur(5px); padding-top: 56.25%; }
 
         /* BULLET LIST */
-        .prep-list {
-            padding: 0 20px 30px;
-            list-style: disc;
-            margin-left: 20px;
-        }
-        .prep-list li {
-            font-size: 14px;
-            color: #555555;
-            padding: 4px 0;
-            line-height: 1.6;
-        }
+        .prep-list { padding: 0 20px 8px; list-style: disc; margin-left: 22px; }
+        .prep-list li { font-size: 16px; color: #555555; padding: 6px 0; line-height: 1.6; }
         .prep-list li strong { color: #111111; font-weight: 700; }
 
         /* PHONE CTA */
-        .phone-cta {
-            text-align: center;
-            padding: 36px 0;
-            border-bottom: 1px solid rgba(0,0,0,0.08);
-        }
-        .phone-cta p {
-            font-size: clamp(18px, 4vw, 26px);
-            font-weight: 600;
-            color: #111111;
-        }
-        .phone-cta a {
-            color: #111111;
-            text-decoration: none;
-        }
+        .phone-cta { text-align: center; padding: 44px 0; border-bottom: 1px solid rgba(0,0,0,0.08); }
+        .phone-cta p { font-size: clamp(20px, 4vw, 30px); font-weight: 600; color: #111111; }
+        .phone-cta a { color: #111111; }
 
         /* FAQ ROW */
-        .faq-row {
-            display: flex;
-            align-items: center;
-            padding: 20px 0;
-            border-bottom: 1px solid rgba(0,0,0,0.03);
-        }
+        .faq-row { display: flex; align-items: center; padding: 26px 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
         .faq-row:last-child { border-bottom: none; }
-        .faq-row .faq-title {
-            flex: 1;
-            padding: 0 20px;
-        }
-        .faq-row .faq-title h3 {
-            font-size: clamp(13px, 2.2vw, 16px);
-            font-weight: 600;
-            line-height: 1.4;
-            text-align: center;
-        }
-        .faq-row .faq-video {
-            flex: 1;
-            padding: 0 10px;
-        }
+        .faq-row .faq-title { flex: 1; padding: 0 24px; }
+        .faq-row .faq-title h3 { font-size: clamp(15px, 2.4vw, 19px); font-weight: 600; line-height: 1.4; text-align: center; }
+        .faq-row .faq-video { flex: 1; padding: 0 10px; }
 
-        /* FOOTER */
-        .footer {
-            padding: 30px 0;
-            text-align: center;
-            font-size: 12px;
-            color: #999999;
+        /* FOOTER — same design as the call funnel (dark, centered, white logo) */
+        footer {
+            background: #111111; padding: 32px 0; border-top: 2px solid rgba(255,255,255,0.1);
         }
+        footer .container { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; text-align: center; }
+        .foot-copy { font-size: 0.72rem; color: rgba(255,255,255,0.4); }
 
         /* TABLET */
         @media (max-width: 768px) {
             .faq-row { flex-direction: column; }
-            .faq-row .faq-title { margin-bottom: 12px; padding: 0; }
+            .faq-row .faq-title { margin-bottom: 14px; padding: 0; }
             .faq-row .faq-video { padding: 0; width: 100%; }
         }
 
         /* MOBILE */
         @media (max-width: 600px) {
-            .container { padding: 0 16px; }
-            .hero { padding: 48px 0 32px; }
-            .hero h1 { font-size: 22px; }
-            .hero p { font-size: 14px; }
-            .section { padding: 32px 0; }
-            .step-heading { padding: 16px; }
-            .step-heading h1 { font-size: 16px; }
-            .phone-cta { padding: 28px 0; }
-            .phone-cta p { font-size: 18px; }
-            .faq-row { padding: 16px 0; }
-            .faq-row .faq-title h3 { font-size: 15px; }
-            .prep-list { padding: 0 10px 20px; margin-left: 16px; }
-            .prep-list li { font-size: 13px; }
+            .container { padding: 0 18px; }
+            .hero { padding: 104px 0 40px; }
+            .hero h1 { font-size: 28px; }
+            .hero p { font-size: 15px; }
+            .section { padding: 40px 0; }
+            .step-heading { padding: 18px; }
+            .step-heading h1 { font-size: 17px; }
+            .phone-cta { padding: 32px 0; }
+            .phone-cta p { font-size: 20px; }
+            .faq-row { padding: 18px 0; }
+            .faq-row .faq-title h3 { font-size: 16px; }
+            .prep-list { padding: 0 10px 4px; margin-left: 18px; }
+            .prep-list li { font-size: 14px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- NAV -->
-    <nav class="nav">
+    <!-- NAV (same as call funnel) -->
+    <nav id="nav">
         <div class="container">
-            <a href="/"><img src="../../logo.png" alt="JustScale"></a>
-            <span class="nav-label">Confirmed</span>
+            <a href="/" class="logo"><img src="../../logo.png" alt="JustScale" class="logo-img"></a>
         </div>
     </nav>
 
@@ -299,12 +230,20 @@
         </div>
     </div>
 
-    <!-- FOOTER -->
-    <footer class="footer">
+    <!-- FOOTER (same as call funnel) -->
+    <footer>
         <div class="container">
-            <p>&copy; 2026 JustScale. All rights reserved.</p>
+            <a href="/" class="logo"><img src="../../logo-white.png" alt="JustScale" class="logo-img"></a>
+            <span class="foot-copy">&copy; 2026 JustScale. All rights reserved.</span>
         </div>
     </footer>
 
+    <script>
+        // Nav blur on scroll — same behavior as the call funnel
+        var nav = document.getElementById('nav');
+        window.addEventListener('scroll', function () {
+            nav.classList.toggle('scrolled', window.scrollY > 20);
+        });
+    </script>
 </body>
 </html>
