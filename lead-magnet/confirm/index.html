@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You're In | JustScale</title>
+    <meta name="description" content="Check your inbox for the guide. You can also download it below.">
+    <link rel="icon" type="image/png" href="../../logo.png">
+    <link rel="apple-touch-icon" href="../../logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --border: rgba(0,0,0,0.16); }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #FFFFFF;
+            color: #111111;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            display: flex; flex-direction: column; min-height: 100vh;
+        }
+        a { color: #111111; text-decoration: none; }
+        .container { max-width: 640px; margin: 0 auto; padding: 0 24px; }
+
+        /* NAV — fixed, centered logo, blur on scroll */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            padding: 18px 0;
+            transition: background 0.4s, border 0.4s, backdrop-filter 0.4s;
+        }
+        nav.scrolled {
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-bottom: 2px solid var(--border);
+        }
+        nav .container { display: flex; align-items: center; justify-content: center; }
+        .logo-img { height: 44px; width: auto; }
+
+        /* HERO */
+        .hero { flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; padding: 128px 0 64px; }
+        .check {
+            width: 64px; height: 64px; margin: 0 auto 24px;
+            border-radius: 50%; background: #111111;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .check svg { width: 30px; height: 30px; stroke: #FFFFFF; stroke-width: 3; fill: none; }
+        .hero h1 { font-size: clamp(28px, 6vw, 44px); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 16px; }
+        .hero p { font-size: clamp(16px, 2.8vw, 19px); color: #555555; max-width: 480px; margin: 0 auto 14px; }
+        .hero p strong { color: #111111; font-weight: 600; }
+
+        /* DOWNLOAD BUTTON */
+        .btn {
+            display: inline-block; margin-top: 22px;
+            background: #111111; color: #FFFFFF;
+            font-size: 16px; font-weight: 600;
+            padding: 16px 38px; border-radius: 10px;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+        .btn:hover { transform: translateY(-2px); opacity: 0.9; }
+        .btn-note { display: block; margin-top: 12px; font-size: 13px; color: #999999; }
+
+        /* FOOTER — dark, centered, white logo */
+        footer { background: #111111; padding: 32px 0; border-top: 2px solid rgba(255,255,255,0.1); }
+        footer .container { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; text-align: center; }
+        .foot-copy { font-size: 0.72rem; color: rgba(255,255,255,0.4); }
+
+        @media (max-width: 600px) {
+            .container { padding: 0 18px; }
+            .hero { padding: 108px 0 48px; }
+            .hero h1 { font-size: 26px; }
+            .hero p { font-size: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav id="nav">
+        <div class="container">
+            <a href="/" class="logo"><img src="../../logo.png" alt="JustScale" class="logo-img"></a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+        <div class="container">
+            <div class="check">
+                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <h1>You're in. Check your inbox.</h1>
+            <p>The guide is on its way to your email right now. <strong>If you don't see it in a few minutes, check your spam or promotions folder</strong> and mark it as not spam so you get everything we send.</p>
+            <a class="btn" href="../launch-paid-ads-from-zero.pdf" target="_blank" rel="noopener">Download the guide now</a>
+            <span class="btn-note">Can't wait for the email? Grab it here.</span>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <a href="/" class="logo"><img src="../../logo-white.png" alt="JustScale" class="logo-img"></a>
+            <span class="foot-copy">&copy; 2026 JustScale. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <script>
+        var nav = document.getElementById('nav');
+        window.addEventListener('scroll', function () {
+            nav.classList.toggle('scrolled', window.scrollY > 20);
+        });
+    </script>
+</body>
+</html>

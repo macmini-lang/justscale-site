@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Launch Paid Ads From Zero | JustScale</title>
+    <meta name="description" content="The free step-by-step checklist for going from $0 to profitable on paid ads. Enter your email and we'll send it over.">
+    <link rel="canonical" href="https://justscale.co/lead-magnet/">
+
+    <!-- Social share card -->
+    <meta property="og:title" content="The free checklist for launching paid ads from zero.">
+    <meta property="og:description" content="Step by step, from $0 to profitable. Enter your email and we'll send it over.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://justscale.co/lead-magnet/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The free checklist for launching paid ads from zero.">
+    <meta name="twitter:description" content="Step by step, from $0 to profitable. Enter your email and we'll send it over.">
+
+    <link rel="icon" type="image/png" href="../logo.png">
+    <link rel="apple-touch-icon" href="../logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Brand engine: dot grid, aurora, real headline font, scroll animations -->
+    <link rel="stylesheet" href="../shared.css?v=20260407k">
+
+    <style>
+        /* Center the nav logo */
+        #nav .container { justify-content: center; }
+
+        /* Center the footer logo (shared.css defaults to space-between) */
+        footer .container { flex-direction: column; justify-content: center; align-items: center; gap: 14px; text-align: center; }
+
+        /* Opt-in hero */
+        .optin {
+            position: relative; z-index: 2;
+            min-height: calc(100vh - 80px);
+            display: flex; align-items: center; justify-content: center;
+            padding: 120px 28px 56px;
+        }
+        /* Desktop: cover spans the left column; headline (top) + form (bottom) sit right.
+           Mobile: single column flows in source order — headline, cover, form. */
+        .optin-grid {
+            width: 100%; max-width: 1080px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            column-gap: clamp(32px, 5vw, 72px);
+            row-gap: 18px;
+            align-items: center;
+        }
+        .optin-h1 { grid-column: 2; grid-row: 1; align-self: end; }
+        .lm-cover { grid-column: 1; grid-row: 1 / span 2; }
+        .optin-form { grid-column: 2; grid-row: 2; align-self: start; }
+
+        /* Headline */
+        .optin-h1 {
+            font-size: clamp(1.9rem, 3.4vw, 2.6rem); line-height: 1.14;
+            letter-spacing: -0.02em; text-wrap: balance;
+        }
+
+        /* Cover */
+        .lm-cover { display: flex; justify-content: center; }
+        .lm-cover img {
+            width: 100%; max-width: 420px; height: auto;
+            border-radius: var(--r);
+            box-shadow: 0 30px 70px rgba(0,0,0,0.18), 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        /* Sub + form */
+        .optin-form .sub {
+            font-size: clamp(1rem, 1.6vw, 1.15rem); color: var(--text-s);
+            margin-bottom: 24px; max-width: 460px;
+        }
+        .form-frame {
+            border: 2px solid var(--border); border-radius: var(--r);
+            background: var(--bg-s); overflow: hidden;
+        }
+        .form-frame iframe { display: block; width: 100%; border: none; }
+
+        /* TABLET / MOBILE: stack headline -> cover -> form */
+        @media (max-width: 860px) {
+            .optin { padding: 104px 24px 44px; min-height: auto; }
+            .optin-grid { grid-template-columns: 1fr; row-gap: 22px; max-width: 480px; text-align: center; }
+            .optin-h1, .lm-cover, .optin-form { grid-column: 1; grid-row: auto; }
+            .optin-form .sub { margin-left: auto; margin-right: auto; }
+            .lm-cover img { max-width: 240px; }
+        }
+    </style>
+</head>
+<body>
+<div class="bg-dynamic">
+    <div class="bg-dot-grid"></div>
+    <div class="bg-aurora"></div>
+    <div class="bg-blob bg-blob--1"></div>
+    <div class="bg-blob bg-blob--2"></div>
+    <div class="bg-blob bg-blob--3"></div>
+</div>
+
+<div class="page" id="page">
+
+    <!-- NAV (logo only — distraction-free) -->
+    <nav id="nav">
+        <div class="container">
+            <a href="/" class="logo">
+                <img src="../logo.png" alt="JustScale" class="logo-img">
+            </a>
+        </div>
+    </nav>
+
+    <!-- OPT-IN -->
+    <section class="optin">
+        <div class="optin-grid">
+
+            <!-- Headline: top-right on desktop, top on mobile -->
+            <h1 class="optin-h1">Grab the step-by-step checklist for launching paid ads from zero.</h1>
+
+            <!-- Cover: left on desktop, under the headline on mobile -->
+            <div class="lm-cover">
+                <img src="cover.png" alt="How to Launch Paid Ads From Zero">
+            </div>
+
+            <!-- Sub + form: bottom-right on desktop, bottom on mobile -->
+            <div class="optin-form">
+                <p class="sub">The exact steps to go from $0 to profitable on paid, without torching your budget figuring it out. Drop your email below.</p>
+
+                <div class="form-frame">
+                    <iframe
+                        src="https://api.leadconnectorhq.com/widget/form/wiUz7yaft8qTHoWJSgfu"
+                        style="width:100%;height:491px;border:none;border-radius:3px"
+                        id="inline-wiUz7yaft8qTHoWJSgfu"
+                        data-layout="{'id':'INLINE'}"
+                        data-trigger-type="alwaysShow"
+                        data-trigger-value=""
+                        data-activation-type="alwaysActivated"
+                        data-activation-value=""
+                        data-deactivation-type="neverDeactivate"
+                        data-deactivation-value=""
+                        data-form-name="FB ADS 0-1 - LEAD MAGNET"
+                        data-height="491"
+                        data-layout-iframe-id="inline-wiUz7yaft8qTHoWJSgfu"
+                        data-form-id="wiUz7yaft8qTHoWJSgfu"
+                        title="FB ADS 0-1 - LEAD MAGNET">
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <a href="/" class="logo">
+                <img src="../logo-white.png" alt="JustScale" class="logo-img">
+            </a>
+            <span class="foot-copy">&copy; 2026 JustScale. All rights reserved.</span>
+        </div>
+    </footer>
+
+</div>
+
+<script src="https://link.msgsndr.com/js/form_embed.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="../shared.js?v=20260407b"></script>
+</body>
+</html>
