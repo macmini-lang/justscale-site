@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You're In | JustScale</title>
+    <meta name="description" content="You're on the list. Watch your inbox for the first email.">
+    <link rel="icon" type="image/png" href="../../logo.png">
+    <link rel="apple-touch-icon" href="../../logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --border: rgba(0,0,0,0.16); }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #FFFFFF;
+            color: #111111;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            display: flex; flex-direction: column; min-height: 100vh;
+        }
+        a { color: #111111; text-decoration: none; }
+        .container { max-width: 640px; margin: 0 auto; padding: 0 24px; }
+
+        /* NAV — fixed, centered logo, blur on scroll */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            padding: 18px 0;
+            transition: background 0.4s, border 0.4s, backdrop-filter 0.4s;
+        }
+        nav.scrolled {
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-bottom: 2px solid var(--border);
+        }
+        nav .container { display: flex; align-items: center; justify-content: center; }
+        .logo-img { height: 44px; width: auto; }
+
+        /* HERO */
+        .hero { flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; padding: 128px 0 64px; }
+        .check {
+            width: 64px; height: 64px; margin: 0 auto 24px;
+            border-radius: 50%; background: #111111;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .check svg { width: 30px; height: 30px; stroke: #FFFFFF; stroke-width: 3; fill: none; }
+        .hero h1 { font-size: clamp(28px, 5vw, 40px); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 16px; white-space: nowrap; }
+        .hero p { font-size: clamp(16px, 2.8vw, 19px); color: #555555; max-width: 520px; margin: 0 auto 14px; }
+        .hero p strong { color: #111111; font-weight: 600; }
+
+        /* VIDEO — responsive 16:9 */
+        .video-wrap {
+            max-width: 640px; margin: 28px auto 0;
+            border-radius: 14px; overflow: hidden;
+            box-shadow: 0 30px 70px rgba(0,0,0,0.18), 0 8px 20px rgba(0,0,0,0.08);
+        }
+        .video-ratio { position: relative; width: 100%; padding-top: 56.25%; background: #000; }
+        .video-ratio iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+
+        /* FOOTER — dark, centered, white logo */
+        footer { background: #111111; padding: 32px 0; border-top: 2px solid rgba(255,255,255,0.1); }
+        footer .container { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; text-align: center; }
+        .foot-copy { font-size: 0.72rem; color: rgba(255,255,255,0.4); }
+
+        @media (max-width: 600px) {
+            .container { padding: 0 18px; }
+            .hero { padding: 108px 0 48px; }
+            .hero h1 { font-size: 23px; white-space: normal; }
+            .hero p { font-size: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav id="nav">
+        <div class="container">
+            <a href="/" class="logo"><img src="../../logo.png" alt="JustScale" class="logo-img"></a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+        <div class="container">
+            <div class="check">
+                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <h1>Awesome, you're subscribed.</h1>
+            <p>There should be an email in your inbox right now. Watch the quick video below, then follow the steps so you keep getting everything I send.</p>
+
+            <!-- ============================================================
+                 VIDEO: paste your embed URL in the iframe src below.
+                 Loom:    https://www.loom.com/embed/VIDEO_ID
+                 YouTube: https://www.youtube.com/embed/VIDEO_ID
+                 Wistia/Vimeo embed URLs work the same way.
+                 ============================================================ -->
+            <div class="video-wrap">
+                <div class="video-ratio">
+                    <iframe
+                        src="REPLACE_VIDEO_EMBED_URL"
+                        title="How to make sure you get every email"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <a href="/" class="logo"><img src="../../logo-white.png" alt="JustScale" class="logo-img"></a>
+            <span class="foot-copy">&copy; 2026 JustScale. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <script>
+        var nav = document.getElementById('nav');
+        window.addEventListener('scroll', function () {
+            nav.classList.toggle('scrolled', window.scrollY > 20);
+        });
+    </script>
+</body>
+</html>
