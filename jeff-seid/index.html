@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jeff Seid - Launch Sequence</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ========== JUSTSCALE TOKENS ========== */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#FFFFFF; --bg-s:#F7F7F7; --card:#FFFFFF; --card-hover:#FAFAFA;
+  --text:#111111; --text-s:#555555; --text-m:#999999;
+  --border:rgba(0,0,0,0.16); --border-l:rgba(0,0,0,0.24);
+  --r:14px; --ease:cubic-bezier(0.16,1,0.3,1);
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+}
+html{font-size:16px;scroll-behavior:smooth;overflow-x:clip;width:100%}
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  background:var(--bg);color:var(--text);line-height:1.6;overflow-x:clip;width:100%;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+}
+.bg-dynamic{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.bg-dot-grid{
+  position:absolute;inset:0;
+  background-image:radial-gradient(circle,rgba(0,0,0,0.12) 1.2px,transparent 1.2px);
+  background-size:32px 32px;
+}
+.container{max-width:1140px;margin:0 auto;padding:0 28px;position:relative;z-index:1}
+.section{padding:90px 0;position:relative}
+.section--alt{background:linear-gradient(180deg,var(--bg) 0%,var(--bg-s) 15%,var(--bg-s) 85%,var(--bg) 100%)}
+.section-label{font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text);margin-bottom:20px}
+.section-title{font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:700;letter-spacing:-.03em;line-height:1.15;margin-bottom:16px}
+.section-sub{font-size:1rem;color:var(--text-s);line-height:1.75;max-width:600px}
+
+/* ========== HERO ========== */
+.hero{padding:96px 0 0;position:relative}
+.hero .eyebrow{font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--text-m);margin-bottom:22px}
+.hero h1{font-size:clamp(2.4rem,5.2vw,3.8rem);font-weight:700;letter-spacing:-.035em;line-height:1.15}
+.hero p.lede{font-size:1.05rem;color:var(--text-s);line-height:1.75;max-width:620px;margin-top:20px}
+.pins{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:38px}
+.pin{background:var(--card);border:2px solid var(--border);border-radius:var(--r);padding:20px 22px}
+.pin b{display:block;font-size:.66rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--text-m);margin-bottom:8px}
+.pin span{font-size:1.28rem;font-weight:700;letter-spacing:-.025em}
+
+/* ========== SIX STEPS ========== */
+.stages{display:flex;align-items:stretch;gap:0;overflow-x:auto;padding:4px 0 12px}
+.stage{
+  flex:1 1 0;min-width:150px;background:var(--card);border:2px solid var(--border);
+  border-radius:var(--r);padding:24px 20px 20px;display:flex;flex-direction:column;gap:7px;
+  transition:border-color .3s var(--ease),box-shadow .3s var(--ease);
+}
+.stage:hover{border-color:var(--border-l);box-shadow:0 0 30px rgba(0,0,0,.06)}
+.stage .cnt{font-size:.66rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--text-m)}
+.stage b{font-size:1.25rem;font-weight:600;letter-spacing:-.02em;line-height:1.15}
+.stage time{font-size:.74rem;font-weight:500;color:var(--text-m);letter-spacing:.01em}
+.stage p{margin-top:6px;font-size:.86rem;line-height:1.55;color:var(--text-s);flex:1}
+.stage em{font-family:var(--mono);font-style:normal;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-m);border-top:1px solid var(--border);padding-top:11px;margin-top:8px}
+.arw{flex:0 0 22px;align-self:center;height:2px;background:var(--text);position:relative;opacity:.5}
+.arw::after{content:"";position:absolute;right:0;top:50%;width:7px;height:7px;border-top:2px solid var(--text);border-right:2px solid var(--text);transform:translateY(-50%) rotate(45deg)}
+.stage.w6{background:#111;border-color:#111;color:#fff}
+.stage.w6 p{color:rgba(255,255,255,.7)}
+.stage.w6 time,.stage.w6 .cnt,.stage.w6 em{color:rgba(255,255,255,.5);border-color:rgba(255,255,255,.18)}
+.stage.w5{background:var(--bg-s)}
+
+/* ========== SHARED CHART GRID ==========
+   Column rules, weekend banding and the webinar rule are painted as background
+   layers so every row lines up into one continuous grid. */
+.chart{--line:rgba(0,0,0,.13);--band:rgba(0,0,0,.05);--mark:rgba(0,0,0,.11)}
+.track{
+  background-image:
+    linear-gradient(90deg,transparent calc(var(--w) * 100% / var(--c)),var(--text) calc(var(--w) * 100% / var(--c)),var(--text) calc(var(--w) * 100% / var(--c) + 2px),transparent calc(var(--w) * 100% / var(--c) + 2px)),
+    repeating-linear-gradient(90deg,transparent 0,transparent calc(var(--wk) * 100% / var(--c)),var(--band) calc(var(--wk) * 100% / var(--c)),var(--band) calc((var(--wk) + 2) * 100% / var(--c)),transparent calc((var(--wk) + 2) * 100% / var(--c)),transparent calc(7 * 100% / var(--c))),
+    repeating-linear-gradient(90deg,var(--line) 0,var(--line) 1px,transparent 1px,transparent calc(100% / var(--c)));
+  border-right:1px solid var(--line);
+}
+
+/* ========== CHANNEL GRID ========== */
+.gscroll{overflow-x:auto;padding-bottom:8px}
+.gtable{min-width:880px;--c:36;--w:23;--wk:1}
+.ghead,.gdow,.grow{display:grid;grid-template-columns:158px 1fr;gap:14px;align-items:center}
+.ghead .cells,.gdow .cells,.grow .cells{display:grid;grid-template-columns:repeat(36,1fr)}
+.gdow i,.ghead i{font-family:var(--mono);font-size:.55rem;font-style:normal;color:var(--text-m);text-align:center;line-height:1}
+.gdow i{font-size:.5rem;letter-spacing:0;padding-bottom:2px;opacity:.65}
+.ghead i{padding-bottom:6px}
+.ghead i.mo{color:var(--text);font-weight:700}
+.grow{padding:0}
+.grow>span{font-size:.76rem;font-weight:500;color:var(--text);text-align:right;padding:4px 0}
+.grow .cells{border-top:1px solid rgba(0,0,0,.07)}
+.grow:last-child .cells{border-bottom:1px solid rgba(0,0,0,.07)}
+.grow i{display:block;height:16px;margin:3px 0}
+.grow i.on{background:var(--text);box-shadow:inset -1px 0 0 rgba(255,255,255,.3)}
+.grow i.on+i.on{border-left:0}
+.gkey{display:flex;flex-wrap:wrap;gap:22px;margin-top:20px;font-size:.72rem;color:var(--text-m)}
+.gkey s{display:inline-block;width:14px;height:11px;background:var(--text);margin-right:8px;vertical-align:-1px;border-radius:3px}
+.gkey s.off{background:rgba(0,0,0,.06)}
+.gkey s.rule{width:2px;background:var(--text)}
+
+/* ========== FLOW ========== */
+.flow{position:relative}
+.flow::before{content:"";position:absolute;left:19px;top:8px;bottom:0;width:2px;background:var(--border)}
+.phase{position:relative;padding:0 0 40px 62px}
+.phead{position:relative;padding-bottom:20px}
+.pnum{
+  position:absolute;left:-62px;top:-4px;width:40px;height:40px;border-radius:50%;
+  display:grid;place-items:center;font-size:.8rem;font-weight:700;
+  background:var(--bg);border:2px solid var(--border);color:var(--text);z-index:2;
+}
+.phase h2{font-size:clamp(1.5rem,2.6vw,2rem);letter-spacing:-.03em;font-weight:700;line-height:1.1}
+.pdate{display:block;font-size:.74rem;font-weight:500;color:var(--text-m);margin-top:7px}
+.pgoal{margin-top:16px;max-width:74ch}
+.pgoal p{font-size:.94rem;line-height:1.7;color:var(--text-s)}
+.pgoal .rules{margin-top:8px;font-size:.86rem;color:var(--text-m)}
+.pgoal b{font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text);margin-right:9px}
+.nodes{display:flex;flex-direction:column;gap:10px}
+.node{
+  position:relative;background:var(--card);border:2px solid var(--border);
+  border-radius:var(--r);padding:20px 22px 18px;
+  transition:border-color .3s var(--ease),background .3s var(--ease);
+}
+.node:hover{border-color:var(--border-l);background:var(--card-hover)}
+.node::before{content:"";position:absolute;left:-43px;top:29px;width:31px;height:2px;background:var(--border)}
+.node::after{content:"";position:absolute;left:-49px;top:25px;width:10px;height:10px;background:var(--bg);border:2px solid var(--border-l);border-radius:50%}
+.node header{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+.node time{font-size:.82rem;font-weight:700;letter-spacing:-.01em}
+.gate{font-size:.6rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;background:var(--text);color:var(--bg);padding:4px 10px 3px;border-radius:6px}
+.node p{max-width:70ch;font-size:.9rem;line-height:1.6;color:var(--text-s)}
+.chips{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.chips li{font-size:.68rem;font-weight:500;padding:5px 11px;border:1.5px solid var(--border);border-radius:999px;color:var(--text-s);white-space:nowrap}
+.lv5 .node{background:#111;border-color:#111}
+.lv5 .node:hover{background:#181818}
+.lv5 .node time{color:#fff}
+.lv5 .node p{color:rgba(255,255,255,.7)}
+.lv5 .node::after{background:#111;border-color:#111}
+.lv5 .gate{background:#fff;color:#111}
+.lv5 .chips li{border-color:rgba(255,255,255,.24);color:rgba(255,255,255,.85)}
+.lv4 .node{background:var(--bg-s)}
+
+/* ========== GANTT ========== */
+.gscroll2{overflow-x:auto;padding-bottom:10px}
+.gwide{min-width:1000px;--c:37;--w:24;--wk:2}
+.gphase,.ghd,.gdw,.gtask{display:grid;grid-template-columns:230px 1fr;gap:14px;align-items:center}
+.gphase>.gtrack,.ghd>.cells,.gdw>.cells,.gtask>.gtrack{display:grid;grid-template-columns:repeat(37,1fr)}
+.gphase>.gtrack{gap:2px}
+.gphase{margin-bottom:9px}
+.gdw i{font-family:var(--mono);font-size:.5rem;font-style:normal;color:var(--text-m);text-align:center;line-height:1;padding-bottom:2px;opacity:.65}
+.gph{
+  font-size:.6rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-align:center;
+  padding:6px 2px 5px;background:var(--bg-s);border:1.5px solid var(--border);border-radius:6px;
+  overflow:hidden;white-space:nowrap;color:var(--text-s);
+}
+.gph.tight{background:var(--text);border-color:var(--text)}
+.ghd i{font-family:var(--mono);font-size:.55rem;font-style:normal;color:var(--text-m);text-align:center;line-height:1;padding-bottom:6px}
+.ghd i.mo{color:var(--text);font-weight:700}
+.gperson{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:30px 0 10px;padding-bottom:9px;border-bottom:2px solid var(--border)}
+.gperson b{font-size:1.1rem;font-weight:700;letter-spacing:-.02em}
+.gperson span{font-size:.72rem;font-weight:500;color:var(--text-m)}
+.gtask{padding:0}
+.gtask>span{font-size:.78rem;color:var(--text-s);text-align:right;line-height:1.35;padding:3px 0}
+.gtask>.gtrack{border-top:1px solid rgba(0,0,0,.07);padding:3px 0}
+.gtask:last-child>.gtrack{border-bottom:1px solid rgba(0,0,0,.07)}
+.gbar{height:17px;border-radius:3px;background-repeat:repeat-x}
+.gbar{background-image:repeating-linear-gradient(90deg,transparent 0,transparent calc(100% / var(--n) - 1px),rgba(255,255,255,.34) calc(100% / var(--n) - 1px),rgba(255,255,255,.34) calc(100% / var(--n)))}
+.gbar.gate,.gbar.work,.gbar.ambient{background:var(--text)}
+.gbar i{display:none}
+.gkey2{display:flex;flex-wrap:wrap;gap:24px;margin-top:26px;font-size:.72rem;color:var(--text-m)}
+.gkey2 s{display:inline-block;width:18px;height:11px;margin-right:8px;vertical-align:-1px;border-radius:4px}
+.gkey2 s.gate{background:var(--text)}
+.gkey2 s.rule{width:2px;background:var(--text)}
+
+
+.tail{padding:32px 0 90px;font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--text-m)}
+
+@media (max-width:720px){
+  .section{padding:60px 0}
+  .flow::before{left:13px}
+  .phase{padding-left:40px}
+  .pnum{left:-40px;width:28px;height:28px;font-size:.7rem}
+  .node::before{left:-27px;width:15px}
+  .node::after{left:-31px}
+}
+@media print{
+  .bg-dynamic{display:none}
+  body{font-size:10.5pt}
+  .phase,.node,.stage,.gtask{break-inside:avoid}
+  .section{padding:30px 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="bg-dynamic"><div class="bg-dot-grid"></div></div>
+
+<header class="hero">
+  <div class="container">
+    <h1>Jeff Seid - Launch Sequence</h1>
+    <div class="pins">
+      <div class="pin"><b>Runs</b><span>7 Aug to 11 Sep</span></div>
+      <div class="pin"><b>Registration opens</b><span>Fri 21 Aug</span></div>
+      <div class="pin"><b>Webinar</b><span>Sun 30 Aug</span></div>
+      <div class="pin"><b>Cart closes</b><span>Sun 6 Sep</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title" style="margin-bottom:38px">Basic outline of launch</h2>
+    <div class="stages"><div class="stage w1"><b>Preframe</b><time>Fri 7 to Sun 16 Aug</time><span class="cnt">10 days</span><p>Talk about money. No date, no product, no signal a launch exists.</p><em>Preframe</em></div><div class="arw" aria-hidden="true"></div><div class="stage w2"><b>Whisper</b><time>Mon 17 to Thu 20 Aug</time><span class="cnt">4 days</span><p>One date and nothing else. No links anywhere.</p><em>Whisper</em></div><div class="arw" aria-hidden="true"></div><div class="stage w3"><b>Tease</b><time>Fri 21 to Thu 27 Aug</time><span class="cnt">7 days</span><p>Name it, open registration, then a free asset to pull new people in.</p><em>Tease + Free Asset</em></div><div class="arw" aria-hidden="true"></div><div class="stage w5"><b>Shout</b><time>Fri 28 to Sat 29 Aug</time><span class="cnt">2 days</span><p>Countdown, peak volume, giveaway rule. Loudest two days.</p><em>Push</em></div><div class="arw" aria-hidden="true"></div><div class="stage w6"><b>Launch</b><time>Sun 30 Aug</time><span class="cnt">1 day</span><p>The room. Reminder ladder all day, live 45 to 60 minutes.</p><em>Webinar Day</em></div><div class="arw" aria-hidden="true"></div><div class="stage w3"><b>Sell</b><time>Mon 31 Aug to Sun 6 Sep</time><span class="cnt">7 days</span><p>Replay, calls, retargeting. Cart shuts Sunday.</p><em>Close</em></div></div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <h2 class="section-title" style="margin-bottom:38px">The front end mapped</h2>
+    <div class="gscroll"><div class="gtable chart">
+      <div class="gdow"><span></span><div class="cells track"><i class="dow">F</i><i class="dow we">S</i><i class="dow we">S</i><i class="dow">M</i><i class="dow">T</i><i class="dow">W</i><i class="dow">T</i><i class="dow">F</i><i class="dow we">S</i><i class="dow we">S</i><i class="dow">M</i><i class="dow">T</i><i class="dow">W</i><i class="dow">T</i><i class="dow">F</i><i class="dow we">S</i><i class="dow we">S</i><i class="dow">M</i><i class="dow">T</i><i class="dow">W</i><i class="dow">T</i><i class="dow">F</i><i class="dow we">S</i><i class="dow we">S</i><i class="dow">M</i><i class="dow">M</i><i class="dow">T</i><i class="dow">W</i><i class="dow">T</i><i class="dow">F</i><i class="dow we">S</i><i class="dow we">S</i><i class="dow">M</i><i class="dow">T</i><i class="dow">W</i><i class="dow">T</i></div></div>
+      <div class="ghead"><span></span><div class="cells"><i class="hd mo">7</i><i class="hd">8</i><i class="hd">9</i><i class="hd">10</i><i class="hd">11</i><i class="hd">12</i><i class="hd">13</i><i class="hd">14</i><i class="hd">15</i><i class="hd">16</i><i class="hd">17</i><i class="hd">18</i><i class="hd">19</i><i class="hd">20</i><i class="hd">21</i><i class="hd">22</i><i class="hd">23</i><i class="hd">24</i><i class="hd">25</i><i class="hd">26</i><i class="hd">27</i><i class="hd">28</i><i class="hd">29</i><i class="hd">30</i><i class="hd">31</i><i class="hd mo">1</i><i class="hd">2</i><i class="hd">3</i><i class="hd">4</i><i class="hd">5</i><i class="hd">6</i><i class="hd">7</i><i class="hd">8</i><i class="hd">9</i><i class="hd">10</i><i class="hd">11</i></div></div>
+      <div class="grow"><span>Stories</span><div class="cells"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div><div class="grow"><span>Reels</span><div class="cells"><i class="on"></i><i class=""></i><i class=""></i><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i><i class="on"></i><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div><div class="grow"><span>YouTube</span><div class="cells"><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div><div class="grow"><span>Replies to comments</span><div class="cells"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div><div class="grow"><span>DM conversations</span><div class="cells"><i class=""></i><i class=""></i><i class=""></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div><div class="grow"><span>Telegram</span><div class="cells"><i class=""></i><i class=""></i><i class=""></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div><div class="grow"><span>Email</span><div class="cells"><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div><div class="grow"><span>SMS</span><div class="cells"><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div><div class="grow"><span>Pages + forms</span><div class="cells"><i class=""></i><i class=""></i><i class=""></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class="on"></i><i class=""></i><i class=""></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div><div class="grow"><span>Video</span><div class="cells"><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="on"></i><i class=""></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div><div class="grow"><span>Retargeting</span><div class="cells"><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div><div class="grow"><span>Sales calls</span><div class="cells"><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div>
+    </div></div>
+    <p class="gkey"><span><s></s>Running</span><span><s class="off"></s>Off</span><span><s class="rule"></s>Webinar, Sun 30 Aug</span><span>7 Aug to 11 Sep</span></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title" style="margin-bottom:46px">Psychology and mechanics of the launch</h2>
+    <div class="flow"><section class="phase lv1"><div class="phead"><span class="pnum">1</span><div><h2>Preframe</h2><time class="pdate">Fri 7 to Sun 16 Aug</time></div><div class="pgoal"><p>Get the audience accustomed to Jeff openly talking about brand deals and making money with his audience. Establish credibility, frame as he's been getting a ton of questions on these topics from creators and want to be creators.</p><p class="rules"><b>Rules</b> No date, no product, nothing that hints a launch is coming. Two story frames a day minimum, and in week one the cadence matters more than what he actually says.</p></div></div><div class="nodes"><article class="node"><header><time>Fri 7 Aug</time></header><p>Start talking about money, and find out who we are actually talking to. Two polls to size the audience, plus the first proof reel.</p><ul class="chips"><li>Stories x2</li><li>Reel</li><li>Comments</li></ul></article><article class="node"><header><time>Sat 8 Aug</time></header><p>Make it obvious people are asking him this. He is not bringing it up to sell something.</p><ul class="chips"><li>Stories x2</li></ul></article><article class="node"><header><time>Sun 9 Aug</time></header><p>Show he started where they are. An early deal, and what he got wrong on it.</p><ul class="chips"><li>Stories x2</li></ul></article><article class="node"><header><time>Mon 10 Aug</time><b class="gate">Giveaway drops</b></header><p>Get contact details off the people paying attention. Release the first brand deal training on the keyword, and open the Telegram channel.</p><ul class="chips"><li>Stories x2</li><li>Reel</li><li>Opt-in form</li><li>Telegram opens</li></ul></article><article class="node"><header><time>Tue 11 Aug</time></header><p>Keep people claiming the training now the announcement is a day old.</p><ul class="chips"><li>Stories x2</li><li>DMs</li><li>Telegram</li></ul></article><article class="node"><header><time>Wed 12 Aug</time></header><p>Get them to see how badly they are being paid. Collect what brands are offering them, and react to it out loud.</p><ul class="chips"><li>Stories x2</li><li>Reel</li></ul></article><article class="node"><header><time>Thu 13 Aug</time></header><p>Reach the people who would actually buy but never open stories.</p><ul class="chips"><li>Stories x2</li><li>YouTube</li></ul></article><article class="node"><header><time>Fri 14 Aug</time></header><p>Kill the idea that followers are what gets you paid.</p><ul class="chips"><li>Stories x2</li><li>Reel</li></ul></article><article class="node"><header><time>Sat 15 Aug</time></header><p>Keep it looking like he is answering questions, not building up to something.</p><ul class="chips"><li>Stories x2</li></ul></article><article class="node"><header><time>Sun 16 Aug</time><b class="gate">Preframe ends</b></header><p>Put the strongest proof out the day before the date drops. What he charged then against what he charges now.</p><ul class="chips"><li>Stories x2</li><li>Reel</li></ul></article></div></section><section class="phase lv2"><div class="phead"><span class="pnum">2</span><div><h2>Whisper</h2><time class="pdate">Mon 17 to Thu 20 Aug</time></div><div class="pgoal"><p>Get one date locked in their head and nothing else. Make them want to know what it is without telling them.</p><p class="rules"><b>Rules</b> No product named, no links anywhere. Two frames a day, poll first then the message, 30 August in every single frame.</p></div></div><div class="nodes"><article class="node"><header><time>Mon 17 Aug</time><b class="gate">Whisper starts</b></header><p>Get 30 August in front of everyone, everywhere, on the same day.</p><ul class="chips"><li>Stories x2</li><li>Email</li><li>Telegram</li><li>Pages up, unlinked</li><li>VSL + thank you video</li></ul></article><article class="node"><header><time>Tue 18 Aug</time></header><p>Show he turns work down, which is what someone in demand does.</p><ul class="chips"><li>Stories x2</li><li>Reel</li><li>Email</li></ul></article><article class="node"><header><time>Wed 19 Aug</time></header><p>Make them want to know what it is. Hint at what he's covering without naming it.</p><ul class="chips"><li>Stories x2</li><li>Email</li></ul></article><article class="node"><header><time>Thu 20 Aug</time><b class="gate">Whisper ends</b></header><p>Last date drop before it gets a name.</p><ul class="chips"><li>Stories x2</li><li>Reel</li><li>YouTube</li><li>Email</li></ul></article></div></section><section class="phase lv3"><div class="phead"><span class="pnum">3</span><div><h2>Tease</h2><time class="pdate">Fri 21 to Mon 24 Aug</time></div><div class="pgoal"><p>Name it and open registration. Get as many of the right people signed up as possible before the free asset takes over.</p><p class="rules"><b>Rules</b> Registration is the only ask for four days. Three heavy frames spaced two days apart. Keyword first and link second.</p></div></div><div class="nodes"><article class="node"><header><time>Fri 21 Aug</time><b class="gate">Registration opens</b></header><p>Open registration and get as many people signed up on day one as possible. Name it, say how many seats, put the link everywhere.</p><ul class="chips"><li>Heavy frame</li><li>Story</li><li>Announcement reel</li><li>Pages live</li><li>Telegram</li><li>Email x2-4</li><li>DMs</li></ul></article><article class="node"><header><time>Sat 22 Aug</time></header><p>Keep registrations coming without pitching hard two days running. Post the count so far.</p><ul class="chips"><li>Stories x2</li><li>Email x2-4</li><li>DMs</li></ul></article><article class="node"><header><time>Sun 23 Aug</time><b class="gate">SMS opens</b></header><p>Get the wrong people to opt out on their own, so the room is people who could actually buy.</p><ul class="chips"><li>Heavy frame</li><li>Story</li><li>Reel</li><li>Email x2-4</li><li>SMS every 2 days</li></ul></article><article class="node"><header><time>Mon 24 Aug</time><b class="gate">Tease ends</b></header><p>Use seats left to make people decide now, before the free asset takes over the feed.</p><ul class="chips"><li>Heavy frame</li><li>Story</li><li>Email x2-4</li><li>Asset keyword live</li></ul></article></div></section><section class="phase lv3"><div class="phead"><span class="pnum">4</span><div><h2>Free Asset</h2><time class="pdate">Tue 25 to Thu 27 Aug</time></div><div class="pgoal"><p>Bring new people in. Three weeks in, the same audience has seen everything, so a real free asset pulls in people who have not been watching.</p><p class="rules"><b>Rules</b> Registration stays the ask underneath it. New registrants pick up the emails at the phase they joined, not back at the start.</p></div></div><div class="nodes"><article class="node"><header><time>Tue 25 Aug</time><b class="gate">Asset drops</b></header><p>Bring new people in. Release the pricing asset on the keyword and straight into the channel.</p><ul class="chips"><li>Stories x2</li><li>Reel</li><li>Email</li><li>Telegram</li><li>SMS daily</li></ul></article><article class="node"><header><time>Wed 26 Aug</time></header><p>Keep the asset in front of people who haven't claimed it.</p><ul class="chips"><li>Stories x2</li><li>Email</li><li>SMS</li></ul></article><article class="node"><header><time>Thu 27 Aug</time></header><p>Last day before it gets loud. Tell them what actually happens on the 30th.</p><ul class="chips"><li>Stories x2</li><li>Reel</li><li>YouTube</li><li>Email</li><li>SMS</li></ul></article></div></section><section class="phase lv4"><div class="phead"><span class="pnum">5</span><div><h2>Push</h2><time class="pdate">Fri 28 to Sat 29 Aug</time></div><div class="pgoal"><p>The loudest two days of the launch. Most people register in the last 48 hours, and anyone who signs up now still gets every reminder before the webinar.</p><p class="rules"><b>Rules</b> Volume goes up here, not down. No going quiet before the room.</p></div></div><div class="nodes"><article class="node"><header><time>Fri 28 Aug</time><b class="gate">Countdown starts</b></header><p>Start the countdown and give them a reason to stay to the end. The giveaway rule goes out.</p><ul class="chips"><li>Stories x3</li><li>Countdown reel</li><li>Email peak</li><li>Telegram</li><li>SMS daily</li><li>DMs</li><li>Pre-call video live</li></ul></article><article class="node"><header><time>Sat 29 Aug</time><b class="gate">24hr reminder</b></header><p>Get everything the last 24 hours will give. Anyone still not registered called out by name.</p><ul class="chips"><li>Stories x3</li><li>Last call reel</li><li>24hr reminder</li><li>Email peak</li><li>Telegram</li><li>SMS daily</li><li>DMs</li></ul></article></div></section><section class="phase lv5"><div class="phead"><span class="pnum">6</span><div><h2>Webinar Day</h2><time class="pdate">Sun 30 Aug</time></div><div class="pgoal"><p>Fill the room, hold them to the end, and book calls while they still believe it.</p></div></div><div class="nodes"><article class="node"><header><time>Sun 30 Aug</time><b class="gate">WEBINAR</b></header><p>Get them in, keep them in, and book them before the feeling wears off.</p><ul class="chips"><li>Reminder ladder x6</li><li>Telegram at every rung</li><li>Stories all day</li><li>Live today reel</li><li>Live 45-60 min</li><li>Sign-up demo</li><li>Giveaway drawn</li><li>Buyer welcome video</li><li>Follow up same night</li></ul></article></div></section><section class="phase lv3"><div class="phead"><span class="pnum">7</span><div><h2>Close</h2><time class="pdate">Mon 31 Aug to Sun 6 Sep</time></div><div class="pgoal"><p>Work the replay and the booked list for a full working week. That's what running on a Sunday buys.</p></div></div><div class="nodes"><article class="node"><header><time>Mon 31 Aug</time><b class="gate">Replay live</b></header><p>Catch everyone who missed it and get the calls moving.</p><ul class="chips"><li>Replay public</li><li>Telegram</li><li>No-show sequence</li><li>No-show recap video</li><li>Retargeting</li><li>Calls from 9am</li></ul></article><article class="node"><header><time>Tue 1 to Sat 5 Sep</time></header><p>Work every list daily until the cart shuts. Nothing new gets built, everything already running gets run.</p><ul class="chips"><li>Replay sequence</li><li>Retargeting</li><li>Calls daily</li><li>Email daily</li></ul></article><article class="node"><header><time>Sun 6 Sep</time><b class="gate">CART CLOSES</b></header><p>Last call. Take everything the deadline will give.</p><ul class="chips"><li>Final emails</li><li>Telegram last call</li><li>Offer closes</li></ul></article></div></section><section class="phase lv1"><div class="phead"><span class="pnum">8</span><div><h2>After</h2><time class="pdate">Wed 9 and Fri 11 Sep</time></div><div class="pgoal"><p>Deliver what was sold, before anyone posts.</p></div></div><div class="nodes"><article class="node"><header><time>Wed 9 Sep</time></header><p>Every buyer onboarded, inside 72 hours of buying.</p><ul class="chips"><li>Onboarding</li></ul></article><article class="node"><header><time>Fri 11 Sep</time></header><p>Partnerships assigned, and tracking live before anyone posts.</p><ul class="chips"><li>Partnerships</li></ul></article></div></section></div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <h2 class="section-title" style="margin-bottom:44px">Project timelines: who is building what and when</h2>
+    <div class="gscroll2"><div class="gwide chart">
+      <div class="gphase"><span></span><div class="gtrack"><span class="gph" title="Preframe" style="grid-column:2/12">Preframe</span><span class="gph" title="Whisper" style="grid-column:12/16">Whisper</span><span class="gph" title="Tease" style="grid-column:16/23">Tease</span><span class="gph tight" title="Shout" style="grid-column:23/25"></span><span class="gph tight" title="Launch" style="grid-column:25/26"></span><span class="gph" title="Sell" style="grid-column:26/33">Sell</span></div></div>
+      <div class="gdw"><span></span><div class="cells track"><i class="dow">T</i><i class="dow">F</i><i class="dow">S</i><i class="dow">S</i><i class="dow">M</i><i class="dow">T</i><i class="dow">W</i><i class="dow">T</i><i class="dow">F</i><i class="dow">S</i><i class="dow">S</i><i class="dow">M</i><i class="dow">T</i><i class="dow">W</i><i class="dow">T</i><i class="dow">F</i><i class="dow">S</i><i class="dow">S</i><i class="dow">M</i><i class="dow">T</i><i class="dow">W</i><i class="dow">T</i><i class="dow">F</i><i class="dow">S</i><i class="dow">S</i><i class="dow">M</i><i class="dow">T</i><i class="dow">W</i><i class="dow">T</i><i class="dow">F</i><i class="dow">S</i><i class="dow">S</i><i class="dow">M</i><i class="dow">T</i><i class="dow">W</i><i class="dow">T</i><i class="dow">F</i></div></div>
+      <div class="ghd"><span></span><div class="cells"><i class="hd mo">6</i><i class="hd">7</i><i class="hd">8</i><i class="hd">9</i><i class="hd">10</i><i class="hd">11</i><i class="hd">12</i><i class="hd">13</i><i class="hd">14</i><i class="hd">15</i><i class="hd">16</i><i class="hd">17</i><i class="hd">18</i><i class="hd">19</i><i class="hd">20</i><i class="hd">21</i><i class="hd">22</i><i class="hd">23</i><i class="hd">24</i><i class="hd">25</i><i class="hd">26</i><i class="hd">27</i><i class="hd">28</i><i class="hd">29</i><i class="hd">30</i><i class="hd">31</i><i class="hd mo">1</i><i class="hd">2</i><i class="hd">3</i><i class="hd">4</i><i class="hd">5</i><i class="hd">6</i><i class="hd">7</i><i class="hd">8</i><i class="hd">9</i><i class="hd">10</i><i class="hd">11</i></div></div>
+      <div class="gperson"><b>Jeff, what he ships</b><span>Everything that reaches the audience or the product</span></div><div class="gtask"><span>Posts daily, every single day</span><div class="gtrack track"><div class="gbar ambient" style="grid-column:2/26;--n:24"><i>Posts daily, every single day</i></div></div></div><div class="gtask"><span>Films curriculum modules</span><div class="gtrack track"><div class="gbar gate" style="grid-column:1/23;--n:22"><i>Films curriculum modules</i></div></div></div><div class="gtask"><span>Records giveaway</span><div class="gtrack track"><div class="gbar work" style="grid-column:4/5;--n:1"><i>Records giveaway</i></div></div></div><div class="gtask"><span>Records free asset</span><div class="gtrack track"><div class="gbar work" style="grid-column:16/17;--n:1"><i>Records free asset</i></div></div></div><div class="gtask"><span>Webinar</span><div class="gtrack track"><div class="gbar gate" style="grid-column:25/26;--n:1"><i>Webinar</i></div></div></div><div class="gperson"><b>Jeff, rehearsals</b><span>Practice nobody ever sees. He has never done a live, so six sessions, not one</span></div><div class="gtask"><span>1. Camera and delivery, no deck</span><div class="gtrack track"><div class="gbar work" style="grid-column:8/9;--n:1"><i>1. Camera and delivery, no deck</i></div></div></div><div class="gtask"><span>2. First full run-through</span><div class="gtrack track"><div class="gbar work" style="grid-column:15/16;--n:1"><i>2. First full run-through</i></div></div></div><div class="gtask"><span>3. Second run, with the deck</span><div class="gtrack track"><div class="gbar work" style="grid-column:18/19;--n:1"><i>3. Second run, with the deck</i></div></div></div><div class="gtask"><span>4. Timed run, hook and close</span><div class="gtrack track"><div class="gbar work" style="grid-column:21/22;--n:1"><i>4. Timed run, hook and close</i></div></div></div><div class="gtask"><span>5. Objection and Q&amp;A drill</span><div class="gtrack track"><div class="gbar work" style="grid-column:22/23;--n:1"><i>5. Objection and Q&amp;A drill</i></div></div></div><div class="gtask"><span>6. Dress rehearsal, every asset live</span><div class="gtrack track"><div class="gbar gate" style="grid-column:24/25;--n:1"><i>6. Dress rehearsal, every asset live</i></div></div></div><div class="gperson"><b>Sebastian</b><span>Product and fulfilment</span></div><div class="gtask"><span>Builds curriculum with Jeff</span><div class="gtrack track"><div class="gbar work" style="grid-column:1/23;--n:22"><i>Builds curriculum with Jeff</i></div></div></div><div class="gtask"><span>Verifies tracking, brand by brand</span><div class="gtrack track"><div class="gbar gate" style="grid-column:1/14;--n:13"><i>Verifies tracking, brand by brand</i></div></div></div><div class="gtask"><span>Skool and community access live</span><div class="gtrack track"><div class="gbar work" style="grid-column:13/16;--n:3"><i>Skool and community access live</i></div></div></div><div class="gtask"><span>Onboards buyers inside 72hrs</span><div class="gtrack track"><div class="gbar work" style="grid-column:25/36;--n:11"><i>Onboards buyers inside 72hrs</i></div></div></div><div class="gtask"><span>Assigns partnerships</span><div class="gtrack track"><div class="gbar work" style="grid-column:35/38;--n:3"><i>Assigns partnerships</i></div></div></div><div class="gperson"><b>Zac</b><span>Offer, funnel and every word</span></div><div class="gtask"><span>Offer locked, terms written</span><div class="gtrack track"><div class="gbar work" style="grid-column:1/8;--n:7"><i>Offer locked, terms written</i></div></div></div><div class="gtask"><span>Funnel, forms, integrations</span><div class="gtrack track"><div class="gbar work" style="grid-column:5/15;--n:10"><i>Funnel, forms, integrations</i></div></div></div><div class="gtask"><span>Whisper, tease and asset copy</span><div class="gtrack track"><div class="gbar work" style="grid-column:9/22;--n:13"><i>Whisper, tease and asset copy</i></div></div></div><div class="gtask"><span>Webinar script and deck</span><div class="gtrack track"><div class="gbar work" style="grid-column:19/23;--n:4"><i>Webinar script and deck</i></div></div></div><div class="gtask"><span>Sequences loaded, rehearsal</span><div class="gtrack track"><div class="gbar work" style="grid-column:16/25;--n:9"><i>Sequences loaded, rehearsal</i></div></div></div><div class="gtask"><span>Live ops and follow up</span><div class="gtrack track"><div class="gbar gate" style="grid-column:23/26;--n:3"><i>Live ops and follow up</i></div></div></div><div class="gtask"><span>Debrief filed</span><div class="gtrack track"><div class="gbar ambient" style="grid-column:32/36;--n:4"><i>Debrief filed</i></div></div></div><div class="gperson"><b>Kishan</b><span>Do what you do best</span></div><div class="gtask"><span>Sales floor</span><div class="gtrack track"><div class="gbar gate" style="grid-column:5/33;--n:28"><i>Sales floor</i></div></div></div><div class="gperson"><b>Johnny</b><span>Supply side</span></div><div class="gtask"><span>Commission numbers by audience size</span><div class="gtrack track"><div class="gbar gate" style="grid-column:1/3;--n:2"><i>Commission numbers by audience size</i></div></div></div><div class="gtask"><span>Partnership supply confirmed</span><div class="gtrack track"><div class="gbar work" style="grid-column:2/9;--n:7"><i>Partnership supply confirmed</i></div></div></div>
+    </div></div>
+    <p class="gkey2">
+      <span><s class="gate"></s>Scheduled work</span>
+      <span><s class="rule"></s>Webinar, Sun 30 Aug</span>
+      <span>6 Aug to 11 Sep</span>
+    </p>
+  </div>
+</section>
+
+
+
+</body>
+</html>
