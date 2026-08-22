@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flick Mice Growth Brief</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+
+<style>
+  :root {
+    --bg:#FFFFFF; --bg-s:#F7F7F7;
+    --text:#111111; --text-s:#555555; --text-m:#999999;
+    --border:rgba(0,0,0,0.16); --border-l:rgba(0,0,0,0.24); --hair:rgba(0,0,0,0.08);
+    --r:14px;
+    --font:'Inter',-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;
+  }
+  body {
+    background: var(--bg); color: var(--text); font-family: var(--font);
+    font-size: 16px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  }
+  .bg-dot-grid {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background-image: radial-gradient(circle, rgba(0,0,0,0.12) 1.2px, transparent 1.2px);
+    background-size: 32px 32px; opacity: .5;
+  }
+  .doc {
+    position: relative; z-index: 1; max-width: 760px; margin: 0 auto;
+    padding: 56px 28px 96px; display: flex; flex-direction: column; gap: 58px;
+  }
+
+  .brandbar {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    padding-bottom: 20px; border-bottom: 2px solid var(--border);
+  }
+  .logo { display: inline-flex; align-items: center; gap: 11px; }
+  .logo svg { height: 34px; width: auto; display: block; }
+  .logo .wordmark { font-size: 1.02rem; font-weight: 700; letter-spacing: -0.02em; }
+  .docmeta {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--text-m); text-align: right; line-height: 1.7;
+  }
+
+  .masthead { display: flex; flex-direction: column; gap: 16px; }
+  .eyebrow {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--text);
+  }
+  h1 {
+    font-size: clamp(2rem, 4.4vw, 2.8rem); font-weight: 700;
+    letter-spacing: -0.035em; line-height: 1.13; text-wrap: balance; margin: 0;
+  }
+  .standfirst { font-size: 1.05rem; color: var(--text-s); line-height: 1.75; max-width: 33rem; text-wrap: pretty; }
+
+  .stats {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+    border: 2px solid var(--border); border-radius: var(--r); overflow: hidden;
+  }
+  .stat { padding: 20px; border-right: 1px solid var(--hair); }
+  .stat:last-child { border-right: 0; }
+  .stat b {
+    display: block; font-size: 1.7rem; font-weight: 700;
+    letter-spacing: -0.035em; font-variant-numeric: tabular-nums; line-height: 1.1;
+  }
+  .stat span {
+    display: block; margin-top: 7px; font-size: 0.68rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-m); line-height: 1.5;
+    text-wrap: balance;
+  }
+
+  section { display: flex; flex-direction: column; gap: 18px; }
+  .section-label {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--text);
+    display: flex; align-items: center; gap: 12px;
+  }
+  .section-label::after { content: ""; flex: 1; height: 2px; background: var(--border); }
+  h2 {
+    font-size: clamp(1.5rem, 2.8vw, 1.95rem); font-weight: 700;
+    letter-spacing: -0.03em; line-height: 1.15; text-wrap: balance; margin: 0;
+  }
+  p { margin: 0; color: var(--text-s); line-height: 1.75; }
+  p + p { margin-top: 14px; }
+  p.lead { color: var(--text); font-size: 1.05rem; text-wrap: pretty; }
+  p.punch { color: var(--text); font-weight: 600; text-wrap: balance; }
+  strong { font-weight: 600; color: var(--text); }
+
+  h3.sub {
+    font-size: 1.02rem; font-weight: 700; letter-spacing: -0.02em;
+    margin: 24px 0 6px; line-height: 1.3; color: var(--text); text-wrap: balance;
+  }
+  h3.sub:first-of-type { margin-top: 6px; }
+
+  .rivals { display: flex; flex-direction: column; gap: 14px; }
+  .rival {
+    border: 2px solid var(--border); border-radius: var(--r); padding: 22px 24px;
+    display: grid; grid-template-columns: 2rem 1fr; gap: 16px; align-items: start;
+  }
+  .rival .mark {
+    font-size: 1.15rem; font-weight: 700; letter-spacing: -0.02em;
+    color: var(--text-m); line-height: 1.2; padding-top: 1px;
+  }
+  .rival-body { display: flex; flex-direction: column; gap: 10px; }
+  .rival h3 { font-size: 1.1rem; font-weight: 700; letter-spacing: -0.025em; margin: 0; line-height: 1.25; text-wrap: balance; }
+  .rival dl { margin: 0; display: flex; flex-direction: column; gap: 9px; }
+  .rival .row { display: grid; grid-template-columns: 7rem 1fr; gap: 12px; align-items: baseline; }
+  .rival dt {
+    font-size: 0.66rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--text-m); line-height: 1.9;
+  }
+  .rival dd { margin: 0; color: var(--text-s); line-height: 1.6; font-size: 0.95rem; }
+  .rival .row.win dd { color: var(--text); font-weight: 500; }
+
+  ul.plain { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 13px; }
+  ul.plain li { position: relative; padding-left: 20px; color: var(--text-s); line-height: 1.7; }
+  ul.plain li::before {
+    content: ""; position: absolute; left: 0; top: 0.68em;
+    width: 7px; height: 7px; background: var(--text); border-radius: 2px;
+  }
+
+  .callout {
+    background: var(--bg-s); border: 2px solid var(--border-l); border-radius: var(--r);
+    padding: 24px 26px; display: flex; flex-direction: column; gap: 10px;
+  }
+  .callout .label {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--text);
+  }
+  .callout p { color: var(--text); }
+
+  .twoup { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .lane {
+    border: 2px solid var(--border); border-radius: var(--r); padding: 22px 24px;
+    display: flex; flex-direction: column; gap: 9px;
+  }
+  .lane .tag {
+    font-size: 0.66rem; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--text-m);
+  }
+  .lane h3 { font-size: 1.08rem; font-weight: 700; letter-spacing: -0.025em; margin: 0; line-height: 1.25; text-wrap: balance; }
+  .lane p { font-size: 0.95rem; line-height: 1.65; }
+  .lane p + p { margin-top: 10px; }
+
+  ol.steps { margin: 0; padding: 0; list-style: none; counter-reset: s; display: flex; flex-direction: column; }
+  ol.steps > li {
+    counter-increment: s; display: grid; grid-template-columns: 2.4rem 1fr;
+    align-items: start; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--hair);
+  }
+  ol.steps > li:first-child { padding-top: 0; }
+  ol.steps > li:last-child { border-bottom: 0; padding-bottom: 0; }
+  ol.steps > li::before {
+    content: "0" counter(s); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em;
+    font-variant-numeric: tabular-nums; color: var(--text-m); padding-top: 0.32em;
+  }
+  .step-body { display: block; }
+  .step-body b {
+    display: block; font-size: 1.05rem; font-weight: 700;
+    letter-spacing: -0.025em; color: var(--text); margin-bottom: 2px;
+    text-wrap: balance;
+  }
+  .step-body span { display: block; color: var(--text-s); line-height: 1.6; font-size: 0.94rem; }
+
+  .close { border-top: 3px solid var(--text); padding-top: 28px; display: flex; flex-direction: column; gap: 18px; }
+
+  @media (max-width: 640px) {
+    .doc { padding: 40px 20px 72px; gap: 44px; }
+    .stat { border-right: 0; border-bottom: 1px solid var(--hair); }
+    .stat:last-child { border-bottom: 0; }
+    .brandbar { flex-direction: column; align-items: flex-start; gap: 14px; }
+    .docmeta { text-align: left; }
+    .twoup { grid-template-columns: 1fr; }
+    .rival { grid-template-columns: 1fr; gap: 10px; }
+    .rival .row { grid-template-columns: 1fr; gap: 2px; }
+    .rival dt { line-height: 1.5; }
+  }
+</style>
+
+</head>
+<body>
+<div class="bg-dot-grid"></div>
+
+<div class="doc">
+
+  <div class="brandbar">
+    <div class="logo">
+      <svg viewBox="0 0 40 44" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="JustScale">
+        <polygon points="1,0 39,0 34,8 6,8" fill="#111111"/>
+        <polygon points="7,10.5 33,10.5 28.5,18.5 11.5,18.5" fill="#111111"/>
+        <polygon points="12.5,21 27.5,21 24,29 16,29" fill="#111111"/>
+        <rect x="16.5" y="33" width="7" height="7" fill="#111111"/>
+      </svg>
+      <span class="wordmark">JustScale</span>
+    </div>
+    <div class="docmeta">Growth Brief<br>Flick Mice &nbsp;/&nbsp; August 2026</div>
+  </div>
+
+  <header class="masthead">
+    <div class="eyebrow">Prepared for Nick and Dan</div>
+    <h1>You've got a real product and nothing behind it</h1>
+    <p class="standfirst">Four parts. Who you are actually up against, why your pricing caps you at $35 a customer, why you have no back end, and the creator army that feeds TikTok Shop and Meta off the same content.</p>
+  </header>
+
+  <div class="stats">
+    <div class="stat"><b>$99.99</b><span>Your hero SKU</span></div>
+    <div class="stat"><b>$55</b><span>You keep per order</span></div>
+    <div class="stat"><b>$35</b><span>Most you can pay for a customer</span></div>
+    <div class="stat"><b>0</b><span>Reasons to buy again</span></div>
+  </div>
+
+  <section>
+    <div class="section-label">Part 1 &nbsp;/&nbsp; The competition</div>
+    <h2>Three kinds of competitor. Not thirty. Three.</h2>
+    <p class="lead">You are not competing with the whole industry. There are three groups, and only one of them is a fight worth picking.</p>
+
+    <div class="rivals">
+      <div class="rival">
+        <div class="mark">A</div>
+        <div class="rival-body">
+          <h3>The giants. Razer and Logitech.</h3>
+          <dl>
+            <div class="row"><dt>What they do</dt><dd>Own the pros. Razer is on 31% of tracked pro setups, and in Fortnite the Viper V3 Pro alone is on 33.8%. That came from ten years of sponsorship money rather than better marketing.</dd></div>
+            <div class="row"><dt>Price</dt><dd>$130 to $160</dd></div>
+            <div class="row win"><dt>Your opening</dt><dd>Nobody has ever bought a Logitech because they liked the person who made it. That company does not have a face and it cannot go out and get one.</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="rival">
+        <div class="mark">B</div>
+        <div class="rival-body">
+          <h3>The cheap ones. Attack Shark, MCHOSE, VXE.</h3>
+          <dl>
+            <div class="row"><dt>What they do</dt><dd>Sell a 49 gram mouse for $40 on the same sensor family as a $150 one. They built the brand by shipping free product to TikTok creators and letting the reviews do the selling.</dd></div>
+            <div class="row"><dt>Price</dt><dd>$30 to $68</dd></div>
+            <div class="row win"><dt>Your opening</dt><dd>Their customers have nothing to be loyal to. There is no person behind the brand and no reason to ever buy a second time, and that is the gap you can walk into.</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="rival">
+        <div class="mark">C</div>
+        <div class="rival-body">
+          <h3>The hype brands. Finalmouse and Higround.</h3>
+          <dl>
+            <div class="row"><dt>What they do</dt><dd>Run limited drops with a creator's name attached. They sell out in hours and then go quiet for months until the next one.</dd></div>
+            <div class="row"><dt>Price</dt><dd>$100 to $190</dd></div>
+            <div class="row win"><dt>Your opening</dt><dd>Every drop needs a fresh hype cycle and they have to build one from scratch each time. Nick is live every day, so you already have the attention they keep paying for.</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <p>The Edge is 52 grams at $99.99. The Attack Shark X3 is 49 grams at $40. Any spec claim you put in an ad invites somebody to go look that up and find a lighter mouse for less money, so that is not an argument worth having.</p>
+    <p class="punch">You are not going to out-credential Razer or undercut Attack Shark.</p>
+    <p>What you have instead is a person people actually watch, playing the game the product was built for, every single day. That is the whole asset, and every decision from here should run through it.</p>
+  </section>
+
+  <section>
+    <div class="section-label">Part 2 &nbsp;/&nbsp; The pricing</div>
+    <h2>If you sell one mouse and never speak to that person again, there is nothing to scale.</h2>
+    <p class="lead">$99.99. 55% margin. You keep about $55.</p>
+    <p>A gaming mouse gets replaced every two or three years, so there is no second order coming. Every dollar you spend acquiring that customer has to come back on the first purchase, which puts your ceiling somewhere around $35.</p>
+    <p class="punch">$35 does not buy a customer on Meta in 2026.</p>
+    <p>That is the real reason nobody in this category runs ads, and it has nothing to do with the channel. The math does not work at $100 with an empty back end, so everybody who tried it lost money and walked away believing paid does not work for gaming peripherals.</p>
+
+    <div class="callout">
+      <div class="label">The bundle fixes half of it</div>
+      <p>Mouse, pad, skates and grips at $149 to $169. You keep $85 instead of $55, which moves your acquisition ceiling from $35 to $55. Same traffic and the same creative with 57% more room to buy customers. This is a Shopify change and it could be live by Friday.</p>
+    </div>
+
+    <p>Two smaller things need fixing this week. Your Stratus page still says it ships July 2026, which was last month. And Flick Fire is no longer in the published catalog, so either it is discontinued and needs removing properly, or it is still a live product that nobody can find.</p>
+  </section>
+
+  <section>
+    <div class="section-label">Part 3 &nbsp;/&nbsp; The back end</div>
+    <h2>Brands doing eight figures lose money on the first sale on purpose.</h2>
+    <p class="lead">They will buy a customer at breakeven, sometimes at a loss, because they know what that person is worth over the following eighteen months.</p>
+    <p>Think about a restaurant. The rotisserie chicken loses money on every bird and nobody in the kitchen cares, because it gets people through the door. Once they are sitting down they order drinks, they get dessert, and they come back on Thursday with their wife.</p>
+    <p class="punch">You are running the restaurant with nothing on the menu except the chicken.</p>
+
+    <h3 class="sub">Get everyone onto a list</h3>
+    <p>Capture buyers, abandoned carts, giveaway entries and anybody who lands on the site off a stream. Right now when Nick drops a link on Twitch that traffic hits a product page, and everybody who does not buy in that moment is gone for good.</p>
+
+    <h3 class="sub">Email them properly</h3>
+    <p>A monthly newsletter will not do anything. Nick makes content every single day and none of it goes to a list. His clips, his settings, what he is running this week, why he changed his DPI. Every one of those is an email that costs nothing to produce.</p>
+
+    <h3 class="sub">Segment on how many times someone has bought</h3>
+    <p>A first-time buyer needs a different message than somebody on their third order. One of them needs a reason to come back and the other needs early access. Most brand lists do nothing because every person on them gets the same email.</p>
+
+    <h3 class="sub">Give them something to come back for</h3>
+    <p>Skates wear out in about three months. Grips wear out. Pads wear out faster than people expect. New colorways, restocks and limited runs that hit the list before they go public will bring people back without you having to build a new product.</p>
+
+    <p class="punch">The first number I want out of Shopify is how many customers bought exactly once and never returned.</p>
+    <p>My guess is north of 85%, which is completely normal for a brand with no back end. That number is the size of the opportunity and it is sitting in your admin panel right now.</p>
+    <p>Once there is a back end you get to measure a customer by what they spend over a year instead of what they spend today. That is the point where a $55 acquisition cost becomes a choice you make rather than a limit you are stuck with.</p>
+  </section>
+
+  <section>
+    <div class="section-label">Part 4 &nbsp;/&nbsp; The creator army</div>
+    <h2>Organic has a ceiling, and right now Nick is the ceiling.</h2>
+    <p class="lead">That is not a knock on him, because every creator brand runs into this. When he posts, revenue moves. When he takes a week off, it moves the other way. You do not fix that by asking Nick to post more, you fix it by getting a hundred other people posting.</p>
+    <p>The advantage here is not that you can hire creators, because anybody with a credit card can hire creators. It is that Nick already knows hundreds of Fortnite players who use a mouse for a living, and Attack Shark would have to go out and buy those relationships.</p>
+
+    <h3 class="sub">How we build it</h3>
+    <ul class="plain">
+      <li><strong>50 to 100 creators to start.</strong> Between 5k and 200k followers, all Fortnite, all pulled off Nick's own list. Marketplace creators have never played the game and you can tell within three seconds of the video.</li>
+      <li><strong>A small flat fee plus 15 to 20% of what they sell.</strong> The category standard is 5%, which gets you nobody worth having. The flat fee is what makes a good creator actually pick the camera up instead of leaving your mouse in a drawer.</li>
+      <li><strong>Usage rights and whitelisting written into every contract.</strong> Most brands skip this clause and it is the one that matters, because it is what lets you run their video as an ad for a year instead of watching it die on their page in two days.</li>
+      <li><strong>Four content lanes so the ads are not all the same video.</strong> Creator gameplay, Nick on camera explaining why he built it, product and glide b-roll, and a head to head against whatever mouse they use now.</li>
+    </ul>
+    <p>That last lane is the ad. You lose the spec argument on paper, so put the Edge next to a Viper in a real player's hand and let them switch on camera instead.</p>
+
+    <h3 class="sub">Same army, two surfaces</h3>
+
+    <div class="twoup">
+      <div class="lane">
+        <div class="tag">Where they buy</div>
+        <h3>TikTok Shop</h3>
+        <p>Your buyer is already there, and Attack Shark built an entire brand on it, so you have proof it works in this exact category.</p>
+        <p>Creators post, creators sell, TikTok handles checkout, and once the affiliate program is live it starts recruiting for you.</p>
+      </div>
+      <div class="lane">
+        <div class="tag">Where it scales</div>
+        <h3>Meta</h3>
+        <p>Whatever wins organically gets loaded into your own account as a Spark Ad, running on a cost cap set to your max CAC.</p>
+        <p>If an ad cannot get a customer at your number, Meta will not spend on it. Most people see that and assume something is broken, but an ad refusing to spend is the system doing its job.</p>
+      </div>
+    </div>
+
+    <p>That is what makes testing free. You deploy everything, the winners scale themselves, the losers sit there doing nothing, and the revenue share only pays out on sales that already cleared your target.</p>
+    <p class="punch">TikTok is where you find out what works. Meta is where you put money behind it and collect the email address.</p>
+    <p>One more thing about Meta. We pulled the Ad Library this week and found two real brands running gaming mouse ads in the US. A search for gaming mousepads returns nothing at all. Everybody assumed paid does not work in this category, so nobody has tested it in years, and that is usually where the cheap inventory is sitting.</p>
+  </section>
+
+  <section>
+    <div class="section-label">First 60 days</div>
+    <h2>Nine moves. In this order.</h2>
+    <ol class="steps">
+      <li><span class="step-body"><b>Bundle live, site fixed</b><span>Stratus still says July 2026 and Flick Fire is not listed. Neither of those is strategy.</span></span></li>
+      <li><span class="step-body"><b>Increase customer LTV</b><span>A customer is currently worth $55, one time. That is the number everything else attacks.</span></span></li>
+      <li><span class="step-body"><b>Stop selling one thing on the front end</b><span>Sell several, then give people a reason to return before the mouse wears out.</span></span></li>
+      <li><span class="step-body"><b>Analyze the data</b><span>How many customers bought once and never came back. That sets the size of the build.</span></span></li>
+      <li><span class="step-body"><b>Set up back end selling systems</b><span>List, flows and segments by purchase count. Nick's daily content finally has somewhere to go.</span></span></li>
+      <li><span class="step-body"><b>Begin building the creator army</b><span>50 to 100 Fortnite creators off Nick's list, with usage rights in every contract.</span></span></li>
+      <li><span class="step-body"><b>Launch on TikTok Shop</b><span>Catalog loaded, affiliate program live, the army pointed at it.</span></span></li>
+      <li><span class="step-body"><b>Take winners</b><span>Whatever actually sold, not whatever was fun to watch.</span></span></li>
+      <li><span class="step-body"><b>Scale on Meta</b><span>Cost cap set to your max CAC. If it cannot hit the number it does not spend.</span></span></li>
+    </ol>
+  </section>
+
+  <section class="close">
+    <div class="section-label">What we need from you</div>
+    <p class="lead">Shopify read access so we can replace the estimates with your real numbers. The ad account and Business Manager. A first pass at the creator list from Nick. And a yes or no on a weekly LIVE with him, because live converts at 7.8% against 2.1% for feed ads and he is already streaming anyway.</p>
+    <p>One thing straight on scope. Gross profit is somewhere around $22k to $27k a month and that has to cover media, our fee, inventory and Nick. It supports a lean setup with $8k to $12k a month behind it. It does not support all nine of those moves inside thirty days, which is why the list says sixty. Push it faster than that and you are burning runway before the system has a chance to work.</p>
+  </section>
+
+</div>
+</body>
+</html>
