@@ -4,37 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apply | JustScale</title>
-    <meta name="description" content="Apply for a strategy session. We work with a limited number of businesses at any given time. Fill out the application to get on a call.">
-        <link rel="icon" type="image/png" href="../logo.png">
+    <meta name="description" content="We run paid ads for high-ticket businesses scaling past their ceiling on cold traffic. Watch the video and fill out the application.">
+    <link rel="icon" type="image/png" href="../logo.png">
     <link rel="apple-touch-icon" href="../logo.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../shared.css?v=20260407k">
     <style>
-        .book-hero { text-align: center; padding: 120px 28px 40px; }
-        .book-hero h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 14px; }
-        .book-hero p { color: var(--text-s); font-size: 1.05rem; max-width: 500px; margin: 0 auto; }
-        .book-hero .gold-rule { width: 60px; height: 2px; background: var(--gold); margin: 24px auto 0; opacity: 0.5; }
-        .book-section-label {
-            font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em;
-            text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
-        }
-        .book-value h2 { font-size: 1.3rem; font-weight: 600; margin-bottom: 16px; line-height: 1.4; }
-        .book-value ul { list-style: none; text-align: left; max-width: 400px; margin: 0 auto; }
-        .book-value li {
-            font-size: 0.95rem; color: var(--text-s); padding: 8px 0;
-            border-bottom: 2px solid var(--border); display: flex; align-items: center; gap: 10px;
-        }
-        .book-value li svg { width: 16px; height: 16px; stroke: var(--gold); fill: none; stroke-width: 2; flex-shrink: 0; }
-        .book-calendly { max-width: 900px; margin: 0 auto; padding: 0 20px 0; }
-        .book-value { text-align: center; padding: 0 20px 40px; max-width: 600px; margin: -40px auto 0; }
-        .sr.visible { opacity: 1 !important; transform: translateY(0) !important; }
+        #nav .container { justify-content: center; }
+        /* Shared footer is a space-between row; stack it centred on this page. */
+        footer .container { flex-direction: column; justify-content: center; gap: 14px; }
+        .book-hero { text-align: center; padding: 96px 28px 28px; }
+        .book-hero h1 { font-size: 2.4rem; font-weight: 700; margin-bottom: 18px; line-height: 1.18; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .book-hero p { color: var(--text-s); font-size: 1.08rem; line-height: 1.6; max-width: 500px; margin: 0 auto; }
+        .book-hero .gold-rule { width: 60px; height: 2px; background: var(--gold); margin: 26px auto 0; opacity: 0.5; }
+        .book-vsl { max-width: 860px; margin: 0 auto; padding: 0 28px 28px; }
+        .book-vsl-frame { position: relative; width: 100%; border: 2px solid var(--border); border-radius: var(--r); overflow: hidden; }
+        .book-app { max-width: 900px; margin: 0 auto; padding: 0 20px 28px; }
         .sr { transition: opacity 0.6s ease, transform 0.6s ease; }
+        .sr.visible { opacity: 1 !important; transform: translateY(0) !important; }
         @media (max-width: 768px) {
-            .book-hero { padding: 100px 28px 10px; }
-            .book-hero h1 { font-size: 1.6rem; }
-            .book-value h2 { font-size: 1.15rem; }
+            .book-hero { padding: 88px 24px 20px; }
+            .book-hero h1 { font-size: 1.7rem; }
+            .book-hero p { font-size: 1rem; }
+            .book-vsl { padding: 0 18px 20px; }
         }
     </style>
 </head>
@@ -42,70 +36,46 @@
 <div class="scroll-progress"></div>
 <div class="page" id="page">
 
-    <!-- NAV (same as main site) -->
+    <!-- NAV -->
     <nav id="nav">
         <div class="container">
-            <a href="../index.html" class="logo">
+            <a href="./" class="logo">
                 <img src="../logo.png" alt="JustScale" class="logo-img">
             </a>
-            <ul class="nav-links">
-                <li><a href="../education.html">Education</a></li>
-                <li><a href="../capital.html">Capital</a></li>
-                <li><a href="../local.html">Local</a></li>
-                <li><a href="./" class="btn mag-btn">Yes, I want to scale</a></li>
-            </ul>
-            <div class="ham" onclick="this.classList.toggle('open');document.querySelector('.nav-links').classList.toggle('mobile-open')">
-                <span></span><span></span><span></span>
-            </div>
         </div>
     </nav>
 
+    <!-- HEADLINE -->
     <div class="book-hero">
         <div class="container">
-            <h1 class="sr">Apply for a strategy session.</h1>
-            <p class="sr">We work with a limited number of clients at any given time. Fill out the application below and we'll be in touch.</p>
+            <h1 class="sr">How we help businesses scale with paid advertising.</h1>
+            <p class="sr">We run the ads, position your offer for cold traffic, and build the system around it.</p>
             <div class="gold-rule sr"></div>
         </div>
     </div>
 
     <!-- VSL -->
-    <div class="container" style="max-width: 860px; padding: 0 28px 40px;">
-        <div style="position: relative; width: 100%; border: 2px solid var(--border); border-radius: var(--r); overflow: hidden;">
+    <div class="book-vsl">
+        <div class="book-vsl-frame">
             <script src="https://fast.wistia.com/player.js" async></script>
-            <script src="https://fast.wistia.com/embed/3rxw2w2jpa.js" async type="module"></script>
-            <style>wistia-player[media-id='3rxw2w2jpa']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/3rxw2w2jpa/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style>
-            <wistia-player media-id="3rxw2w2jpa" aspect="1.7777777777777777"></wistia-player>
+            <script src="https://fast.wistia.com/embed/1lsrejk2ks.js" async type="module"></script>
+            <style>wistia-player[media-id='1lsrejk2ks']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/1lsrejk2ks/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style>
+            <wistia-player media-id="1lsrejk2ks" aspect="1.7777777777777777"></wistia-player>
         </div>
     </div>
 
-    <div class="book-calendly">
-        <div data-tf-live="01KM6NNMYV0EA2VFNS6N8B7555" style="width:100%;height:80vh;min-height:600px;"></div>
+    <!-- APPLICATION -->
+    <div class="book-app">
+        <div data-tf-live="01KM6NNMYV0EA2VFNS6N8B7555" style="width:100%;height:500px;"></div>
         <script src="//embed.typeform.com/next/embed.js"></script>
     </div>
 
-    <div class="book-value sr">
-        <div class="book-section-label">What happens next</div>
-        <h2>If accepted, here's what we'll cover on the call.</h2>
-        <ul>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Where your business is today and where you're trying to get</li>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>The primary bottleneck between you and that number</li>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Whether paid advertising is the right lever to pull</li>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>What working together would actually look like</li>
-        </ul>
-    </div>
-
-    <!-- FOOTER (same as main site) -->
+    <!-- FOOTER -->
     <footer>
         <div class="container">
-            <a href="../index.html" class="logo">
+            <a href="./" class="logo">
                 <img src="../logo-white.png" alt="JustScale" class="logo-img">
             </a>
-            <ul class="foot-links">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../education.html">Education</a></li>
-                <li><a href="../capital.html">Capital</a></li>
-                <li><a href="../local.html">Local</a></li>
-            </ul>
             <span class="foot-copy">&copy; 2026 JustScale. All rights reserved.</span>
         </div>
     </footer>
