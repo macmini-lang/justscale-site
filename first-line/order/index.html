@@ -6,18 +6,10 @@
     <title>Order | The First Line</title>
     <meta name="robots" content="noindex">
     <link rel="icon" type="image/png" href="../../logo.png">
-    <style>
-        html { background: #FFFFFF; -webkit-text-size-adjust: 100%; }
-        body { margin: 0; background: #FFFFFF; }
-    </style>
+    <style>html { background: #FFFFFF; -webkit-text-size-adjust: 100%; } body { margin: 0; background: #FFFFFF; }</style>
 </head>
 <body>
-<!-- ============================================================
-     THE FIRST LINE, order page.
-     Two columns per Gavin: form + bumps + guarantee left, stack right.
-     Two bumps. Each opens on the next problem the front end creates.
-     Payment: placeholder. Wire Whop/Stripe checkout before launch.
-     ============================================================ -->
+<!-- THE FIRST LINE, order page. Shape: clientsforfree.com/order. Two bumps, each opens on the next problem. Payment placeholder. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -211,64 +203,64 @@ html, body {
 </style>
 
 <style>
-.fo-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: var(--ds-space-5); max-width: 980px; margin: 0 auto; text-align: left; align-items: start; }
+.fl-sticky { position: sticky; top: 0; z-index: 50; background: var(--ds-text); color: #fff; font-size: var(--ds-text-sm); font-weight: var(--ds-font-semibold); padding: 10px var(--ds-container-padding); text-align: center; }
+.fl-fill { background: var(--ds-highlight); padding: 0 3px; color: var(--ds-text); }
+.fo-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: var(--ds-space-4); max-width: 1000px; margin: 0 auto; text-align: left; align-items: start; }
 .fo-col { min-width: 0; }
 .fo-card { background: var(--ds-surface); border: 1px solid var(--ds-border-light); border-radius: var(--ds-radius-md); box-shadow: var(--ds-shadow-lg); padding: var(--ds-space-4) var(--ds-space-3); }
+.fo-card + .fo-card { margin-top: var(--ds-space-3); }
 .fo-step { font-size: var(--ds-text-xs); font-weight: var(--ds-font-bold); letter-spacing: var(--ds-tracking-wide); text-transform: uppercase; color: var(--ds-text-muted); margin-bottom: 6px; }
 .fo-card h2 { font-size: var(--ds-heading-sm); font-weight: var(--ds-font-bold); letter-spacing: -0.03em; margin-bottom: var(--ds-space-3); }
+.fo-card h3 { font-size: var(--ds-text-xs); font-weight: var(--ds-font-bold); letter-spacing: var(--ds-tracking-wide); text-transform: uppercase; color: var(--ds-text-muted); margin: var(--ds-space-3) 0 var(--ds-space-2); }
+.fo-card h3:first-child { margin-top: 0; }
 .fo-field { margin-bottom: 12px; }
 .fo-field label { display: block; font-size: var(--ds-text-xs); font-weight: var(--ds-font-semibold); color: var(--ds-text-secondary); margin-bottom: 5px; }
 .fo-field input { width: 100%; font: inherit; font-size: var(--ds-text-base); padding: 13px 14px; border: 1px solid var(--ds-border-light); border-radius: var(--ds-radius-sm); background: #fff; color: var(--ds-text); }
 .fo-field input:focus { outline: none; border-color: var(--ds-text); }
 .fo-row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .fo-pay { margin-top: var(--ds-space-2); border: 1px dashed var(--ds-border-light); border-radius: var(--ds-radius-sm); padding: 14px; font-size: var(--ds-text-sm); color: var(--ds-text-muted); text-align: center; }
-
 .fo-bump { margin-top: var(--ds-space-3); border: 2px dashed var(--ds-text); border-radius: var(--ds-radius-md); padding: var(--ds-space-3); background: #FFFDF2; }
+.fo-bump__k { font-size: var(--ds-text-xs); font-weight: var(--ds-font-bold); letter-spacing: var(--ds-tracking-wide); text-transform: uppercase; color: var(--ds-text); margin-bottom: 8px; }
 .fo-bump__top { display: flex; align-items: flex-start; gap: 12px; cursor: pointer; }
 .fo-bump__top input { width: 22px; height: 22px; margin-top: 2px; flex-shrink: 0; accent-color: #111; }
-.fo-bump__label { font-size: var(--ds-text-xs); font-weight: var(--ds-font-bold); letter-spacing: var(--ds-tracking-wide); text-transform: uppercase; color: var(--ds-text-muted); }
 .fo-bump__title { font-size: var(--ds-text-lg); font-weight: var(--ds-font-bold); letter-spacing: -0.02em; line-height: 1.3; }
-.fo-bump__title em { font-style: normal; font-weight: var(--ds-font-bold); }
 .fo-bump p { font-size: var(--ds-text-sm); color: var(--ds-text-secondary); line-height: 1.6; margin-top: 10px; }
 .fo-bump p b { color: var(--ds-text); }
-
 .fo-total { display: flex; justify-content: space-between; align-items: baseline; margin-top: var(--ds-space-3); padding-top: var(--ds-space-2); border-top: 1px solid var(--ds-border); }
 .fo-total span { font-size: var(--ds-text-sm); color: var(--ds-text-secondary); }
 .fo-total b { font-size: 26px; font-weight: var(--ds-font-bold); letter-spacing: var(--ds-tracking-tight); }
 .fo-card .ds-pill { text-align: center; }
 .fo-fine { font-size: var(--ds-text-xs); color: var(--ds-text-muted); margin-top: var(--ds-space-2); line-height: 1.6; text-align: center; }
-
-.fo-side h3 { font-size: var(--ds-text-xs); font-weight: var(--ds-font-bold); letter-spacing: var(--ds-tracking-wide); text-transform: uppercase; color: var(--ds-text-muted); margin-bottom: var(--ds-space-2); }
-.fo-side .fo-price { font-size: clamp(2rem, 4vw, 2.6rem); font-weight: var(--ds-font-bold); letter-spacing: var(--ds-tracking-tight); line-height: 1; margin-bottom: 6px; }
-.fo-side .fo-price small { font-size: var(--ds-text-base); font-weight: var(--ds-font-semibold); color: var(--ds-text-secondary); letter-spacing: 0; }
+.fo-guar { margin-top: var(--ds-space-3); border: 2px solid var(--ds-text); border-radius: var(--ds-radius-md); padding: var(--ds-space-3); }
+.fo-guar b { display: block; font-size: var(--ds-text-base); font-weight: var(--ds-font-bold); margin-bottom: 6px; }
+.fo-guar p { font-size: var(--ds-text-sm); color: var(--ds-text-secondary); line-height: 1.6; }
+.fo-price { font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: var(--ds-font-bold); letter-spacing: var(--ds-tracking-tight); line-height: 1.1; margin-bottom: var(--ds-space-2); }
+.fo-side p { font-size: var(--ds-text-sm); color: var(--ds-text-secondary); line-height: 1.6; }
 .fo-side ul li { position: relative; padding-left: 20px; font-size: var(--ds-text-sm); color: var(--ds-text-secondary); line-height: 1.55; }
 .fo-side ul li + li { margin-top: 10px; }
 .fo-side ul li::before { content: ""; position: absolute; left: 0; top: 8px; width: 7px; height: 7px; border-radius: 50%; background: var(--ds-accent); }
 .fo-side ul li b { color: var(--ds-text); font-weight: var(--ds-font-bold); }
-.fo-guar { margin-top: var(--ds-space-3); border: 2px solid var(--ds-text); border-radius: var(--ds-radius-md); padding: var(--ds-space-3); }
-.fo-guar b { display: block; font-size: var(--ds-text-base); font-weight: var(--ds-font-bold); margin-bottom: 6px; }
-.fo-guar p { font-size: var(--ds-text-sm); color: var(--ds-text-secondary); line-height: 1.6; }
+.fo-shots { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.fo-shot { aspect-ratio: 4/3; border-radius: var(--ds-radius-sm); background: var(--ds-bg-secondary); border: 1px solid var(--ds-border); display: flex; align-items: center; justify-content: center; color: var(--ds-text-muted); font-size: var(--ds-text-xs); text-align: center; padding: 8px; }
 .fo-back { display: inline-block; font-size: var(--ds-text-sm); color: var(--ds-text-muted); margin-top: var(--ds-space-3); text-decoration: underline; text-underline-offset: 3px; }
-
-@media (max-width: 860px) {
-    .fo-grid { grid-template-columns: 1fr; }
-    .fo-side { order: -1; }
-    .fo-row2 { grid-template-columns: 1fr; }
-}
+.fl-footer { padding: var(--ds-space-6) var(--ds-container-padding); border-top: 1px solid var(--ds-border); }
+.fl-footer p { font-size: var(--ds-text-xs); color: var(--ds-text-muted); max-width: 620px; margin: 0 auto; line-height: 1.6; }
+.fl-footer p + p { margin-top: 10px; }
+@media (max-width: 860px) { .fo-grid { grid-template-columns: 1fr; } .fo-side { order: -1; } .fo-row2 { grid-template-columns: 1fr; } }
 </style>
 
 <div class="ds-page">
-
+<div class="fl-sticky"><span class="fl-fill">[ZAC: support line]</span> Questions? Reply to any email from me and I'll answer it myself.</div>
 <div class="ds-bar"><img src="https://justscale.co/logo.png" alt="JustScale"></div>
 
 <section class="ds-section ds-section--alt" style="padding-top: var(--ds-space-5);">
-    <div class="ds-wrap" style="max-width: 1040px;">
+    <div class="ds-wrap" style="max-width: 1060px;">
         <div class="fo-grid">
 
             <div class="fo-col">
                 <div class="fo-card">
                     <div class="fo-step">Step 2 of 2</div>
-                    <h2>Where should we send it?</h2>
+                    <h2>Where should I send it?</h2>
                     <form id="fo-form" onsubmit="return false;">
                         <div class="fo-row2">
                             <div class="fo-field"><label for="fn">First name</label><input id="fn" type="text" autocomplete="given-name" required></div>
@@ -276,58 +268,63 @@ html, body {
                         </div>
                         <div class="fo-field"><label for="em">Email</label><input id="em" type="email" autocomplete="email" required></div>
                         <div class="fo-field"><label for="ph">Phone</label><input id="ph" type="tel" autocomplete="tel"></div>
-
                         <div class="fo-pay">Card fields load here (Stripe or Whop). Placeholder until checkout is wired.</div>
 
                         <div class="fo-bump">
+                            <div class="fo-bump__k">Special one time offer: $27</div>
                             <label class="fo-bump__top">
                                 <input type="checkbox" id="bump1" data-price="27">
-                                <div>
-                                    <div class="fo-bump__label">One time offer, $27</div>
-                                    <div class="fo-bump__title">The templates are open and the first line is blank. <em>The Hooks Swipe File.</em></div>
-                                </div>
+                                <div class="fo-bump__title">The Hooks Swipe File</div>
                             </label>
-                            <p>Ten minutes into the sitting you'll hit it. You know who the ad is for and what it's promising, and the cursor is sitting on an empty first line. This is every hook framework I use, sorted by the angle you're writing, with a note on why each one works and when it doesn't. <b>Check the box to add it to your order.</b></p>
+                            <p>Having the four questions answered means nothing if the cursor's still sitting on a blank first line. Ten minutes into the sitting you'll hit it. This is every hook framework I use, sorted by the angle you're writing, with a note on why each one works and when it doesn't. So the line gets written instead of stared at. <b>Check the box above to add The Hooks Swipe File to your order now!</b></p>
                         </div>
 
                         <div class="fo-bump">
+                            <div class="fo-bump__k">Special one time offer: $47</div>
                             <label class="fo-bump__top">
                                 <input type="checkbox" id="bump2" data-price="47">
-                                <div>
-                                    <div class="fo-bump__label">One time offer, $47</div>
-                                    <div class="fo-bump__title">Tomorrow you upload a batch with claims in it, into an account you can't afford to lose. <em>Don't Get Banned.</em></div>
-                                </div>
+                                <div class="fo-bump__title">Don't Get Banned</div>
                             </label>
-                            <p>One of the accounts on the page lost two ads over a dollar figure and a screenshot. A good batch in a flagged account is worth nothing. This is the policy checklist by ad type, the special ad categories and when you're in one, the claims to strip before upload with the compliant rewrite, and what to do when an ad gets rejected without appealing your way into a shutdown. <b>Check the box to add it to your order.</b></p>
+                            <p>A perfect batch means nothing if the account gets flagged the day you upload it. One of the accounts on the page lost two ads over a dollar figure and a screenshot. This is the policy checklist by ad type, the special ad categories and when you're in one, the claims to strip before upload with the compliant rewrite, and what to do when an ad gets rejected without appealing your way into a shutdown. <b>Check the box above to add Don't Get Banned to your order now!</b></p>
                         </div>
 
                         <div class="fo-total"><span>Total today</span><b id="fo-total">$97</b></div>
-
                         <div style="margin-top: var(--ds-space-3);">
-                            <button class="ds-pill" type="submit"><b>Complete my order</b><span>Instant access. The batch or your money back.</span></button>
+                            <button class="ds-pill" type="submit"><b>Complete My Order</b><span>Get your batch written in one sitting</span></button>
                         </div>
-                        <p class="fo-fine">Secure checkout. One payment, no subscription. If you do the sitting and don't leave with your batch, email and it's refunded.</p>
+                        <p class="fo-fine">100% secure &amp; safe payments. By entering your phone number you agree to receive text messages about your order. Reply STOP to opt out.</p>
                     </form>
+                    <div class="fo-guar">
+                        <b>30 day money back guarantee</b>
+                        <p>If you change your mind about this decision at any point, for any reason, in the next 30 days, all you need to do is send me a quick email. Refunded, and you keep the templates.</p>
+                    </div>
                 </div>
                 <a class="fo-back" href="../">Back to the page</a>
             </div>
 
             <div class="fo-col fo-side">
                 <div class="fo-card">
-                    <h3>The First Line</h3>
-                    <div class="fo-price">$97 <small>today</small></div>
-                    <p style="font-size: var(--ds-text-sm); color: var(--ds-text-secondary); margin-bottom: var(--ds-space-3); line-height: 1.6;">By tonight you'll know what your first line should say to the person you want. And you'll have written it.</p>
-                    <h3>Everything you get</h3>
+                    <div class="fo-price">Get Access For Only $97 Today!</div>
+                    <h3>Here's everything you get</h3>
+                    <p><b style="color: var(--ds-text);">The First Line.</b> One work-along video where you answer the four questions for your offer, rewrite your current first line in the first fifteen minutes, and write a full batch of eight to twelve first lines for your account by the end. It eliminates the month of rewriting, re-testing, and guessing what to say, and it's written tonight.</p>
+                    <h3>You'll also receive 4 bonuses</h3>
                     <ul>
-                        <li><b>The sitting.</b> One video, work along. Your first line rewritten in fifteen minutes, a full batch by the end.</li>
-                        <li><b>The templates.</b> One per ad type, the four questions pre-filled.</li>
-                        <li><b>Three worked examples.</b> Roofing, financial advisors, Dubai. Script next to the finished ad.</li>
-                        <li><b>The reference library.</b> Research, angles, hooks, formats, who should be on camera.</li>
-                        <li><b>The tracker.</b> So the batch goes into an account that can read it.</li>
+                        <li><b>Fast Start Bonus #1: The Four Questions Worksheet.</b> One page, the four questions with the trap under each.</li>
+                        <li><b>Fast Start Bonus #2: The Tracker Pack.</b> Creative tracker, naming rule, dashboard prompts, so you know which of the twelve worked.</li>
+                        <li><b>Fast Start Bonus #3: The Upload Checklist.</b> What every ad type needs before it goes live.</li>
+                        <li><b>Fast Start Bonus #4: The Reference Library.</b> Eleven short lessons for the batch after this one.</li>
                     </ul>
-                    <div class="fo-guar">
-                        <b>The batch or your money back.</b>
-                        <p>Do the sitting. If you don't leave with a batch of first lines written for your account, email me. Refunded, and you keep the templates.</p>
+                    <h3>Results</h3>
+                    <div class="fo-shots">
+                        <div class="fo-shot">[before / after: roofing]</div>
+                        <div class="fo-shot">[before / after: financial advisors]</div>
+                        <div class="fo-shot">[before / after: Dubai]</div>
+                        <div class="fo-shot">[account screenshot]</div>
+                    </div>
+                    <h3>Reviews</h3>
+                    <div class="fo-shots">
+                        <div class="fo-shot">[review]</div>
+                        <div class="fo-shot">[review]</div>
                     </div>
                 </div>
             </div>
@@ -336,13 +333,11 @@ html, body {
     </div>
 </section>
 
-<footer class="ds-foot">
-    <img src="https://justscale.co/logo.png" alt="JustScale">
-    <span>JustScale. All rights reserved.</span>
+<footer class="fl-footer">
+    <p>This site is not a part of the Facebook™ website or Facebook™ Inc. Additionally, this site is NOT endorsed by Facebook™ in any way. Facebook™ is a trademark of Facebook™, Inc.</p>
+    <p>© 2026 JustScale. All rights reserved.</p>
 </footer>
-
 </div>
-
 <script>
 (function(){
     var base = 97, out = document.getElementById('fo-total');
